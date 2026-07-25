@@ -80,12 +80,26 @@ delete packageJson.publishConfig;
 
 await fs.writeFile(mainPackageJsonPath, JSON.stringify(packageJson, undefined, 4) + "\n");
 
-const { stdout } = await $({ cwd: builtNpm })`npm pack --json ${mainPackageDirName}`;
+// Pack by explicit path so npm does not resolve a registry package named "typescript".
+const packSpec = `./${mainPackageDirName}`;
+const { stdout } = await $({ cwd: builtNpm })`npm pack --json ${packSpec}`;
 const packedName = JSON.parse(stdout)[0].filename.replace("@", "").replace("/", "-");
 const packedPath = path.join(builtNpm, packedName);
 const targetPath = path.join(builtNpm, mainTarballName);
 if (path.resolve(packedPath) !== path.resolve(targetPath)) {
     await fs.rename(packedPath, targetPath);
+}
+
+// Sanity-check the packed tarball actually contains our rewritten optionalDependencies.
+const { stdout: packedJsonStdout } = await $({ cwd: builtNpm })`tar -xOf ${mainTarballName} package/package.json`;
+const packedJson = JSON.parse(packedJsonStdout);
+const sampleDep = Object.values(packedJson.optionalDependencies ?? {})[0];
+if (typeof sampleDep !== "string" || !sampleDep.startsWith(`https://github.com/${values.repo}/releases/download/${values.tag}/`)) {
+    throw new Error(
+        `Packed ${mainTarballName} does not contain rewritten Release URLs ` +
+            `(got optionalDependency value: ${JSON.stringify(sampleDep)}). ` +
+            `Refusing to publish a broken main package.`,
+    );
 }
 
 console.log(`Rewrote optionalDependencies and repacked ${mainTarballName}`);
