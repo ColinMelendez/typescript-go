@@ -29,7 +29,7 @@ const (
 	FlagsNone Flags = 0
 	// Options
 	FlagsNoTruncation                        Flags = 1 << 0
-	FlagsWriteArrayAsGenericType             Flags = 1 << 1
+	FlagsWriteArrayAsGenericType             Flags = 1 << 1 // Inverted vs upstream: write T[] instead of Array<T>
 	FlagsGenerateNamesForShadowedTypeParams  Flags = 1 << 2
 	FlagsUseStructuralFallback               Flags = 1 << 3
 	FlagsForbidIndexedAccessSymbolReferences Flags = 1 << 4

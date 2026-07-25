@@ -49,7 +49,7 @@ type TypeFormatFlags uint32
 const (
 	TypeFormatFlagsNone                               TypeFormatFlags = 0
 	TypeFormatFlagsNoTruncation                       TypeFormatFlags = 1 << 0 // Don't truncate typeToString result
-	TypeFormatFlagsWriteArrayAsGenericType            TypeFormatFlags = 1 << 1 // Write Array<T> instead T[]
+	TypeFormatFlagsWriteArrayAsGenericType            TypeFormatFlags = 1 << 1 // Inverted vs upstream: write T[] instead of Array<T>
 	TypeFormatFlagsGenerateNamesForShadowedTypeParams TypeFormatFlags = 1 << 2 // When a type parameter T is shadowing another T, generate a name for it so it can still be referenced
 	TypeFormatFlagsUseStructuralFallback              TypeFormatFlags = 1 << 3 // When an alias cannot be named by its symbol, rather than report an error, fallback to a structural printout if possible
 	// hole because there's a hole in node builder flags

@@ -2961,10 +2961,23 @@ func (b *NodeBuilderImpl) getParentSymbolOfTypeParameter(typeParameter *TypePara
 	return b.ch.getSymbolOfNode(host)
 }
 
+// arrayTypeNodeForElement returns Array<T> by default, or T[] when WriteArrayAsGenericType is set
+// (flag meaning is inverted relative to upstream).
+func (b *NodeBuilderImpl) arrayTypeNodeForElement(elementType *ast.TypeNode) *ast.TypeNode {
+	if b.ctx.flags&nodebuilder.FlagsWriteArrayAsGenericType == 0 {
+		return b.f.NewTypeReferenceNode(
+			b.newIdentifier("Array", b.ch.globalArrayType.symbol),
+			b.f.NewNodeList([]*ast.TypeNode{elementType}),
+		)
+	}
+	return b.f.NewArrayTypeNode(elementType)
+}
+
 func (b *NodeBuilderImpl) typeReferenceToTypeNode(t *Type) *ast.TypeNode {
 	var typeArguments []*Type = b.ch.getTypeArguments(t)
 	if t.Target() == b.ch.globalArrayType || t.Target() == b.ch.globalReadonlyArrayType {
-		if b.ctx.flags&nodebuilder.FlagsWriteArrayAsGenericType != 0 {
+		// Inverted relative to upstream: default to Array<T>/ReadonlyArray<T>; set WriteArrayAsGenericType for T[]/readonly T[].
+		if b.ctx.flags&nodebuilder.FlagsWriteArrayAsGenericType == 0 {
 			typeArgumentNode := b.typeToTypeNode(typeArguments[0])
 			return b.f.NewTypeReferenceNode(
 				b.newIdentifier(core.IfElse(t.Target() == b.ch.globalArrayType, "Array", "ReadonlyArray"), t.Target().symbol),
@@ -2999,12 +3012,12 @@ func (b *NodeBuilderImpl) typeReferenceToTypeNode(t *Type) *ast.TypeNode {
 							core.IfElse(flags&ElementFlagsVariable != 0, b.f.NewToken(ast.KindDotDotDotToken), nil),
 							b.newIdentifier(b.ch.getTupleElementLabel(t.Target().AsTupleType().elementInfos[i], nil, i), nil /*symbol*/),
 							core.IfElse(flags&ElementFlagsOptional != 0, b.f.NewToken(ast.KindQuestionToken), nil),
-							core.IfElse(flags&ElementFlagsRest != 0, b.f.NewArrayTypeNode(tupleConstituentNodes.Nodes[i]), tupleConstituentNodes.Nodes[i]),
+							core.IfElse(flags&ElementFlagsRest != 0, b.arrayTypeNodeForElement(tupleConstituentNodes.Nodes[i]), tupleConstituentNodes.Nodes[i]),
 						)
 					} else {
 						switch {
 						case flags&ElementFlagsVariable != 0:
-							tupleConstituentNodes.Nodes[i] = b.f.NewRestTypeNode(core.IfElse(flags&ElementFlagsRest != 0, b.f.NewArrayTypeNode(tupleConstituentNodes.Nodes[i]), tupleConstituentNodes.Nodes[i]))
+							tupleConstituentNodes.Nodes[i] = b.f.NewRestTypeNode(core.IfElse(flags&ElementFlagsRest != 0, b.arrayTypeNodeForElement(tupleConstituentNodes.Nodes[i]), tupleConstituentNodes.Nodes[i]))
 						case flags&ElementFlagsOptional != 0:
 							tupleConstituentNodes.Nodes[i] = b.f.NewOptionalTypeNode(tupleConstituentNodes.Nodes[i])
 						}
@@ -3354,7 +3367,9 @@ func (b *NodeBuilderImpl) typeToTypeNode(t *Type) *ast.TypeNode {
 			if isReservedMemberName(sym.Name) && sym.Flags&ast.SymbolFlagsClass == 0 {
 				return b.f.NewTypeReferenceNode(b.f.NewIdentifier(""), typeArgumentNodes)
 			}
-			if typeArgumentNodes != nil && len(typeArgumentNodes.Nodes) == 1 && sym == b.ch.globalArrayType.symbol {
+			// Inverted relative to upstream: only rewrite Array<T> → T[] when WriteArrayAsGenericType is set.
+			if typeArgumentNodes != nil && len(typeArgumentNodes.Nodes) == 1 && sym == b.ch.globalArrayType.symbol &&
+				b.ctx.flags&nodebuilder.FlagsWriteArrayAsGenericType != 0 {
 				return b.f.NewArrayTypeNode(typeArgumentNodes.Nodes[0])
 			}
 			return b.symbolToTypeNode(sym, ast.SymbolFlagsType, typeArgumentNodes)
