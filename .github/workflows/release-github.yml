@@ -1,0 +1,138 @@
+# Build fork release tarballs and host them on a GitHub Release so consumers can:
+#   npm install -D https://github.com/<owner>/<repo>/releases/download/<tag>/typescript.tgz
+#
+# Platform optionalDependencies are rewritten to the same Release's asset URLs
+# (npm registry publishing is not required).
+
+name: Release (GitHub)
+
+on:
+  workflow_dispatch:
+    inputs:
+      setPrerelease:
+        description: "Prerelease id appended to version.go base version (e.g. dev.20260724.1)"
+        required: true
+        type: string
+      tag:
+        description: "Git tag for the release (default v<package-version>)"
+        required: false
+        type: string
+        default: ""
+      draft:
+        description: "Create a draft release"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      # Skip VSIX packaging; this workflow only publishes npm tarballs.
+      TSGO_HEREBY_PRODUCE_TYPESCRIPT_NIGHTLY_VSIX: "false"
+      TSGO_HEREBY_PRODUCE_NATIVE_PREVIEW_VSIX: "false"
+    steps:
+      - uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
+        with:
+          large-packages: false
+          docker-images: false
+          swap-storage: false
+          dotnet: false
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "lts/*"
+
+      - uses: ./.github/actions/setup-go
+
+      - name: Disable PR annotations
+        run: |
+          echo "::remove-matcher owner=eslint-compact::"
+          echo "::remove-matcher owner=eslint-stylish::"
+          echo "::remove-matcher owner=tsc::"
+          echo "::remove-matcher owner=go::"
+
+      - run: npm ci
+
+      - name: Build release packages
+        run: npx hereby native-preview:release --forRelease --setPrerelease "${{ inputs.setPrerelease }}"
+
+      - name: Resolve version and tag
+        id: meta
+        run: |
+          set -euo pipefail
+          if [[ -f built/npm/typescript/package.json ]]; then
+            MAIN_DIR=built/npm/typescript
+            MAIN_TGZ=typescript.tgz
+          elif [[ -f built/npm/native-preview/package.json ]]; then
+            MAIN_DIR=built/npm/native-preview
+            MAIN_TGZ=native-preview.tgz
+          else
+            echo "Main package directory not found under built/npm" >&2
+            ls -la built/npm >&2 || true
+            exit 1
+          fi
+          VERSION="$(node -p "require('./${MAIN_DIR}/package.json').version")"
+          if [[ -n "${{ inputs.tag }}" ]]; then
+            TAG="${{ inputs.tag }}"
+          else
+            TAG="v${VERSION}"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "main_tgz=${MAIN_TGZ}" >> "$GITHUB_OUTPUT"
+          echo "Resolved version=${VERSION} tag=${TAG} main=${MAIN_TGZ}"
+
+      - name: Rewrite optionalDependencies to Release asset URLs
+        run: |
+          node _scripts/rewrite-release-optional-deps.mjs \
+            --repo "${{ github.repository }}" \
+            --tag "${{ steps.meta.outputs.tag }}" \
+            --built-npm built/npm
+
+      - name: Create GitHub Release and upload tarballs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.meta.outputs.tag }}"
+          VERSION="${{ steps.meta.outputs.version }}"
+          MAIN_TGZ="${{ steps.meta.outputs.main_tgz }}"
+          INSTALL_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}/${MAIN_TGZ}"
+          NOTES_FILE="$(mktemp)"
+          cat > "$NOTES_FILE" <<EOF
+          Fork release of TypeScript native (\`${VERSION}\`) with \`Array<T>\` / \`ReadonlyArray<T>\` type display preference.
+
+          ## Install
+
+          \`\`\`sh
+          npm install -D ${INSTALL_URL}
+          \`\`\`
+
+          Then use \`npx tsc\` (or \`npx tsgo\` for native-preview profile builds).
+
+          Platform binaries are pulled automatically via optionalDependencies pointing at this Release.
+          EOF
+
+          ARGS=(release create "$TAG" --title "$TAG" --notes-file "$NOTES_FILE")
+          if [[ "${{ inputs.draft }}" == "true" ]]; then
+            ARGS+=(--draft)
+          fi
+
+          # Upload every packed tarball (main + platforms). Skip the manifest.
+          shopt -s nullglob
+          TGZS=(built/npm/*.tgz)
+          if [[ ${#TGZS[@]} -eq 0 ]]; then
+            echo "No tarballs found in built/npm" >&2
+            exit 1
+          fi
+          gh "${ARGS[@]}" "${TGZS[@]}"

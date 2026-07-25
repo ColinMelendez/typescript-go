@@ -89,8 +89,9 @@ const options = /** @type {Options} */ (rawOptions);
 // Main publishes prerelease builds of the TypeScript package.
 const nativePreviewReleaseProfile = /** @type {"native-preview" | "typescript"} */ ("typescript");
 const nativePreviewReleaseVersion = /** @type {string | undefined} */ (undefined);
-const produceNativePreviewVsix = /** @type {boolean} */ (false);
-const produceTypeScriptNightlyVsix = /** @type {boolean} */ (true);
+// Env overrides let forks skip VSIX packaging without permanently diverging from upstream defaults.
+const produceNativePreviewVsix = /** @type {boolean} */ (parseEnvBoolean("PRODUCE_NATIVE_PREVIEW_VSIX", false));
+const produceTypeScriptNightlyVsix = /** @type {boolean} */ (parseEnvBoolean("PRODUCE_TYPESCRIPT_NIGHTLY_VSIX", true));
 const usePublishedPlatformPackagesForVsix = /** @type {boolean} */ (false);
 const produceAnyVsix = produceNativePreviewVsix || produceTypeScriptNightlyVsix;
 const publishAsTypescript = nativePreviewReleaseProfile === "typescript";
