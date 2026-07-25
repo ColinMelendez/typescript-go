@@ -493,7 +493,7 @@ declare function isZero(value: number): value is 0;
 declare function isMaybeZero(value: number | null | undefined): value is 0 | null | undefined;
 declare function isEmptyArray<T>(value: T[]): value is [];
 declare function isMaybeEmptyArray<T>(value: T[] | null | undefined): value is [] | null | undefined;
-declare const TEST_CASES: (((value: string) => void) | ((value: number) => void) | ((value: string[]) => void))[];
+declare const TEST_CASES: Array<((value: string) => void) | ((value: number) => void) | ((value: string[]) => void)>;
 type EmptyString = '' | null | undefined;
 declare function isEmpty(value: string | EmptyString): value is EmptyString;
 declare let test: string | null | undefined;

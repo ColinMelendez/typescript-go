@@ -1,0 +1,13 @@
+--- old.for-of55.types
++++ new.for-of55.types
+@@= skipped -1, +1 lines =@@
+
+ === for-of55.ts ===
+ let v = [1];
+->v : number[]
+->[1] : number[]
++>v : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ for (let v of v) {

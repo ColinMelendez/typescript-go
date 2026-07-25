@@ -6,7 +6,7 @@
 const f = <F extends (...args: any[]) => <G>(x: G) => void>(_: F): F => _;
 >f : <F extends (...args: any[]) => <G>(x: G) => void>(_: F) => F
 ><F extends (...args: any[]) => <G>(x: G) => void>(_: F): F => _ : <F extends (...args: any[]) => <G>(x: G) => void>(_: F) => F
->args : any[]
+>args : Array<any>
 >x : G
 >_ : F
 >_ : F

@@ -1,0 +1,44 @@
+--- old.declFileRestParametersOfFunctionAndFunctionType.types
++++ new.declFileRestParametersOfFunctionAndFunctionType.types
+@@= skipped -1, +1 lines =@@
+
+ === declFileRestParametersOfFunctionAndFunctionType.ts ===
+ function f1(...args) { }
+->f1 : (...args: any[]) => void
+->args : any[]
++>f1 : (...args: Array<any>) => void
++>args : Array<any>
+
+ function f2(x: (...args) => void) { }
+ >f2 : (x: (...args: any) => void) => void
+->x : (...args: any[]) => void
+->args : any[]
++>x : (...args: Array<any>) => void
++>args : Array<any>
+
+ function f3(x: { (...args): void }) { }
+ >f3 : (x: { (...args: any): void; }) => void
+->x : (...args: any[]) => void
+->args : any[]
++>x : (...args: Array<any>) => void
++>args : Array<any>
+
+ function f4<T extends (...args) => void>() { }
+ >f4 : <T extends (...args: any) => void>() => void
+->args : any[]
++>args : Array<any>
+
+ function f5<T extends { (...args): void }>() { }
+ >f5 : <T extends { (...args: any): void; }>() => void
+->args : any[]
++>args : Array<any>
+
+ var f6 = () => { return [<any>10]; }
+->f6 : () => any[]
+->() => { return [<any>10]; } : () => any[]
+->[<any>10] : any[]
++>f6 : () => Array<any>
++>() => { return [<any>10]; } : () => Array<any>
++>[<any>10] : Array<any>
+ ><any>10 : any
+ >10 : 10

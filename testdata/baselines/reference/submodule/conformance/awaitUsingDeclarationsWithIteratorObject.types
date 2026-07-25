@@ -52,7 +52,7 @@ async function f() {
 >it4 : ArrayIterator<any>
 >[].values() : ArrayIterator<any>
 >[].values : () => ArrayIterator<any>
->[] : undefined[]
+>[] : Array<undefined>
 >values : () => ArrayIterator<any>
 
     await using it5 = new Map<string, string>().entries();

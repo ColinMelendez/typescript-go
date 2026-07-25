@@ -69,7 +69,7 @@ type Tree<T> = T & {
 >Tree : Tree<T>
 
     children?: Tree<T>[];
->children : Tree<T>[]
+>children : Array<Tree<T>>
 }
 
 class MyClass {

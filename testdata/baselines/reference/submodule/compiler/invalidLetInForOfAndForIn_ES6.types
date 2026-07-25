@@ -19,7 +19,7 @@ for (let of [1,2,3]) {}
 > : any
 
 for (let in [1,2,3]) {}
->[1,2,3] : number[]
+>[1,2,3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

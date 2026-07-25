@@ -9,7 +9,7 @@ class C1 { item: string }
 
 class C2 { item: string[] }
 >C2 : C2
->item : string[]
+>item : Array<string>
 
 class C3 { item: string }
 >C3 : C3
@@ -36,9 +36,9 @@ function foo1(x: C1 | C2 | C3): string {
 
         return x.item[0];
 >x.item[0] : string
->x.item : string[]
+>x.item : Array<string>
 >x : C2
->item : string[]
+>item : Array<string>
 >0 : 0
     }
     else if (x instanceof C3) {
@@ -97,9 +97,9 @@ function foo2(x: C1 | C2 | C3): string {
 
         return x.item[0];
 >x.item[0] : string
->x.item : string[]
+>x.item : Array<string>
 >x : C2
->item : string[]
+>item : Array<string>
 >0 : 0
     }
     else if (isC3(x)) {

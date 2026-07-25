@@ -4,24 +4,24 @@
 function f18(a?:string, ...b:number[]){}
 >f18 : (a?: string, ...b: number[]) => void
 >a : string | undefined
->b : number[]
+>b : Array<number>
  
 function f19(a?:string, b?:number, ...c:number[]){}
 >f19 : (a?: string, b?: number, ...c: number[]) => void
 >a : string | undefined
 >b : number | undefined
->c : number[]
+>c : Array<number>
  
 function f20(a:string, b?:string, ...c:number[]){}
 >f20 : (a: string, b?: string, ...c: number[]) => void
 >a : string
 >b : string | undefined
->c : number[]
+>c : Array<number>
  
 function f21(a:string, b?:string, c?:number, ...d:number[]){}
 >f21 : (a: string, b?: string, c?: number, ...d: number[]) => void
 >a : string
 >b : string | undefined
 >c : number | undefined
->d : number[]
+>d : Array<number>
 

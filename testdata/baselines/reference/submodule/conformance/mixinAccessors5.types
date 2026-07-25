@@ -18,7 +18,7 @@ declare class GetterA {
 >GetterA : GetterA
 
   constructor(...args: any[]);
->args : any[]
+>args : Array<any>
 
   get inCompendium(): boolean;
 >inCompendium : boolean
@@ -28,7 +28,7 @@ declare class GetterB {
 >GetterB : GetterB
 
   constructor(...args: any[]);
->args : any[]
+>args : Array<any>
 
   get inCompendium(): boolean;
 >inCompendium : boolean

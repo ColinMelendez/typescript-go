@@ -1,0 +1,12 @@
+--- old.arrayLiteral1.types
++++ new.arrayLiteral1.types
+@@= skipped -1, +1 lines =@@
+
+ === arrayLiteral1.ts ===
+ var v30 = [1, 2];
+->v30 : number[]
+->[1, 2] : number[]
++>v30 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

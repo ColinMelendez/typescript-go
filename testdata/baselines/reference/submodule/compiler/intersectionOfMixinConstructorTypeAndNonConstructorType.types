@@ -6,7 +6,7 @@
 declare let x: {foo: undefined} & {new(...args: any[]): any};
 >x : { foo: undefined; } & (new (...args: any[]) => any)
 >foo : undefined
->args : any[]
+>args : Array<any>
 
 new x();
 >new x() : any

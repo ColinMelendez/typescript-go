@@ -34,14 +34,14 @@ declare namespace D_M {
 
     // No implicit-'any' errors.
     function dm_f6(...r): void;
->dm_f6 : (...r: any[]) => void
->r : any[]
+>dm_f6 : (...r: Array<any>) => void
+>r : Array<any>
 
     // No implicit-'any' errors.
     function dm_f7(x, ...r): void;
->dm_f7 : (x: any, ...r: any[]) => void
+>dm_f7 : (x: any, ...r: Array<any>) => void
 >x : any
->r : any[]
+>r : Array<any>
 
     // No implicit-'any' errors.
     function dm_f8(x1, y1: number): any;
@@ -84,12 +84,12 @@ declare namespace D_M {
 
     // No implicit-'any' errors.
     var dm_f13: (...r) => string;
->dm_f13 : (...r: any[]) => string
->r : any[]
+>dm_f13 : (...r: Array<any>) => string
+>r : Array<any>
 
     // No implicit-'any' errors.
     var dm_f14: (x, ...r) => string;
->dm_f14 : (x: any, ...r: any[]) => string
+>dm_f14 : (x: any, ...r: Array<any>) => string
 >x : any
->r : any[]
+>r : Array<any>
 }

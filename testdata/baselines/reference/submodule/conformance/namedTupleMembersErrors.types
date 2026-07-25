@@ -8,10 +8,10 @@ export type Segment2 = [number, size: number];
 >Segment2 : Segment2
 
 export type List = [item: any, ...any]; 
->List : [item: any, ...any[]]
+>List : [item: any, ...Array<any>]
 
 export type List2 = [any, ...remainder: any]; 
->List2 : [any, ...remainder: any[]]
+>List2 : [any, ...remainder: Array<any>]
 
 export type Pair = [item: any, any?]; 
 >Pair : Pair
@@ -32,7 +32,7 @@ export type OptRest = [first: string, ...rest?: string[]]; // rest+optional disa
 >OptRest : OptRest
 
 export type NonArrayRest = [first: string, ...rest: number]; // non-arraylike rest, disallowed
->NonArrayRest : [first: string, ...rest: any[]]
+>NonArrayRest : [first: string, ...rest: Array<any>]
 
 export type RecusiveRestUnlabeled = [string, ...RecusiveRestUnlabeled];
 >RecusiveRestUnlabeled : any

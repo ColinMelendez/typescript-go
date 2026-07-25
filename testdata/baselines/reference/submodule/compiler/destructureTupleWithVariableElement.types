@@ -4,10 +4,10 @@
 // repro from #52302
 
 type NonEmptyStringArray = [string, ...Array<string>]
->NonEmptyStringArray : [string, ...string[]]
+>NonEmptyStringArray : [string, ...Array<string>]
 
 const strings: NonEmptyStringArray = ['one', 'two']
->strings : [string, ...string[]]
+>strings : [string, ...Array<string>]
 >['one', 'two'] : [string, string]
 >'one' : "one"
 >'two' : "two"
@@ -16,7 +16,7 @@ const [s0, s1, s2] = strings;
 >s0 : string
 >s1 : string | undefined
 >s2 : string | undefined
->strings : [string, ...string[]]
+>strings : [string, ...Array<string>]
 
 s0.toUpperCase()
 >s0.toUpperCase() : string
@@ -37,13 +37,13 @@ s2.toUpperCase()
 >toUpperCase : () => string
 
 declare const strings2: [string, ...Array<string>, string]
->strings2 : [string, ...string[], string]
+>strings2 : [string, ...Array<string>, string]
 
 const [s3, s4, s5] = strings2;
 >s3 : string
 >s4 : string
 >s5 : string | undefined
->strings2 : [string, ...string[], string]
+>strings2 : [string, ...Array<string>, string]
 
 s3.toUpperCase()
 >s3.toUpperCase() : string

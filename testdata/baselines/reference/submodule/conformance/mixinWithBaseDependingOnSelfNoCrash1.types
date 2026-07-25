@@ -15,7 +15,7 @@ declare function ClientDocumentMixin<
 >ClientDocumentMixin : <BaseClass extends new (...args: any[]) => any>(Base: BaseClass) => any
 
   BaseClass extends new (...args: any[]) => any,
->args : any[]
+>args : Array<any>
 
 >(Base: BaseClass): any;
 >Base : BaseClass

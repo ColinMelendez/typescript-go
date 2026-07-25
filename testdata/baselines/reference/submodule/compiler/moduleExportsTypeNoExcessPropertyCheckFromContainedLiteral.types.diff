@@ -22,8 +22,12 @@
  >eslintReact : { plugins: { react: { deprecatedRules: { "jsx-sort-default-props": boolean; }; rules: { 'no-unsafe': boolean; }; }; }; }
 
  === eslint-plugin-react.js ===
-@@= skipped -74, +74 lines =@@
- >configs : Config[]
+@@= skipped -71, +71 lines =@@
+  */
+ function config(...configs) { }
+ >config : (...configs: Config[]) => void
+->configs : Config[]
++>configs : Array<Config>
 
  module.exports = { config };
 ->module.exports = { config } : typeof module.exports

@@ -17,5 +17,5 @@ func TestQuickInfoFunctionCheckType(t *testing.T) {
 	const content = `export type /**/Tail<T extends any[]> = ((...t: T) => void) extends (h: any, ...rest: infer R) => void ? R : never;`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "type Tail<T extends any[]> = ((...t: T) => void) extends (h: any, ...rest: infer R) => void ? R : never", "")
+	f.VerifyQuickInfoAt(t, "", "type Tail<T extends Array<any>> = ((...t: T) => void) extends (h: any, ...rest: infer R) => void ? R : never", "")
 }

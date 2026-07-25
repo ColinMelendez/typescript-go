@@ -5,19 +5,19 @@ class Event {
 >Event : Event
 
 	 private _listeners: any[] = [];
->_listeners : any[]
->[] : never[]
+>_listeners : Array<any>
+>[] : Array<never>
 
 	 constructor () {
 
 		 // TODO: remove
 
 		 this._listeners = [];
->this._listeners = [] : never[]
->this._listeners : any[]
+>this._listeners = [] : Array<never>
+>this._listeners : Array<any>
 >this : this
->_listeners : any[]
->[] : never[]
+>_listeners : Array<any>
+>[] : Array<never>
 
 	}
 
@@ -31,11 +31,11 @@ class Event {
 
 		 this._listeners.push(listener);
 >this._listeners.push(listener) : number
->this._listeners.push : (...items: any[]) => number
->this._listeners : any[]
+>this._listeners.push : (...items: Array<any>) => number
+>this._listeners : Array<any>
 >this : this
->_listeners : any[]
->push : (...items: any[]) => number
+>_listeners : Array<any>
+>push : (...items: Array<any>) => number
 >listener : () => any
 
 	}

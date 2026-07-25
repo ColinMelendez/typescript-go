@@ -1,0 +1,17 @@
+--- old.nodeModulesAllowJsTopLevelAwait(module=node18).types
++++ new.nodeModulesAllowJsTopLevelAwait(module=node18).types
+@@= skipped -11, +11 lines =@@
+
+ for await (const y of []) {}
+ >y : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ === index.js ===
+ // esm format file
+@@= skipped -14, +14 lines =@@
+
+ for await (const y of []) {}
+ >y : any
+->[] : undefined[]
++>[] : Array<undefined>

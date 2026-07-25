@@ -61,7 +61,7 @@ declare namespace Foo {
 >forIncr : number
 
     var forOf: any[];
->forOf : any[]
+>forOf : Array<any>
 
     var fromForOfBody: number;
 >fromForOfBody : number
@@ -70,7 +70,7 @@ declare namespace Foo {
 >fromForOfBodyNested : number
 
     var forIn: any[];
->forIn : any[]
+>forIn : Array<any>
 
     var fromForInBody: number;
 >fromForInBody : number
@@ -203,12 +203,12 @@ for(Foo.forInit = 1; (Foo.forCond = 1) > 1; Foo.forIncr = 1){
 
 for(let f of (Foo.forOf = []) ){
 >f : any
->(Foo.forOf = []) : undefined[]
->Foo.forOf = [] : undefined[]
->Foo.forOf : any[]
+>(Foo.forOf = []) : Array<undefined>
+>Foo.forOf = [] : Array<undefined>
+>Foo.forOf : Array<any>
 >Foo : typeof Foo
->forOf : any[]
->[] : undefined[]
+>forOf : Array<any>
+>[] : Array<undefined>
 
     Foo.fromForOfBody = 1;
 >Foo.fromForOfBody = 1 : 1
@@ -229,12 +229,12 @@ for(let f of (Foo.forOf = []) ){
 
 for(let f in (Foo.forIn = []) ){
 >f : string
->(Foo.forIn = []) : undefined[]
->Foo.forIn = [] : undefined[]
->Foo.forIn : any[]
+>(Foo.forIn = []) : Array<undefined>
+>Foo.forIn = [] : Array<undefined>
+>Foo.forIn : Array<any>
 >Foo : typeof Foo
->forIn : any[]
->[] : undefined[]
+>forIn : Array<any>
+>[] : Array<undefined>
 
     Foo.fromForInBody = 1;
 >Foo.fromForInBody = 1 : 1

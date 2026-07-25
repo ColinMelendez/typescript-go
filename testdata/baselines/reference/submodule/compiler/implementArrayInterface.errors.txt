@@ -1,6 +1,6 @@
-implementArrayInterface.ts(19,5): error TS2416: Property 'every' in type 'MyArray<T>' is not assignable to the same property in base type 'T[]'.
-  Type '(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any) => boolean' is not assignable to type '{ <S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean; }'.
-    Signature '(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean' must be a type predicate.
+implementArrayInterface.ts(19,5): error TS2416: Property 'every' in type 'MyArray<T>' is not assignable to the same property in base type 'Array<T>'.
+  Type '(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any) => boolean' is not assignable to type '{ <S extends T>(predicate: (value: T, index: number, array: Array<T>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: T, index: number, array: Array<T>) => unknown, thisArg?: any): boolean; }'.
+    Signature '(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): boolean' must be a type predicate.
 
 
 ==== implementArrayInterface.ts (1 errors) ====
@@ -24,9 +24,9 @@ implementArrayInterface.ts(19,5): error TS2416: Property 'every' in type 'MyArra
         lastIndexOf(searchElement: T, fromIndex?: number): number;
         every(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean;
         ~~~~~
-!!! error TS2416: Property 'every' in type 'MyArray<T>' is not assignable to the same property in base type 'T[]'.
-!!! error TS2416:   Type '(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any) => boolean' is not assignable to type '{ <S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean; }'.
-!!! error TS2416:     Signature '(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean' must be a type predicate.
+!!! error TS2416: Property 'every' in type 'MyArray<T>' is not assignable to the same property in base type 'Array<T>'.
+!!! error TS2416:   Type '(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any) => boolean' is not assignable to type '{ <S extends T>(predicate: (value: T, index: number, array: Array<T>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: T, index: number, array: Array<T>) => unknown, thisArg?: any): boolean; }'.
+!!! error TS2416:     Signature '(callbackfn: (value: T, index: number, array: Array<T>) => boolean, thisArg?: any): boolean' must be a type predicate.
         some(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean;
         forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
         map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];

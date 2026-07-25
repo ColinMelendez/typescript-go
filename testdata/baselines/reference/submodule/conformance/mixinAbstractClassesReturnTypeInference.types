@@ -15,7 +15,7 @@ abstract class AbstractBase {
 
 function Mixin2<TBase extends abstract new (...args: any[]) => any>(baseClass: TBase) {
 >Mixin2 : <TBase extends abstract new (...args: any[]) => any>(baseClass: TBase) => ((abstract new (...args: any[]) => MixinClass) & { staticMixinMethod(): void; prototype: Mixin2.MixinClass; }) & TBase
->args : any[]
+>args : Array<any>
 >baseClass : TBase
 
     // must be `abstract` because we cannot know *all* of the possible abstract members that need to be

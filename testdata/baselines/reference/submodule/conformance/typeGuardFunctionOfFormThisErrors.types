@@ -95,19 +95,19 @@ function invalidGuard(c: any): this is number {
 }
 
 declare var c: number | number[];
->c : number | number[]
+>c : number | Array<number>
 
 if (invalidGuard(c)) {
 >invalidGuard(c) : boolean
 >invalidGuard : (c: any) => this is number
->c : number | number[]
+>c : number | Array<number>
 
     c;
->c : number | number[]
+>c : number | Array<number>
 }
 else {
     c;
->c : number | number[]
+>c : number | Array<number>
 }
 
 let holder = {invalidGuard};
@@ -120,17 +120,17 @@ if (holder.invalidGuard(c)) {
 >holder.invalidGuard : (c: any) => this is number
 >holder : { invalidGuard: (c: any) => this is number; }
 >invalidGuard : (c: any) => this is number
->c : number | number[]
+>c : number | Array<number>
 
     c;
->c : number | number[]
+>c : number | Array<number>
 
     holder;
 >holder : { invalidGuard: (c: any) => this is number; } & number
 }
 else {
     c;
->c : number | number[]
+>c : number | Array<number>
 
     holder;
 >holder : { invalidGuard: (c: any) => this is number; }

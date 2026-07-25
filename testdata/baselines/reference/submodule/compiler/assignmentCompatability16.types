@@ -22,9 +22,9 @@ namespace __test2__ {
     export var obj = {one: <any[]>[1]};
 >obj : { one: any[]; }
 >{one: <any[]>[1]} : { one: any[]; }
->one : any[]
-><any[]>[1] : any[]
->[1] : number[]
+>one : Array<any>
+><any[]>[1] : Array<any>
+>[1] : Array<number>
 >1 : 1
 
     export var __val__obj = obj;

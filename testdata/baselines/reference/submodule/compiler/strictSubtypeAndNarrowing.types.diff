@@ -1,6 +1,130 @@
 --- old.strictSubtypeAndNarrowing.types
 +++ new.strictSubtypeAndNarrowing.types
-@@= skipped -450, +450 lines =@@
+@@= skipped -11, +11 lines =@@
+ >x : any
+
+ const a11 = [x11, x12];
+->a11 : { x: any; }[]
+->[x11, x12] : { x: any; }[]
++>a11 : Array<{ x: any; }>
++>[x11, x12] : Array<{ x: any; }>
+ >x11 : { x: unknown; }
+ >x12 : { x: any; }
+
+ const a12 = [x12, x11];
+->a12 : { x: any; }[]
+->[x12, x11] : { x: any; }[]
++>a12 : Array<{ x: any; }>
++>[x12, x11] : Array<{ x: any; }>
+ >x12 : { x: any; }
+ >x11 : { x: unknown; }
+
+@@= skipped -20, +20 lines =@@
+ >x : unknown
+
+ const a21 = [x22, x21];
+->a21 : { x: any; }[]
+->[x22, x21] : { x: any; }[]
++>a21 : Array<{ x: any; }>
++>[x22, x21] : Array<{ x: any; }>
+ >x22 : { x: unknown; }
+ >x21 : { x: any; }
+
+ const a22 = [x21, x22];
+->a22 : { x: any; }[]
+->[x21, x22] : { x: any; }[]
++>a22 : Array<{ x: any; }>
++>[x21, x22] : Array<{ x: any; }>
+ >x21 : { x: any; }
+ >x22 : { x: unknown; }
+
+@@= skipped -25, +25 lines =@@
+ >a : number
+
+ const a31 = [x31, x32];
+->a31 : { a: number; }[]
+->[x31, x32] : { a: number; }[]
++>a31 : Array<{ a: number; }>
++>[x31, x32] : Array<{ a: number; }>
+ >x31 : { a: number; }
+ >x32 : { [x: string]: unknown; a: number; }
+
+ const a32 = [x32, x31];
+->a32 : { a: number; }[]
+->[x32, x31] : { a: number; }[]
++>a32 : Array<{ a: number; }>
++>[x32, x31] : Array<{ a: number; }>
+ >x32 : { [x: string]: unknown; a: number; }
+ >x31 : { a: number; }
+
+@@= skipped -23, +23 lines =@@
+ >1 : 1
+
+ const a41 = [x42, x41];
+->a41 : { a: number; }[]
+->[x42, x41] : { a: number; }[]
++>a41 : Array<{ a: number; }>
++>[x42, x41] : Array<{ a: number; }>
+ >x42 : { a: number; }
+ >x41 : { [x: string]: unknown; a: number; }
+
+ const a42 = [x41, x42];
+->a42 : { a: number; }[]
+->[x41, x42] : { a: number; }[]
++>a42 : Array<{ a: number; }>
++>[x41, x42] : Array<{ a: number; }>
+ >x41 : { [x: string]: unknown; a: number; }
+ >x42 : { a: number; }
+
+@@= skipped -23, +23 lines =@@
+
+ type B = (...args: any[]) => unknown;
+ >B : B
+->args : any[]
++>args : Array<any>
+
+ type C = (...args: never) => unknown;
+ >C : C
+@@= skipped -8, +8 lines =@@
+
+ type D = (...args: never[]) => unknown;
+ >D : D
+->args : never[]
++>args : Array<never>
+
+ type FnTypes = A | B | C | D;
+ >FnTypes : FnTypes
+@@= skipped -270, +270 lines =@@
+
+ function ff3(value: string | string[] | { [index: number]: boolean, length: number } | [number, boolean] | number | { length: string } | { a: string } | null | undefined) {
+ >ff3 : (value: string | string[] | { [index: number]: boolean; length: number; } | [number, boolean] | number | { length: string; } | { a: string; } | null | undefined) => void
+->value : string | number | string[] | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
++>value : string | number | Array<string> | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
+ >index : number
+ >length : number
+ >length : string
+@@= skipped -9, +9 lines =@@
+     if (isArrayLike(value)) {
+ >isArrayLike(value) : boolean
+ >isArrayLike : (value: any) => value is { length: number; }
+->value : string | number | string[] | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
++>value : string | number | Array<string> | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
+
+         value;
+->value : string | string[] | { [index: number]: boolean; length: number; } | [number, boolean]
++>value : string | Array<string> | { [index: number]: boolean; length: number; } | [number, boolean]
+
+     } else {
+         value;
+ >value : number | { length: string; } | { a: string; } | null | undefined
+     }
+     value;
+->value : string | number | string[] | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
++>value : string | number | Array<string> | { [index: number]: boolean; length: number; } | { length: string; } | { a: string; } | [number, boolean] | null | undefined
+ }
+
+ // Repro from comment in #52984
+@@= skipped -61, +61 lines =@@
 
  type Foo = {value: {type: 'A'}; a?: number} | {value: {type: 'B'}; b?: number};
  >Foo : Foo

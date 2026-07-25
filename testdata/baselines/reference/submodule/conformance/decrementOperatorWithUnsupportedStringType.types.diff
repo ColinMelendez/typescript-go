@@ -1,0 +1,79 @@
+--- old.decrementOperatorWithUnsupportedStringType.types
++++ new.decrementOperatorWithUnsupportedStringType.types
+@@= skipped -5, +5 lines =@@
+ >STRING : string
+
+ var STRING1: string[] = ["", ""];
+->STRING1 : string[]
+->["", ""] : string[]
++>STRING1 : Array<string>
++>["", ""] : Array<string>
+ >"" : ""
+ >"" : ""
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsNumber2 = --STRING1;
+ >ResultIsNumber2 : number
+ >--STRING1 : number
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ var ResultIsNumber3 = STRING--;
+ >ResultIsNumber3 : number
+@@= skipped -10, +10 lines =@@
+ var ResultIsNumber4 = STRING1--;
+ >ResultIsNumber4 : number
+ >STRING1-- : number
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ // string type literal
+ var ResultIsNumber5 = --"";
+@@= skipped -72, +72 lines =@@
+ >ResultIsNumber13 : number
+ >--STRING1[0] : number
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ var ResultIsNumber14 = --foo();
+@@= skipped -43, +43 lines =@@
+ >ResultIsNumber19 : number
+ >STRING1[0]-- : number
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ var ResultIsNumber20 = foo()--;
+@@= skipped -36, +36 lines =@@
+
+ --STRING1;
+ >--STRING1 : number
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ --STRING1[0];
+ >--STRING1[0] : number
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ --foo();
+@@= skipped -45, +45 lines =@@
+
+ STRING1--;
+ >STRING1-- : number
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ STRING1[0]--;
+ >STRING1[0]-- : number
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ foo()--;

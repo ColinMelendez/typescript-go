@@ -21,7 +21,7 @@ function f(foo: T) {
     }
     else if (foo === "b") {
 >foo === "b" : boolean
->foo : "b" | S[]
+>foo : "b" | Array<S>
 >"b" : "b"
 
         return foo;
@@ -30,9 +30,9 @@ function f(foo: T) {
     else { 
         return (foo as S[])[0];
 >(foo as S[])[0] : S
->(foo as S[]) : S[]
->foo as S[] : S[]
->foo : S[]
+>(foo as S[]) : Array<S>
+>foo as S[] : Array<S>
+>foo : Array<S>
 >0 : 0
     }
 }

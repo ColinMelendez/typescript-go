@@ -9,7 +9,7 @@ function foo([x, y, z] ?: [string, number, boolean]);
 
 function foo(...rest: any[]) {
 >foo : ([x, y, z]?: [string, number, boolean]) => any
->rest : any[]
+>rest : Array<any>
 }
 
 function foo2( { x, y, z }?: { x: string; y: number; z: boolean });
@@ -23,6 +23,6 @@ function foo2( { x, y, z }?: { x: string; y: number; z: boolean });
 
 function foo2(...rest: any[]) {
 >foo2 : ({ x, y, z }?: { x: string; y: number; z: boolean; }) => any
->rest : any[]
+>rest : Array<any>
 
 }

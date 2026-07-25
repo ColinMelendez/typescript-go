@@ -24,14 +24,14 @@ export class c1 {
     public fooWithRestParameters(a: string, ...rests: string[]) {
 >fooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -73,14 +73,14 @@ export class c1 {
     private privateFooWithRestParameters(a: string, ...rests: string[]) {
 >privateFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -121,14 +121,14 @@ export class c1 {
     static staticFooWithRestParameters(a: string, ...rests: string[]) {
 >staticFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -169,14 +169,14 @@ export class c1 {
     private static privateStaticFooWithRestParameters(a: string, ...rests: string[]) {
 >privateStaticFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -214,7 +214,7 @@ export interface I1 {
     fooWithRestParameters(a: string, ...rests: string[]): string;
 >fooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
     fooWithOverloads(a: string): string;
 >fooWithOverloads : { (a: string): string; (a: number): number; }
@@ -249,14 +249,14 @@ class c2 {
     public fooWithRestParameters(a: string, ...rests: string[]) {
 >fooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -298,14 +298,14 @@ class c2 {
     private privateFooWithRestParameters(a: string, ...rests: string[]) {
 >privateFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -346,14 +346,14 @@ class c2 {
     static staticFooWithRestParameters(a: string, ...rests: string[]) {
 >staticFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -394,14 +394,14 @@ class c2 {
     private static privateStaticFooWithRestParameters(a: string, ...rests: string[]) {
 >privateStaticFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -439,7 +439,7 @@ interface I2 {
     fooWithRestParameters(a: string, ...rests: string[]): string;
 >fooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
     fooWithOverloads(a: string): string;
 >fooWithOverloads : { (a: string): string; (a: number): number; }

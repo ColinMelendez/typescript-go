@@ -1,0 +1,62 @@
+--- old.incrementOperatorWithAnyOtherTypeInvalidOperations.types
++++ new.incrementOperatorWithAnyOtherTypeInvalidOperations.types
+@@= skipped -5, +5 lines =@@
+ >ANY1 : any
+
+ var ANY2: any[] = [1, 2];
+->ANY2 : any[]
+->[1, 2] : number[]
++>ANY2 : Array<any>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -56, +56 lines =@@
+ var ResultIsNumber1 = ++ANY2;
+ >ResultIsNumber1 : number
+ >++ANY2 : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsNumber2 = ++A;
+ >ResultIsNumber2 : number
+@@= skipped -25, +25 lines =@@
+ var ResultIsNumber6 = ANY2++;
+ >ResultIsNumber6 : number
+ >ANY2++ : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsNumber7 = A++;
+ >ResultIsNumber7 : number
+@@= skipped -153, +153 lines =@@
+ // miss assignment operators
+ ++ANY2;
+ >++ANY2 : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ ANY2++;
+ >ANY2++ : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ ++ANY1++;
+ >++ANY1 : number
+@@= skipped -14, +14 lines =@@
+
+ ++ANY2++;
+ >++ANY2 : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >++ : number
+ > : any
+
+ ++ANY2[0]++;
+ >++ANY2[0] : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+ >++ : number
+ > : any

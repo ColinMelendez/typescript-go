@@ -1,0 +1,44 @@
+--- old.noImplicitAnyParametersInModule.types
++++ new.noImplicitAnyParametersInModule.types
+@@= skipped -33, +33 lines =@@
+
+     // Implicit-'any[]' error for r.
+     function m_f6(...r): void { }
+->m_f6 : (...r: any[]) => void
+->r : any[]
++>m_f6 : (...r: Array<any>) => void
++>r : Array<any>
+
+     // Implicit-'any'/'any[]' errors for x and r.
+     function m_f7(x, ...r): void { }
+->m_f7 : (x: any, ...r: any[]) => void
++>m_f7 : (x: any, ...r: Array<any>) => void
+ >x : any
+->r : any[]
++>r : Array<any>
+
+     // Implicit-'any' errors for x1, y2, x3, and y3.
+     function m_f8(x1, y1: number): any;
+@@= skipped -58, +58 lines =@@
+
+     // Implicit-'any[]' errors for r.
+     var m_f13 = (...r) => "";
+->m_f13 : (...r: any[]) => string
+->(...r) => "" : (...r: any[]) => string
+->r : any[]
++>m_f13 : (...r: Array<any>) => string
++>(...r) => "" : (...r: Array<any>) => string
++>r : Array<any>
+ >"" : ""
+
+     // Implicit-'any'/'any[]' errors for x and r.
+     var m_f14 = (x, ...r) => "";
+->m_f14 : (x: any, ...r: any[]) => string
+->(x, ...r) => "" : (x: any, ...r: any[]) => string
++>m_f14 : (x: any, ...r: Array<any>) => string
++>(x, ...r) => "" : (x: any, ...r: Array<any>) => string
+ >x : any
+->r : any[]
++>r : Array<any>
+ >"" : ""
+ }

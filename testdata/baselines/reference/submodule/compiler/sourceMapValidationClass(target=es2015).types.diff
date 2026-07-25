@@ -1,0 +1,11 @@
+--- old.sourceMapValidationClass(target=es2015).types
++++ new.sourceMapValidationClass(target=es2015).types
+@@= skipped -5, +5 lines =@@
+
+     constructor(public greeting: string, ...b: string[]) {
+ >greeting : string
+->b : string[]
++>b : Array<string>
+     }
+     greet() {
+ >greet : () => string

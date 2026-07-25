@@ -27,7 +27,7 @@ interface indexErrors {
 >p2 : string | undefined
 
     [...p3: any[]];
->p3 : any[]
+>p3 : Array<any>
 
     [p4: string, p5?: string];
 >p4 : string
@@ -35,5 +35,5 @@ interface indexErrors {
 
     [p6: string, ...p7: any[]];
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 }

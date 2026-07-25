@@ -1,0 +1,30 @@
+--- old.typeParameterConstModifiers.types
++++ new.typeParameterConstModifiers.types
+@@= skipped -81, +81 lines =@@
+ >x : T
+
+ const x31 = f3("hello");
+->x31 : "hello"[]
+->f3("hello") : "hello"[]
++>x31 : Array<"hello">
++>f3("hello") : Array<"hello">
+ >f3 : <const T>(x: T) => T[]
+ >"hello" : "hello"
+
+ const x32 = f3("hello");
+->x32 : "hello"[]
+->f3("hello") : "hello"[]
++>x32 : Array<"hello">
++>f3("hello") : Array<"hello">
+ >f3 : <const T>(x: T) => T[]
+ >"hello" : "hello"
+
+@@= skipped -610, +610 lines =@@
+
+ declare function fn1<const T extends { foo: unknown[] }[]>(...args: T): T;
+ >fn1 : <const T extends { foo: unknown[]; }[]>(...args: T) => T
+->foo : unknown[]
++>foo : Array<unknown>
+ >args : T
+
+ fn1({ foo: ["hello", 123] }, { foo: [true]});

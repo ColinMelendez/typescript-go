@@ -1,0 +1,67 @@
+--- old.narrowingPastLastAssignment.types
++++ new.narrowingPastLastAssignment.types
+@@= skipped -429, +429 lines =@@
+ >f12 : () => void
+
+     const fooMap: Map<string,Array<number>> = new Map()
+->fooMap : Map<string, number[]>
++>fooMap : Map<string, Array<number>>
+ >new Map() : Map<any, any>
+ >Map : MapConstructor
+
+     const values = [1, 2, 3, 4, 5];
+->values : number[]
+->[1, 2, 3, 4, 5] : number[]
++>values : Array<number>
++>[1, 2, 3, 4, 5] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -14, +14 lines =@@
+ >5 : 5
+
+     let foo = fooMap.get("a");
+->foo : number[] | undefined
+->fooMap.get("a") : number[] | undefined
+->fooMap.get : (key: string) => number[] | undefined
+->fooMap : Map<string, number[]>
+->get : (key: string) => number[] | undefined
++>foo : Array<number> | undefined
++>fooMap.get("a") : Array<number> | undefined
++>fooMap.get : (key: string) => Array<number> | undefined
++>fooMap : Map<string, Array<number>>
++>get : (key: string) => Array<number> | undefined
+ >"a" : "a"
+
+     if (foo == null) {
+ >foo == null : boolean
+->foo : number[] | undefined
++>foo : Array<number> | undefined
+
+         foo = [];
+->foo = [] : never[]
+->foo : number[] | undefined
+->[] : never[]
++>foo = [] : Array<never>
++>foo : Array<number> | undefined
++>[] : Array<never>
+     }
+     values.forEach(v => foo.push(v));
+ >values.forEach(v => foo.push(v)) : void
+->values.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->values : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>values.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>values : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >v => foo.push(v) : (v: number) => number
+ >v : number
+ >foo.push(v) : number
+->foo.push : (...items: number[]) => number
+->foo : number[]
+->push : (...items: number[]) => number
++>foo.push : (...items: Array<number>) => number
++>foo : Array<number>
++>push : (...items: Array<number>) => number
+ >v : number
+ }

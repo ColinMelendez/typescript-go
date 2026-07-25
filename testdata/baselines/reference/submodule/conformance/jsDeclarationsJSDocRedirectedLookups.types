@@ -38,8 +38,8 @@
 >0 : 0
 
 /** @type {array} */const i = [];
->i : any[]
->[] : never[]
+>i : Array<any>
+>[] : Array<never>
 
 /** @type {promise} */const j = Promise.resolve(0);
 >j : Promise<any>

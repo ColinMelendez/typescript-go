@@ -1,0 +1,256 @@
+--- old.callWithSpread.types
++++ new.callWithSpread.types
+@@= skipped -5, +5 lines =@@
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >x : number
+ >y : number
+->z : string[]
++>z : Array<string>
+ }
+
+ function foo(x: number, y: number, ...z: string[]) {
+ >foo : (x: number, y: number, ...z: string[]) => void
+ >x : number
+ >y : number
+->z : string[]
++>z : Array<string>
+ }
+
+ var a: string[];
+->a : string[]
++>a : Array<string>
+
+ var z: number[];
+->z : number[]
++>z : Array<number>
+
+ var obj: X;
+ >obj : X
+
+ var xa: X[];
+->xa : X[]
++>xa : Array<X>
+
+ foo(1, 2, "abc");
+ >foo(1, 2, "abc") : void
+@@= skipped -35, +35 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ foo(1, 2, ...a, "abc");
+ >foo(1, 2, ...a, "abc") : void
+@@= skipped -8, +8 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ obj.foo(1, 2, "abc");
+@@= skipped -20, +20 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ obj.foo(1, 2, ...a, "abc");
+ >obj.foo(1, 2, ...a, "abc") : X
+@@= skipped -10, +10 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ obj.foo(1, 2, ...a).foo(1, 2, "abc");
+@@= skipped -13, +13 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+@@= skipped -16, +16 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ obj.foo(1, 2, ...a).foo(1, 2, ...a, "abc");
+ >obj.foo(1, 2, ...a).foo(1, 2, ...a, "abc") : X
+@@= skipped -17, +17 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ (obj.foo)(1, 2, "abc");
+@@= skipped -27, +27 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ (obj.foo)(1, 2, ...a, "abc");
+ >(obj.foo)(1, 2, ...a, "abc") : X
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ ((obj.foo)(1, 2, ...a).foo)(1, 2, "abc");
+@@= skipped -15, +15 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+@@= skipped -18, +18 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ ((obj.foo)(1, 2, ...a).foo)(1, 2, ...a, "abc");
+ >((obj.foo)(1, 2, ...a).foo)(1, 2, ...a, "abc") : X
+@@= skipped -19, +19 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ xa[1].foo(1, 2, "abc");
+ >xa[1].foo(1, 2, "abc") : X
+ >xa[1].foo : (x: number, y: number, ...z: string[]) => X
+ >xa[1] : X
+->xa : X[]
++>xa : Array<X>
+ >1 : 1
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+@@= skipped -23, +23 lines =@@
+ >xa[1].foo(1, 2, ...a) : X
+ >xa[1].foo : (x: number, y: number, ...z: string[]) => X
+ >xa[1] : X
+->xa : X[]
++>xa : Array<X>
+ >1 : 1
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ xa[1].foo(1, 2, ...a, "abc");
+ >xa[1].foo(1, 2, ...a, "abc") : X
+ >xa[1].foo : (x: number, y: number, ...z: string[]) => X
+ >xa[1] : X
+->xa : X[]
++>xa : Array<X>
+ >1 : 1
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+ >"abc" : "abc"
+
+ (<Function>xa[1].foo)(...[1, 2, "abc"]);
+@@= skipped -27, +27 lines =@@
+ ><Function>xa[1].foo : Function
+ >xa[1].foo : (x: number, y: number, ...z: string[]) => X
+ >xa[1] : X
+->xa : X[]
++>xa : Array<X>
+ >1 : 1
+ >foo : (x: number, y: number, ...z: string[]) => X
+ >...[1, 2, "abc"] : string | number
+@@= skipped -15, +15 lines =@@
+     constructor(x: number, y: number, ...z: string[]) {
+ >x : number
+ >y : number
+->z : string[]
++>z : Array<string>
+
+         this.foo(x, y);
+ >this.foo(x, y) : void
+@@= skipped -18, +18 lines =@@
+ >x : number
+ >y : number
+ >...z : string
+->z : string[]
++>z : Array<string>
+     }
+     foo(x: number, y: number, ...z: string[]) {
+ >foo : (x: number, y: number, ...z: string[]) => void
+ >x : number
+ >y : number
+->z : string[]
++>z : Array<string>
+     }
+ }
+
+@@= skipped -27, +27 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+     }
+     foo() {
+ >foo : () => void
+@@= skipped -21, +21 lines =@@
+ >1 : 1
+ >2 : 2
+ >...a : string
+->a : string[]
++>a : Array<string>
+     }
+ }

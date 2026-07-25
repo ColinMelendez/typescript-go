@@ -14,8 +14,8 @@ var obj: { [s: string]: number } = { p: "", q: x };
 >x : any
 
 var arr: number[] = ["", x];
->arr : number[]
->["", x] : any[]
+>arr : Array<number>
+>["", x] : Array<any>
 >"" : ""
 >x : any
 

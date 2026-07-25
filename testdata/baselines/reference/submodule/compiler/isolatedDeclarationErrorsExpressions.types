@@ -213,8 +213,8 @@ export let templateLetOk4AsConst = `s${1 + 1} - ${"S"} - ${!false}` as const;
 >false : false
 
 export let arr = [1, 2, 3];
->arr : number[]
->[1, 2, 3] : number[]
+>arr : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -228,14 +228,14 @@ export let arrConst = [1, 2, 3] as const;
 >3 : 3
 
 export let arrWithSpread = [1, 2, 3, ...arr] as const;
->arrWithSpread : readonly [1, 2, 3, ...number[]]
->[1, 2, 3, ...arr] as const : readonly [1, 2, 3, ...number[]]
->[1, 2, 3, ...arr] : readonly [1, 2, 3, ...number[]]
+>arrWithSpread : readonly [1, 2, 3, ...Array<number>]
+>[1, 2, 3, ...arr] as const : readonly [1, 2, 3, ...Array<number>]
+>[1, 2, 3, ...arr] : readonly [1, 2, 3, ...Array<number>]
 >1 : 1
 >2 : 2
 >3 : 3
 >...arr : number
->arr : number[]
+>arr : Array<number>
 
 export class Exported {
 >Exported : Exported

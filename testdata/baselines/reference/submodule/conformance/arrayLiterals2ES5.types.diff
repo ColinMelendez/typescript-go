@@ -1,0 +1,233 @@
+--- old.arrayLiterals2ES5.types
++++ new.arrayLiterals2ES5.types
+@@= skipped -10, +10 lines =@@
+ //      ...   AssignmentExpression
+
+ var a0 = [,, 2, 3, 4]
+->a0 : number[]
+->[,, 2, 3, 4] : number[]
++>a0 : Array<number>
++>[,, 2, 3, 4] : Array<number>
+ >2 : 2
+ >3 : 3
+ >4 : 4
+
+ var a1 = ["hello", "world"]
+->a1 : string[]
+->["hello", "world"] : string[]
++>a1 : Array<string>
++>["hello", "world"] : Array<string>
+ >"hello" : "hello"
+ >"world" : "world"
+
+ var a2 = [, , , ...a0, "hello"];
+->a2 : (string | number)[]
+->[, , , ...a0, "hello"] : (string | number)[]
++>a2 : Array<string | number>
++>[, , , ...a0, "hello"] : Array<string | number>
+ >...a0 : number
+->a0 : number[]
++>a0 : Array<number>
+ >"hello" : "hello"
+
+ var a3 = [,, ...a0]
+->a3 : number[]
+->[,, ...a0] : number[]
++>a3 : Array<number>
++>[,, ...a0] : Array<number>
+ >...a0 : number
+->a0 : number[]
++>a0 : Array<number>
+
+ var a4 = [() => 1, ];
+->a4 : (() => number)[]
+->[() => 1, ] : (() => number)[]
++>a4 : Array<() => number>
++>[() => 1, ] : Array<() => number>
+ >() => 1 : () => number
+ >1 : 1
+
+ var a5 = [...a0, , ]
+->a5 : number[]
+->[...a0, , ] : number[]
++>a5 : Array<number>
++>[...a0, , ] : Array<number>
+ >...a0 : number
+->a0 : number[]
++>a0 : Array<number>
+
+ // Each element expression in a non-empty array literal is processed as follows:
+ //    - If the array literal contains no spread elements, and if the array literal is contextually typed (section 4.19)
+@@= skipped -53, +53 lines =@@
+ >undefined : undefined
+
+ var b1: [number[], string[]] = [[1, 2, 3], ["hello", "string"]];
+->b1 : [number[], string[]]
+->[[1, 2, 3], ["hello", "string"]] : [number[], string[]]
+->[1, 2, 3] : number[]
++>b1 : [Array<number>, Array<string>]
++>[[1, 2, 3], ["hello", "string"]] : [Array<number>, Array<string>]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->["hello", "string"] : string[]
++>["hello", "string"] : Array<string>
+ >"hello" : "hello"
+ >"string" : "string"
+
+@@= skipped -33, +33 lines =@@
+ //      - the resulting type is an array type with an element type that is the union of the types of the
+ //        non - spread element expressions and the numeric index signature types of the spread element expressions
+ var temp = ["s", "t", "r"];
+->temp : string[]
+->["s", "t", "r"] : string[]
++>temp : Array<string>
++>["s", "t", "r"] : Array<string>
+ >"s" : "s"
+ >"t" : "t"
+ >"r" : "r"
+
+ var temp1 = [1, 2, 3];
+->temp1 : number[]
+->[1, 2, 3] : number[]
++>temp1 : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ var temp2: [number[], string[]] = [[1, 2, 3], ["hello", "string"]];
+->temp2 : [number[], string[]]
+->[[1, 2, 3], ["hello", "string"]] : [number[], string[]]
+->[1, 2, 3] : number[]
++>temp2 : [Array<number>, Array<string>]
++>[[1, 2, 3], ["hello", "string"]] : [Array<number>, Array<string>]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->["hello", "string"] : string[]
++>["hello", "string"] : Array<string>
+ >"hello" : "hello"
+ >"string" : "string"
+
+ var temp3 = [undefined, null, undefined];
+->temp3 : any[]
+->[undefined, null, undefined] : null[]
++>temp3 : Array<any>
++>[undefined, null, undefined] : Array<null>
+ >undefined : undefined
+ >undefined : undefined
+
+ var temp4 = [];
+->temp4 : any[]
+->[] : undefined[]
++>temp4 : Array<any>
++>[] : Array<undefined>
+
+ interface myArray extends Array<Number> { }
+ interface myArray2 extends Array<Number|String> { }
+ var d0 = [1, true, ...temp,];  // has type (string|number|boolean)[]
+->d0 : (string | number | boolean)[]
+->[1, true, ...temp,] : (string | number | boolean)[]
++>d0 : Array<string | number | boolean>
++>[1, true, ...temp,] : Array<string | number | boolean>
+ >1 : 1
+ >true : true
+ >...temp : string
+->temp : string[]
++>temp : Array<string>
+
+ var d1 = [...temp];            // has type string[]
+->d1 : string[]
+->[...temp] : string[]
++>d1 : Array<string>
++>[...temp] : Array<string>
+ >...temp : string
+->temp : string[]
++>temp : Array<string>
+
+ var d2: number[] = [...temp1];
+->d2 : number[]
+->[...temp1] : number[]
++>d2 : Array<number>
++>[...temp1] : Array<number>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+
+ var d3: myArray = [...temp1];
+ >d3 : myArray
+->[...temp1] : number[]
++>[...temp1] : Array<number>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+
+ var d4: myArray2 = [...temp, ...temp1];
+ >d4 : myArray2
+->[...temp, ...temp1] : (string | number)[]
++>[...temp, ...temp1] : Array<string | number>
+ >...temp : string
+->temp : string[]
++>temp : Array<string>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+
+ var d5 = [...temp3];
+->d5 : any[]
+->[...temp3] : any[]
++>d5 : Array<any>
++>[...temp3] : Array<any>
+ >...temp3 : any
+->temp3 : any[]
++>temp3 : Array<any>
+
+ var d6 = [...temp4];
+->d6 : any[]
+->[...temp4] : any[]
++>d6 : Array<any>
++>[...temp4] : Array<any>
+ >...temp4 : any
+->temp4 : any[]
++>temp4 : Array<any>
+
+ var d7 = [...[...temp1]];
+->d7 : number[]
+->[...[...temp1]] : number[]
++>d7 : Array<number>
++>[...[...temp1]] : Array<number>
+ >...[...temp1] : number
+->[...temp1] : number[]
++>[...temp1] : Array<number>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+
+ var d8: number[][] = [[...temp1]]
+->d8 : number[][]
+->[[...temp1]] : number[][]
+->[...temp1] : number[]
++>d8 : Array<Array<number>>
++>[[...temp1]] : Array<Array<number>>
++>[...temp1] : Array<number>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+
+ var d9 = [[...temp1], ...["hello"]];
+->d9 : (string | number[])[]
+->[[...temp1], ...["hello"]] : (string | number[])[]
+->[...temp1] : number[]
++>d9 : Array<string | Array<number>>
++>[[...temp1], ...["hello"]] : Array<string | Array<number>>
++>[...temp1] : Array<number>
+ >...temp1 : number
+->temp1 : number[]
++>temp1 : Array<number>
+ >...["hello"] : string
+->["hello"] : string[]
++>["hello"] : Array<string>
+ >"hello" : "hello"

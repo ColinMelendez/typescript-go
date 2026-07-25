@@ -11,7 +11,7 @@ declare function CreateMixin<C extends Foo, T extends Foo>(Context: C, Base: T):
 >Base : T
 
    new (...args: any[]): { context: InstanceType<C> }
->args : any[]
+>args : Array<any>
 >context : InstanceType<C>
 }
 class Context {}

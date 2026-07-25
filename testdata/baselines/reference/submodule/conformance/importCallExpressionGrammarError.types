@@ -8,8 +8,8 @@ declare var whatToLoad: boolean;
 >whatToLoad : boolean
 
 var a = ["./0"];
->a : string[]
->["./0"] : string[]
+>a : Array<string>
+>["./0"] : Array<string>
 >"./0" : "./0"
 
 import(...["PathModule"]);
@@ -22,7 +22,7 @@ var p1 = import(...a);
 >p1 : Promise<any>
 >import(...a) : Promise<any>
 >...a : string
->a : string[]
+>a : Array<string>
 
 const p2 = import();
 >p2 : Promise<any>

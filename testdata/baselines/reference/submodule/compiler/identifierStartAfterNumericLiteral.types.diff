@@ -1,0 +1,26 @@
+--- old.identifierStartAfterNumericLiteral.types
++++ new.identifierStartAfterNumericLiteral.types
+@@= skipped -4, +4 lines =@@
+ >valueIn : boolean
+ >3in[null] : boolean
+ >3 : 3
+->[null] : null[]
++>[null] : Array<null>
+
+ 3a[null]
+ >3 : 3
+@@= skipped -23, +23 lines =@@
+ 3in[null]
+ >3in[null] : boolean
+ >3 : 3
+->[null] : null[]
++>[null] : Array<null>
+
+ 123in[null]
+ >123in[null] : boolean
+ >123 : 123
+->[null] : null[]
++>[null] : Array<null>
+
+ 3en[null]
+ >3en[null] : any

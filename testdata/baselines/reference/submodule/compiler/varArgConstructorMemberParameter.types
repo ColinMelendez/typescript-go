@@ -5,20 +5,20 @@ class Foo1 {
 >Foo1 : Foo1
 
     constructor (...args: string[]) { }
->args : string[]
+>args : Array<string>
 }
 
 class Foo2 {
 >Foo2 : Foo2
 
     constructor (public args: string[]) { }
->args : string[]
+>args : Array<string>
 }
 
 class Foo3 {
 >Foo3 : Foo3
 
     constructor (public ...args: string[]) { }
->args : string[]
+>args : Array<string>
 }
 

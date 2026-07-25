@@ -43,7 +43,7 @@ if (var1.constructor === Array) {
 >Array : ArrayConstructor
 
     var1; // any[]
->var1 : any[]
+>var1 : Array<any>
 }
 if (var1.constructor === Symbol) {
 >var1.constructor === Symbol : boolean

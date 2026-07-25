@@ -416,7 +416,7 @@ function f10(foo: Foo) {
 
 type Func<T> = (...args: any[]) => T;
 >Func : Func<T>
->args : any[]
+>args : Array<any>
 
 type Spec<T> = {
 >Spec : Spec<T>
@@ -432,7 +432,7 @@ type Spec<T> = {
 declare function applySpec<T>(obj: Spec<T>): (...args: any[]) => T;
 >applySpec : <T>(obj: Spec<T>) => (...args: any[]) => T
 >obj : Spec<T>
->args : any[]
+>args : Array<any>
 
 // Infers g1: (...args: any[]) => { sum: number, nested: { mul: string } }
 var g1 = applySpec({
@@ -591,7 +591,7 @@ let x4 = f24({ foo: 42, bar: "hello" });
 function getProps<T, K extends keyof T>(obj: T, list: K[]): Pick<T, K> {
 >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
 >obj : T
->list : K[]
+>list : Array<K>
 
     return {} as any;
 >{} as any : any
@@ -607,7 +607,7 @@ const o1 = getProps(myAny, ['foo', 'bar']);
 >getProps(myAny, ['foo', 'bar']) : Pick<any, "bar" | "foo">
 >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
 >myAny : any
->['foo', 'bar'] : ("bar" | "foo")[]
+>['foo', 'bar'] : Array<"bar" | "foo">
 >'foo' : "foo"
 >'bar' : "bar"
 
@@ -618,7 +618,7 @@ const o2: { foo: any; bar: any } = getProps(myAny, ['foo', 'bar']);
 >getProps(myAny, ['foo', 'bar']) : Pick<any, "bar" | "foo">
 >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
 >myAny : any
->['foo', 'bar'] : ("bar" | "foo")[]
+>['foo', 'bar'] : Array<"bar" | "foo">
 >'foo' : "foo"
 >'bar' : "bar"
 

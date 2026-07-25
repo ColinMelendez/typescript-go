@@ -1,0 +1,38 @@
+--- old.assignmentToAnyArrayRestParameters.types
++++ new.assignmentToAnyArrayRestParameters.types
+@@= skipped -8, +8 lines =@@
+     fa: (s: string, ...args: string[]) => string,
+ >fa : (s: string, ...args: string[]) => string
+ >s : string
+->args : string[]
++>args : Array<string>
+
+     fb: (s: string, ...args: T) => string
+ >fb : (s: string, ...args: T) => string
+@@= skipped -15, +15 lines =@@
+
+     const f2: (...args: any[]) => string = fa;
+ >f2 : (...args: any[]) => string
+->args : any[]
++>args : Array<any>
+ >fa : (s: string, ...args: string[]) => string
+
+     const f3: (...args: any) => string = fb;
+@@= skipped -10, +10 lines =@@
+
+     const f4: (...args: any[]) => string = fb;
+ >f4 : (...args: any[]) => string
+->args : any[]
++>args : Array<any>
+ >fb : (s: string, ...args: T) => string
+ }
+
+@@= skipped -14, +14 lines =@@
+ >T01 : any
+
+     type T02 = string[][K | "0"];
+->T02 : string[]["0" | K]
++>T02 : Array<string>["0" | K]
+
+     type T10 = T["0"];
+ >T10 : T["0"]

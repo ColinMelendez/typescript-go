@@ -59,7 +59,7 @@
 //     ^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | var A: any[]
+// | var A: Array<any>
 // | ```
 // | 
 // | ----------------------------------------------------------------------
@@ -293,7 +293,7 @@
     "item": {
       "contents": {
         "kind": "markdown",
-        "value": "```typescript\nvar A: any[]\n```\n"
+        "value": "```typescript\nvar A: Array<any>\n```\n"
       },
       "range": {
         "start": {

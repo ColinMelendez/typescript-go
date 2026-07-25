@@ -5,7 +5,7 @@ export class bluebird<T> {
 >bluebird : bluebird<T>
 
     static all: Array<bluebird<any>>;
->all : bluebird<any>[]
+>all : Array<bluebird<any>>
 }
 
 export async function runSampleWorks<A, B, C, D, E>(
@@ -24,18 +24,18 @@ export async function runSampleWorks<A, B, C, D, E>(
 >(bluebird.all as any)([a, b, c, d, e].filter(el => !!el)) : any
 >(bluebird.all as any) : any
 >bluebird.all as any : any
->bluebird.all : bluebird<any>[]
+>bluebird.all : Array<bluebird<any>>
 >bluebird : typeof bluebird
->all : bluebird<any>[]
->[a, b, c, d, e].filter(el => !!el) : bluebird<A>[]
->[a, b, c, d, e].filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => value is S, thisArg?: any): S[]; (predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => unknown, thisArg?: any): (bluebird<A> | undefined)[]; }
->[a, b, c, d, e] : (bluebird<A> | undefined)[]
+>all : Array<bluebird<any>>
+>[a, b, c, d, e].filter(el => !!el) : Array<bluebird<A>>
+>[a, b, c, d, e].filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => value is S, thisArg?: any): Array<S>; (predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => unknown, thisArg?: any): Array<bluebird<A> | undefined>; }
+>[a, b, c, d, e] : Array<bluebird<A> | undefined>
 >a : bluebird<A>
 >b : bluebird<B> | undefined
 >c : bluebird<C> | undefined
 >d : bluebird<D> | undefined
 >e : bluebird<E> | undefined
->filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => value is S, thisArg?: any): S[]; (predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => unknown, thisArg?: any): (bluebird<A> | undefined)[]; }
+>filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => value is S, thisArg?: any): Array<S>; (predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => unknown, thisArg?: any): Array<bluebird<A> | undefined>; }
 >el => !!el : (el: bluebird<A> | undefined) => el is bluebird<A>
 >el : bluebird<A> | undefined
 >!!el : boolean
@@ -86,18 +86,18 @@ export async function runSampleBreaks<A, B, C, D, E>(
 >(bluebird.all as any)([a, b, c, d, e].filter(el => !!el)) : any
 >(bluebird.all as any) : any
 >bluebird.all as any : any
->bluebird.all : bluebird<any>[]
+>bluebird.all : Array<bluebird<any>>
 >bluebird : typeof bluebird
->all : bluebird<any>[]
->[a, b, c, d, e].filter(el => !!el) : bluebird<A>[]
->[a, b, c, d, e].filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => value is S, thisArg?: any): S[]; (predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => unknown, thisArg?: any): (bluebird<A> | undefined)[]; }
->[a, b, c, d, e] : (bluebird<A> | undefined)[]
+>all : Array<bluebird<any>>
+>[a, b, c, d, e].filter(el => !!el) : Array<bluebird<A>>
+>[a, b, c, d, e].filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => value is S, thisArg?: any): Array<S>; (predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => unknown, thisArg?: any): Array<bluebird<A> | undefined>; }
+>[a, b, c, d, e] : Array<bluebird<A> | undefined>
 >a : bluebird<A>
 >b : bluebird<B> | undefined
 >c : bluebird<C> | undefined
 >d : bluebird<D> | undefined
 >e : bluebird<E> | undefined
->filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => value is S, thisArg?: any): S[]; (predicate: (value: bluebird<A> | undefined, index: number, array: (bluebird<A> | undefined)[]) => unknown, thisArg?: any): (bluebird<A> | undefined)[]; }
+>filter : { <S extends bluebird<A> | undefined>(predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => value is S, thisArg?: any): Array<S>; (predicate: (value: bluebird<A> | undefined, index: number, array: Array<bluebird<A> | undefined>) => unknown, thisArg?: any): Array<bluebird<A> | undefined>; }
 >el => !!el : (el: bluebird<A> | undefined) => el is bluebird<A>
 >el : bluebird<A> | undefined
 >!!el : boolean

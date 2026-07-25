@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithUnicodeEscapesES6.types
++++ new.taggedTemplateStringsWithUnicodeEscapesES6.types
+@@= skipped -2, +2 lines =@@
+ === taggedTemplateStringsWithUnicodeEscapesES6.ts ===
+ function f(...args: any[]) {
+ >f : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ f `'\u{1f4a9}'${ " should be converted to " }'\uD83D\uDCA9'`;

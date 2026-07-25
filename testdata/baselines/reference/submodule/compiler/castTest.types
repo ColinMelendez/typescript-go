@@ -32,8 +32,8 @@ var s = <string>"";
 >"" : ""
 
 var ar = <any[]>null;
->ar : any[]
-><any[]>null : any[]
+>ar : Array<any>
+><any[]>null : Array<any>
 
 var f = <(res : number) => void>null;
 >f : (res: number) => void

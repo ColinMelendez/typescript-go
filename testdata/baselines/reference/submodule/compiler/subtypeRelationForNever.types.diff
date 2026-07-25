@@ -1,0 +1,43 @@
+--- old.subtypeRelationForNever.types
++++ new.subtypeRelationForNever.types
+@@= skipped -9, +9 lines =@@
+
+ function withFew<a, r>(values: a[], haveFew: (values: a[]) => r, haveNone: (reason: string) => r): r {
+ >withFew : <a, r>(values: a[], haveFew: (values: a[]) => r, haveNone: (reason: string) => r) => r
+->values : a[]
++>values : Array<a>
+ >haveFew : (values: a[]) => r
+->values : a[]
++>values : Array<a>
+ >haveNone : (reason: string) => r
+ >reason : string
+
+@@= skipped -10, +10 lines =@@
+ >values.length > 0 ? haveFew(values) : haveNone('No values.') : r
+ >values.length > 0 : boolean
+ >values.length : number
+->values : a[]
++>values : Array<a>
+ >length : number
+ >0 : 0
+ >haveFew(values) : r
+ >haveFew : (values: a[]) => r
+->values : a[]
++>values : Array<a>
+ >haveNone('No values.') : r
+ >haveNone : (reason: string) => r
+ >'No values.' : "No values."
+@@= skipped -16, +16 lines =@@
+ >value : a
+
+ const result = withFew([1, 2, 3], id, fail); // expected result is number[]
+->result : number[]
+->withFew([1, 2, 3], id, fail) : number[]
++>result : Array<number>
++>withFew([1, 2, 3], id, fail) : Array<number>
+ >withFew : <a, r>(values: a[], haveFew: (values: a[]) => r, haveNone: (reason: string) => r) => r
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

@@ -15,13 +15,13 @@ class D extends C { }
 function foo(x: "hi", items: string[]): typeof foo;
 >foo : (x: "hi", items: string[]) => typeof foo
 >x : "hi"
->items : string[]
+>items : Array<string>
 >foo : (x: "hi", items: string[]) => typeof foo
 
 function foo(x: string, items: string[]): typeof foo {
 >foo : (x: "hi", items: string[]) => typeof foo
 >x : string
->items : string[]
+>items : Array<string>
 >foo : (x: "hi", items: string[]) => typeof foo
 
     return null;
@@ -31,5 +31,5 @@ var a: D = foo("hi", []);
 >foo("hi", []) : (x: "hi", items: string[]) => typeof foo
 >foo : (x: "hi", items: string[]) => typeof foo
 >"hi" : "hi"
->[] : never[]
+>[] : Array<never>
 

@@ -1,0 +1,71 @@
+--- old.collisionRestParameterClassConstructor.types
++++ new.collisionRestParameterClassConstructor.types
+@@= skipped -6, +6 lines =@@
+
+     constructor(_i: number, ...restParameters) { //_i is error
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+         var _i = 10; // no error
+ >_i : number
+@@= skipped -23, +23 lines =@@
+ >c2 : c2
+
+     constructor(...restParameters) {
+->restParameters : any[]
++>restParameters : Array<any>
+
+         var _i = 10; // no error
+ >_i : number
+@@= skipped -22, +22 lines =@@
+
+     constructor(public _i: number, ...restParameters) { //_i is error
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+         var _i = 10; // no error
+ >_i : number
+@@= skipped -24, +24 lines =@@
+
+     constructor(_i: number, ...restParameters); // No error - no code gen
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+ }
+ declare class c4NoError {
+ >c4NoError : c4NoError
+@@= skipped -14, +14 lines =@@
+
+     constructor(_i: number, ...rest); // no codegen no error
+ >_i : number
+->rest : any[]
++>rest : Array<any>
+
+     constructor(_i: string, ...rest); // no codegen no error
+ >_i : string
+->rest : any[]
++>rest : Array<any>
+
+     constructor(_i: any, ...rest) { // error
+ >_i : any
+->rest : any[]
++>rest : Array<any>
+
+         var _i: any; // no error
+ >_i : any
+@@= skipped -37, +37 lines =@@
+
+     constructor(_i: number, ...rest); // no codegen no error
+ >_i : number
+->rest : any[]
++>rest : Array<any>
+
+     constructor(_i: string, ...rest); // no codegen no error
+ >_i : string
+->rest : any[]
++>rest : Array<any>
+ }
+
+ declare class c6NoError {

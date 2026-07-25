@@ -10,7 +10,7 @@ const Symbol = globalThis.Symbol;
 
 [][Symbol.iterator];
 >[][Symbol.iterator] : () => ArrayIterator<never>
->[] : never[]
+>[] : Array<never>
 >Symbol.iterator : unique symbol
 >Symbol : SymbolConstructor
 >iterator : unique symbol

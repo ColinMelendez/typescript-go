@@ -32,8 +32,8 @@ var i: I;
 var /*4*/c3 = [i, a];`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "var c: {\n    name: string;\n    age: number;\n}[]", "")
-	f.VerifyQuickInfoAt(t, "2", "var c1: {\n    name: string;\n    age: number;\n}[]", "")
-	f.VerifyQuickInfoAt(t, "3", "var c2: ({\n    name: string;\n    age: number;\n    address: string;\n} | {\n    name: string;\n    age: number;\n    dob: Date;\n})[]", "")
-	f.VerifyQuickInfoAt(t, "4", "var c3: I[]", "")
+	f.VerifyQuickInfoAt(t, "1", "var c: Array<{\n    name: string;\n    age: number;\n}>", "")
+	f.VerifyQuickInfoAt(t, "2", "var c1: Array<{\n    name: string;\n    age: number;\n}>", "")
+	f.VerifyQuickInfoAt(t, "3", "var c2: Array<{\n    name: string;\n    age: number;\n    address: string;\n} | {\n    name: string;\n    age: number;\n    dob: Date;\n}>", "")
+	f.VerifyQuickInfoAt(t, "4", "var c3: Array<I>", "")
 }

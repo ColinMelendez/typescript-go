@@ -1,0 +1,10 @@
+--- old.parserArrayLiteralExpression3.types
++++ new.parserArrayLiteralExpression3.types
+@@= skipped -1, +1 lines =@@
+
+ === parserArrayLiteralExpression3.ts ===
+ var v = [,,];
+->v : undefined[]
+->[,,] : undefined[]
++>v : Array<undefined>
++>[,,] : Array<undefined>

@@ -11,7 +11,7 @@ type Tester = (opts: any, done: (...args: any[]) => any) => any;
 >Tester : Tester
 >opts : any
 >done : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 declare function cases(tester: Tester): void;
 >cases : (tester: Tester) => void

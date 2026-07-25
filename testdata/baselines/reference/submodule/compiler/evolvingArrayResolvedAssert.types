@@ -2,17 +2,17 @@
 
 === evolvingArrayResolvedAssert.ts ===
 var C = [];
->C : any[]
->[] : never[]
+>C : Array<any>
+>[] : Array<never>
 
 for (var a in C) {
 >a : string
->C : any[]
+>C : Array<any>
 
     if (C.hasOwnProperty(a)) {
 >C.hasOwnProperty(a) : boolean
 >C.hasOwnProperty : (v: PropertyKey) => boolean
->C : any[]
+>C : Array<any>
 >hasOwnProperty : (v: PropertyKey) => boolean
 >a : string
     }

@@ -37,7 +37,7 @@ function init(properties: IProperties) {
 
         for (const x of [1, 2, 3]) {
 >x : number
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -104,7 +104,7 @@ function init2(foo: DeepOptional) {
 
         for(const _ of [1]) {
 >_ : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
             type A = typeof foo.a;
@@ -164,7 +164,7 @@ function init2(foo: DeepOptional) {
 
                 for(const _ of [1]) {
 >_ : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
                     type A = typeof foo.a;
@@ -226,7 +226,7 @@ function init2(foo: DeepOptional) {
 
                         for(const _ of [1]) {
 >_ : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
                             type A = typeof foo.a;

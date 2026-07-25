@@ -1,0 +1,17 @@
+--- old.nestedRecursiveArraysOrObjectsError01.types
++++ new.nestedRecursiveArraysOrObjectsError01.types
+@@= skipped -11, +11 lines =@@
+
+ const blah: Style = [
+ >blah : Style
+->[    [[{        foo: 'asdf',        jj: 1 // intentional error    }]]] : { foo: string; jj: number; }[][][]
++>[    [[{        foo: 'asdf',        jj: 1 // intentional error    }]]] : Array<Array<Array<{ foo: string; jj: number; }>>>
+
+     [[{
+->[[{        foo: 'asdf',        jj: 1 // intentional error    }]] : { foo: string; jj: number; }[][]
+->[{        foo: 'asdf',        jj: 1 // intentional error    }] : { foo: string; jj: number; }[]
++>[[{        foo: 'asdf',        jj: 1 // intentional error    }]] : Array<Array<{ foo: string; jj: number; }>>
++>[{        foo: 'asdf',        jj: 1 // intentional error    }] : Array<{ foo: string; jj: number; }>
+ >{        foo: 'asdf',        jj: 1 // intentional error    } : { foo: string; jj: number; }
+
+         foo: 'asdf',

@@ -4,7 +4,7 @@
 for ([""] of [[""]]) { }
 >[""] : [string]
 >"" : ""
->[[""]] : string[][]
->[""] : string[]
+>[[""]] : Array<Array<string>>
+>[""] : Array<string>
 >"" : ""
 

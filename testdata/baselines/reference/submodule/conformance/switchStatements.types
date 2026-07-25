@@ -45,7 +45,7 @@ switch (x) {
 >/[a-z]/ : RegExp
 
     case[]:
->[] : never[]
+>[] : Array<never>
 
     case {}:
 >{} : {}
@@ -56,7 +56,7 @@ switch (x) {
 >12 : 12
 
     case['a']:
->['a'] : string[]
+>['a'] : Array<string>
 >'a' : "a"
 
     case typeof x:
@@ -146,7 +146,7 @@ switch (/[a-z]/) { }
 >/[a-z]/ : RegExp
 
 switch ([]) { }
->[] : never[]
+>[] : Array<never>
 
 switch ({}) { }
 >{} : {}
@@ -157,7 +157,7 @@ switch ({ id: 12 }) { }
 >12 : 12
 
 switch (['a']) { }
->['a'] : string[]
+>['a'] : Array<string>
 >'a' : "a"
 
 switch (<T>(x: number) => '') { }

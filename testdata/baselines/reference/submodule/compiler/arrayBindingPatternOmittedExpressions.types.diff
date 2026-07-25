@@ -1,0 +1,32 @@
+--- old.arrayBindingPatternOmittedExpressions.types
++++ new.arrayBindingPatternOmittedExpressions.types
+@@= skipped -1, +1 lines =@@
+
+ === arrayBindingPatternOmittedExpressions.ts ===
+ var results: string[];
+->results : string[]
++>results : Array<string>
+
+ {
+     let [, b, , a] = results;
+ >b : string
+ >a : string
+->results : string[]
++>results : Array<string>
+
+     let x = {
+ >x : { a: string; b: string; }
+@@= skipped -22, +22 lines =@@
+
+
+ function f([, a, , b, , , , s, , , ] = results) {
+->f : ([, a, , b, , , , s, , ,]?: string[]) => void
++>f : ([, a, , b, , , , s, , ,]?: Array<string>) => void
+ >a : string
+ >b : string
+ >s : string
+->results : string[]
++>results : Array<string>
+
+     a = s[1];
+ >a = s[1] : string

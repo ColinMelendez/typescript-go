@@ -1,0 +1,24 @@
+--- old.arrowFunctionExpressions.types
++++ new.arrowFunctionExpressions.types
+@@= skipped -63, +63 lines =@@
+ var p2 = ([...a]) => { };
+ >p2 : ([...a]: Iterable<any, void, undefined>) => void
+ >([...a]) => { } : ([...a]: Iterable<any, void, undefined>) => void
+->a : any[]
++>a : Array<any>
+
+ var p3 = ([, a]) => { };
+ >p3 : ([, a]: [any, any]) => void
+@@= skipped -8, +8 lines =@@
+ >a : any
+
+ var p4 = ([, ...a]) => { };
+->p4 : ([, ...a]: [any?, ...any[]]) => void
+->([, ...a]) => { } : ([, ...a]: [any?, ...any[]]) => void
+->a : any[]
++>p4 : ([, ...a]: [any?, ...Array<any>]) => void
++>([, ...a]) => { } : ([, ...a]: [any?, ...Array<any>]) => void
++>a : Array<any>
+
+ var p5 = ([a = 1]) => { };
+ >p5 : ([a]: [number?]) => void

@@ -22,8 +22,8 @@ declare global {
 import "./f2";
 
 let x = [1];
->x : number[]
->[1] : number[]
+>x : Array<number>
+>[1] : Array<number>
 >1 : 1
 
 let y = x.getCountAsString().toLowerCase();
@@ -32,7 +32,7 @@ let y = x.getCountAsString().toLowerCase();
 >x.getCountAsString().toLowerCase : () => string
 >x.getCountAsString() : string
 >x.getCountAsString : () => string
->x : number[]
+>x : Array<number>
 >getCountAsString : () => string
 >toLowerCase : () => string
 

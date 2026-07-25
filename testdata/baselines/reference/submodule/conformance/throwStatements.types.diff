@@ -1,0 +1,18 @@
+--- old.throwStatements.types
++++ new.throwStatements.types
+@@= skipped -223, +223 lines =@@
+ >13 : 13
+
+ throw [];
+->[] : undefined[]
++>[] : Array<undefined>
+
+ throw ['a', ['b']];
+->['a', ['b']] : (string | string[])[]
++>['a', ['b']] : Array<string | Array<string>>
+ >'a' : "a"
+->['b'] : string[]
++>['b'] : Array<string>
+ >'b' : "b"
+
+ throw /[a-z]/;

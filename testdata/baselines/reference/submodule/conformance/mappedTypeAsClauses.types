@@ -140,7 +140,7 @@ interface Car {
 >engine : Engine
 
     wheels: Wheel[];
->wheels : Wheel[]
+>wheels : Array<Wheel>
 }
 
 interface Engine {

@@ -1,0 +1,43 @@
+--- old.jsxElementType.types
++++ new.jsxElementType.types
+@@= skipped -139, +139 lines =@@
+ >excessProp : true
+
+ const RenderArray = ({ title }: { title: string }) => [title];
+->RenderArray : ({ title }: { title: string; }) => string[]
+->({ title }: { title: string }) => [title] : ({ title }: { title: string; }) => string[]
+->title : string
+->title : string
+->[title] : string[]
++>RenderArray : ({ title }: { title: string; }) => Array<string>
++>({ title }: { title: string }) => [title] : ({ title }: { title: string; }) => Array<string>
++>title : string
++>title : string
++>[title] : Array<string>
+ >title : string
+
+ Component = RenderArray;
+->Component = RenderArray : ({ title }: { title: string; }) => string[]
++>Component = RenderArray : ({ title }: { title: string; }) => Array<string>
+ >Component : NewReactJSXElementConstructor<{ title: string; }>
+->RenderArray : ({ title }: { title: string; }) => string[]
++>RenderArray : ({ title }: { title: string; }) => Array<string>
+
+ <RenderArray />;
+ ><RenderArray /> : JSX.Element
+->RenderArray : ({ title }: { title: string; }) => string[]
++>RenderArray : ({ title }: { title: string; }) => Array<string>
+
+ <RenderArray title="react" />;
+ ><RenderArray title="react" /> : JSX.Element
+->RenderArray : ({ title }: { title: string; }) => string[]
++>RenderArray : ({ title }: { title: string; }) => Array<string>
+ >title : string
+
+ <RenderArray excessProp />;
+ ><RenderArray excessProp /> : JSX.Element
+->RenderArray : ({ title }: { title: string; }) => string[]
++>RenderArray : ({ title }: { title: string; }) => Array<string>
+ >excessProp : true
+
+ // React Server Component

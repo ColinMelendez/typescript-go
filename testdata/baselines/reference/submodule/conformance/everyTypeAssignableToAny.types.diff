@@ -1,0 +1,23 @@
+--- old.everyTypeAssignableToAny.types
++++ new.everyTypeAssignableToAny.types
+@@= skipped -61, +61 lines =@@
+ >x : number
+
+ var m: number[];
+->m : number[]
++>m : Array<number>
+
+ var n: { foo: string };
+ >n : { foo: string; }
+@@= skipped -72, +72 lines =@@
+ >l : (x: number) => string
+
+ a = m;
+->a = m : number[]
++>a = m : Array<number>
+ >a : any
+->m : number[]
++>m : Array<number>
+
+ a = o;
+ >a = o : <T>(x: T) => T

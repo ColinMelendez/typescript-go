@@ -1,0 +1,29 @@
+--- old.decoratorReferenceOnOtherProperty.types
++++ new.decoratorReferenceOnOtherProperty.types
+@@= skipped -9, +9 lines =@@
+
+ function foo(...args: any[]) {}
+ >foo : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+ class Bar {
+ >Bar : Bar
+@@= skipped -20, +20 lines =@@
+
+ function foo(...args: any[]) {}
+ >foo : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+ class Bar {
+ >Bar : Bar
+@@= skipped -9, +9 lines =@@
+ >yoha : (yoha: any, ...bar: Yoha[]) => void
+ >foo : (...args: any[]) => void
+ >yoha : any
+->bar : Yoha[]
++>bar : Array<Yoha>
+
+   //                      ^^^^
+ }

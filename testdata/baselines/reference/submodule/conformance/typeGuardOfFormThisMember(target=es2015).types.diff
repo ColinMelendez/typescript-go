@@ -1,0 +1,11 @@
+--- old.typeGuardOfFormThisMember(target=es2015).types
++++ new.typeGuardOfFormThisMember(target=es2015).types
+@@= skipped -55, +55 lines =@@
+ >FileSystemObject : FileSystemObject
+
+ 		children: FileSystemObject[];
+->children : FileSystemObject[]
++>children : Array<FileSystemObject>
+ 	}
+ 	export interface Networked {
+ 		host: string;

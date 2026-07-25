@@ -1,0 +1,11 @@
+--- old.invalidLetInForOfAndForIn_ES6.types
++++ new.invalidLetInForOfAndForIn_ES6.types
+@@= skipped -18, +18 lines =@@
+ > : any
+
+ for (let in [1,2,3]) {}
+->[1,2,3] : number[]
++>[1,2,3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

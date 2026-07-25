@@ -49,7 +49,7 @@ const a6 = f<number>['g'];  // Error
 >f<number : boolean
 >f : { <T>(): T; g<U>(): U; }
 >number : any
->['g'] : string[]
+>['g'] : Array<string>
 >'g' : "g"
 
 const a7 = (f<number>)['g'];

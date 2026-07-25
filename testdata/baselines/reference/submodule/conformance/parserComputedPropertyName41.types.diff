@@ -1,0 +1,10 @@
+--- old.parserComputedPropertyName41.types
++++ new.parserComputedPropertyName41.types
+@@= skipped -8, +8 lines =@@
+ >[0 in []] : boolean
+ >0 in [] : boolean
+ >0 : 0
+->[] : never[]
++>[] : Array<never>
+ >true : true
+ }

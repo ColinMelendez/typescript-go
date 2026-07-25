@@ -21,8 +21,8 @@ type T21 = readonly [number, number];
 
 declare function f1(ma: string[], ra: readonly string[], mt: [string, string], rt: readonly [string, string]): readonly [string, string];
 >f1 : (ma: string[], ra: readonly string[], mt: [string, string], rt: readonly [string, string]) => readonly [string, string]
->ma : string[]
->ra : readonly string[]
+>ma : Array<string>
+>ra : ReadonlyArray<string>
 >mt : [string, string]
 >rt : readonly [string, string]
 
@@ -36,8 +36,8 @@ class A {
 >someDec : any
 
   j: readonly string[] = [];
->j : readonly string[]
->[] : never[]
+>j : ReadonlyArray<string>
+>[] : Array<never>
 
   @someDec
 >someDec : any

@@ -5,7 +5,7 @@
 interface i1 {
     (_i: number, ...restParameters); // no error - no code gen
 >_i : number
->restParameters : any[]
+>restParameters : Array<any>
 }
 interface i1NoError {
     (_i: number);  // no error
@@ -16,7 +16,7 @@ interface i1NoError {
 interface i2 {
     new (_i: number, ...restParameters); // no error - no code gen
 >_i : number
->restParameters : any[]
+>restParameters : Array<any>
 }
 interface i2NoError {
     new (_i: number);  // no error
@@ -26,9 +26,9 @@ interface i2NoError {
 // method
 interface i3 {
     foo (_i: number, ...restParameters); // no error - no code gen
->foo : (_i: number, ...restParameters: any[]) => any
+>foo : (_i: number, ...restParameters: Array<any>) => any
 >_i : number
->restParameters : any[]
+>restParameters : Array<any>
 
     fooNoError (_i: number);  // no error
 >fooNoError : (_i: number) => any

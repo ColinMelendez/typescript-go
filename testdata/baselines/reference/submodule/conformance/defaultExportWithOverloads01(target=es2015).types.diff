@@ -1,0 +1,9 @@
+--- old.defaultExportWithOverloads01(target=es2015).types
++++ new.defaultExportWithOverloads01(target=es2015).types
+@@= skipped -9, +9 lines =@@
+
+ export default function f(...args: any[]) {
+ >f : { (): any; (x: string): any; }
+->args : any[]
++>args : Array<any>
+ }

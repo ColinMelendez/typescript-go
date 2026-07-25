@@ -1,0 +1,11 @@
+--- old.contextuallyTypedParametersWithInitializers2.types
++++ new.contextuallyTypedParametersWithInitializers2.types
+@@= skipped -6, +6 lines =@@
+   TContext,
+   TMethods extends Record<string, (ctx: TContext, ...args: never[]) => unknown>,
+ >ctx : TContext
+->args : never[]
++>args : Array<never>
+
+ >(context: TContext, methods: TMethods): void;
+ >context : TContext

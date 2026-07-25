@@ -3,7 +3,7 @@
 === mixinClassesAnnotated.ts ===
 type Constructor<T> = new(...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 class Base {
 >Base : Base
@@ -83,13 +83,13 @@ function Tagged<T extends Constructor<{}>>(superClass: T): Constructor<Tagged> &
 >_tag : string
 
         constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
             super(...args);
 >super(...args) : void
 >super : T
 >...args : any
->args : any[]
+>args : Array<any>
 
             this._tag = "hello";
 >this._tag = "hello" : "hello"

@@ -22,7 +22,7 @@ var v4: G.H.I<X<T>, Y<Z<T>>>;
 >H : any
 
 var v6: K<X<T>, Y<Z<T>>>[];
->v6 : K<X<T>, Y<Z<T>>>[]
+>v6 : Array<K<X<T>, Y<Z<T>>>>
 
 
 function f1(a: E<X<T>, Y<Z<T>>>) {

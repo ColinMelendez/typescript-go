@@ -1,0 +1,10 @@
+--- old.for-of13.types
++++ new.for-of13.types
+@@= skipped -7, +7 lines =@@
+ >v : string
+ >[""].values() : ArrayIterator<string>
+ >[""].values : () => ArrayIterator<string>
+->[""] : string[]
++>[""] : Array<string>
+ >"" : ""
+ >values : () => ArrayIterator<string>

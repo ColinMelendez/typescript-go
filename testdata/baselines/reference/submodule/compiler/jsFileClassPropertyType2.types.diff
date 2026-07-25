@@ -1,0 +1,33 @@
+--- old.jsFileClassPropertyType2.types
++++ new.jsFileClassPropertyType2.types
+@@= skipped -6, +6 lines =@@
+     constructor() {
+       /** @type {number[]}*/
+       this.p = [];
+->this.p = [] : never[]
+->this.p : number[]
++>this.p = [] : Array<never>
++>this.p : Array<number>
+ >this : this
+->p : number[]
+->[] : never[]
++>p : Array<number>
++>[] : Array<never>
+   }
+ }
+
+ === bar.ts ===
+ (new C()).p.push("string");
+ >(new C()).p.push("string") : number
+->(new C()).p.push : (...items: number[]) => number
+->(new C()).p : number[]
++>(new C()).p.push : (...items: Array<number>) => number
++>(new C()).p : Array<number>
+ >(new C()) : C
+ >new C() : C
+ >C : typeof C
+->p : number[]
+->push : (...items: number[]) => number
++>p : Array<number>
++>push : (...items: Array<number>) => number
+ >"string" : "string"

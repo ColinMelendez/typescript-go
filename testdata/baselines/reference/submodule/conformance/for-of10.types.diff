@@ -1,0 +1,9 @@
+--- old.for-of10.types
++++ new.for-of10.types
+@@= skipped -5, +5 lines =@@
+
+ for (v of [0]) { }
+ >v : string
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0

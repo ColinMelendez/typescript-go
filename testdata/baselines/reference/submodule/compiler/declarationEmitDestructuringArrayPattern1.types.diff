@@ -1,0 +1,33 @@
+--- old.declarationEmitDestructuringArrayPattern1.types
++++ new.declarationEmitDestructuringArrayPattern1.types
+@@= skipped -1, +1 lines =@@
+
+ === declarationEmitDestructuringArrayPattern1.ts ===
+ var [] = [1, "hello"]; // Dont emit anything
+->[1, "hello"] : (string | number)[]
++>[1, "hello"] : Array<string | number>
+ >1 : 1
+ >"hello" : "hello"
+
+@@= skipped -25, +25 lines =@@
+ >2 : 2
+
+ var a = [1, "hello"];
+->a : (string | number)[]
+->[1, "hello"] : (string | number)[]
++>a : Array<string | number>
++>[1, "hello"] : Array<string | number>
+ >1 : 1
+ >"hello" : "hello"
+
+ var [x2] = a;          // emit x2: number | string
+ >x2 : string | number
+->a : (string | number)[]
++>a : Array<string | number>
+
+ var [x3, y3, z3] = a;  // emit x3, y3, z3 
+ >x3 : string | number
+ >y3 : string | number
+ >z3 : string | number
+->a : (string | number)[]
++>a : Array<string | number>

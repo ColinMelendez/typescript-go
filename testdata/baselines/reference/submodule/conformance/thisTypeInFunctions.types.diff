@@ -1,0 +1,13 @@
+--- old.thisTypeInFunctions.types
++++ new.thisTypeInFunctions.types
+@@= skipped -923, +923 lines =@@
+     call<U>(this: (...argArray: any[]) => U, ...argArray: any[]): U;
+ >call : <U>(this: (...argArray: any[]) => U, ...argArray: any[]) => U
+ >this : (...argArray: any[]) => U
+->argArray : any[]
+->argArray : any[]
++>argArray : Array<any>
++>argArray : Array<any>
+
+ };
+ let n: number = f.call(12);

@@ -5,7 +5,7 @@ function f0() {
 >f0 : () => void
 
     var [] = [1, "hello"];
->[1, "hello"] : (string | number)[]
+>[1, "hello"] : Array<string | number>
 >1 : 1
 >"hello" : "hello"
 
@@ -48,25 +48,25 @@ function f1() {
 >f1 : () => void
 
     var a = [1, "hello"];
->a : (string | number)[]
->[1, "hello"] : (string | number)[]
+>a : Array<string | number>
+>[1, "hello"] : Array<string | number>
 >1 : 1
 >"hello" : "hello"
 
     var [x] = a;
 >x : string | number
->a : (string | number)[]
+>a : Array<string | number>
 
     var [x, y] = a;
 >x : string | number
 >y : string | number
->a : (string | number)[]
+>a : Array<string | number>
 
     var [x, y, z] = a;
 >x : string | number
 >y : string | number
 >z : string | number
->a : (string | number)[]
+>a : Array<string | number>
 
     var x!: number | string;
 >x : string | number
@@ -304,7 +304,7 @@ function f10() {
     var { a, b } = [];  // Error
 >a : any
 >b : any
->[] : undefined[]
+>[] : Array<undefined>
 }
 
 function f11() {
@@ -403,10 +403,10 @@ function f13() {
 >"hello" : "hello"
 
     var [a, b] = [[x, y], { x: x, y: y }];
->a : (string | number)[]
+>a : Array<string | number>
 >b : { x: number; y: string; }
->[[x, y], { x: x, y: y }] : [(string | number)[], { x: number; y: string; }]
->[x, y] : (string | number)[]
+>[[x, y], { x: x, y: y }] : [Array<string | number>, { x: number; y: string; }]
+>[x, y] : Array<string | number>
 >x : number
 >y : string
 >{ x: x, y: y } : { x: number; y: string; }
@@ -560,7 +560,7 @@ function f18() {
 >b : string
 
     var aa!: number[];
->aa : number[]
+>aa : Array<number>
 
     ({ a, b } = { a, b });
 >({ a, b } = { a, b }) : { a: number; b: string; }
@@ -586,7 +586,7 @@ function f18() {
 >[aa[0], b] = [a, b] : [number, string]
 >[aa[0], b] : [number, string]
 >aa[0] : number
->aa : number[]
+>aa : Array<number>
 >0 : 0
 >b : string
 >[a, b] : [number, string]

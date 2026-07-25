@@ -41,7 +41,7 @@ declare module "./observable" {
 >z0 : { n: number; }
 >n : number
 >z1 : { arr: number[]; }
->arr : number[]
+>arr : Array<number>
 
     interface A { x }
 >x : any

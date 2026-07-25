@@ -17,7 +17,7 @@ import { DOMNode } from './dom'
 
 type Constructor = new (...args: any[]) => any
 >Constructor : Constructor
->args : any[]
+>args : Array<any>
 
 export const mixin = (Base: Constructor) => {
 >mixin : (Base: Constructor) => typeof (Anonymous class)

@@ -1,0 +1,64 @@
+--- old.callWithSpread4.types
++++ new.callWithSpread4.types
+@@= skipped -24, +24 lines =@@
+ >s5 : W
+
+     (streams: ReadonlyArray<R | W | RW>): Promise<void>;
+->streams : readonly (R | RW | W)[]
++>streams : ReadonlyArray<R | RW | W>
+
+     (s1: R, s2: RW | W, ...streams: Array<RW | W>): Promise<void>;
+ >s1 : R
+ >s2 : RW | W
+->streams : (RW | W)[]
++>streams : Array<RW | W>
+ }
+
+ declare var writes: W
+@@= skipped -18, +18 lines =@@
+ >tr : W
+
+ declare var gun: RW[]
+->gun : RW[]
++>gun : Array<RW>
+
+ declare var gz: RW[]
+->gz : RW[]
++>gz : Array<RW>
+
+ declare var fun: (inp: any) => AsyncGenerator<string, void, unknown>
+ >fun : (inp: any) => AsyncGenerator<string, void, unknown>
+@@= skipped -18, +18 lines =@@
+
+     ...gun,
+ >...gun : RW
+->gun : RW[]
++>gun : Array<RW>
+
+     tr,
+ >tr : W
+@@= skipped -10, +10 lines =@@
+
+     ...gz,
+ >...gz : RW
+->gz : RW[]
++>gz : Array<RW>
+
+     writes
+ >writes : W
+@@= skipped -13, +13 lines =@@
+ >y : () => string
+
+ declare var anys: any[]
+->anys : any[]
++>anys : Array<any>
+
+ test(...anys)
+ >test(...anys) : string | undefined
+ >test : (x: any, y: () => string) => string | undefined
+ >...anys : any
+->anys : any[]
++>anys : Array<any>
+
+ pli(...[reads, writes, writes] as const)
+ >pli(...[reads, writes, writes] as const) : Promise<void>

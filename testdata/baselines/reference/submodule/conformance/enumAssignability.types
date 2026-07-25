@@ -131,7 +131,7 @@ namespace Others {
 >e : E
 
     var m: number[] = e;
->m : number[]
+>m : Array<number>
 >e : E
 
     var n: { foo: string } = e;

@@ -6,7 +6,7 @@
 
 interface IObservable<T> {
     n: IObservable<T[]>; // Needed, must be T[]
->n : IObservable<T[]>
+>n : IObservable<Array<T>>
 }
 
 // Needed

@@ -39,23 +39,23 @@ for (var j in arr) { // ok
 }
 
 var arr2 = [];
->arr2 : any[]
->[] : undefined[]
+>arr2 : Array<any>
+>[] : Array<undefined>
 
 for (j in arr2) { // ok
 >j : string
->arr2 : any[]
+>arr2 : Array<any>
 
     var x3 = arr2[j];
 >x3 : any
 >arr2[j] : any
->arr2 : any[]
+>arr2 : Array<any>
 >j : string
 
     var y3 = arr2[j];
 >y3 : any
 >arr2[j] : any
->arr2 : any[]
+>arr2 : Array<any>
 >j : string
 }
 

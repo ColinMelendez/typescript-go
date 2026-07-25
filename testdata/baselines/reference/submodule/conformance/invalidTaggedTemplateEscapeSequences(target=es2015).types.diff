@@ -1,0 +1,11 @@
+--- old.invalidTaggedTemplateEscapeSequences(target=es2015).types
++++ new.invalidTaggedTemplateEscapeSequences(target=es2015).types
+@@= skipped -3, +3 lines =@@
+ function tag (str: any, ...args: any[]): any {
+ >tag : (str: any, ...args: any[]) => any
+ >str : any
+->args : any[]
++>args : Array<any>
+
+   return str
+ >str : any

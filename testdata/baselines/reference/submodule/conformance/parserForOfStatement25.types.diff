@@ -1,0 +1,22 @@
+--- old.parserForOfStatement25.types
++++ new.parserForOfStatement25.types
+@@= skipped -7, +7 lines =@@
+ >'a' in {} : boolean
+ >'a' : "a"
+ >{} : {}
+->[[]] : never[][]
+->[] : never[]
++>[[]] : Array<Array<never>>
++>[] : Array<never>
+ >console.log(x) : void
+ >console.log : (...data: any[]) => void
+ >console : Console
+@@= skipped -13, +13 lines =@@
+ >'a' in {} : boolean
+ >'a' : "a"
+ >{} : {}
+->[{}] : {}[]
++>[{}] : Array<{}>
+ >{} : {}
+ >console.log(x) : void
+ >console.log : (...data: any[]) => void

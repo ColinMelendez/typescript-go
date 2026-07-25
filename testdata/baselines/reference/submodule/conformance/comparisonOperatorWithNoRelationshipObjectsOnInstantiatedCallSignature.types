@@ -55,12 +55,12 @@ var b3: { fn(x?: string): number };
 var a4: { fn<T>(...x: T[]): T };
 >a4 : { fn<T>(...x: T[]): T; }
 >fn : <T>(...x: T[]) => T
->x : T[]
+>x : Array<T>
 
 var b4: { fn(...x: string[]): number };
 >b4 : { fn(...x: string[]): number; }
 >fn : (...x: string[]) => number
->x : string[]
+>x : Array<string>
 
 var a5: { fn<T>(x: T, y: T): T };
 >a5 : { fn<T>(x: T, y: T): T; }

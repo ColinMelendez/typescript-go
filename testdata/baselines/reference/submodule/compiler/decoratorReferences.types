@@ -3,7 +3,7 @@
 === decoratorReferences.ts ===
 declare function y(...args: any[]): any;
 >y : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 type T = number;
 >T : number

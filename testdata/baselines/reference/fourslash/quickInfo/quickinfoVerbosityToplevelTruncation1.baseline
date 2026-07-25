@@ -70,9 +70,9 @@
 // |     property2: number;
 // |     property3: boolean;
 // |     property4: Date;
-// |     property5: string[];
-// |     property6: number[];
-// |     property7: boolean[];
+// |     property5: Array<string>;
+// |     property6: Array<number>;
+// |     property7: Array<boolean>;
 // |     property8: {
 // |         [key: string]: unknown;
 // |     };
@@ -83,14 +83,14 @@
 // |     property13: string | number;
 // |     property14: number | boolean;
 // |     property15: string | boolean;
-// |     property16: {
+// |     property16: Array<{
 // |         id: number;
 // |         name: string;
-// |     }[];
-// |     property17: {
+// |     }>;
+// |     property17: Array<{
 // |         key: string;
 // |         value: unknown;
-// |     }[];
+// |     }>;
 // |     property18: {
 // |         nestedProp1: string;
 // |         nestedProp2: number;
@@ -171,7 +171,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\ninterface LargeInterface {\n    property1: string;\n    property2: number;\n    property3: boolean;\n    property4: Date;\n    property5: string[];\n    property6: number[];\n    property7: boolean[];\n    property8: {\n        [key: string]: unknown;\n    };\n    property9: string | null;\n    property10: number | null;\n    property11: boolean | null;\n    property12: Date | null;\n    property13: string | number;\n    property14: number | boolean;\n    property15: string | boolean;\n    property16: {\n        id: number;\n        name: string;\n    }[];\n    property17: {\n        key: string;\n        value: unknown;\n    }[];\n    property18: {\n        nestedProp1: string;\n        nestedProp2: number;\n    };\n    property19: {\n        nestedProp3: boolean;\n        nestedProp4: Date;\n    };\n    property20: () => void;\n}\n```\n"
+          "value": "```typescript\ninterface LargeInterface {\n    property1: string;\n    property2: number;\n    property3: boolean;\n    property4: Date;\n    property5: Array<string>;\n    property6: Array<number>;\n    property7: Array<boolean>;\n    property8: {\n        [key: string]: unknown;\n    };\n    property9: string | null;\n    property10: number | null;\n    property11: boolean | null;\n    property12: Date | null;\n    property13: string | number;\n    property14: number | boolean;\n    property15: string | boolean;\n    property16: Array<{\n        id: number;\n        name: string;\n    }>;\n    property17: Array<{\n        key: string;\n        value: unknown;\n    }>;\n    property18: {\n        nestedProp1: string;\n        nestedProp2: number;\n    };\n    property19: {\n        nestedProp3: boolean;\n        nestedProp4: Date;\n    };\n    property20: () => void;\n}\n```\n"
         },
         "range": {
           "start": {

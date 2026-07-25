@@ -1,0 +1,9 @@
+--- old.parserTypeQuery9.types
++++ new.parserTypeQuery9.types
+@@= skipped -1, +1 lines =@@
+
+ === parserTypeQuery9.ts ===
+ var s: typeof A[];
+->s : any[]
++>s : Array<any>
+ >A : any

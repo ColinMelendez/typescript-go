@@ -9,45 +9,45 @@ function foo<T>(a: T) {
 >a : T
 
   const b: Extract<any[], T> = 0 as any;
->b : Extract<any[], T>
+>b : Extract<Array<any>, T>
 >0 as any : any
 >0 : 0
 
   a = b; // ok
->a = b : Extract<any[], T>
+>a = b : Extract<Array<any>, T>
 >a : T
->b : Extract<any[], T>
+>b : Extract<Array<any>, T>
 
   const c: (any[] extends T ? any[] : never) = 0 as any;
->c : any[] extends T ? any[] : never
+>c : Array<any> extends T ? Array<any> : never
 >0 as any : any
 >0 : 0
 
   a = c;
->a = c : any[] extends T ? any[] : never
+>a = c : Array<any> extends T ? Array<any> : never
 >a : T
->c : any[] extends T ? any[] : never
+>c : Array<any> extends T ? Array<any> : never
 
   const d: MyExtract<any[], T> = 0 as any;
->d : MyExtract<any[], T>
+>d : MyExtract<Array<any>, T>
 >0 as any : any
 >0 : 0
 
   a = d; // ok
->a = d : MyExtract<any[], T>
+>a = d : MyExtract<Array<any>, T>
 >a : T
->d : MyExtract<any[], T>
+>d : MyExtract<Array<any>, T>
 
   type CustomType = any[] extends T ? any[] : never;
->CustomType : any[] extends T ? any[] : never
+>CustomType : Array<any> extends T ? Array<any> : never
 
   const e: CustomType = 0 as any;
->e : any[] extends T ? any[] : never
+>e : Array<any> extends T ? Array<any> : never
 >0 as any : any
 >0 : 0
 
   a = e;
->a = e : any[] extends T ? any[] : never
+>a = e : Array<any> extends T ? Array<any> : never
 >a : T
->e : any[] extends T ? any[] : never
+>e : Array<any> extends T ? Array<any> : never
 }

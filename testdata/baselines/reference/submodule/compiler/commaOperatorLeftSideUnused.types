@@ -11,12 +11,12 @@ function fn() {
 >fn : () => "more than one" | "zero or one"
 
   let arr: any[] = [];
->arr : any[]
->[] : never[]
+>arr : Array<any>
+>[] : Array<never>
 
   switch(arr.length) {
 >arr.length : number
->arr : any[]
+>arr : Array<any>
 >length : number
 
     // Should error
@@ -49,8 +49,8 @@ let x = Math.pow((3, 5), 2);
 
 // Should error
 let a = [(3 + 4), ((1 + 1, 8) * 4)];
->a : number[]
->[(3 + 4), ((1 + 1, 8) * 4)] : number[]
+>a : Array<number>
+>[(3 + 4), ((1 + 1, 8) * 4)] : Array<number>
 >(3 + 4) : number
 >3 + 4 : number
 >3 : 3
@@ -168,7 +168,7 @@ xx = ([1, 2, x++], xx);
 >xx : any
 >([1, 2, x++], xx) : any
 >[1, 2, x++], xx : any
->[1, 2, x++] : number[]
+>[1, 2, x++] : Array<number>
 >1 : 1
 >2 : 2
 >x++ : number

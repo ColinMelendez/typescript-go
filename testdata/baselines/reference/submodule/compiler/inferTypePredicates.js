@@ -549,7 +549,7 @@ function negative(t) {
 
 
 //// [inferTypePredicates.d.ts]
-declare const numsOrNull: (number | null)[];
+declare const numsOrNull: Array<number | null>;
 declare const filteredNumsTruthy: number[];
 declare const filteredNumsNonNullish: number[];
 declare const evenSquaresInline: number[];
@@ -568,8 +568,8 @@ type MyArray = {
     list?: MyObj[];
 }[];
 declare const myArray: MyArray;
-declare const result: any[][];
-declare const result2: any[][];
+declare const result: Array<Array<any>>;
+declare const result2: Array<Array<any>>;
 type Foo = {
     foo: string;
 };
@@ -580,7 +580,7 @@ declare const list: (Foo | Bar)[];
 declare const resultBars: Bar[];
 declare function isBarNonNull(x: Foo | Bar | null): x is Bar;
 declare const fooOrBar: Foo | Bar;
-declare const a: string[];
+declare const a: Array<string>;
 declare function backwardsGuard(x: number | string): x is number;
 declare function isString(x: string | number): x is string;
 declare let strOrNum: string | number;

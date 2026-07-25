@@ -2,9 +2,9 @@
 
 === declarationEmitConstObjectLiteralGenericMethod1.ts ===
 export const obj1 = {
->obj1 : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => T[]; }
->{    id<T>(value: T) {        return value;    },    pair<T>(left: T, right: T) {        return [left, right];    },} as const : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => T[]; }
->{    id<T>(value: T) {        return value;    },    pair<T>(left: T, right: T) {        return [left, right];    },} : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => T[]; }
+>obj1 : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => Array<T>; }
+>{    id<T>(value: T) {        return value;    },    pair<T>(left: T, right: T) {        return [left, right];    },} as const : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => Array<T>; }
+>{    id<T>(value: T) {        return value;    },    pair<T>(left: T, right: T) {        return [left, right];    },} : { readonly id: <T>(value: T) => T; readonly pair: <T>(left: T, right: T) => Array<T>; }
 
     id<T>(value: T) {
 >id : <T>(value: T) => T
@@ -15,12 +15,12 @@ export const obj1 = {
 
     },
     pair<T>(left: T, right: T) {
->pair : <T>(left: T, right: T) => T[]
+>pair : <T>(left: T, right: T) => Array<T>
 >left : T
 >right : T
 
         return [left, right];
->[left, right] : T[]
+>[left, right] : Array<T>
 >left : T
 >right : T
 

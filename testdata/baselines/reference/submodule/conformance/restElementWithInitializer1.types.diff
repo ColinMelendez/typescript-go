@@ -1,0 +1,16 @@
+--- old.restElementWithInitializer1.types
++++ new.restElementWithInitializer1.types
+@@= skipped -1, +1 lines =@@
+
+ === restElementWithInitializer1.ts ===
+ declare var a: number[];
+->a : number[]
++>a : Array<number>
+
+ var [...x = a] = a;  // Error, rest element cannot have initializer
+->x : number[]
+->a : number[]
+->a : number[]
++>x : Array<number>
++>a : Array<number>
++>a : Array<number>

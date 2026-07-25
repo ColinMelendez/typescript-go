@@ -1,6 +1,6 @@
 destructuringParameterDeclaration2.ts(7,8): error TS2322: Type 'string' is not assignable to type 'number'.
 destructuringParameterDeclaration2.ts(7,29): error TS1005: ',' expected.
-destructuringParameterDeclaration2.ts(8,4): error TS2345: Argument of type '[number, number, string[][], string]' is not assignable to parameter of type '[number, number, string[][]]'.
+destructuringParameterDeclaration2.ts(8,4): error TS2345: Argument of type '[number, number, Array<Array<string>>, string]' is not assignable to parameter of type '[number, number, Array<Array<string>>]'.
   Source has 4 element(s) but target allows only 3.
 destructuringParameterDeclaration2.ts(16,5): error TS7010: 'b0', which lacks return-type annotation, implicitly has an 'any' return type.
 destructuringParameterDeclaration2.ts(16,8): error TS2371: A parameter initializer is only allowed in a function or constructor implementation.
@@ -80,7 +80,7 @@ destructuringParameterDeclaration2.ts(65,34): error TS7031: Binding element 'num
 !!! error TS1005: ',' expected.
     a0([1, 2, [["world"]], "string"]);  // Error
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!! error TS2345: Argument of type '[number, number, string[][], string]' is not assignable to parameter of type '[number, number, string[][]]'.
+!!! error TS2345: Argument of type '[number, number, Array<Array<string>>, string]' is not assignable to parameter of type '[number, number, Array<Array<string>>]'.
 !!! error TS2345:   Source has 4 element(s) but target allows only 3.
     
     

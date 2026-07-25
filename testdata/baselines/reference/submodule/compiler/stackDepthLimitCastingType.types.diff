@@ -1,0 +1,11 @@
+--- old.stackDepthLimitCastingType.types
++++ new.stackDepthLimitCastingType.types
+@@= skipped -25, +25 lines =@@
+
+         without(...values: TModel[]): TModel[];
+ >without : (...values: TModel[]) => TModel[]
+->values : TModel[]
++>values : Array<TModel>
+     }
+     type CombinedModelConstructorOptions<E, M extends Model<any, E> = Model> = ModelConstructorOptions<M> & E;
+ >CombinedModelConstructorOptions : CombinedModelConstructorOptions<E, M>

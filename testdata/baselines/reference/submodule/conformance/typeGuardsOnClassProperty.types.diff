@@ -1,0 +1,59 @@
+--- old.typeGuardsOnClassProperty.types
++++ new.typeGuardsOnClassProperty.types
+@@= skipped -9, +9 lines =@@
+ >D : D
+
+     data: string | string[];
+->data : string | string[]
++>data : string | Array<string>
+
+     getData() {
+ >getData : () => string
+
+         var data = this.data;
+->data : string | string[]
+->this.data : string | string[]
++>data : string | Array<string>
++>this.data : string | Array<string>
+ >this : this
+->data : string | string[]
++>data : string | Array<string>
+
+         return typeof data === "string" ? data : data.join(" ");
+ >typeof data === "string" ? data : data.join(" ") : string
+ >typeof data === "string" : boolean
+ >typeof data : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->data : string | string[]
++>data : string | Array<string>
+ >"string" : "string"
+ >data : string
+ >data.join(" ") : string
+ >data.join : (separator?: string) => string
+->data : string[]
++>data : Array<string>
+ >join : (separator?: string) => string
+ >" " : " "
+     }
+@@= skipped -32, +32 lines =@@
+ >typeof this.data === "string" ? this.data : this.data.join(" ") : string
+ >typeof this.data === "string" : boolean
+ >typeof this.data : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->this.data : string | string[]
++>this.data : string | Array<string>
+ >this : this
+->data : string | string[]
++>data : string | Array<string>
+ >"string" : "string"
+ >this.data : string
+ >this : this
+ >data : string
+ >this.data.join(" ") : string
+ >this.data.join : (separator?: string) => string
+->this.data : string[]
++>this.data : Array<string>
+ >this : this
+->data : string[]
++>data : Array<string>
+ >join : (separator?: string) => string
+ >" " : " "
+     }

@@ -1,0 +1,20 @@
+--- old.undefinedAssignableToEveryType.errors.txt
++++ new.undefinedAssignableToEveryType.errors.txt
+@@= skipped -10, +10 lines =@@
+ undefinedAssignableToEveryType.ts(24,1): error TS2322: Type 'undefined' is not assignable to type 'C'.
+ undefinedAssignableToEveryType.ts(25,1): error TS2322: Type 'undefined' is not assignable to type 'I'.
+ undefinedAssignableToEveryType.ts(26,1): error TS2322: Type 'undefined' is not assignable to type 'E'.
+-undefinedAssignableToEveryType.ts(27,5): error TS2322: Type 'undefined' is not assignable to type 'number[]'.
++undefinedAssignableToEveryType.ts(27,5): error TS2322: Type 'undefined' is not assignable to type 'Array<number>'.
+ undefinedAssignableToEveryType.ts(28,5): error TS2322: Type 'undefined' is not assignable to type '{ foo: string; }'.
+ undefinedAssignableToEveryType.ts(29,5): error TS2322: Type 'undefined' is not assignable to type '<T>(x: T) => T'.
+ undefinedAssignableToEveryType.ts(30,5): error TS2322: Type 'undefined' is not assignable to type 'Number'.
+@@= skipped -68, +68 lines =@@
+ !!! error TS2322: Type 'undefined' is not assignable to type 'E'.
+     var m: number[] = undefined;
+         ~
+-!!! error TS2322: Type 'undefined' is not assignable to type 'number[]'.
++!!! error TS2322: Type 'undefined' is not assignable to type 'Array<number>'.
+     var n: { foo: string } = undefined;
+         ~
+ !!! error TS2322: Type 'undefined' is not assignable to type '{ foo: string; }'.

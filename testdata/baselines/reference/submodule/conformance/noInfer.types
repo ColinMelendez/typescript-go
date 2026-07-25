@@ -27,7 +27,7 @@ type T06 = NoInfer<{}>;
 // NoInfer<T> is preserved for object types
 
 type T10 = NoInfer<string[]>;
->T10 : NoInfer<string[]>
+>T10 : NoInfer<Array<string>>
 
 type T11 = NoInfer<{ x: string }>;
 >T11 : NoInfer<{ x: string; }>
@@ -42,7 +42,7 @@ type T21<T> = NoInfer<NoInfer<T> & string>;
 >T21 : NoInfer<T> & string
 
 type T22<T> = NoInfer<NoInfer<T> & string[]>;
->T22 : NoInfer<NoInfer<T> & string[]>
+>T22 : NoInfer<NoInfer<T> & Array<string>>
 
 // keyof NoInfer<T> is transformed into NoInfer<keyof T>
 
@@ -67,12 +67,12 @@ declare function foo1<T extends string>(a: T, b: NoInfer<T>): void
 declare function foo2<T extends string>(a: T, b: NoInfer<T>[]): void
 >foo2 : <T extends string>(a: T, b: NoInfer<T>[]) => void
 >a : T
->b : NoInfer<T>[]
+>b : Array<NoInfer<T>>
 
 declare function foo3<T extends string>(a: T, b: NoInfer<T[]>): void
 >foo3 : <T extends string>(a: T, b: NoInfer<T[]>) => void
 >a : T
->b : NoInfer<T[]>
+>b : NoInfer<Array<T>>
 
 declare function foo4<T extends string>(a: T, b: { x: NoInfer<T> }): void
 >foo4 : <T extends string>(a: T, b: { x: NoInfer<T>; }) => void
@@ -102,14 +102,14 @@ foo2('foo', ['bar']) // error
 >foo2('foo', ['bar']) : void
 >foo2 : <T extends string>(a: T, b: NoInfer<T>[]) => void
 >'foo' : "foo"
->['bar'] : "bar"[]
+>['bar'] : Array<"bar">
 >'bar' : "bar"
 
 foo3('foo', ['bar']) // error
 >foo3('foo', ['bar']) : void
 >foo3 : <T extends string>(a: T, b: NoInfer<T[]>) => void
 >'foo' : "foo"
->['bar'] : "bar"[]
+>['bar'] : Array<"bar">
 >'bar' : "bar"
 
 foo4('foo', { x: 'bar' }) // error

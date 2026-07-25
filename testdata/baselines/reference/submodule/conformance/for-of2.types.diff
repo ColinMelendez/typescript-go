@@ -1,0 +1,8 @@
+--- old.for-of2.types
++++ new.for-of2.types
+@@= skipped -5, +5 lines =@@
+
+ for (v of []) { }
+ >v : any
+->[] : never[]
++>[] : Array<never>

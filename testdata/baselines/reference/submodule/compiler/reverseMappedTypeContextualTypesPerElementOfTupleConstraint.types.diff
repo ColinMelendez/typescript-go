@@ -1,0 +1,11 @@
+--- old.reverseMappedTypeContextualTypesPerElementOfTupleConstraint.types
++++ new.reverseMappedTypeContextualTypesPerElementOfTupleConstraint.types
+@@= skipped -24, +24 lines =@@
+
+         ev: Parameters<Extract<TTarget[TTypes[K]], (...args: any[]) => any>>[0]
+ >ev : Parameters<Extract<TTarget[TTypes[K]], (...args: any[]) => any>>[0]
+->args : any[]
++>args : Array<any>
+
+       ) => void;
+     };

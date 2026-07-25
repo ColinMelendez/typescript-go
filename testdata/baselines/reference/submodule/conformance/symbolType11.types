@@ -15,9 +15,9 @@ s && s;
 >s : symbol
 
 s && [];
->s && [] : never[]
+>s && [] : Array<never>
 >s : symbol
->[] : never[]
+>[] : Array<never>
 
 0 && s;
 >0 && s : 0

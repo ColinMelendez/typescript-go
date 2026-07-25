@@ -1,0 +1,21 @@
+--- old.contextualTypeCaching.types
++++ new.contextualTypeCaching.types
+@@= skipped -74, +74 lines =@@
+
+ interface Optimization {
+   minimizer?: (WebpackPluginInstance | WebpackPluginFunction)[];
+->minimizer : (WebpackPluginFunction | WebpackPluginInstance)[] | undefined
++>minimizer : Array<WebpackPluginFunction | WebpackPluginInstance> | undefined
+ }
+ declare const A: <T, P extends keyof T>(
+ >A : <T, P extends keyof T>(obj: T, prop: P, factory: () => T[P]) => void
+@@= skipped -25, +25 lines =@@
+ >A : <T, P extends keyof T>(obj: T, prop: P, factory: () => T[P]) => void
+ >optimization : Optimization
+ >"minimizer" : "minimizer"
+->() => [    {      apply: (compiler) => {},    },  ] : () => { apply: (compiler: MyCompiler) => void; }[]
+->[    {      apply: (compiler) => {},    },  ] : { apply: (compiler: MyCompiler) => void; }[]
++>() => [    {      apply: (compiler) => {},    },  ] : () => Array<{ apply: (compiler: MyCompiler) => void; }>
++>[    {      apply: (compiler) => {},    },  ] : Array<{ apply: (compiler: MyCompiler) => void; }>
+     {
+ >{      apply: (compiler) => {},    } : { apply: (compiler: MyCompiler) => void; }

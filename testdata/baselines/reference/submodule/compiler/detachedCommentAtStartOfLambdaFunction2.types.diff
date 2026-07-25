@@ -1,0 +1,11 @@
+--- old.detachedCommentAtStartOfLambdaFunction2.types
++++ new.detachedCommentAtStartOfLambdaFunction2.types
+@@= skipped -12, +12 lines =@@
+
+         return (...x: string[]) =>
+ >(...x: string[]) =>            /// <summary>Test summary</summary>            /// <param name="message" type="String" />            /// <returns type="Function" />            message + this.name : (...x: string[]) => string
+->x : string[]
++>x : Array<string>
+
+             /// <summary>Test summary</summary>
+             /// <param name="message" type="String" />

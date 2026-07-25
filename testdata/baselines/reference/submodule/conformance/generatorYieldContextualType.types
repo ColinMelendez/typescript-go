@@ -226,7 +226,7 @@ function* showStep<
 >repo : any
 
   Context extends { repos: any[]; title: string; status: any }
->repos : any[]
+>repos : Array<any>
 >title : string
 >status : any
 
@@ -250,7 +250,7 @@ function* showStep<
 
   });
   const selection: StepSelection<typeof step> = yield step;
->selection : QuickPickItem[] | Directive
+>selection : Array<QuickPickItem> | Directive
 >step : QuickPickStep<QuickPickItem>
 >yield step : any
 >step : QuickPickStep<QuickPickItem>
@@ -261,11 +261,11 @@ function* showStep<
 >canPickStepContinue : <T extends QuickPickStep>(_step: T, _state: PartialStepState, _selection: StepItemType<T> | Directive) => _selection is StepItemType<T>
 >step : QuickPickStep<QuickPickItem>
 >state : State
->selection : QuickPickItem[] | Directive
+>selection : Array<QuickPickItem> | Directive
 
     ? selection[0]
 >selection[0] : QuickPickItem
->selection : QuickPickItem[]
+>selection : Array<QuickPickItem>
 >0 : 0
 
     : StepResult.Break;

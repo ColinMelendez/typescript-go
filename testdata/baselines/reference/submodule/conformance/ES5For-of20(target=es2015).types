@@ -3,14 +3,14 @@
 === ES5For-of20.ts ===
 for (let v of []) {
 >v : any
->[] : undefined[]
+>[] : Array<undefined>
 
     let v;
 >v : any
 
     for (let v of [v]) {
 >v : any
->[v] : any[]
+>[v] : Array<any>
 >v : any
 
         const v;

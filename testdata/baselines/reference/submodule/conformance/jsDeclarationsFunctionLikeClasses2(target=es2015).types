@@ -12,11 +12,11 @@ export function Vec(len) {
      * @type {number[]}
      */
     this.storage = new Array(len);
->this.storage = new Array(len) : any[]
+>this.storage = new Array(len) : Array<any>
 >this.storage : any
 >this : any
 >storage : any
->new Array(len) : any[]
+>new Array(len) : Array<any>
 >Array : ArrayConstructor
 >len : number
 }

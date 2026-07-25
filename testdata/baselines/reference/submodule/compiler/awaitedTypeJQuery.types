@@ -29,7 +29,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TR
 >u : UR
 >v : VR
->s : SR[]
+>s : Array<SR>
 
                 BRD, BJD, BND,
                 CRD, CJD, CND,
@@ -39,7 +39,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TJ
 >u : UJ
 >v : VJ
->s : SJ[]
+>s : Array<SJ>
 
                 BRF, BJF, BNF,
                 CRF, CJF, CNF,
@@ -49,7 +49,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TN
 >u : UN
 >v : VN
->s : SN[]
+>s : Array<SN>
 
                 BRP, BJP, BNP,
                 CRP, CJP, CNP,
@@ -75,7 +75,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TJ
 >u : UJ
 >v : VJ
->s : SJ[]
+>s : Array<SJ>
 
                 BRF, BJF, BNF,
                 CRF, CJF, CNF,
@@ -85,7 +85,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TN
 >u : UN
 >v : VN
->s : SN[]
+>s : Array<SN>
 
                 BRP, BJP, BNP,
                 CRP, CJP, CNP,
@@ -110,7 +110,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TN
 >u : UN
 >v : VN
->s : SN[]
+>s : Array<SN>
 
                 BRP, BJP, BNP,
                 CRP, CJP, CNP,
@@ -133,7 +133,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TR
 >u : UR
 >v : VR
->s : SR[]
+>s : Array<SR>
 
                 BRD, BJD, BND,
                 CRD, CJD, CND,
@@ -143,7 +143,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TJ
 >u : UJ
 >v : VJ
->s : SJ[]
+>s : Array<SJ>
 
                 BRF, BJF, BNF,
                 CRF, CJF, CNF,
@@ -168,7 +168,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TJ
 >u : UJ
 >v : VJ
->s : SJ[]
+>s : Array<SJ>
 
                 BRF, BJF, BNF,
                 CRF, CJF, CNF,
@@ -190,7 +190,7 @@ interface PromiseBase<TR, TJ, TN,
 >t : TR
 >u : UR
 >v : VR
->s : SR[]
+>s : Array<SR>
 
                 BRD, BJD, BND,
                 CRD, CJD, CND,

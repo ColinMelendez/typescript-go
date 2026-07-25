@@ -1,4 +1,4 @@
-index.js(15,9): error TS7031: Binding element 'json' implicitly has an 'any[]' type.
+index.js(15,9): error TS7031: Binding element 'json' implicitly has an 'Array<any>' type.
 
 
 ==== index.js (1 errors) ====
@@ -18,7 +18,7 @@ index.js(15,9): error TS7031: Binding element 'json' implicitly has an 'any[]' t
         additionalFiles: {
             json = []
             ~~~~
-!!! error TS7031: Binding element 'json' implicitly has an 'any[]' type.
+!!! error TS7031: Binding element 'json' implicitly has an 'Array<any>' type.
         } = {}
     } = {}) {
         json

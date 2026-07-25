@@ -1,0 +1,40 @@
+--- old.deleteOperatorWithAnyOtherType(alwaysstrict=true).types
++++ new.deleteOperatorWithAnyOtherType(alwaysstrict=true).types
+@@= skipped -9, +9 lines =@@
+ >ANY1 : any
+
+ var ANY2: any[] = ["", ""];
+->ANY2 : any[]
+->["", ""] : string[]
++>ANY2 : Array<any>
++>["", ""] : Array<string>
+ >"" : ""
+ >"" : ""
+
+@@= skipped -61, +61 lines =@@
+ var ResultIsBoolean2 = delete ANY2;
+ >ResultIsBoolean2 : boolean
+ >delete ANY2 : boolean
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsBoolean3 = delete A;
+ >ResultIsBoolean3 : boolean
+@@= skipped -37, +37 lines =@@
+ >ResultIsBoolean9 : boolean
+ >delete ANY2[0] : boolean
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsBoolean10 = delete obj1.x;
+@@= skipped -103, +103 lines =@@
+ delete ANY2[0];
+ >delete ANY2[0] : boolean
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ delete ANY, ANY1;

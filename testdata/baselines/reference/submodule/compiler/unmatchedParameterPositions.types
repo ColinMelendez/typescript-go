@@ -5,7 +5,7 @@
 
 declare let s: (...items: never[]) => never[];
 >s : (...items: never[]) => never[]
->items : never[]
+>items : Array<never>
 
 let t1: () => unknown[] = s;
 >t1 : () => unknown[]

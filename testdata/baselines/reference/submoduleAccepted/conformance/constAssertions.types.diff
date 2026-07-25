@@ -1,6 +1,61 @@
 --- old.constAssertions.types
 +++ new.constAssertions.types
-@@= skipped -382, +382 lines =@@
+@@= skipped -136, +136 lines =@@
+ >3 : 3
+
+ let a5 = [1, 2, 3];
+->a5 : number[]
+->[1, 2, 3] : number[]
++>a5 : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ let a6 = [...a5] as const;
+->a6 : readonly number[]
+->[...a5] as const : readonly number[]
+->[...a5] : readonly number[]
++>a6 : ReadonlyArray<number>
++>[...a5] as const : ReadonlyArray<number>
++>[...a5] : ReadonlyArray<number>
+ >...a5 : number
+->a5 : number[]
++>a5 : Array<number>
+
+ let a7 = [...a6];
+->a7 : number[]
+->[...a6] : number[]
++>a7 : Array<number>
++>[...a6] : Array<number>
+ >...a6 : number
+->a6 : readonly number[]
++>a6 : ReadonlyArray<number>
+
+ let a8 = ['abc', ...a7] as const;
+->a8 : readonly ["abc", ...number[]]
+->['abc', ...a7] as const : readonly ["abc", ...number[]]
+->['abc', ...a7] : readonly ["abc", ...number[]]
++>a8 : readonly ["abc", ...Array<number>]
++>['abc', ...a7] as const : readonly ["abc", ...Array<number>]
++>['abc', ...a7] : readonly ["abc", ...Array<number>]
+ >'abc' : "abc"
+ >...a7 : number
+->a7 : number[]
++>a7 : Array<number>
+
+ let a9 = [...a8];
+->a9 : (number | "abc")[]
+->[...a8] : (number | "abc")[]
++>a9 : Array<number | "abc">
++>[...a8] : Array<number | "abc">
+ >...a8 : number | "abc"
+->a8 : readonly ["abc", ...number[]]
++>a8 : readonly ["abc", ...Array<number>]
+
+ declare let d: { [x: string]: string };
+ >d : { [x: string]: string; }
+@@= skipped -246, +246 lines =@@
  >t2 : "bar"
 
  function ff1(x: 'foo' | 'bar', y: 1 | 2) {

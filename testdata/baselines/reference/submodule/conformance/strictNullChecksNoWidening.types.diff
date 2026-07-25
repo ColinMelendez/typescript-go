@@ -1,0 +1,57 @@
+--- old.strictNullChecksNoWidening.types
++++ new.strictNullChecksNoWidening.types
+@@= skipped -13, +13 lines =@@
+ >0 : 0
+
+ var b1 = [];
+->b1 : any[]
+->[] : never[]
++>b1 : Array<any>
++>[] : Array<never>
+
+ var b2 = [,];
+->b2 : undefined[]
+->[,] : undefined[]
++>b2 : Array<undefined>
++>[,] : Array<undefined>
+
+ var b3 = [undefined];
+->b3 : undefined[]
+->[undefined] : undefined[]
++>b3 : Array<undefined>
++>[undefined] : Array<undefined>
+ >undefined : undefined
+
+ var b4 = [[], []];
+->b4 : never[][]
+->[[], []] : never[][]
+->[] : never[]
+->[] : never[]
++>b4 : Array<Array<never>>
++>[[], []] : Array<Array<never>>
++>[] : Array<never>
++>[] : Array<never>
+
+ var b5 = [[], [,]];
+->b5 : undefined[][]
+->[[], [,]] : undefined[][]
+->[] : never[]
+->[,] : undefined[]
++>b5 : Array<Array<undefined>>
++>[[], [,]] : Array<Array<undefined>>
++>[] : Array<never>
++>[,] : Array<undefined>
+
+ declare function f<T>(x: T): T;
+ >f : <T>(x: T) => T
+@@= skipped -40, +40 lines =@@
+ >undefined : undefined
+
+ var c3 = f([]);
+->c3 : never[]
+->f([]) : never[]
++>c3 : Array<never>
++>f([]) : Array<never>
+ >f : <T>(x: T) => T
+->[] : never[]
++>[] : Array<never>

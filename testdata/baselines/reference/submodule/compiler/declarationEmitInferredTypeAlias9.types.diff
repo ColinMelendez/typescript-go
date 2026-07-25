@@ -1,0 +1,17 @@
+--- old.declarationEmitInferredTypeAlias9.types
++++ new.declarationEmitInferredTypeAlias9.types
+@@= skipped -5, +5 lines =@@
+ >x : Foo<T>
+
+ var x: Foo<number[]>;
+->x : Foo<number[]>
++>x : Foo<Array<number>>
+
+ export function returnSomeGlobalValue() {
+->returnSomeGlobalValue : () => Foo<number[]>
++>returnSomeGlobalValue : () => Foo<Array<number>>
+
+     return x;
+->x : Foo<number[]>
++>x : Foo<Array<number>>
+ }

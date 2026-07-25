@@ -1,0 +1,180 @@
+--- old.unionOfClassCalls.types
++++ new.unionOfClassCalls.types
+@@= skipped -38, +38 lines =@@
+ // from https://github.com/microsoft/TypeScript/issues/36390
+
+ const arr: number[] | string[] = [];  // Works with Array<number | string>
+->arr : string[] | number[]
+->[] : never[]
++>arr : Array<string> | Array<number>
++>[] : Array<never>
+
+ const arr1: number[]  = [];
+->arr1 : number[]
+->[] : never[]
++>arr1 : Array<number>
++>[] : Array<never>
+
+ const arr2:  string[] = [];
+->arr2 : string[]
+->[] : never[]
++>arr2 : Array<string>
++>[] : Array<never>
+
+ arr.map((a: number | string, index: number) => { 
+->arr.map((a: number | string, index: number) => {     return index}) : number[]
+->arr.map : (<U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]) | (<U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[])
+->arr : string[] | number[]
+->map : (<U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]) | (<U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[])
++>arr.map((a: number | string, index: number) => {     return index}) : Array<number>
++>arr.map : (<U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>) | (<U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>)
++>arr : Array<string> | Array<number>
++>map : (<U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>) | (<U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>)
+ >(a: number | string, index: number) => {     return index} : (a: number | string, index: number) => number
+ >a : string | number
+ >index : number
+@@= skipped -27, +27 lines =@@
+
+ // This case still doesn't work because `reduce` has multiple overloads :(
+ arr.reduce((acc: Array<string>, a: number | string, index: number) => { 
+->arr.reduce((acc: Array<string>, a: number | string, index: number) => {     return []}, []) : never[]
+->arr.reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: string[]) => U, initialValue: U): U; } | { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
+->arr : string[] | number[]
+->reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: string[]) => U, initialValue: U): U; } | { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
+->(acc: Array<string>, a: number | string, index: number) => {     return []} : (acc: Array<string>, a: number | string, index: number) => never[]
+->acc : string[]
++>arr.reduce((acc: Array<string>, a: number | string, index: number) => {     return []}, []) : Array<never>
++>arr.reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: Array<string>) => U, initialValue: U): U; } | { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
++>arr : Array<string> | Array<number>
++>reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: Array<string>) => U, initialValue: U): U; } | { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
++>(acc: Array<string>, a: number | string, index: number) => {     return []} : (acc: Array<string>, a: number | string, index: number) => Array<never>
++>acc : Array<string>
+ >a : string | number
+ >index : number
+
+     return []
+->[] : never[]
++>[] : Array<never>
+
+ }, [])
+->[] : never[]
++>[] : Array<never>
+
+ arr.forEach((a: number | string, index: number) => { 
+ >arr.forEach((a: number | string, index: number) => {     return index}) : void
+->arr.forEach : ((callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void) | ((callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void)
+->arr : string[] | number[]
+->forEach : ((callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void) | ((callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void)
++>arr.forEach : ((callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void) | ((callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void)
++>arr : Array<string> | Array<number>
++>forEach : ((callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void) | ((callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void)
+ >(a: number | string, index: number) => {     return index} : (a: number | string, index: number) => number
+ >a : string | number
+ >index : number
+@@= skipped -30, +30 lines =@@
+ })
+
+ arr1.map((a: number, index: number) => { 
+->arr1.map((a: number, index: number) => {     return index}) : number[]
+->arr1.map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
+->arr1 : number[]
+->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
++>arr1.map((a: number, index: number) => {     return index}) : Array<number>
++>arr1.map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
++>arr1 : Array<number>
++>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+ >(a: number, index: number) => {     return index} : (a: number, index: number) => number
+ >a : number
+ >index : number
+@@= skipped -14, +14 lines =@@
+ })
+
+ arr1.reduce((acc: number[], a: number, index: number) => { 
+->arr1.reduce((acc: number[], a: number, index: number) => {     return [a]}, []) : number[]
+->arr1.reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
+->arr1 : number[]
+->reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
+->(acc: number[], a: number, index: number) => {     return [a]} : (acc: number[], a: number, index: number) => number[]
+->acc : number[]
++>arr1.reduce((acc: number[], a: number, index: number) => {     return [a]}, []) : Array<number>
++>arr1.reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
++>arr1 : Array<number>
++>reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
++>(acc: number[], a: number, index: number) => {     return [a]} : (acc: number[], a: number, index: number) => Array<number>
++>acc : Array<number>
+ >a : number
+ >index : number
+
+     return [a]
+->[a] : number[]
++>[a] : Array<number>
+ >a : number
+
+ }, [])
+->[] : never[]
++>[] : Array<never>
+
+ arr1.forEach((a: number, index: number) => { 
+ >arr1.forEach((a: number, index: number) => {     return index}) : void
+->arr1.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->arr1 : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>arr1.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>arr1 : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >(a: number, index: number) => {     return index} : (a: number, index: number) => number
+ >a : number
+ >index : number
+@@= skipped -30, +30 lines =@@
+
+ })
+ arr2.map((a:  string, index: number) => { 
+->arr2.map((a:  string, index: number) => {     return index}) : number[]
+->arr2.map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
+->arr2 : string[]
+->map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
++>arr2.map((a:  string, index: number) => {     return index}) : Array<number>
++>arr2.map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
++>arr2 : Array<string>
++>map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
+ >(a:  string, index: number) => {     return index} : (a: string, index: number) => number
+ >a : string
+ >index : number
+@@= skipped -14, +14 lines =@@
+ })
+
+ arr2.reduce((acc: string[], a: string, index: number) => { 
+->arr2.reduce((acc: string[], a: string, index: number) => {     return []}, []) : never[]
+->arr2.reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: string[]) => U, initialValue: U): U; }
+->arr2 : string[]
+->reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: string[]) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: string[]) => U, initialValue: U): U; }
+->(acc: string[], a: string, index: number) => {     return []} : (acc: string[], a: string, index: number) => never[]
+->acc : string[]
++>arr2.reduce((acc: string[], a: string, index: number) => {     return []}, []) : Array<never>
++>arr2.reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: Array<string>) => U, initialValue: U): U; }
++>arr2 : Array<string>
++>reduce : { (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string): string; (callbackfn: (previousValue: string, currentValue: string, currentIndex: number, array: Array<string>) => string, initialValue: string): string; <U>(callbackfn: (previousValue: U, currentValue: string, currentIndex: number, array: Array<string>) => U, initialValue: U): U; }
++>(acc: string[], a: string, index: number) => {     return []} : (acc: string[], a: string, index: number) => Array<never>
++>acc : Array<string>
+ >a : string
+ >index : number
+
+     return []
+->[] : never[]
++>[] : Array<never>
+
+ }, [])
+->[] : never[]
++>[] : Array<never>
+
+ arr2.forEach((a: string, index: number) => { 
+ >arr2.forEach((a: string, index: number) => {     return index}) : void
+->arr2.forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
+->arr2 : string[]
+->forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
++>arr2.forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
++>arr2 : Array<string>
++>forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
+ >(a: string, index: number) => {     return index} : (a: string, index: number) => number
+ >a : string
+ >index : number

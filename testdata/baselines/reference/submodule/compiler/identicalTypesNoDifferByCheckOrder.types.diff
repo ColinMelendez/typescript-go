@@ -1,0 +1,20 @@
+--- old.identicalTypesNoDifferByCheckOrder.types
++++ new.identicalTypesNoDifferByCheckOrder.types
+@@= skipped -55, +55 lines =@@
+
+ function needsComponentOfSomeProps3(...x: SomePropsClone[]): void {}
+ >needsComponentOfSomeProps3 : (...x: SomePropsClone[]) => void
+->x : SomePropsClone[]
++>x : Array<SomePropsClone>
+
+ const comp3: FunctionComponent2<SomePropsCloneX> = null as any;
+ >comp3 : FunctionComponent2<SomePropsCloneX>
+@@= skipped -15, +15 lines =@@
+
+ function needsComponentOfSomeProps2(...x: SomeProps[]): void {}
+ >needsComponentOfSomeProps2 : (...x: SomeProps[]) => void
+->x : SomeProps[]
++>x : Array<SomeProps>
+
+ const comp2: FunctionComponent1<SomePropsX> = null as any;
+ >comp2 : FunctionComponent1<SomePropsX>

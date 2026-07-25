@@ -68,8 +68,8 @@ const c9 = { x: "abc" };
 >"abc" : "abc"
 
 const c10 = [123];
->c10 : number[]
->[123] : number[]
+>c10 : Array<number>
+>[123] : Array<number>
 >123 : 123
 
 const c11 = "abc" + "def";

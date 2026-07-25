@@ -1,0 +1,27 @@
+--- old.generatorTypeCheck24.types
++++ new.generatorTypeCheck24.types
+@@= skipped -21, +21 lines =@@
+
+     yield * [new Foo];
+ >yield * [new Foo] : undefined
+->[new Foo] : Foo[]
++>[new Foo] : Array<Foo>
+ >new Foo : Foo
+ >Foo : typeof Foo
+
+@@= skipped -16, +16 lines =@@
+
+     yield *[new Bar];
+ >yield *[new Bar] : undefined
+->[new Bar] : Bar[]
++>[new Bar] : Array<Bar>
+ >new Bar : Bar
+ >Bar : typeof Bar
+
+     yield *[new Baz];
+ >yield *[new Baz] : undefined
+->[new Baz] : Baz[]
++>[new Baz] : Array<Baz>
+ >new Baz : Baz
+ >Baz : typeof Baz
+ }

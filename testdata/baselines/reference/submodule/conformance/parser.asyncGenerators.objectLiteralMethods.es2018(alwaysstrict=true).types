@@ -189,7 +189,7 @@ const o16 = {
 
         yield * [];
 >yield * [] : any
->[] : undefined[]
+>[] : Array<undefined>
     }
 };
 === awaitWithValueIsOk.ts ===

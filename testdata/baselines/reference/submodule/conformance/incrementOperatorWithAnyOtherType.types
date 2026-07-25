@@ -10,8 +10,8 @@ var ANY1: any;
 >ANY1 : any
 
 var ANY2: any[] = ["", ""];
->ANY2 : any[]
->["", ""] : string[]
+>ANY2 : Array<any>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -65,7 +65,7 @@ var ResultIsNumber5 = ++ANY2[0];
 >ResultIsNumber5 : number
 >++ANY2[0] : number
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsNumber6 = ++obj.x;
@@ -100,7 +100,7 @@ var ResultIsNumber9 = ANY2[0]++;
 >ResultIsNumber9 : number
 >ANY2[0]++ : number
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsNumber10 = obj.x++;
@@ -143,7 +143,7 @@ var ResultIsNumber13 = M.n++;
 ++ANY2[0];
 >++ANY2[0] : number
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 ++ANY, ++ANY1;
@@ -176,7 +176,7 @@ ANY1++;
 ANY2[0]++;
 >ANY2[0]++ : number
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 ANY++, ANY1++;

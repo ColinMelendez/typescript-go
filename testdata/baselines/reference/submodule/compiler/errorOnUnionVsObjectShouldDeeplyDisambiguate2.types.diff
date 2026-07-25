@@ -1,0 +1,17 @@
+--- old.errorOnUnionVsObjectShouldDeeplyDisambiguate2.types
++++ new.errorOnUnionVsObjectShouldDeeplyDisambiguate2.types
+@@= skipped -39, +39 lines =@@
+ >foo : () => Stuff | Date
+
+   return {
+->{    a() { return [123] },    b: () => "hello",    c: () => "hello",    d: () => "hello",    e: () => "hello",    f: () => "hello",    g: () => "hello",    h: () => "hello",    i: () => "hello",    j: () => "hello",    k: () => 123  } : { a(): number[]; b: () => string; c: () => string; d: () => string; e: () => string; f: () => string; g: () => string; h: () => string; i: () => string; j: () => string; k: () => number; }
++>{    a() { return [123] },    b: () => "hello",    c: () => "hello",    d: () => "hello",    e: () => "hello",    f: () => "hello",    g: () => "hello",    h: () => "hello",    i: () => "hello",    j: () => "hello",    k: () => 123  } : { a(): Array<number>; b: () => string; c: () => string; d: () => string; e: () => string; f: () => string; g: () => string; h: () => string; i: () => string; j: () => string; k: () => number; }
+
+     a() { return [123] },
+->a : () => number[]
+->[123] : number[]
++>a : () => Array<number>
++>[123] : Array<number>
+ >123 : 123
+
+     b: () => "hello",

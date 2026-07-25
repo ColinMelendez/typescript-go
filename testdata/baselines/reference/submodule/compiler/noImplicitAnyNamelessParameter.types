@@ -5,9 +5,9 @@ class C { }
 >C : C
 
 declare var a: { m(...string): void }
->a : { m(...string: any[]): void; }
->m : (...string: any[]) => void
->string : any[]
+>a : { m(...string: Array<any>): void; }
+>m : (...string: Array<any>) => void
+>string : Array<any>
 
 declare var b: (string, C) => void;
 >b : (string: any, C: any) => void

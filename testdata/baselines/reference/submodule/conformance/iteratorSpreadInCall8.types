@@ -5,7 +5,7 @@ class Foo<T> {
 >Foo : Foo<T>
 
     constructor(...s: T[]) { }
->s : T[]
+>s : Array<T>
 }
 
 class SymbolIterator {

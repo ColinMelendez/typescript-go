@@ -258,7 +258,7 @@ type T42 = Split<'foo.bar', ''>;  // ['f', 'o', 'o', '.', 'b', 'a', 'r']
 >T42 : ["f", "o", "o", ".", "b", "a", "r"]
 
 type T43 = Split<any, '.'>;  // string[]
->T43 : string[]
+>T43 : Array<string>
 
 // Inference and property name paths
 
@@ -515,7 +515,7 @@ type TDigits = [0] | [1] | [2] | [3] | [4] | [5] | [6] | [7] | [8] | [9];
 >TDigits : TDigits
 
 type T100000 = [...TDigits, ...TDigits, ...TDigits, ...TDigits, ...TDigits];  // Error
->T100000 : (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]
+>T100000 : Array<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9>
 
 // Repro from #40863
 

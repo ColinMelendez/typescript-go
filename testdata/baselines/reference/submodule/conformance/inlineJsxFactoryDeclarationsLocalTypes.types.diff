@@ -1,0 +1,96 @@
+--- old.inlineJsxFactoryDeclarationsLocalTypes.types
++++ new.inlineJsxFactoryDeclarationsLocalTypes.types
+@@= skipped -14, +14 lines =@@
+ >props : { children?: Element[]; }
+
+                 children?: Element[];
+->children : Element[] | undefined
++>children : Array<Element> | undefined
+
+             };
+         }
+@@= skipped -35, +35 lines =@@
+ >props : { children?: Element[]; }
+
+                 children?: Element[];
+->children : Element[] | undefined
++>children : Array<Element> | undefined
+
+             };
+         }
+@@= skipped -31, +31 lines =@@
+ >props : { x: number; y: number; children?: predom.JSX.Element[]; }
+ >x : number
+ >y : number
+->children : predom.JSX.Element[] | undefined
++>children : Array<predom.JSX.Element> | undefined
+ >predom : any
+ >JSX : any
+ ><p>{props.x} + {props.y} = {props.x + props.y}{...this.props.children}</p> : predom.JSX.Element
+@@= skipped -38, +38 lines =@@
+ >props : { x: number; y: number; children?: predom.JSX.Element[]; }
+ >x : number
+ >y : number
+->children : predom.JSX.Element[] | undefined
++>children : Array<predom.JSX.Element> | undefined
+ >predom : any
+ >JSX : any
+
+@@= skipped -35, +35 lines =@@
+ >y : number
+
+             {...this.props.children}
+->this.props.children : predom.JSX.Element[] | undefined
++>this.props.children : Array<predom.JSX.Element> | undefined
+ >this.props : { x: number; y: number; children?: predom.JSX.Element[]; }
+ >this : this
+ >props : { x: number; y: number; children?: predom.JSX.Element[]; }
+->children : predom.JSX.Element[] | undefined
++>children : Array<predom.JSX.Element> | undefined
+
+         </p>;
+ >p : any
+@@= skipped -65, +65 lines =@@
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+ >x : number
+ >y : number
+->children : dom.JSX.Element[] | undefined
++>children : Array<dom.JSX.Element> | undefined
+ >dom : any
+ >JSX : any
+ ><p>{props.x} + {props.y} = {props.x + props.y}{props.children}</p> : dom.JSX.Element
+@@= skipped -18, +18 lines =@@
+ >props.y : number
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+ >y : number
+->props.children : dom.JSX.Element[] | undefined
++>props.children : Array<dom.JSX.Element> | undefined
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+->children : dom.JSX.Element[] | undefined
++>children : Array<dom.JSX.Element> | undefined
+ >p : any
+
+ class DOMClass implements dom.JSX.Element {
+@@= skipped -18, +18 lines =@@
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+ >x : number
+ >y : number
+->children : dom.JSX.Element[] | undefined
++>children : Array<dom.JSX.Element> | undefined
+ >dom : any
+ >JSX : any
+
+@@= skipped -31, +31 lines =@@
+ >this : this
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+ >y : number
+->this.props.children : dom.JSX.Element[] | undefined
++>this.props.children : Array<dom.JSX.Element> | undefined
+ >this.props : { x: number; y: number; children?: dom.JSX.Element[]; }
+ >this : this
+ >props : { x: number; y: number; children?: dom.JSX.Element[]; }
+->children : dom.JSX.Element[] | undefined
++>children : Array<dom.JSX.Element> | undefined
+ >p : any
+     }
+ }

@@ -1,0 +1,11 @@
+--- old.enumAssignabilityInInheritance.types
++++ new.enumAssignabilityInInheritance.types
+@@= skipped -132, +132 lines =@@
+
+ declare function foo7(x: number[]): number[];
+ >foo7 : { (x: number[]): number[]; (x: E): E; }
+->x : number[]
++>x : Array<number>
+
+ declare function foo7(x: E): E;
+ >foo7 : { (x: number[]): number[]; (x: E): E; }

@@ -1,0 +1,10 @@
+--- old.interfaceExtendsObjectIntersectionErrors.types
++++ new.interfaceExtendsObjectIntersectionErrors.types
+@@= skipped -52, +52 lines =@@
+
+ class C3 extends Constructor<T3>() { length: string }
+ >C3 : C3
+->Constructor<T3>() : number[]
++>Constructor<T3>() : Array<number>
+ >Constructor : <T>() => Constructor<T>
+ >length : string

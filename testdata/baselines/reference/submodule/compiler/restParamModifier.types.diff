@@ -1,0 +1,11 @@
+--- old.restParamModifier.types
++++ new.restParamModifier.types
+@@= skipped -4, +4 lines =@@
+ >C : C
+
+     constructor(...public rest: string[]) {}
+->public : any[]
+->rest : string[]
++>public : Array<any>
++>rest : Array<string>
+ }

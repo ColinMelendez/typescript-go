@@ -1,5 +1,5 @@
 arrayAssignmentTest5.ts(21,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
-arrayAssignmentTest5.ts(23,17): error TS2322: Type 'IToken[]' is not assignable to type 'IStateToken[]'.
+arrayAssignmentTest5.ts(23,17): error TS2322: Type 'Array<IToken>' is not assignable to type 'Array<IStateToken>'.
   Property 'state' is missing in type 'IToken' but required in type 'IStateToken'.
 arrayAssignmentTest5.ts(29,13): error TS2322: Type 'null' is not assignable to type 'ILineTokens'.
 
@@ -31,7 +31,7 @@ arrayAssignmentTest5.ts(29,13): error TS2322: Type 'null' is not assignable to t
                 var lineTokens:ILineTokens= this.tokenize(line, state, true);
                 var tokens:IStateToken[]= lineTokens.tokens;
                     ~~~~~~
-!!! error TS2322: Type 'IToken[]' is not assignable to type 'IStateToken[]'.
+!!! error TS2322: Type 'Array<IToken>' is not assignable to type 'Array<IStateToken>'.
 !!! error TS2322:   Property 'state' is missing in type 'IToken' but required in type 'IStateToken'.
 !!! related TS2728 arrayAssignmentTest5.ts:8:9: 'state' is declared here.
                 if (tokens.length === 0) {

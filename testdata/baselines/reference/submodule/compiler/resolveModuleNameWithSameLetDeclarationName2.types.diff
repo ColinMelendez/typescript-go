@@ -1,0 +1,11 @@
+--- old.resolveModuleNameWithSameLetDeclarationName2.types
++++ new.resolveModuleNameWithSameLetDeclarationName2.types
+@@= skipped -10, +10 lines =@@
+
+         encode(codePoints: number[]): string;
+ >encode : (codePoints: number[]) => string
+->codePoints : number[]
++>codePoints : Array<number>
+     }
+
+     export let ucs2: ucs2;

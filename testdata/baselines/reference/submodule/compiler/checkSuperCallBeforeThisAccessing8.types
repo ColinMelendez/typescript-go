@@ -5,7 +5,7 @@ class Base {
 >Base : Base
 
     constructor(...arg) {
->arg : any[]
+>arg : Array<any>
     }
 }
 class Super extends Base {

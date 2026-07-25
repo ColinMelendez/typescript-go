@@ -3,7 +3,7 @@
 === indexedAccessKeyofNestedSimplifiedSubstituteUnwrapped.ts ===
 type AnyFunction = (...args: any[]) => any;
 >AnyFunction : AnyFunction
->args : any[]
+>args : Array<any>
 
 type Params<T> = Parameters<Extract<T, AnyFunction>>;
 >Params : Params<T>

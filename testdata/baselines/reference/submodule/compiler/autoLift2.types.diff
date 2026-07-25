@@ -1,0 +1,32 @@
+--- old.autoLift2.types
++++ new.autoLift2.types
+@@= skipped -38, +38 lines =@@
+
+      [1, 2].forEach((p) => this.foo);
+ >[1, 2].forEach((p) => this.foo) : void
+->[1, 2].forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->[1, 2] : number[]
++>[1, 2].forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >(p) => this.foo : (p: number) => any
+ >p : number
+ >this.foo : any
+@@= skipped -13, +13 lines =@@
+
+      [1, 2].forEach((p) => this.bar);
+ >[1, 2].forEach((p) => this.bar) : void
+->[1, 2].forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->[1, 2] : number[]
++>[1, 2].forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >(p) => this.bar : (p: number) => any
+ >p : number
+ >this.bar : any

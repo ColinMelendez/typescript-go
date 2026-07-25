@@ -1,0 +1,11 @@
+--- old.generatorTypeCheck19.types
++++ new.generatorTypeCheck19.types
+@@= skipped -17, +17 lines =@@
+
+     yield * [new Bar];
+ >yield * [new Bar] : undefined
+->[new Bar] : Bar[]
++>[new Bar] : Array<Bar>
+ >new Bar : Bar
+ >Bar : typeof Bar
+ }

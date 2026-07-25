@@ -1,0 +1,31 @@
+--- old.sourceMapValidationStatements.types
++++ new.sourceMapValidationStatements.types
+@@= skipped -50, +50 lines =@@
+ >x : number
+     }
+     var a = [
+->a : number[]
+->[        1,        2,        3    ] : number[]
++>a : Array<number>
++>[        1,        2,        3    ] : Array<number>
+
+         1,
+ >1 : 1
+@@= skipped -28, +28 lines =@@
+     };
+     for (var j in a) {
+ >j : string
+->a : number[]
++>a : Array<number>
+
+         obj.z = a[j];
+ >obj.z = a[j] : number
+@@= skipped -8, +8 lines =@@
+ >obj : { z: number; q: string; }
+ >z : number
+ >a[j] : number
+->a : number[]
++>a : Array<number>
+ >j : string
+
+         var v = 10;

@@ -1,0 +1,12 @@
+--- old.functionTypeArgumentArrayAssignment.types
++++ new.functionTypeArgumentArrayAssignment.types
+@@= skipped -15, +15 lines =@@
+ >map : <U>() => void
+
+         var ys: U[] = [];
+->ys : U[]
+->[] : never[]
++>ys : Array<U>
++>[] : Array<never>
+     }
+ }

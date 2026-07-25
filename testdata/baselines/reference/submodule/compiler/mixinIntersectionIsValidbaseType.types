@@ -3,12 +3,12 @@
 === mixinIntersectionIsValidbaseType.ts ===
 export type Constructor<T extends object = object> = new (...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 export interface Initable {
     init(...args: any[]): void;
 >init : (...args: any[]) => void
->args : any[]
+>args : Array<any>
 }
 
 /**

@@ -1,0 +1,14 @@
+--- old.parameterListAsTupleType.types
++++ new.parameterListAsTupleType.types
+@@= skipped -53, +53 lines =@@
+
+     constructor(a: number, ...rest: string[]) {
+ >a : number
+->rest : string[]
++>rest : Array<string>
+     }
+ }
+ type Dcps = ConstructorParameters<typeof D>; // should be [number, ...string[]]
+->Dcps : [a: number, ...rest: string[]]
++>Dcps : [a: number, ...rest: Array<string>]
+ >D : typeof D

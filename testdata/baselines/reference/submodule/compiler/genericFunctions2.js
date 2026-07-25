@@ -17,4 +17,4 @@ var lengths = map(myItems, x => x.length);
 //// [genericFunctions2.d.ts]
 declare function map<T, U>(items: T[], f: (x: T) => U): U[];
 declare var myItems: string[];
-declare var lengths: number[];
+declare var lengths: Array<number>;

@@ -10,7 +10,7 @@ class X {
 
     public getSettings(keys: string[]): any {
 >getSettings : (keys: string[]) => any
->keys : string[]
+>keys : Array<string>
 
         var ret: any;
 >ret : any

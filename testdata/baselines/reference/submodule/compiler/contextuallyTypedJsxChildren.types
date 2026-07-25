@@ -27,7 +27,7 @@ declare namespace DropdownMenu {
   }
   interface PropsWithControls extends BaseProps {
     controls: Control[];
->controls : Control[]
+>controls : Array<Control>
 
     children?: never | undefined;
 >children : undefined

@@ -1,0 +1,11 @@
+--- old.overloadedConstructorFixesInferencesAppropriately.types
++++ new.overloadedConstructorFixesInferencesAppropriately.types
+@@= skipped -31, +31 lines =@@
+ >props : AsyncLoaderProps<TResult>
+
+     constructor(...args: any[]) {}
+->args : any[]
++>args : Array<any>
+ }
+
+ function load(): Box<{ success: true } | ErrorResult> {

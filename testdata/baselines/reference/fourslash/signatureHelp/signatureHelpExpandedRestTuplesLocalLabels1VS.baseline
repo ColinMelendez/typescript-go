@@ -58,24 +58,24 @@
 // logFruitTuple5();
 //                ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple5(**fruit: "apple"**, ...firstInfo_n: AppleInfo[]): void
+// | logFruitTuple5(**fruit: "apple"**, ...firstInfo_n: Array<AppleInfo>): void
 // | ----------------------------------------------------------------------
 // logFruitTuple5("apple", );
 //                         ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple5(fruit: "apple", **...firstInfo_n: AppleInfo[]**): void
+// | logFruitTuple5(fruit: "apple", **...firstInfo_n: Array<AppleInfo>**): void
 // | ----------------------------------------------------------------------
 // 
 // function logFruitTuple6(...[fruit, ...fruitInfo]: FruitAndInfo2) {}
 // logFruitTuple6();
 //                ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple6(**fruit: "apple"**, ...fruitInfo: AppleInfo[]): void
+// | logFruitTuple6(**fruit: "apple"**, ...fruitInfo: Array<AppleInfo>): void
 // | ----------------------------------------------------------------------
 // logFruitTuple6("apple", );
 //                         ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple6(fruit: "apple", **...fruitInfo: AppleInfo[]**): void
+// | logFruitTuple6(fruit: "apple", **...fruitInfo: Array<AppleInfo>**): void
 // | ----------------------------------------------------------------------
 // 
 // type FruitAndInfo3 = ["apple", ...AppleInfo[], number] | ["banana", ...BananaInfo[], number];
@@ -84,85 +84,85 @@
 // logFruitTuple7();
 //                ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple7(**fruit: "apple"**, ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void
+// | logFruitTuple7(**fruit: "apple"**, ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple7("apple", );
 //                         ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple7(fruit: "apple", **...fruitInfoOrNumber_n: AppleInfo[]**, secondFruitInfoOrNumber: number): void
+// | logFruitTuple7(fruit: "apple", **...fruitInfoOrNumber_n: Array<AppleInfo>**, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple7("apple", { color: "red" }, );
 //                                           ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple7(fruit: "apple", ...fruitInfoOrNumber_n: AppleInfo[], **secondFruitInfoOrNumber: number**): void
+// | logFruitTuple7(fruit: "apple", ...fruitInfoOrNumber_n: Array<AppleInfo>, **secondFruitInfoOrNumber: number**): void
 // | ----------------------------------------------------------------------
 // 
 // function logFruitTuple8(...[fruit, , secondFruitInfoOrNumber]: FruitAndInfo3) {}
 // logFruitTuple8();
 //                ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple8(**fruit: "apple"**, ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void
+// | logFruitTuple8(**fruit: "apple"**, ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple8("apple", );
 //                         ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple8(fruit: "apple", **...arg_1: AppleInfo[]**, secondFruitInfoOrNumber: number): void
+// | logFruitTuple8(fruit: "apple", **...arg_1: Array<AppleInfo>**, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple8("apple", { color: "red" }, );
 //                                           ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple8(fruit: "apple", ...arg_1: AppleInfo[], **secondFruitInfoOrNumber: number**): void
+// | logFruitTuple8(fruit: "apple", ...arg_1: Array<AppleInfo>, **secondFruitInfoOrNumber: number**): void
 // | ----------------------------------------------------------------------
 // 
 // function logFruitTuple9(...[...[fruit, fruitInfoOrNumber, secondFruitInfoOrNumber]]: FruitAndInfo3) {}
 // logFruitTuple9();
 //                ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple9(**fruit: "apple"**, ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void
+// | logFruitTuple9(**fruit: "apple"**, ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple9("apple", );
 //                         ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple9(fruit: "apple", **...fruitInfoOrNumber_n: AppleInfo[]**, secondFruitInfoOrNumber: number): void
+// | logFruitTuple9(fruit: "apple", **...fruitInfoOrNumber_n: Array<AppleInfo>**, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple9("apple", { color: "red" }, );
 //                                           ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple9(fruit: "apple", ...fruitInfoOrNumber_n: AppleInfo[], **secondFruitInfoOrNumber: number**): void
+// | logFruitTuple9(fruit: "apple", ...fruitInfoOrNumber_n: Array<AppleInfo>, **secondFruitInfoOrNumber: number**): void
 // | ----------------------------------------------------------------------
 // 
 // function logFruitTuple10(...[fruit, {}, secondFruitInfoOrNumber]: FruitAndInfo3) {}
 // logFruitTuple10();
 //                 ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple10(**fruit: "apple"**, ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void
+// | logFruitTuple10(**fruit: "apple"**, ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple10("apple", );
 //                          ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple10(fruit: "apple", **...arg_1: AppleInfo[]**, secondFruitInfoOrNumber: number): void
+// | logFruitTuple10(fruit: "apple", **...arg_1: Array<AppleInfo>**, secondFruitInfoOrNumber: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple10("apple", { color: "red" }, );
 //                                            ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple10(fruit: "apple", ...arg_1: AppleInfo[], **secondFruitInfoOrNumber: number**): void
+// | logFruitTuple10(fruit: "apple", ...arg_1: Array<AppleInfo>, **secondFruitInfoOrNumber: number**): void
 // | ----------------------------------------------------------------------
 // 
 // function logFruitTuple11(...{}: FruitAndInfo3) {}
 // logFruitTuple11();
 //                 ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple11(**arg_0: "apple"**, ...arg_1: AppleInfo[], arg_2: number): void
+// | logFruitTuple11(**arg_0: "apple"**, ...arg_1: Array<AppleInfo>, arg_2: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple11("apple", );
 //                          ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple11(arg_0: "apple", **...arg_1: AppleInfo[]**, arg_2: number): void
+// | logFruitTuple11(arg_0: "apple", **...arg_1: Array<AppleInfo>**, arg_2: number): void
 // | ----------------------------------------------------------------------
 // logFruitTuple11("apple", { color: "red" }, );
 //                                            ^
 // | ----------------------------------------------------------------------
-// | logFruitTuple11(arg_0: "apple", ...arg_1: AppleInfo[], **arg_2: number**): void
+// | logFruitTuple11(arg_0: "apple", ...arg_1: Array<AppleInfo>, **arg_2: number**): void
 // | ----------------------------------------------------------------------
 // function withPair(...[first, second]: [number, named: string]) {}
 // withPair();
@@ -1519,13 +1519,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple5(fruit: \"apple\", ...firstInfo_n: AppleInfo[]): void",
+          "label": "logFruitTuple5(fruit: \"apple\", ...firstInfo_n: Array<AppleInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...firstInfo_n: AppleInfo[]"
+              "label": "...firstInfo_n: Array<AppleInfo>"
             }
           ],
           "activeParameter": 0,
@@ -1588,17 +1588,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -1621,13 +1626,13 @@
           }
         },
         {
-          "label": "logFruitTuple5(fruit: \"banana\", ...firstInfo_n: BananaInfo[]): void",
+          "label": "logFruitTuple5(fruit: \"banana\", ...firstInfo_n: Array<BananaInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...firstInfo_n: BananaInfo[]"
+              "label": "...firstInfo_n: Array<BananaInfo>"
             }
           ],
           "activeParameter": 0,
@@ -1690,17 +1695,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -1739,13 +1749,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple5(fruit: \"apple\", ...firstInfo_n: AppleInfo[]): void",
+          "label": "logFruitTuple5(fruit: \"apple\", ...firstInfo_n: Array<AppleInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...firstInfo_n: AppleInfo[]"
+              "label": "...firstInfo_n: Array<AppleInfo>"
             }
           ],
           "activeParameter": 1,
@@ -1808,17 +1818,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -1841,13 +1856,13 @@
           }
         },
         {
-          "label": "logFruitTuple5(fruit: \"banana\", ...firstInfo_n: BananaInfo[]): void",
+          "label": "logFruitTuple5(fruit: \"banana\", ...firstInfo_n: Array<BananaInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...firstInfo_n: BananaInfo[]"
+              "label": "...firstInfo_n: Array<BananaInfo>"
             }
           ],
           "activeParameter": 1,
@@ -1910,17 +1925,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -1959,13 +1979,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple6(fruit: \"apple\", ...fruitInfo: AppleInfo[]): void",
+          "label": "logFruitTuple6(fruit: \"apple\", ...fruitInfo: Array<AppleInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfo: AppleInfo[]"
+              "label": "...fruitInfo: Array<AppleInfo>"
             }
           ],
           "activeParameter": 0,
@@ -2028,17 +2048,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2061,13 +2086,13 @@
           }
         },
         {
-          "label": "logFruitTuple6(fruit: \"banana\", ...fruitInfo: BananaInfo[]): void",
+          "label": "logFruitTuple6(fruit: \"banana\", ...fruitInfo: Array<BananaInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfo: BananaInfo[]"
+              "label": "...fruitInfo: Array<BananaInfo>"
             }
           ],
           "activeParameter": 0,
@@ -2130,17 +2155,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2179,13 +2209,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple6(fruit: \"apple\", ...fruitInfo: AppleInfo[]): void",
+          "label": "logFruitTuple6(fruit: \"apple\", ...fruitInfo: Array<AppleInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfo: AppleInfo[]"
+              "label": "...fruitInfo: Array<AppleInfo>"
             }
           ],
           "activeParameter": 1,
@@ -2248,17 +2278,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2281,13 +2316,13 @@
           }
         },
         {
-          "label": "logFruitTuple6(fruit: \"banana\", ...fruitInfo: BananaInfo[]): void",
+          "label": "logFruitTuple6(fruit: \"banana\", ...fruitInfo: Array<BananaInfo>): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfo: BananaInfo[]"
+              "label": "...fruitInfo: Array<BananaInfo>"
             }
           ],
           "activeParameter": 1,
@@ -2350,17 +2385,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2399,13 +2439,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -2471,17 +2511,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2529,13 +2574,13 @@
           }
         },
         {
-          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -2601,17 +2646,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2675,13 +2725,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -2747,17 +2797,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2805,13 +2860,13 @@
           }
         },
         {
-          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -2877,17 +2932,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -2951,13 +3011,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3023,17 +3083,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3081,13 +3146,13 @@
           }
         },
         {
-          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple7(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3153,17 +3218,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3227,13 +3297,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3299,17 +3369,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3357,13 +3432,13 @@
           }
         },
         {
-          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3429,17 +3504,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3503,13 +3583,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3575,17 +3655,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3633,13 +3718,13 @@
           }
         },
         {
-          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3705,17 +3790,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3779,13 +3869,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3851,17 +3941,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -3909,13 +4004,13 @@
           }
         },
         {
-          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple8(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -3981,17 +4076,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4055,13 +4155,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4127,17 +4227,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4185,13 +4290,13 @@
           }
         },
         {
-          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4257,17 +4362,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4331,13 +4441,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4403,17 +4513,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4461,13 +4576,13 @@
           }
         },
         {
-          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4533,17 +4648,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4607,13 +4727,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"apple\", ...fruitInfoOrNumber_n: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: AppleInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4679,17 +4799,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4737,13 +4862,13 @@
           }
         },
         {
-          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple9(fruit: \"banana\", ...fruitInfoOrNumber_n: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...fruitInfoOrNumber_n: BananaInfo[]"
+              "label": "...fruitInfoOrNumber_n: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4809,17 +4934,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -4883,13 +5013,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -4955,17 +5085,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5013,13 +5148,13 @@
           }
         },
         {
-          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -5085,17 +5220,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5159,13 +5299,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -5231,17 +5371,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5289,13 +5434,13 @@
           }
         },
         {
-          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -5361,17 +5506,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5435,13 +5585,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: AppleInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"apple\", ...arg_1: Array<AppleInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -5507,17 +5657,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5565,13 +5720,13 @@
           }
         },
         {
-          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: BananaInfo[], secondFruitInfoOrNumber: number): void",
+          "label": "logFruitTuple10(fruit: \"banana\", ...arg_1: Array<BananaInfo>, secondFruitInfoOrNumber: number): void",
           "parameters": [
             {
               "label": "fruit: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "secondFruitInfoOrNumber: number"
@@ -5637,17 +5792,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5711,13 +5871,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: AppleInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: Array<AppleInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "arg_2: number"
@@ -5783,17 +5943,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5841,13 +6006,13 @@
           }
         },
         {
-          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: BananaInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: Array<BananaInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "arg_2: number"
@@ -5913,17 +6078,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -5987,13 +6157,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: AppleInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: Array<AppleInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "arg_2: number"
@@ -6059,17 +6229,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -6117,13 +6292,13 @@
           }
         },
         {
-          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: BananaInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: Array<BananaInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "arg_2: number"
@@ -6189,17 +6364,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -6263,13 +6443,13 @@
     "item": {
       "signatures": [
         {
-          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: AppleInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"apple\", ...arg_1: Array<AppleInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"apple\""
             },
             {
-              "label": "...arg_1: AppleInfo[]"
+              "label": "...arg_1: Array<AppleInfo>"
             },
             {
               "label": "arg_2: number"
@@ -6335,17 +6515,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "AppleInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
@@ -6393,13 +6578,13 @@
           }
         },
         {
-          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: BananaInfo[], arg_2: number): void",
+          "label": "logFruitTuple11(arg_0: \"banana\", ...arg_1: Array<BananaInfo>, arg_2: number): void",
           "parameters": [
             {
               "label": "arg_0: \"banana\""
             },
             {
-              "label": "...arg_1: BananaInfo[]"
+              "label": "...arg_1: Array<BananaInfo>"
             },
             {
               "label": "arg_2: number"
@@ -6465,17 +6650,22 @@
               },
               {
                 "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "text",
                 "Text": "BananaInfo",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               },
               {

@@ -9,12 +9,12 @@ interface IFoo<T> {
 interface Array<T> extends IFoo<T> { }
 
 var arr: string[] = [];
->arr : string[]
->[] : never[]
+>arr : Array<string>
+>[] : Array<never>
 
 var y: number = arr.x;
 >y : number
 >arr.x : string
->arr : string[]
+>arr : Array<string>
 >x : string
 

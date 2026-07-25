@@ -1,0 +1,9 @@
+--- old.discriminateWithMissingProperty.types
++++ new.discriminateWithMissingProperty.types
+@@= skipped -34, +34 lines =@@
+ >data : Uint8Array<ArrayBuffer>
+ >new Uint8Array([30]) : Uint8Array<ArrayBuffer>
+ >Uint8Array : Uint8ArrayConstructor
+->[30] : number[]
++>[30] : Array<number>
+ >30 : 30

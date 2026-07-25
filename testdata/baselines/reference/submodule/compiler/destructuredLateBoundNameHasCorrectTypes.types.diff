@@ -1,0 +1,11 @@
+--- old.destructuredLateBoundNameHasCorrectTypes.types
++++ new.destructuredLateBoundNameHasCorrectTypes.types
+@@= skipped -5, +5 lines =@@
+ >Symbol : SymbolConstructor
+ >iterator : unique symbol
+ >destructured : () => ArrayIterator<never>
+->[] : never[]
++>[] : Array<never>
+
+ void destructured;
+ >void destructured : undefined

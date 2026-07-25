@@ -1,0 +1,11 @@
+--- old.declarationsForFileShadowingGlobalNoError.types
++++ new.declarationsForFileShadowingGlobalNoError.types
+@@= skipped -16, +16 lines =@@
+
+ type Constructor = new (...args: any[]) => any
+ >Constructor : Constructor
+->args : any[]
++>args : Array<any>
+
+ export const mixin = (Base: Constructor) => {
+ >mixin : (Base: Constructor) => typeof (Anonymous class)

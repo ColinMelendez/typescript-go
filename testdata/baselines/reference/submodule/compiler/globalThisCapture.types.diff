@@ -1,0 +1,17 @@
+--- old.globalThisCapture.types
++++ new.globalThisCapture.types
+@@= skipped -9, +9 lines =@@
+ >window : Window & typeof globalThis
+
+ var parts = [];
+->parts : any[]
+->[] : undefined[]
++>parts : Array<any>
++>[] : Array<undefined>
+
+ // Ensure that the generated code is correct
+ parts[0];
+ >parts[0] : any
+->parts : any[]
++>parts : Array<any>
+ >0 : 0

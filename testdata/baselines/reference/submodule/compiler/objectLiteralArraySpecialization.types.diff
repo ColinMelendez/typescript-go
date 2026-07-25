@@ -1,0 +1,26 @@
+--- old.objectLiteralArraySpecialization.types
++++ new.objectLiteralArraySpecialization.types
+@@= skipped -2, +2 lines =@@
+ === objectLiteralArraySpecialization.ts ===
+ declare function create<T>(initialValues?: T[]): MyArrayWrapper<T>;
+ >create : <T>(initialValues?: T[]) => MyArrayWrapper<T>
+->initialValues : T[]
++>initialValues : Array<T>
+
+ interface MyArrayWrapper<T> {
+ 	constructor(initialItems?: T[]);
+ >constructor : (initialItems?: T[]) => any
+->initialItems : T[]
++>initialItems : Array<T>
+
+ 	doSomething(predicate: (x: T, y: T) => boolean): void;
+ >doSomething : (predicate: (x: T, y: T) => boolean) => void
+@@= skipped -17, +17 lines =@@
+ >thing : MyArrayWrapper<{ name: string; id: number; }>
+ >create([ { name: "bob", id: 24 }, { name: "doug", id: 32 } ]) : MyArrayWrapper<{ name: string; id: number; }>
+ >create : <T>(initialValues?: T[]) => MyArrayWrapper<T>
+->[ { name: "bob", id: 24 }, { name: "doug", id: 32 } ] : { name: string; id: number; }[]
++>[ { name: "bob", id: 24 }, { name: "doug", id: 32 } ] : Array<{ name: string; id: number; }>
+ >{ name: "bob", id: 24 } : { name: string; id: number; }
+ >name : string
+ >"bob" : "bob"

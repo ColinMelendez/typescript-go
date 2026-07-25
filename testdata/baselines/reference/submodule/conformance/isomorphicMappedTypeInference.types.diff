@@ -1,0 +1,46 @@
+--- old.isomorphicMappedTypeInference.types
++++ new.isomorphicMappedTypeInference.types
+@@= skipped -415, +415 lines =@@
+
+ type Func<T> = (...args: any[]) => T;
+ >Func : Func<T>
+->args : any[]
++>args : Array<any>
+
+ type Spec<T> = {
+ >Spec : Spec<T>
+@@= skipped -16, +16 lines =@@
+ declare function applySpec<T>(obj: Spec<T>): (...args: any[]) => T;
+ >applySpec : <T>(obj: Spec<T>) => (...args: any[]) => T
+ >obj : Spec<T>
+->args : any[]
++>args : Array<any>
+
+ // Infers g1: (...args: any[]) => { sum: number, nested: { mul: string } }
+ var g1 = applySpec({
+@@= skipped -159, +159 lines =@@
+ function getProps<T, K extends keyof T>(obj: T, list: K[]): Pick<T, K> {
+ >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
+ >obj : T
+->list : K[]
++>list : Array<K>
+
+     return {} as any;
+ >{} as any : any
+@@= skipped -16, +16 lines =@@
+ >getProps(myAny, ['foo', 'bar']) : Pick<any, "bar" | "foo">
+ >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
+ >myAny : any
+->['foo', 'bar'] : ("bar" | "foo")[]
++>['foo', 'bar'] : Array<"bar" | "foo">
+ >'foo' : "foo"
+ >'bar' : "bar"
+
+@@= skipped -11, +11 lines =@@
+ >getProps(myAny, ['foo', 'bar']) : Pick<any, "bar" | "foo">
+ >getProps : <T, K extends keyof T>(obj: T, list: K[]) => Pick<T, K>
+ >myAny : any
+->['foo', 'bar'] : ("bar" | "foo")[]
++>['foo', 'bar'] : Array<"bar" | "foo">
+ >'foo' : "foo"
+ >'bar' : "bar"

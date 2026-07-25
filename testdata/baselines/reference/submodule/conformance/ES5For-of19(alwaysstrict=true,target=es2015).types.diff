@@ -1,0 +1,20 @@
+--- old.ES5For-of19(alwaysstrict=true,target=es2015).types
++++ new.ES5For-of19(alwaysstrict=true,target=es2015).types
+@@= skipped -2, +2 lines =@@
+ === ES5For-of19.ts ===
+ for (let v of []) {
+ >v : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     v;
+ >v : any
+@@= skipped -10, +10 lines =@@
+
+         for (const v of []) {
+ >v : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+             v;
+ >v : any

@@ -24,6 +24,6 @@ export function test(fn) {
 
 //// [index.d.ts]
 export declare function test(fn: any): {
-    (...args: any[]): void;
+    (...args: Array<any>): void;
     readonly name: string;
 };

@@ -1,0 +1,33 @@
+--- old.arrayDestructuringInSwitch1.types
++++ new.arrayDestructuringInSwitch1.types
+@@= skipped -19, +19 lines =@@
+
+     const [operator, ...operands] = expression;
+ >operator : "and" | "not"
+->operands : Expression[] | [Expression]
++>operands : Array<Expression> | [Expression]
+ >expression : BooleanLogicExpression
+
+     switch (operator) {
+@@= skipped -11, +11 lines =@@
+
+         return operands.every((child) => evaluate(child));
+ >operands.every((child) => evaluate(child)) : boolean
+->operands.every : { <S extends Expression>(predicate: (value: Expression, index: number, array: Expression[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Expression, index: number, array: Expression[]) => unknown, thisArg?: any): boolean; } | { <S extends Expression>(predicate: (value: Expression, index: number, array: Expression[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Expression, index: number, array: Expression[]) => unknown, thisArg?: any): boolean; }
+->operands : Expression[] | [Expression]
+->every : { <S extends Expression>(predicate: (value: Expression, index: number, array: Expression[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Expression, index: number, array: Expression[]) => unknown, thisArg?: any): boolean; } | { <S extends Expression>(predicate: (value: Expression, index: number, array: Expression[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Expression, index: number, array: Expression[]) => unknown, thisArg?: any): boolean; }
++>operands.every : { <S extends Expression>(predicate: (value: Expression, index: number, array: Array<Expression>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Expression, index: number, array: Array<Expression>) => unknown, thisArg?: any): boolean; } | { <S extends Expression>(predicate: (value: Expression, index: number, array: Array<Expression>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Expression, index: number, array: Array<Expression>) => unknown, thisArg?: any): boolean; }
++>operands : Array<Expression> | [Expression]
++>every : { <S extends Expression>(predicate: (value: Expression, index: number, array: Array<Expression>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Expression, index: number, array: Array<Expression>) => unknown, thisArg?: any): boolean; } | { <S extends Expression>(predicate: (value: Expression, index: number, array: Array<Expression>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Expression, index: number, array: Array<Expression>) => unknown, thisArg?: any): boolean; }
+ >(child) => evaluate(child) : (child: Expression) => boolean
+ >child : Expression
+ >evaluate(child) : boolean
+@@= skipped -17, +17 lines =@@
+ >evaluate(operands[0]) : boolean
+ >evaluate : (expression: Expression) => boolean
+ >operands[0] : Expression
+->operands : Expression[] | [Expression]
++>operands : Array<Expression> | [Expression]
+ >0 : 0
+       }
+       default: {

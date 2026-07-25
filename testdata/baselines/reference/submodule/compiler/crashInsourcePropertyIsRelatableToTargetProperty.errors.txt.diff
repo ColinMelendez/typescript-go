@@ -1,0 +1,22 @@
+--- old.crashInsourcePropertyIsRelatableToTargetProperty.errors.txt
++++ new.crashInsourcePropertyIsRelatableToTargetProperty.errors.txt
+@@= skipped -0, +0 lines =@@
+-crashInsourcePropertyIsRelatableToTargetProperty.ts(7,5): error TS2322: Type 'null' is not assignable to type '(x: "hi", items: string[]) => typeof foo'.
+-crashInsourcePropertyIsRelatableToTargetProperty.ts(9,5): error TS2322: Type '(x: "hi", items: string[]) => typeof foo' is not assignable to type 'D'.
++crashInsourcePropertyIsRelatableToTargetProperty.ts(7,5): error TS2322: Type 'null' is not assignable to type '(x: "hi", items: Array<string>) => typeof foo'.
++crashInsourcePropertyIsRelatableToTargetProperty.ts(9,5): error TS2322: Type '(x: "hi", items: Array<string>) => typeof foo' is not assignable to type 'D'.
+
+
+ ==== crashInsourcePropertyIsRelatableToTargetProperty.ts (2 errors) ====
+@@= skipped -10, +10 lines =@@
+     function foo(x: string, items: string[]): typeof foo {
+         return null;
+         ~~~~~~
+-!!! error TS2322: Type 'null' is not assignable to type '(x: "hi", items: string[]) => typeof foo'.
++!!! error TS2322: Type 'null' is not assignable to type '(x: "hi", items: Array<string>) => typeof foo'.
+     }
+     var a: D = foo("hi", []);
+         ~
+-!!! error TS2322: Type '(x: "hi", items: string[]) => typeof foo' is not assignable to type 'D'.
++!!! error TS2322: Type '(x: "hi", items: Array<string>) => typeof foo' is not assignable to type 'D'.
+     

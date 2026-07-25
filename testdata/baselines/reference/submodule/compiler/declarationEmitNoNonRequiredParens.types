@@ -15,8 +15,8 @@ export type TestType = typeof Test;
 >Test : typeof Test
 
 export const bar = null! as TestType[Extract<keyof TestType, string>][] satisfies any;
->bar : Test[]
->null! as TestType[Extract<keyof TestType, string>][] satisfies any : Test[]
->null! as TestType[Extract<keyof TestType, string>][] : Test[]
+>bar : Array<Test>
+>null! as TestType[Extract<keyof TestType, string>][] satisfies any : Array<Test>
+>null! as TestType[Extract<keyof TestType, string>][] : Array<Test>
 >null! : never
 

@@ -1,0 +1,268 @@
+--- old.controlFlowArrayErrors.types
++++ new.controlFlowArrayErrors.types
+@@= skipped -7, +7 lines =@@
+ >f1 : () => void
+
+     let x = [];  // Implicit any[] error in some locations
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     let y = x;   // Implicit any[] error
+->y : any[]
+->x : any[]
++>y : Array<any>
++>x : Array<any>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     let z = x;
+->z : number[]
+->x : number[]
++>z : Array<number>
++>x : Array<number>
+ }
+
+ function f2() {
+@@= skipped -26, +26 lines =@@
+ >x : any
+
+     x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+     let y = x;   // Implicit any[] error
+->y : any[]
+->x : any[]
++>y : Array<any>
++>x : Array<any>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     let z = x;
+->z : number[]
+->x : number[]
++>z : Array<number>
++>x : Array<number>
+ }
+
+ function f3() {
+ >f3 : () => void
+
+     let x = [];  // Implicit any[] error in some locations
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     function g() {
+ >g : () => void
+
+         x;       // Implicit any[] error
+->x : any[]
++>x : Array<any>
+     }
+ }
+
+@@= skipped -49, +49 lines =@@
+ >x : any
+
+     x = [5, "hello"];  // Non-evolving array
+->x = [5, "hello"] : (string | number)[]
++>x = [5, "hello"] : Array<string | number>
+ >x : any
+->[5, "hello"] : (string | number)[]
++>[5, "hello"] : Array<string | number>
+ >5 : 5
+ >"hello" : "hello"
+
+     x.push(true);      // Error
+ >x.push(true) : number
+->x.push : (...items: (string | number)[]) => number
+->x : (string | number)[]
+->push : (...items: (string | number)[]) => number
++>x.push : (...items: Array<string | number>) => number
++>x : Array<string | number>
++>push : (...items: Array<string | number>) => number
+ >true : true
+ }
+
+@@= skipped -18, +18 lines =@@
+ >f5 : () => void
+
+     let x = [5, "hello"];  // Non-evolving array
+->x : (string | number)[]
+->[5, "hello"] : (string | number)[]
++>x : Array<string | number>
++>[5, "hello"] : Array<string | number>
+ >5 : 5
+ >"hello" : "hello"
+
+     x.push(true);          // Error
+ >x.push(true) : number
+->x.push : (...items: (string | number)[]) => number
+->x : (string | number)[]
+->push : (...items: (string | number)[]) => number
++>x.push : (...items: Array<string | number>) => number
++>x : Array<string | number>
++>push : (...items: Array<string | number>) => number
+ >true : true
+ }
+
+@@= skipped -24, +24 lines =@@
+ >cond : () => boolean
+
+         x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+         x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     else {
+         x = [true];  // Non-evolving array
+->x = [true] : boolean[]
++>x = [true] : Array<boolean>
+ >x : any
+->[true] : boolean[]
++>[true] : Array<boolean>
+ >true : true
+     }
+     x;           // boolean[] | (string | number)[]
+->x : (string | number)[] | boolean[]
++>x : Array<string | number> | Array<boolean>
+
+     x.push(99);  // Error
+ >x.push(99) : number
+->x.push : ((...items: (string | number)[]) => number) | ((...items: boolean[]) => number)
+->x : (string | number)[] | boolean[]
+->push : ((...items: (string | number)[]) => number) | ((...items: boolean[]) => number)
++>x.push : ((...items: Array<string | number>) => number) | ((...items: Array<boolean>) => number)
++>x : Array<string | number> | Array<boolean>
++>push : ((...items: Array<string | number>) => number) | ((...items: Array<boolean>) => number)
+ >99 : 99
+ }
+
+@@= skipped -40, +40 lines =@@
+ >f7 : () => void
+
+     let x = [];       // x has evolving array value
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     let y = x;        // y has non-evolving array value
+->y : number[]
+->x : number[]
++>y : Array<number>
++>x : Array<number>
+
+     x.push("hello");  // Ok
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     y.push("hello");  // Error
+ >y.push("hello") : number
+->y.push : (...items: number[]) => number
+->y : number[]
+->push : (...items: number[]) => number
++>y.push : (...items: Array<number>) => number
++>y : Array<number>
++>push : (...items: Array<number>) => number
+ >"hello" : "hello"
+ }
+
+@@= skipped -33, +33 lines =@@
+ >f8 : () => void
+
+     const x = [];  // Implicit any[] error in some locations
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     function g() {
+ >g : () => void
+
+         x;  // Implicit any[] error
+->x : any[]
++>x : Array<any>
+     }
+ }

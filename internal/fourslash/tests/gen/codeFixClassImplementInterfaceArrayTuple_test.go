@@ -32,8 +32,8 @@ class C implements I {[| |]}`
 }
 
 class C implements I {
-    x: number[];
-    y: number[];
+    x: Array<number>;
+    y: Array<number>;
     z: [number, string, I];
 }`,
 		Index: 0,

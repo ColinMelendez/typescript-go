@@ -1,4 +1,4 @@
-variadicTuples3.ts(5,3): error TS2322: Type 'any[]' is not assignable to type '[...T, ...P]'.
+variadicTuples3.ts(5,3): error TS2322: Type 'Array<any>' is not assignable to type '[...T, ...P]'.
   Source provides no match for variadic element at position 0 in target.
 variadicTuples3.ts(10,3): error TS2322: Type '[any, any]' is not assignable to type '[...T, ...P]'.
   Source provides no match for variadic element at position 0 in target.
@@ -13,7 +13,7 @@ variadicTuples3.ts(15,3): error TS2322: Type '[any, any, any]' is not assignable
       let x: any[] = [];
       return x;
       ~~~~~~
-!!! error TS2322: Type 'any[]' is not assignable to type '[...T, ...P]'.
+!!! error TS2322: Type 'Array<any>' is not assignable to type '[...T, ...P]'.
 !!! error TS2322:   Source provides no match for variadic element at position 0 in target.
     }
     

@@ -1,0 +1,11 @@
+--- old.blockScopedBindingUsedBeforeDef.types
++++ new.blockScopedBindingUsedBeforeDef.types
+@@= skipped -4, +4 lines =@@
+ for (let {[a]: a} of [{ }]) continue;
+ >a : any
+ >a : any
+->[{ }] : {}[]
++>[{ }] : Array<{}>
+ >{ } : {}
+
+ // 2:

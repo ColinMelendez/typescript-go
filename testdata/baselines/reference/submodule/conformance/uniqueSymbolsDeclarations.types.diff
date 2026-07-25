@@ -1,0 +1,34 @@
+--- old.uniqueSymbolsDeclarations.types
++++ new.uniqueSymbolsDeclarations.types
+@@= skipped -400, +400 lines =@@
+ >constCall : unique symbol
+
+ const arrayOfConstCall = [constCall];
+->arrayOfConstCall : symbol[]
+->[constCall] : symbol[]
++>arrayOfConstCall : Array<symbol>
++>[constCall] : Array<symbol>
+ >constCall : unique symbol
+
+ // unique symbol widening in expressions
+@@= skipped -61, +61 lines =@@
+
+ // array literal elements
+ [s];
+->[s] : symbol[]
++>[s] : Array<symbol>
+ >s : unique symbol
+
+ [N.s];
+->[N.s] : symbol[]
++>[N.s] : Array<symbol>
+ >N.s : unique symbol
+ >N : typeof N
+ >s : unique symbol
+
+ [N["s"]];
+->[N["s"]] : symbol[]
++>[N["s"]] : Array<symbol>
+ >N["s"] : unique symbol
+ >N : typeof N
+ >"s" : "s"

@@ -1,0 +1,16 @@
+--- old.controlFlowDestructuringLoop.types
++++ new.controlFlowDestructuringLoop.types
+@@= skipped -26, +26 lines =@@
+
+ function foo(things: Val[]): void {
+ >foo : (things: Val[]) => void
+->things : Val[]
++>things : Array<Val>
+
+     for (const thing of things) {
+ >thing : Val
+->things : Val[]
++>things : Array<Val>
+
+         if (isNumVal(thing)) {
+ >isNumVal(thing) : boolean

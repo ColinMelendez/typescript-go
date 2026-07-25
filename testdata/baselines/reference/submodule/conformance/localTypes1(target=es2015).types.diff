@@ -1,0 +1,163 @@
+--- old.localTypes1(target=es2015).types
++++ new.localTypes1(target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === localTypes1.ts ===
+ function f1() {
+->f1 : () => I[]
++>f1 : () => Array<I>
+
+     enum E {
+ >E : E
+@@= skipped -21, +21 lines =@@
+ >x : E
+     }
+     type A = I[];
+->A : I[]
++>A : Array<I>
+
+     let a: A = [new C()];
+->a : I[]
+->[new C()] : C[]
++>a : Array<I>
++>[new C()] : Array<C>
+ >new C() : C
+ >C : typeof C
+
+@@= skipped -12, +12 lines =@@
+ >a[0].x = E.B : E.B
+ >a[0].x : E
+ >a[0] : I
+->a : I[]
++>a : Array<I>
+ >0 : 0
+ >x : E
+ >E.B : E.B
+@@= skipped -8, +8 lines =@@
+ >B : E.B
+
+     return a;
+->a : I[]
++>a : Array<I>
+ }
+
+ function f2() {
+->f2 : () => I[]
++>f2 : () => Array<I>
+
+     function g() {
+->g : () => I[]
++>g : () => Array<I>
+
+         enum E {
+ >E : E
+@@= skipped -28, +28 lines =@@
+ >x : E
+         }
+         type A = I[];
+->A : I[]
++>A : Array<I>
+
+         let a: A = [new C()];
+->a : I[]
+->[new C()] : C[]
++>a : Array<I>
++>[new C()] : Array<C>
+ >new C() : C
+ >C : typeof C
+
+@@= skipped -12, +12 lines =@@
+ >a[0].x = E.B : E.B
+ >a[0].x : E
+ >a[0] : I
+->a : I[]
++>a : Array<I>
+ >0 : 0
+ >x : E
+ >E.B : E.B
+@@= skipped -8, +8 lines =@@
+ >B : E.B
+
+         return a;
+->a : I[]
++>a : Array<I>
+     }
+     return g();
+->g() : I[]
+->g : () => I[]
++>g() : Array<I>
++>g : () => Array<I>
+ }
+
+ function f3(b: boolean) {
+->f3 : (b: boolean) => I[]
++>f3 : (b: boolean) => Array<I>
+ >b : boolean
+
+     if (true) {
+@@= skipped -36, +36 lines =@@
+ >x : E
+             }
+             type A = I[];
+->A : I[]
++>A : Array<I>
+
+             let a: A = [new C()];
+->a : I[]
+->[new C()] : C[]
++>a : Array<I>
++>[new C()] : Array<C>
+ >new C() : C
+ >C : typeof C
+
+@@= skipped -12, +12 lines =@@
+ >a[0].x = E.B : E.B
+ >a[0].x : E
+ >a[0] : I
+->a : I[]
++>a : Array<I>
+ >0 : 0
+ >x : E
+ >E.B : E.B
+@@= skipped -8, +8 lines =@@
+ >B : E.B
+
+             return a;
+->a : I[]
++>a : Array<I>
+         }
+         else {
+             class A {
+@@= skipped -14, +14 lines =@@
+ >x : E
+             }
+             type C = J[];
+->C : J[]
++>C : Array<J>
+
+             let c: C = [new A()];
+->c : J[]
+->[new A()] : A[]
++>c : Array<J>
++>[new A()] : Array<A>
+ >new A() : A
+ >A : typeof A
+
+@@= skipped -12, +12 lines =@@
+ >c[0].x = E.B : E.B
+ >c[0].x : E
+ >c[0] : J
+->c : J[]
++>c : Array<J>
+ >0 : 0
+ >x : E
+ >E.B : E.B
+@@= skipped -8, +8 lines =@@
+ >B : E.B
+
+             return c;
+->c : J[]
++>c : Array<J>
+         }
+     }
+ }

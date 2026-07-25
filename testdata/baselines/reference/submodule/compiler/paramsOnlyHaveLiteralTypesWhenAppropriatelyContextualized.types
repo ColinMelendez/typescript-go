@@ -15,7 +15,7 @@ export function appendToOptionalArray<
   T
 >(
   object: { [x in K]?: Lower<T>[] },
->object : { [x in K]?: Lower<T>[] | undefined; }
+>object : { [x in K]?: Array<Lower<T>> | undefined; }
 
   key: K,
 >key : K
@@ -25,28 +25,28 @@ export function appendToOptionalArray<
 
 ) {
   const array = object[key];
->array : { [x in K]?: Lower<T>[] | undefined; }[K]
->object[key] : { [x in K]?: Lower<T>[] | undefined; }[K]
->object : { [x in K]?: Lower<T>[] | undefined; }
+>array : { [x in K]?: Array<Lower<T>> | undefined; }[K]
+>object[key] : { [x in K]?: Array<Lower<T>> | undefined; }[K]
+>object : { [x in K]?: Array<Lower<T>> | undefined; }
 >key : K
 
   if (array) {
->array : { [x in K]?: Lower<T>[] | undefined; }[K]
+>array : { [x in K]?: Array<Lower<T>> | undefined; }[K]
 
     array.push(value);
 >array.push(value) : number
->array.push : (...items: Lower<T>[]) => number
->array : Lower<T>[]
->push : (...items: Lower<T>[]) => number
+>array.push : (...items: Array<Lower<T>>) => number
+>array : Array<Lower<T>>
+>push : (...items: Array<Lower<T>>) => number
 >value : T
 
   } else {
     object[key] = [value];
->object[key] = [value] : T[]
->object[key] : { [x in K]?: Lower<T>[] | undefined; }[K]
->object : { [x in K]?: Lower<T>[] | undefined; }
+>object[key] = [value] : Array<T>
+>object[key] : { [x in K]?: Array<Lower<T>> | undefined; }[K]
+>object : { [x in K]?: Array<Lower<T>> | undefined; }
 >key : K
->[value] : T[]
+>[value] : Array<T>
 >value : T
   }
 }
@@ -54,8 +54,8 @@ export function appendToOptionalArray<
 // e.g.
 const foo: {x?: number[]; y?: string[]; } = {};
 >foo : { x?: number[]; y?: string[]; }
->x : number[] | undefined
->y : string[] | undefined
+>x : Array<number> | undefined
+>y : Array<string> | undefined
 >{} : {}
 
 appendToOptionalArray(foo, 'x', 123);   // ok

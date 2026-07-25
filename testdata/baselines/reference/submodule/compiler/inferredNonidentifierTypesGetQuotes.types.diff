@@ -1,0 +1,23 @@
+--- old.inferredNonidentifierTypesGetQuotes.types
++++ new.inferredNonidentifierTypesGetQuotes.types
+@@= skipped -1, +1 lines =@@
+
+ === inferredNonidentifierTypesGetQuotes.ts ===
+ var x = [{ "a-b": "string" }, {}];
+->x : ({ "a-b": string; } | { "a-b"?: undefined; })[]
+->[{ "a-b": "string" }, {}] : ({ "a-b": string; } | {})[]
++>x : Array<{ "a-b": string; } | { "a-b"?: undefined; }>
++>[{ "a-b": "string" }, {}] : Array<{ "a-b": string; } | {}>
+ >{ "a-b": "string" } : { "a-b": string; }
+ >"a-b" : string
+ >"string" : "string"
+ >{} : {}
+
+ var y = [{ ["a-b"]: "string" }, {}];
+->y : ({ "a-b": string; } | { "a-b"?: undefined; })[]
+->[{ ["a-b"]: "string" }, {}] : ({ "a-b": string; } | {})[]
++>y : Array<{ "a-b": string; } | { "a-b"?: undefined; }>
++>[{ ["a-b"]: "string" }, {}] : Array<{ "a-b": string; } | {}>
+ >{ ["a-b"]: "string" } : { "a-b": string; }
+ >["a-b"] : string
+ >"a-b" : "a-b"

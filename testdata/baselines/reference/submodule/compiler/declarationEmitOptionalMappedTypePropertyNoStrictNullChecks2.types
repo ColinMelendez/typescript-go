@@ -17,7 +17,7 @@ export declare function createApi<Definitions>(_: { endpoints: Definitions }): {
 >status : "uninitialized"
 
     originalArgs?: any[];
->originalArgs : any[]
+>originalArgs : Array<any>
 
   }>;
 };

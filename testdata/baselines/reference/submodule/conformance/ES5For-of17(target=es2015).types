@@ -3,14 +3,14 @@
 === ES5For-of17.ts ===
 for (let v of []) {
 >v : never
->[] : never[]
+>[] : Array<never>
 
     v;
 >v : never
 
     for (let v of [v]) {
 >v : any
->[v] : any[]
+>[v] : Array<any>
 >v : any
 
         var x = v;

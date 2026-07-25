@@ -5,87 +5,87 @@
 
 export function main(a: string[] | undefined) {
 >main : (a: string[] | undefined) => void
->a : string[] | undefined
+>a : Array<string> | undefined
 
   const z = a ? { a } : { b: ["there"] };
->z : { a: string[]; b?: undefined; } | { a?: undefined; b: string[]; }
->a ? { a } : { b: ["there"] } : { a: string[]; } | { b: string[]; }
->a : string[] | undefined
->{ a } : { a: string[]; }
->a : string[]
->{ b: ["there"] } : { b: string[]; }
->b : string[]
->["there"] : string[]
+>z : { a: Array<string>; b?: undefined; } | { a?: undefined; b: Array<string>; }
+>a ? { a } : { b: ["there"] } : { a: Array<string>; } | { b: Array<string>; }
+>a : Array<string> | undefined
+>{ a } : { a: Array<string>; }
+>a : Array<string>
+>{ b: ["there"] } : { b: Array<string>; }
+>b : Array<string>
+>["there"] : Array<string>
 >"there" : "there"
 
   z.a //
 >z.a //    ? z.a.toString()    : z.b.toString() : string
->z.a : string[] | undefined
->z : { a: string[]; b?: undefined; } | { a?: undefined; b: string[]; }
->a : string[] | undefined
+>z.a : Array<string> | undefined
+>z : { a: Array<string>; b?: undefined; } | { a?: undefined; b: Array<string>; }
+>a : Array<string> | undefined
 
     ? z.a.toString()
 >z.a.toString() : string
 >z.a.toString : () => string
->z.a : string[]
->z : { a: string[]; b?: undefined; }
->a : string[]
+>z.a : Array<string>
+>z : { a: Array<string>; b?: undefined; }
+>a : Array<string>
 >toString : () => string
 
     : z.b.toString();
 >z.b.toString() : string
 >z.b.toString : () => string
->z.b : string[]
->z : { a?: undefined; b: string[]; }
->b : string[]
+>z.b : Array<string>
+>z : { a?: undefined; b: Array<string>; }
+>b : Array<string>
 >toString : () => string
 
   const zWorkAround:
 >zWorkAround : { a: string[]; b?: undefined; } | { b: string[]; a?: undefined; }
 
     | { a: string[]; b?: undefined }
->a : string[]
+>a : Array<string>
 >b : undefined
 
     | { b: string[]; a?: undefined } = z;
->b : string[]
+>b : Array<string>
 >a : undefined
->z : { a: string[]; b?: undefined; } | { a?: undefined; b: string[]; }
+>z : { a: Array<string>; b?: undefined; } | { a?: undefined; b: Array<string>; }
 
   zWorkAround.a ? zWorkAround.a.toString() : zWorkAround.b.toString();
 >zWorkAround.a ? zWorkAround.a.toString() : zWorkAround.b.toString() : string
->zWorkAround.a : string[] | undefined
+>zWorkAround.a : Array<string> | undefined
 >zWorkAround : { a: string[]; b?: undefined; } | { b: string[]; a?: undefined; }
->a : string[] | undefined
+>a : Array<string> | undefined
 >zWorkAround.a.toString() : string
 >zWorkAround.a.toString : () => string
->zWorkAround.a : string[]
+>zWorkAround.a : Array<string>
 >zWorkAround : { a: string[]; b?: undefined; }
->a : string[]
+>a : Array<string>
 >toString : () => string
 >zWorkAround.b.toString() : string
 >zWorkAround.b.toString : () => string
->zWorkAround.b : string[]
+>zWorkAround.b : Array<string>
 >zWorkAround : { b: string[]; a?: undefined; }
->b : string[]
+>b : Array<string>
 >toString : () => string
 
   "a" in z ? z.a.toString() : z.b.toString();
 >"a" in z ? z.a.toString() : z.b.toString() : string
 >"a" in z : boolean
 >"a" : "a"
->z : { a: string[]; b?: undefined; } | { a?: undefined; b: string[]; }
+>z : { a: Array<string>; b?: undefined; } | { a?: undefined; b: Array<string>; }
 >z.a.toString() : string
 >z.a.toString : () => string
->z.a : string[] | undefined
->z : { a: string[]; b?: undefined; } | { a?: undefined; b: string[]; }
->a : string[] | undefined
+>z.a : Array<string> | undefined
+>z : { a: Array<string>; b?: undefined; } | { a?: undefined; b: Array<string>; }
+>a : Array<string> | undefined
 >toString : () => string
 >z.b.toString() : string
 >z.b.toString : () => string
->z.b : string[]
->z : { a?: undefined; b: string[]; }
->b : string[]
+>z.b : Array<string>
+>z : { a?: undefined; b: Array<string>; }
+>b : Array<string>
 >toString : () => string
 }
 

@@ -1,0 +1,23 @@
+--- old.assignmentCompatability_checking-apply-member-off-of-function-interface.types
++++ new.assignmentCompatability_checking-apply-member-off-of-function-interface.types
+@@= skipped -18, +18 lines =@@
+ >'' : ""
+
+ x = [''];
+->x = [''] : string[]
++>x = [''] : Array<string>
+ >x : Applicable
+->[''] : string[]
++>[''] : Array<string>
+ >'' : ""
+
+ x = 4;
+@@= skipped -37, +37 lines =@@
+ fn(['']);
+ >fn(['']) : void
+ >fn : (c: Applicable) => void
+->[''] : string[]
++>[''] : Array<string>
+ >'' : ""
+
+ fn(4);

@@ -51,10 +51,10 @@ async function myAllSettled<T extends readonly unknown[]>(fn: () => T) {
 
   return promises.map((result) =>
 >promises.map((result) =>    result.status === "fulfilled"      ? [result.value, undefined]      : [undefined, new Error(String(result.reason))],  ) as { [K in keyof T]: [Awaited<T[K]>, undefined] | [undefined, Error] } : { [K in keyof T]: [undefined, Error] | [Awaited<T[K]>, undefined]; }
->promises.map((result) =>    result.status === "fulfilled"      ? [result.value, undefined]      : [undefined, new Error(String(result.reason))],  ) : ([unknown, undefined] | [undefined, Error])[]
->promises.map : <U>(callbackfn: (value: PromiseSettledResult<unknown>, index: number, array: PromiseSettledResult<unknown>[]) => U, thisArg?: any) => U[]
+>promises.map((result) =>    result.status === "fulfilled"      ? [result.value, undefined]      : [undefined, new Error(String(result.reason))],  ) : Array<[unknown, undefined] | [undefined, Error]>
+>promises.map : <U>(callbackfn: (value: PromiseSettledResult<unknown>, index: number, array: Array<PromiseSettledResult<unknown>>) => U, thisArg?: any) => Array<U>
 >promises : { -readonly [P in keyof T]: PromiseSettledResult<Awaited<T[P]>>; }
->map : <U>(callbackfn: (value: PromiseSettledResult<unknown>, index: number, array: PromiseSettledResult<unknown>[]) => U, thisArg?: any) => U[]
+>map : <U>(callbackfn: (value: PromiseSettledResult<unknown>, index: number, array: Array<PromiseSettledResult<unknown>>) => U, thisArg?: any) => Array<U>
 >(result) =>    result.status === "fulfilled"      ? [result.value, undefined]      : [undefined, new Error(String(result.reason))] : (result: PromiseSettledResult<unknown>) => [unknown, undefined] | [undefined, Error]
 >result : PromiseSettledResult<unknown>
 

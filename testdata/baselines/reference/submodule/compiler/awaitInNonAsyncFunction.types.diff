@@ -1,0 +1,74 @@
+--- old.awaitInNonAsyncFunction.types
++++ new.awaitInNonAsyncFunction.types
+@@= skipped -8, +8 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+   return await p;
+ >await p : number
+@@= skipped -13, +13 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+   return await p;
+ >await p : number
+@@= skipped -14, +14 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+   await p;
+ >await p : number
+@@= skipped -14, +14 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+   return await p;
+ >await p : number
+@@= skipped -14, +14 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+   yield await p;
+ >yield await p : any
+@@= skipped -16, +16 lines =@@
+
+     for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     await p;
+ >await p : number
+@@= skipped -12, +12 lines =@@
+
+   for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     await p;
+ >await p : number
+@@= skipped -10, +10 lines =@@
+
+ for await (const _ of []);
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ await null;
+ >await null : null

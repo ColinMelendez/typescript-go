@@ -1,0 +1,10 @@
+--- old.predicateSemantics.types
++++ new.predicateSemantics.types
+@@= skipped -328, +328 lines =@@
+ >strings : TemplateStringsArray
+
+   ...values: number[]
+->values : number[]
++>values : Array<number>
+
+ ): T | null;

@@ -26,5 +26,5 @@ declare namespace ng {
     interface IQService {
         all(promises: IPromise < any > []): IPromise<
 >all : (promises: IPromise<any>[]) => IPromise
->promises : IPromise<any>[]
+>promises : Array<IPromise<any>>
 

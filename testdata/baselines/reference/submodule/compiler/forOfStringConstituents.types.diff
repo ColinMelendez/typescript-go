@@ -1,0 +1,25 @@
+--- old.forOfStringConstituents.types
++++ new.forOfStringConstituents.types
+@@= skipped -2, +2 lines =@@
+ === forOfStringConstituents.ts ===
+ interface A { x: 0; y: C[]; }
+ >x : 0
+->y : C[]
++>y : Array<C>
+
+ interface B { x: 1; y: CD[]; }
+ >x : 1
+->y : CD[]
++>y : Array<CD>
+
+ interface C { x: 2; }
+ >x : 2
+@@= skipped -24, +24 lines =@@
+
+ for (y of x.y);
+ >y : CD
+->x.y : C[] | CD[]
++>x.y : Array<C> | Array<CD>
+ >x : AB
+->y : C[] | CD[]
++>y : Array<C> | Array<CD>

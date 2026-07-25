@@ -11,7 +11,7 @@ async function fn(
 >b : Promise<number>
 
     c: Promise<string[]>,
->c : Promise<string[]>
+>c : Promise<Array<string>>
 
     d: Promise<{ prop: string }>,
 >d : Promise<{ prop: string; }>
@@ -62,20 +62,20 @@ async function fn(
 >b : Promise<number>
 
     [...c];
->[...c] : any[]
+>[...c] : Array<any>
 >...c : any
->c : Promise<string[]>
+>c : Promise<Array<string>>
 
     for (const s of c) {
 >s : any
->c : Promise<string[]>
+>c : Promise<Array<string>>
 
         fn(b, b, c, d, e, f, g);
 >fn(b, b, c, d, e, f, g) : Promise<void>
 >fn : (a: number, b: Promise<number>, c: Promise<string[]>, d: Promise<{ prop: string; }>, e: Promise<() => void>, f: Promise<() => void> | (() => void), g: Promise<{ new (): any; }>) => Promise<void>
 >b : Promise<number>
 >b : Promise<number>
->c : Promise<string[]>
+>c : Promise<Array<string>>
 >d : Promise<{ prop: string; }>
 >e : Promise<() => void>
 >f : Promise<() => void> | (() => void)
@@ -88,7 +88,7 @@ async function fn(
     }
     for await (const s of c) {}
 >s : any
->c : Promise<string[]>
+>c : Promise<Array<string>>
 
     e();
 >e() : any

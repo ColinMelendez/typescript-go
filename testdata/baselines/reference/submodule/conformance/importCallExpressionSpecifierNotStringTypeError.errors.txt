@@ -1,7 +1,7 @@
 importCallExpressionSpecifierNotStringTypeError.ts(5,8): error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'boolean'.
 importCallExpressionSpecifierNotStringTypeError.ts(6,17): error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'boolean'.
 importCallExpressionSpecifierNotStringTypeError.ts(7,19): error TS7036: Dynamic import's specifier must be of type 'string', but here has type '"defaulPath" | boolean'.
-importCallExpressionSpecifierNotStringTypeError.ts(12,17): error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'string[]'.
+importCallExpressionSpecifierNotStringTypeError.ts(12,17): error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'Array<string>'.
 importCallExpressionSpecifierNotStringTypeError.ts(13,17): error TS7036: Dynamic import's specifier must be of type 'string', but here has type '() => string'.
 
 
@@ -25,7 +25,7 @@ importCallExpressionSpecifierNotStringTypeError.ts(13,17): error TS7036: Dynamic
     
     var p3 = import(["path1", "path2"]);
                     ~~~~~~~~~~~~~~~~~~
-!!! error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'string[]'.
+!!! error TS7036: Dynamic import's specifier must be of type 'string', but here has type 'Array<string>'.
     var p4 = import(()=>"PathToModule");
                     ~~~~~~~~~~~~~~~~~~
 !!! error TS7036: Dynamic import's specifier must be of type 'string', but here has type '() => string'.

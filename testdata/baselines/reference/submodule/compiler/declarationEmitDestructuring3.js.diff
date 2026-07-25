@@ -1,0 +1,9 @@
+--- old.declarationEmitDestructuring3.js
++++ new.declarationEmitDestructuring3.js
+@@= skipped -12, +12 lines =@@
+
+
+ //// [declarationEmitDestructuring3.d.ts]
+-declare function bar([x, z, ...w]: [any, any, ...any[]]): void;
++declare function bar([x, z, ...w]: [any, any, ...Array<any>]): void;
+ declare function foo([x, ...y]?: [number, string, boolean]): void;

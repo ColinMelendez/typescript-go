@@ -1,0 +1,48 @@
+--- old.generatorAssignability.types
++++ new.generatorAssignability.types
+@@= skipped -23, +23 lines =@@
+
+ // spread iterable
+ [...g1]; // error
+->[...g1] : number[]
++>[...g1] : Array<number>
+ >...g1 : number
+ >g1 : Generator<number, void, string>
+
+ [...g2]; // ok
+->[...g2] : number[]
++>[...g2] : Array<number>
+ >...g2 : number
+ >g2 : Generator<number, void, undefined>
+
+@@= skipped -20, +20 lines =@@
+
+ // binding rest pattern over iterable
+ let [...y1] = g1; // error
+->y1 : number[]
++>y1 : Array<number>
+ >g1 : Generator<number, void, string>
+
+ let [...y2] = g2; // ok
+->y2 : number[]
++>y2 : Array<number>
+ >g2 : Generator<number, void, undefined>
+
+ // assignment pattern over iterable
+@@= skipped -23, +23 lines =@@
+ // assignment rest pattern over iterable
+ [..._] = g1; // error
+ >[..._] = g1 : Generator<number, void, string>
+->[..._] : any[]
++>[..._] : Array<any>
+ >..._ : any
+ >_ : any
+ >g1 : Generator<number, void, string>
+
+ [..._] = g2; // ok
+ >[..._] = g2 : Generator<number, void, undefined>
+->[..._] : any[]
++>[..._] : Array<any>
+ >..._ : any
+ >_ : any
+ >g2 : Generator<number, void, undefined>

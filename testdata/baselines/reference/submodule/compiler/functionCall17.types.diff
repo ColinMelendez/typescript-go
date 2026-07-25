@@ -1,0 +1,11 @@
+--- old.functionCall17.types
++++ new.functionCall17.types
+@@= skipped -5, +5 lines =@@
+ >a : string
+ >b : string | undefined
+ >c : number | undefined
+->d : number[]
++>d : Array<number>
+
+ foo('foo', 1); 
+ >foo('foo', 1) : void

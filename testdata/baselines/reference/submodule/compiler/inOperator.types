@@ -2,17 +2,17 @@
 
 === inOperator.ts ===
 var a=[];
->a : any[]
->[] : undefined[]
+>a : Array<any>
+>[] : Array<undefined>
 
 for (var x in a) {}
 >x : string
->a : any[]
+>a : Array<any>
 
 if (3 in a) {}
 >3 in a : boolean
 >3 : 3
->a : any[]
+>a : Array<any>
 
 var b = '' in 0;
 >b : boolean

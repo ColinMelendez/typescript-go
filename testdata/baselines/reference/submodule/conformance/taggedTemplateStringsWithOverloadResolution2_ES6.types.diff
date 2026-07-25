@@ -1,0 +1,48 @@
+--- old.taggedTemplateStringsWithOverloadResolution2_ES6.types
++++ new.taggedTemplateStringsWithOverloadResolution2_ES6.types
+@@= skipped -7, +7 lines =@@
+
+ function foo1(strs: string[], x: number): number;
+ >foo1 : { (strs: TemplateStringsArray, x: number): string; (strs: string[], x: number): number; }
+->strs : string[]
++>strs : Array<string>
+ >x : number
+
+ function foo1(...stuff: any[]): any {
+ >foo1 : { (strs: TemplateStringsArray, x: number): string; (strs: string[], x: number): number; }
+->stuff : any[]
++>stuff : Array<any>
+
+     return undefined;
+ >undefined : undefined
+@@= skipped -22, +22 lines =@@
+ >b : number
+ >foo1([], 1) : number
+ >foo1 : { (strs: TemplateStringsArray, x: number): string; (strs: string[], x: number): number; }
+->[] : never[]
++>[] : Array<never>
+ >1 : 1
+
+ function foo2(strs: string[], x: number): number;
+ >foo2 : { (strs: string[], x: number): number; (strs: TemplateStringsArray, x: number): string; }
+->strs : string[]
++>strs : Array<string>
+ >x : number
+
+ function foo2(strs: TemplateStringsArray, x: number): string;
+@@= skipped -15, +15 lines =@@
+
+ function foo2(...stuff: any[]): any {
+ >foo2 : { (strs: string[], x: number): number; (strs: TemplateStringsArray, x: number): string; }
+->stuff : any[]
++>stuff : Array<any>
+
+     return undefined;
+ >undefined : undefined
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >foo2([], 1) : number
+ >foo2 : { (strs: string[], x: number): number; (strs: TemplateStringsArray, x: number): string; }
+->[] : never[]
++>[] : Array<never>
+ >1 : 1

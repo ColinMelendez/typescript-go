@@ -1,0 +1,11 @@
+--- old.checkSuperCallBeforeThisAccessing5.types
++++ new.checkSuperCallBeforeThisAccessing5.types
+@@= skipped -2, +2 lines =@@
+ === checkSuperCallBeforeThisAccessing5.ts ===
+ class Based { constructor(...arg) { } }
+ >Based : Based
+->arg : any[]
++>arg : Array<any>
+
+ class Derived extends Based {
+ >Derived : Derived

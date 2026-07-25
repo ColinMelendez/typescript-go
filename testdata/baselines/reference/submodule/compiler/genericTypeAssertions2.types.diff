@@ -1,0 +1,8 @@
+--- old.genericTypeAssertions2.types
++++ new.genericTypeAssertions2.types
+@@= skipped -48, +48 lines =@@
+ var r5: A<number> = <A<number>>[]; // error
+ >r5 : A<number>
+ ><A<number>>[] : A<number>
+->[] : never[]
++>[] : Array<never>

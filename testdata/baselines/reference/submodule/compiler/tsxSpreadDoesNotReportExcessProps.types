@@ -11,7 +11,7 @@ class MyComponent extends React.Component<{dataSource: number[], onClick?: any},
 >React.Component : React.Component<{ dataSource: number[]; onClick?: any; }, {}, any>
 >React : typeof React
 >Component : typeof React.Component
->dataSource : number[]
+>dataSource : Array<number>
 >onClick : any
 
     render() {

@@ -1,0 +1,21 @@
+--- old.restElementWithAssignmentPattern2.types
++++ new.restElementWithAssignmentPattern2.types
+@@= skipped -5, +5 lines =@@
+ >b : number
+
+ [...{ 0: a = "", b }] = ["", 1];
+->[...{ 0: a = "", b }] = ["", 1] : (string | number)[]
+->[...{ 0: a = "", b }] : unknown[]
++>[...{ 0: a = "", b }] = ["", 1] : Array<string | number>
++>[...{ 0: a = "", b }] : Array<unknown>
+ >...{ 0: a = "", b } : any
+ >{ 0: a = "", b } : { 0?: string; b: number; }
+ >0 : string
+@@= skipped -9, +9 lines =@@
+ >a : string
+ >"" : ""
+ >b : number
+->["", 1] : (string | number)[]
++>["", 1] : Array<string | number>
+ >"" : ""
+ >1 : 1

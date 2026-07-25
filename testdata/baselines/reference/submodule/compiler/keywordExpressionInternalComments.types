@@ -2,7 +2,7 @@
 
 === keywordExpressionInternalComments.ts ===
 /*1*/ new /*2*/ Array /*3*/;
->new /*2*/ Array : any[]
+>new /*2*/ Array : Array<any>
 >Array : ArrayConstructor
 
 /*1*/ typeof /*2*/ Array /*3*/;

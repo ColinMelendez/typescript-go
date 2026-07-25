@@ -1,0 +1,44 @@
+--- old.chainedSpecializationToObjectTypeLiteral.types
++++ new.chainedSpecializationToObjectTypeLiteral.types
+@@= skipped -21, +21 lines =@@
+ >keySelector : (value: T) => K
+ >value : T
+ >key : K
+->items : T[]
++>items : Array<T>
+ }
+
+ var s: Sequence<string>;
+ >s : Sequence<string>
+
+ var s2 = s.groupBy(s => s.length);
+->s2 : Sequence<{ key: number; items: string[]; }>
+->s.groupBy(s => s.length) : Sequence<{ key: number; items: string[]; }>
+->s.groupBy : <K>(keySelector: (value: string) => K) => Sequence<{ key: K; items: string[]; }>
++>s2 : Sequence<{ key: number; items: Array<string>; }>
++>s.groupBy(s => s.length) : Sequence<{ key: number; items: Array<string>; }>
++>s.groupBy : <K>(keySelector: (value: string) => K) => Sequence<{ key: K; items: Array<string>; }>
+ >s : Sequence<string>
+->groupBy : <K>(keySelector: (value: string) => K) => Sequence<{ key: K; items: string[]; }>
++>groupBy : <K>(keySelector: (value: string) => K) => Sequence<{ key: K; items: Array<string>; }>
+ >s => s.length : (s: string) => number
+ >s : string
+ >s.length : number
+@@= skipped -21, +21 lines =@@
+ var s3 = s2.each(x => { x.key /* Type is K, should be number */ });
+ >s3 : void
+ >s2.each(x => { x.key /* Type is K, should be number */ }) : void
+->s2.each : (iterator: (value: { key: number; items: string[]; }) => void) => void
+->s2 : Sequence<{ key: number; items: string[]; }>
+->each : (iterator: (value: { key: number; items: string[]; }) => void) => void
+->x => { x.key /* Type is K, should be number */ } : (x: { key: number; items: string[]; }) => void
+->x : { key: number; items: string[]; }
++>s2.each : (iterator: (value: { key: number; items: Array<string>; }) => void) => void
++>s2 : Sequence<{ key: number; items: Array<string>; }>
++>each : (iterator: (value: { key: number; items: Array<string>; }) => void) => void
++>x => { x.key /* Type is K, should be number */ } : (x: { key: number; items: Array<string>; }) => void
++>x : { key: number; items: Array<string>; }
+ >x.key : number
+->x : { key: number; items: string[]; }
++>x : { key: number; items: Array<string>; }
+ >key : number

@@ -4,8 +4,8 @@
 ({ a: [], ...(null as any) });
 >({ a: [], ...(null as any) }) : any
 >{ a: [], ...(null as any) } : any
->a : never[]
->[] : never[]
+>a : Array<never>
+>[] : Array<never>
 >(null as any) : any
 >null as any : any
 

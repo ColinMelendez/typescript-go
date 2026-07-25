@@ -1,0 +1,19 @@
+--- old.typeCheckingInsideFunctionExpressionInArray.errors.txt
++++ new.typeCheckingInsideFunctionExpressionInArray.errors.txt
+@@= skipped -0, +0 lines =@@
+ typeCheckingInsideFunctionExpressionInArray.ts(2,7): error TS2322: Type 'number' is not assignable to type 'string'.
+ typeCheckingInsideFunctionExpressionInArray.ts(3,5): error TS2322: Type 'Object' is not assignable to type 'string'.
+-typeCheckingInsideFunctionExpressionInArray.ts(4,15): error TS2339: Property 'NonexistantMethod' does not exist on type 'number[]'.
++typeCheckingInsideFunctionExpressionInArray.ts(4,15): error TS2339: Property 'NonexistantMethod' does not exist on type 'Array<number>'.
+ typeCheckingInsideFunctionExpressionInArray.ts(5,5): error TS2304: Cannot find name 'derp'.
+
+
+@@= skipped -13, +13 lines =@@
+ !!! error TS2322: Type 'Object' is not assignable to type 'string'.
+         [1, 2, 3].NonexistantMethod();
+                   ~~~~~~~~~~~~~~~~~
+-!!! error TS2339: Property 'NonexistantMethod' does not exist on type 'number[]'.
++!!! error TS2339: Property 'NonexistantMethod' does not exist on type 'Array<number>'.
+         derp();
+         ~~~~
+ !!! error TS2304: Cannot find name 'derp'.

@@ -20,7 +20,7 @@ interface TodoProp {
 }
 interface TodoListProps {
     todos: TodoProp[];
->todos : TodoProp[]
+>todos : Array<TodoProp>
 }
 function Todo(prop: { key: number, todo: string }) {
 >Todo : (prop: { key: number; todo: string; }) => any
@@ -45,7 +45,7 @@ function Todo(prop: { key: number, todo: string }) {
 }
 function TodoList({ todos }: TodoListProps) {
 >TodoList : ({ todos }: TodoListProps) => any
->todos : TodoProp[]
+>todos : Array<TodoProp>
 
     return <div>
 ><div>        {...<Todo key={todos[0].id} todo={todos[0].todo} />}    </div> : any
@@ -57,13 +57,13 @@ function TodoList({ todos }: TodoListProps) {
 >key : number
 >todos[0].id : number
 >todos[0] : TodoProp
->todos : TodoProp[]
+>todos : Array<TodoProp>
 >0 : 0
 >id : number
 >todo : string
 >todos[0].todo : string
 >todos[0] : TodoProp
->todos : TodoProp[]
+>todos : Array<TodoProp>
 >0 : 0
 >todo : string
 
@@ -72,7 +72,7 @@ function TodoList({ todos }: TodoListProps) {
 }
 function TodoListNoError({ todos }: TodoListProps) {
 >TodoListNoError : ({ todos }: TodoListProps) => any
->todos : TodoProp[]
+>todos : Array<TodoProp>
 
     // any is not checked
     return <div>
@@ -87,13 +87,13 @@ function TodoListNoError({ todos }: TodoListProps) {
 >key : number
 >todos[0].id : number
 >todos[0] : TodoProp
->todos : TodoProp[]
+>todos : Array<TodoProp>
 >0 : 0
 >id : number
 >todo : string
 >todos[0].todo : string
 >todos[0] : TodoProp
->todos : TodoProp[]
+>todos : Array<TodoProp>
 >0 : 0
 >todo : string
 

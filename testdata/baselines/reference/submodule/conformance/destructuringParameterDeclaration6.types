@@ -30,13 +30,13 @@ function a4([while, for, public]){ }
 > : any
 
 function a5(...while) { }
->a5 : (...: any[]) => any
-> : any[]
+>a5 : (...: Array<any>) => any
+> : Array<any>
 > : any
 
 function a6(...public) { }
->a6 : (...public: any[]) => void
->public : any[]
+>a6 : (...public: Array<any>) => void
+>public : Array<any>
 
 function a7(...a: string) { }
 >a7 : (...a: string) => void

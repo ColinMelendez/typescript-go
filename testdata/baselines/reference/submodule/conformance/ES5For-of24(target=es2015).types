@@ -2,15 +2,15 @@
 
 === ES5For-of24.ts ===
 var a = [1, 2, 3];
->a : number[]
->[1, 2, 3] : number[]
+>a : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
 for (var v of a) {
 >v : number
->a : number[]
+>a : Array<number>
 
     let a = 0;
 >a : number

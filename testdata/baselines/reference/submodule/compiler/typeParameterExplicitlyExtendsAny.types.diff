@@ -1,0 +1,11 @@
+--- old.typeParameterExplicitlyExtendsAny.types
++++ new.typeParameterExplicitlyExtendsAny.types
+@@= skipped -68, +68 lines =@@
+ >Tree : Tree<T>
+
+     children?: Tree<T>[];
+->children : Tree<T>[]
++>children : Array<Tree<T>>
+ }
+
+ class MyClass {

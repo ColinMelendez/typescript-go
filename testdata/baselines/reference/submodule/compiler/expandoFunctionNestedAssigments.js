@@ -119,10 +119,10 @@ declare namespace Foo {
     export var forIncr: number;
     export var fromForBody: number;
     export var fromForBodyNested: number;
-    export var forOf: any[];
+    export var forOf: Array<any>;
     export var fromForOfBody: number;
     export var fromForOfBodyNested: number;
-    export var forIn: any[];
+    export var forIn: Array<any>;
     export var fromForInBody: number;
     export var fromForInBodyNested: number;
 }

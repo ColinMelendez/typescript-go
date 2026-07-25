@@ -14,5 +14,5 @@ wrapResolver(resolver() || []);
 >resolver() || [] : () => void
 >resolver() : () => void
 >resolver : <T>() => () => void
->[] : never[]
+>[] : Array<never>
 

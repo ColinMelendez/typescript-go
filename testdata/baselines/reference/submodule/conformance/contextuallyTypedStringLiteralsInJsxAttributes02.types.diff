@@ -1,0 +1,11 @@
+--- old.contextuallyTypedStringLiteralsInJsxAttributes02.types
++++ new.contextuallyTypedStringLiteralsInJsxAttributes02.types
+@@= skipped -7, +7 lines =@@
+
+ declare function log(...args: any[]): void;
+ >log : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+ export interface ClickableProps {
+     children?: string;

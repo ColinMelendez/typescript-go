@@ -4,8 +4,8 @@
 // Sample from
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/supportedLocalesOf
 const locales = ['ban', 'id-u-co-pinyin', 'de-ID'];
->locales : string[]
->['ban', 'id-u-co-pinyin', 'de-ID'] : string[]
+>locales : Array<string>
+>['ban', 'id-u-co-pinyin', 'de-ID'] : Array<string>
 >'ban' : "ban"
 >'id-u-co-pinyin' : "id-u-co-pinyin"
 >'de-ID' : "de-ID"
@@ -24,20 +24,20 @@ console.log(Intl.PluralRules.supportedLocalesOf(locales, options).join(', '));
 >log : (...data: any[]) => void
 >Intl.PluralRules.supportedLocalesOf(locales, options).join(', ') : string
 >Intl.PluralRules.supportedLocalesOf(locales, options).join : (separator?: string) => string
->Intl.PluralRules.supportedLocalesOf(locales, options) : string[]
+>Intl.PluralRules.supportedLocalesOf(locales, options) : Array<string>
 >Intl.PluralRules.supportedLocalesOf : (locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => string[]
 >Intl.PluralRules : Intl.PluralRulesConstructor
 >Intl : typeof Intl
 >PluralRules : Intl.PluralRulesConstructor
 >supportedLocalesOf : (locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => string[]
->locales : string[]
+>locales : Array<string>
 >options : { readonly localeMatcher: 'lookup'; }
 >join : (separator?: string) => string
 >', ' : ", "
 
 const [ part ] = new Intl.NumberFormat().formatToParts();
 >part : Intl.NumberFormatPart
->new Intl.NumberFormat().formatToParts() : Intl.NumberFormatPart[]
+>new Intl.NumberFormat().formatToParts() : Array<Intl.NumberFormatPart>
 >new Intl.NumberFormat().formatToParts : (number?: number | bigint) => Intl.NumberFormatPart[]
 >new Intl.NumberFormat() : Intl.NumberFormat
 >Intl.NumberFormat : Intl.NumberFormatConstructor

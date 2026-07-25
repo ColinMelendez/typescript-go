@@ -1,4 +1,4 @@
-input.ts(2,6): error TS2339: Property '0' does not exist on type 'string[]'.
+input.ts(2,6): error TS2339: Property '0' does not exist on type 'Array<string>'.
 
 
 ==== globals.ts (0 errors) ====
@@ -17,5 +17,5 @@ input.ts(2,6): error TS2339: Property '0' does not exist on type 'string[]'.
     declare var x: string[];
     var [a] = x;
          ~
-!!! error TS2339: Property '0' does not exist on type 'string[]'.
+!!! error TS2339: Property '0' does not exist on type 'Array<string>'.
     

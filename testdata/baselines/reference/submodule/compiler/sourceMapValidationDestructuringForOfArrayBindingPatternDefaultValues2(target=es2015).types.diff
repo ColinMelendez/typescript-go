@@ -1,0 +1,283 @@
+--- old.sourceMapValidationDestructuringForOfArrayBindingPatternDefaultValues2(target=es2015).types
++++ new.sourceMapValidationDestructuringForOfArrayBindingPatternDefaultValues2(target=es2015).types
+@@= skipped -28, +28 lines =@@
+ >"trimming" : "trimming"
+
+ let robots = [robotA, robotB];
+->robots : Robot[]
+->[robotA, robotB] : Robot[]
++>robots : Array<Robot>
++>[robotA, robotB] : Array<Robot>
+ >robotA : Robot
+ >robotB : Robot
+
+ function getRobots() {
+->getRobots : () => Robot[]
++>getRobots : () => Array<Robot>
+
+     return robots;
+->robots : Robot[]
++>robots : Array<Robot>
+ }
+
+ let multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
+@@= skipped -29, +29 lines =@@
+ >"edging" : "edging"
+
+ let multiRobots = [multiRobotA, multiRobotB];
+->multiRobots : MultiSkilledRobot[]
+->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
++>multiRobots : Array<MultiSkilledRobot>
++>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
+ >multiRobotA : MultiSkilledRobot
+ >multiRobotB : MultiSkilledRobot
+
+ function getMultiRobots() {
+->getMultiRobots : () => MultiSkilledRobot[]
++>getMultiRobots : () => Array<MultiSkilledRobot>
+
+     return multiRobots;
+->multiRobots : MultiSkilledRobot[]
++>multiRobots : Array<MultiSkilledRobot>
+ }
+
+ let nameA: string, primarySkillA: string, secondarySkillA: string;
+@@= skipped -29, +29 lines =@@
+
+ let numberA3: number, robotAInfo: (number | string)[], multiRobotAInfo: (string | [string, string])[];
+ >numberA3 : number
+->robotAInfo : (string | number)[]
+->multiRobotAInfo : (string | [string, string])[]
++>robotAInfo : Array<string | number>
++>multiRobotAInfo : Array<string | [string, string]>
+
+ for ([, nameA = "noName"] of robots) {
+ >[, nameA = "noName"] : [undefined, string]
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -22, +22 lines =@@
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -15, +15 lines =@@
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->[robotA, robotB] : Robot[]
++>[robotA, robotB] : Array<Robot>
+ >robotA : Robot
+ >robotB : Robot
+
+@@= skipped -30, +30 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->multiRobots : MultiSkilledRobot[]
++>multiRobots : Array<MultiSkilledRobot>
+
+     console.log(primarySkillA);
+ >console.log(primarySkillA) : void
+@@= skipped -28, +28 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->getMultiRobots() : MultiSkilledRobot[]
+->getMultiRobots : () => MultiSkilledRobot[]
++>getMultiRobots() : Array<MultiSkilledRobot>
++>getMultiRobots : () => Array<MultiSkilledRobot>
+
+     console.log(primarySkillA);
+ >console.log(primarySkillA) : void
+@@= skipped -29, +29 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
++>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
+ >multiRobotA : MultiSkilledRobot
+ >multiRobotB : MultiSkilledRobot
+
+@@= skipped -18, +18 lines =@@
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(numberB);
+ >console.log(numberB) : void
+@@= skipped -15, +15 lines =@@
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(numberB);
+ >console.log(numberB) : void
+@@= skipped -16, +16 lines =@@
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+->[robotA, robotB] : Robot[]
++>[robotA, robotB] : Array<Robot>
+ >robotA : Robot
+ >robotB : Robot
+
+@@= skipped -16, +16 lines =@@
+ >nameB = "noName" : "noName"
+ >nameB : string
+ >"noName" : "noName"
+->multiRobots : MultiSkilledRobot[]
++>multiRobots : Array<MultiSkilledRobot>
+
+     console.log(nameB);
+ >console.log(nameB) : void
+@@= skipped -14, +14 lines =@@
+ >nameB = "noName" : "noName"
+ >nameB : string
+ >"noName" : "noName"
+->getMultiRobots() : MultiSkilledRobot[]
+->getMultiRobots : () => MultiSkilledRobot[]
++>getMultiRobots() : Array<MultiSkilledRobot>
++>getMultiRobots : () => Array<MultiSkilledRobot>
+
+     console.log(nameB);
+ >console.log(nameB) : void
+@@= skipped -15, +15 lines =@@
+ >nameB = "noName" : "noName"
+ >nameB : string
+ >"noName" : "noName"
+->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
++>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
+ >multiRobotA : MultiSkilledRobot
+ >multiRobotB : MultiSkilledRobot
+
+@@= skipped -24, +24 lines =@@
+ >skillA2 = "skill" : "skill"
+ >skillA2 : string
+ >"skill" : "skill"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA2);
+ >console.log(nameA2) : void
+@@= skipped -21, +21 lines =@@
+ >skillA2 = "skill" : "skill"
+ >skillA2 : string
+ >"skill" : "skill"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA2);
+ >console.log(nameA2) : void
+@@= skipped -22, +22 lines =@@
+ >skillA2 = "skill" : "skill"
+ >skillA2 : string
+ >"skill" : "skill"
+->[robotA, robotB] : Robot[]
++>[robotA, robotB] : Array<Robot>
+ >robotA : Robot
+ >robotB : Robot
+
+@@= skipped -33, +33 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->multiRobots : MultiSkilledRobot[]
++>multiRobots : Array<MultiSkilledRobot>
+
+     console.log(nameMA);
+ >console.log(nameMA) : void
+@@= skipped -31, +31 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->getMultiRobots() : MultiSkilledRobot[]
+->getMultiRobots : () => MultiSkilledRobot[]
++>getMultiRobots() : Array<MultiSkilledRobot>
++>getMultiRobots : () => Array<MultiSkilledRobot>
+
+     console.log(nameMA);
+ >console.log(nameMA) : void
+@@= skipped -32, +32 lines =@@
+ >["skill1", "skill2"] : [string, string]
+ >"skill1" : "skill1"
+ >"skill2" : "skill2"
+->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
++>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
+ >multiRobotA : MultiSkilledRobot
+ >multiRobotB : MultiSkilledRobot
+
+@@= skipped -13, +13 lines =@@
+ }
+
+ for ([numberA3 = -1, ...robotAInfo] of robots) {
+->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberA3 = -1 : -1
+ >numberA3 : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
+->robots : Robot[]
++>robotAInfo : Array<string | number>
++>robots : Array<Robot>
+
+     console.log(numberA3);
+ >console.log(numberA3) : void
+@@= skipped -17, +17 lines =@@
+ >numberA3 : number
+ }
+ for ([numberA3 = -1, ...robotAInfo] of getRobots()) {
+->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberA3 = -1 : -1
+ >numberA3 : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>robotAInfo : Array<string | number>
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(numberA3);
+ >console.log(numberA3) : void
+@@= skipped -18, +18 lines =@@
+ >numberA3 : number
+ }
+ for ([numberA3 = -1, ...robotAInfo] of [robotA, robotB]) {
+->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberA3 = -1 : -1
+ >numberA3 : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
+->[robotA, robotB] : Robot[]
++>robotAInfo : Array<string | number>
++>[robotA, robotB] : Array<Robot>
+ >robotA : Robot
+ >robotB : Robot

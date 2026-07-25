@@ -5,7 +5,7 @@ function createElement(element: string, props: any, ...children: any[]): any {}
 >createElement : (element: string, props: any, ...children: any[]) => any
 >element : string
 >props : any
->children : any[]
+>children : Array<any>
 
 namespace JSX {
   export interface IntrinsicElements {

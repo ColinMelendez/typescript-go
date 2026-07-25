@@ -27,7 +27,7 @@ JSON.stringify(value, ["a", 1], 2);
 >JSON : JSON
 >stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (number | string)[] | null, space?: string | number): string; }
 >value : null
->["a", 1] : (string | number)[]
+>["a", 1] : Array<string | number>
 >"a" : "a"
 >1 : 1
 >2 : 2

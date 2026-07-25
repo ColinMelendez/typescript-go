@@ -1,0 +1,64 @@
+--- old.intlNumberFormatES2023.types
++++ new.intlNumberFormatES2023.types
+@@= skipped -113, +113 lines =@@
+
+ new Intl.NumberFormat('en-GB').formatRangeToParts(10, 1000)[0];
+ >new Intl.NumberFormat('en-GB').formatRangeToParts(10, 1000)[0] : Intl.NumberRangeFormatPart
+->new Intl.NumberFormat('en-GB').formatRangeToParts(10, 1000) : Intl.NumberRangeFormatPart[]
++>new Intl.NumberFormat('en-GB').formatRangeToParts(10, 1000) : Array<Intl.NumberRangeFormatPart>
+ >new Intl.NumberFormat('en-GB').formatRangeToParts : (start: number | bigint | Intl.StringNumericLiteral, end: number | bigint | Intl.StringNumericLiteral) => Intl.NumberRangeFormatPart[]
+ >new Intl.NumberFormat('en-GB') : Intl.NumberFormat
+ >Intl.NumberFormat : Intl.NumberFormatConstructor
+@@= skipped -14, +14 lines =@@
+
+ new Intl.NumberFormat('en-GB').formatRangeToParts(10n, 1000n)[0];
+ >new Intl.NumberFormat('en-GB').formatRangeToParts(10n, 1000n)[0] : Intl.NumberRangeFormatPart
+->new Intl.NumberFormat('en-GB').formatRangeToParts(10n, 1000n) : Intl.NumberRangeFormatPart[]
++>new Intl.NumberFormat('en-GB').formatRangeToParts(10n, 1000n) : Array<Intl.NumberRangeFormatPart>
+ >new Intl.NumberFormat('en-GB').formatRangeToParts : (start: number | bigint | Intl.StringNumericLiteral, end: number | bigint | Intl.StringNumericLiteral) => Intl.NumberRangeFormatPart[]
+ >new Intl.NumberFormat('en-GB') : Intl.NumberFormat
+ >Intl.NumberFormat : Intl.NumberFormatConstructor
+@@= skipped -37, +37 lines =@@
+ >'567.8' : "567.8"
+
+ new Intl.NumberFormat('en-GB').formatRangeToParts('123E-4', '567E8');
+->new Intl.NumberFormat('en-GB').formatRangeToParts('123E-4', '567E8') : Intl.NumberRangeFormatPart[]
++>new Intl.NumberFormat('en-GB').formatRangeToParts('123E-4', '567E8') : Array<Intl.NumberRangeFormatPart>
+ >new Intl.NumberFormat('en-GB').formatRangeToParts : (start: number | bigint | Intl.StringNumericLiteral, end: number | bigint | Intl.StringNumericLiteral) => Intl.NumberRangeFormatPart[]
+ >new Intl.NumberFormat('en-GB') : Intl.NumberFormat
+ >Intl.NumberFormat : Intl.NumberFormatConstructor
+@@= skipped -72, +72 lines =@@
+ >filtered : string
+ >nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map((part) => part.value)  .join("") : string
+ >nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map((part) => part.value)  .join : (separator?: string) => string
+->nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map((part) => part.value) : string[]
+->nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map : <U>(callbackfn: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => U, thisArg?: any) => U[]
+->nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign") : Intl.NumberRangeFormatPart[]
+->nf  .formatRangeToParts(100, 100)  .filter : { <S extends Intl.NumberRangeFormatPart>(predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => value is S, thisArg?: any): S[]; (predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => unknown, thisArg?: any): Intl.NumberRangeFormatPart[]; }
+->nf  .formatRangeToParts(100, 100) : Intl.NumberRangeFormatPart[]
++>nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map((part) => part.value) : Array<string>
++>nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign")  .map : <U>(callbackfn: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => U, thisArg?: any) => Array<U>
++>nf  .formatRangeToParts(100, 100)  .filter((part) => part.type !== "approximatelySign") : Array<Intl.NumberRangeFormatPart>
++>nf  .formatRangeToParts(100, 100)  .filter : { <S extends Intl.NumberRangeFormatPart>(predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => value is S, thisArg?: any): Array<S>; (predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => unknown, thisArg?: any): Array<Intl.NumberRangeFormatPart>; }
++>nf  .formatRangeToParts(100, 100) : Array<Intl.NumberRangeFormatPart>
+ >nf  .formatRangeToParts : (start: number | bigint | Intl.StringNumericLiteral, end: number | bigint | Intl.StringNumericLiteral) => Intl.NumberRangeFormatPart[]
+ >nf : Intl.NumberFormat
+
+@@= skipped -14, +14 lines =@@
+ >100 : 100
+
+   .filter((part) => part.type !== "approximatelySign")
+->filter : { <S extends Intl.NumberRangeFormatPart>(predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => value is S, thisArg?: any): S[]; (predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => unknown, thisArg?: any): Intl.NumberRangeFormatPart[]; }
++>filter : { <S extends Intl.NumberRangeFormatPart>(predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => value is S, thisArg?: any): Array<S>; (predicate: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => unknown, thisArg?: any): Array<Intl.NumberRangeFormatPart>; }
+ >(part) => part.type !== "approximatelySign" : (part: Intl.NumberRangeFormatPart) => boolean
+ >part : Intl.NumberRangeFormatPart
+ >part.type !== "approximatelySign" : boolean
+@@= skipped -10, +10 lines =@@
+ >"approximatelySign" : "approximatelySign"
+
+   .map((part) => part.value)
+->map : <U>(callbackfn: (value: Intl.NumberRangeFormatPart, index: number, array: Intl.NumberRangeFormatPart[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: Intl.NumberRangeFormatPart, index: number, array: Array<Intl.NumberRangeFormatPart>) => U, thisArg?: any) => Array<U>
+ >(part) => part.value : (part: Intl.NumberRangeFormatPart) => string
+ >part : Intl.NumberRangeFormatPart
+ >part.value : string

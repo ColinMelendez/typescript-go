@@ -24,5 +24,5 @@ var /*4*/d = [null, undefined];      // var d: any[]`
 	f.VerifyQuickInfoAt(t, "1", "var a: any", "")
 	f.VerifyQuickInfoAt(t, "2", "var b: any", "")
 	f.VerifyQuickInfoAt(t, "3", "var c: {\n    x: number;\n    y: any;\n}", "")
-	f.VerifyQuickInfoAt(t, "4", "var d: any[]", "")
+	f.VerifyQuickInfoAt(t, "4", "var d: Array<any>", "")
 }

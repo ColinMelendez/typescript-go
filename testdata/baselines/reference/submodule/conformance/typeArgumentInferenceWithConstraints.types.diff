@@ -1,0 +1,28 @@
+--- old.typeArgumentInferenceWithConstraints.types
++++ new.typeArgumentInferenceWithConstraints.types
+@@= skipped -362, +362 lines =@@
+ >someGenerics9 : <T extends unknown>(a: T, b: T, c: T) => T
+ >'' : ""
+ >0 : 0
+->[] : never[]
++>[] : Array<never>
+
+ var a9a: {};
+ >a9a : string
+@@= skipped -112, +112 lines =@@
+
+ // Generic call with multiple parameters of generic type where one argument is [] and the other is not 'any'
+ var arr = someGenerics9([], null, undefined);
+->arr : never[] | null | undefined
+->someGenerics9([], null, undefined) : never[] | null | undefined
++>arr : Array<never> | null | undefined
++>someGenerics9([], null, undefined) : Array<never> | null | undefined
+ >someGenerics9 : <T extends unknown>(a: T, b: T, c: T) => T
+->[] : never[]
++>[] : Array<never>
+ >undefined : undefined
+
+ var arr: any[];
+->arr : never[] | null | undefined
++>arr : Array<never> | null | undefined
+

@@ -35,7 +35,7 @@ class SymbolIterator {
 
 var [a, ...b] = new SymbolIterator;
 >a : symbol
->b : symbol[]
+>b : Array<symbol>
 >new SymbolIterator : SymbolIterator
 >SymbolIterator : typeof SymbolIterator
 

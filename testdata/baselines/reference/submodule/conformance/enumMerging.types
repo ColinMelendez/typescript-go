@@ -50,8 +50,8 @@ namespace M1 {
     }
 
     var x = [EConst1.A, EConst1.B, EConst1.C, EConst1.D, EConst1.E, EConst1.F];
->x : EConst1[]
->[EConst1.A, EConst1.B, EConst1.C, EConst1.D, EConst1.E, EConst1.F] : EConst1[]
+>x : Array<EConst1>
+>[EConst1.A, EConst1.B, EConst1.C, EConst1.D, EConst1.E, EConst1.F] : Array<EConst1>
 >EConst1.A : EConst1.A
 >EConst1 : typeof EConst1
 >A : EConst1.A
@@ -113,8 +113,8 @@ namespace M2 {
     }
 
     var x = [EComp2.A, EComp2.B, EComp2.C, EComp2.D, EComp2.E, EComp2.F];
->x : EComp2[]
->[EComp2.A, EComp2.B, EComp2.C, EComp2.D, EComp2.E, EComp2.F] : EComp2[]
+>x : Array<EComp2>
+>[EComp2.A, EComp2.B, EComp2.C, EComp2.D, EComp2.E, EComp2.F] : Array<EComp2>
 >EComp2.A : EComp2.A
 >EComp2 : typeof EComp2
 >A : EComp2.A

@@ -2,8 +2,8 @@
 
 === for-of43.ts ===
 var array = [{ x: "", y: 0 }]
->array : { x: string; y: number; }[]
->[{ x: "", y: 0 }] : { x: string; y: number; }[]
+>array : Array<{ x: string; y: number; }>
+>[{ x: "", y: 0 }] : Array<{ x: string; y: number; }>
 >{ x: "", y: 0 } : { x: string; y: number; }
 >x : string
 >"" : ""
@@ -17,7 +17,7 @@ for (var {x: a = "", y: b = true} of array) {
 >y : any
 >b : number | boolean
 >true : true
->array : { x: string; y: number; }[]
+>array : Array<{ x: string; y: number; }>
 
     a;
 >a : string

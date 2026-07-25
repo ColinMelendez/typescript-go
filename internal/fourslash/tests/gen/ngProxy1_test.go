@@ -32,5 +32,5 @@ x/**/
 	defer done()
 	f.MarkTestAsStradaServer()
 	f.GoToMarker(t, "")
-	f.VerifyQuickInfoIs(t, "Proxied x: number[]hello world", "")
+	f.VerifyQuickInfoIs(t, "Proxied x: Array<number>hello world", "")
 }

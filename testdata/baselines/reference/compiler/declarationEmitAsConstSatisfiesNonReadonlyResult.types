@@ -23,12 +23,12 @@ export const obj = {
 
     ]
 } as const satisfies {array?: Readonly<{n: unknown}>[]}
->array : Readonly<{ n: unknown; }>[] | undefined
+>array : Array<Readonly<{ n: unknown; }>> | undefined
 >n : unknown
 
 declare function foo<const T extends {array?: Readonly<{n: unknown}>[]}>(arg: T): T;
 >foo : <const T extends { array?: Readonly<{ n: unknown; }>[]; }>(arg: T) => T
->array : Readonly<{ n: unknown; }>[] | undefined
+>array : Array<Readonly<{ n: unknown; }>> | undefined
 >n : unknown
 >arg : T
 

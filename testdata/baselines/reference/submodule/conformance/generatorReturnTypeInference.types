@@ -35,7 +35,7 @@ function* g003() { // Generator<never, void, undefined>
 
     yield* [];
 >yield* [] : undefined
->[] : never[]
+>[] : Array<never>
 }
 
 function* g004() { // Generator<number, void, undefined>

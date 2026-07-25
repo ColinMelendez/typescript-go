@@ -1,0 +1,38 @@
+--- old.contextualOuterTypeParameters.types
++++ new.contextualOuterTypeParameters.types
+@@= skipped -14, +14 lines =@@
+ >t : T
+
+     type isArray = (typeof t)[] extends string[] ? true : false;
+->isArray : T[] extends string[] ? true : false
++>isArray : Array<T> extends Array<string> ? true : false
+ >t : T
+ >true : true
+ >false : false
+@@= skipped -22, +22 lines =@@
+ >t : T
+
+     type isArray = (typeof t)[] extends string[] ? true : false;
+->isArray : T[] extends string[] ? true : false
++>isArray : Array<T> extends Array<string> ? true : false
+ >t : T
+ >true : true
+ >false : false
+@@= skipped -23, +23 lines =@@
+ >t : T
+
+     type isArray = (typeof t)[] extends string[] ? true : false;
+->isArray : T[] extends string[] ? true : false
++>isArray : Array<T> extends Array<string> ? true : false
+ >t : T
+ >true : true
+ >false : false
+@@= skipped -26, +26 lines =@@
+ >t : T
+
+         type isArray = (typeof t)[] extends string[] ? true : false;
+->isArray : T[] extends string[] ? true : false
++>isArray : Array<T> extends Array<string> ? true : false
+ >t : T
+ >true : true
+ >false : false

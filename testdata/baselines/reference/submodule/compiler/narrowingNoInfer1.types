@@ -15,29 +15,29 @@ type TaggedUnion = TaggedA | TaggedB;
 >TaggedUnion : TaggedUnion
 
 const m: { result: NoInfer<TaggedUnion> }[] = [];
->m : { result: NoInfer<TaggedUnion>; }[]
+>m : Array<{ result: NoInfer<TaggedUnion>; }>
 >result : NoInfer<TaggedUnion>
->[] : never[]
+>[] : Array<never>
 
 function map<A, B>(items: readonly A[], f: (a: NoInfer<A>) => B) {
->map : <A, B>(items: readonly A[], f: (a: NoInfer<A>) => B) => B[]
->items : readonly A[]
+>map : <A, B>(items: readonly A[], f: (a: NoInfer<A>) => B) => Array<B>
+>items : ReadonlyArray<A>
 >f : (a: NoInfer<A>) => B
 >a : NoInfer<A>
 
   return items.map(f);
->items.map(f) : B[]
->items.map : <U>(callbackfn: (value: A, index: number, array: readonly A[]) => U, thisArg?: any) => U[]
->items : readonly A[]
->map : <U>(callbackfn: (value: A, index: number, array: readonly A[]) => U, thisArg?: any) => U[]
+>items.map(f) : Array<B>
+>items.map : <U>(callbackfn: (value: A, index: number, array: ReadonlyArray<A>) => U, thisArg?: any) => Array<U>
+>items : ReadonlyArray<A>
+>map : <U>(callbackfn: (value: A, index: number, array: ReadonlyArray<A>) => U, thisArg?: any) => Array<U>
 >f : (a: NoInfer<A>) => B
 }
 
 const something = map(m, (_) =>
->something : ({ result: TaggedA; } | null)[]
->map(m, (_) =>  _.result._tag === "a" ? { ..._, result: _.result } : null,) : ({ result: TaggedA; } | null)[]
->map : <A, B>(items: readonly A[], f: (a: NoInfer<A>) => B) => B[]
->m : { result: NoInfer<TaggedUnion>; }[]
+>something : Array<{ result: TaggedA; } | null>
+>map(m, (_) =>  _.result._tag === "a" ? { ..._, result: _.result } : null,) : Array<{ result: TaggedA; } | null>
+>map : <A, B>(items: readonly A[], f: (a: NoInfer<A>) => B) => Array<B>
+>m : Array<{ result: NoInfer<TaggedUnion>; }>
 >(_) =>  _.result._tag === "a" ? { ..._, result: _.result } : null : (_: NoInfer<{ result: NoInfer<TaggedUnion>; }>) => { result: TaggedA; } | null
 >_ : NoInfer<{ result: NoInfer<TaggedUnion>; }>
 

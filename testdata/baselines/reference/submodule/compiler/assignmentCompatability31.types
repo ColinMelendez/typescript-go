@@ -21,7 +21,7 @@ namespace __test2__ {
 
     export declare var aa:{one:string[];};;
 >aa : { one: string[]; }
->one : string[]
+>one : Array<string>
 
     export var __val__aa = aa;
 >__val__aa : { one: string[]; }

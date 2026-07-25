@@ -1,7 +1,7 @@
-assignmentCompatBetweenTupleAndArray.ts(17,1): error TS2322: Type '[number, string]' is not assignable to type 'number[]'.
+assignmentCompatBetweenTupleAndArray.ts(17,1): error TS2322: Type '[number, string]' is not assignable to type 'Array<number>'.
   Type 'string | number' is not assignable to type 'number'.
     Type 'string' is not assignable to type 'number'.
-assignmentCompatBetweenTupleAndArray.ts(18,1): error TS2322: Type '{}[]' is not assignable to type '[{}]'.
+assignmentCompatBetweenTupleAndArray.ts(18,1): error TS2322: Type 'Array<{}>' is not assignable to type '[{}]'.
   Target requires 1 element(s) but source may have fewer.
 
 
@@ -24,11 +24,11 @@ assignmentCompatBetweenTupleAndArray.ts(18,1): error TS2322: Type '{}[]' is not 
     // error
     numArray = numStrTuple;
     ~~~~~~~~
-!!! error TS2322: Type '[number, string]' is not assignable to type 'number[]'.
+!!! error TS2322: Type '[number, string]' is not assignable to type 'Array<number>'.
 !!! error TS2322:   Type 'string | number' is not assignable to type 'number'.
 !!! error TS2322:     Type 'string' is not assignable to type 'number'.
     emptyObjTuple = emptyObjArray;
     ~~~~~~~~~~~~~
-!!! error TS2322: Type '{}[]' is not assignable to type '[{}]'.
+!!! error TS2322: Type 'Array<{}>' is not assignable to type '[{}]'.
 !!! error TS2322:   Target requires 1 element(s) but source may have fewer.
     

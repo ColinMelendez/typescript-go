@@ -1,6 +1,57 @@
 --- old.inferTypes1.types
 +++ new.inferTypes1.types
-@@= skipped -478, +478 lines =@@
+@@= skipped -5, +5 lines =@@
+
+     T extends (infer U)[] ? U :
+     T extends (...args: any[]) => infer U ? U :
+->args : any[]
++>args : Array<any>
+
+     T extends Promise<infer U> ? U :
+     T;
+@@= skipped -73, +73 lines =@@
+ >T12 : unknown
+
+ type T13 = ReturnType<(<T extends U, U extends number[]>() => T)>;  // number[]
+->T13 : number[]
++>T13 : Array<number>
+
+ type T14 = ReturnType<typeof f1>;  // { a: number, b: string }
+ >T14 : { a: number; b: string; }
+@@= skipped -19, +19 lines =@@
+ >T18 : any
+
+ type T19<T extends any[]> = ReturnType<(x: string, ...args: T) => T[]>;  // T[]
+->T19 : T[]
++>T19 : Array<T>
+ >x : string
+ >args : T
+
+@@= skipped -25, +25 lines =@@
+ >Abstract : typeof Abstract
+
+ type U16<T extends any[]> = InstanceType<new (x: string, ...args: T) => T[]>;  // T[]
+->U16 : T[]
++>U16 : Array<T>
+ >x : string
+ >args : T
+
+ type U17<T extends any[]> = InstanceType<abstract new (x: string, ...args: T) => T[]>;  // T[]
+->U17 : T[]
++>U17 : Array<T>
+ >x : string
+ >args : T
+
+@@= skipped -27, +27 lines =@@
+
+ type T23 = ArgumentType<(...args: string[]) => number>;  // string
+ >T23 : string
+->args : string[]
++>args : Array<string>
+
+ type T24 = ArgumentType<(x: string, y: string) => number>;  // Error
+ >T24 : any
+@@= skipped -329, +329 lines =@@
  const result = invoker('test', true)({ test: (a: boolean) => 123 })
  >result : number
  >invoker('test', true)({ test: (a: boolean) => 123 }) : number

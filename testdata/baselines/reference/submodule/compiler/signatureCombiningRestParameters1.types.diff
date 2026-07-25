@@ -1,0 +1,11 @@
+--- old.signatureCombiningRestParameters1.types
++++ new.signatureCombiningRestParameters1.types
+@@= skipped -30, +30 lines =@@
+ for (const [key, fn] of Object.entries(map)) {
+ >key : string
+ >fn : (() => unknown) | (() => unknown) | ((args_0: string) => unknown) | ((args_0: number) => unknown)
+->Object.entries(map) : [string, (() => unknown) | (() => unknown) | ((args_0: string) => unknown) | ((args_0: number) => unknown)][]
++>Object.entries(map) : Array<[string, (() => unknown) | (() => unknown) | ((args_0: string) => unknown) | ((args_0: number) => unknown)]>
+ >Object.entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }
+ >Object : ObjectConstructor
+ >entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }

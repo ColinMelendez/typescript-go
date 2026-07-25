@@ -5,7 +5,8 @@
 
  //// [index.d.ts]
 -export function test(fn: any): {
+-    (...args: any[]): void;
 +export declare function test(fn: any): {
-     (...args: any[]): void;
++    (...args: Array<any>): void;
      readonly name: string;
  };

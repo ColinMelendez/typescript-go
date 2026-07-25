@@ -1,0 +1,468 @@
+--- old.arrayBestCommonTypes.types
++++ new.arrayBestCommonTypes.types
+@@= skipped -50, +50 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[4, 2][0] : number
+->[4, 2] : number[]
++>[4, 2] : Array<number>
+ >4 : 4
+ >2 : 2
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[4, 2, undefined][0] : number | undefined
+->[4, 2, undefined] : (number | undefined)[]
++>[4, 2, undefined] : Array<number | undefined>
+ >4 : 4
+ >2 : 2
+ >undefined : undefined
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, 2, 4][0] : number | undefined
+->[undefined, 2, 4] : (number | undefined)[]
++>[undefined, 2, 4] : Array<number | undefined>
+ >undefined : undefined
+ >2 : 2
+ >4 : 4
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[null, 2, 4][0] : number | null
+->[null, 2, 4] : (number | null)[]
++>[null, 2, 4] : Array<number | null>
+ >2 : 2
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[2, 4, null][0] : number | null
+->[2, 4, null] : (number | null)[]
++>[2, 4, null] : Array<number | null>
+ >2 : 2
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, 4, null][0] : number | null | undefined
+->[undefined, 4, null] : (number | null | undefined)[]
++>[undefined, 4, null] : Array<number | null | undefined>
+ >undefined : undefined
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >['', "q"][0] : string
+->['', "q"] : string[]
++>['', "q"] : Array<string>
+ >'' : ""
+ >"q" : "q"
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >['', "q", undefined][0] : string | undefined
+->['', "q", undefined] : (string | undefined)[]
++>['', "q", undefined] : Array<string | undefined>
+ >'' : ""
+ >"q" : "q"
+ >undefined : undefined
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, "q", ''][0] : string | undefined
+->[undefined, "q", ''] : (string | undefined)[]
++>[undefined, "q", ''] : Array<string | undefined>
+ >undefined : undefined
+ >"q" : "q"
+ >'' : ""
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[null, "q", ''][0] : string | null
+->[null, "q", ''] : (string | null)[]
++>[null, "q", ''] : Array<string | null>
+ >"q" : "q"
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >["q", '', null][0] : string | null
+->["q", '', null] : (string | null)[]
++>["q", '', null] : Array<string | null>
+ >"q" : "q"
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, '', null][0] : string | null | undefined
+->[undefined, '', null] : (string | null | undefined)[]
++>[undefined, '', null] : Array<string | null | undefined>
+ >undefined : undefined
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[[3, 4], [null]][0][0] : number | null
+->[[3, 4], [null]][0] : null[] | number[]
+->[[3, 4], [null]] : (null[] | number[])[]
+->[3, 4] : number[]
++>[[3, 4], [null]][0] : Array<null> | Array<number>
++>[[3, 4], [null]] : Array<Array<null> | Array<number>>
++>[3, 4] : Array<number>
+ >3 : 3
+ >4 : 4
+->[null] : null[]
++>[null] : Array<null>
+ >0 : 0
+ >0 : 0
+
+
+             var t1: { x: number; y: base; }[] = [{ x: 7, y: new derived() }, { x: 5, y: new base() }];
+->t1 : { x: number; y: base; }[]
++>t1 : Array<{ x: number; y: base; }>
+ >x : number
+ >y : base
+->[{ x: 7, y: new derived() }, { x: 5, y: new base() }] : { x: number; y: derived; }[]
++>[{ x: 7, y: new derived() }, { x: 5, y: new base() }] : Array<{ x: number; y: derived; }>
+ >{ x: 7, y: new derived() } : { x: number; y: derived; }
+ >x : number
+ >7 : 7
+@@= skipped -29, +29 lines =@@
+ >base : typeof base
+
+             var t2: { x: boolean; y: base; }[] = [{ x: true, y: new derived() }, { x: false, y: new base() }];
+->t2 : { x: boolean; y: base; }[]
++>t2 : Array<{ x: boolean; y: base; }>
+ >x : boolean
+ >y : base
+->[{ x: true, y: new derived() }, { x: false, y: new base() }] : ({ x: true; y: derived; } | { x: false; y: base; })[]
++>[{ x: true, y: new derived() }, { x: false, y: new base() }] : Array<{ x: true; y: derived; } | { x: false; y: base; }>
+ >{ x: true, y: new derived() } : { x: true; y: derived; }
+ >x : true
+ >true : true
+@@= skipped -18, +18 lines =@@
+ >base : typeof base
+
+             var t3: { x: string; y: base; }[] = [{ x: undefined, y: new base() }, { x: '', y: new derived() }];
+->t3 : { x: string; y: base; }[]
++>t3 : Array<{ x: string; y: base; }>
+ >x : string
+ >y : base
+->[{ x: undefined, y: new base() }, { x: '', y: new derived() }] : ({ x: undefined; y: base; } | { x: string; y: derived; })[]
++>[{ x: undefined, y: new base() }, { x: '', y: new derived() }] : Array<{ x: undefined; y: base; } | { x: string; y: derived; }>
+ >{ x: undefined, y: new base() } : { x: undefined; y: base; }
+ >x : undefined
+ >undefined : undefined
+@@= skipped -22, +22 lines =@@
+
+             // Order matters here so test all the variants
+             var a1 = [{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }];
+->a1 : { x: any; y: string; }[]
+->[{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }] : { x: any; y: string; }[]
++>a1 : Array<{ x: any; y: string; }>
++>[{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: 0, y: 'a' } : { x: number; y: string; }
+ >x : number
+ >0 : 0
+@@= skipped -19, +19 lines =@@
+ >'a' : "a"
+
+             var a2 = [{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }];
+->a2 : { x: any; y: string; }[]
+->[{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }] : { x: any; y: string; }[]
++>a2 : Array<{ x: any; y: string; }>
++>[{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: anyObj, y: 'a' } : { x: any; y: string; }
+ >x : any
+ >anyObj : any
+@@= skipped -19, +19 lines =@@
+ >'a' : "a"
+
+             var a3 = [{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }];
+->a3 : { x: any; y: string; }[]
+->[{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }] : { x: any; y: string; }[]
++>a3 : Array<{ x: any; y: string; }>
++>[{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: 0, y: 'a' } : { x: number; y: string; }
+ >x : number
+ >0 : 0
+@@= skipped -32, +32 lines =@@
+ >base2 : typeof base2
+
+             var b1 = [baseObj, base2Obj, ifaceObj];
+->b1 : (base | base2)[]
+->[baseObj, base2Obj, ifaceObj] : (base | base2)[]
++>b1 : Array<base | base2>
++>[baseObj, base2Obj, ifaceObj] : Array<base | base2>
+ >baseObj : base
+ >base2Obj : base2
+ >ifaceObj : iface
+
+             var b2 = [base2Obj, baseObj, ifaceObj];
+->b2 : (base | base2)[]
+->[base2Obj, baseObj, ifaceObj] : (base | base2)[]
++>b2 : Array<base | base2>
++>[base2Obj, baseObj, ifaceObj] : Array<base | base2>
+ >base2Obj : base2
+ >baseObj : base
+ >ifaceObj : iface
+
+             var b3 = [baseObj, ifaceObj, base2Obj];
+->b3 : (base | base2)[]
+->[baseObj, ifaceObj, base2Obj] : (base | base2)[]
++>b3 : Array<base | base2>
++>[baseObj, ifaceObj, base2Obj] : Array<base | base2>
+ >baseObj : base
+ >ifaceObj : iface
+ >base2Obj : base2
+
+             var b4 = [ifaceObj, baseObj, base2Obj];
+->b4 : (base | base2)[]
+->[ifaceObj, baseObj, base2Obj] : (base | base2)[]
++>b4 : Array<base | base2>
++>[ifaceObj, baseObj, base2Obj] : Array<base | base2>
+ >ifaceObj : iface
+ >baseObj : base
+ >base2Obj : base2
+@@= skipped -87, +87 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[4, 2][0] : number
+->[4, 2] : number[]
++>[4, 2] : Array<number>
+ >4 : 4
+ >2 : 2
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[4, 2, undefined][0] : number | undefined
+->[4, 2, undefined] : (number | undefined)[]
++>[4, 2, undefined] : Array<number | undefined>
+ >4 : 4
+ >2 : 2
+ >undefined : undefined
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, 2, 4][0] : number | undefined
+->[undefined, 2, 4] : (number | undefined)[]
++>[undefined, 2, 4] : Array<number | undefined>
+ >undefined : undefined
+ >2 : 2
+ >4 : 4
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[null, 2, 4][0] : number | null
+->[null, 2, 4] : (number | null)[]
++>[null, 2, 4] : Array<number | null>
+ >2 : 2
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[2, 4, null][0] : number | null
+->[2, 4, null] : (number | null)[]
++>[2, 4, null] : Array<number | null>
+ >2 : 2
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, 4, null][0] : number | null | undefined
+->[undefined, 4, null] : (number | null | undefined)[]
++>[undefined, 4, null] : Array<number | null | undefined>
+ >undefined : undefined
+ >4 : 4
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >['', "q"][0] : string
+->['', "q"] : string[]
++>['', "q"] : Array<string>
+ >'' : ""
+ >"q" : "q"
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >['', "q", undefined][0] : string | undefined
+->['', "q", undefined] : (string | undefined)[]
++>['', "q", undefined] : Array<string | undefined>
+ >'' : ""
+ >"q" : "q"
+ >undefined : undefined
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, "q", ''][0] : string | undefined
+->[undefined, "q", ''] : (string | undefined)[]
++>[undefined, "q", ''] : Array<string | undefined>
+ >undefined : undefined
+ >"q" : "q"
+ >'' : ""
+@@= skipped -14, +14 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[null, "q", ''][0] : string | null
+->[null, "q", ''] : (string | null)[]
++>[null, "q", ''] : Array<string | null>
+ >"q" : "q"
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >["q", '', null][0] : string | null
+->["q", '', null] : (string | null)[]
++>["q", '', null] : Array<string | null>
+ >"q" : "q"
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[undefined, '', null][0] : string | null | undefined
+->[undefined, '', null] : (string | null | undefined)[]
++>[undefined, '', null] : Array<string | null | undefined>
+ >undefined : undefined
+ >'' : ""
+ >0 : 0
+@@= skipped -13, +13 lines =@@
+ >this : this
+ >voidIfAny : { (x: boolean, y?: boolean): number; (x: string, y?: boolean): number; (x: number, y?: boolean): number; }
+ >[[3, 4], [null]][0][0] : number | null
+->[[3, 4], [null]][0] : null[] | number[]
+->[[3, 4], [null]] : (null[] | number[])[]
+->[3, 4] : number[]
++>[[3, 4], [null]][0] : Array<null> | Array<number>
++>[[3, 4], [null]] : Array<Array<null> | Array<number>>
++>[3, 4] : Array<number>
+ >3 : 3
+ >4 : 4
+->[null] : null[]
++>[null] : Array<null>
+ >0 : 0
+ >0 : 0
+
+
+             var t1: { x: number; y: base; }[] = [{ x: 7, y: new derived() }, { x: 5, y: new base() }];
+->t1 : { x: number; y: base; }[]
++>t1 : Array<{ x: number; y: base; }>
+ >x : number
+ >y : base
+->[{ x: 7, y: new derived() }, { x: 5, y: new base() }] : { x: number; y: base; }[]
++>[{ x: 7, y: new derived() }, { x: 5, y: new base() }] : Array<{ x: number; y: base; }>
+ >{ x: 7, y: new derived() } : { x: number; y: derived; }
+ >x : number
+ >7 : 7
+@@= skipped -29, +29 lines =@@
+ >base : typeof base
+
+             var t2: { x: boolean; y: base; }[] = [{ x: true, y: new derived() }, { x: false, y: new base() }];
+->t2 : { x: boolean; y: base; }[]
++>t2 : Array<{ x: boolean; y: base; }>
+ >x : boolean
+ >y : base
+->[{ x: true, y: new derived() }, { x: false, y: new base() }] : ({ x: true; y: derived; } | { x: false; y: base; })[]
++>[{ x: true, y: new derived() }, { x: false, y: new base() }] : Array<{ x: true; y: derived; } | { x: false; y: base; }>
+ >{ x: true, y: new derived() } : { x: true; y: derived; }
+ >x : true
+ >true : true
+@@= skipped -18, +18 lines =@@
+ >base : typeof base
+
+             var t3: { x: string; y: base; }[] = [{ x: undefined, y: new base() }, { x: '', y: new derived() }];
+->t3 : { x: string; y: base; }[]
++>t3 : Array<{ x: string; y: base; }>
+ >x : string
+ >y : base
+->[{ x: undefined, y: new base() }, { x: '', y: new derived() }] : ({ x: undefined; y: base; } | { x: string; y: derived; })[]
++>[{ x: undefined, y: new base() }, { x: '', y: new derived() }] : Array<{ x: undefined; y: base; } | { x: string; y: derived; }>
+ >{ x: undefined, y: new base() } : { x: undefined; y: base; }
+ >x : undefined
+ >undefined : undefined
+@@= skipped -22, +22 lines =@@
+
+             // Order matters here so test all the variants
+             var a1 = [{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }];
+->a1 : { x: any; y: string; }[]
+->[{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }] : { x: any; y: string; }[]
++>a1 : Array<{ x: any; y: string; }>
++>[{ x: 0, y: 'a' }, { x: 'a', y: 'a' }, { x: anyObj, y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: 0, y: 'a' } : { x: number; y: string; }
+ >x : number
+ >0 : 0
+@@= skipped -19, +19 lines =@@
+ >'a' : "a"
+
+             var a2 = [{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }];
+->a2 : { x: any; y: string; }[]
+->[{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }] : { x: any; y: string; }[]
++>a2 : Array<{ x: any; y: string; }>
++>[{ x: anyObj, y: 'a' }, { x: 0, y: 'a' }, { x: 'a', y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: anyObj, y: 'a' } : { x: any; y: string; }
+ >x : any
+ >anyObj : any
+@@= skipped -19, +19 lines =@@
+ >'a' : "a"
+
+             var a3 = [{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }];
+->a3 : { x: any; y: string; }[]
+->[{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }] : { x: any; y: string; }[]
++>a3 : Array<{ x: any; y: string; }>
++>[{ x: 0, y: 'a' }, { x: anyObj, y: 'a' }, { x: 'a', y: 'a' }] : Array<{ x: any; y: string; }>
+ >{ x: 0, y: 'a' } : { x: number; y: string; }
+ >x : number
+ >0 : 0
+@@= skipped -32, +32 lines =@@
+ >base2 : typeof base2
+
+             var b1 = [baseObj, base2Obj, ifaceObj];
+->b1 : iface[]
+->[baseObj, base2Obj, ifaceObj] : iface[]
++>b1 : Array<iface>
++>[baseObj, base2Obj, ifaceObj] : Array<iface>
+ >baseObj : base
+ >base2Obj : base2
+ >ifaceObj : iface
+
+             var b2 = [base2Obj, baseObj, ifaceObj];
+->b2 : iface[]
+->[base2Obj, baseObj, ifaceObj] : iface[]
++>b2 : Array<iface>
++>[base2Obj, baseObj, ifaceObj] : Array<iface>
+ >base2Obj : base2
+ >baseObj : base
+ >ifaceObj : iface
+
+             var b3 = [baseObj, ifaceObj, base2Obj];
+->b3 : iface[]
+->[baseObj, ifaceObj, base2Obj] : iface[]
++>b3 : Array<iface>
++>[baseObj, ifaceObj, base2Obj] : Array<iface>
+ >baseObj : base
+ >ifaceObj : iface
+ >base2Obj : base2
+
+             var b4 = [ifaceObj, baseObj, base2Obj];
+->b4 : iface[]
+->[ifaceObj, baseObj, base2Obj] : iface[]
++>b4 : Array<iface>
++>[ifaceObj, baseObj, base2Obj] : Array<iface>
+ >ifaceObj : iface
+ >baseObj : base
+ >base2Obj : base2

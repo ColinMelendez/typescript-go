@@ -1,0 +1,48 @@
+--- old.tupleTypeInference2.types
++++ new.tupleTypeInference2.types
+@@= skipped -37, +37 lines =@@
+ g([[]] as [void[]]); // U: {}
+ >g([[]] as [void[]]) : unknown
+ >g : <T, U>(f: B<T, U>) => U
+->[[]] as [void[]] : [void[]]
+->[[]] : [never[]]
+->[] : never[]
++>[[]] as [void[]] : [Array<void>]
++>[[]] : [Array<never>]
++>[] : Array<never>
+
+ type C<R, S> = [R[]] | [R[], S];
+ >C : C<R, S>
+@@= skipped -14, +14 lines =@@
+ h([[]] as [void[]]); // U: {}
+ >h([[]] as [void[]]) : unknown
+ >h : <T, U>(f: C<T, U>) => U
+->[[]] as [void[]] : [void[]]
+->[[]] : [never[]]
+->[] : never[]
++>[[]] as [void[]] : [Array<void>]
++>[[]] : [Array<never>]
++>[] : Array<never>
+
+ // Repro from #22562
+
+@@= skipped -16, +16 lines =@@
+ h2([[]] as [never[]]); // T: never
+ >h2([[]] as [never[]]) : never
+ >h2 : <T>(f: C2<T>) => T
+->[[]] as [never[]] : [never[]]
+->[[]] : [never[]]
+->[] : never[]
++>[[]] as [never[]] : [Array<never>]
++>[[]] : [Array<never>]
++>[] : Array<never>
+
+ h2([[]] as [void[]]); // T: void
+ >h2([[]] as [void[]]) : void
+ >h2 : <T>(f: C2<T>) => T
+->[[]] as [void[]] : [void[]]
+->[[]] : [never[]]
+->[] : never[]
++>[[]] as [void[]] : [Array<void>]
++>[[]] : [Array<never>]
++>[] : Array<never>

@@ -582,26 +582,26 @@ declare function nested<T>(arg: {
         consume: (arg2: T) => void;
     };
 }): T;
-declare const resNested: number[];
+declare const resNested: Array<number>;
 declare function twoConsumers<T>(arg: {
     a: (arg: string) => T;
     consume1: (arg1: T) => void;
     consume2: (arg2: T) => void;
 }): T;
-declare const resTwoConsumers: string[];
+declare const resTwoConsumers: Array<string>;
 declare function multipleProducersBeforeConsumers<T, T2>(arg: {
     a: (arg: string) => T;
     b: (arg: string) => T2;
     consume1: (arg1: T) => void;
     consume2: (arg2: T2) => void;
 }): [T, T2];
-declare const resMultipleProducersBeforeConsumers: [string[], number];
+declare const resMultipleProducersBeforeConsumers: [Array<string>, number];
 declare function withConditionalExpression<T, T2, T3>(arg: {
     a: (arg1: string) => T;
     b: (arg2: T) => T2;
     c: (arg2: T2) => T3;
 }): [T, T2, T3];
-declare const resWithConditionalExpression: [string[], "first" | "two", boolean];
+declare const resWithConditionalExpression: [Array<string>, "first" | "two", boolean];
 declare function onion<T, T2, T3>(arg: {
     a: (arg1: string) => T;
     nested: {
@@ -611,7 +611,7 @@ declare function onion<T, T2, T3>(arg: {
         };
     };
 }): [T, T2, T3];
-declare const resOnion: [string[], string, boolean];
+declare const resOnion: [Array<string>, string, boolean];
 declare function onion2<T, T2, T3, T4>(arg: {
     a: (arg1: string) => T;
     nested: {
@@ -622,7 +622,7 @@ declare function onion2<T, T2, T3, T4>(arg: {
         };
     };
 }): [T, T2, T3, T4];
-declare const resOnion2: [string[], string, number, boolean];
+declare const resOnion2: [Array<string>, string, number, boolean];
 declare function distant<T>(args: {
     foo: {
         bar: {

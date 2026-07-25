@@ -1,0 +1,11 @@
+--- old.taggedTemplateContextualTyping1.types
++++ new.taggedTemplateContextualTyping1.types
+@@= skipped -21, +21 lines =@@
+
+ function tempTag1<T>(...rest: any[]): T {
+ >tempTag1 : { <T_1>(templateStrs: TemplateStringsArray, f: FuncType, x: T_1): T_1; <T_1>(templateStrs: TemplateStringsArray, f: FuncType, h: FuncType, x: T_1): T_1; }
+->rest : any[]
++>rest : Array<any>
+
+     return undefined;
+ >undefined : undefined

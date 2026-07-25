@@ -1,0 +1,36 @@
+--- old.sourceMapValidationDestructuringForArrayBindingPatternDefaultValues(target=es2015).types
++++ new.sourceMapValidationDestructuringForArrayBindingPatternDefaultValues(target=es2015).types
+@@= skipped -29, +29 lines =@@
+
+ let multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
+ >multiRobotA : MultiSkilledRobot
+->["mower", ["mowing", ""]] : [string, string[]]
++>["mower", ["mowing", ""]] : [string, Array<string>]
+ >"mower" : "mower"
+->["mowing", ""] : string[]
++>["mowing", ""] : Array<string>
+ >"mowing" : "mowing"
+ >"" : ""
+
+ let multiRobotB: MultiSkilledRobot = ["trimmer", ["trimming", "edging"]];
+ >multiRobotB : MultiSkilledRobot
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+
+@@= skipped -281, +281 lines =@@
+ for (let [nameB = "name"] = ["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
+ >nameB : string
+ >"name" : "name"
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+ >i : number

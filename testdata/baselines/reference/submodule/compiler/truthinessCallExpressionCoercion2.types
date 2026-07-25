@@ -120,9 +120,9 @@ function test(required1: () => boolean, required2: () => boolean, b: boolean, op
     // ok
     [].forEach((f: () => void) => f && f.apply(parent, []));
 >[].forEach((f: () => void) => f && f.apply(parent, [])) : void
->[].forEach : (callbackfn: (value: never, index: number, array: never[]) => void, thisArg?: any) => void
->[] : never[]
->forEach : (callbackfn: (value: never, index: number, array: never[]) => void, thisArg?: any) => void
+>[].forEach : (callbackfn: (value: never, index: number, array: Array<never>) => void, thisArg?: any) => void
+>[] : Array<never>
+>forEach : (callbackfn: (value: never, index: number, array: Array<never>) => void, thisArg?: any) => void
 >(f: () => void) => f && f.apply(parent, []) : (f: () => void) => void
 >f : () => void
 >f && f.apply(parent, []) : void

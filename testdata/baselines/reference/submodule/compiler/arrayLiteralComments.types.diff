@@ -1,0 +1,22 @@
+--- old.arrayLiteralComments.types
++++ new.arrayLiteralComments.types
+@@= skipped -1, +1 lines =@@
+
+ === arrayLiteralComments.ts ===
+ var testArrayWithFunc = [
+->testArrayWithFunc : (string | number | number[] | (() => void) | { a: number; })[]
+->[    // Function comment    function() {        let x = 1;    },    // String comment    '1',    // Numeric comment    2,    // Object comment    { a: 1 },    // Array comment    [1, 2, 3]] : (string | number | number[] | (() => void) | { a: number; })[]
++>testArrayWithFunc : Array<string | number | Array<number> | (() => void) | { a: number; }>
++>[    // Function comment    function() {        let x = 1;    },    // String comment    '1',    // Numeric comment    2,    // Object comment    { a: 1 },    // Array comment    [1, 2, 3]] : Array<string | number | Array<number> | (() => void) | { a: number; }>
+
+     // Function comment
+     function() {
+@@= skipped -28, +28 lines =@@
+
+     // Array comment
+     [1, 2, 3]
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

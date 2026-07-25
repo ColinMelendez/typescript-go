@@ -1,0 +1,26 @@
+--- old.directDependenceBetweenTypeAliases.types
++++ new.directDependenceBetweenTypeAliases.types
+@@= skipped -41, +41 lines =@@
+ // A type query directly depends on the type of the referenced entity.
+ var x: T5[] = []
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+ type T5 = typeof x
+ >T5 : any
+@@= skipped -13, +13 lines =@@
+ >T6 : T6
+
+ type T7 = typeof yy
+->T7 : [string, T8[]]
+->yy : [string, T8[]]
++>T7 : [string, Array<T8>]
++>yy : [string, Array<T8>]
+
+ var yy: [string, T8[]];
+->yy : [string, T8[]]
++>yy : [string, Array<T8>]
+
+ type T8 = C<T6>
+ >T8 : T8

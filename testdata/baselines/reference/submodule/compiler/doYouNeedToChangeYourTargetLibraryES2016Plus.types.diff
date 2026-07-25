@@ -1,0 +1,46 @@
+--- old.doYouNeedToChangeYourTargetLibraryES2016Plus.types
++++ new.doYouNeedToChangeYourTargetLibraryES2016Plus.types
+@@= skipped -5, +5 lines =@@
+ >testIncludes : any
+ >["hello"].includes("world") : any
+ >["hello"].includes : any
+->["hello"] : string[]
++>["hello"] : Array<string>
+ >"hello" : "hello"
+ >includes : any
+ >"world" : "world"
+@@= skipped -155, +155 lines =@@
+ >testArrayFlat : any
+ >[].flat() : any
+ >[].flat : any
+->[] : undefined[]
++>[] : Array<undefined>
+ >flat : any
+
+ const testArrayFlatMap = [].flatMap();
+ >testArrayFlatMap : any
+ >[].flatMap() : any
+ >[].flatMap : any
+->[] : undefined[]
++>[] : Array<undefined>
+ >flatMap : any
+
+ const testObjectConstructorFromEntries = Object.fromEntries({});
+@@= skipped -61, +61 lines =@@
+ >Promise.allSettled : any
+ >Promise : PromiseConstructor
+ >allSettled : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ const testStringMatchAll = "".matchAll();
+ >testStringMatchAll : any
+@@= skipped -32, +32 lines =@@
+ >Promise.any : any
+ >Promise : PromiseConstructor
+ >any : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ const testStringReplaceAll = "".replaceAll();
+ >testStringReplaceAll : any

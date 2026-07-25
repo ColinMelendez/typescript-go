@@ -1,0 +1,14 @@
+--- old.contextualTyping9.types
++++ new.contextualTyping9.types
+@@= skipped -1, +1 lines =@@
+
+ === contextualTyping9.ts ===
+ var foo:{id:number;}[] = [{id:1}, {id:2, name:"foo"}];
+->foo : { id: number; }[]
++>foo : Array<{ id: number; }>
+ >id : number
+->[{id:1}, {id:2, name:"foo"}] : ({ id: number; } | { id: number; name: string; })[]
++>[{id:1}, {id:2, name:"foo"}] : Array<{ id: number; } | { id: number; name: string; }>
+ >{id:1} : { id: number; }
+ >id : number
+ >1 : 1

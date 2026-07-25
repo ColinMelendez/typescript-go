@@ -1,0 +1,20 @@
+--- old.unparenthesizedFunctionTypeInUnionOrIntersection.types
++++ new.unparenthesizedFunctionTypeInUnionOrIntersection.types
+@@= skipped -24, +24 lines =@@
+
+   | string
+   | (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+   | number;
+
+@@= skipped -9, +9 lines =@@
+
+ type I2 = string & (...foo: number[]) => void;
+ >I2 : I2
+->foo : number[]
++>foo : Array<number>
+
+ type I3 = & () => boolean
+ >I3 : () => boolean

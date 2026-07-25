@@ -1,0 +1,78 @@
+--- old.destructuringParameterDeclaration10(strict=false).types
++++ new.destructuringParameterDeclaration10(strict=false).types
+@@= skipped -7, +7 lines =@@
+ >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : undefined[]
++>json : Array<string>
++>[] : Array<undefined>
+
+     } = {}
+ >{} : {}
+
+ }: {
+   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
+->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>>
++>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>>
+
+ } = {}) {
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }
+
+ export function prepareConfigWithoutAnnotation({
+->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: any[]; }; }) => void
++>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<any>; }; }) => void
+
+     additionalFiles: {
+ >additionalFiles : any
+
+         json = []
+->json : any[]
+->[] : undefined[]
++>json : Array<any>
++>[] : Array<undefined>
+
+     } = {}
+ >{} : {}
+@@= skipped -34, +34 lines =@@
+ >{} : {}
+
+     json
+->json : any[]
++>json : Array<any>
+ }
+
+ export const prepareConfigWithContextualSignature: (param:{
+@@= skipped -8, +8 lines =@@
+ >param : { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }
+
+   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
+->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>>
++>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>>
+
+ }) => void = ({
+ >({    additionalFiles: {        json = []    } = {}} = {}) => {    json // string[]} : ({ additionalFiles: { json } }?: { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }) => void
+@@= skipped -9, +9 lines =@@
+ >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : undefined[]
++>json : Array<string>
++>[] : Array<undefined>
+
+     } = {}
+ >{} : {}
+@@= skipped -10, +10 lines =@@
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }

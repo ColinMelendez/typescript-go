@@ -1,6 +1,101 @@
 --- old.keyofAndIndexedAccess.types
 +++ new.keyofAndIndexedAccess.types
-@@= skipped -1027, +1027 lines =@@
+@@= skipped -86, +86 lines =@@
+ >K10 : keyof Shape
+
+ type K11 = keyof Shape[];  // "length" | "toString" | ...
+->K11 : keyof Shape[]
++>K11 : keyof Array<Shape>
+
+ type K12 = keyof Dictionary<Shape>;  // string
+ >K12 : string | number
+@@= skipped -184, +184 lines =@@
+
+ function f11(a: Shape[]) {
+ >f11 : (a: Shape[]) => void
+->a : Shape[]
++>a : Array<Shape>
+
+     let len = getProperty(a, "length");  // number
+ >len : number
+ >getProperty(a, "length") : number
+ >getProperty : <T, K extends keyof T>(obj: T, key: K) => T[K]
+->a : Shape[]
++>a : Array<Shape>
+ >"length" : "length"
+
+     setProperty(a, "length", len);
+ >setProperty(a, "length", len) : void
+ >setProperty : <T, K extends keyof T>(obj: T, key: K, value: T[K]) => void
+->a : Shape[]
++>a : Array<Shape>
+ >"length" : "length"
+ >len : number
+ }
+@@= skipped -169, +169 lines =@@
+ }
+
+ function pluck<T, K extends keyof T>(array: T[], key: K) {
+->pluck : <T, K extends keyof T>(array: T[], key: K) => T[K][]
+->array : T[]
++>pluck : <T, K extends keyof T>(array: T[], key: K) => Array<T[K]>
++>array : Array<T>
+ >key : K
+
+     return array.map(x => x[key]);
+->array.map(x => x[key]) : T[K][]
+->array.map : <U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any) => U[]
+->array : T[]
+->map : <U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any) => U[]
++>array.map(x => x[key]) : Array<T[K]>
++>array.map : <U>(callbackfn: (value: T, index: number, array: Array<T>) => U, thisArg?: any) => Array<U>
++>array : Array<T>
++>map : <U>(callbackfn: (value: T, index: number, array: Array<T>) => U, thisArg?: any) => Array<U>
+ >x => x[key] : (x: T) => T[K]
+ >x : T
+ >x[key] : T[K]
+@@= skipped -18, +18 lines =@@
+
+ function f30(shapes: Shape[]) {
+ >f30 : (shapes: Shape[]) => void
+->shapes : Shape[]
++>shapes : Array<Shape>
+
+     let names = pluck(shapes, "name");    // string[]
+->names : string[]
+->pluck(shapes, "name") : string[]
+->pluck : <T, K extends keyof T>(array: T[], key: K) => T[K][]
+->shapes : Shape[]
++>names : Array<string>
++>pluck(shapes, "name") : Array<string>
++>pluck : <T, K extends keyof T>(array: T[], key: K) => Array<T[K]>
++>shapes : Array<Shape>
+ >"name" : "name"
+
+     let widths = pluck(shapes, "width");  // number[]
+->widths : number[]
+->pluck(shapes, "width") : number[]
+->pluck : <T, K extends keyof T>(array: T[], key: K) => T[K][]
+->shapes : Shape[]
++>widths : Array<number>
++>pluck(shapes, "width") : Array<number>
++>pluck : <T, K extends keyof T>(array: T[], key: K) => Array<T[K]>
++>shapes : Array<Shape>
+ >"width" : "width"
+
+     let nameOrVisibles = pluck(shapes, cond ? "name" : "visible");  // (string | boolean)[]
+->nameOrVisibles : (string | boolean)[]
+->pluck(shapes, cond ? "name" : "visible") : (string | boolean)[]
+->pluck : <T, K extends keyof T>(array: T[], key: K) => T[K][]
+->shapes : Shape[]
++>nameOrVisibles : Array<string | boolean>
++>pluck(shapes, cond ? "name" : "visible") : Array<string | boolean>
++>pluck : <T, K extends keyof T>(array: T[], key: K) => Array<T[K]>
++>shapes : Array<Shape>
+ >cond ? "name" : "visible" : "name" | "visible"
+ >cond : boolean
+ >"name" : "name"
+@@= skipped -570, +570 lines =@@
  }
 
  function f81<T extends { a: { x: any } }>(obj: T) {
@@ -54,7 +149,31 @@
  >{ bar: { x: 42 } } : { bar: { x: number; }; }
  >bar : { x: number; }
  >{ x: 42 } : { x: number; }
-@@= skipped -496, +496 lines =@@
+@@= skipped -322, +322 lines =@@
+ function path(obj: any, ...keys: (string | number)[]): any;
+ >path : { <T, K1 extends keyof T>(obj: T, key1: K1): T[K1]; <T, K1 extends keyof T, K2 extends keyof T[K1]>(obj: T, key1: K1, key2: K2): T[K1][K2]; <T, K1 extends keyof T, K2 extends keyof T[K1], K3 extends keyof T[K1][K2]>(obj: T, key1: K1, key2: K2, key3: K3): T[K1][K2][K3]; (obj: any, ...keys: (string | number)[]): any; }
+ >obj : any
+->keys : (string | number)[]
++>keys : Array<string | number>
+
+ function path(obj: any, ...keys: (string | number)[]): any {
+ >path : { <T, K1 extends keyof T>(obj: T, key1: K1): T[K1]; <T, K1 extends keyof T, K2 extends keyof T[K1]>(obj: T, key1: K1, key2: K2): T[K1][K2]; <T, K1 extends keyof T, K2 extends keyof T[K1], K3 extends keyof T[K1][K2]>(obj: T, key1: K1, key2: K2, key3: K3): T[K1][K2][K3]; (obj: any, ...keys: (string | number)[]): any; }
+ >obj : any
+->keys : (string | number)[]
++>keys : Array<string | number>
+
+     let result = obj;
+ >result : any
+@@= skipped -13, +13 lines =@@
+
+     for (let k of keys) {
+ >k : string | number
+->keys : (string | number)[]
++>keys : Array<string | number>
+
+         result = result[k];
+ >result = result[k] : any
+@@= skipped -161, +161 lines =@@
 
  c1.get("hello");
  >c1.get("hello") : string
@@ -66,7 +185,15 @@
  >"hello" : "hello"
 
  // Repro from #12625
-@@= skipped -64, +64 lines =@@
+@@= skipped -57, +57 lines =@@
+ >name : string
+
+ 	args: any[];
+->args : any[]
++>args : Array<any>
+
+ 	returnValue: any;
+ >returnValue : any
  }
 
  declare function dispatchMethod<M extends MethodDescriptor>(name: M['name'], args: M['args']): M['returnValue'];
@@ -75,12 +202,95 @@
  >name : M["name"]
  >args : M["args"]
 
-@@= skipped -20, +20 lines =@@
+@@= skipped -21, +21 lines =@@
+ >args : [string, number]
+
+ 	returnValue: string[];
+->returnValue : string[]
++>returnValue : Array<string>
+ }
+
  let result = dispatchMethod<SomeMethodDescriptor>("someMethod", ["hello", 35]);
- >result : string[]
- >dispatchMethod<SomeMethodDescriptor>("someMethod", ["hello", 35]) : string[]
+->result : string[]
+->dispatchMethod<SomeMethodDescriptor>("someMethod", ["hello", 35]) : string[]
 ->dispatchMethod : <M extends MethodDescriptor>(name: M["name"], args: M["args"]) => M["returnValue"]
++>result : Array<string>
++>dispatchMethod<SomeMethodDescriptor>("someMethod", ["hello", 35]) : Array<string>
 +>dispatchMethod : <M extends MethodDescriptor>(name: M['name'], args: M['args']) => M['returnValue']
  >"someMethod" : "someMethod"
  >["hello", 35] : [string, number]
  >"hello" : "hello"
+@@= skipped -18, +18 lines =@@
+ >KeyTypes : KeyTypes
+
+ let MyThingy: { [key in KeyTypes]: string[] };
+->MyThingy : { a: string[]; b: string[]; }
++>MyThingy : { a: Array<string>; b: Array<string>; }
+
+ function addToMyThingy<S extends KeyTypes>(key: S) {
+ >addToMyThingy : <S extends KeyTypes>(key: S) => void
+@@= skipped -8, +8 lines =@@
+
+     MyThingy[key].push("a");
+ >MyThingy[key].push("a") : number
+->MyThingy[key].push : (...items: string[]) => number
+->MyThingy[key] : { a: string[]; b: string[]; }[S]
+->MyThingy : { a: string[]; b: string[]; }
++>MyThingy[key].push : (...items: Array<string>) => number
++>MyThingy[key] : { a: Array<string>; b: Array<string>; }[S]
++>MyThingy : { a: Array<string>; b: Array<string>; }
+ >key : S
+->push : (...items: string[]) => number
++>push : (...items: Array<string>) => number
+ >"a" : "a"
+ }
+
+@@= skipped -41, +41 lines =@@
+ >obj : T
+
+     idFields: K[],
+->idFields : K[]
++>idFields : Array<K>
+
+     idMapping: Partial<Record<T[K], T[K]>>
+ >idMapping : Partial<Record<T[K], T[K]>>
+@@= skipped -8, +8 lines =@@
+ ): Record<K, string> {
+     for (const idField of idFields) {
+ >idField : K
+->idFields : K[]
++>idFields : Array<K>
+
+         const newId: T[K] | undefined = idMapping[obj[idField]];
+ >newId : T[K] | undefined
+@@= skipped -269, +269 lines =@@
+ function getFlagsFromSimpleRecord<Flag extends string>(record: SimpleDBRecord<Flag>, flags: Flag[]) {
+ >getFlagsFromSimpleRecord : <Flag extends string>(record: SimpleDBRecord<Flag>, flags: Flag[]) => SimpleDBRecord<Flag>[Flag]
+ >record : SimpleDBRecord<Flag>
+->flags : Flag[]
++>flags : Array<Flag>
+
+     return record[flags[0]];
+ >record[flags[0]] : SimpleDBRecord<Flag>[Flag]
+ >record : SimpleDBRecord<Flag>
+ >flags[0] : Flag
+->flags : Flag[]
++>flags : Array<Flag>
+ >0 : 0
+ }
+
+@@= skipped -18, +18 lines =@@
+ function getFlagsFromDynamicRecord<Flag extends string>(record: DynamicDBRecord<Flag>, flags: Flag[]) {
+ >getFlagsFromDynamicRecord : <Flag extends string>(record: DynamicDBRecord<Flag>, flags: Flag[]) => DynamicDBRecord<Flag>[Flag]
+ >record : DynamicDBRecord<Flag>
+->flags : Flag[]
++>flags : Array<Flag>
+
+     return record[flags[0]];
+ >record[flags[0]] : DynamicDBRecord<Flag>[Flag]
+ >record : DynamicDBRecord<Flag>
+ >flags[0] : Flag
+->flags : Flag[]
++>flags : Array<Flag>
+ >0 : 0
+ }

@@ -3,7 +3,7 @@
 === taggedTemplateWithConstructableTag02.ts ===
 interface I {
     new (...args: any[]): string;
->args : any[]
+>args : Array<any>
 
     new (): number;
 }

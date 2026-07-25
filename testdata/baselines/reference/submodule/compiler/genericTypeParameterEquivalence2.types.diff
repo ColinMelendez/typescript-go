@@ -1,0 +1,136 @@
+--- old.genericTypeParameterEquivalence2.types
++++ new.genericTypeParameterEquivalence2.types
+@@= skipped -28, +28 lines =@@
+ // forEach :: [a] -> (a -> ()) -> ()
+ function forEach<A>(list: A[], f: (a: A, n?: number) => void ): void {
+ >forEach : <A>(list: A[], f: (a: A, n?: number) => void) => void
+->list : A[]
++>list : Array<A>
+ >f : (a: A, n?: number) => void
+ >a : A
+ >n : number
+@@= skipped -11, +11 lines =@@
+ >i < list.length : boolean
+ >i : number
+ >list.length : number
+->list : A[]
++>list : Array<A>
+ >length : number
+ >++i : number
+ >i : number
+@@= skipped -9, +9 lines =@@
+ >f(list[i], i) : void
+ >f : (a: A, n?: number) => void
+ >list[i] : A
+->list : A[]
++>list : Array<A>
+ >i : number
+ >i : number
+     }
+@@= skipped -11, +11 lines =@@
+ >filter : <A>(f: (a: A) => boolean, ar: A[]) => A[]
+ >f : (a: A) => boolean
+ >a : A
+->ar : A[]
++>ar : Array<A>
+
+     var ret = [];
+->ret : any[]
+->[] : undefined[]
++>ret : Array<any>
++>[] : Array<undefined>
+
+     forEach(ar, (el) => {
+ >forEach(ar, (el) => {        if (f(el)) {            ret.push(el);        }    } ) : void
+ >forEach : <A_1>(list: A_1[], f: (a: A_1, n?: number) => void) => void
+->ar : A[]
++>ar : Array<A>
+ >(el) => {        if (f(el)) {            ret.push(el);        }    } : (el: A) => void
+ >el : A
+
+@@= skipped -20, +20 lines =@@
+
+             ret.push(el);
+ >ret.push(el) : number
+->ret.push : (...items: any[]) => number
+->ret : any[]
+->push : (...items: any[]) => number
++>ret.push : (...items: Array<any>) => number
++>ret : Array<any>
++>push : (...items: Array<any>) => number
+ >el : A
+         }
+     } );
+
+     return ret;
+->ret : any[]
++>ret : Array<any>
+ }
+
+ // length :: [a] -> Num
+ function length2<A>(ar: A[]): number {
+ >length2 : <A>(ar: A[]) => number
+->ar : A[]
++>ar : Array<A>
+
+     return ar.length;
+ >ar.length : number
+->ar : A[]
++>ar : Array<A>
+ >length : number
+ }
+
+@@= skipped -50, +50 lines =@@
+ }
+
+ var cfilter = curry1(filter);
+->cfilter : <A>(ax: (a: A) => boolean) => (bx: A[]) => A[]
+->curry1(filter) : <A>(ax: (a: A) => boolean) => (bx: A[]) => A[]
++>cfilter : <A>(ax: (a: A) => boolean) => (bx: Array<A>) => Array<A>
++>curry1(filter) : <A>(ax: (a: A) => boolean) => (bx: Array<A>) => Array<A>
+ >curry1 : <A, B, C>(f: (a: A, b: B) => C) => (ax: A) => (bx: B) => C
+ >filter : <A>(f: (a: A) => boolean, ar: A[]) => A[]
+
+@@= skipped -17, +17 lines =@@
+ >countWhere_1 : <A>(pred: (a: A) => boolean) => (a: A[]) => number
+ >pred : (a: A) => boolean
+ >a : A
+->a : A[]
++>a : Array<A>
+
+     return compose(length2, cfilter(pred));
+->compose(length2, cfilter(pred)) : (a: A[]) => number
++>compose(length2, cfilter(pred)) : (a: Array<A>) => number
+ >compose : <A_1, B, C>(f: (b: B) => C, g: (a: A_1) => B) => (a: A_1) => C
+ >length2 : <A_1>(ar: A_1[]) => number
+->cfilter(pred) : (bx: A[]) => A[]
+->cfilter : <A_1>(ax: (a: A_1) => boolean) => (bx: A_1[]) => A_1[]
++>cfilter(pred) : (bx: Array<A>) => Array<A>
++>cfilter : <A_1>(ax: (a: A_1) => boolean) => (bx: Array<A_1>) => Array<A_1>
+ >pred : (a: A) => boolean
+ }
+
+@@= skipped -15, +15 lines =@@
+ >countWhere_2 : <A>(pred: (a: A) => boolean) => (a: A[]) => number
+ >pred : (a: A) => boolean
+ >a : A
+->a : A[]
++>a : Array<A>
+
+     var where = cfilter(pred);
+->where : (bx: A[]) => A[]
+->cfilter(pred) : (bx: A[]) => A[]
+->cfilter : <A_1>(ax: (a: A_1) => boolean) => (bx: A_1[]) => A_1[]
++>where : (bx: Array<A>) => Array<A>
++>cfilter(pred) : (bx: Array<A>) => Array<A>
++>cfilter : <A_1>(ax: (a: A_1) => boolean) => (bx: Array<A_1>) => Array<A_1>
+ >pred : (a: A) => boolean
+
+     return compose(length2, where);
+->compose(length2, where) : (a: A[]) => number
++>compose(length2, where) : (a: Array<A>) => number
+ >compose : <A_1, B, C>(f: (b: B) => C, g: (a: A_1) => B) => (a: A_1) => C
+ >length2 : <A_1>(ar: A_1[]) => number
+->where : (bx: A[]) => A[]
++>where : (bx: Array<A>) => Array<A>
+ }

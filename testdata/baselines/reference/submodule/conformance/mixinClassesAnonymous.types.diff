@@ -1,6 +1,15 @@
 --- old.mixinClassesAnonymous.types
 +++ new.mixinClassesAnonymous.types
-@@= skipped -30, +30 lines =@@
+@@= skipped -2, +2 lines =@@
+ === mixinClassesAnonymous.ts ===
+ type Constructor<T> = new(...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ class Base {
+ >Base : Base
+@@= skipped -28, +28 lines =@@
  }
 
  const Printable = <T extends Constructor<Base>>(superClass: T) => class extends superClass {
@@ -23,7 +32,23 @@
  >superClass : T
 
      class C extends superClass {
-@@= skipped -28, +28 lines =@@
+@@= skipped -11, +11 lines =@@
+ >_tag : string
+
+         constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+             super(...args);
+ >super(...args) : void
+ >super : T
+ >...args : any
+->args : any[]
++>args : Array<any>
+
+             this._tag = "hello";
+ >this._tag = "hello" : "hello"
+@@= skipped -17, +17 lines =@@
          }
      }
      return C;

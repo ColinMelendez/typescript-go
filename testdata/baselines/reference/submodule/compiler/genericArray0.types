@@ -2,18 +2,18 @@
 
 === genericArray0.ts ===
 var x:number[];
->x : number[]
+>x : Array<number>
 
 
 var y = x; 
->y : number[]
->x : number[]
+>y : Array<number>
+>x : Array<number>
 
 function map<U>() {
 >map : <U>() => void
 
     var ys: U[] = [];
->ys : U[]
->[] : never[]
+>ys : Array<U>
+>[] : Array<never>
 }
 

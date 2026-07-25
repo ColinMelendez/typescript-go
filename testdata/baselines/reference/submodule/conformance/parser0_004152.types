@@ -8,7 +8,7 @@ export class Game {
 >position : any
 >new DisplayPosition([) : any
 >DisplayPosition : any
->[ : undefined[]
+>[ : Array<undefined>
 >3 : any
 >3 : any
 >3 : any
@@ -26,5 +26,5 @@ export class Game {
 >0 : any
 
     private prevConfig: SeedCoords[][];
->prevConfig : SeedCoords[][]
+>prevConfig : Array<Array<SeedCoords>>
 }

@@ -1,0 +1,22 @@
+--- old.noCrashOnThisTypeUsage.types
++++ new.noCrashOnThisTypeUsage.types
+@@= skipped -2, +2 lines =@@
+ === noCrashOnThisTypeUsage.ts ===
+ interface IListenable {
+     changeListeners: Function[] | null
+->changeListeners : Function[] | null
++>changeListeners : Array<Function> | null
+
+     observe(handler: (change: any, oldValue?: any) => void, fireImmediately?: boolean): void
+ >observe : (handler: (change: any, oldValue?: any) => void, fireImmediately?: boolean) => void
+@@= skipped -54, +54 lines =@@
+         });
+     }
+     changeListeners: Function[] | null = [];
+->changeListeners : Function[] | null
+->[] : never[]
++>changeListeners : Array<Function> | null
++>[] : Array<never>
+
+     observe(handler: (change: any, oldValue?: any) => void, fireImmediately?: boolean) {}
+ >observe : (handler: (change: any, oldValue?: any) => void, fireImmediately?: boolean) => void

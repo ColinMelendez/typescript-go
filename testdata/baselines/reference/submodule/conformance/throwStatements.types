@@ -224,12 +224,12 @@ throw { x: 12, y: 13 };
 >13 : 13
 
 throw [];
->[] : undefined[]
+>[] : Array<undefined>
 
 throw ['a', ['b']];
->['a', ['b']] : (string | string[])[]
+>['a', ['b']] : Array<string | Array<string>>
 >'a' : "a"
->['b'] : string[]
+>['b'] : Array<string>
 >'b' : "b"
 
 throw /[a-z]/;

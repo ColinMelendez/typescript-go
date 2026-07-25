@@ -14,13 +14,13 @@ function* g() {
 
     yield* [new Foo];
 >yield* [new Foo] : undefined
->[new Foo] : Foo[]
+>[new Foo] : Array<Foo>
 >new Foo : Foo
 >Foo : typeof Foo
 
     yield* [new Baz];
 >yield* [new Baz] : undefined
->[new Baz] : Baz[]
+>[new Baz] : Array<Baz>
 >new Baz : Baz
 >Baz : typeof Baz
 }

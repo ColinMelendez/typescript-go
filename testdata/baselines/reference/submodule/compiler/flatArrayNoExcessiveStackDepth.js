@@ -44,7 +44,7 @@ function f(x, y) {
 
 //// [flatArrayNoExcessiveStackDepth.d.ts]
 declare const foo: unknown[];
-declare const bar: string[];
+declare const bar: Array<string>;
 interface Foo extends Array<string> {
 }
 declare const repro_43249: (value: unknown) => void;

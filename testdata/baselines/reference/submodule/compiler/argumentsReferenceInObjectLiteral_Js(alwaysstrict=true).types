@@ -2,33 +2,33 @@
 
 === /a.js ===
 const a = () => {
->a : () => { arguments: undefined[]; }
->() => {    return {        arguments: [],    };} : () => { arguments: undefined[]; }
+>a : () => { arguments: Array<undefined>; }
+>() => {    return {        arguments: [],    };} : () => { arguments: Array<undefined>; }
 
     return {
->{        arguments: [],    } : { arguments: undefined[]; }
+>{        arguments: [],    } : { arguments: Array<undefined>; }
 
         arguments: [],
->arguments : undefined[]
->[] : undefined[]
+>arguments : Array<undefined>
+>[] : Array<undefined>
 
     };
 };
 
 const b = () => {
->b : () => { arguments: any[]; }
->() => {    const c = {        arguments: [],    }    return c;} : () => { arguments: any[]; }
+>b : () => { arguments: Array<any>; }
+>() => {    const c = {        arguments: [],    }    return c;} : () => { arguments: Array<any>; }
 
     const c = {
->c : { arguments: any[]; }
->{        arguments: [],    } : { arguments: undefined[]; }
+>c : { arguments: Array<any>; }
+>{        arguments: [],    } : { arguments: Array<undefined>; }
 
         arguments: [],
->arguments : undefined[]
->[] : undefined[]
+>arguments : Array<undefined>
+>[] : Array<undefined>
     }
     return c;
->c : { arguments: any[]; }
+>c : { arguments: Array<any>; }
 
 };
 

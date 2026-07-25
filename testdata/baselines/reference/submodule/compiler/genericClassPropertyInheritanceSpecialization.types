@@ -38,21 +38,21 @@ interface KnockoutObservableArray<T> extends KnockoutObservable<T[]> {
 >splice : (start: number, deleteCount?: number, ...items: T[]) => T[]
 >start : number
 >deleteCount : number
->items : T[]
+>items : Array<T>
 
     pop(): T;
 >pop : () => T
 
     push(...items: T[]): void;
 >push : (...items: T[]) => void
->items : T[]
+>items : Array<T>
 
     shift(): T;
 >shift : () => T
 
     unshift(...items: T[]): number;
 >unshift : (...items: T[]) => number
->items : T[]
+>items : Array<T>
 
     reverse(): T[];
 >reverse : () => T[]
@@ -74,7 +74,7 @@ interface KnockoutObservableArray<T> extends KnockoutObservable<T[]> {
 
     removeAll(items?: T[]): T[];
 >removeAll : (items?: T[]) => T[]
->items : T[]
+>items : Array<T>
 
     destroy(item: T): void;
 >destroy : (item: T) => void
@@ -82,7 +82,7 @@ interface KnockoutObservableArray<T> extends KnockoutObservable<T[]> {
 
     destroyAll(items?: T[]): void;
 >destroyAll : (items?: T[]) => void
->items : T[]
+>items : Array<T>
 }
 
 interface KnockoutObservableArrayStatic {
@@ -90,7 +90,7 @@ interface KnockoutObservableArrayStatic {
 >fn : KnockoutObservableArray<any>
 
     <T>(value?: T[]): KnockoutObservableArray<T>;
->value : T[]
+>value : Array<T>
 }
 
 declare namespace ko {

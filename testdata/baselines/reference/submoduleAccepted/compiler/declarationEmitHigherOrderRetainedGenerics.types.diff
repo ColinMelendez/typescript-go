@@ -1,6 +1,28 @@
 --- old.declarationEmitHigherOrderRetainedGenerics.types
 +++ new.declarationEmitHigherOrderRetainedGenerics.types
-@@= skipped -188, +188 lines =@@
+@@= skipped -163, +163 lines =@@
+ >dual : { <DataLast extends (...args: Array<any>) => any, DataFirst extends (...args: Array<any>) => any>(arity: Parameters<DataFirst>["length"], body: DataFirst): DataLast & DataFirst; <DataLast extends (...args: Array<any>) => any, DataFirst extends (...args: Array<any>) => any>(isDataFirst: (args: IArguments) => boolean, body: DataFirst): DataLast & DataFirst; }
+
+     <DataLast extends (...args: Array<any>) => any, DataFirst extends (...args: Array<any>) => any>(
+->args : any[]
+->args : any[]
++>args : Array<any>
++>args : Array<any>
+
+         arity: Parameters<DataFirst>["length"],
+ >arity : Parameters<DataFirst>["length"]
+@@= skipped -11, +11 lines =@@
+
+     ): DataLast & DataFirst
+     <DataLast extends (...args: Array<any>) => any, DataFirst extends (...args: Array<any>) => any>(
+->args : any[]
+->args : any[]
++>args : Array<any>
++>args : Array<any>
+
+         isDataFirst: (args: IArguments) => boolean,
+ >isDataFirst : (args: IArguments) => boolean
+@@= skipped -14, +14 lines =@@
  };
 
  export const zipWith = <F extends TypeLambda>(F: SemiApplicative<F>): {

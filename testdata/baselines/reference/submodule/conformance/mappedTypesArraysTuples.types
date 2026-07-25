@@ -9,55 +9,55 @@ type Boxified<T> = { [P in keyof T]: Box<T[P]> };
 >Boxified : Boxified<T>
 
 type T00 = Boxified<[number, string?, ...boolean[]]>;
->T00 : [Box<number>, (Box<string | undefined> | undefined)?, ...Box<boolean>[]]
+>T00 : [Box<number>, (Box<string | undefined> | undefined)?, ...Array<Box<boolean>>]
 
 type T01 = Partial<[number, string?, ...boolean[]]>;
->T01 : [(number | undefined)?, (string | undefined)?, ...(boolean | undefined)[]]
+>T01 : [(number | undefined)?, (string | undefined)?, ...Array<boolean | undefined>]
 
 type T02 = Required<[number, string?, ...boolean[]]>;
->T02 : [number, string, ...boolean[]]
+>T02 : [number, string, ...Array<boolean>]
 
 type T10 = Boxified<string[]>;
->T10 : Box<string>[]
+>T10 : Array<Box<string>>
 
 type T11 = Partial<string[]>;
->T11 : (string | undefined)[]
+>T11 : Array<string | undefined>
 
 type T12 = Required<string[]>;
->T12 : string[]
+>T12 : Array<string>
 
 type T13 = Boxified<ReadonlyArray<string>>;
->T13 : readonly Box<string>[]
+>T13 : ReadonlyArray<Box<string>>
 
 type T14 = Partial<ReadonlyArray<string>>;
->T14 : readonly (string | undefined)[]
+>T14 : ReadonlyArray<string | undefined>
 
 type T15 = Required<ReadonlyArray<string>>;
->T15 : readonly string[]
+>T15 : ReadonlyArray<string>
 
 type T20 = Boxified<(string | undefined)[]>;
->T20 : Box<string | undefined>[]
+>T20 : Array<Box<string | undefined>>
 
 type T21 = Partial<(string | undefined)[]>;
->T21 : (string | undefined)[]
+>T21 : Array<string | undefined>
 
 type T22 = Required<(string | undefined)[]>;
->T22 : string[]
+>T22 : Array<string>
 
 type T23 = Boxified<ReadonlyArray<string | undefined>>;
->T23 : readonly Box<string | undefined>[]
+>T23 : ReadonlyArray<Box<string | undefined>>
 
 type T24 = Partial<ReadonlyArray<string | undefined>>;
->T24 : readonly (string | undefined)[]
+>T24 : ReadonlyArray<string | undefined>
 
 type T25 = Required<ReadonlyArray<string | undefined>>;
->T25 : readonly string[]
+>T25 : ReadonlyArray<string>
 
 type T30 = Boxified<Partial<string[]>>;
->T30 : Box<string | undefined>[]
+>T30 : Array<Box<string | undefined>>
 
 type T31 = Partial<Boxified<string[]>>;
->T31 : (Box<string> | undefined)[]
+>T31 : Array<Box<string> | undefined>
 
 type A = { a: string };
 >A : A
@@ -74,50 +74,50 @@ type ReadWrite<T> = { -readonly [P in keyof T] : T[P] };
 >ReadWrite : ReadWrite<T>
 
 type T50 = Readonly<string[]>;
->T50 : readonly string[]
+>T50 : ReadonlyArray<string>
 
 type T51 = Readonly<[number, number]>;
 >T51 : readonly [number, number]
 
 type T52 = Partial<Readonly<string[]>>;
->T52 : readonly (string | undefined)[]
+>T52 : ReadonlyArray<string | undefined>
 
 type T53 = Readonly<Partial<string[]>>;
->T53 : readonly (string | undefined)[]
+>T53 : ReadonlyArray<string | undefined>
 
 type T54 = ReadWrite<Required<T53>>;
->T54 : string[]
+>T54 : Array<string>
 
 declare function unboxify<T>(x: Boxified<T>): T;
 >unboxify : <T>(x: Boxified<T>) => T
 >x : Boxified<T>
 
 declare let x10: [Box<number>, Box<string>, ...Box<boolean>[]];
->x10 : [Box<number>, Box<string>, ...Box<boolean>[]]
+>x10 : [Box<number>, Box<string>, ...Array<Box<boolean>>]
 
 let y10 = unboxify(x10);
->y10 : [number, string, ...boolean[]]
->unboxify(x10) : [number, string, ...boolean[]]
+>y10 : [number, string, ...Array<boolean>]
+>unboxify(x10) : [number, string, ...Array<boolean>]
 >unboxify : <T>(x: Boxified<T>) => T
->x10 : [Box<number>, Box<string>, ...Box<boolean>[]]
+>x10 : [Box<number>, Box<string>, ...Array<Box<boolean>>]
 
 declare let x11: Box<number>[];
->x11 : Box<number>[]
+>x11 : Array<Box<number>>
 
 let y11 = unboxify(x11);
->y11 : number[]
->unboxify(x11) : number[]
+>y11 : Array<number>
+>unboxify(x11) : Array<number>
 >unboxify : <T>(x: Boxified<T>) => T
->x11 : Box<number>[]
+>x11 : Array<Box<number>>
 
 declare let x12: { a: Box<number>, b: Box<string[]> };
 >x12 : { a: Box<number>; b: Box<string[]>; }
 >a : Box<number>
->b : Box<string[]>
+>b : Box<Array<string>>
 
 let y12 = unboxify(x12);
->y12 : { a: number; b: string[]; }
->unboxify(x12) : { a: number; b: string[]; }
+>y12 : { a: number; b: Array<string>; }
+>unboxify(x12) : { a: number; b: Array<string>; }
 >unboxify : <T>(x: Boxified<T>) => T
 >x12 : { a: Box<number>; b: Box<string[]>; }
 
@@ -126,27 +126,27 @@ declare function nonpartial<T>(x: Partial<T>): T;
 >x : Partial<T>
 
 declare let x20: [number | undefined, string?, ...boolean[]];
->x20 : [number | undefined, (string | undefined)?, ...boolean[]]
+>x20 : [number | undefined, (string | undefined)?, ...Array<boolean>]
 
 let y20 = nonpartial(x20);
->y20 : [number, string, ...boolean[]]
->nonpartial(x20) : [number, string, ...boolean[]]
+>y20 : [number, string, ...Array<boolean>]
+>nonpartial(x20) : [number, string, ...Array<boolean>]
 >nonpartial : <T>(x: Partial<T>) => T
->x20 : [number | undefined, (string | undefined)?, ...boolean[]]
+>x20 : [number | undefined, (string | undefined)?, ...Array<boolean>]
 
 declare let x21: (number | undefined)[];
->x21 : (number | undefined)[]
+>x21 : Array<number | undefined>
 
 let y21 = nonpartial(x21);
->y21 : number[]
->nonpartial(x21) : number[]
+>y21 : Array<number>
+>nonpartial(x21) : Array<number>
 >nonpartial : <T>(x: Partial<T>) => T
->x21 : (number | undefined)[]
+>x21 : Array<number | undefined>
 
 declare let x22: { a: number | undefined, b?: string[] };
 >x22 : { a: number | undefined; b?: string[]; }
 >a : number | undefined
->b : string[] | undefined
+>b : Array<string> | undefined
 
 let y22 = nonpartial(x22);
 >y22 : { a: number; b: string[]; }
@@ -168,8 +168,8 @@ function f1(a: number, b: Promise<number>, c: string[], d: Promise<string[]>) {
 >f1 : (a: number, b: Promise<number>, c: string[], d: Promise<string[]>) => void
 >a : number
 >b : Promise<number>
->c : string[]
->d : Promise<string[]>
+>c : Array<string>
+>d : Promise<Array<string>>
 
     let x1 = all(a);
 >x1 : Promise<[number]>
@@ -185,21 +185,21 @@ function f1(a: number, b: Promise<number>, c: string[], d: Promise<string[]>) {
 >b : Promise<number>
 
     let x3 = all(a, b, c);
->x3 : Promise<[number, number, string[]]>
->all(a, b, c) : Promise<[number, number, string[]]>
+>x3 : Promise<[number, number, Array<string>]>
+>all(a, b, c) : Promise<[number, number, Array<string>]>
 >all : <T extends any[]>(...values: T) => Promise<Awaitified<T>>
 >a : number
 >b : Promise<number>
->c : string[]
+>c : Array<string>
 
     let x4 = all(a, b, c, d);
->x4 : Promise<[number, number, string[], string[]]>
->all(a, b, c, d) : Promise<[number, number, string[], string[]]>
+>x4 : Promise<[number, number, Array<string>, Array<string>]>
+>all(a, b, c, d) : Promise<[number, number, Array<string>, Array<string>]>
 >all : <T extends any[]>(...values: T) => Promise<Awaitified<T>>
 >a : number
 >b : Promise<number>
->c : string[]
->d : Promise<string[]>
+>c : Array<string>
+>d : Promise<Array<string>>
 }
 
 function f2<T extends any[]>(a: Boxified<T>) {
@@ -214,11 +214,11 @@ function f2<T extends any[]>(a: Boxified<T>) {
 >pop : () => Box<any> | undefined
 
     let y: Box<any>[] = a.concat(a);
->y : Box<any>[]
->a.concat(a) : Box<any>[]
->a.concat : { (...items: ConcatArray<Box<any>>[]): Box<any>[]; (...items: (Box<any> | ConcatArray<Box<any>>)[]): Box<any>[]; }
+>y : Array<Box<any>>
+>a.concat(a) : Array<Box<any>>
+>a.concat : { (...items: Array<ConcatArray<Box<any>>>): Array<Box<any>>; (...items: Array<Box<any> | ConcatArray<Box<any>>>): Array<Box<any>>; }
 >a : Boxified<T>
->concat : { (...items: ConcatArray<Box<any>>[]): Box<any>[]; (...items: (Box<any> | ConcatArray<Box<any>>)[]): Box<any>[]; }
+>concat : { (...items: Array<ConcatArray<Box<any>>>): Array<Box<any>>; (...items: Array<Box<any> | ConcatArray<Box<any>>>): Array<Box<any>>; }
 >a : Boxified<T>
 }
 
@@ -243,7 +243,7 @@ type R2 = ElementType<Mapped<[string, number, boolean]>>;  // string | number | 
 
 declare function acceptArray(arr: any[]): void;
 >acceptArray : (arr: any[]) => void
->arr : any[]
+>arr : Array<any>
 
 declare function mapArray<T extends any[]>(arr: T): Mapped<T>;
 >mapArray : <T extends any[]>(arr: T) => Mapped<T>

@@ -1,0 +1,18 @@
+--- old.moduleClassArrayCodeGenTest.types
++++ new.moduleClassArrayCodeGenTest.types
+@@= skipped -13, +13 lines =@@
+ }
+
+ var t: M.A[] = [];
+->t : M.A[]
++>t : Array<M.A>
+ >M : any
+->[] : never[]
++>[] : Array<never>
+
+ var t2: M.B[] = [];
+->t2 : M.B[]
++>t2 : Array<M.B>
+ >M : any
+->[] : never[]
++>[] : Array<never>

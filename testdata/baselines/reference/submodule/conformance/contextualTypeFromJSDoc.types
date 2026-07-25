@@ -3,8 +3,8 @@
 === index.js ===
 /** @type {Array<[string, {x?:number, y?:number}]>} */
 const arr = [
->arr : [string, { x?: number; y?: number; }][]
->[    ['a', { x: 1 }],    ['b', { y: 2 }]] : ([string, { x: number; }] | [string, { y: number; }])[]
+>arr : Array<[string, { x?: number; y?: number; }]>
+>[    ['a', { x: 1 }],    ['b', { y: 2 }]] : Array<[string, { x: number; }] | [string, { y: number; }]>
 
     ['a', { x: 1 }],
 >['a', { x: 1 }] : [string, { x: number; }]
@@ -27,7 +27,7 @@ function f() {
 >f : () => Array<[string, { x?: number; y?: number; }]>
 
     return [
->[        ['a', { x: 1 }],        ['b', { y: 2 }]    ] : ([string, { x: number; }] | [string, { y: number; }])[]
+>[        ['a', { x: 1 }],        ['b', { y: 2 }]    ] : Array<[string, { x: number; }] | [string, { y: number; }]>
 
         ['a', { x: 1 }],
 >['a', { x: 1 }] : [string, { x: number; }]
@@ -51,14 +51,14 @@ class C {
 
     /** @param {Array<[string, {x?:number, y?:number}]>} value */
     set x(value) { }
->x : [string, { x?: number; y?: number; }][]
->value : [string, { x?: number; y?: number; }][]
+>x : Array<[string, { x?: number; y?: number; }]>
+>value : Array<[string, { x?: number; y?: number; }]>
 
     get x() {
->x : [string, { x?: number; y?: number; }][]
+>x : Array<[string, { x?: number; y?: number; }]>
 
         return [
->[            ['a', { x: 1 }],            ['b', { y: 2 }]        ] : ([string, { x: number; }] | [string, { y: number; }])[]
+>[            ['a', { x: 1 }],            ['b', { y: 2 }]        ] : Array<[string, { x: number; }] | [string, { y: number; }]>
 
             ['a', { x: 1 }],
 >['a', { x: 1 }] : [string, { x: number; }]

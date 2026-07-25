@@ -1,0 +1,13 @@
+--- old.initializersInDeclarations.types
++++ new.initializersInDeclarations.types
+@@= skipped -22, +22 lines =@@
+ }
+
+ declare var x = [];
+->x : any[]
+->[] : undefined[]
++>x : Array<any>
++>[] : Array<undefined>
+
+ declare var y = {};
+ >y : {}

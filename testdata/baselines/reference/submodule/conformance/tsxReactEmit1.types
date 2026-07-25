@@ -123,7 +123,7 @@ class SomeClass {
 >rewrites2 : JSX.Element
 ><div>{[p, ...p, p]}</div> : JSX.Element
 >div : any
->[p, ...p, p] : any[]
+>[p, ...p, p] : Array<any>
 >p : any
 >...p : any
 >p : any
@@ -151,8 +151,8 @@ class SomeClass {
 >rewrites5 : JSX.Element
 ><div a={[p, ...p, p]}></div> : JSX.Element
 >div : any
->a : any[]
->[p, ...p, p] : any[]
+>a : Array<any>
+>[p, ...p, p] : Array<any>
 >p : any
 >...p : any
 >p : any

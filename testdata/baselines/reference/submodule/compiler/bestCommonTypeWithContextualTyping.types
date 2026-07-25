@@ -24,8 +24,8 @@ declare var e: Ellement;
 // always use Ellement in these examples (not Contextual). Because Ellement is assignable
 // to Contextual, no errors.
 var arr: Contextual[] = [e]; // Ellement[]
->arr : Contextual[]
->[e] : Ellement[]
+>arr : Array<Contextual>
+>[e] : Array<Ellement>
 >e : Ellement
 
 var obj: { [s: string]: Contextual } = { s: e }; // { s: Ellement; [s: string]: Ellement }

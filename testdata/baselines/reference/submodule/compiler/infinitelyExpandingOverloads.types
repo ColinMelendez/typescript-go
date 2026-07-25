@@ -32,8 +32,8 @@ class ViewModel<TValue> {
 >ViewModel : ViewModel<TValue>
 
     public validationPlacements: Array<ValidationPlacement2<TValue>> = new Array<ValidationPlacement2<TValue>>();
->validationPlacements : ValidationPlacement2<TValue>[]
->new Array<ValidationPlacement2<TValue>>() : ValidationPlacement2<TValue>[]
+>validationPlacements : Array<ValidationPlacement2<TValue>>
+>new Array<ValidationPlacement2<TValue>>() : Array<ValidationPlacement2<TValue>>
 >Array : ArrayConstructor
 }
 class Widget<TValue> {

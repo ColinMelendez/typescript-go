@@ -1,0 +1,9 @@
+--- old.implicitAnyCastedValue.types
++++ new.implicitAnyCastedValue.types
+@@= skipped -167, +167 lines =@@
+ var array = <any>[null, undefined];
+ >array : any
+ ><any>[null, undefined] : any
+->[null, undefined] : (null | undefined)[]
++>[null, undefined] : Array<null | undefined>
+ >undefined : undefined

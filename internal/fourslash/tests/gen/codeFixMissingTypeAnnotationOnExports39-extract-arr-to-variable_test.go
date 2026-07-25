@@ -50,9 +50,9 @@ export let o = {
 		ApplyChanges: true,
 	})
 	f.VerifyCodeFix(t, fourslash.VerifyCodeFixOptions{
-		Description: "Add annotation of type 'readonly string[]'",
+		Description: "Add annotation of type 'ReadonlyArray<string>'",
 		NewFileContent: `let c: string[] = [];
-const newLocal: readonly string[] = [
+const newLocal: ReadonlyArray<string> = [
     ...c
 ] as const;
 export let o = {

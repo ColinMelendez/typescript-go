@@ -1,0 +1,14 @@
+--- old.recursiveTupleTypeInference.types
++++ new.recursiveTupleTypeInference.types
+@@= skipped -23, +23 lines =@@
+
+ const gK: { [key in keyof K]: A } = { b: ["number", "null"] };
+ >gK : { b: A; }
+->{ b: ["number", "null"] } : { b: ("null" | "number")[]; }
+->b : ("null" | "number")[]
+->["number", "null"] : ("null" | "number")[]
++>{ b: ["number", "null"] } : { b: Array<"null" | "number">; }
++>b : Array<"null" | "number">
++>["number", "null"] : Array<"null" | "number">
+ >"number" : "number"
+ >"null" : "null"

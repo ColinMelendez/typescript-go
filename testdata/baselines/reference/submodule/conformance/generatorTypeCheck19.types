@@ -18,7 +18,7 @@ function* g(): IterableIterator<Foo> {
 
     yield * [new Bar];
 >yield * [new Bar] : undefined
->[new Bar] : Bar[]
+>[new Bar] : Array<Bar>
 >new Bar : Bar
 >Bar : typeof Bar
 }

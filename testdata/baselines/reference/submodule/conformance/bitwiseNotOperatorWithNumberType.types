@@ -6,8 +6,8 @@ var NUMBER: number;
 >NUMBER : number
 
 var NUMBER1: number[] = [1, 2];
->NUMBER1 : number[]
->[1, 2] : number[]
+>NUMBER1 : Array<number>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 
@@ -46,7 +46,7 @@ var ResultIsNumber1 = ~NUMBER;
 var ResultIsNumber2 = ~NUMBER1;
 >ResultIsNumber2 : number
 >~NUMBER1 : number
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 
 // number type literal
 var ResultIsNumber3 = ~1;
@@ -93,7 +93,7 @@ var ResultIsNumber8 = ~NUMBER1[0];
 >ResultIsNumber8 : number
 >~NUMBER1[0] : number
 >NUMBER1[0] : number
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 >0 : 0
 
 var ResultIsNumber9 = ~foo();
@@ -142,7 +142,7 @@ var ResultIsNumber13 = ~~~(NUMBER + NUMBER);
 
 ~NUMBER1;
 >~NUMBER1 : number
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 
 ~foo();
 >~foo() : number

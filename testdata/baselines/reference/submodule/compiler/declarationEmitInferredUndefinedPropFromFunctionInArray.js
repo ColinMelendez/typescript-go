@@ -14,7 +14,7 @@ exports.b = [{ foo: 0, m() { } }, { bar: 1 }];
 
 
 //// [declarationEmitInferredUndefinedPropFromFunctionInArray.d.ts]
-export declare let b: ({
+export declare let b: Array<{
     foo: number;
     m(): void;
     bar?: undefined;
@@ -22,4 +22,4 @@ export declare let b: ({
     foo?: undefined;
     m?: undefined;
     bar: number;
-})[];
+}>;

@@ -1,0 +1,11 @@
+--- old.exportDeclarationsInAmbientNamespaces.types
++++ new.exportDeclarationsInAmbientNamespaces.types
+@@= skipped -6, +6 lines =@@
+     function _try(method: Function, ...args: any[]): any;
+ >_try : (method: Function, ...args: any[]) => any
+ >method : Function
+->args : any[]
++>args : Array<any>
+
+     export { _try as try };
+ >_try : (method: Function, ...args: any[]) => any

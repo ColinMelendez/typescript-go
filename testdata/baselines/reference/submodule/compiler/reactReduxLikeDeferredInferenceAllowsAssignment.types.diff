@@ -1,0 +1,28 @@
+--- old.reactReduxLikeDeferredInferenceAllowsAssignment.types
++++ new.reactReduxLikeDeferredInferenceAllowsAssignment.types
+@@= skipped -155, +155 lines =@@
+ >InferThunkActionCreatorType : InferThunkActionCreatorType<TActionCreator>
+
+   TActionCreator extends (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ > = TActionCreator extends (
+   ...args: infer TParams
+ >args : TParams
+
+ ) => (...args: any[]) => infer TReturn
+->args : any[]
++>args : Array<any>
+
+   ? (...args: TParams) => TReturn
+ >args : TParams
+@@= skipped -18, +18 lines =@@
+ >HandleThunkActionCreator : HandleThunkActionCreator<TActionCreator>
+
+   ...args: any[]
+->args : any[]
++>args : Array<any>
+
+ ) => any
+   ? InferThunkActionCreatorType<TActionCreator>

@@ -64,7 +64,7 @@ declare namespace Bacon {
 
         withDescription(...args: any[]): Observable<T>;
 >withDescription : (...args: any[]) => Observable<T>
->args : any[]
+>args : Array<any>
     }
     interface Property<T> extends Observable<T> {
     }

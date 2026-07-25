@@ -1,0 +1,106 @@
+--- old.privateNameStaticMethodCallExpression.types
++++ new.privateNameStaticMethodCallExpression.types
+@@= skipped -12, +12 lines =@@
+ >10 : 10
+
+     static #method2(a, ...b) {};
+->#method2 : (a: any, ...b: any[]) => void
++>#method2 : (a: any, ...b: Array<any>) => void
+ >a : any
+->b : any[]
++>b : Array<any>
+
+     static x = 1;
+ >x : number
+@@= skipped -31, +31 lines =@@
+ >AA : typeof AA
+
+         const arr = [ 1, 2 ];
+->arr : number[]
+->[ 1, 2 ] : number[]
++>arr : Array<number>
++>[ 1, 2 ] : Array<number>
+ >1 : 1
+ >2 : 2
+
+         AA.#method2(0, ...arr, 3);
+ >AA.#method2(0, ...arr, 3) : void
+->AA.#method2 : (a: any, ...b: any[]) => void
++>AA.#method2 : (a: any, ...b: Array<any>) => void
+ >AA : typeof AA
+ >0 : 0
+ >...arr : number
+->arr : number[]
++>arr : Array<number>
+ >3 : 3
+
+         const b = new AA.#method2(0, ...arr, 3); //Error 
+ >b : any
+ >new AA.#method2(0, ...arr, 3) : any
+->AA.#method2 : (a: any, ...b: any[]) => void
++>AA.#method2 : (a: any, ...b: Array<any>) => void
+ >AA : typeof AA
+ >0 : 0
+ >...arr : number
+->arr : number[]
++>arr : Array<number>
+ >3 : 3
+
+         const str = AA.#method2`head${1}middle${2}tail`;
+ >str : void
+ >AA.#method2`head${1}middle${2}tail` : void
+->AA.#method2 : (a: any, ...b: any[]) => void
++>AA.#method2 : (a: any, ...b: Array<any>) => void
+ >AA : typeof AA
+ >`head${1}middle${2}tail` : string
+ >1 : 1
+@@= skipped -35, +35 lines =@@
+
+         AA.getClass().#method2`test${1}and${2}`;
+ >AA.getClass().#method2`test${1}and${2}` : void
+->AA.getClass().#method2 : (a: any, ...b: any[]) => void
++>AA.getClass().#method2 : (a: any, ...b: Array<any>) => void
+ >AA.getClass() : typeof AA
+ >AA.getClass : () => typeof AA
+ >AA : typeof AA
+@@= skipped -11, +11 lines =@@
+
+         AA.getClass().#method2(0, ...arr, 3); 
+ >AA.getClass().#method2(0, ...arr, 3) : void
+->AA.getClass().#method2 : (a: any, ...b: any[]) => void
++>AA.getClass().#method2 : (a: any, ...b: Array<any>) => void
+ >AA.getClass() : typeof AA
+ >AA.getClass : () => typeof AA
+ >AA : typeof AA
+ >getClass : () => typeof AA
+ >0 : 0
+ >...arr : number
+->arr : number[]
++>arr : Array<number>
+ >3 : 3
+
+         const b2 = new (AA.getClass().#method2)(0, ...arr, 3); //Error 
+ >b2 : any
+ >new (AA.getClass().#method2)(0, ...arr, 3) : any
+->(AA.getClass().#method2) : (a: any, ...b: any[]) => void
+->AA.getClass().#method2 : (a: any, ...b: any[]) => void
++>(AA.getClass().#method2) : (a: any, ...b: Array<any>) => void
++>AA.getClass().#method2 : (a: any, ...b: Array<any>) => void
+ >AA.getClass() : typeof AA
+ >AA.getClass : () => typeof AA
+ >AA : typeof AA
+ >getClass : () => typeof AA
+ >0 : 0
+ >...arr : number
+->arr : number[]
++>arr : Array<number>
+ >3 : 3
+
+         const str2 = AA.getClass().#method2`head${1}middle${2}tail`;
+ >str2 : void
+ >AA.getClass().#method2`head${1}middle${2}tail` : void
+->AA.getClass().#method2 : (a: any, ...b: any[]) => void
++>AA.getClass().#method2 : (a: any, ...b: Array<any>) => void
+ >AA.getClass() : typeof AA
+ >AA.getClass : () => typeof AA
+ >AA : typeof AA

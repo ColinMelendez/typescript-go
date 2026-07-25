@@ -3,7 +3,7 @@ enumIsNotASubtypeOfAnythingButNumber.ts(24,5): error TS2411: Property 'foo' of t
 enumIsNotASubtypeOfAnythingButNumber.ts(30,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'Date'.
 enumIsNotASubtypeOfAnythingButNumber.ts(36,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'RegExp'.
 enumIsNotASubtypeOfAnythingButNumber.ts(42,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type '{ bar: number; }'.
-enumIsNotASubtypeOfAnythingButNumber.ts(48,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'number[]'.
+enumIsNotASubtypeOfAnythingButNumber.ts(48,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'Array<number>'.
 enumIsNotASubtypeOfAnythingButNumber.ts(54,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'I8'.
 enumIsNotASubtypeOfAnythingButNumber.ts(60,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'A'.
 enumIsNotASubtypeOfAnythingButNumber.ts(66,5): error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'A2<number>'.
@@ -76,7 +76,7 @@ enumIsNotASubtypeOfAnythingButNumber.ts(117,5): error TS2411: Property 'foo' of 
         [x: string]: number[];
         foo: E;
         ~~~
-!!! error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'number[]'.
+!!! error TS2411: Property 'foo' of type 'E' is not assignable to 'string' index type 'Array<number>'.
     }
     
     

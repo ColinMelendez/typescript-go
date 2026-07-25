@@ -1,0 +1,36 @@
+--- old.forStatementsMultipleInvalidDecl.errors.txt
++++ new.forStatementsMultipleInvalidDecl.errors.txt
+@@= skipped -12, +12 lines =@@
+ forStatementsMultipleInvalidDecl.ts(39,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'b' must be of type 'I', but here has type 'C'.
+ forStatementsMultipleInvalidDecl.ts(40,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'b' must be of type 'I', but here has type 'C2'.
+ forStatementsMultipleInvalidDecl.ts(43,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'f' must be of type '(x: string) => number', but here has type '(x: number) => string'.
+-forStatementsMultipleInvalidDecl.ts(46,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type 'number[]'.
+-forStatementsMultipleInvalidDecl.ts(47,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type '(C | D<string>)[]'.
+-forStatementsMultipleInvalidDecl.ts(50,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'D<string>[]', but here has type 'D<number>[]'.
++forStatementsMultipleInvalidDecl.ts(46,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<number>'.
++forStatementsMultipleInvalidDecl.ts(47,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<C | D<string>>'.
++forStatementsMultipleInvalidDecl.ts(50,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'Array<D<string>>', but here has type 'Array<D<number>>'.
+ forStatementsMultipleInvalidDecl.ts(53,10): error TS2403: Subsequent variable declarations must have the same type.  Variable 'm' must be of type 'typeof M', but here has type 'typeof A'.
+
+
+@@= skipped -92, +92 lines =@@
+     for(var arr: string[];;){}
+     for( var arr = [1, 2, 3, 4];;){}
+              ~~~
+-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type 'number[]'.
++!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<number>'.
+ !!! related TS6203 forStatementsMultipleInvalidDecl.ts:45:9: 'arr' was also declared here.
+     for( var arr = [new C(), new C2(), new D<string>()];;){}
+              ~~~
+-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type '(C | D<string>)[]'.
++!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<C | D<string>>'.
+ !!! related TS6203 forStatementsMultipleInvalidDecl.ts:45:9: 'arr' was also declared here.
+     
+     for(var arr2 = [new D<string>()];;){}
+     for( var arr2 = new Array<D<number>>();;){}
+              ~~~~
+-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'D<string>[]', but here has type 'D<number>[]'.
++!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'Array<D<string>>', but here has type 'Array<D<number>>'.
+ !!! related TS6203 forStatementsMultipleInvalidDecl.ts:49:9: 'arr2' was also declared here.
+     
+     for(var m: typeof M;;){}

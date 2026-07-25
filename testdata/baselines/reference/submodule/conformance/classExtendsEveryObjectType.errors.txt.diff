@@ -1,0 +1,17 @@
+--- old.classExtendsEveryObjectType.errors.txt
++++ new.classExtendsEveryObjectType.errors.txt
+@@= skipped -4, +4 lines =@@
+ classExtendsEveryObjectType.ts(8,18): error TS2507: Type '{ foo: string; }' is not a constructor function type.
+ classExtendsEveryObjectType.ts(11,18): error TS2507: Type 'typeof M' is not a constructor function type.
+ classExtendsEveryObjectType.ts(14,18): error TS2507: Type '() => void' is not a constructor function type.
+-classExtendsEveryObjectType.ts(16,18): error TS2507: Type 'never[]' is not a constructor function type.
++classExtendsEveryObjectType.ts(16,18): error TS2507: Type 'Array<never>' is not a constructor function type.
+
+
+ ==== classExtendsEveryObjectType.ts (8 errors) ====
+@@= skipped -35, +35 lines =@@
+     
+     class C6 extends []{ } // error
+                      ~~
+-!!! error TS2507: Type 'never[]' is not a constructor function type.
++!!! error TS2507: Type 'Array<never>' is not a constructor function type.

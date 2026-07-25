@@ -1,0 +1,454 @@
+--- old.duplicateLocalVariable1.types
++++ new.duplicateLocalVariable1.types
+@@= skipped -26, +26 lines =@@
+ >TestRunner : TestRunner
+
+     private tests: TestCase[] = [];
+->tests : TestCase[]
+->[] : never[]
++>tests : Array<TestCase>
++>[] : Array<never>
+
+     static arrayCompare(arg1: any[], arg2: any[]): boolean {
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->arg1 : any[]
+->arg2 : any[]
++>arg1 : Array<any>
++>arg2 : Array<any>
+
+         return (arg1.every(function (val, index) { return val === arg2[index] }));
+ >(arg1.every(function (val, index) { return val === arg2[index] })) : boolean
+ >arg1.every(function (val, index) { return val === arg2[index] }) : boolean
+->arg1.every : { <S extends any>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): boolean; }
+->arg1 : any[]
+->every : { <S extends any>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): boolean; }
++>arg1.every : { <S extends any>(predicate: (value: any, index: number, array: Array<any>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: any, index: number, array: Array<any>) => unknown, thisArg?: any): boolean; }
++>arg1 : Array<any>
++>every : { <S extends any>(predicate: (value: any, index: number, array: Array<any>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: any, index: number, array: Array<any>) => unknown, thisArg?: any): boolean; }
+ >function (val, index) { return val === arg2[index] } : (val: any, index: number) => boolean
+ >val : any
+ >index : number
+ >val === arg2[index] : boolean
+ >val : any
+ >arg2[index] : any
+->arg2 : any[]
++>arg2 : Array<any>
+ >index : number
+     }
+
+@@= skipped -30, +30 lines =@@
+
+         this.tests.push(test);
+ >this.tests.push(test) : number
+->this.tests.push : (...items: TestCase[]) => number
+->this.tests : TestCase[]
++>this.tests.push : (...items: Array<TestCase>) => number
++>this.tests : Array<TestCase>
+ >this : this
+->tests : TestCase[]
+->push : (...items: TestCase[]) => number
++>tests : Array<TestCase>
++>push : (...items: Array<TestCase>) => number
+ >test : TestCase
+     }
+     public run() {
+@@= skipped -16, +16 lines =@@
+
+         for (var test in this.tests) {
+ >test : string
+->this.tests : TestCase[]
++>this.tests : Array<TestCase>
+ >this : this
+->tests : TestCase[]
++>tests : Array<TestCase>
+
+             var exception = false;
+ >exception : boolean
+@@= skipped -12, +12 lines =@@
+ >testcase : TestCase
+ ><TestCase>this.tests[test] : TestCase
+ >this.tests[test] : TestCase
+->this.tests : TestCase[]
++>this.tests : Array<TestCase>
+ >this : this
+->tests : TestCase[]
++>tests : Array<TestCase>
+ >test : string
+
+             var testResult: boolean = false;
+@@= skipped -183, +183 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -23, +23 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->[3, 2, 3] : number[]
++>[3, 2, 3] : Array<number>
+ >3 : 3
+ >2 : 2
+ >3 : 3
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -181, +181 lines =@@
+ >App.App : any
+ >App : any
+ >App : any
+->[] : never[]
++>[] : Array<never>
+
+             return (app.fixLines === false &&
+ >(app.fixLines === false &&                   app.recurse === true &&                   app.lineEndings === "CRLF" &&                   app.matchPattern === undefined &&                   app.rootDirectory === ".\\" &&                   app.encodings[0] === "ascii" &&                   app.encodings[1] === "utf8nobom") : boolean
+@@= skipped -81, +81 lines =@@
+ >App.App : any
+ >App : any
+ >App : any
+->["-dir=C:\\test dir", "-lineEndings=LF", "-encodings=utf16be,ascii", "-recurse=false", "-fixlines"] : string[]
++>["-dir=C:\\test dir", "-lineEndings=LF", "-encodings=utf16be,ascii", "-recurse=false", "-fixlines"] : Array<string>
+ >"-dir=C:\\test dir" : "-dir=C:\\test dir"
+ >"-lineEndings=LF" : "-lineEndings=LF"
+ >"-encodings=utf16be,ascii" : "-encodings=utf16be,ascii"
+@@= skipped -321, +321 lines =@@
+ >"\\UTF8BOM.txt" : "\\UTF8BOM.txt"
+
+             var chars = [];
+->chars : any[]
+->[] : never[]
++>chars : Array<any>
++>[] : Array<never>
+
+             for (var i = 0; i < 11; i++) {
+ >i : number
+@@= skipped -14, +14 lines =@@
+
+                 chars.push(fb.readByte());
+ >chars.push(fb.readByte()) : number
+->chars.push : (...items: any[]) => number
+->chars : any[]
+->push : (...items: any[]) => number
++>chars.push : (...items: Array<any>) => number
++>chars : Array<any>
++>push : (...items: Array<any>) => number
+ >fb.readByte() : any
+ >fb.readByte : any
+ >fb : any
+@@= skipped -13, +13 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->chars : any[]
+->[0x54, 0xC3, 0xA8, 0xE1, 0xB4, 0xA3, 0xE2, 0x80, 0xA0, 0x0D, 0x0A] : number[]
++>chars : Array<any>
++>[0x54, 0xC3, 0xA8, 0xE1, 0xB4, 0xA3, 0xE2, 0x80, 0xA0, 0x0D, 0x0A] : Array<number>
+ >0x54 : 84
+ >0xC3 : 195
+ >0xA8 : 168
+@@= skipped -40, +40 lines =@@
+ >"\\UTF8BOM.txt" : "\\UTF8BOM.txt"
+
+             var chars = [];
+->chars : any[]
+->[] : never[]
++>chars : Array<any>
++>[] : Array<never>
+
+             for (var i = 0; i < 6; i++) {
+ >i : number
+@@= skipped -14, +14 lines =@@
+
+                 chars.push(fb.readUtf8CodePoint());
+ >chars.push(fb.readUtf8CodePoint()) : number
+->chars.push : (...items: any[]) => number
+->chars : any[]
+->push : (...items: any[]) => number
++>chars.push : (...items: Array<any>) => number
++>chars : Array<any>
++>push : (...items: Array<any>) => number
+ >fb.readUtf8CodePoint() : any
+ >fb.readUtf8CodePoint : any
+ >fb : any
+@@= skipped -13, +13 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->chars : any[]
+->[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : number[]
++>chars : Array<any>
++>[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : Array<number>
+ >0x0054 : 84
+ >0x00E8 : 232
+ >0x1D23 : 7459
+@@= skipped -38, +38 lines =@@
+ >writeUtf8Bom : any
+
+             var chars = [0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A];
+->chars : number[]
+->[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : number[]
++>chars : Array<number>
++>[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : Array<number>
+ >0x0054 : 84
+ >0x00E8 : 232
+ >0x1D23 : 7459
+@@= skipped -11, +11 lines =@@
+
+             for (var i in chars) {
+ >i : string
+->chars : number[]
++>chars : Array<number>
+
+                 fb.writeUtf8CodePoint(chars[i]);
+ >fb.writeUtf8CodePoint(chars[i]) : any
+@@= skipped -8, +8 lines =@@
+ >fb : any
+ >writeUtf8CodePoint : any
+ >chars[i] : number
+->chars : number[]
++>chars : Array<number>
+ >i : string
+             }
+             fb.index = 0;
+@@= skipped -11, +11 lines =@@
+ >0 : 0
+
+             var bytes = [];
+->bytes : any[]
+->[] : never[]
++>bytes : Array<any>
++>[] : Array<never>
+
+             for (var i = 0; i < 14; i++) {
+ >i : string
+@@= skipped -14, +14 lines =@@
+
+                 bytes.push(fb.readByte());
+ >bytes.push(fb.readByte()) : number
+->bytes.push : (...items: any[]) => number
+->bytes : any[]
+->push : (...items: any[]) => number
++>bytes.push : (...items: Array<any>) => number
++>bytes : Array<any>
++>push : (...items: Array<any>) => number
+ >fb.readByte() : any
+ >fb.readByte : any
+ >fb : any
+ >readByte : any
+             }
+             var expected = [0xEF, 0xBB, 0xBF, 0x54, 0xC3, 0xA8, 0xE1, 0xB4, 0xA3, 0xE2, 0x80, 0xA0, 0x0D, 0x0A];
+->expected : number[]
+->[0xEF, 0xBB, 0xBF, 0x54, 0xC3, 0xA8, 0xE1, 0xB4, 0xA3, 0xE2, 0x80, 0xA0, 0x0D, 0x0A] : number[]
++>expected : Array<number>
++>[0xEF, 0xBB, 0xBF, 0x54, 0xC3, 0xA8, 0xE1, 0xB4, 0xA3, 0xE2, 0x80, 0xA0, 0x0D, 0x0A] : Array<number>
+ >0xEF : 239
+ >0xBB : 187
+ >0xBF : 191
+@@= skipped -31, +31 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->bytes : any[]
+->expected : number[]
++>bytes : Array<any>
++>expected : Array<number>
+
+         }));
+
+@@= skipped -39, +39 lines =@@
+ >writeUtf16leBom : any
+
+             var chars = [0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A];
+->chars : number[]
+->[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : number[]
++>chars : Array<number>
++>[0x0054, 0x00E8, 0x1D23, 0x2020, 0x000D, 0x000A] : Array<number>
+ >0x0054 : 84
+ >0x00E8 : 232
+ >0x1D23 : 7459
+@@= skipped -11, +11 lines =@@
+
+             chars.forEach(function (val) { fb.writeUtf16CodePoint(val, false); });
+ >chars.forEach(function (val) { fb.writeUtf16CodePoint(val, false); }) : void
+->chars.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->chars : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>chars.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>chars : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >function (val) { fb.writeUtf16CodePoint(val, false); } : (val: number) => void
+ >val : number
+ >fb.writeUtf16CodePoint(val, false) : any
+@@= skipped -40, +40 lines =@@
+ >"Incorrect encoding" : "Incorrect encoding"
+             }
+             var expectedBytes = [0xFF, 0xFE, 0x54, 0x00, 0xE8, 0x00, 0x23, 0x1D, 0x20, 0x20, 0x0D, 0x00, 0x0A, 0x00]
+->expectedBytes : number[]
+->[0xFF, 0xFE, 0x54, 0x00, 0xE8, 0x00, 0x23, 0x1D, 0x20, 0x20, 0x0D, 0x00, 0x0A, 0x00] : number[]
++>expectedBytes : Array<number>
++>[0xFF, 0xFE, 0x54, 0x00, 0xE8, 0x00, 0x23, 0x1D, 0x20, 0x20, 0x0D, 0x00, 0x0A, 0x00] : Array<number>
+ >0xFF : 255
+ >0xFE : 254
+ >0x54 : 84
+@@= skipped -26, +26 lines =@@
+
+             expectedBytes.forEach(function (val) {
+ >expectedBytes.forEach(function (val) {                var byteVal = savedFile.readByte();                if (byteVal !== val) {                    throw Error("Incorrect byte value");                }            }) : void
+->expectedBytes.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->expectedBytes : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>expectedBytes.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>expectedBytes : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >function (val) {                var byteVal = savedFile.readByte();                if (byteVal !== val) {                    throw Error("Incorrect byte value");                }            } : (val: number) => void
+ >val : number
+
+@@= skipped -138, +138 lines =@@
+             }
+
+             var codePoints = [];
+->codePoints : any[]
+->[] : never[]
++>codePoints : Array<any>
++>[] : Array<never>
+
+             for (var i = 0; i < 6; i++) {
+ >i : number
+@@= skipped -14, +14 lines =@@
+
+                 codePoints.push(savedFile.readUtf16CodePoint(false));
+ >codePoints.push(savedFile.readUtf16CodePoint(false)) : number
+->codePoints.push : (...items: any[]) => number
+->codePoints : any[]
+->push : (...items: any[]) => number
++>codePoints.push : (...items: Array<any>) => number
++>codePoints : Array<any>
++>push : (...items: Array<any>) => number
+ >savedFile.readUtf16CodePoint(false) : any
+ >savedFile.readUtf16CodePoint : any
+ >savedFile : any
+@@= skipped -10, +10 lines =@@
+ >false : false
+             }
+             var expectedCodePoints = [0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69];
+->expectedCodePoints : number[]
+->[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : number[]
++>expectedCodePoints : Array<number>
++>[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : Array<number>
+ >0x10480 : 66688
+ >0x10481 : 66689
+ >0x10482 : 66690
+@@= skipped -14, +14 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->codePoints : any[]
+->expectedCodePoints : number[]
++>codePoints : Array<any>
++>expectedCodePoints : Array<number>
+
+         }));
+
+@@= skipped -41, +41 lines =@@
+             }
+
+             var codePoints = [];
+->codePoints : any[]
+->[] : never[]
++>codePoints : Array<any>
++>[] : Array<never>
+
+             for (var i = 0; i < 6; i++) {
+ >i : number
+@@= skipped -14, +14 lines =@@
+
+                 codePoints.push(savedFile.readUtf8CodePoint());
+ >codePoints.push(savedFile.readUtf8CodePoint()) : number
+->codePoints.push : (...items: any[]) => number
+->codePoints : any[]
+->push : (...items: any[]) => number
++>codePoints.push : (...items: Array<any>) => number
++>codePoints : Array<any>
++>push : (...items: Array<any>) => number
+ >savedFile.readUtf8CodePoint() : any
+ >savedFile.readUtf8CodePoint : any
+ >savedFile : any
+ >readUtf8CodePoint : any
+             }
+             var expectedCodePoints = [0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69];
+->expectedCodePoints : number[]
+->[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : number[]
++>expectedCodePoints : Array<number>
++>[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : Array<number>
+ >0x10480 : 66688
+ >0x10481 : 66689
+ >0x10482 : 66690
+@@= skipped -23, +23 lines =@@
+ >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
+ >TestRunner : typeof TestRunner
+ >arrayCompare : (arg1: any[], arg2: any[]) => boolean
+->codePoints : any[]
+->expectedCodePoints : number[]
++>codePoints : Array<any>
++>expectedCodePoints : Array<number>
+
+         }));
+
+@@= skipped -32, +32 lines =@@
+ >15 : 15
+
+             var chars = [0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69];
+->chars : number[]
+->[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : number[]
++>chars : Array<number>
++>[0x10480, 0x10481, 0x10482, 0x54, 0x68, 0x69] : Array<number>
+ >0x10480 : 66688
+ >0x10481 : 66689
+ >0x10482 : 66690
+@@= skipped -11, +11 lines =@@
+
+             chars.forEach(function (val) { fb.writeUtf8CodePoint(val); });
+ >chars.forEach(function (val) { fb.writeUtf8CodePoint(val); }) : void
+->chars.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->chars : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>chars.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>chars : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >function (val) { fb.writeUtf8CodePoint(val); } : (val: number) => void
+ >val : number
+ >fb.writeUtf8CodePoint(val) : any
+@@= skipped -39, +39 lines =@@
+ >"Incorrect encoding" : "Incorrect encoding"
+             }
+             var expectedBytes = [0xF0, 0x90, 0x92, 0x80, 0xF0, 0x90, 0x92, 0x81, 0xF0, 0x90, 0x92, 0x82, 0x54, 0x68, 0x69];
+->expectedBytes : number[]
+->[0xF0, 0x90, 0x92, 0x80, 0xF0, 0x90, 0x92, 0x81, 0xF0, 0x90, 0x92, 0x82, 0x54, 0x68, 0x69] : number[]
++>expectedBytes : Array<number>
++>[0xF0, 0x90, 0x92, 0x80, 0xF0, 0x90, 0x92, 0x81, 0xF0, 0x90, 0x92, 0x82, 0x54, 0x68, 0x69] : Array<number>
+ >0xF0 : 240
+ >0x90 : 144
+ >0x92 : 146
+@@= skipped -20, +20 lines =@@
+
+             expectedBytes.forEach(function (val) {
+ >expectedBytes.forEach(function (val) {                var byteVal = savedFile.readByte();                if (byteVal !== val) {                    throw Error("Incorrect byte value");                }            }) : void
+->expectedBytes.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->expectedBytes : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>expectedBytes.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>expectedBytes : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >function (val) {                var byteVal = savedFile.readByte();                if (byteVal !== val) {                    throw Error("Incorrect byte value");                }            } : (val: number) => void
+ >val : number

@@ -34,14 +34,14 @@ declare class D_C {
 
     // Implicit-'any[]' errors for r.
     public pub_f6(...r): void;
->pub_f6 : (...r: any[]) => void
->r : any[]
+>pub_f6 : (...r: Array<any>) => void
+>r : Array<any>
 
     // Implicit-'any'/'any[]' errors for x, r.
     public pub_f7(x, ...r): void;
->pub_f7 : (x: any, ...r: any[]) => void
+>pub_f7 : (x: any, ...r: Array<any>) => void
 >x : any
->r : any[]
+>r : Array<any>
 
     // Implicit-'any' errors for x1, y2, x3, and y3.
     public pub_f8(x1, y1: number): any;
@@ -84,14 +84,14 @@ declare class D_C {
 
     // Implicit-'any[]' error for r.
     public pub_f13: (...r) => string;
->pub_f13 : (...r: any[]) => string
->r : any[]
+>pub_f13 : (...r: Array<any>) => string
+>r : Array<any>
 
     // Implicit-'any'/'any[]' errors for x, r.
     public pub_f14: (x, ...r) => string;
->pub_f14 : (x: any, ...r: any[]) => string
+>pub_f14 : (x: any, ...r: Array<any>) => string
 >x : any
->r : any[]
+>r : Array<any>
 
     ///////////////////////////////////////////
 
@@ -125,14 +125,14 @@ declare class D_C {
 
     // No implicit-'any' errors.
     private priv_f6(...r): void;
->priv_f6 : (...r: any[]) => void
->r : any[]
+>priv_f6 : (...r: Array<any>) => void
+>r : Array<any>
 
     // No implicit-'any' errors.
     private priv_f7(x, ...r): void;
->priv_f7 : (x: any, ...r: any[]) => void
+>priv_f7 : (x: any, ...r: Array<any>) => void
 >x : any
->r : any[]
+>r : Array<any>
 
     // No implicit-'any' errors.
     private priv_f8(x1, y1: number): any;
@@ -175,12 +175,12 @@ declare class D_C {
 
     // Implicit-'any[]' error for r.
     private priv_f13: (...r) => string;
->priv_f13 : (...r: any[]) => string
->r : any[]
+>priv_f13 : (...r: Array<any>) => string
+>r : Array<any>
 
     // Implicit-'any'/'any[]' errors for x, r.
     private priv_f14: (x, ...r) => string;
->priv_f14 : (x: any, ...r: any[]) => string
+>priv_f14 : (x: any, ...r: Array<any>) => string
 >x : any
->r : any[]
+>r : Array<any>
 }

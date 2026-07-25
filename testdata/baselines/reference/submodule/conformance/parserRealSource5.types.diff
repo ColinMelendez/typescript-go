@@ -1,0 +1,37 @@
+--- old.parserRealSource5.types
++++ new.parserRealSource5.types
+@@= skipped -21, +21 lines =@@
+ >"  " : "  "
+
+         public indentStrings: string[] = [];
+->indentStrings : string[]
+->[] : undefined[]
++>indentStrings : Array<string>
++>[] : Array<undefined>
+
+         public indentAmt = 0;
+ >indentAmt : number
+@@= skipped -56, +56 lines =@@
+             var indentString = this.indentStrings[this.indentAmt];
+ >indentString : string
+ >this.indentStrings[this.indentAmt] : string
+->this.indentStrings : string[]
++>this.indentStrings : Array<string>
+ >this : this
+->indentStrings : string[]
++>indentStrings : Array<string>
+ >this.indentAmt : number
+ >this : this
+ >indentAmt : number
+@@= skipped -38, +38 lines =@@
+                 this.indentStrings[this.indentAmt] = indentString;
+ >this.indentStrings[this.indentAmt] = indentString : string
+ >this.indentStrings[this.indentAmt] : string
+->this.indentStrings : string[]
++>this.indentStrings : Array<string>
+ >this : this
+->indentStrings : string[]
++>indentStrings : Array<string>
+ >this.indentAmt : number
+ >this : this
+ >indentAmt : number

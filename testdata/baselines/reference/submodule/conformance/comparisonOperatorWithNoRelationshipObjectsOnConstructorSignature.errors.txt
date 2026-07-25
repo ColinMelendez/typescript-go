@@ -5,82 +5,82 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(35,12): err
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(36,12): error TS2365: Operator '<' cannot be applied to types 'new (a: number, b: string) => Base' and 'new (a: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(37,12): error TS2365: Operator '<' cannot be applied to types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(38,12): error TS2365: Operator '<' cannot be applied to types 'new () => Base' and 'new () => C'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(40,12): error TS2365: Operator '<' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(40,12): error TS2365: Operator '<' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(43,12): error TS2365: Operator '<' cannot be applied to types 'new () => Base' and '{ fn(): Base; }'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(44,12): error TS2365: Operator '<' cannot be applied to types 'new (a: string) => Base' and 'new (a: number, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(45,12): error TS2365: Operator '<' cannot be applied to types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(46,12): error TS2365: Operator '<' cannot be applied to types 'new () => C' and 'new () => Base'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(48,12): error TS2365: Operator '<' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(48,12): error TS2365: Operator '<' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(52,12): error TS2365: Operator '>' cannot be applied to types '{ fn(): Base; }' and 'new () => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(53,12): error TS2365: Operator '>' cannot be applied to types 'new (a: number, b: string) => Base' and 'new (a: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(54,12): error TS2365: Operator '>' cannot be applied to types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(55,12): error TS2365: Operator '>' cannot be applied to types 'new () => Base' and 'new () => C'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(57,12): error TS2365: Operator '>' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(57,12): error TS2365: Operator '>' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(60,12): error TS2365: Operator '>' cannot be applied to types 'new () => Base' and '{ fn(): Base; }'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(61,12): error TS2365: Operator '>' cannot be applied to types 'new (a: string) => Base' and 'new (a: number, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(62,12): error TS2365: Operator '>' cannot be applied to types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(63,12): error TS2365: Operator '>' cannot be applied to types 'new () => C' and 'new () => Base'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(65,12): error TS2365: Operator '>' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(65,12): error TS2365: Operator '>' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(69,12): error TS2365: Operator '<=' cannot be applied to types '{ fn(): Base; }' and 'new () => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(70,12): error TS2365: Operator '<=' cannot be applied to types 'new (a: number, b: string) => Base' and 'new (a: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(71,12): error TS2365: Operator '<=' cannot be applied to types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(72,12): error TS2365: Operator '<=' cannot be applied to types 'new () => Base' and 'new () => C'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(74,12): error TS2365: Operator '<=' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(74,12): error TS2365: Operator '<=' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(77,12): error TS2365: Operator '<=' cannot be applied to types 'new () => Base' and '{ fn(): Base; }'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(78,12): error TS2365: Operator '<=' cannot be applied to types 'new (a: string) => Base' and 'new (a: number, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(79,12): error TS2365: Operator '<=' cannot be applied to types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(80,12): error TS2365: Operator '<=' cannot be applied to types 'new () => C' and 'new () => Base'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(82,12): error TS2365: Operator '<=' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(82,12): error TS2365: Operator '<=' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(86,12): error TS2365: Operator '>=' cannot be applied to types '{ fn(): Base; }' and 'new () => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(87,12): error TS2365: Operator '>=' cannot be applied to types 'new (a: number, b: string) => Base' and 'new (a: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(88,12): error TS2365: Operator '>=' cannot be applied to types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(89,12): error TS2365: Operator '>=' cannot be applied to types 'new () => Base' and 'new () => C'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(91,12): error TS2365: Operator '>=' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(91,12): error TS2365: Operator '>=' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(94,12): error TS2365: Operator '>=' cannot be applied to types 'new () => Base' and '{ fn(): Base; }'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(95,12): error TS2365: Operator '>=' cannot be applied to types 'new (a: string) => Base' and 'new (a: number, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(96,12): error TS2365: Operator '>=' cannot be applied to types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(97,12): error TS2365: Operator '>=' cannot be applied to types 'new () => C' and 'new () => Base'.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(99,12): error TS2365: Operator '>=' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(99,12): error TS2365: Operator '>=' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(103,12): error TS2367: This comparison appears to be unintentional because the types '{ fn(): Base; }' and 'new () => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(104,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: number, b: string) => Base' and 'new (a: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(105,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(106,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and 'new () => C' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(108,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(108,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(111,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and '{ fn(): Base; }' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(112,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: string) => Base' and 'new (a: number, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(113,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(114,12): error TS2367: This comparison appears to be unintentional because the types 'new () => C' and 'new () => Base' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(116,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(116,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(120,12): error TS2367: This comparison appears to be unintentional because the types '{ fn(): Base; }' and 'new () => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(121,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: number, b: string) => Base' and 'new (a: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(122,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(123,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and 'new () => C' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(125,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(125,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(128,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and '{ fn(): Base; }' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(129,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: string) => Base' and 'new (a: number, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(130,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(131,12): error TS2367: This comparison appears to be unintentional because the types 'new () => C' and 'new () => Base' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(133,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(133,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(137,12): error TS2367: This comparison appears to be unintentional because the types '{ fn(): Base; }' and 'new () => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(138,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: number, b: string) => Base' and 'new (a: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(139,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(140,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and 'new () => C' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(142,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(142,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(145,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and '{ fn(): Base; }' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(146,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: string) => Base' and 'new (a: number, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(147,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(148,12): error TS2367: This comparison appears to be unintentional because the types 'new () => C' and 'new () => Base' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(150,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(150,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(154,12): error TS2367: This comparison appears to be unintentional because the types '{ fn(): Base; }' and 'new () => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(155,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: number, b: string) => Base' and 'new (a: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(156,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Base, b: string) => Base' and 'new (a: Derived, b: Base) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(157,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and 'new () => C' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(159,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(159,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(162,12): error TS2367: This comparison appears to be unintentional because the types 'new () => Base' and '{ fn(): Base; }' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(163,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: string) => Base' and 'new (a: number, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(164,12): error TS2367: This comparison appears to be unintentional because the types 'new (a: Derived, b: Base) => Base' and 'new (a: Base, b: string) => Base' have no overlap.
 comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(165,12): error TS2367: This comparison appears to be unintentional because the types 'new () => C' and 'new () => Base' have no overlap.
-comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
 
 
 ==== comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts (83 errors) ====
@@ -139,7 +139,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r1a5 = a5 < b5;
     var r1a6 = a6 < b6;
                ~~~~~~~
-!!! error TS2365: Operator '<' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+!!! error TS2365: Operator '<' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
     var r1a7 = a7 < b7;
     
     var r1b1 = b1 < a1;
@@ -157,7 +157,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r1b5 = b5 < a5;
     var r1b6 = b6 < a6;
                ~~~~~~~
-!!! error TS2365: Operator '<' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+!!! error TS2365: Operator '<' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
     var r1b7 = b7 < a7;
     
     // operator >
@@ -176,7 +176,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r2a5 = a5 > b5;
     var r2a6 = a6 > b6;
                ~~~~~~~
-!!! error TS2365: Operator '>' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+!!! error TS2365: Operator '>' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
     var r2a7 = a7 > b7;
     
     var r2b1 = b1 > a1;
@@ -194,7 +194,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r2b5 = b5 > a5;
     var r2b6 = b6 > a6;
                ~~~~~~~
-!!! error TS2365: Operator '>' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+!!! error TS2365: Operator '>' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
     var r2b7 = b7 > a7;
     
     // operator <=
@@ -213,7 +213,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r3a5 = a5 <= b5;
     var r3a6 = a6 <= b6;
                ~~~~~~~~
-!!! error TS2365: Operator '<=' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+!!! error TS2365: Operator '<=' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
     var r3a7 = a7 <= b7;
     
     var r3b1 = b1 <= a1;
@@ -231,7 +231,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r3b5 = b5 <= a5;
     var r3b6 = b6 <= a6;
                ~~~~~~~~
-!!! error TS2365: Operator '<=' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+!!! error TS2365: Operator '<=' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
     var r3b7 = b7 <= a7;
     
     // operator >=
@@ -250,7 +250,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r4a5 = a5 >= b5;
     var r4a6 = a6 >= b6;
                ~~~~~~~~
-!!! error TS2365: Operator '>=' cannot be applied to types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base'.
+!!! error TS2365: Operator '>=' cannot be applied to types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base'.
     var r4a7 = a7 >= b7;
     
     var r4b1 = b1 >= a1;
@@ -268,7 +268,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r4b5 = b5 >= a5;
     var r4b6 = b6 >= a6;
                ~~~~~~~~
-!!! error TS2365: Operator '>=' cannot be applied to types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base'.
+!!! error TS2365: Operator '>=' cannot be applied to types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base'.
     var r4b7 = b7 >= a7;
     
     // operator ==
@@ -287,7 +287,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r5a5 = a5 == b5;
     var r5a6 = a6 == b6;
                ~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
     var r5a7 = a7 == b7;
     
     var r5b1 = b1 == a1;
@@ -305,7 +305,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r5b5 = b5 == a5;
     var r5b6 = b6 == a6;
                ~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
     var r5b7 = b7 == a7;
     
     // operator !=
@@ -324,7 +324,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r6a5 = a5 != b5;
     var r6a6 = a6 != b6;
                ~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
     var r6a7 = a7 != b7;
     
     var r6b1 = b1 != a1;
@@ -342,7 +342,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r6b5 = b5 != a5;
     var r6b6 = b6 != a6;
                ~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
     var r6b7 = b7 != a7;
     
     // operator ===
@@ -361,7 +361,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r7a5 = a5 === b5;
     var r7a6 = a6 === b6;
                ~~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
     var r7a7 = a7 === b7;
     
     var r7b1 = b1 === a1;
@@ -379,7 +379,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r7b5 = b5 === a5;
     var r7b6 = b6 === a6;
                ~~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
     var r7b7 = b7 === a7;
     
     // operator !==
@@ -398,7 +398,7 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r8a5 = a5 !== b5;
     var r8a6 = a6 !== b6;
                ~~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Base[]) => Base' and 'new (...a: C[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<Base>) => Base' and 'new (...a: Array<C>) => Base' have no overlap.
     var r8a7 = a7 !== b7;
     
     var r8b1 = b1 !== a1;
@@ -416,5 +416,5 @@ comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.ts(167,12): er
     var r8b5 = b5 !== a5;
     var r8b6 = b6 !== a6;
                ~~~~~~~~~
-!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: C[]) => Base' and 'new (...a: Base[]) => Base' have no overlap.
+!!! error TS2367: This comparison appears to be unintentional because the types 'new (...a: Array<C>) => Base' and 'new (...a: Array<Base>) => Base' have no overlap.
     var r8b7 = b7 !== a7;

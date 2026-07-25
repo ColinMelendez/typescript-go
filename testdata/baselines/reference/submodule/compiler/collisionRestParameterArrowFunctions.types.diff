@@ -1,0 +1,29 @@
+--- old.collisionRestParameterArrowFunctions.types
++++ new.collisionRestParameterArrowFunctions.types
+@@= skipped -1, +1 lines =@@
+
+ === collisionRestParameterArrowFunctions.ts ===
+ var f1 = (_i: number, ...restParameters) => { //_i is error
+->f1 : (_i: number, ...restParameters: any[]) => void
+->(_i: number, ...restParameters) => { //_i is error    var _i = 10; // no error} : (_i: number, ...restParameters: any[]) => void
++>f1 : (_i: number, ...restParameters: Array<any>) => void
++>(_i: number, ...restParameters) => { //_i is error    var _i = 10; // no error} : (_i: number, ...restParameters: Array<any>) => void
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+     var _i = 10; // no error
+ >_i : number
+@@= skipped -20, +20 lines =@@
+ }
+
+ var f2 = (...restParameters) => {
+->f2 : (...restParameters: any[]) => void
+->(...restParameters) => {    var _i = 10; // No Error} : (...restParameters: any[]) => void
+->restParameters : any[]
++>f2 : (...restParameters: Array<any>) => void
++>(...restParameters) => {    var _i = 10; // No Error} : (...restParameters: Array<any>) => void
++>restParameters : Array<any>
+
+     var _i = 10; // No Error
+ >_i : number

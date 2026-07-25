@@ -1,0 +1,20 @@
+--- old.destructuringParameterDeclaration3ES5.errors.txt
++++ new.destructuringParameterDeclaration3ES5.errors.txt
+@@= skipped -8, +8 lines =@@
+ destructuringParameterDeclaration3ES5.ts(26,4): error TS2345: Argument of type '[number, number, [[string]], boolean, boolean]' is not assignable to parameter of type '[any, any, [[any]]]'.
+   Source has 5 element(s) but target allows only 3.
+ destructuringParameterDeclaration3ES5.ts(29,12): error TS2322: Type 'number' is not assignable to type '[[any]]'.
+-destructuringParameterDeclaration3ES5.ts(30,5): error TS2345: Argument of type '[number, number]' is not assignable to parameter of type '[any, any, [[any]], ...any[]]'.
++destructuringParameterDeclaration3ES5.ts(30,5): error TS2345: Argument of type '[number, number]' is not assignable to parameter of type '[any, any, [[any]], ...Array<any>]'.
+   Source has 2 element(s) but target requires 3.
+
+
+@@= skipped -57, +57 lines =@@
+ !!! error TS2322: Type 'number' is not assignable to type '[[any]]'.
+     a10([1, 2]);                              // Parameter type is any[]
+         ~~~~~~
+-!!! error TS2345: Argument of type '[number, number]' is not assignable to parameter of type '[any, any, [[any]], ...any[]]'.
++!!! error TS2345: Argument of type '[number, number]' is not assignable to parameter of type '[any, any, [[any]], ...Array<any>]'.
+ !!! error TS2345:   Source has 2 element(s) but target requires 3.
+     a11([1, 2]);                              // Parameter type is number[]
+     

@@ -108,11 +108,11 @@ yellow[blue]; // error
 >blue : Blue
 
 declare var x:number[];
->x : number[]
+>x : Array<number>
 
 x[0];
 >x[0] : number
->x : number[]
+>x : Array<number>
 >0 : 0
 
 class Benchmark {

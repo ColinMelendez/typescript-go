@@ -9,3 +9,98 @@
 
      additionalFiles: {
  >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : never[]
++>json : Array<string>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+@@= skipped -16, +16 lines =@@
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }
+
+ export function prepareConfigWithoutAnnotation({
+->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: never[] | undefined; } | undefined; }) => void
++>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<never> | undefined; } | undefined; }) => void
+
+     additionalFiles: {
+ >additionalFiles : any
+
+         json = []
+->json : any[]
+->[] : never[]
++>json : Array<any>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+@@= skipped -20, +20 lines =@@
+ >{} : {}
+
+     json
+->json : any[]
++>json : Array<any>
+ }
+
+ /** @type {(param: {
+@@= skipped -14, +14 lines =@@
+ >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : never[]
++>json : Array<string>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+@@= skipped -10, +10 lines =@@
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }
+
+ // Additional repros from https://github.com/microsoft/TypeScript/issues/59936
+@@= skipped -9, +9 lines =@@
+  * @param {{ a?: { json?: string[] }}} [config]
+  */
+ function f1({ a: { json = [] } = {} } = {}) { return json }
+->f1 : ({ a: { json } }?: { a?: { json?: string[]; }; }) => string[]
++>f1 : ({ a: { json } }?: { a?: { json?: string[]; }; }) => Array<string>
+ >a : any
+->json : string[]
+->[] : never[]
+->{} : {}
+->{} : {}
+->json : string[]
++>json : Array<string>
++>[] : Array<never>
++>{} : {}
++>{} : {}
++>json : Array<string>
+
+ /**
+  * @param {[[string[]?]?]} [x]
+  */
+ function f2([[json = []] = []] = []) { return json }
+->f2 : ([[json]]?: [[string[]?]?]) => string[]
+->json : string[]
+->[] : never[]
+->[] : []
+->[] : []
+->json : string[]
++>f2 : ([[json]]?: [[string[]?]?]) => Array<string>
++>json : Array<string>
++>[] : Array<never>
++>[] : []
++>[] : []
++>json : Array<string>

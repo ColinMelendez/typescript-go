@@ -99,12 +99,12 @@ function reducer(action: ReducerAction): void {
 >Batch : ActionType.Batch
 
             action.payload.map(reducer);
->action.payload.map(reducer) : void[]
->action.payload.map : <U>(callbackfn: (value: ReducerAction, index: number, array: ReducerAction[]) => U, thisArg?: any) => U[]
->action.payload : ReducerAction[]
->action : { type: ActionType.Batch; payload: ReducerAction[]; }
->payload : ReducerAction[]
->map : <U>(callbackfn: (value: ReducerAction, index: number, array: ReducerAction[]) => U, thisArg?: any) => U[]
+>action.payload.map(reducer) : Array<void>
+>action.payload.map : <U>(callbackfn: (value: ReducerAction, index: number, array: Array<ReducerAction>) => U, thisArg?: any) => Array<U>
+>action.payload : Array<ReducerAction>
+>action : { type: ActionType.Batch; payload: Array<ReducerAction>; }
+>payload : Array<ReducerAction>
+>map : <U>(callbackfn: (value: ReducerAction, index: number, array: Array<ReducerAction>) => U, thisArg?: any) => Array<U>
 >reducer : (action: ReducerAction) => void
 
             break;

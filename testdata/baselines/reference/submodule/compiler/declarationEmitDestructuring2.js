@@ -30,7 +30,7 @@ declare function h([a, [b], [[c]], { x, y: [a, b, c], z: { a1, b1 } }]: [any, [a
 }]): void;
 declare function h1([a, [b], [[c]], { x, y, z: { a1, b1 } }]: [any, [any], [[any]], {
     x?: number;
-    y?: number[];
+    y?: Array<number>;
     z: {
         a1: any;
         b1: any;

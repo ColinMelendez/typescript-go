@@ -127,7 +127,7 @@ class Greeter {
 
 function deco(...args: any[]): any {}
 >deco : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 enum Enum {
 >Enum : Enum
@@ -144,7 +144,7 @@ enum Enum {
 const lambda = (...args: any[]): any => {};
 >lambda : (...args: any[]) => any
 >(...args: any[]): any => {} : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 @lambda(Enum.No)
 >lambda(Enum.No) : any

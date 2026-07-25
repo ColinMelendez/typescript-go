@@ -1,0 +1,16 @@
+--- old.comparisonOperatorWithSubtypeObjectOnInstantiatedConstructorSignature.types
++++ new.comparisonOperatorWithSubtypeObjectOnInstantiatedConstructorSignature.types
+@@= skipped -52, +52 lines =@@
+
+ var a5: { new <T>(...x: T[]): T };
+ >a5 : new <T>(...x: T[]) => T
+->x : T[]
++>x : Array<T>
+
+ var b5: { new (...x: string[]): string };
+ >b5 : new (...x: string[]) => string
+->x : string[]
++>x : Array<string>
+
+ var a6: { new <T>(x: T, y: T): T };
+ >a6 : new <T>(x: T, y: T) => T

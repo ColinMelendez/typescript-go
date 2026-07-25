@@ -1,0 +1,453 @@
+--- old.genericRestParameters2.types
++++ new.genericRestParameters2.types
+@@= skipped -1, +1 lines =@@
+
+ === genericRestParameters2.ts ===
+ declare const t1: [number, string, ...boolean[]];
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ declare const t2: [string, ...boolean[]];
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ declare const t3: [...boolean[]];
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ declare const t4: [];
+ >t4 : []
+@@= skipped -40, +40 lines =@@
+ >x : []
+
+ declare let f10: (...x: [number, string, ...boolean[]]) => void;
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
+->x : [number, string, ...boolean[]]
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
++>x : [number, string, ...Array<boolean>]
+
+ declare let f11: (a: number, ...x: [string, ...boolean[]]) => void;
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >a : number
+->x : [string, ...boolean[]]
++>x : [string, ...Array<boolean>]
+
+ declare let f12: (a: number, b: string, ...x: [...boolean[]]) => void;
+ >f12 : (a: number, b: string, ...x: [...boolean[]]) => void
+ >a : number
+ >b : string
+->x : boolean[]
++>x : Array<boolean>
+
+ declare let f13: (a: number, b: string, ...c: boolean[]) => void;
+ >f13 : (a: number, b: string, ...c: boolean[]) => void
+ >a : number
+ >b : string
+->c : boolean[]
++>c : Array<boolean>
+
+ declare const ns: [number, string];
+ >ns : [number, string]
+@@= skipped -28, +28 lines =@@
+
+ f10(42, "hello");
+ >f10(42, "hello") : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+
+ f10(42, "hello", true);
+ >f10(42, "hello", true) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+
+ f10(42, "hello", true, false);
+ >f10(42, "hello", true, false) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -21, +21 lines =@@
+
+ f10(t1[0], t1[1], t1[2], t1[3]);
+ >f10(t1[0], t1[1], t1[2], t1[3]) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >t1[0] : number
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >0 : 0
+ >t1[1] : string
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >1 : 1
+ >t1[2] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >2 : 2
+ >t1[3] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >3 : 3
+
+ f10(...t1);
+ >f10(...t1) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >...t1 : string | number | boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ f10(42, ...t2);
+ >f10(42, ...t2) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ f10(42, "hello", ...t3);
+ >f10(42, "hello", ...t3) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f10(42, "hello", true, ...t4);
+ >f10(42, "hello", true, ...t4) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -46, +46 lines =@@
+
+ f10(42, "hello", true, ...t4, false, ...t3);
+ >f10(42, "hello", true, ...t4, false, ...t3) : void
+->f10 : (x_0: number, x_1: string, ...x: boolean[]) => void
++>f10 : (x_0: number, x_1: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -8, +8 lines =@@
+ >t4 : []
+ >false : false
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f11(42, "hello");
+ >f11(42, "hello") : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+
+ f11(42, "hello", true);
+ >f11(42, "hello", true) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+
+ f11(42, "hello", true, false);
+ >f11(42, "hello", true, false) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -25, +25 lines =@@
+
+ f11(t1[0], t1[1], t1[2], t1[3]);
+ >f11(t1[0], t1[1], t1[2], t1[3]) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >t1[0] : number
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >0 : 0
+ >t1[1] : string
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >1 : 1
+ >t1[2] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >2 : 2
+ >t1[3] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >3 : 3
+
+ f11(...t1);
+ >f11(...t1) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >...t1 : string | number | boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ f11(42, ...t2);
+ >f11(42, ...t2) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ f11(42, "hello", ...t3);
+ >f11(42, "hello", ...t3) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f11(42, "hello", true, ...t4);
+ >f11(42, "hello", true, ...t4) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -46, +46 lines =@@
+
+ f11(42, "hello", true, ...t4, false, ...t3);
+ >f11(42, "hello", true, ...t4, false, ...t3) : void
+->f11 : (a: number, x_0: string, ...x: boolean[]) => void
++>f11 : (a: number, x_0: string, ...x: Array<boolean>) => void
+ >42 : 42
+ >"hello" : "hello"
+ >true : true
+@@= skipped -8, +8 lines =@@
+ >t4 : []
+ >false : false
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f12(42, "hello");
+ >f12(42, "hello") : void
+@@= skipped -27, +27 lines =@@
+ >f12(t1[0], t1[1], t1[2], t1[3]) : void
+ >f12 : (a: number, b: string, ...x: [...boolean[]]) => void
+ >t1[0] : number
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >0 : 0
+ >t1[1] : string
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >1 : 1
+ >t1[2] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >2 : 2
+ >t1[3] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >3 : 3
+
+ f12(...t1);
+ >f12(...t1) : void
+ >f12 : (a: number, b: string, ...x: [...boolean[]]) => void
+ >...t1 : string | number | boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ f12(42, ...t2);
+ >f12(42, ...t2) : void
+ >f12 : (a: number, b: string, ...x: [...boolean[]]) => void
+ >42 : 42
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ f12(42, "hello", ...t3);
+ >f12(42, "hello", ...t3) : void
+@@= skipped -31, +31 lines =@@
+ >42 : 42
+ >"hello" : "hello"
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f12(42, "hello", true, ...t4);
+ >f12(42, "hello", true, ...t4) : void
+@@= skipped -21, +21 lines =@@
+ >t4 : []
+ >false : false
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f13(42, "hello");
+ >f13(42, "hello") : void
+@@= skipped -27, +27 lines =@@
+ >f13(t1[0], t1[1], t1[2], t1[3]) : void
+ >f13 : (a: number, b: string, ...c: boolean[]) => void
+ >t1[0] : number
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >0 : 0
+ >t1[1] : string
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >1 : 1
+ >t1[2] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >2 : 2
+ >t1[3] : boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+ >3 : 3
+
+ f13(...t1);
+ >f13(...t1) : void
+ >f13 : (a: number, b: string, ...c: boolean[]) => void
+ >...t1 : string | number | boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ f13(42, ...t2);
+ >f13(42, ...t2) : void
+ >f13 : (a: number, b: string, ...c: boolean[]) => void
+ >42 : 42
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ f13(42, "hello", ...t3);
+ >f13(42, "hello", ...t3) : void
+@@= skipped -31, +31 lines =@@
+ >42 : 42
+ >"hello" : "hello"
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f13(42, "hello", true, ...t4);
+ >f13(42, "hello", true, ...t4) : void
+@@= skipped -21, +21 lines =@@
+ >t4 : []
+ >false : false
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ declare const f20: <T extends unknown[]>(...args: T) => T;
+ >f20 : <T extends unknown[]>(...args: T) => T
+ >args : T
+
+ f20(...t1);
+->f20(...t1) : [number, string, ...boolean[]]
++>f20(...t1) : [number, string, ...Array<boolean>]
+ >f20 : <T extends unknown[]>(...args: T) => T
+ >...t1 : string | number | boolean
+->t1 : [number, string, ...boolean[]]
++>t1 : [number, string, ...Array<boolean>]
+
+ f20(42, ...t2);
+->f20(42, ...t2) : [number, string, ...boolean[]]
++>f20(42, ...t2) : [number, string, ...Array<boolean>]
+ >f20 : <T extends unknown[]>(...args: T) => T
+ >42 : 42
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+
+ f20(42, "hello", ...t3);
+->f20(42, "hello", ...t3) : [number, string, ...boolean[]]
++>f20(42, "hello", ...t3) : [number, string, ...Array<boolean>]
+ >f20 : <T extends unknown[]>(...args: T) => T
+ >42 : 42
+ >"hello" : "hello"
+ >...t3 : boolean
+->t3 : boolean[]
++>t3 : Array<boolean>
+
+ f20(42, "hello", ...t2, true);
+->f20(42, "hello", ...t2, true) : [number, string, string, ...boolean[], boolean]
++>f20(42, "hello", ...t2, true) : [number, string, string, ...Array<boolean>, boolean]
+ >f20 : <T extends unknown[]>(...args: T) => T
+ >42 : 42
+ >"hello" : "hello"
+ >...t2 : string | boolean
+->t2 : [string, ...boolean[]]
++>t2 : [string, ...Array<boolean>]
+ >true : true
+
+ type T01 = Parameters<(x: number, y: string, ...z: boolean[]) => void>;
+->T01 : [x: number, y: string, ...z: boolean[]]
++>T01 : [x: number, y: string, ...z: Array<boolean>]
+ >x : number
+ >y : string
+->z : boolean[]
++>z : Array<boolean>
+
+ type T02 = Parameters<(...args: [number, string, ...boolean[]]) => void>;
+->T02 : [number, string, ...boolean[]]
+->args : [number, string, ...boolean[]]
++>T02 : [number, string, ...Array<boolean>]
++>args : [number, string, ...Array<boolean>]
+
+ type T03 = ConstructorParameters<new (x: number, y: string, ...z: boolean[]) => void>;
+->T03 : [x: number, y: string, ...z: boolean[]]
++>T03 : [x: number, y: string, ...z: Array<boolean>]
+ >x : number
+ >y : string
+->z : boolean[]
++>z : Array<boolean>
+
+ type T04 = ConstructorParameters<new (...args: [number, string, ...boolean[]]) => void>;
+->T04 : [number, string, ...boolean[]]
+->args : [number, string, ...boolean[]]
++>T04 : [number, string, ...Array<boolean>]
++>args : [number, string, ...Array<boolean>]
+
+ type T05<T extends any[]> = Parameters<(x: string, ...args: T) => void>;
+ >T05 : [x: string, ...args: T]
+@@= skipped -62, +62 lines =@@
+ >args : T
+
+ type T06 = T05<[number, ...boolean[]]>;
+->T06 : [x: string, number, ...boolean[]]
++>T06 : [x: string, number, ...Array<boolean>]
+
+ type P1<T extends Function> = T extends (head: infer A, ...tail: infer B) => any ? { head: A, tail: B } : any[];
+ >P1 : P1<T>
+@@= skipped -10, +10 lines =@@
+ >tail : B
+
+ type T10 = P1<(x: number, y: string, ...z: boolean[]) => void>;
+->T10 : { head: number; tail: [y: string, ...z: boolean[]]; }
++>T10 : { head: number; tail: [y: string, ...z: Array<boolean>]; }
+ >x : number
+ >y : string
+->z : boolean[]
++>z : Array<boolean>
+
+ type T11 = P1<(...z: number[]) => void>;
+->T11 : { head: number; tail: number[]; }
+->z : number[]
++>T11 : { head: number; tail: Array<number>; }
++>z : Array<number>
+
+ type T12 = P1<(x: number, y: number) => void>;
+ >T12 : { head: number; tail: [y: number]; }

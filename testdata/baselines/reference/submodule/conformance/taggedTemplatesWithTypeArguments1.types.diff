@@ -1,0 +1,11 @@
+--- old.taggedTemplatesWithTypeArguments1.types
++++ new.taggedTemplatesWithTypeArguments1.types
+@@= skipped -3, +3 lines =@@
+ declare function f<T>(strs: TemplateStringsArray, ...callbacks: Array<(x: T) => any>): void;
+ >f : <T>(strs: TemplateStringsArray, ...callbacks: Array<(x: T) => any>) => void
+ >strs : TemplateStringsArray
+->callbacks : ((x: T) => any)[]
++>callbacks : Array<(x: T) => any>
+ >x : T
+
+ interface Stuff {

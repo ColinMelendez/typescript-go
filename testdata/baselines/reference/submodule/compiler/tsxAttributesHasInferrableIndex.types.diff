@@ -1,0 +1,20 @@
+--- old.tsxAttributesHasInferrableIndex.types
++++ new.tsxAttributesHasInferrableIndex.types
+@@= skipped -11, +11 lines =@@
+ >createElement : (name: string, attributes: Attributes | undefined, ...contents: string[]) => string
+ >name : string
+ >attributes : Attributes | undefined
+->contents : string[]
++>contents : Array<string>
+
+     return name;
+ >name : string
+@@= skipped -13, +13 lines =@@
+ function Button(attributes: Attributes | undefined, contents: string[]) {
+ >Button : (attributes: Attributes | undefined, contents: string[]) => string
+ >attributes : Attributes | undefined
+->contents : string[]
++>contents : Array<string>
+
+     return '';
+ >'' : ""

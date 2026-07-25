@@ -1,0 +1,11 @@
+--- old.for-of46.types
++++ new.for-of46.types
+@@= skipped -8, +8 lines =@@
+ >map : Map<string, boolean>
+ >new Map([["", true]]) : Map<string, boolean>
+ >Map : MapConstructor
+->[["", true]] : [string, true][]
++>[["", true]] : Array<[string, true]>
+ >["", true] : [string, true]
+ >"" : ""
+ >true : true

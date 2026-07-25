@@ -1,0 +1,156 @@
+--- old.declFileMethods(target=es2015).types
++++ new.declFileMethods(target=es2015).types
+@@= skipped -23, +23 lines =@@
+     public fooWithRestParameters(a: string, ...rests: string[]) {
+ >fooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -49, +49 lines =@@
+     private privateFooWithRestParameters(a: string, ...rests: string[]) {
+ >privateFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -48, +48 lines =@@
+     static staticFooWithRestParameters(a: string, ...rests: string[]) {
+ >staticFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -48, +48 lines =@@
+     private static privateStaticFooWithRestParameters(a: string, ...rests: string[]) {
+ >privateStaticFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -45, +45 lines =@@
+     fooWithRestParameters(a: string, ...rests: string[]): string;
+ >fooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+     fooWithOverloads(a: string): string;
+ >fooWithOverloads : { (a: string): string; (a: number): number; }
+@@= skipped -35, +35 lines =@@
+     public fooWithRestParameters(a: string, ...rests: string[]) {
+ >fooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -49, +49 lines =@@
+     private privateFooWithRestParameters(a: string, ...rests: string[]) {
+ >privateFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -48, +48 lines =@@
+     static staticFooWithRestParameters(a: string, ...rests: string[]) {
+ >staticFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -48, +48 lines =@@
+     private static privateStaticFooWithRestParameters(a: string, ...rests: string[]) {
+ >privateStaticFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -45, +45 lines =@@
+     fooWithRestParameters(a: string, ...rests: string[]): string;
+ >fooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+     fooWithOverloads(a: string): string;
+ >fooWithOverloads : { (a: string): string; (a: number): number; }

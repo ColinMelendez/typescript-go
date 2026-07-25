@@ -19,7 +19,7 @@ for (let x in {}) {
 
 for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => any
@@ -234,7 +234,7 @@ for (const x in {}) {
 
 for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => any

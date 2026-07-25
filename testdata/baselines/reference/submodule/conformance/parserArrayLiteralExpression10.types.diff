@@ -1,0 +1,12 @@
+--- old.parserArrayLiteralExpression10.types
++++ new.parserArrayLiteralExpression10.types
+@@= skipped -1, +1 lines =@@
+
+ === parserArrayLiteralExpression10.ts ===
+ var v = [1,1,];
+->v : number[]
+->[1,1,] : number[]
++>v : Array<number>
++>[1,1,] : Array<number>
+ >1 : 1
+ >1 : 1

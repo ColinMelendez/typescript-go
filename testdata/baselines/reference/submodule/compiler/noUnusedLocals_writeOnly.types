@@ -111,5 +111,5 @@ function f(x = 0, b = false) {
 }
 function f2(_: ReadonlyArray<number>): void {}
 >f2 : (_: ReadonlyArray<number>) => void
->_ : readonly number[]
+>_ : ReadonlyArray<number>
 

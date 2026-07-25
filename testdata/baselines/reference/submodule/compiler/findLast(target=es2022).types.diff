@@ -1,0 +1,38 @@
+--- old.findLast(target=es2022).types
++++ new.findLast(target=es2022).types
+@@= skipped -4, +4 lines =@@
+ >itemNumber : number
+ >[0].findLast((item) => item === 0) : any
+ >[0].findLast : any
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+ >findLast : any
+ >(item) => item === 0 : (item: any) => boolean
+@@= skipped -13, +13 lines =@@
+ >itemString : string
+ >["string"].findLast((item) => item === "string") : any
+ >["string"].findLast : any
+->["string"] : string[]
++>["string"] : Array<string>
+ >"string" : "string"
+ >findLast : any
+ >(item) => item === "string" : (item: any) => boolean
+@@= skipped -149, +149 lines =@@
+ >indexNumber : number
+ >[0].findLastIndex((item) => item === 0) : any
+ >[0].findLastIndex : any
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+ >findLastIndex : any
+ >(item) => item === 0 : (item: any) => boolean
+@@= skipped -13, +13 lines =@@
+ >indexString : number
+ >["string"].findLastIndex((item) => item === "string") : any
+ >["string"].findLastIndex : any
+->["string"] : string[]
++>["string"] : Array<string>
+ >"string" : "string"
+ >findLastIndex : any
+ >(item) => item === "string" : (item: any) => boolean

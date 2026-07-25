@@ -49,7 +49,7 @@ namespace Errors {
 
             a10: (...x: Base[]) => Base;
 >a10 : (...x: Base[]) => Base
->x : Base[]
+>x : Array<Base>
 
             a11: (x: { foo: string }, y: { foo: string; bar: string }) => Base;
 >a11 : (x: { foo: string; }, y: { foo: string; bar: string; }) => Base
@@ -61,8 +61,8 @@ namespace Errors {
 
             a12: (x: Array<Base>, y: Array<Derived2>) => Array<Derived>;
 >a12 : (x: Array<Base>, y: Array<Derived2>) => Array<Derived>
->x : Base[]
->y : Derived2[]
+>x : Array<Base>
+>y : Array<Derived2>
 
             a14: {
 >a14 : { (x: number): number[]; (x: string): string[]; }
@@ -166,7 +166,7 @@ namespace Errors {
         interface I4B extends A {
             a10: <T extends Derived>(...x: T[]) => T; // valid, parameter covariance works even after contextual signature instantiation
 >a10 : <T extends Derived>(...x: T[]) => T
->x : T[]
+>x : Array<T>
         }
 
         interface I4C extends A {
@@ -179,8 +179,8 @@ namespace Errors {
         interface I4E extends A {
             a12: <T extends Array<Derived2>>(x: Array<Base>, y: Array<Base>) => T; // valid, no inferences for T, defaults to Array<Derived2>
 >a12 : <T extends Array<Derived2>>(x: Array<Base>, y: Array<Base>) => T
->x : Base[]
->y : Base[]
+>x : Array<Base>
+>y : Array<Base>
         }
 
         interface I6 extends A {

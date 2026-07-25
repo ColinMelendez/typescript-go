@@ -103,10 +103,10 @@ function onlyErrorsWhenUnusedInBody() {
 
         ? [() => null].forEach(() => { test(); })
 >[() => null].forEach(() => { test(); }) : void
->[() => null].forEach : (callbackfn: (value: () => null, index: number, array: (() => null)[]) => void, thisArg?: any) => void
->[() => null] : (() => null)[]
+>[() => null].forEach : (callbackfn: (value: () => null, index: number, array: Array<() => null>) => void, thisArg?: any) => void
+>[() => null] : Array<() => null>
 >() => null : () => null
->forEach : (callbackfn: (value: () => null, index: number, array: (() => null)[]) => void, thisArg?: any) => void
+>forEach : (callbackfn: (value: () => null, index: number, array: Array<() => null>) => void, thisArg?: any) => void
 >() => { test(); } : () => void
 >test() : boolean
 >test : () => boolean
@@ -121,10 +121,10 @@ function onlyErrorsWhenUnusedInBody() {
 
         ? [() => null].forEach(test => { test() })
 >[() => null].forEach(test => { test() }) : void
->[() => null].forEach : (callbackfn: (value: () => null, index: number, array: (() => null)[]) => void, thisArg?: any) => void
->[() => null] : (() => null)[]
+>[() => null].forEach : (callbackfn: (value: () => null, index: number, array: Array<() => null>) => void, thisArg?: any) => void
+>[() => null] : Array<() => null>
 >() => null : () => null
->forEach : (callbackfn: (value: () => null, index: number, array: (() => null)[]) => void, thisArg?: any) => void
+>forEach : (callbackfn: (value: () => null, index: number, array: Array<() => null>) => void, thisArg?: any) => void
 >test => { test() } : (test: () => null) => void
 >test : () => null
 >test() : null

@@ -1,0 +1,680 @@
+--- old.temporal.types
++++ new.temporal.types
+@@= skipped -287, +287 lines =@@
+ >1.2e12 : 1200000000000
+
+     const sorted = [three, one, two].sort(Temporal.Instant.compare);
+->sorted : Temporal.Instant[]
+->[three, one, two].sort(Temporal.Instant.compare) : Temporal.Instant[]
+->[three, one, two].sort : (compareFn?: ((a: Temporal.Instant, b: Temporal.Instant) => number) | undefined) => Temporal.Instant[]
+->[three, one, two] : Temporal.Instant[]
++>sorted : Array<Temporal.Instant>
++>[three, one, two].sort(Temporal.Instant.compare) : Array<Temporal.Instant>
++>[three, one, two].sort : (compareFn?: ((a: Temporal.Instant, b: Temporal.Instant) => number) | undefined) => Array<Temporal.Instant>
++>[three, one, two] : Array<Temporal.Instant>
+ >three : Temporal.Instant
+ >one : Temporal.Instant
+ >two : Temporal.Instant
+->sort : (compareFn?: ((a: Temporal.Instant, b: Temporal.Instant) => number) | undefined) => Temporal.Instant[]
++>sort : (compareFn?: ((a: Temporal.Instant, b: Temporal.Instant) => number) | undefined) => Array<Temporal.Instant>
+ >Temporal.Instant.compare : (one: Temporal.InstantLike, two: Temporal.InstantLike) => number
+ >Temporal.Instant : Temporal.InstantConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted.join(" ");
+ >sorted.join(" ") : string
+ >sorted.join : (separator?: string) => string
+->sorted : Temporal.Instant[]
++>sorted : Array<Temporal.Instant>
+ >join : (separator?: string) => string
+ >" " : " "
+
+@@= skipped -801, +801 lines =@@
+
+ {
+     const arr = [
+->arr : Temporal.ZonedDateTime[]
+->[        Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/Toronto]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/New_York]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30+01:00[Europe/Brussels]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30+00:00[Europe/London]"),    ] : Temporal.ZonedDateTime[]
++>arr : Array<Temporal.ZonedDateTime>
++>[        Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/Toronto]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/New_York]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30+01:00[Europe/Brussels]"),        Temporal.ZonedDateTime.from("2020-02-01T12:30+00:00[Europe/London]"),    ] : Array<Temporal.ZonedDateTime>
+
+         Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/Toronto]"),
+ >Temporal.ZonedDateTime.from("2020-02-01T12:30-05:00[America/Toronto]") : Temporal.ZonedDateTime
+@@= skipped -41, +41 lines =@@
+
+     ];
+     const sorted = arr.sort(Temporal.ZonedDateTime.compare);
+->sorted : Temporal.ZonedDateTime[]
+->arr.sort(Temporal.ZonedDateTime.compare) : Temporal.ZonedDateTime[]
+->arr.sort : (compareFn?: ((a: Temporal.ZonedDateTime, b: Temporal.ZonedDateTime) => number) | undefined) => Temporal.ZonedDateTime[]
+->arr : Temporal.ZonedDateTime[]
+->sort : (compareFn?: ((a: Temporal.ZonedDateTime, b: Temporal.ZonedDateTime) => number) | undefined) => Temporal.ZonedDateTime[]
++>sorted : Array<Temporal.ZonedDateTime>
++>arr.sort(Temporal.ZonedDateTime.compare) : Array<Temporal.ZonedDateTime>
++>arr.sort : (compareFn?: ((a: Temporal.ZonedDateTime, b: Temporal.ZonedDateTime) => number) | undefined) => Array<Temporal.ZonedDateTime>
++>arr : Array<Temporal.ZonedDateTime>
++>sort : (compareFn?: ((a: Temporal.ZonedDateTime, b: Temporal.ZonedDateTime) => number) | undefined) => Array<Temporal.ZonedDateTime>
+ >Temporal.ZonedDateTime.compare : (one: Temporal.ZonedDateTimeLike, two: Temporal.ZonedDateTimeLike) => number
+ >Temporal.ZonedDateTime : Temporal.ZonedDateTimeConstructor
+ >Temporal : typeof Temporal
+@@= skipped -16, +16 lines =@@
+ >JSON.stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (number | string)[] | null, space?: string | number): string; }
+ >JSON : JSON
+ >stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (number | string)[] | null, space?: string | number): string; }
+->sorted : Temporal.ZonedDateTime[]
++>sorted : Array<Temporal.ZonedDateTime>
+ >undefined : undefined
+ >2 : 2
+
+@@= skipped -288, +288 lines =@@
+
+     ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][zdt.dayOfWeek - 1]; // => 'THU'
+ >["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][zdt.dayOfWeek - 1] : string
+->["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : string[]
++>["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : Array<string>
+ >"MON" : "MON"
+ >"TUE" : "TUE"
+ >"WED" : "WED"
+@@= skipped -88, +88 lines =@@
+ {
+     // Attempt to write some mnemonic poetry
+     const monthsByDays: Record<number, Temporal.ZonedDateTime[]> = {};
+->monthsByDays : Record<number, Temporal.ZonedDateTime[]>
++>monthsByDays : Record<number, Array<Temporal.ZonedDateTime>>
+ >Temporal : any
+ >{} : {}
+
+@@= skipped -28, +28 lines =@@
+ >month : number
+
+         monthsByDays[zdt.daysInMonth] = (monthsByDays[zdt.daysInMonth] || []).concat(zdt);
+->monthsByDays[zdt.daysInMonth] = (monthsByDays[zdt.daysInMonth] || []).concat(zdt) : Temporal.ZonedDateTime[]
+->monthsByDays[zdt.daysInMonth] : Temporal.ZonedDateTime[]
+->monthsByDays : Record<number, Temporal.ZonedDateTime[]>
+->zdt.daysInMonth : number
+->zdt : Temporal.ZonedDateTime
+->daysInMonth : number
+->(monthsByDays[zdt.daysInMonth] || []).concat(zdt) : Temporal.ZonedDateTime[]
+->(monthsByDays[zdt.daysInMonth] || []).concat : { (...items: ConcatArray<Temporal.ZonedDateTime>[]): Temporal.ZonedDateTime[]; (...items: (ConcatArray<Temporal.ZonedDateTime> | Temporal.ZonedDateTime)[]): Temporal.ZonedDateTime[]; }
+->(monthsByDays[zdt.daysInMonth] || []) : Temporal.ZonedDateTime[]
+->monthsByDays[zdt.daysInMonth] || [] : Temporal.ZonedDateTime[]
+->monthsByDays[zdt.daysInMonth] : Temporal.ZonedDateTime[]
+->monthsByDays : Record<number, Temporal.ZonedDateTime[]>
+->zdt.daysInMonth : number
+->zdt : Temporal.ZonedDateTime
+->daysInMonth : number
+->[] : never[]
+->concat : { (...items: ConcatArray<Temporal.ZonedDateTime>[]): Temporal.ZonedDateTime[]; (...items: (ConcatArray<Temporal.ZonedDateTime> | Temporal.ZonedDateTime)[]): Temporal.ZonedDateTime[]; }
++>monthsByDays[zdt.daysInMonth] = (monthsByDays[zdt.daysInMonth] || []).concat(zdt) : Array<Temporal.ZonedDateTime>
++>monthsByDays[zdt.daysInMonth] : Array<Temporal.ZonedDateTime>
++>monthsByDays : Record<number, Array<Temporal.ZonedDateTime>>
++>zdt.daysInMonth : number
++>zdt : Temporal.ZonedDateTime
++>daysInMonth : number
++>(monthsByDays[zdt.daysInMonth] || []).concat(zdt) : Array<Temporal.ZonedDateTime>
++>(monthsByDays[zdt.daysInMonth] || []).concat : { (...items: Array<ConcatArray<Temporal.ZonedDateTime>>): Array<Temporal.ZonedDateTime>; (...items: Array<ConcatArray<Temporal.ZonedDateTime> | Temporal.ZonedDateTime>): Array<Temporal.ZonedDateTime>; }
++>(monthsByDays[zdt.daysInMonth] || []) : Array<Temporal.ZonedDateTime>
++>monthsByDays[zdt.daysInMonth] || [] : Array<Temporal.ZonedDateTime>
++>monthsByDays[zdt.daysInMonth] : Array<Temporal.ZonedDateTime>
++>monthsByDays : Record<number, Array<Temporal.ZonedDateTime>>
++>zdt.daysInMonth : number
++>zdt : Temporal.ZonedDateTime
++>daysInMonth : number
++>[] : Array<never>
++>concat : { (...items: Array<ConcatArray<Temporal.ZonedDateTime>>): Array<Temporal.ZonedDateTime>; (...items: Array<ConcatArray<Temporal.ZonedDateTime> | Temporal.ZonedDateTime>): Array<Temporal.ZonedDateTime>; }
+ >zdt : Temporal.ZonedDateTime
+     }
+
+     const strings = monthsByDays[30].map(zdt => zdt.toLocaleString("en", { month: "long" }));
+->strings : string[]
+->monthsByDays[30].map(zdt => zdt.toLocaleString("en", { month: "long" })) : string[]
+->monthsByDays[30].map : <U>(callbackfn: (value: Temporal.ZonedDateTime, index: number, array: Temporal.ZonedDateTime[]) => U, thisArg?: any) => U[]
+->monthsByDays[30] : Temporal.ZonedDateTime[]
+->monthsByDays : Record<number, Temporal.ZonedDateTime[]>
++>strings : Array<string>
++>monthsByDays[30].map(zdt => zdt.toLocaleString("en", { month: "long" })) : Array<string>
++>monthsByDays[30].map : <U>(callbackfn: (value: Temporal.ZonedDateTime, index: number, array: Array<Temporal.ZonedDateTime>) => U, thisArg?: any) => Array<U>
++>monthsByDays[30] : Array<Temporal.ZonedDateTime>
++>monthsByDays : Record<number, Array<Temporal.ZonedDateTime>>
+ >30 : 30
+->map : <U>(callbackfn: (value: Temporal.ZonedDateTime, index: number, array: Temporal.ZonedDateTime[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: Temporal.ZonedDateTime, index: number, array: Array<Temporal.ZonedDateTime>) => U, thisArg?: any) => Array<U>
+ >zdt => zdt.toLocaleString("en", { month: "long" }) : (zdt: Temporal.ZonedDateTime) => string
+ >zdt : Temporal.ZonedDateTime
+ >zdt.toLocaleString("en", { month: "long" }) : string
+@@= skipped -42, +42 lines =@@
+     // Shuffle to improve poem as determined empirically
+     strings.unshift(strings.pop()!);
+ >strings.unshift(strings.pop()!) : number
+->strings.unshift : (...items: string[]) => number
+->strings : string[]
+->unshift : (...items: string[]) => number
++>strings.unshift : (...items: Array<string>) => number
++>strings : Array<string>
++>unshift : (...items: Array<string>) => number
+ >strings.pop()! : string
+ >strings.pop() : string | undefined
+ >strings.pop : () => string | undefined
+->strings : string[]
++>strings : Array<string>
+ >pop : () => string | undefined
+
+     const format = new Intl.ListFormat("en");
+@@= skipped -24, +24 lines =@@
+ >format.format : (list: Iterable<string>) => string
+ >format : Intl.ListFormat
+ >format : (list: Iterable<string>) => string
+->strings : string[]
++>strings : Array<string>
+
+     console.log(poem);
+ >console.log(poem) : void
+@@= skipped -539, +539 lines =@@
+ >jan1 : Temporal.ZonedDateTime
+ >feb1 : Temporal.ZonedDateTime
+ >mar1 : Temporal.ZonedDateTime
+->[1, 2, 3].map(month => Temporal.ZonedDateTime.from({ year: 2020, month, day: 1, timeZone: "Asia/Seoul" })) : Temporal.ZonedDateTime[]
+->[1, 2, 3].map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
+->[1, 2, 3] : number[]
++>[1, 2, 3].map(month => Temporal.ZonedDateTime.from({ year: 2020, month, day: 1, timeZone: "Asia/Seoul" })) : Array<Temporal.ZonedDateTime>
++>[1, 2, 3].map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+ >month => Temporal.ZonedDateTime.from({ year: 2020, month, day: 1, timeZone: "Asia/Seoul" }) : (month: number) => Temporal.ZonedDateTime
+ >month : number
+ >Temporal.ZonedDateTime.from({ year: 2020, month, day: 1, timeZone: "Asia/Seoul" }) : Temporal.ZonedDateTime
+@@= skipped -799, +799 lines =@@
+ >"1930-02-18" : "1930-02-18"
+
+     const sorted = [one, two, three].sort(Temporal.PlainDate.compare);
+->sorted : Temporal.PlainDate[]
+->[one, two, three].sort(Temporal.PlainDate.compare) : Temporal.PlainDate[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.PlainDate, b: Temporal.PlainDate) => number) | undefined) => Temporal.PlainDate[]
+->[one, two, three] : Temporal.PlainDate[]
++>sorted : Array<Temporal.PlainDate>
++>[one, two, three].sort(Temporal.PlainDate.compare) : Array<Temporal.PlainDate>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.PlainDate, b: Temporal.PlainDate) => number) | undefined) => Array<Temporal.PlainDate>
++>[one, two, three] : Array<Temporal.PlainDate>
+ >one : Temporal.PlainDate
+ >two : Temporal.PlainDate
+ >three : Temporal.PlainDate
+->sort : (compareFn?: ((a: Temporal.PlainDate, b: Temporal.PlainDate) => number) | undefined) => Temporal.PlainDate[]
++>sort : (compareFn?: ((a: Temporal.PlainDate, b: Temporal.PlainDate) => number) | undefined) => Array<Temporal.PlainDate>
+ >Temporal.PlainDate.compare : (one: Temporal.PlainDateLike, two: Temporal.PlainDateLike) => number
+ >Temporal.PlainDate : Temporal.PlainDateConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted.join(" "); // => '1930-02-18 2006-08-24 2015-07-14'
+ >sorted.join(" ") : string
+ >sorted.join : (separator?: string) => string
+->sorted : Temporal.PlainDate[]
++>sorted : Array<Temporal.PlainDate>
+ >join : (separator?: string) => string
+ >" " : " "
+ }
+@@= skipped -117, +117 lines =@@
+
+     ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][date.dayOfWeek - 1]; // => 'THU'
+ >["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][date.dayOfWeek - 1] : string
+->["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : string[]
++>["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : Array<string>
+ >"MON" : "MON"
+ >"TUE" : "TUE"
+ >"WED" : "WED"
+@@= skipped -88, +88 lines =@@
+ {
+     // Attempt to write some mnemonic poetry
+     const monthsByDays: Record<number, Temporal.PlainDate[]> = {};
+->monthsByDays : Record<number, Temporal.PlainDate[]>
++>monthsByDays : Record<number, Array<Temporal.PlainDate>>
+ >Temporal : any
+ >{} : {}
+
+@@= skipped -28, +28 lines =@@
+ >month : number
+
+         monthsByDays[date.daysInMonth] = (monthsByDays[date.daysInMonth] || []).concat(date);
+->monthsByDays[date.daysInMonth] = (monthsByDays[date.daysInMonth] || []).concat(date) : Temporal.PlainDate[]
+->monthsByDays[date.daysInMonth] : Temporal.PlainDate[]
+->monthsByDays : Record<number, Temporal.PlainDate[]>
+->date.daysInMonth : number
+->date : Temporal.PlainDate
+->daysInMonth : number
+->(monthsByDays[date.daysInMonth] || []).concat(date) : Temporal.PlainDate[]
+->(monthsByDays[date.daysInMonth] || []).concat : { (...items: ConcatArray<Temporal.PlainDate>[]): Temporal.PlainDate[]; (...items: (ConcatArray<Temporal.PlainDate> | Temporal.PlainDate)[]): Temporal.PlainDate[]; }
+->(monthsByDays[date.daysInMonth] || []) : Temporal.PlainDate[]
+->monthsByDays[date.daysInMonth] || [] : Temporal.PlainDate[]
+->monthsByDays[date.daysInMonth] : Temporal.PlainDate[]
+->monthsByDays : Record<number, Temporal.PlainDate[]>
+->date.daysInMonth : number
+->date : Temporal.PlainDate
+->daysInMonth : number
+->[] : never[]
+->concat : { (...items: ConcatArray<Temporal.PlainDate>[]): Temporal.PlainDate[]; (...items: (ConcatArray<Temporal.PlainDate> | Temporal.PlainDate)[]): Temporal.PlainDate[]; }
++>monthsByDays[date.daysInMonth] = (monthsByDays[date.daysInMonth] || []).concat(date) : Array<Temporal.PlainDate>
++>monthsByDays[date.daysInMonth] : Array<Temporal.PlainDate>
++>monthsByDays : Record<number, Array<Temporal.PlainDate>>
++>date.daysInMonth : number
++>date : Temporal.PlainDate
++>daysInMonth : number
++>(monthsByDays[date.daysInMonth] || []).concat(date) : Array<Temporal.PlainDate>
++>(monthsByDays[date.daysInMonth] || []).concat : { (...items: Array<ConcatArray<Temporal.PlainDate>>): Array<Temporal.PlainDate>; (...items: Array<ConcatArray<Temporal.PlainDate> | Temporal.PlainDate>): Array<Temporal.PlainDate>; }
++>(monthsByDays[date.daysInMonth] || []) : Array<Temporal.PlainDate>
++>monthsByDays[date.daysInMonth] || [] : Array<Temporal.PlainDate>
++>monthsByDays[date.daysInMonth] : Array<Temporal.PlainDate>
++>monthsByDays : Record<number, Array<Temporal.PlainDate>>
++>date.daysInMonth : number
++>date : Temporal.PlainDate
++>daysInMonth : number
++>[] : Array<never>
++>concat : { (...items: Array<ConcatArray<Temporal.PlainDate>>): Array<Temporal.PlainDate>; (...items: Array<ConcatArray<Temporal.PlainDate> | Temporal.PlainDate>): Array<Temporal.PlainDate>; }
+ >date : Temporal.PlainDate
+     }
+
+     const strings = monthsByDays[30].map(date => date.toLocaleString("en", { month: "long" }));
+->strings : string[]
+->monthsByDays[30].map(date => date.toLocaleString("en", { month: "long" })) : string[]
+->monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainDate, index: number, array: Temporal.PlainDate[]) => U, thisArg?: any) => U[]
+->monthsByDays[30] : Temporal.PlainDate[]
+->monthsByDays : Record<number, Temporal.PlainDate[]>
++>strings : Array<string>
++>monthsByDays[30].map(date => date.toLocaleString("en", { month: "long" })) : Array<string>
++>monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainDate, index: number, array: Array<Temporal.PlainDate>) => U, thisArg?: any) => Array<U>
++>monthsByDays[30] : Array<Temporal.PlainDate>
++>monthsByDays : Record<number, Array<Temporal.PlainDate>>
+ >30 : 30
+->map : <U>(callbackfn: (value: Temporal.PlainDate, index: number, array: Temporal.PlainDate[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: Temporal.PlainDate, index: number, array: Array<Temporal.PlainDate>) => U, thisArg?: any) => Array<U>
+ >date => date.toLocaleString("en", { month: "long" }) : (date: Temporal.PlainDate) => string
+ >date : Temporal.PlainDate
+ >date.toLocaleString("en", { month: "long" }) : string
+@@= skipped -42, +42 lines =@@
+     // Shuffle to improve poem as determined empirically
+     strings.unshift(strings.pop()!);
+ >strings.unshift(strings.pop()!) : number
+->strings.unshift : (...items: string[]) => number
+->strings : string[]
+->unshift : (...items: string[]) => number
++>strings.unshift : (...items: Array<string>) => number
++>strings : Array<string>
++>unshift : (...items: Array<string>) => number
+ >strings.pop()! : string
+ >strings.pop() : string | undefined
+ >strings.pop : () => string | undefined
+->strings : string[]
++>strings : Array<string>
+ >pop : () => string | undefined
+
+     const format = new Intl.ListFormat("en");
+@@= skipped -24, +24 lines =@@
+ >format.format : (list: Iterable<string>) => string
+ >format : Intl.ListFormat
+ >format : (list: Iterable<string>) => string
+->strings : string[]
++>strings : Array<string>
+
+     console.log(poem);
+ >console.log(poem) : void
+@@= skipped -894, +894 lines =@@
+ >"01:24:05" : "01:24:05"
+
+     const sorted = [one, two, three].sort(Temporal.PlainTime.compare);
+->sorted : Temporal.PlainTime[]
+->[one, two, three].sort(Temporal.PlainTime.compare) : Temporal.PlainTime[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.PlainTime, b: Temporal.PlainTime) => number) | undefined) => Temporal.PlainTime[]
+->[one, two, three] : Temporal.PlainTime[]
++>sorted : Array<Temporal.PlainTime>
++>[one, two, three].sort(Temporal.PlainTime.compare) : Array<Temporal.PlainTime>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.PlainTime, b: Temporal.PlainTime) => number) | undefined) => Array<Temporal.PlainTime>
++>[one, two, three] : Array<Temporal.PlainTime>
+ >one : Temporal.PlainTime
+ >two : Temporal.PlainTime
+ >three : Temporal.PlainTime
+->sort : (compareFn?: ((a: Temporal.PlainTime, b: Temporal.PlainTime) => number) | undefined) => Temporal.PlainTime[]
++>sort : (compareFn?: ((a: Temporal.PlainTime, b: Temporal.PlainTime) => number) | undefined) => Array<Temporal.PlainTime>
+ >Temporal.PlainTime.compare : (one: Temporal.PlainTimeLike, two: Temporal.PlainTimeLike) => number
+ >Temporal.PlainTime : Temporal.PlainTimeConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted.join(" "); // => '01:24:00 01:24:05 03:24:00'
+ >sorted.join(" ") : string
+ >sorted.join : (separator?: string) => string
+->sorted : Temporal.PlainTime[]
++>sorted : Array<Temporal.PlainTime>
+ >join : (separator?: string) => string
+ >" " : " "
+ }
+@@= skipped -926, +926 lines =@@
+ >"2015-12-07T01:24" : "2015-12-07T01:24"
+
+     const sorted = [one, two, three].sort(Temporal.PlainDateTime.compare);
+->sorted : Temporal.PlainDateTime[]
+->[one, two, three].sort(Temporal.PlainDateTime.compare) : Temporal.PlainDateTime[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.PlainDateTime, b: Temporal.PlainDateTime) => number) | undefined) => Temporal.PlainDateTime[]
+->[one, two, three] : Temporal.PlainDateTime[]
++>sorted : Array<Temporal.PlainDateTime>
++>[one, two, three].sort(Temporal.PlainDateTime.compare) : Array<Temporal.PlainDateTime>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.PlainDateTime, b: Temporal.PlainDateTime) => number) | undefined) => Array<Temporal.PlainDateTime>
++>[one, two, three] : Array<Temporal.PlainDateTime>
+ >one : Temporal.PlainDateTime
+ >two : Temporal.PlainDateTime
+ >three : Temporal.PlainDateTime
+->sort : (compareFn?: ((a: Temporal.PlainDateTime, b: Temporal.PlainDateTime) => number) | undefined) => Temporal.PlainDateTime[]
++>sort : (compareFn?: ((a: Temporal.PlainDateTime, b: Temporal.PlainDateTime) => number) | undefined) => Array<Temporal.PlainDateTime>
+ >Temporal.PlainDateTime.compare : (one: Temporal.PlainDateTimeLike, two: Temporal.PlainDateTimeLike) => number
+ >Temporal.PlainDateTime : Temporal.PlainDateTimeConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted.join(" ");
+ >sorted.join(" ") : string
+ >sorted.join : (separator?: string) => string
+->sorted : Temporal.PlainDateTime[]
++>sorted : Array<Temporal.PlainDateTime>
+ >join : (separator?: string) => string
+ >" " : " "
+
+@@= skipped -179, +179 lines =@@
+
+     ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][dt.dayOfWeek - 1]; // => 'THU'
+ >["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"][dt.dayOfWeek - 1] : string
+->["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : string[]
++>["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"] : Array<string>
+ >"MON" : "MON"
+ >"TUE" : "TUE"
+ >"WED" : "WED"
+@@= skipped -88, +88 lines =@@
+ {
+     // Attempt to write some mnemonic poetry
+     const monthsByDays: Record<number, Temporal.PlainDateTime[]> = {};
+->monthsByDays : Record<number, Temporal.PlainDateTime[]>
++>monthsByDays : Record<number, Array<Temporal.PlainDateTime>>
+ >Temporal : any
+ >{} : {}
+
+@@= skipped -28, +28 lines =@@
+ >month : number
+
+         monthsByDays[dt.daysInMonth] = (monthsByDays[dt.daysInMonth] || []).concat(dt);
+->monthsByDays[dt.daysInMonth] = (monthsByDays[dt.daysInMonth] || []).concat(dt) : Temporal.PlainDateTime[]
+->monthsByDays[dt.daysInMonth] : Temporal.PlainDateTime[]
+->monthsByDays : Record<number, Temporal.PlainDateTime[]>
+->dt.daysInMonth : number
+->dt : Temporal.PlainDateTime
+->daysInMonth : number
+->(monthsByDays[dt.daysInMonth] || []).concat(dt) : Temporal.PlainDateTime[]
+->(monthsByDays[dt.daysInMonth] || []).concat : { (...items: ConcatArray<Temporal.PlainDateTime>[]): Temporal.PlainDateTime[]; (...items: (ConcatArray<Temporal.PlainDateTime> | Temporal.PlainDateTime)[]): Temporal.PlainDateTime[]; }
+->(monthsByDays[dt.daysInMonth] || []) : Temporal.PlainDateTime[]
+->monthsByDays[dt.daysInMonth] || [] : Temporal.PlainDateTime[]
+->monthsByDays[dt.daysInMonth] : Temporal.PlainDateTime[]
+->monthsByDays : Record<number, Temporal.PlainDateTime[]>
+->dt.daysInMonth : number
+->dt : Temporal.PlainDateTime
+->daysInMonth : number
+->[] : never[]
+->concat : { (...items: ConcatArray<Temporal.PlainDateTime>[]): Temporal.PlainDateTime[]; (...items: (ConcatArray<Temporal.PlainDateTime> | Temporal.PlainDateTime)[]): Temporal.PlainDateTime[]; }
++>monthsByDays[dt.daysInMonth] = (monthsByDays[dt.daysInMonth] || []).concat(dt) : Array<Temporal.PlainDateTime>
++>monthsByDays[dt.daysInMonth] : Array<Temporal.PlainDateTime>
++>monthsByDays : Record<number, Array<Temporal.PlainDateTime>>
++>dt.daysInMonth : number
++>dt : Temporal.PlainDateTime
++>daysInMonth : number
++>(monthsByDays[dt.daysInMonth] || []).concat(dt) : Array<Temporal.PlainDateTime>
++>(monthsByDays[dt.daysInMonth] || []).concat : { (...items: Array<ConcatArray<Temporal.PlainDateTime>>): Array<Temporal.PlainDateTime>; (...items: Array<ConcatArray<Temporal.PlainDateTime> | Temporal.PlainDateTime>): Array<Temporal.PlainDateTime>; }
++>(monthsByDays[dt.daysInMonth] || []) : Array<Temporal.PlainDateTime>
++>monthsByDays[dt.daysInMonth] || [] : Array<Temporal.PlainDateTime>
++>monthsByDays[dt.daysInMonth] : Array<Temporal.PlainDateTime>
++>monthsByDays : Record<number, Array<Temporal.PlainDateTime>>
++>dt.daysInMonth : number
++>dt : Temporal.PlainDateTime
++>daysInMonth : number
++>[] : Array<never>
++>concat : { (...items: Array<ConcatArray<Temporal.PlainDateTime>>): Array<Temporal.PlainDateTime>; (...items: Array<ConcatArray<Temporal.PlainDateTime> | Temporal.PlainDateTime>): Array<Temporal.PlainDateTime>; }
+ >dt : Temporal.PlainDateTime
+     }
+
+     const strings = monthsByDays[30].map(dt => dt.toLocaleString("en", { month: "long" }));
+->strings : string[]
+->monthsByDays[30].map(dt => dt.toLocaleString("en", { month: "long" })) : string[]
+->monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainDateTime, index: number, array: Temporal.PlainDateTime[]) => U, thisArg?: any) => U[]
+->monthsByDays[30] : Temporal.PlainDateTime[]
+->monthsByDays : Record<number, Temporal.PlainDateTime[]>
++>strings : Array<string>
++>monthsByDays[30].map(dt => dt.toLocaleString("en", { month: "long" })) : Array<string>
++>monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainDateTime, index: number, array: Array<Temporal.PlainDateTime>) => U, thisArg?: any) => Array<U>
++>monthsByDays[30] : Array<Temporal.PlainDateTime>
++>monthsByDays : Record<number, Array<Temporal.PlainDateTime>>
+ >30 : 30
+->map : <U>(callbackfn: (value: Temporal.PlainDateTime, index: number, array: Temporal.PlainDateTime[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: Temporal.PlainDateTime, index: number, array: Array<Temporal.PlainDateTime>) => U, thisArg?: any) => Array<U>
+ >dt => dt.toLocaleString("en", { month: "long" }) : (dt: Temporal.PlainDateTime) => string
+ >dt : Temporal.PlainDateTime
+ >dt.toLocaleString("en", { month: "long" }) : string
+@@= skipped -42, +42 lines =@@
+     // Shuffle to improve poem as determined empirically
+     strings.unshift(strings.pop()!);
+ >strings.unshift(strings.pop()!) : number
+->strings.unshift : (...items: string[]) => number
+->strings : string[]
+->unshift : (...items: string[]) => number
++>strings.unshift : (...items: Array<string>) => number
++>strings : Array<string>
++>unshift : (...items: Array<string>) => number
+ >strings.pop()! : string
+ >strings.pop() : string | undefined
+ >strings.pop : () => string | undefined
+->strings : string[]
++>strings : Array<string>
+ >pop : () => string | undefined
+
+     const format = new Intl.ListFormat("en");
+@@= skipped -24, +24 lines =@@
+ >format.format : (list: Iterable<string>) => string
+ >format : Intl.ListFormat
+ >format : (list: Iterable<string>) => string
+->strings : string[]
++>strings : Array<string>
+
+     console.log(poem);
+ >console.log(poem) : void
+@@= skipped -399, +399 lines =@@
+ >jan1 : Temporal.PlainDateTime
+ >feb1 : Temporal.PlainDateTime
+ >mar1 : Temporal.PlainDateTime
+->[1, 2, 3].map(month => Temporal.PlainDateTime.from({ year: 2020, month, day: 1 })) : Temporal.PlainDateTime[]
+->[1, 2, 3].map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
+->[1, 2, 3] : number[]
++>[1, 2, 3].map(month => Temporal.PlainDateTime.from({ year: 2020, month, day: 1 })) : Array<Temporal.PlainDateTime>
++>[1, 2, 3].map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+ >month => Temporal.PlainDateTime.from({ year: 2020, month, day: 1 }) : (month: number) => Temporal.PlainDateTime
+ >month : number
+ >Temporal.PlainDateTime.from({ year: 2020, month, day: 1 }) : Temporal.PlainDateTime
+@@= skipped -544, +544 lines =@@
+ >"1930-02" : "1930-02"
+
+     const sorted = [one, two, three].sort(Temporal.PlainYearMonth.compare);
+->sorted : Temporal.PlainYearMonth[]
+->[one, two, three].sort(Temporal.PlainYearMonth.compare) : Temporal.PlainYearMonth[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.PlainYearMonth, b: Temporal.PlainYearMonth) => number) | undefined) => Temporal.PlainYearMonth[]
+->[one, two, three] : Temporal.PlainYearMonth[]
++>sorted : Array<Temporal.PlainYearMonth>
++>[one, two, three].sort(Temporal.PlainYearMonth.compare) : Array<Temporal.PlainYearMonth>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.PlainYearMonth, b: Temporal.PlainYearMonth) => number) | undefined) => Array<Temporal.PlainYearMonth>
++>[one, two, three] : Array<Temporal.PlainYearMonth>
+ >one : Temporal.PlainYearMonth
+ >two : Temporal.PlainYearMonth
+ >three : Temporal.PlainYearMonth
+->sort : (compareFn?: ((a: Temporal.PlainYearMonth, b: Temporal.PlainYearMonth) => number) | undefined) => Temporal.PlainYearMonth[]
++>sort : (compareFn?: ((a: Temporal.PlainYearMonth, b: Temporal.PlainYearMonth) => number) | undefined) => Array<Temporal.PlainYearMonth>
+ >Temporal.PlainYearMonth.compare : (one: Temporal.PlainYearMonthLike, two: Temporal.PlainYearMonthLike) => number
+ >Temporal.PlainYearMonth : Temporal.PlainYearMonthConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted.join(" "); // => '1930-02 2006-08 2015-07'
+ >sorted.join(" ") : string
+ >sorted.join : (separator?: string) => string
+->sorted : Temporal.PlainYearMonth[]
++>sorted : Array<Temporal.PlainYearMonth>
+ >join : (separator?: string) => string
+ >" " : " "
+ }
+@@= skipped -97, +97 lines =@@
+ {
+     // Attempt to write some mnemonic poetry
+     const monthsByDays: Record<number, Temporal.PlainYearMonth[]> = {};
+->monthsByDays : Record<number, Temporal.PlainYearMonth[]>
++>monthsByDays : Record<number, Array<Temporal.PlainYearMonth>>
+ >Temporal : any
+ >{} : {}
+
+@@= skipped -29, +29 lines =@@
+ >month : number
+
+         monthsByDays[ym.daysInMonth] = (monthsByDays[ym.daysInMonth] || []).concat(ym);
+->monthsByDays[ym.daysInMonth] = (monthsByDays[ym.daysInMonth] || []).concat(ym) : Temporal.PlainYearMonth[]
+->monthsByDays[ym.daysInMonth] : Temporal.PlainYearMonth[]
+->monthsByDays : Record<number, Temporal.PlainYearMonth[]>
+->ym.daysInMonth : number
+->ym : Temporal.PlainYearMonth
+->daysInMonth : number
+->(monthsByDays[ym.daysInMonth] || []).concat(ym) : Temporal.PlainYearMonth[]
+->(monthsByDays[ym.daysInMonth] || []).concat : { (...items: ConcatArray<Temporal.PlainYearMonth>[]): Temporal.PlainYearMonth[]; (...items: (ConcatArray<Temporal.PlainYearMonth> | Temporal.PlainYearMonth)[]): Temporal.PlainYearMonth[]; }
+->(monthsByDays[ym.daysInMonth] || []) : Temporal.PlainYearMonth[]
+->monthsByDays[ym.daysInMonth] || [] : Temporal.PlainYearMonth[]
+->monthsByDays[ym.daysInMonth] : Temporal.PlainYearMonth[]
+->monthsByDays : Record<number, Temporal.PlainYearMonth[]>
+->ym.daysInMonth : number
+->ym : Temporal.PlainYearMonth
+->daysInMonth : number
+->[] : never[]
+->concat : { (...items: ConcatArray<Temporal.PlainYearMonth>[]): Temporal.PlainYearMonth[]; (...items: (ConcatArray<Temporal.PlainYearMonth> | Temporal.PlainYearMonth)[]): Temporal.PlainYearMonth[]; }
++>monthsByDays[ym.daysInMonth] = (monthsByDays[ym.daysInMonth] || []).concat(ym) : Array<Temporal.PlainYearMonth>
++>monthsByDays[ym.daysInMonth] : Array<Temporal.PlainYearMonth>
++>monthsByDays : Record<number, Array<Temporal.PlainYearMonth>>
++>ym.daysInMonth : number
++>ym : Temporal.PlainYearMonth
++>daysInMonth : number
++>(monthsByDays[ym.daysInMonth] || []).concat(ym) : Array<Temporal.PlainYearMonth>
++>(monthsByDays[ym.daysInMonth] || []).concat : { (...items: Array<ConcatArray<Temporal.PlainYearMonth>>): Array<Temporal.PlainYearMonth>; (...items: Array<ConcatArray<Temporal.PlainYearMonth> | Temporal.PlainYearMonth>): Array<Temporal.PlainYearMonth>; }
++>(monthsByDays[ym.daysInMonth] || []) : Array<Temporal.PlainYearMonth>
++>monthsByDays[ym.daysInMonth] || [] : Array<Temporal.PlainYearMonth>
++>monthsByDays[ym.daysInMonth] : Array<Temporal.PlainYearMonth>
++>monthsByDays : Record<number, Array<Temporal.PlainYearMonth>>
++>ym.daysInMonth : number
++>ym : Temporal.PlainYearMonth
++>daysInMonth : number
++>[] : Array<never>
++>concat : { (...items: Array<ConcatArray<Temporal.PlainYearMonth>>): Array<Temporal.PlainYearMonth>; (...items: Array<ConcatArray<Temporal.PlainYearMonth> | Temporal.PlainYearMonth>): Array<Temporal.PlainYearMonth>; }
+ >ym : Temporal.PlainYearMonth
+     }
+
+     const strings = monthsByDays[30].map(ym => ym.toLocaleString("en", { month: "long", calendar: "iso8601" }));
+->strings : string[]
+->monthsByDays[30].map(ym => ym.toLocaleString("en", { month: "long", calendar: "iso8601" })) : string[]
+->monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainYearMonth, index: number, array: Temporal.PlainYearMonth[]) => U, thisArg?: any) => U[]
+->monthsByDays[30] : Temporal.PlainYearMonth[]
+->monthsByDays : Record<number, Temporal.PlainYearMonth[]>
++>strings : Array<string>
++>monthsByDays[30].map(ym => ym.toLocaleString("en", { month: "long", calendar: "iso8601" })) : Array<string>
++>monthsByDays[30].map : <U>(callbackfn: (value: Temporal.PlainYearMonth, index: number, array: Array<Temporal.PlainYearMonth>) => U, thisArg?: any) => Array<U>
++>monthsByDays[30] : Array<Temporal.PlainYearMonth>
++>monthsByDays : Record<number, Array<Temporal.PlainYearMonth>>
+ >30 : 30
+->map : <U>(callbackfn: (value: Temporal.PlainYearMonth, index: number, array: Temporal.PlainYearMonth[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: Temporal.PlainYearMonth, index: number, array: Array<Temporal.PlainYearMonth>) => U, thisArg?: any) => Array<U>
+ >ym => ym.toLocaleString("en", { month: "long", calendar: "iso8601" }) : (ym: Temporal.PlainYearMonth) => string
+ >ym : Temporal.PlainYearMonth
+ >ym.toLocaleString("en", { month: "long", calendar: "iso8601" }) : string
+@@= skipped -44, +44 lines =@@
+     // Shuffle to improve poem as determined empirically
+     strings.unshift(strings.pop()!);
+ >strings.unshift(strings.pop()!) : number
+->strings.unshift : (...items: string[]) => number
+->strings : string[]
+->unshift : (...items: string[]) => number
++>strings.unshift : (...items: Array<string>) => number
++>strings : Array<string>
++>unshift : (...items: Array<string>) => number
+ >strings.pop()! : string
+ >strings.pop() : string | undefined
+ >strings.pop : () => string | undefined
+->strings : string[]
++>strings : Array<string>
+ >pop : () => string | undefined
+
+     const format = new Intl.ListFormat("en");
+@@= skipped -24, +24 lines =@@
+ >format.format : (list: Iterable<string>) => string
+ >format : Intl.ListFormat
+ >format : (list: Iterable<string>) => string
+->strings : string[]
++>strings : Array<string>
+
+     console.log(poem);
+ >console.log(poem) : void
+@@= skipped -1255, +1255 lines =@@
+ >50 : 50
+
+     const sorted1 = [one, two, three].sort(Temporal.Duration.compare);
+->sorted1 : Temporal.Duration[]
+->[one, two, three].sort(Temporal.Duration.compare) : Temporal.Duration[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Temporal.Duration[]
+->[one, two, three] : Temporal.Duration[]
++>sorted1 : Array<Temporal.Duration>
++>[one, two, three].sort(Temporal.Duration.compare) : Array<Temporal.Duration>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Array<Temporal.Duration>
++>[one, two, three] : Array<Temporal.Duration>
+ >one : Temporal.Duration
+ >two : Temporal.Duration
+ >three : Temporal.Duration
+->sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Temporal.Duration[]
++>sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Array<Temporal.Duration>
+ >Temporal.Duration.compare : (one: Temporal.DurationLike, two: Temporal.DurationLike, options?: Temporal.DurationRelativeToOptions) => number
+ >Temporal.Duration : Temporal.DurationConstructor
+ >Temporal : typeof Temporal
+@@= skipped -17, +17 lines =@@
+     sorted1.join(" ");
+ >sorted1.join(" ") : string
+ >sorted1.join : (separator?: string) => string
+->sorted1 : Temporal.Duration[]
++>sorted1 : Array<Temporal.Duration>
+ >join : (separator?: string) => string
+ >" " : " "
+
+@@= skipped -18, +18 lines =@@
+ >"2020-11-01T00:00-07:00[America/Los_Angeles]" : "2020-11-01T00:00-07:00[America/Los_Angeles]"
+
+     const sorted2 = [one, two, three].sort((one, two) => Temporal.Duration.compare(one, two, { relativeTo }));
+->sorted2 : Temporal.Duration[]
+->[one, two, three].sort((one, two) => Temporal.Duration.compare(one, two, { relativeTo })) : Temporal.Duration[]
+->[one, two, three].sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Temporal.Duration[]
+->[one, two, three] : Temporal.Duration[]
++>sorted2 : Array<Temporal.Duration>
++>[one, two, three].sort((one, two) => Temporal.Duration.compare(one, two, { relativeTo })) : Array<Temporal.Duration>
++>[one, two, three].sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Array<Temporal.Duration>
++>[one, two, three] : Array<Temporal.Duration>
+ >one : Temporal.Duration
+ >two : Temporal.Duration
+ >three : Temporal.Duration
+->sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Temporal.Duration[]
++>sort : (compareFn?: ((a: Temporal.Duration, b: Temporal.Duration) => number) | undefined) => Array<Temporal.Duration>
+ >(one, two) => Temporal.Duration.compare(one, two, { relativeTo }) : (one: Temporal.Duration, two: Temporal.Duration) => number
+ >one : Temporal.Duration
+ >two : Temporal.Duration
+@@= skipped -25, +25 lines =@@
+     sorted2.join(" ");
+ >sorted2.join(" ") : string
+ >sorted2.join : (separator?: string) => string
+->sorted2 : Temporal.Duration[]
++>sorted2 : Array<Temporal.Duration>
+ >join : (separator?: string) => string
+ >" " : " "

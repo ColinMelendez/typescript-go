@@ -1,0 +1,829 @@
+--- old.controlFlowArrays.types
++++ new.controlFlowArrays.types
+@@= skipped -4, +4 lines =@@
+ >cond : () => boolean
+
+ function f1() {
+->f1 : () => (string | number | boolean)[]
++>f1 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x[0] = 5;
+ >x[0] = 5 : 5
+ >x[0] : any
+->x : any[]
++>x : Array<any>
+ >0 : 0
+ >5 : 5
+
+     x[1] = "hello";
+ >x[1] = "hello" : "hello"
+ >x[1] : any
+->x : any[]
++>x : Array<any>
+ >1 : 1
+ >"hello" : "hello"
+
+     x[2] = true;
+ >x[2] = true : true
+ >x[2] : any
+->x : any[]
++>x : Array<any>
+ >2 : 2
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f2() {
+->f2 : () => (string | number | boolean)[]
++>f2 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     x.push(true);
+ >x.push(true) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f3() {
+->f3 : () => (string | number)[]
++>f3 : () => Array<string | number>
+
+     let x;
+ >x : any
+
+     x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+     x.push(5, "hello");
+ >x.push(5, "hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+ >"hello" : "hello"
+
+     return x;  // (string | number)[]
+->x : (string | number)[]
++>x : Array<string | number>
+ }
+
+ function f4() {
+->f4 : () => (string | number)[]
++>f4 : () => Array<string | number>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     if (cond()) {
+ >cond() : boolean
+@@= skipped -99, +99 lines =@@
+
+         x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+     }
+     else {
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;  // (string | number)[]
+->x : (string | number)[]
++>x : Array<string | number>
+ }
+
+ function f5() {
+->f5 : () => (string | number)[]
++>f5 : () => Array<string | number>
+
+     let x;
+ >x : any
+@@= skipped -28, +28 lines =@@
+ >cond : () => boolean
+
+         x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+         x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+     }
+     else {
+         x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;  // (string | number)[]
+->x : (string | number)[]
++>x : Array<string | number>
+ }
+
+ function f6() {
+->f6 : () => number | string[]
++>f6 : () => number | Array<string>
+
+     let x;
+ >x : any
+@@= skipped -45, +45 lines =@@
+     }
+     else {
+         x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;  // number | string[]
+->x : number | string[]
++>x : number | Array<string>
+ }
+
+ function f7() {
+->f7 : () => string[] | null
++>f7 : () => Array<string> | null
+
+     let x = null;
+ >x : any
+@@= skipped -26, +26 lines =@@
+ >cond : () => boolean
+
+         x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+         while (cond()) {
+ >cond() : boolean
+@@= skipped -10, +10 lines =@@
+
+             x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+         }
+     }
+     return x;  // string[] | null
+->x : string[] | null
++>x : Array<string> | null
+ }
+
+ function f8() {
+->f8 : () => (string | number | boolean)[]
++>f8 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     if (cond()) return x;  // number[]
+ >cond() : boolean
+ >cond : () => boolean
+->x : number[]
++>x : Array<number>
+
+     x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     if (cond()) return x;  // (string | number)[]
+ >cond() : boolean
+ >cond : () => boolean
+->x : (string | number)[]
++>x : Array<string | number>
+
+     x.push(true);
+ >x.push(true) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f9() {
+->f9 : () => string[] | number[]
++>f9 : () => Array<string> | Array<number>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     if (cond()) {
+ >cond() : boolean
+@@= skipped -65, +65 lines =@@
+
+         x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+         return x;  // number[]
+->x : number[]
++>x : Array<number>
+     }
+     else {
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+         return x;  // string[]
+->x : string[]
++>x : Array<string>
+     }
+ }
+
+ function f10() {
+->f10 : () => (string | number | boolean)[]
++>f10 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     if (cond()) {
+ >cond() : boolean
+@@= skipped -34, +34 lines =@@
+
+         x.push(true);
+ >x.push(true) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+         x;  // boolean[]
+->x : boolean[]
++>x : Array<boolean>
+     }
+     else {
+         x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+         x;  // number[]
+->x : number[]
++>x : Array<number>
+
+         while (cond()) {
+ >cond() : boolean
+@@= skipped -25, +25 lines =@@
+
+             x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+         }
+         x;  // (string | number)[]
+->x : (string | number)[]
++>x : Array<string | number>
+     }
+     x.push(99);
+ >x.push(99) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >99 : 99
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f11() {
+->f11 : () => string[]
++>f11 : () => Array<string>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     if (x.length === 0) {  // x.length ok on implicit any[]
+ >x.length === 0 : boolean
+ >x.length : number
+->x : any[]
++>x : Array<any>
+ >length : number
+ >0 : 0
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;
+->x : string[]
++>x : Array<string>
+ }
+
+ function f12() {
+->f12 : () => string[]
++>f12 : () => Array<string>
+
+     let x;
+ >x : any
+
+     x = [];
+->x = [] : never[]
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
++>[] : Array<never>
+
+     if (x.length === 0) {  // x.length ok on implicit any[]
+ >x.length === 0 : boolean
+ >x.length : number
+->x : any[]
++>x : Array<any>
+ >length : number
+ >0 : 0
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;
+->x : string[]
++>x : Array<string>
+ }
+
+ function f13() {
+->f13 : () => (string | number | boolean)[]
++>f13 : () => Array<string | number | boolean>
+
+     var x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     x.push(true);
+ >x.push(true) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f14() {
+->f14 : () => (string | number | boolean)[]
++>f14 : () => Array<string | number | boolean>
+
+     const x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     x.push(true);
+ >x.push(true) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f15() {
+->f15 : () => string[]
++>f15 : () => Array<string>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     while (cond()) {
+ >cond() : boolean
+@@= skipped -154, +154 lines =@@
+
+         x.push("hello");
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+     }
+     return x;  // string[]
+->x : string[]
++>x : Array<string>
+ }
+
+ function f16() {
+->f16 : () => (string | number | boolean | { a: number; })[]
++>f16 : () => Array<string | number | boolean | { a: number; }>
+
+     let x;
+ >x : any
+@@= skipped -20, +20 lines =@@
+
+     (x = [], x).push(5);
+ >(x = [], x).push(5) : number
+->(x = [], x).push : (...items: any[]) => number
+->(x = [], x) : any[]
+->x = [], x : any[]
+->x = [] : never[]
++>(x = [], x).push : (...items: Array<any>) => number
++>(x = [], x) : Array<any>
++>x = [], x : Array<any>
++>x = [] : Array<never>
+ >x : any
+->[] : never[]
+->x : any[]
+->push : (...items: any[]) => number
++>[] : Array<never>
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     (x.push("hello"), x).push(true);
+ >(x.push("hello"), x).push(true) : number
+->(x.push("hello"), x).push : (...items: any[]) => number
+->(x.push("hello"), x) : any[]
+->x.push("hello"), x : any[]
++>(x.push("hello"), x).push : (...items: Array<any>) => number
++>(x.push("hello"), x) : Array<any>
++>x.push("hello"), x : Array<any>
+ >x.push("hello") : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >"hello" : "hello"
+->x : any[]
+->push : (...items: any[]) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >true : true
+
+     ((x))[3] = { a: 1 };
+ >((x))[3] = { a: 1 } : { a: number; }
+ >((x))[3] : any
+->((x)) : any[]
+->(x) : any[]
+->x : any[]
++>((x)) : Array<any>
++>(x) : Array<any>
++>x : Array<any>
+ >3 : 3
+ >{ a: 1 } : { a: number; }
+ >a : number
+ >1 : 1
+
+     return x;  // (string | number | boolean | { a: number })[]
+->x : (string | number | boolean | { a: number; })[]
++>x : Array<string | number | boolean | { a: number; }>
+ }
+
+ function f17() {
+->f17 : () => (string | number | boolean)[]
++>f17 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.unshift(5);
+ >x.unshift(5) : number
+->x.unshift : (...items: any[]) => number
+->x : any[]
+->unshift : (...items: any[]) => number
++>x.unshift : (...items: Array<any>) => number
++>x : Array<any>
++>unshift : (...items: Array<any>) => number
+ >5 : 5
+
+     x.unshift("hello");
+ >x.unshift("hello") : number
+->x.unshift : (...items: any[]) => number
+->x : any[]
+->unshift : (...items: any[]) => number
++>x.unshift : (...items: Array<any>) => number
++>x : Array<any>
++>unshift : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     x.unshift(true);
+ >x.unshift(true) : number
+->x.unshift : (...items: any[]) => number
+->x : any[]
+->unshift : (...items: any[]) => number
++>x.unshift : (...items: Array<any>) => number
++>x : Array<any>
++>unshift : (...items: Array<any>) => number
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ function f18() {
+->f18 : () => (string | number | boolean)[]
++>f18 : () => Array<string | number | boolean>
+
+     let x = [];
+->x : any[]
+->[] : never[]
++>x : Array<any>
++>[] : Array<never>
+
+     x.push(5);
+ >x.push(5) : number
+->x.push : (...items: any[]) => number
+->x : any[]
+->push : (...items: any[]) => number
++>x.push : (...items: Array<any>) => number
++>x : Array<any>
++>push : (...items: Array<any>) => number
+ >5 : 5
+
+     x.unshift("hello");
+ >x.unshift("hello") : number
+->x.unshift : (...items: any[]) => number
+->x : any[]
+->unshift : (...items: any[]) => number
++>x.unshift : (...items: Array<any>) => number
++>x : Array<any>
++>unshift : (...items: Array<any>) => number
+ >"hello" : "hello"
+
+     x[2] = true;
+ >x[2] = true : true
+ >x[2] : any
+->x : any[]
++>x : Array<any>
+ >2 : 2
+ >true : true
+
+     return x;  // (string | number | boolean)[]
+->x : (string | number | boolean)[]
++>x : Array<string | number | boolean>
+ }
+
+ // Repro from #39470
+
+ declare function foo(arg: { val: number }[]): void;
+ >foo : (arg: { val: number; }[]) => void
+->arg : { val: number; }[]
++>arg : Array<{ val: number; }>
+ >val : number
+
+ let arr = []
+->arr : any[]
+->[] : never[]
++>arr : Array<any>
++>[] : Array<never>
+
+ arr.push({ val: 1, bar: 2 });
+ >arr.push({ val: 1, bar: 2 }) : number
+->arr.push : (...items: any[]) => number
+->arr : any[]
+->push : (...items: any[]) => number
++>arr.push : (...items: Array<any>) => number
++>arr : Array<any>
++>push : (...items: Array<any>) => number
+ >{ val: 1, bar: 2 } : { val: number; bar: number; }
+ >val : number
+ >1 : 1
+@@= skipped -128, +128 lines =@@
+ foo(arr);
+ >foo(arr) : void
+ >foo : (arg: { val: number; }[]) => void
+->arr : { val: number; bar: number; }[]
++>arr : Array<{ val: number; bar: number; }>

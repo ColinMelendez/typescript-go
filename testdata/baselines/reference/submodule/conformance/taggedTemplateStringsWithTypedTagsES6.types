@@ -4,7 +4,7 @@
 interface I {
     (stringParts: TemplateStringsArray, ...rest: number[]): I;
 >stringParts : TemplateStringsArray
->rest : number[]
+>rest : Array<number>
 
     g: I;
 >g : I

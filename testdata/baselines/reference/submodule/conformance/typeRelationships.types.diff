@@ -1,0 +1,31 @@
+--- old.typeRelationships.types
++++ new.typeRelationships.types
+@@= skipped -43, +43 lines =@@
+ >f2 : () => void
+
+         var a: C[];
+->a : C[]
++>a : Array<C>
+
+         var a = [this, this.c];  // C[] since this is subtype of C
+->a : C[]
+->[this, this.c] : C[]
++>a : Array<C>
++>[this, this.c] : Array<C>
+ >this : this
+ >this.c : C
+ >this : this
+ >c : C
+
+         var b: this[];
+->b : this[]
++>b : Array<this>
+
+         var b = [this, this.self, null, undefined];
+->b : this[]
+->[this, this.self, null, undefined] : (this | null | undefined)[]
++>b : Array<this>
++>[this, this.self, null, undefined] : Array<this | null | undefined>
+ >this : this
+ >this.self : this
+ >this : this

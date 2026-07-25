@@ -214,29 +214,29 @@ export const Output = Type.Object({
 
 function problematicFunction1(ors: Input[]): Output[] {
 >problematicFunction1 : (ors: Input[]) => Output[]
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 
     return ors;  // Error
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 }
 
 function problematicFunction2<T extends Output[]>(ors: Input[]): T {
 >problematicFunction2 : <T extends Output[]>(ors: Input[]) => T
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 
     return ors;  // Error
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 }
 
 function problematicFunction3(ors: (typeof Input.static)[]): Output[] {
 >problematicFunction3 : (ors: (typeof Input.static)[]) => Output[]
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 >Input.static : { level1: { level2: { foo: string; }; }; }
 >Input : TObject<{ level1: TObject<{ level2: TObject<{ foo: TString; }>; }>; }>
 >static : { level1: { level2: { foo: string; }; }; }
 
     return ors;  // Error
->ors : { level1: { level2: { foo: string; }; }; }[]
+>ors : Array<{ level1: { level2: { foo: string; }; }; }>
 }
 
 export type Evaluate<T> = T extends infer O ? { [K in keyof O]: O[K] } : never
@@ -273,7 +273,7 @@ export interface TSchema extends TKind {
 >Hint : unique symbol
 
     params: unknown[]
->params : unknown[]
+>params : Array<unknown>
 
     static: unknown
 >static : unknown

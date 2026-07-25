@@ -1,0 +1,52 @@
+--- old.objectTypesIdentityWithGenericConstructSignaturesDifferingByConstraints2.types
++++ new.objectTypesIdentityWithGenericConstructSignaturesDifferingByConstraints2.types
+@@= skipped -55, +55 lines =@@
+
+ function foo1b(x: B<Array<number>, Array<number>>);
+ >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo1b(x: B<Array<number>, Array<number>>); // error
+ >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo1b(x: any) { }
+ >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
+@@= skipped -88, +88 lines =@@
+
+ function foo8(x: B<Array<number>, Array<number>>);
+ >foo8 : { (x: B<Array<number>, Array<number>>): any; (x: I<Number, Number>): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo8(x: I<Number, Number>); // ok
+ >foo8 : { (x: B<Array<number>, Array<number>>): any; (x: I<Number, Number>): any; }
+@@= skipped -12, +12 lines =@@
+
+ function foo9(x: B<Array<number>, Array<number>>);
+ >foo9 : { (x: B<Array<number>, Array<number>>): any; (x: C<String, String>): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo9(x: C<String, String>); // error, types are structurally equal
+ >foo9 : { (x: B<Array<number>, Array<number>>): any; (x: C<String, String>): any; }
+@@= skipped -12, +12 lines =@@
+
+ function foo10(x: B<Array<number>, Array<number>>);
+ >foo10 : { (x: B<Array<number>, Array<number>>): any; (x: typeof a): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo10(x: typeof a); // ok
+ >foo10 : { (x: B<Array<number>, Array<number>>): any; (x: typeof a): any; }
+@@= skipped -13, +13 lines =@@
+
+ function foo11(x: B<Array<number>, Array<number>>);
+ >foo11 : { (x: B<Array<number>, Array<number>>): any; (x: typeof b): any; }
+->x : B<number[], number[]>
++>x : B<Array<number>, Array<number>>
+
+ function foo11(x: typeof b); // ok
+ >foo11 : { (x: B<Array<number>, Array<number>>): any; (x: typeof b): any; }

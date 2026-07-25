@@ -6,10 +6,10 @@ export declare class ObservableArray<T> implements Array<T> { // MS.Entertainmen
 
 concat<U extends T[]>(...items: U[]): T[];
 >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
->items : U[]
+>items : Array<U>
 
 concat(...items: T[]): T[];
 >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
->items : T[]
+>items : Array<T>
 }
 

@@ -1,0 +1,37 @@
+--- old.privateNameFieldDestructuredBinding(target=esnext).types
++++ new.privateNameFieldDestructuredBinding(target=esnext).types
+@@= skipped -23, +23 lines =@@
+ >6 : 6
+     }
+     testArray() {
+->testArray : () => number[]
++>testArray : () => Array<number>
+
+         return [10, 11];
+->[10, 11] : number[]
++>[10, 11] : Array<number>
+ >10 : 10
+ >11 : 11
+     }
+@@= skipped -25, +25 lines =@@
+ >testObject : () => { x: number; y: number; }
+
+         ([this.#field, y] = this.testArray());
+->([this.#field, y] = this.testArray()) : number[]
+->[this.#field, y] = this.testArray() : number[]
++>([this.#field, y] = this.testArray()) : Array<number>
++>[this.#field, y] = this.testArray() : Array<number>
+ >[this.#field, y] : [number, number]
+ >this.#field : number
+ >this : this
+ >y : number
+->this.testArray() : number[]
+->this.testArray : () => number[]
++>this.testArray() : Array<number>
++>this.testArray : () => Array<number>
+ >this : this
+->testArray : () => number[]
++>testArray : () => Array<number>
+
+         ({ a: this.#field, b: [this.#field] } = { a: 1, b: [2] });
+ >({ a: this.#field, b: [this.#field] } = { a: 1, b: [2] }) : { a: number; b: [number]; }

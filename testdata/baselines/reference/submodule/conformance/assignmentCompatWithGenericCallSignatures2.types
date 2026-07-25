@@ -6,13 +6,13 @@
 interface A {
     <T>(x: T, ...y: T[][]): void
 >x : T
->y : T[][]
+>y : Array<Array<T>>
 }
 
 interface B {
     <S>(x: S, ...y: S[]): void
 >x : S
->y : S[]
+>y : Array<S>
 }
 
 declare var a: A;

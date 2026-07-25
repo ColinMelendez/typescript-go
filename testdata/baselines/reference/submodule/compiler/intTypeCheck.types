@@ -44,7 +44,7 @@ interface i2 {
 >p2 : string
 
     (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     (p4: string, p5?: string);
 >p4 : string
@@ -52,7 +52,7 @@ interface i2 {
 
     (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 }
 interface i3 {
     //Construct Signatures
@@ -65,7 +65,7 @@ interface i3 {
 >p2 : string
 
     new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     new (p4: string, p5?: string);
 >p4 : string
@@ -73,7 +73,7 @@ interface i3 {
 
     new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 }
 interface i4 {
     // Used to be indexer, now it is a computed property
@@ -113,7 +113,7 @@ interface i11 {
 >p2 : string
 
     (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     (p4: string, p5?: string);
 >p4 : string
@@ -121,7 +121,7 @@ interface i11 {
 
     (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
     //(p8?: string, ...p9: any[]);
     //(p10:string, p8?: string, ...p9: any[]);
@@ -136,7 +136,7 @@ interface i11 {
 >p2 : string
 
     new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     new (p4: string, p5?: string);
 >p4 : string
@@ -144,7 +144,7 @@ interface i11 {
 
     new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
     
     // Used to be indexer, now it is a computed property
     [p];

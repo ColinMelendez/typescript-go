@@ -5,9 +5,9 @@ function delegate(instance: any, method: (...args: any[]) => any, data?: any): (
 >delegate : (instance: any, method: (...args: any[]) => any, data?: any) => (...args: any[]) => any
 >instance : any
 >method : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 >data : any
->args : any[]
+>args : Array<any>
 
     return function () { };
 >function () { } : () => void

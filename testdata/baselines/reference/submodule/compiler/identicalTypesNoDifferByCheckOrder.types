@@ -56,7 +56,7 @@ interface FunctionComponent2<P> {
 
 function needsComponentOfSomeProps3(...x: SomePropsClone[]): void {}
 >needsComponentOfSomeProps3 : (...x: SomePropsClone[]) => void
->x : SomePropsClone[]
+>x : Array<SomePropsClone>
 
 const comp3: FunctionComponent2<SomePropsCloneX> = null as any;
 >comp3 : FunctionComponent2<SomePropsCloneX>
@@ -71,7 +71,7 @@ needsComponentOfSomeProps3({ renderAs: comp3 });
 
 function needsComponentOfSomeProps2(...x: SomeProps[]): void {}
 >needsComponentOfSomeProps2 : (...x: SomeProps[]) => void
->x : SomeProps[]
+>x : Array<SomeProps>
 
 const comp2: FunctionComponent1<SomePropsX> = null as any;
 >comp2 : FunctionComponent1<SomePropsX>

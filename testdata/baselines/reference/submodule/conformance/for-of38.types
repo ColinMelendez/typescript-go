@@ -5,7 +5,7 @@ var map = new Map([["", true]]);
 >map : Map<string, boolean>
 >new Map([["", true]]) : Map<string, boolean>
 >Map : MapConstructor
->[["", true]] : [string, true][]
+>[["", true]] : Array<[string, true]>
 >["", true] : [string, true]
 >"" : ""
 >true : true

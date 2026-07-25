@@ -51,8 +51,8 @@ function f() {
 >x : number
     }
     var a = [
->a : number[]
->[        1,        2,        3    ] : number[]
+>a : Array<number>
+>[        1,        2,        3    ] : Array<number>
 
         1,
 >1 : 1
@@ -79,7 +79,7 @@ function f() {
     };
     for (var j in a) {
 >j : string
->a : number[]
+>a : Array<number>
 
         obj.z = a[j];
 >obj.z = a[j] : number
@@ -87,7 +87,7 @@ function f() {
 >obj : { z: number; q: string; }
 >z : number
 >a[j] : number
->a : number[]
+>a : Array<number>
 >j : string
 
         var v = 10;

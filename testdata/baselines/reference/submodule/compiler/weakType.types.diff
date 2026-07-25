@@ -1,0 +1,31 @@
+--- old.weakType.types
++++ new.weakType.types
+@@= skipped -95, +95 lines =@@
+ >{} : {}
+
+     let changes: ChangeOptions[] = [];
+->changes : ChangeOptions[]
+->[] : never[]
++>changes : Array<ChangeOptions>
++>[] : Array<never>
+
+     changes.push(options);
+ >changes.push(options) : number
+->changes.push : (...items: ChangeOptions[]) => number
+->changes : ChangeOptions[]
+->push : (...items: ChangeOptions[]) => number
++>changes.push : (...items: Array<ChangeOptions>) => number
++>changes : Array<ChangeOptions>
++>push : (...items: Array<ChangeOptions>) => number
+ >options : ConfigurableStartEnd
+
+     changes.push(error);
+ >changes.push(error) : number
+->changes.push : (...items: ChangeOptions[]) => number
+->changes : ChangeOptions[]
+->push : (...items: ChangeOptions[]) => number
++>changes.push : (...items: Array<ChangeOptions>) => number
++>changes : Array<ChangeOptions>
++>push : (...items: Array<ChangeOptions>) => number
+ >error : { error?: number; }
+ }

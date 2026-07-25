@@ -1,0 +1,275 @@
+--- old.restTuplesFromContextualTypes.types
++++ new.restTuplesFromContextualTypes.types
+@@= skipped -96, +96 lines =@@
+ >x : []
+
+ declare const t2: [number, boolean, ...string[]];
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ (function (a, b, c){})(...t2);
+ >(function (a, b, c){})(...t2) : void
+@@= skipped -10, +10 lines =@@
+ >b : boolean
+ >c : string
+ >...t2 : string | number | boolean
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ (function (...x){})(...t2);
+ >(function (...x){})(...t2) : void
+->(function (...x){}) : (x_0: number, x_1: boolean, ...x: string[]) => void
+->function (...x){} : (x_0: number, x_1: boolean, ...x: string[]) => void
+->x : [number, boolean, ...string[]]
++>(function (...x){}) : (x_0: number, x_1: boolean, ...x: Array<string>) => void
++>function (...x){} : (x_0: number, x_1: boolean, ...x: Array<string>) => void
++>x : [number, boolean, ...Array<string>]
+ >...t2 : string | number | boolean
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ (function (a, ...x){})(...t2);
+ >(function (a, ...x){})(...t2) : void
+->(function (a, ...x){}) : (a: number, x_0: boolean, ...x: string[]) => void
+->function (a, ...x){} : (a: number, x_0: boolean, ...x: string[]) => void
++>(function (a, ...x){}) : (a: number, x_0: boolean, ...x: Array<string>) => void
++>function (a, ...x){} : (a: number, x_0: boolean, ...x: Array<string>) => void
+ >a : number
+->x : [boolean, ...string[]]
++>x : [boolean, ...Array<string>]
+ >...t2 : string | number | boolean
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ (function (a, b, ...x){})(...t2);
+ >(function (a, b, ...x){})(...t2) : void
+->(function (a, b, ...x){}) : (a: number, b: boolean, ...x: string[]) => void
+->function (a, b, ...x){} : (a: number, b: boolean, ...x: string[]) => void
++>(function (a, b, ...x){}) : (a: number, b: boolean, ...x: Array<string>) => void
++>function (a, b, ...x){} : (a: number, b: boolean, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+->x : string[]
++>x : Array<string>
+ >...t2 : string | number | boolean
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ (function (a, b, c, ...x){})(...t2);
+ >(function (a, b, c, ...x){})(...t2) : void
+->(function (a, b, c, ...x){}) : (a: number, b: boolean, c: string, ...x: string[]) => void
+->function (a, b, c, ...x){} : (a: number, b: boolean, c: string, ...x: string[]) => void
++>(function (a, b, c, ...x){}) : (a: number, b: boolean, c: string, ...x: Array<string>) => void
++>function (a, b, c, ...x){} : (a: number, b: boolean, c: string, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+ >c : string
+->x : string[]
++>x : Array<string>
+ >...t2 : string | number | boolean
+->t2 : [number, boolean, ...string[]]
++>t2 : [number, boolean, ...Array<string>]
+
+ declare function f2(cb: (...args: typeof t2) => void): void;
+ >f2 : (cb: (...args: typeof t2) => void) => void
+->cb : (args_0: number, args_1: boolean, ...args: string[]) => void
+->args : [number, boolean, ...string[]]
+->t2 : [number, boolean, ...string[]]
++>cb : (args_0: number, args_1: boolean, ...args: Array<string>) => void
++>args : [number, boolean, ...Array<string>]
++>t2 : [number, boolean, ...Array<string>]
+
+ f2((a, b, c) => {})
+ >f2((a, b, c) => {}) : void
+@@= skipped -57, +57 lines =@@
+ f2((...x) => {})
+ >f2((...x) => {}) : void
+ >f2 : (cb: (...args: typeof t2) => void) => void
+->(...x) => {} : (x_0: number, x_1: boolean, ...x: string[]) => void
+->x : [number, boolean, ...string[]]
++>(...x) => {} : (x_0: number, x_1: boolean, ...x: Array<string>) => void
++>x : [number, boolean, ...Array<string>]
+
+ f2((a, ...x) => {})
+ >f2((a, ...x) => {}) : void
+ >f2 : (cb: (...args: typeof t2) => void) => void
+->(a, ...x) => {} : (a: number, x_0: boolean, ...x: string[]) => void
++>(a, ...x) => {} : (a: number, x_0: boolean, ...x: Array<string>) => void
+ >a : number
+->x : [boolean, ...string[]]
++>x : [boolean, ...Array<string>]
+
+ f2((a, b, ...x) => {})
+ >f2((a, b, ...x) => {}) : void
+ >f2 : (cb: (...args: typeof t2) => void) => void
+->(a, b, ...x) => {} : (a: number, b: boolean, ...x: string[]) => void
++>(a, b, ...x) => {} : (a: number, b: boolean, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+->x : string[]
++>x : Array<string>
+
+ f2((a, b, c, ...x) => {})
+ >f2((a, b, c, ...x) => {}) : void
+ >f2 : (cb: (...args: typeof t2) => void) => void
+->(a, b, c, ...x) => {} : (a: number, b: boolean, c: string, ...x: string[]) => void
++>(a, b, c, ...x) => {} : (a: number, b: boolean, c: string, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+ >c : string
+->x : string[]
++>x : Array<string>
+
+ declare const t3: [boolean, ...string[]];
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ (function (a, b, c){})(1, ...t3);
+ >(function (a, b, c){})(1, ...t3) : void
+@@= skipped -39, +39 lines =@@
+ >c : string
+ >1 : 1
+ >...t3 : string | boolean
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ (function (...x){})(1, ...t3);
+ >(function (...x){})(1, ...t3) : void
+->(function (...x){}) : (x_0: number, x_1: boolean, ...x: string[]) => void
+->function (...x){} : (x_0: number, x_1: boolean, ...x: string[]) => void
+->x : [number, boolean, ...string[]]
++>(function (...x){}) : (x_0: number, x_1: boolean, ...x: Array<string>) => void
++>function (...x){} : (x_0: number, x_1: boolean, ...x: Array<string>) => void
++>x : [number, boolean, ...Array<string>]
+ >1 : 1
+ >...t3 : string | boolean
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ (function (a, ...x){})(1, ...t3);
+ >(function (a, ...x){})(1, ...t3) : void
+->(function (a, ...x){}) : (a: number, x_0: boolean, ...x: string[]) => void
+->function (a, ...x){} : (a: number, x_0: boolean, ...x: string[]) => void
++>(function (a, ...x){}) : (a: number, x_0: boolean, ...x: Array<string>) => void
++>function (a, ...x){} : (a: number, x_0: boolean, ...x: Array<string>) => void
+ >a : number
+->x : [boolean, ...string[]]
++>x : [boolean, ...Array<string>]
+ >1 : 1
+ >...t3 : string | boolean
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ (function (a, b, ...x){})(1, ...t3);
+ >(function (a, b, ...x){})(1, ...t3) : void
+->(function (a, b, ...x){}) : (a: number, b: boolean, ...x: string[]) => void
+->function (a, b, ...x){} : (a: number, b: boolean, ...x: string[]) => void
++>(function (a, b, ...x){}) : (a: number, b: boolean, ...x: Array<string>) => void
++>function (a, b, ...x){} : (a: number, b: boolean, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+->x : string[]
++>x : Array<string>
+ >1 : 1
+ >...t3 : string | boolean
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ (function (a, b, c, ...x){})(1, ...t3);
+ >(function (a, b, c, ...x){})(1, ...t3) : void
+->(function (a, b, c, ...x){}) : (a: number, b: boolean, c: string, ...x: string[]) => void
+->function (a, b, c, ...x){} : (a: number, b: boolean, c: string, ...x: string[]) => void
++>(function (a, b, c, ...x){}) : (a: number, b: boolean, c: string, ...x: Array<string>) => void
++>function (a, b, c, ...x){} : (a: number, b: boolean, c: string, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+ >c : string
+->x : string[]
++>x : Array<string>
+ >1 : 1
+ >...t3 : string | boolean
+->t3 : [boolean, ...string[]]
++>t3 : [boolean, ...Array<string>]
+
+ declare function f3(cb: (x: number, ...args: typeof t3) => void): void;
+ >f3 : (cb: (x: number, ...args: typeof t3) => void) => void
+->cb : (x: number, args_0: boolean, ...args: string[]) => void
++>cb : (x: number, args_0: boolean, ...args: Array<string>) => void
+ >x : number
+->args : [boolean, ...string[]]
+->t3 : [boolean, ...string[]]
++>args : [boolean, ...Array<string>]
++>t3 : [boolean, ...Array<string>]
+
+ f3((a, b, c) => {})
+ >f3((a, b, c) => {}) : void
+@@= skipped -62, +62 lines =@@
+ f3((...x) => {})
+ >f3((...x) => {}) : void
+ >f3 : (cb: (x: number, ...args: typeof t3) => void) => void
+->(...x) => {} : (x: number, x_1: boolean, ...x_2: string[]) => void
+->x : [x: number, boolean, ...string[]]
++>(...x) => {} : (x: number, x_1: boolean, ...x_2: Array<string>) => void
++>x : [x: number, boolean, ...Array<string>]
+
+ f3((a, ...x) => {})
+ >f3((a, ...x) => {}) : void
+ >f3 : (cb: (x: number, ...args: typeof t3) => void) => void
+->(a, ...x) => {} : (a: number, x_0: boolean, ...x: string[]) => void
++>(a, ...x) => {} : (a: number, x_0: boolean, ...x: Array<string>) => void
+ >a : number
+->x : [boolean, ...string[]]
++>x : [boolean, ...Array<string>]
+
+ f3((a, b, ...x) => {})
+ >f3((a, b, ...x) => {}) : void
+ >f3 : (cb: (x: number, ...args: typeof t3) => void) => void
+->(a, b, ...x) => {} : (a: number, b: boolean, ...x: string[]) => void
++>(a, b, ...x) => {} : (a: number, b: boolean, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+->x : string[]
++>x : Array<string>
+
+ f3((a, b, c, ...x) => {})
+ >f3((a, b, c, ...x) => {}) : void
+ >f3 : (cb: (x: number, ...args: typeof t3) => void) => void
+->(a, b, c, ...x) => {} : (a: number, b: boolean, c: string, ...x: string[]) => void
++>(a, b, c, ...x) => {} : (a: number, b: boolean, c: string, ...x: Array<string>) => void
+ >a : number
+ >b : boolean
+ >c : string
+->x : string[]
++>x : Array<string>
+
+ function f4<T extends any[]>(t: T) {
+ >f4 : <T extends any[]>(t: T) => void
+@@= skipped -82, +82 lines =@@
+     f((a, b, ...x) => {});
+ >f((a, b, ...x) => {}) : void
+ >f : (cb: (x: number, ...args: T) => void) => void
+->(a, b, ...x) => {} : (a: number, b: T[0], ...x: T[number][]) => void
++>(a, b, ...x) => {} : (a: number, b: T[0], ...x: Array<T[number]>) => void
+ >a : number
+ >b : T[0]
+->x : T[number][]
++>x : Array<T[number]>
+ }
+
+ declare function f5<T extends any[], U>(f: (...args: T) => U): (...args: T) => U;
+@@= skipped -49, +49 lines =@@
+ >y : number
+
+ let g4 = f5((...args) => true);
+->g4 : (...args: any[]) => boolean
+->f5((...args) => true) : (...args: any[]) => boolean
++>g4 : (...args: Array<any>) => boolean
++>f5((...args) => true) : (...args: Array<any>) => boolean
+ >f5 : <T extends any[], U>(f: (...args: T) => U) => (...args: T) => U
+->(...args) => true : (...args: any[]) => boolean
+->args : any[]
++>(...args) => true : (...args: Array<any>) => boolean
++>args : Array<any>
+ >true : true
+
+ declare function pipe<A extends any[], B, C>(f: (...args: A) => B, g: (x: B) => C): (...args: A) => C;

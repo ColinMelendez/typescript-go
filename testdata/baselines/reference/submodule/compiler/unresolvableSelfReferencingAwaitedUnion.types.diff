@@ -1,0 +1,12 @@
+--- old.unresolvableSelfReferencingAwaitedUnion.types
++++ new.unresolvableSelfReferencingAwaitedUnion.types
+@@= skipped -26, +26 lines =@@
+ >param : T1
+
+   const awaited = await param
+->awaited : 1 | T1[]
+->await param : 1 | T1[]
++>awaited : 1 | Array<T1>
++>await param : 1 | Array<T1>
+ >param : T1
+ }

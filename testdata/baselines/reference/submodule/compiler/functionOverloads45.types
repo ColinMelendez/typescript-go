@@ -12,12 +12,12 @@ interface Cat extends Animal { cat }
 
 function foo1(bar: { a:number }[]): Cat;
 >foo1 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo1(bar: { a:string }[]): Dog;
 >foo1 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->bar : { a: string; }[]
+>bar : Array<{ a: string; }>
 >a : string
 
 function foo1([x]: { a:number | string }[]): Animal {
@@ -31,12 +31,12 @@ function foo1([x]: { a:number | string }[]): Animal {
 
 function foo2(bar: { a:number }[]): Cat;
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo2(bar: { a:string }[]): Dog;
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->bar : { a: string; }[]
+>bar : Array<{ a: string; }>
 >a : string
 
 function foo2([x]: { a:number | string }[]): Cat | Dog {
@@ -53,7 +53,7 @@ var x1 = foo1([{a: "str"}]);
 >x1 : Dog
 >foo1([{a: "str"}]) : Dog
 >foo1 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->[{a: "str"}] : { a: string; }[]
+>[{a: "str"}] : Array<{ a: string; }>
 >{a: "str"} : { a: string; }
 >a : string
 >"str" : "str"
@@ -62,7 +62,7 @@ var y1 = foo1([{a: 100}]);
 >y1 : Cat
 >foo1([{a: 100}]) : Cat
 >foo1 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->[{a: 100}] : { a: number; }[]
+>[{a: 100}] : Array<{ a: number; }>
 >{a: 100} : { a: number; }
 >a : number
 >100 : 100
@@ -71,7 +71,7 @@ var x2 = foo2([{a: "str"}]);
 >x2 : Dog
 >foo2([{a: "str"}]) : Dog
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->[{a: "str"}] : { a: string; }[]
+>[{a: "str"}] : Array<{ a: string; }>
 >{a: "str"} : { a: string; }
 >a : string
 >"str" : "str"
@@ -80,7 +80,7 @@ var y2 = foo2([{a: 100}]);
 >y2 : Cat
 >foo2([{a: 100}]) : Cat
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Dog; }
->[{a: 100}] : { a: number; }[]
+>[{a: 100}] : Array<{ a: number; }>
 >{a: 100} : { a: number; }
 >a : number
 >100 : 100

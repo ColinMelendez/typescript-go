@@ -1,0 +1,20 @@
+--- old.stringLiteralTypesOverloads03.types
++++ new.stringLiteralTypesOverloads03.types
+@@= skipped -50, +50 lines =@@
+
+ function f(...args: any[]): any {
+ >f : { (p: "hello"): JustHello; (p: "hello" | "world"): HelloOrWorld; (p: "world"): JustWorld; (p: string): Base; }
+->args : any[]
++>args : Array<any>
+
+     return undefined;
+ >undefined : undefined
+@@= skipped -42, +42 lines =@@
+
+ function g(...args: any[]): any {
+ >g : { (p: string): Base; (p: "hello"): JustHello; (p: "hello" | "world"): HelloOrWorld; (p: "world"): JustWorld; }
+->args : any[]
++>args : Array<any>
+
+     return undefined;
+ >undefined : undefined

@@ -1,0 +1,24 @@
+--- old.funcdecl.types
++++ new.funcdecl.types
+@@= skipped -83, +83 lines =@@
+ >withOptionalInitializedParams : (a: string, c?: string) => void
+
+ function withRestParams(a: string, ... myRestParameter : number[]) {
+->withRestParams : (a: string, ...myRestParameter: number[]) => number[]
++>withRestParams : (a: string, ...myRestParameter: number[]) => Array<number>
+ >a : string
+->myRestParameter : number[]
++>myRestParameter : Array<number>
+
+     return myRestParameter;
+->myRestParameter : number[]
++>myRestParameter : Array<number>
+ }
+ var withRestParamsVar = withRestParams;
+->withRestParamsVar : (a: string, ...myRestParameter: number[]) => number[]
+->withRestParams : (a: string, ...myRestParameter: number[]) => number[]
++>withRestParamsVar : (a: string, ...myRestParameter: number[]) => Array<number>
++>withRestParams : (a: string, ...myRestParameter: number[]) => Array<number>
+
+ function overload1(n: number) : string;
+ >overload1 : { (n: number): string; (s: string): string; }

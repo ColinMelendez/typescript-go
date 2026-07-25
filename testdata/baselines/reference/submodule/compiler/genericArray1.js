@@ -33,4 +33,4 @@ var lengths = ["a", "b", "c"].map(x => x.length);
 
 
 //// [genericArray1.d.ts]
-declare var lengths: number[];
+declare var lengths: Array<number>;

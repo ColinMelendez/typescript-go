@@ -1,0 +1,56 @@
+--- old.uniqueSymbolsErrors.types
++++ new.uniqueSymbolsErrors.types
+@@= skipped -18, +18 lines =@@
+
+ declare function invalidRestArgType(...arg: (unique symbol)[]): void;
+ >invalidRestArgType : (...arg: (unique symbol)[]) => void
+->arg : symbol[]
++>arg : Array<symbol>
+
+ declare function invalidReturnType(): unique symbol;
+ >invalidReturnType : () => unique symbol
+@@= skipped -38, +38 lines =@@
+
+     invalidRestArgType(...args: (unique symbol)[]): void { return; }
+ >invalidRestArgType : (...args: (unique symbol)[]) => void
+->args : symbol[]
++>args : Array<symbol>
+
+     invalidReturnType(): unique symbol { return; }
+ >invalidReturnType : () => unique symbol
+@@= skipped -35, +35 lines =@@
+
+     static invalidStaticRestArgType(...args: (unique symbol)[]): void { return; }
+ >invalidStaticRestArgType : (...args: (unique symbol)[]) => void
+->args : symbol[]
++>args : Array<symbol>
+
+     static invalidStaticReturnType(): unique symbol { return; }
+ >invalidStaticReturnType : () => unique symbol
+@@= skipped -38, +38 lines =@@
+
+     invalidRestArgType(...args: (unique symbol)[]): void;
+ >invalidRestArgType : (...args: (unique symbol)[]) => void
+->args : symbol[]
++>args : Array<symbol>
+
+     invalidReturnType(): unique symbol;
+ >invalidReturnType : () => unique symbol
+@@= skipped -33, +33 lines =@@
+
+     invalidRestArgType(...args: (unique symbol)[]): void;
+ >invalidRestArgType : (...args: (unique symbol)[]) => void
+->args : symbol[]
++>args : Array<symbol>
+
+     invalidReturnType(): unique symbol;
+ >invalidReturnType : () => unique symbol
+@@= skipped -36, +36 lines =@@
+ >invalidTypeArgument : Promise<symbol>
+
+ declare const invalidArrayType: (unique symbol)[];
+->invalidArrayType : symbol[]
++>invalidArrayType : Array<symbol>
+
+ declare const invalidTupleType: [unique symbol];
+ >invalidTupleType : [symbol]

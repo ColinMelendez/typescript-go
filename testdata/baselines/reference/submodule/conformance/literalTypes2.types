@@ -438,14 +438,14 @@ function f5() {
 >f5 : () => void
 
     const c1 = [1, "foo"];
->c1 : (string | number)[]
->[1, "foo"] : (string | number)[]
+>c1 : Array<string | number>
+>[1, "foo"] : Array<string | number>
 >1 : 1
 >"foo" : "foo"
 
     const c2: (1 | "foo")[] = [1, "foo"];
->c2 : ("foo" | 1)[]
->[1, "foo"] : ("foo" | 1)[]
+>c2 : Array<"foo" | 1>
+>[1, "foo"] : Array<"foo" | 1>
 >1 : 1
 >"foo" : "foo"
 
@@ -456,14 +456,14 @@ function f5() {
 >"foo" : "foo"
 
     let x1 = [1, "foo"];
->x1 : (string | number)[]
->[1, "foo"] : (string | number)[]
+>x1 : Array<string | number>
+>[1, "foo"] : Array<string | number>
 >1 : 1
 >"foo" : "foo"
 
     let x2: (1 | "foo")[] = [1, "foo"];
->x2 : ("foo" | 1)[]
->[1, "foo"] : ("foo" | 1)[]
+>x2 : Array<"foo" | 1>
+>[1, "foo"] : Array<"foo" | 1>
 >1 : 1
 >"foo" : "foo"
 
@@ -626,11 +626,11 @@ declare function g5<T extends number>(x: T, y: T): T[];
 
 declare function g6<T>(x: T[]): T;
 >g6 : <T>(x: T[]) => T
->x : T[]
+>x : Array<T>
 
 declare function g7<T>(x: T[]): T[];
 >g7 : <T>(x: T[]) => T[]
->x : T[]
+>x : Array<T>
 
 declare function g8<T>(x: T, f: (p: T) => T): T;
 >g8 : <T>(x: T, f: (p: T) => T) => T
@@ -639,8 +639,8 @@ declare function g8<T>(x: T, f: (p: T) => T): T;
 >p : T
 
 const a: (1 | 2)[] = [1, 2];
->a : (1 | 2)[]
->[1, 2] : (1 | 2)[]
+>a : Array<1 | 2>
+>[1, 2] : Array<1 | 2>
 >1 : 1
 >2 : 2
 
@@ -672,14 +672,14 @@ const x4 = g3(1, "two");  // Type 1 | "two"
 >"two" : "two"
 
 const x5 = g4(1);  // Type number[]
->x5 : number[]
->g4(1) : number[]
+>x5 : Array<number>
+>g4(1) : Array<number>
 >g4 : <T>(x: T) => T[]
 >1 : 1
 
 const x6 = g5(1, 2);  // Type (1 | 2)[]
->x6 : (1 | 2)[]
->g5(1, 2) : (1 | 2)[]
+>x6 : Array<1 | 2>
+>g5(1, 2) : Array<1 | 2>
 >g5 : <T extends number>(x: T, y: T) => T[]
 >1 : 1
 >2 : 2
@@ -688,7 +688,7 @@ const x7 = g6([1, 2]);  // Type number
 >x7 : number
 >g6([1, 2]) : number
 >g6 : <T>(x: T[]) => T
->[1, 2] : number[]
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 
@@ -696,13 +696,13 @@ const x8 = g6(a);  // Type 1 | 2
 >x8 : 1 | 2
 >g6(a) : 1 | 2
 >g6 : <T>(x: T[]) => T
->a : (1 | 2)[]
+>a : Array<1 | 2>
 
 const x9 = g7(a);  // Type (1 | 2)[]
->x9 : (1 | 2)[]
->g7(a) : (1 | 2)[]
+>x9 : Array<1 | 2>
+>g7(a) : Array<1 | 2>
 >g7 : <T>(x: T[]) => T[]
->a : (1 | 2)[]
+>a : Array<1 | 2>
 
 const x10 = g8(1, x => x);  // Type number
 >x10 : number
@@ -729,47 +729,47 @@ function makeArray<T>(x: T): T[] {
 >x : T
 
     return [x];
->[x] : T[]
+>[x] : Array<T>
 >x : T
 }
 
 function append<T>(a: T[], x: T): T[] {
 >append : <T>(a: T[], x: T) => T[]
->a : T[]
+>a : Array<T>
 >x : T
 
     let result = a.slice();
->result : T[]
->a.slice() : T[]
->a.slice : (start?: number, end?: number) => T[]
->a : T[]
->slice : (start?: number, end?: number) => T[]
+>result : Array<T>
+>a.slice() : Array<T>
+>a.slice : (start?: number, end?: number) => Array<T>
+>a : Array<T>
+>slice : (start?: number, end?: number) => Array<T>
 
     result.push(x);
 >result.push(x) : number
->result.push : (...items: T[]) => number
->result : T[]
->push : (...items: T[]) => number
+>result.push : (...items: Array<T>) => number
+>result : Array<T>
+>push : (...items: Array<T>) => number
 >x : T
 
     return result;
->result : T[]
+>result : Array<T>
 }
 
 type Bit = 0 | 1;
 >Bit : Bit
 
 let aa = makeArray<Bit>(0);
->aa : Bit[]
->makeArray<Bit>(0) : Bit[]
+>aa : Array<Bit>
+>makeArray<Bit>(0) : Array<Bit>
 >makeArray : <T>(x: T) => T[]
 >0 : 0
 
 aa = append(aa, 1);
->aa = append(aa, 1) : Bit[]
->aa : Bit[]
->append(aa, 1) : Bit[]
+>aa = append(aa, 1) : Array<Bit>
+>aa : Array<Bit>
+>append(aa, 1) : Array<Bit>
 >append : <T>(a: T[], x: T) => T[]
->aa : Bit[]
+>aa : Array<Bit>
 >1 : 1
 

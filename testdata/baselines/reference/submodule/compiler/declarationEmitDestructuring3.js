@@ -13,5 +13,5 @@ function foo([x, ...y] = [1, "string", true]) { }
 
 
 //// [declarationEmitDestructuring3.d.ts]
-declare function bar([x, z, ...w]: [any, any, ...any[]]): void;
+declare function bar([x, z, ...w]: [any, any, ...Array<any>]): void;
 declare function foo([x, ...y]?: [number, string, boolean]): void;

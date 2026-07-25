@@ -1,0 +1,34 @@
+--- old.decoratorMetadataRestParameterWithImportedType(target=es2015).types
++++ new.decoratorMetadataRestParameterWithImportedType(target=es2015).types
+@@= skipped -53, +53 lines =@@
+ >ClassA : ClassA
+
+     array: SomeClass[];
+->array : SomeClass[]
++>array : Array<SomeClass>
+
+     constructor(...init: SomeClass[]) {
+->init : SomeClass[]
++>init : Array<SomeClass>
+
+         this.array = init;
+->this.array = init : SomeClass[]
+->this.array : SomeClass[]
++>this.array = init : Array<SomeClass>
++>this.array : Array<SomeClass>
+ >this : this
+->array : SomeClass[]
+->init : SomeClass[]
++>array : Array<SomeClass>
++>init : Array<SomeClass>
+     }
+
+     @annotation1()
+@@= skipped -19, +19 lines =@@
+
+     foo(... args: SomeClass1[]) {
+ >foo : (...args: SomeClass1[]) => void
+->args : SomeClass1[]
++>args : Array<SomeClass1>
+     }
+ }

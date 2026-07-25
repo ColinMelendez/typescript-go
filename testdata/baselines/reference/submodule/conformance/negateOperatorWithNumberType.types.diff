@@ -1,0 +1,40 @@
+--- old.negateOperatorWithNumberType.types
++++ new.negateOperatorWithNumberType.types
+@@= skipped -5, +5 lines =@@
+ >NUMBER : number
+
+ var NUMBER1: number[] = [1, 2];
+->NUMBER1 : number[]
+->[1, 2] : number[]
++>NUMBER1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsNumber2 = -NUMBER1;
+ >ResultIsNumber2 : number
+ >-NUMBER1 : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ // number type literal
+ var ResultIsNumber3 = -1;
+@@= skipped -47, +47 lines =@@
+ >ResultIsNumber8 : number
+ >-NUMBER1[0] : number
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ var ResultIsNumber9 = -foo();
+@@= skipped -36, +36 lines =@@
+
+ -NUMBER1;
+ >-NUMBER1 : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ -foo();
+ >-foo() : number

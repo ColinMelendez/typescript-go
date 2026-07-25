@@ -2,8 +2,8 @@
 
 === templateStringInArray.ts ===
 var x = [1, 2, `abc${ 123 }def`];
->x : (string | number)[]
->[1, 2, `abc${ 123 }def`] : (string | number)[]
+>x : Array<string | number>
+>[1, 2, `abc${ 123 }def`] : Array<string | number>
 >1 : 1
 >2 : 2
 >`abc${ 123 }def` : "abc123def"

@@ -8,16 +8,16 @@ function baz([]) { }
 >baz : ([]: Iterable<any, void, undefined>) => void
 
 function baz1([] = [1,2,3]) { }
->baz1 : ([]?: number[]) => void
->[1,2,3] : number[]
+>baz1 : ([]?: Array<number>) => void
+>[1,2,3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
 function baz2([[]] = [[1,2,3]]) { }
->baz2 : ([[]]?: [number[]]) => void
->[[1,2,3]] : [number[]]
->[1,2,3] : number[]
+>baz2 : ([[]]?: [Array<number>]) => void
+>[[1,2,3]] : [Array<number>]
+>[1,2,3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

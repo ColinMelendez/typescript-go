@@ -1,0 +1,27 @@
+--- old.newArrays.types
++++ new.newArrays.types
+@@= skipped -10, +10 lines =@@
+ >Gar : Gar
+
+ 		public fa: Foo[];
+->fa : Foo[]
++>fa : Array<Foo>
+
+ 		public x = 10;
+ >x : number
+@@= skipped -14, +14 lines =@@
+ >m : () => void
+
+ 			this.fa = new Array<Foo>(this.x * this.y);		
+->this.fa = new Array<Foo>(this.x * this.y) : Foo[]
+->this.fa : Foo[]
++>this.fa = new Array<Foo>(this.x * this.y) : Array<Foo>
++>this.fa : Array<Foo>
+ >this : this
+->fa : Foo[]
+->new Array<Foo>(this.x * this.y) : Foo[]
++>fa : Array<Foo>
++>new Array<Foo>(this.x * this.y) : Array<Foo>
+ >Array : ArrayConstructor
+ >this.x * this.y : number
+ >this.x : number

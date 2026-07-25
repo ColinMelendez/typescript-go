@@ -1,0 +1,49 @@
+--- old.variadicTuples1.js
++++ new.variadicTuples1.js
+@@= skipped -632, +632 lines =@@
+ declare const sa: string[];
+ declare const tc1: [];
+ declare const tc2: [string, number];
+-declare const tc3: [number, number, number, ...string[]];
+-declare const tc4: [...string[], number, number, number];
+-declare function concat2<T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U): (T[number] | U[number])[];
+-declare const tc5: (1 | 2 | 3 | 4 | 5 | 6)[];
++declare const tc3: [number, number, number, ...Array<string>];
++declare const tc4: [...Array<string>, number, number, number];
++declare function concat2<T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U): Array<T[number] | U[number]>;
++declare const tc5: Array<1 | 2 | 3 | 4 | 5 | 6>;
+ declare function foo1(a: number, b: string, c: boolean, ...d: number[]): void;
+ declare function foo2(t1: [number, string], t2: [boolean], a1: number[]): void;
+ declare function foo3<T extends unknown[]>(x: number, ...args: [...T, number]): T;
+@@= skipped -111, +111 lines =@@
+ type R36 = DropLast<readonly []>;
+ declare function curry<T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T): (...b: U) => R;
+ declare const fn1: (a: number, b: string, c: boolean, d: string[]) => number;
+-declare const c0: (a: number, b: string, c: boolean, d: string[]) => number;
+-declare const c1: (b: string, c: boolean, d: string[]) => number;
+-declare const c2: (c: boolean, d: string[]) => number;
+-declare const c3: (d: string[]) => number;
++declare const c0: (a: number, b: string, c: boolean, d: Array<string>) => number;
++declare const c1: (b: string, c: boolean, d: Array<string>) => number;
++declare const c2: (c: boolean, d: Array<string>) => number;
++declare const c3: (d: Array<string>) => number;
+ declare const c4: () => number;
+ declare const fn2: (x: number, b: boolean, ...args: string[]) => number;
+-declare const c10: (x: number, b: boolean, ...args: string[]) => number;
+-declare const c11: (b: boolean, ...args: string[]) => number;
+-declare const c12: (...b: string[]) => number;
+-declare const c13: (...b: string[]) => number;
++declare const c10: (x: number, b: boolean, ...args: Array<string>) => number;
++declare const c11: (b: boolean, ...args: Array<string>) => number;
++declare const c12: (...b: Array<string>) => number;
++declare const c13: (...b: Array<string>) => number;
+ declare const fn3: (...args: string[]) => number;
+-declare const c20: (...b: string[]) => number;
+-declare const c21: (...b: string[]) => number;
+-declare const c22: (...b: string[]) => number;
++declare const c20: (...b: Array<string>) => number;
++declare const c21: (...b: Array<string>) => number;
++declare const c22: (...b: Array<string>) => number;
+ declare function curry2<T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, t: [...T], u: [...U]): R;
+ declare function fn10(a: string, b: number, c: boolean): string[];
+ declare function ft<T extends unknown[]>(t1: [...T], t2: [...T, number?]): T;

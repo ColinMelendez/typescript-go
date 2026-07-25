@@ -1,0 +1,11 @@
+--- old.decoratedBlockScopedClass2(target=es2015).types
++++ new.decoratedBlockScopedClass2(target=es2015).types
+@@= skipped -6, +6 lines =@@
+     return (target: new (...args: any[]) => any) => {}
+ >(target: new (...args: any[]) => any) => {} : (target: new (...args: any[]) => any) => void
+ >target : new (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+ }
+
+ try {

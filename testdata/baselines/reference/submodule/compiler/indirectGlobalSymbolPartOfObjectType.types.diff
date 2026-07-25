@@ -1,0 +1,11 @@
+--- old.indirectGlobalSymbolPartOfObjectType.types
++++ new.indirectGlobalSymbolPartOfObjectType.types
+@@= skipped -9, +9 lines =@@
+
+ [][Symbol.iterator];
+ >[][Symbol.iterator] : () => ArrayIterator<never>
+->[] : never[]
++>[] : Array<never>
+ >Symbol.iterator : unique symbol
+ >Symbol : SymbolConstructor
+ >iterator : unique symbol

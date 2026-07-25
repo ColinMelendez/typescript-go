@@ -6,5 +6,5 @@ function *g() {
 
     yield * [];
 >yield * [] : any
->[] : undefined[]
+>[] : Array<undefined>
 }

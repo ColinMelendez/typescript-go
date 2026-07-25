@@ -1,0 +1,37 @@
+--- old.arrayConcatMap.types
++++ new.arrayConcatMap.types
+@@= skipped -1, +1 lines =@@
+
+ === arrayConcatMap.ts ===
+ var x = [].concat([{ a: 1 }], [{ a: 2 }])
+->x : any[]
+->[].concat([{ a: 1 }], [{ a: 2 }])          .map(b => b.a) : any[]
+->[].concat([{ a: 1 }], [{ a: 2 }])          .map : <U>(callbackfn: (value: never, index: number, array: never[]) => U, thisArg?: any) => U[]
+->[].concat([{ a: 1 }], [{ a: 2 }]) : never[]
+->[].concat : { (...items: ConcatArray<never>[]): never[]; (...items: ConcatArray<never>[]): never[]; }
+->[] : never[]
+->concat : { (...items: ConcatArray<never>[]): never[]; (...items: ConcatArray<never>[]): never[]; }
+->[{ a: 1 }] : { a: number; }[]
++>x : Array<any>
++>[].concat([{ a: 1 }], [{ a: 2 }])          .map(b => b.a) : Array<any>
++>[].concat([{ a: 1 }], [{ a: 2 }])          .map : <U>(callbackfn: (value: never, index: number, array: Array<never>) => U, thisArg?: any) => Array<U>
++>[].concat([{ a: 1 }], [{ a: 2 }]) : Array<never>
++>[].concat : { (...items: Array<ConcatArray<never>>): Array<never>; (...items: Array<ConcatArray<never>>): Array<never>; }
++>[] : Array<never>
++>concat : { (...items: Array<ConcatArray<never>>): Array<never>; (...items: Array<ConcatArray<never>>): Array<never>; }
++>[{ a: 1 }] : Array<{ a: number; }>
+ >{ a: 1 } : { a: number; }
+ >a : number
+ >1 : 1
+->[{ a: 2 }] : { a: number; }[]
++>[{ a: 2 }] : Array<{ a: number; }>
+ >{ a: 2 } : { a: number; }
+ >a : number
+ >2 : 2
+
+           .map(b => b.a);
+->map : <U>(callbackfn: (value: never, index: number, array: never[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: never, index: number, array: Array<never>) => U, thisArg?: any) => Array<U>
+ >b => b.a : (b: never) => any
+ >b : never
+ >b.a : any

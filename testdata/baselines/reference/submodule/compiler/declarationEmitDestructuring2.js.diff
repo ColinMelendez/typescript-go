@@ -1,0 +1,11 @@
+--- old.declarationEmitDestructuring2.js
++++ new.declarationEmitDestructuring2.js
+@@= skipped -29, +29 lines =@@
+ }]): void;
+ declare function h1([a, [b], [[c]], { x, y, z: { a1, b1 } }]: [any, [any], [[any]], {
+     x?: number;
+-    y?: number[];
++    y?: Array<number>;
+     z: {
+         a1: any;
+         b1: any;

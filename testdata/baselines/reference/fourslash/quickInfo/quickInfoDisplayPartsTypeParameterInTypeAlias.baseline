@@ -4,7 +4,7 @@
 //      ^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | type List<T> = T[]
+// | type List<T> = Array<T>
 // | ```
 // | 
 // | ----------------------------------------------------------------------
@@ -26,7 +26,7 @@
 //      ^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | type List2<T extends string> = T[]
+// | type List2<T extends string> = Array<T>
 // | ```
 // | 
 // | ----------------------------------------------------------------------
@@ -58,7 +58,7 @@
     "item": {
       "contents": {
         "kind": "markdown",
-        "value": "```typescript\ntype List<T> = T[]\n```\n"
+        "value": "```typescript\ntype List<T> = Array<T>\n```\n"
       },
       "range": {
         "start": {
@@ -139,7 +139,7 @@
     "item": {
       "contents": {
         "kind": "markdown",
-        "value": "```typescript\ntype List2<T extends string> = T[]\n```\n"
+        "value": "```typescript\ntype List2<T extends string> = Array<T>\n```\n"
       },
       "range": {
         "start": {

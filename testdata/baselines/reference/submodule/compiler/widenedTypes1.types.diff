@@ -1,0 +1,35 @@
+--- old.widenedTypes1.types
++++ new.widenedTypes1.types
+@@= skipped -13, +13 lines =@@
+ >x : null
+
+ var d = [{x: null}];
+->d : { x: any; }[]
+->[{x: null}] : { x: null; }[]
++>d : Array<{ x: any; }>
++>[{x: null}] : Array<{ x: null; }>
+ >{x: null} : { x: null; }
+ >x : null
+
+ var f = [null, null];
+->f : any[]
+->[null, null] : null[]
++>f : Array<any>
++>[null, null] : Array<null>
+
+ var g = [undefined, undefined];
+->g : any[]
+->[undefined, undefined] : undefined[]
++>g : Array<any>
++>[undefined, undefined] : Array<undefined>
+ >undefined : undefined
+ >undefined : undefined
+
+ var h = [{x: undefined}];
+->h : { x: any; }[]
+->[{x: undefined}] : { x: undefined; }[]
++>h : Array<{ x: any; }>
++>[{x: undefined}] : Array<{ x: undefined; }>
+ >{x: undefined} : { x: undefined; }
+ >x : undefined
+ >undefined : undefined

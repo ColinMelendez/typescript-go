@@ -1,0 +1,56 @@
+--- old.unusedLocalsInForInOrOf1.types
++++ new.unusedLocalsInForInOrOf1.types
+@@= skipped -2, +2 lines =@@
+ === unusedLocalsInForInOrOf1.ts ===
+ for (let x of [1, 2]) {
+ >x : number
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -14, +14 lines =@@
+
+ for (let x of [1, 2]) {
+ >x : number
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -16, +16 lines =@@
+
+ for (const x of [1, 2]) {
+ >x : number
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -64, +64 lines =@@
+
+ for (let { x } of [{ x: 1 }, { x: 2 }]) {
+ >x : number
+->[{ x: 1 }, { x: 2 }] : { x: number; }[]
++>[{ x: 1 }, { x: 2 }] : Array<{ x: number; }>
+ >{ x: 1 } : { x: number; }
+ >x : number
+ >1 : 1
+@@= skipped -18, +18 lines =@@
+
+ for (let { x } of [{ x: 1 }, { x: 2 }]) {
+ >x : number
+->[{ x: 1 }, { x: 2 }] : { x: number; }[]
++>[{ x: 1 }, { x: 2 }] : Array<{ x: number; }>
+ >{ x: 1 } : { x: number; }
+ >x : number
+ >1 : 1
+@@= skipped -20, +20 lines =@@
+
+ for (const { x } of [{ x: 1 }, { x: 2 }]) {
+ >x : number
+->[{ x: 1 }, { x: 2 }] : { x: number; }[]
++>[{ x: 1 }, { x: 2 }] : Array<{ x: number; }>
+ >{ x: 1 } : { x: number; }
+ >x : number
+ >1 : 1

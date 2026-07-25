@@ -16,7 +16,7 @@ declare const inner: {
 
       next(...args: ReadonlyArray<any>): IteratorResult<any, A>;
 >next : (...args: ReadonlyArray<any>) => IteratorResult<any, A>
->args : readonly any[]
+>args : ReadonlyArray<any>
 
     };
   };
@@ -99,7 +99,7 @@ declare const inner3: {
 
       next(...args: ReadonlyArray<any>): IteratorResult<number, A>;
 >next : (...args: ReadonlyArray<any>) => IteratorResult<number, A>
->args : readonly any[]
+>args : ReadonlyArray<any>
 
     };
   };

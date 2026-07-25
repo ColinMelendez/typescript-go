@@ -1,0 +1,11 @@
+--- old.for-of9.types
++++ new.for-of9.types
+@@= skipped -5, +5 lines =@@
+
+ for (v of ["hello"]) { }
+ >v : string
+->["hello"] : string[]
++>["hello"] : Array<string>
+ >"hello" : "hello"
+
+ for (v of "hello") { }

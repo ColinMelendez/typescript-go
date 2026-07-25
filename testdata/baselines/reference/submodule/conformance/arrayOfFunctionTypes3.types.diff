@@ -1,0 +1,82 @@
+--- old.arrayOfFunctionTypes3.types
++++ new.arrayOfFunctionTypes3.types
+@@= skipped -3, +3 lines =@@
+ // valid uses of arrays of function types
+
+ var x = [() => 1, () => { }];
+->x : (() => void)[]
+->[() => 1, () => { }] : (() => void)[]
++>x : Array<() => void>
++>[() => 1, () => { }] : Array<() => void>
+ >() => 1 : () => number
+ >1 : 1
+ >() => { } : () => void
+@@= skipped -10, +10 lines =@@
+ >r2 : void
+ >x[0]() : void
+ >x[0] : () => void
+->x : (() => void)[]
++>x : Array<() => void>
+ >0 : 0
+
+ class C {
+@@= skipped -10, +10 lines =@@
+ >foo : string
+ }
+ var y = [C, C];
+->y : (typeof C)[]
+->[C, C] : (typeof C)[]
++>y : Array<typeof C>
++>[C, C] : Array<typeof C>
+ >C : typeof C
+ >C : typeof C
+
+@@= skipped -9, +9 lines =@@
+ >r3 : C
+ >new y[0]() : C
+ >y[0] : typeof C
+->y : (typeof C)[]
++>y : Array<typeof C>
+ >0 : 0
+
+ var a: { (x: number): number; (x: string): string; };
+@@= skipped -19, +19 lines =@@
+ >x : any
+
+ var z = [a, b, c];
+->z : ({ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; })[]
+->[a, b, c] : ({ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; })[]
++>z : Array<{ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; }>
++>[a, b, c] : Array<{ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; }>
+ >a : { (x: number): number; (x: string): string; }
+ >b : { (x: number): number; (x: string): string; }
+ >c : { (x: number): number; (x: any): any; }
+@@= skipped -9, +9 lines =@@
+ var r4 = z[0];
+ >r4 : { (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; }
+ >z[0] : { (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; }
+->z : ({ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; })[]
++>z : Array<{ (x: number): number; (x: string): string; } | { (x: number): number; (x: any): any; }>
+ >0 : 0
+
+ var r5 = r4(''); // any not string
+@@= skipped -31, +31 lines =@@
+ >x : T
+
+ var z2 = [a2, b2, c2];
+->z2 : { (x: number): number; <T>(x: T): any; }[]
+->[a2, b2, c2] : { (x: number): number; <T>(x: T): any; }[]
++>z2 : Array<{ (x: number): number; <T>(x: T): any; }>
++>[a2, b2, c2] : Array<{ (x: number): number; <T>(x: T): any; }>
+ >a2 : { <T>(x: T): number; (x: string): string; }
+ >b2 : { <T>(x: T): number; (x: string): string; }
+ >c2 : { (x: number): number; <T>(x: T): any; }
+@@= skipped -9, +9 lines =@@
+ var r6 = z2[0];
+ >r6 : { (x: number): number; <T>(x: T): any; }
+ >z2[0] : { (x: number): number; <T>(x: T): any; }
+->z2 : { (x: number): number; <T>(x: T): any; }[]
++>z2 : Array<{ (x: number): number; <T>(x: T): any; }>
+ >0 : 0
+
+ var r7 = r6(''); // any not string

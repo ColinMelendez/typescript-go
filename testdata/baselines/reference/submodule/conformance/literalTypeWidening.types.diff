@@ -1,0 +1,60 @@
+--- old.literalTypeWidening.types
++++ new.literalTypeWidening.types
+@@= skipped -359, +359 lines =@@
+
+ export function Set<K extends string>(...keys: K[]): Record<K, true | undefined> {
+ >Set : <K extends string>(...keys: K[]) => Record<K, true | undefined>
+->keys : K[]
++>keys : Array<K>
+ >true : true
+
+   const result = {} as Record<K, true | undefined>
+@@= skipped -11, +11 lines =@@
+
+   keys.forEach(key => result[key] = true)
+ >keys.forEach(key => result[key] = true) : void
+->keys.forEach : (callbackfn: (value: K, index: number, array: K[]) => void, thisArg?: any) => void
+->keys : K[]
+->forEach : (callbackfn: (value: K, index: number, array: K[]) => void, thisArg?: any) => void
++>keys.forEach : (callbackfn: (value: K, index: number, array: Array<K>) => void, thisArg?: any) => void
++>keys : Array<K>
++>forEach : (callbackfn: (value: K, index: number, array: Array<K>) => void, thisArg?: any) => void
+ >key => result[key] = true : (key: K) => boolean
+ >key : K
+ >result[key] = true : true
+@@= skipped -20, +20 lines =@@
+ >obj : Record<K, V>
+
+   return Object.keys(obj) as K[]
+->Object.keys(obj) as K[] : K[]
+->Object.keys(obj) : string[]
++>Object.keys(obj) as K[] : Array<K>
++>Object.keys(obj) : Array<string>
+ >Object.keys : { (o: object): string[]; (o: {}): string[]; }
+ >Object : ObjectConstructor
+ >keys : { (o: object): string[]; (o: {}): string[]; }
+@@= skipped -27, +27 lines =@@
+ >langCodeSet : Record<"en" | "es" | "fr" | "it" | "nl", true | undefined>
+
+ export const langCodes = keys(langCodeSet)
+->langCodes : ("en" | "es" | "fr" | "it" | "nl")[]
+->keys(langCodeSet) : ("en" | "es" | "fr" | "it" | "nl")[]
++>langCodes : Array<"en" | "es" | "fr" | "it" | "nl">
++>keys(langCodeSet) : Array<"en" | "es" | "fr" | "it" | "nl">
+ >keys : <K extends string, V>(obj: Record<K, V>) => K[]
+ >langCodeSet : Record<"en" | "es" | "fr" | "it" | "nl", true | undefined>
+
+ const arr: Obj[] = langCodes.map(code => ({ code }))
+->arr : Obj[]
+->langCodes.map(code => ({ code })) : { code: "en" | "es" | "fr" | "it" | "nl"; }[]
+->langCodes.map : <U>(callbackfn: (value: "en" | "es" | "fr" | "it" | "nl", index: number, array: ("en" | "es" | "fr" | "it" | "nl")[]) => U, thisArg?: any) => U[]
+->langCodes : ("en" | "es" | "fr" | "it" | "nl")[]
+->map : <U>(callbackfn: (value: "en" | "es" | "fr" | "it" | "nl", index: number, array: ("en" | "es" | "fr" | "it" | "nl")[]) => U, thisArg?: any) => U[]
++>arr : Array<Obj>
++>langCodes.map(code => ({ code })) : Array<{ code: "en" | "es" | "fr" | "it" | "nl"; }>
++>langCodes.map : <U>(callbackfn: (value: "en" | "es" | "fr" | "it" | "nl", index: number, array: Array<"en" | "es" | "fr" | "it" | "nl">) => U, thisArg?: any) => Array<U>
++>langCodes : Array<"en" | "es" | "fr" | "it" | "nl">
++>map : <U>(callbackfn: (value: "en" | "es" | "fr" | "it" | "nl", index: number, array: Array<"en" | "es" | "fr" | "it" | "nl">) => U, thisArg?: any) => Array<U>
+ >code => ({ code }) : (code: "en" | "es" | "fr" | "it" | "nl") => { code: "en" | "es" | "fr" | "it" | "nl"; }
+ >code : "en" | "es" | "fr" | "it" | "nl"
+ >({ code }) : { code: "en" | "es" | "fr" | "it" | "nl"; }

@@ -13,9 +13,9 @@ class AA {
 >10 : 10
 
     #method2(a, ...b) {};
->#method2 : (a: any, ...b: any[]) => void
+>#method2 : (a: any, ...b: Array<any>) => void
 >a : any
->b : any[]
+>b : Array<any>
 
     x = 1;
 >x : number
@@ -44,34 +44,34 @@ class AA {
 >this : this
 
         const arr = [ 1, 2 ];
->arr : number[]
->[ 1, 2 ] : number[]
+>arr : Array<number>
+>[ 1, 2 ] : Array<number>
 >1 : 1
 >2 : 2
 
         this.#method2(0, ...arr, 3);
 >this.#method2(0, ...arr, 3) : void
->this.#method2 : (a: any, ...b: any[]) => void
+>this.#method2 : (a: any, ...b: Array<any>) => void
 >this : this
 >0 : 0
 >...arr : number
->arr : number[]
+>arr : Array<number>
 >3 : 3
 
         const b = new this.#method2(0, ...arr, 3); //Error 
 >b : any
 >new this.#method2(0, ...arr, 3) : any
->this.#method2 : (a: any, ...b: any[]) => void
+>this.#method2 : (a: any, ...b: Array<any>) => void
 >this : this
 >0 : 0
 >...arr : number
->arr : number[]
+>arr : Array<number>
 >3 : 3
 
         const str = this.#method2`head${1}middle${2}tail`;
 >str : void
 >this.#method2`head${1}middle${2}tail` : void
->this.#method2 : (a: any, ...b: any[]) => void
+>this.#method2 : (a: any, ...b: Array<any>) => void
 >this : this
 >`head${1}middle${2}tail` : string
 >1 : 1
@@ -79,7 +79,7 @@ class AA {
 
         this.getInstance().#method2`test${1}and${2}`;
 >this.getInstance().#method2`test${1}and${2}` : void
->this.getInstance().#method2 : (a: any, ...b: any[]) => void
+>this.getInstance().#method2 : (a: any, ...b: Array<any>) => void
 >this.getInstance() : AA
 >this.getInstance : () => AA
 >this : this
@@ -90,34 +90,34 @@ class AA {
 
         this.getInstance().#method2(0, ...arr, 3); 
 >this.getInstance().#method2(0, ...arr, 3) : void
->this.getInstance().#method2 : (a: any, ...b: any[]) => void
+>this.getInstance().#method2 : (a: any, ...b: Array<any>) => void
 >this.getInstance() : AA
 >this.getInstance : () => AA
 >this : this
 >getInstance : () => AA
 >0 : 0
 >...arr : number
->arr : number[]
+>arr : Array<number>
 >3 : 3
 
         const b2 = new (this.getInstance().#method2)(0, ...arr, 3); //Error 
 >b2 : any
 >new (this.getInstance().#method2)(0, ...arr, 3) : any
->(this.getInstance().#method2) : (a: any, ...b: any[]) => void
->this.getInstance().#method2 : (a: any, ...b: any[]) => void
+>(this.getInstance().#method2) : (a: any, ...b: Array<any>) => void
+>this.getInstance().#method2 : (a: any, ...b: Array<any>) => void
 >this.getInstance() : AA
 >this.getInstance : () => AA
 >this : this
 >getInstance : () => AA
 >0 : 0
 >...arr : number
->arr : number[]
+>arr : Array<number>
 >3 : 3
 
         const str2 = this.getInstance().#method2`head${1}middle${2}tail`;
 >str2 : void
 >this.getInstance().#method2`head${1}middle${2}tail` : void
->this.getInstance().#method2 : (a: any, ...b: any[]) => void
+>this.getInstance().#method2 : (a: any, ...b: Array<any>) => void
 >this.getInstance() : AA
 >this.getInstance : () => AA
 >this : this

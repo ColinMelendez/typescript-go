@@ -56,18 +56,18 @@ namespace Foo.Bar {
 >greet : () => string
 
     function foo2(greeting: string, ...restGreetings: string[]) {
->foo2 : (greeting: string, ...restGreetings: string[]) => Greeter[]
+>foo2 : (greeting: string, ...restGreetings: string[]) => Array<Greeter>
 >greeting : string
->restGreetings : string[]
+>restGreetings : Array<string>
 
         var greeters: Greeter[] = [];
->greeters : Greeter[]
->[] : never[]
+>greeters : Array<Greeter>
+>[] : Array<never>
 
         greeters[0] = new Greeter(greeting);
 >greeters[0] = new Greeter(greeting) : Greeter
 >greeters[0] : Greeter
->greeters : Greeter[]
+>greeters : Array<Greeter>
 >0 : 0
 >new Greeter(greeting) : Greeter
 >Greeter : typeof Greeter
@@ -79,31 +79,31 @@ namespace Foo.Bar {
 >i < restGreetings.length : boolean
 >i : number
 >restGreetings.length : number
->restGreetings : string[]
+>restGreetings : Array<string>
 >length : number
 >i++ : number
 >i : number
 
             greeters.push(new Greeter(restGreetings[i]));
 >greeters.push(new Greeter(restGreetings[i])) : number
->greeters.push : (...items: Greeter[]) => number
->greeters : Greeter[]
->push : (...items: Greeter[]) => number
+>greeters.push : (...items: Array<Greeter>) => number
+>greeters : Array<Greeter>
+>push : (...items: Array<Greeter>) => number
 >new Greeter(restGreetings[i]) : Greeter
 >Greeter : typeof Greeter
 >restGreetings[i] : string
->restGreetings : string[]
+>restGreetings : Array<string>
 >i : number
         }
 
         return greeters;
->greeters : Greeter[]
+>greeters : Array<Greeter>
     }
 
     var b = foo2("Hello", "World", "!");
->b : Greeter[]
->foo2("Hello", "World", "!") : Greeter[]
->foo2 : (greeting: string, ...restGreetings: string[]) => Greeter[]
+>b : Array<Greeter>
+>foo2("Hello", "World", "!") : Array<Greeter>
+>foo2 : (greeting: string, ...restGreetings: string[]) => Array<Greeter>
 >"Hello" : "Hello"
 >"World" : "World"
 >"!" : "!"
@@ -114,7 +114,7 @@ namespace Foo.Bar {
 >j < b.length : boolean
 >j : number
 >b.length : number
->b : Greeter[]
+>b : Array<Greeter>
 >length : number
 >j++ : number
 >j : number
@@ -123,7 +123,7 @@ namespace Foo.Bar {
 >b[j].greet() : string
 >b[j].greet : () => string
 >b[j] : Greeter
->b : Greeter[]
+>b : Array<Greeter>
 >j : number
 >greet : () => string
     }

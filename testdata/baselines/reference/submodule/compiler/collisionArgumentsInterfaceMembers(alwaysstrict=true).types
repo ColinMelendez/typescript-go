@@ -5,12 +5,12 @@
 interface i1 {
     (i: number, ...arguments); // no error - no code gen
 >i : number
->arguments : any[]
+>arguments : Array<any>
 }
 interface i12 {
     (arguments: number, ...rest); // no error - no code gen
 >arguments : number
->rest : any[]
+>rest : Array<any>
 }
 interface i1NoError {
     (arguments: number);  // no error
@@ -21,12 +21,12 @@ interface i1NoError {
 interface i2 {
     new (i: number, ...arguments); // no error - no code gen
 >i : number
->arguments : any[]
+>arguments : Array<any>
 }
 interface i21 {
     new (arguments: number, ...rest); // no error - no code gen
 >arguments : number
->rest : any[]
+>rest : Array<any>
 }
 interface i2NoError {
     new (arguments: number);  // no error
@@ -36,14 +36,14 @@ interface i2NoError {
 // method
 interface i3 {
     foo(i: number, ...arguments); // no error - no code gen
->foo : (i: number, ...arguments: any[]) => any
+>foo : (i: number, ...arguments: Array<any>) => any
 >i : number
->arguments : any[]
+>arguments : Array<any>
 
     foo1(arguments: number, ...rest); // no error - no code gen
->foo1 : (arguments: number, ...rest: any[]) => any
+>foo1 : (arguments: number, ...rest: Array<any>) => any
 >arguments : number
->rest : any[]
+>rest : Array<any>
 
     fooNoError(arguments: number);  // no error
 >fooNoError : (arguments: number) => any

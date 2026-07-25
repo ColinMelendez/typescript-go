@@ -1,0 +1,28 @@
+--- old.typeArgumentInferenceConstructSignatures.types
++++ new.typeArgumentInferenceConstructSignatures.types
+@@= skipped -389, +389 lines =@@
+ >someGenerics9 : someGenerics9
+ >'' : ""
+ >0 : 0
+->[] : undefined[]
++>[] : Array<undefined>
+
+ declare var a9a: {};
+ >a9a : string
+@@= skipped -112, +112 lines =@@
+
+ // Generic call with multiple parameters of generic type where one argument is [] and the other is not 'any'
+ var arr = new someGenerics9([], null, undefined);
+->arr : any[]
+->new someGenerics9([], null, undefined) : any[]
++>arr : Array<any>
++>new someGenerics9([], null, undefined) : Array<any>
+ >someGenerics9 : someGenerics9
+->[] : undefined[]
++>[] : Array<undefined>
+ >undefined : undefined
+
+ declare var arr: any[];
+->arr : any[]
++>arr : Array<any>
+

@@ -1,0 +1,10 @@
+--- old.for-of52.types
++++ new.for-of52.types
+@@= skipped -3, +3 lines =@@
+ for (let [v, v] of [[]]) {}
+ >v : never
+ >v : never
+->[[]] : never[][]
+->[] : never[]
++>[[]] : Array<Array<never>>
++>[] : Array<never>

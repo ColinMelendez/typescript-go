@@ -78,90 +78,90 @@ var f1 = function () { return new C1();}
 >C1 : typeof C1
 
 var arr_any: any[] = [];
->arr_any : any[]
->[] : undefined[]
+>arr_any : Array<any>
+>[] : Array<undefined>
 
 var arr_i1: I1[] = [];
->arr_i1 : I1[]
->[] : undefined[]
+>arr_i1 : Array<I1>
+>[] : Array<undefined>
 
 var arr_c1: C1[] = [];
->arr_c1 : C1[]
->[] : undefined[]
+>arr_c1 : Array<C1>
+>[] : Array<undefined>
 
 var arr_c2: C2[] = [];
->arr_c2 : C2[]
->[] : undefined[]
+>arr_c2 : Array<C2>
+>[] : Array<undefined>
 
 var arr_i1_2: I1[] = [];
->arr_i1_2 : I1[]
->[] : undefined[]
+>arr_i1_2 : Array<I1>
+>[] : Array<undefined>
 
 var arr_c1_2: C1[] = [];
->arr_c1_2 : C1[]
->[] : undefined[]
+>arr_c1_2 : Array<C1>
+>[] : Array<undefined>
 
 var arr_c2_2: C2[] = [];
->arr_c2_2 : C2[]
->[] : undefined[]
+>arr_c2_2 : Array<C2>
+>[] : Array<undefined>
 
 var arr_c3: C3[] = [];
->arr_c3 : C3[]
->[] : undefined[]
+>arr_c3 : Array<C3>
+>[] : Array<undefined>
 
 // "clean up error" occurs at this point
 arr_c3 = arr_c2_2; // should be an error - is
->arr_c3 = arr_c2_2 : C2[]
->arr_c3 : C3[]
->arr_c2_2 : C2[]
+>arr_c3 = arr_c2_2 : Array<C2>
+>arr_c3 : Array<C3>
+>arr_c2_2 : Array<C2>
 
 arr_c3 = arr_c1_2; // should be an error - is
->arr_c3 = arr_c1_2 : C1[]
->arr_c3 : C3[]
->arr_c1_2 : C1[]
+>arr_c3 = arr_c1_2 : Array<C1>
+>arr_c3 : Array<C3>
+>arr_c1_2 : Array<C1>
 
 arr_c3 = arr_i1_2; // should be an error - is
->arr_c3 = arr_i1_2 : I1[]
->arr_c3 : C3[]
->arr_i1_2 : I1[]
+>arr_c3 = arr_i1_2 : Array<I1>
+>arr_c3 : Array<C3>
+>arr_i1_2 : Array<I1>
 
 arr_any = f1; // should be an error - is
 >arr_any = f1 : () => C1
->arr_any : any[]
+>arr_any : Array<any>
 >f1 : () => C1
 
 arr_any = function () { return null;} // should be an error - is
 >arr_any = function () { return null;} : () => any
->arr_any : any[]
+>arr_any : Array<any>
 >function () { return null;} : () => any
 
 arr_any = o1; // should be an error - is
 >arr_any = o1 : { one: number; }
->arr_any : any[]
+>arr_any : Array<any>
 >o1 : { one: number; }
 
 arr_any = a1; // should be ok - is
 >arr_any = a1 : any
->arr_any : any[]
+>arr_any : Array<any>
 >a1 : any
 
 arr_any = c1; // should be an error - is
 >arr_any = c1 : C1
->arr_any : any[]
+>arr_any : Array<any>
 >c1 : C1
 
 arr_any = c2; // should be an error - is
 >arr_any = c2 : C2
->arr_any : any[]
+>arr_any : Array<any>
 >c2 : C2
 
 arr_any = c3; // should be an error - is
 >arr_any = c3 : C3
->arr_any : any[]
+>arr_any : Array<any>
 >c3 : C3
 
 arr_any = i1; // should be an error - is
 >arr_any = i1 : I1
->arr_any : any[]
+>arr_any : Array<any>
 >i1 : I1
 

@@ -16,7 +16,7 @@ namespace Test {
     }
     interface ILineTokens {
         tokens: IToken[];
->tokens : IToken[]
+>tokens : Array<IToken>
 
         endState: IState;
 >endState : IState
@@ -56,15 +56,15 @@ namespace Test {
 >true : true
 
             var tokens:IStateToken[]= lineTokens.tokens;
->tokens : IStateToken[]
->lineTokens.tokens : IToken[]
+>tokens : Array<IStateToken>
+>lineTokens.tokens : Array<IToken>
 >lineTokens : ILineTokens
->tokens : IToken[]
+>tokens : Array<IToken>
 
             if (tokens.length === 0) {
 >tokens.length === 0 : boolean
 >tokens.length : number
->tokens : IStateToken[]
+>tokens : Array<IStateToken>
 >length : number
 >0 : 0
 
@@ -74,7 +74,7 @@ namespace Test {
 >this : this
 >onEnter : (line: string, state: IState, offset: number) => IAction
 >line : string
->tokens : IStateToken[]
+>tokens : Array<IStateToken>
 >offset : number
             }
         }

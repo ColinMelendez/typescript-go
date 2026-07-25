@@ -6,6 +6,6 @@ var v: string;
 
 for (v of [0]) { }
 >v : string
->[0] : number[]
+>[0] : Array<number>
 >0 : 0
 

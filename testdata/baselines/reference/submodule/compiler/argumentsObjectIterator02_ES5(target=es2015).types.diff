@@ -1,0 +1,33 @@
+--- old.argumentsObjectIterator02_ES5(target=es2015).types
++++ new.argumentsObjectIterator02_ES5(target=es2015).types
+@@= skipped -15, +15 lines =@@
+ >iterator : unique symbol
+
+     let result = [];
+->result : any[]
+->[] : never[]
++>result : Array<any>
++>[] : Array<never>
+
+     for (let arg of blah()) {
+ >arg : any
+@@= skipped -10, +10 lines =@@
+
+         result.push(arg + arg);
+ >result.push(arg + arg) : number
+->result.push : (...items: any[]) => number
+->result : any[]
+->push : (...items: any[]) => number
++>result.push : (...items: Array<any>) => number
++>result : Array<any>
++>push : (...items: Array<any>) => number
+ >arg + arg : any
+ >arg : any
+ >arg : any
+     }
+     return <[any, any, any]>result;
+ ><[any, any, any]>result : [any, any, any]
+->result : any[]
++>result : Array<any>
+ }
+

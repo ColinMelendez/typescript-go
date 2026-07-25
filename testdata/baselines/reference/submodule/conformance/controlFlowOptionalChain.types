@@ -12,7 +12,7 @@ declare const o: undefined | {
 >key : number
 
     (...args: any[]): any;
->args : any[]
+>args : Array<any>
 
 };
 
@@ -1927,7 +1927,7 @@ type Feature = {
 >type : string
 
     coordinates: number[];
->coordinates : number[]
+>coordinates : Array<number>
 
   };
 };
@@ -1947,14 +1947,14 @@ function extractCoordinates(f: Feature): number[] {
 >'test' : "test"
 
         return [];
->[] : never[]
+>[] : Array<never>
     }
     return f.geometry.coordinates;
->f.geometry.coordinates : number[]
+>f.geometry.coordinates : Array<number>
 >f.geometry : { type: string; coordinates: number[]; }
 >f : Feature
 >geometry : { type: string; coordinates: number[]; }
->coordinates : number[]
+>coordinates : Array<number>
 }
 
 // Repro from #35842
@@ -2030,14 +2030,14 @@ let i = 0;
 >0 : 0
 
 declare const arr: { tag: ("left" | "right") }[];
->arr : { tag: ("left" | "right"); }[]
+>arr : Array<{ tag: ("left" | "right"); }>
 >tag : "left" | "right"
 
 while (arr[i]?.tag === "left") {
 >arr[i]?.tag === "left" : boolean
 >arr[i]?.tag : "left" | "right"
 >arr[i] : { tag: ("left" | "right"); }
->arr : { tag: ("left" | "right"); }[]
+>arr : Array<{ tag: ("left" | "right"); }>
 >i : number
 >tag : "left" | "right"
 >"left" : "left"
@@ -2051,7 +2051,7 @@ while (arr[i]?.tag === "left") {
 >arr[i]?.tag === "right" : boolean
 >arr[i]?.tag : "left" | "right"
 >arr[i] : { tag: ("left" | "right"); }
->arr : { tag: ("left" | "right"); }[]
+>arr : Array<{ tag: ("left" | "right"); }>
 >i : number
 >tag : "left" | "right"
 >"right" : "right"

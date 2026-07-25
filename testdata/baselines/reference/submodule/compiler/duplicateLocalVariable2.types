@@ -15,8 +15,8 @@ export class TestRunner {
 
     static arrayCompare(arg1: any[], arg2: any[]): boolean {
 >arrayCompare : (arg1: any[], arg2: any[]) => boolean
->arg1 : any[]
->arg2 : any[]
+>arg1 : Array<any>
+>arg2 : Array<any>
 
         return false;
 >false : false
@@ -61,13 +61,13 @@ export var tests: TestRunner = (function () {
 >writeUtf8Bom : any
 
             var chars = [0x0054];
->chars : number[]
->[0x0054] : number[]
+>chars : Array<number>
+>[0x0054] : Array<number>
 >0x0054 : 84
 
             for (var i in chars) {
 >i : string
->chars : number[]
+>chars : Array<number>
 
                 fb.writeUtf8CodePoint(chars[i]);
 >fb.writeUtf8CodePoint(chars[i]) : any
@@ -75,7 +75,7 @@ export var tests: TestRunner = (function () {
 >fb : any
 >writeUtf8CodePoint : any
 >chars[i] : number
->chars : number[]
+>chars : Array<number>
 >i : string
             }
             fb.index = 0;
@@ -86,8 +86,8 @@ export var tests: TestRunner = (function () {
 >0 : 0
 
             var bytes = [];
->bytes : any[]
->[] : never[]
+>bytes : Array<any>
+>[] : Array<never>
 
             for (var i = 0; i < 14; i++) {
 >i : string
@@ -100,17 +100,17 @@ export var tests: TestRunner = (function () {
 
                 bytes.push(fb.readByte());
 >bytes.push(fb.readByte()) : number
->bytes.push : (...items: any[]) => number
->bytes : any[]
->push : (...items: any[]) => number
+>bytes.push : (...items: Array<any>) => number
+>bytes : Array<any>
+>push : (...items: Array<any>) => number
 >fb.readByte() : any
 >fb.readByte : any
 >fb : any
 >readByte : any
             }
             var expected = [0xEF];
->expected : number[]
->[0xEF] : number[]
+>expected : Array<number>
+>[0xEF] : Array<number>
 >0xEF : 239
 
             return TestRunner.arrayCompare(bytes, expected);
@@ -118,8 +118,8 @@ export var tests: TestRunner = (function () {
 >TestRunner.arrayCompare : (arg1: any[], arg2: any[]) => boolean
 >TestRunner : typeof TestRunner
 >arrayCompare : (arg1: any[], arg2: any[]) => boolean
->bytes : any[]
->expected : number[]
+>bytes : Array<any>
+>expected : Array<number>
 
         }));
 

@@ -3,19 +3,19 @@
 === functionOverloads37.ts ===
 function foo(bar:{a:number;}[]):string;
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo(bar:{a:boolean;}[]):number;
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: boolean; }[]
+>bar : Array<{ a: boolean; }>
 >a : boolean
 
 function foo(bar:{a:any;}[]):any{ return bar }
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: any; }[]
+>bar : Array<{ a: any; }>
 >a : any
->bar : { a: any; }[]
+>bar : Array<{ a: any; }>
 
 var x = foo();
 >x : never

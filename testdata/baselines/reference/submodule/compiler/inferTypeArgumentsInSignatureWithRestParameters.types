@@ -2,28 +2,28 @@
 
 === inferTypeArgumentsInSignatureWithRestParameters.ts ===
 function f<T>(array: T[], ...args) { }
->f : <T>(array: T[], ...args: any[]) => void
->array : T[]
->args : any[]
+>f : <T>(array: T[], ...args: Array<any>) => void
+>array : Array<T>
+>args : Array<any>
 
 function g(array: number[], ...args) { }
->g : (array: number[], ...args: any[]) => void
->array : number[]
->args : any[]
+>g : (array: number[], ...args: Array<any>) => void
+>array : Array<number>
+>args : Array<any>
 
 function h<T>(nonarray: T, ...args) { }
->h : <T>(nonarray: T, ...args: any[]) => void
+>h : <T>(nonarray: T, ...args: Array<any>) => void
 >nonarray : T
->args : any[]
+>args : Array<any>
 
 function i<T>(array: T[], opt?: any[]) { }
 >i : <T>(array: T[], opt?: any[]) => void
->array : T[]
->opt : any[]
+>array : Array<T>
+>opt : Array<any>
 
 var a = [1, 2, 3, 4, 5];
->a : number[]
->[1, 2, 3, 4, 5] : number[]
+>a : Array<number>
+>[1, 2, 3, 4, 5] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -32,21 +32,21 @@ var a = [1, 2, 3, 4, 5];
 
 f(a); // OK
 >f(a) : void
->f : <T>(array: T[], ...args: any[]) => void
->a : number[]
+>f : <T>(array: T[], ...args: Array<any>) => void
+>a : Array<number>
 
 g(a); // OK
 >g(a) : void
->g : (array: number[], ...args: any[]) => void
->a : number[]
+>g : (array: number[], ...args: Array<any>) => void
+>a : Array<number>
 
 h(a); // OK
 >h(a) : void
->h : <T>(nonarray: T, ...args: any[]) => void
->a : number[]
+>h : <T>(nonarray: T, ...args: Array<any>) => void
+>a : Array<number>
 
 i(a); // OK
 >i(a) : void
 >i : <T>(array: T[], opt?: any[]) => void
->a : number[]
+>a : Array<number>
 

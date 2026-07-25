@@ -1,0 +1,20 @@
+--- old.arrayTypeInSignatureOfInterfaceAndClass.types
++++ new.arrayTypeInSignatureOfInterfaceAndClass.types
+@@= skipped -48, +48 lines =@@
+         //removeIndices: WinJS.Promise<IListItem<T>[]>;
+         removeIndices(indices: number[], options?: any): WinJS.Promise<IListItem<T>[]>;
+ >removeIndices : (indices: number[], options?: any) => WinJS.Promise<IListItem<T>[]>
+->indices : number[]
++>indices : Array<number>
+ >options : any
+ >WinJS : any
+     }
+@@= skipped -10, +10 lines =@@
+         //removeIndices: WinJS.Promise<IListItem<T>[]>;
+         public removeIndices(indices: number[], options?: any): WinJS.Promise<IListItem<T>[]>;
+ >removeIndices : (indices: number[], options?: any) => WinJS.Promise<IListItem<T>[]>
+->indices : number[]
++>indices : Array<number>
+ >options : any
+ >WinJS : any
+     }

@@ -21,7 +21,7 @@ namespace __test2__ {
 
     export declare var aa:{one:boolean[];};;
 >aa : { one: boolean[]; }
->one : boolean[]
+>one : Array<boolean>
 
     export var __val__aa = aa;
 >__val__aa : { one: boolean[]; }

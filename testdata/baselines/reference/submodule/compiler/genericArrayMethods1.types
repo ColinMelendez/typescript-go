@@ -2,12 +2,12 @@
 
 === genericArrayMethods1.ts ===
 var x:string[] =  [0,1].slice(0); // this should be an error
->x : string[]
->[0,1].slice(0) : number[]
->[0,1].slice : (start?: number, end?: number) => number[]
->[0,1] : number[]
+>x : Array<string>
+>[0,1].slice(0) : Array<number>
+>[0,1].slice : (start?: number, end?: number) => Array<number>
+>[0,1] : Array<number>
 >0 : 0
 >1 : 1
->slice : (start?: number, end?: number) => number[]
+>slice : (start?: number, end?: number) => Array<number>
 >0 : 0
 

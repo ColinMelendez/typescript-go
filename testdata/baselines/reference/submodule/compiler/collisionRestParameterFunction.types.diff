@@ -1,0 +1,81 @@
+--- old.collisionRestParameterFunction.types
++++ new.collisionRestParameterFunction.types
+@@= skipped -2, +2 lines =@@
+ === collisionRestParameterFunction.ts ===
+ // Functions
+ function f1(_i: number, ...restParameters) { //_i is error
+->f1 : (_i: number, ...restParameters: any[]) => void
++>f1 : (_i: number, ...restParameters: Array<any>) => void
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+     var _i = 10; // no error
+ >_i : number
+@@= skipped -18, +18 lines =@@
+ }
+
+ declare function f2(_i: number, ...restParameters); // no error - no code gen
+->f2 : (_i: number, ...restParameters: any[]) => any
++>f2 : (_i: number, ...restParameters: Array<any>) => any
+ >_i : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+ declare function f2NoError(_i: number); // no error
+ >f2NoError : (_i: number) => any
+ >_i : number
+
+ function f3(...restParameters) {
+->f3 : (...restParameters: any[]) => void
+->restParameters : any[]
++>f3 : (...restParameters: Array<any>) => void
++>restParameters : Array<any>
+
+     var _i = 10; // no error
+ >_i : number
+@@= skipped -25, +25 lines =@@
+ }
+
+ function f4(_i: number, ...rest); // no codegen no error
+->f4 : { (_i: number, ...rest: any[]): any; (_i: string, ...rest: any[]): any; }
++>f4 : { (_i: number, ...rest: Array<any>): any; (_i: string, ...rest: Array<any>): any; }
+ >_i : number
+->rest : any[]
++>rest : Array<any>
+
+ function f4(_i: string, ...rest); // no codegen no error
+->f4 : { (_i: number, ...rest: any[]): any; (_i: string, ...rest: any[]): any; }
++>f4 : { (_i: number, ...rest: Array<any>): any; (_i: string, ...rest: Array<any>): any; }
+ >_i : string
+->rest : any[]
++>rest : Array<any>
+
+ function f4(_i: any, ...rest) { // error
+->f4 : { (_i: number, ...rest: any[]): any; (_i: string, ...rest: any[]): any; }
++>f4 : { (_i: number, ...rest: Array<any>): any; (_i: string, ...rest: Array<any>): any; }
+ >_i : any
+->rest : any[]
++>rest : Array<any>
+ }
+
+ function f4NoError(_i: number); // no error
+@@= skipped -29, +29 lines =@@
+ }
+
+ declare function f5(_i: number, ...rest); // no codegen no error
+->f5 : { (_i: number, ...rest: any[]): any; (_i: string, ...rest: any[]): any; }
++>f5 : { (_i: number, ...rest: Array<any>): any; (_i: string, ...rest: Array<any>): any; }
+ >_i : number
+->rest : any[]
++>rest : Array<any>
+
+ declare function f5(_i: string, ...rest); // no codegen no error
+->f5 : { (_i: number, ...rest: any[]): any; (_i: string, ...rest: any[]): any; }
++>f5 : { (_i: number, ...rest: Array<any>): any; (_i: string, ...rest: Array<any>): any; }
+ >_i : string
+->rest : any[]
++>rest : Array<any>
+
+ declare function f6(_i: number); // no codegen no error
+ >f6 : { (_i: number): any; (_i: string): any; }

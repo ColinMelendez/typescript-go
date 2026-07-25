@@ -1,0 +1,11 @@
+--- old.deeplyNestedConstraints.types
++++ new.deeplyNestedConstraints.types
+@@= skipped -18, +18 lines =@@
+
+         array.length; // Requires exploration of >5 levels of constraints
+ >array.length : number
+->array : string | number[]
++>array : string | Array<number>
+ >length : number
+     }
+ }

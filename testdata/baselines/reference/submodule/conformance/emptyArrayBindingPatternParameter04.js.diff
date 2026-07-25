@@ -1,0 +1,8 @@
+--- old.emptyArrayBindingPatternParameter04.js
++++ new.emptyArrayBindingPatternParameter04.js
+@@= skipped -12, +12 lines =@@
+
+
+ //// [emptyArrayBindingPatternParameter04.d.ts]
+-declare function f([]?: number[]): void;
++declare function f([]?: Array<number>): void;

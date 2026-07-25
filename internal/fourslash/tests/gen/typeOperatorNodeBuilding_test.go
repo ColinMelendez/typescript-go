@@ -29,6 +29,7 @@ const /*2*/utilityFunctions = {
 };`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
+	// Parameter types reuse source annotations (T[]), not the Array<T> print preference.
 	f.VerifyQuickInfoAt(t, "1", "const utilityFunctions: {\n    doSomethingWithKeys: <T>(...keys: (keyof T)[]) => void;\n}", "")
 	f.VerifyQuickInfoAt(t, "2", "const utilityFunctions: {\n    doSomethingWithTypes: (...statics: (typeof Foo)[]) => void;\n}", "")
 }

@@ -1,0 +1,11 @@
+--- old.overloadCrash.types
++++ new.overloadCrash.types
+@@= skipped -16, +16 lines =@@
+
+ declare function foo(...n:I1[]);
+ >foo : { (...n: I1[]): any; (n1: I2, n3: I2): any; }
+->n : I1[]
++>n : Array<I1>
+
+ declare function foo(n1:I2, n3:I2);
+ >foo : { (...n: I1[]): any; (n1: I2, n3: I2): any; }

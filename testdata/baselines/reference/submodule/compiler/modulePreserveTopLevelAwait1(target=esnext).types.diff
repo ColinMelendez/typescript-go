@@ -1,0 +1,11 @@
+--- old.modulePreserveTopLevelAwait1(target=esnext).types
++++ new.modulePreserveTopLevelAwait1(target=esnext).types
+@@= skipped -2, +2 lines =@@
+ === modulePreserveTopLevelAwait1.ts ===
+ for await (const x of []) {}
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ await Promise.resolve();
+ >await Promise.resolve() : void

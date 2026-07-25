@@ -405,7 +405,7 @@ class Tests12 {
 
         for (const dummy in []) {}
 >dummy : string
->[] : never[]
+>[] : Array<never>
 
         type Test = typeof this;
 >Test : this
@@ -417,7 +417,7 @@ class Tests12 {
 
         for (const dummy of []) {}
 >dummy : never
->[] : never[]
+>[] : Array<never>
 
         type Test = typeof this;
 >Test : this

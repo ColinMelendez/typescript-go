@@ -39,9 +39,9 @@ export let o = {
 		ApplyChanges: true,
 	})
 	f.VerifyCodeFix(t, fourslash.VerifyCodeFixOptions{
-		Description: "Add annotation of type 'string[]'",
+		Description: "Add annotation of type 'Array<string>'",
 		NewFileContent: `let c: string[] = [];
-const newLocal: string[] = Math.random() ? [] : [
+const newLocal: Array<string> = Math.random() ? [] : [
     ...c
 ];
 export let o = {

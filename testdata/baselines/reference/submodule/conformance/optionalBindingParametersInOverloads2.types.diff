@@ -1,0 +1,10 @@
+--- old.optionalBindingParametersInOverloads2.types
++++ new.optionalBindingParametersInOverloads2.types
+@@= skipped -11, +11 lines =@@
+
+ function foo(...rest: any[]) {
+ >foo : ({ x, y, z }?: { x: string; y: number; z: boolean; }) => any
+->rest : any[]
++>rest : Array<any>
+
+ }

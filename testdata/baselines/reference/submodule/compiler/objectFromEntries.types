@@ -7,7 +7,7 @@ const o = Object.fromEntries([['a', 1], ['b', 2], ['c', 3]]);
 >Object.fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
 >Object : ObjectConstructor
 >fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
->[['a', 1], ['b', 2], ['c', 3]] : [string, number][]
+>[['a', 1], ['b', 2], ['c', 3]] : Array<[string, number]>
 >['a', 1] : [string, number]
 >'a' : "a"
 >1 : 1
@@ -35,7 +35,7 @@ const o3 = Object.fromEntries(new Map([[Symbol("key"), "value"]]));
 >fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
 >new Map([[Symbol("key"), "value"]]) : Map<symbol, string>
 >Map : MapConstructor
->[[Symbol("key"), "value"]] : [symbol, string][]
+>[[Symbol("key"), "value"]] : Array<[symbol, string]>
 >[Symbol("key"), "value"] : [symbol, string]
 >Symbol("key") : symbol
 >Symbol : SymbolConstructor
@@ -43,19 +43,19 @@ const o3 = Object.fromEntries(new Map([[Symbol("key"), "value"]]));
 >"value" : "value"
 
 const frozenArray = Object.freeze([['a', 1], ['b', 2], ['c', 3]]);
->frozenArray : readonly (string | number)[][]
->Object.freeze([['a', 1], ['b', 2], ['c', 3]]) : readonly (string | number)[][]
+>frozenArray : ReadonlyArray<Array<string | number>>
+>Object.freeze([['a', 1], ['b', 2], ['c', 3]]) : ReadonlyArray<Array<string | number>>
 >Object.freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
 >Object : ObjectConstructor
 >freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
->[['a', 1], ['b', 2], ['c', 3]] : (string | number)[][]
->['a', 1] : (string | number)[]
+>[['a', 1], ['b', 2], ['c', 3]] : Array<Array<string | number>>
+>['a', 1] : Array<string | number>
 >'a' : "a"
 >1 : 1
->['b', 2] : (string | number)[]
+>['b', 2] : Array<string | number>
 >'b' : "b"
 >2 : 2
->['c', 3] : (string | number)[]
+>['c', 3] : Array<string | number>
 >'c' : "c"
 >3 : 3
 
@@ -65,15 +65,15 @@ const o4 = Object.fromEntries(frozenArray);
 >Object.fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
 >Object : ObjectConstructor
 >fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
->frozenArray : readonly (string | number)[][]
+>frozenArray : ReadonlyArray<Array<string | number>>
 
 const frozenArray2: readonly [string, number][] = Object.freeze([['a', 1], ['b', 2], ['c', 3]]);
->frozenArray2 : readonly [string, number][]
->Object.freeze([['a', 1], ['b', 2], ['c', 3]]) : readonly [string, number][]
+>frozenArray2 : ReadonlyArray<[string, number]>
+>Object.freeze([['a', 1], ['b', 2], ['c', 3]]) : ReadonlyArray<[string, number]>
 >Object.freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
 >Object : ObjectConstructor
 >freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
->[['a', 1], ['b', 2], ['c', 3]] : [string, number][]
+>[['a', 1], ['b', 2], ['c', 3]] : Array<[string, number]>
 >['a', 1] : [string, number]
 >'a' : "a"
 >1 : 1
@@ -90,5 +90,5 @@ const o5 = Object.fromEntries(frozenArray2);
 >Object.fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
 >Object : ObjectConstructor
 >fromEntries : { <T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T; }; (entries: Iterable<readonly any[]>): any; }
->frozenArray2 : readonly [string, number][]
+>frozenArray2 : ReadonlyArray<[string, number]>
 

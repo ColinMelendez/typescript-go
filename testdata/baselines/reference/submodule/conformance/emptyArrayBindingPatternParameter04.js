@@ -13,4 +13,4 @@ function f([] = [1, 2, 3, 4]) {
 
 
 //// [emptyArrayBindingPatternParameter04.d.ts]
-declare function f([]?: number[]): void;
+declare function f([]?: Array<number>): void;

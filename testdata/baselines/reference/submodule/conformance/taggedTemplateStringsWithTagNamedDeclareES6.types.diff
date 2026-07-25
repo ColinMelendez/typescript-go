@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithTagNamedDeclareES6.types
++++ new.taggedTemplateStringsWithTagNamedDeclareES6.types
+@@= skipped -3, +3 lines =@@
+ function declare(x: any, ...ys: any[]) {
+ >declare : (x: any, ...ys: any[]) => void
+ >x : any
+->ys : any[]
++>ys : Array<any>
+ }
+
+ declare `Hello ${0} world!`;

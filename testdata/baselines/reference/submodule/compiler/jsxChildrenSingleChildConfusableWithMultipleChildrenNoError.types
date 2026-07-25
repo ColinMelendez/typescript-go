@@ -12,7 +12,7 @@ type Tab = [string, React.ReactNode]  // [tabName, tabContent]
 
 interface Props {
     children: Tab[]
->children : Tab[]
+>children : Array<Tab>
 }
 
 function TabLayout(props: Props) {
@@ -38,7 +38,7 @@ export class App extends React.Component<{}> {
 >TabLayout : (props: Props) => JSX.Element
 
             {[
->[                ['Users', <div/>],                ['Products', <div/>]            ] : [string, JSX.Element][]
+>[                ['Users', <div/>],                ['Products', <div/>]            ] : Array<[string, JSX.Element]>
 
                 ['Users', <div/>],
 >['Users', <div/>] : [string, JSX.Element]

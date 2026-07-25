@@ -21,5 +21,5 @@ var x: WrappedArray<string>;
 var /**/y = x.map(s => s.length);`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "var y: number[]", "")
+	f.VerifyQuickInfoAt(t, "", "var y: Array<number>", "")
 }

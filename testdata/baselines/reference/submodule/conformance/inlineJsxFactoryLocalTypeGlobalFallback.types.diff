@@ -1,0 +1,20 @@
+--- old.inlineJsxFactoryLocalTypeGlobalFallback.types
++++ new.inlineJsxFactoryLocalTypeGlobalFallback.types
+@@= skipped -13, +13 lines =@@
+ >__domBrand : void
+
+             children: Element[];
+->children : Element[]
++>children : Array<Element>
+
+             props: {};
+ >props : {}
+@@= skipped -28, +28 lines =@@
+ >__predomBrand : void
+
+             children: Element[];
+->children : Element[]
++>children : Array<Element>
+
+             props: {};
+ >props : {}

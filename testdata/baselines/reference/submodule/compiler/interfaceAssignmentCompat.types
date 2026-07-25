@@ -61,8 +61,8 @@ namespace M {
 >test : () => string
 
         var x:IEye[]= [];
->x : IEye[]
->[] : never[]
+>x : Array<IEye>
+>[] : Array<never>
 
         var result="";
 >result : string
@@ -71,7 +71,7 @@ namespace M {
         x[0]={ color:Color.Brown };
 >x[0]={ color:Color.Brown } : { color: Color; }
 >x[0] : IEye
->x : IEye[]
+>x : Array<IEye>
 >0 : 0
 >{ color:Color.Brown } : { color: Color; }
 >color : Color
@@ -82,7 +82,7 @@ namespace M {
         x[1]={ color:Color.Blue };
 >x[1]={ color:Color.Blue } : { color: Color; }
 >x[1] : IEye
->x : IEye[]
+>x : Array<IEye>
 >1 : 1
 >{ color:Color.Blue } : { color: Color; }
 >color : Color
@@ -93,7 +93,7 @@ namespace M {
         x[2]={ color:Color.Green };
 >x[2]={ color:Color.Green } : { color: Color; }
 >x[2] : IEye
->x : IEye[]
+>x : Array<IEye>
 >2 : 2
 >{ color:Color.Green } : { color: Color; }
 >color : Color
@@ -102,21 +102,21 @@ namespace M {
 >Green : Color.Green
 
         x=x.sort(CompareYeux); // parameter mismatch
->x=x.sort(CompareYeux) : IEye[]
->x : IEye[]
->x.sort(CompareYeux) : IEye[]
->x.sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => IEye[]
->x : IEye[]
->sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => IEye[]
+>x=x.sort(CompareYeux) : Array<IEye>
+>x : Array<IEye>
+>x.sort(CompareYeux) : Array<IEye>
+>x.sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => Array<IEye>
+>x : Array<IEye>
+>sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => Array<IEye>
 >CompareYeux : (a: IFrenchEye, b: IFrenchEye) => number
 
         // type of z inferred from specialized array type
         var z=x.sort(CompareEyes); // ok
->z : IEye[]
->x.sort(CompareEyes) : IEye[]
->x.sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => IEye[]
->x : IEye[]
->sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => IEye[]
+>z : Array<IEye>
+>x.sort(CompareEyes) : Array<IEye>
+>x.sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => Array<IEye>
+>x : Array<IEye>
+>sort : (compareFn?: ((a: IEye, b: IEye) => number) | undefined) => Array<IEye>
 >CompareEyes : (a: IEye, b: IEye) => number
 
         for (var i=0,len=z.length;i<len;i++) {
@@ -124,7 +124,7 @@ namespace M {
 >0 : 0
 >len : number
 >z.length : number
->z : IEye[]
+>z : Array<IEye>
 >length : number
 >i<len : boolean
 >i : number
@@ -144,21 +144,21 @@ namespace M {
 >_map : any
 >z[i].color : number
 >z[i] : IEye
->z : IEye[]
+>z : Array<IEye>
 >i : number
 >color : number
 >"\r\n" : "\r\n"
         }
 
         var eeks:IFrenchEye[] = [];
->eeks : IFrenchEye[]
->[] : never[]
+>eeks : Array<IFrenchEye>
+>[] : Array<never>
 
         for (var j=z.length=1;j>=0;j--) {
 >j : number
 >z.length=1 : 1
 >z.length : number
->z : IEye[]
+>z : Array<IEye>
 >length : number
 >1 : 1
 >j>=0 : boolean
@@ -170,16 +170,16 @@ namespace M {
             eeks[j]=z[j];  // nope: element assignment
 >eeks[j]=z[j] : IEye
 >eeks[j] : IFrenchEye
->eeks : IFrenchEye[]
+>eeks : Array<IFrenchEye>
 >j : number
 >z[j] : IEye
->z : IEye[]
+>z : Array<IEye>
 >j : number
         }
         eeks=z; // nope: array assignment
->eeks=z : IEye[]
->eeks : IFrenchEye[]
->z : IEye[]
+>eeks=z : Array<IEye>
+>eeks : Array<IFrenchEye>
+>z : Array<IEye>
 
         return result;
 >result : string

@@ -1,0 +1,11 @@
+--- old.typeParameterConstrainedToOuterTypeParameter.types
++++ new.typeParameterConstrainedToOuterTypeParameter.types
+@@= skipped -2, +2 lines =@@
+ === typeParameterConstrainedToOuterTypeParameter.ts ===
+ interface A<T> {
+     <U extends T>(x: U[])
+->x : U[]
++>x : Array<U>
+ }
+
+ interface B<T> {

@@ -1,0 +1,11 @@
+--- old.unusedVariablesinForLoop4.types
++++ new.unusedVariablesinForLoop4.types
+@@= skipped -5, +5 lines =@@
+
+     for (const elem of ["a", "b", "c"]) {
+ >elem : string
+->["a", "b", "c"] : string[]
++>["a", "b", "c"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ >"c" : "c"

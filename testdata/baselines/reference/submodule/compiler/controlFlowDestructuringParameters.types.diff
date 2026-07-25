@@ -1,0 +1,20 @@
+--- old.controlFlowDestructuringParameters.types
++++ new.controlFlowDestructuringParameters.types
+@@= skipped -4, +4 lines =@@
+
+
+ [{ x: 1 }].map(
+->[{ x: 1 }].map(  ({ x }) => x) : number[]
+->[{ x: 1 }].map : <U>(callbackfn: (value: { x: number; }, index: number, array: { x: number; }[]) => U, thisArg?: any) => U[]
+->[{ x: 1 }] : { x: number; }[]
++>[{ x: 1 }].map(  ({ x }) => x) : Array<number>
++>[{ x: 1 }].map : <U>(callbackfn: (value: { x: number; }, index: number, array: Array<{ x: number; }>) => U, thisArg?: any) => Array<U>
++>[{ x: 1 }] : Array<{ x: number; }>
+ >{ x: 1 } : { x: number; }
+ >x : number
+ >1 : 1
+->map : <U>(callbackfn: (value: { x: number; }, index: number, array: { x: number; }[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: { x: number; }, index: number, array: Array<{ x: number; }>) => U, thisArg?: any) => Array<U>
+
+   ({ x }) => x
+ >({ x }) => x : ({ x }: { x: number; }) => number

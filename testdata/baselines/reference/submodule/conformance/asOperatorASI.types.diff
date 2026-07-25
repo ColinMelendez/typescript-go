@@ -1,0 +1,11 @@
+--- old.asOperatorASI.types
++++ new.asOperatorASI.types
+@@= skipped -5, +5 lines =@@
+
+ declare function as(...args: any[]);
+ >as : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ // Example 1
+ var x = 10

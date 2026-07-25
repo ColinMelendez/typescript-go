@@ -1,0 +1,11 @@
+--- old.newOperator.types
++++ new.newOperator.types
+@@= skipped -132, +132 lines =@@
+ >S : S
+
+     public get xs(): M.T[] {
+->xs : M.T[]
++>xs : Array<M.T>
+ >M : any
+
+         return new M.T[];

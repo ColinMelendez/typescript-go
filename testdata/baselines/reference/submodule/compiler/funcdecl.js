@@ -144,7 +144,7 @@ declare function withInitializedParams(a: string, b0: any, b?: number, c?: strin
 declare var withInitializedParamsVar: typeof withInitializedParams;
 declare function withOptionalInitializedParams(a: string, c?: string): void;
 declare var withOptionalInitializedParamsVar: typeof withOptionalInitializedParams;
-declare function withRestParams(a: string, ...myRestParameter: number[]): number[];
+declare function withRestParams(a: string, ...myRestParameter: number[]): Array<number>;
 declare var withRestParamsVar: typeof withRestParams;
 declare function overload1(n: number): string;
 declare function overload1(s: string): string;

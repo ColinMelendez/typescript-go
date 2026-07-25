@@ -1,0 +1,80 @@
+--- old.controlFlowElementAccessNoCrash1.types
++++ new.controlFlowElementAccessNoCrash1.types
+@@= skipped -5, +5 lines =@@
+ >caption : string
+
+   commandLineArgs?: readonly string[];
+->commandLineArgs : readonly string[] | undefined
++>commandLineArgs : ReadonlyArray<string> | undefined
+ }
+
+ interface TestTscCompile {
+@@= skipped -8, +8 lines =@@
+ >subScenario : string
+
+   commandLineArgs: readonly string[];
+->commandLineArgs : readonly string[]
++>commandLineArgs : ReadonlyArray<string>
+ }
+
+ interface VerifyTscEditDiscrepanciesInput {
+@@= skipped -8, +8 lines =@@
+ >index : number
+
+   edits: readonly TestTscEdit[];
+->edits : readonly TestTscEdit[]
++>edits : ReadonlyArray<TestTscEdit>
+
+   commandLineArgs: TestTscCompile["commandLineArgs"];
+->commandLineArgs : readonly string[]
++>commandLineArgs : ReadonlyArray<string>
+ }
+
+ function testTscCompile(input: TestTscCompile) {}
+@@= skipped -17, +17 lines =@@
+ >index : number
+
+   edits,
+->edits : readonly TestTscEdit[]
++>edits : ReadonlyArray<TestTscEdit>
+
+   commandLineArgs,
+->commandLineArgs : readonly string[]
++>commandLineArgs : ReadonlyArray<string>
+
+ }: VerifyTscEditDiscrepanciesInput) {
+   const { caption } = edits[index];
+ >caption : string
+ >edits[index] : TestTscEdit
+->edits : readonly TestTscEdit[]
++>edits : ReadonlyArray<TestTscEdit>
+ >index : number
+
+   testTscCompile({
+ >testTscCompile({    subScenario: caption,    commandLineArgs: edits[index].commandLineArgs || commandLineArgs,  }) : void
+ >testTscCompile : (input: TestTscCompile) => void
+->{    subScenario: caption,    commandLineArgs: edits[index].commandLineArgs || commandLineArgs,  } : { subScenario: string; commandLineArgs: readonly string[]; }
++>{    subScenario: caption,    commandLineArgs: edits[index].commandLineArgs || commandLineArgs,  } : { subScenario: string; commandLineArgs: ReadonlyArray<string>; }
+
+     subScenario: caption,
+ >subScenario : string
+ >caption : string
+
+     commandLineArgs: edits[index].commandLineArgs || commandLineArgs,
+->commandLineArgs : readonly string[]
+->edits[index].commandLineArgs || commandLineArgs : readonly string[]
+->edits[index].commandLineArgs : readonly string[] | undefined
++>commandLineArgs : ReadonlyArray<string>
++>edits[index].commandLineArgs || commandLineArgs : ReadonlyArray<string>
++>edits[index].commandLineArgs : ReadonlyArray<string> | undefined
+ >edits[index] : TestTscEdit
+->edits : readonly TestTscEdit[]
++>edits : ReadonlyArray<TestTscEdit>
+ >index : number
+->commandLineArgs : readonly string[] | undefined
+->commandLineArgs : readonly string[]
++>commandLineArgs : ReadonlyArray<string> | undefined
++>commandLineArgs : ReadonlyArray<string>
+
+   });
+ }

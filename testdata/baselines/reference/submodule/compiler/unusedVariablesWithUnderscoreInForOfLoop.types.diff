@@ -1,0 +1,109 @@
+--- old.unusedVariablesWithUnderscoreInForOfLoop.types
++++ new.unusedVariablesWithUnderscoreInForOfLoop.types
+@@= skipped -6, +6 lines =@@
+     for (const [_a, b] of [['key', 1]]) {
+ >_a : string | number
+ >b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+@@= skipped -16, +16 lines =@@
+     for (const [a, _b] of [['key', 1]]) {
+ >a : string | number
+ >_b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+@@= skipped -16, +16 lines =@@
+     for (const [_a, _b] of [['key', 1]]) {}
+ >_a : string | number
+ >_b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+ }
+@@= skipped -13, +13 lines =@@
+     for (const [_a, b] of [['key', 1]]) {}
+ >_a : string | number
+ >b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+     for (const [a, _b] of [['key', 1]]) {}
+ >a : string | number
+ >_b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+     for (const [a, b] of [['key', 1]]) {}
+ >a : string | number
+ >b : string | number
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+ }
+@@= skipped -28, +28 lines =@@
+     for (const [[[_a, b]]] of [[[['key', 1]]]]) {}
+ >_a : string | number
+ >b : string | number
+->[[[['key', 1]]]] : (string | number)[][][][]
+->[[['key', 1]]] : (string | number)[][][]
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[[[['key', 1]]]] : Array<Array<Array<Array<string | number>>>>
++>[[['key', 1]]] : Array<Array<Array<string | number>>>
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+     for (const [[[a, _b]]] of [[[['key', 1]]]]) {}
+ >a : string | number
+ >_b : string | number
+->[[[['key', 1]]]] : (string | number)[][][][]
+->[[['key', 1]]] : (string | number)[][][]
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[[[['key', 1]]]] : Array<Array<Array<Array<string | number>>>>
++>[[['key', 1]]] : Array<Array<Array<string | number>>>
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+
+     for (const [[[a, b]]] of [[[['key', 1]]]]) {}
+ >a : string | number
+ >b : string | number
+->[[[['key', 1]]]] : (string | number)[][][][]
+->[[['key', 1]]] : (string | number)[][][]
+->[['key', 1]] : (string | number)[][]
+->['key', 1] : (string | number)[]
++>[[[['key', 1]]]] : Array<Array<Array<Array<string | number>>>>
++>[[['key', 1]]] : Array<Array<Array<string | number>>>
++>[['key', 1]] : Array<Array<string | number>>
++>['key', 1] : Array<string | number>
+ >'key' : "key"
+ >1 : 1
+ }

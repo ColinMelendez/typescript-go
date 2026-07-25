@@ -1,0 +1,12 @@
+--- old.alwaysStrictModule.types
++++ new.alwaysStrictModule.types
+@@= skipped -7, +7 lines =@@
+ >f : () => void
+
+         var arguments = [];
+->arguments : any[]
+->[] : never[]
++>arguments : Array<any>
++>[] : Array<never>
+     }
+ }

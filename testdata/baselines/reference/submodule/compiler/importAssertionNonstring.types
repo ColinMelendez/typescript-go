@@ -17,7 +17,7 @@ import * as thing3 from "./mod.mjs" with {field: /a/g};
 import * as thing4 from "./mod.mjs" with {field: ["a"]};
 >thing4 : typeof thing1
 >field : any
->["a"] : string[]
+>["a"] : Array<string>
 >"a" : "a"
 
 import * as thing5 from "./mod.mjs" with {field: { a: 0 }};

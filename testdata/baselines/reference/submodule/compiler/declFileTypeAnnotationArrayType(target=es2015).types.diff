@@ -1,0 +1,90 @@
+--- old.declFileTypeAnnotationArrayType(target=es2015).types
++++ new.declFileTypeAnnotationArrayType(target=es2015).types
+@@= skipped -22, +22 lines =@@
+ >foo : () => c[]
+
+     return [new c()];
+->[new c()] : c[]
++>[new c()] : Array<c>
+ >new c() : c
+ >c : typeof c
+ }
+ function foo2() {
+->foo2 : () => c[]
++>foo2 : () => Array<c>
+
+     return [new c()];
+->[new c()] : c[]
++>[new c()] : Array<c>
+ >new c() : c
+ >c : typeof c
+ }
+@@= skipped -19, +19 lines =@@
+ >m : any
+
+     return [new m.c()];
+->[new m.c()] : m.c[]
++>[new m.c()] : Array<m.c>
+ >new m.c() : m.c
+ >m.c : typeof m.c
+ >m : typeof m
+@@= skipped -20, +20 lines =@@
+ >foo5 : () => g<string>[]
+
+     return [new g<string>()];
+->[new g<string>()] : g<string>[]
++>[new g<string>()] : Array<g<string>>
+ >new g<string>() : g<string>
+ >g : typeof g
+ }
+ function foo6() {
+->foo6 : () => g<string>[]
++>foo6 : () => Array<g<string>>
+
+     return [new g<string>()];
+->[new g<string>()] : g<string>[]
++>[new g<string>()] : Array<g<string>>
+ >new g<string>() : g<string>
+ >g : typeof g
+ }
+@@= skipped -19, +19 lines =@@
+ >m : any
+
+     return [new m.g<number>()];
+->[new m.g<number>()] : m.g<number>[]
++>[new m.g<number>()] : Array<m.g<number>>
+ >new m.g<number>() : m.g<number>
+ >m.g : typeof m.g
+ >m : typeof m
+ >g : typeof m.g
+ }
+ function foo8() {
+->foo8 : () => m.g<number>[]
++>foo8 : () => Array<m.g<number>>
+
+     return [new m.g<number>()];
+->[new m.g<number>()] : m.g<number>[]
++>[new m.g<number>()] : Array<m.g<number>>
+ >new m.g<number>() : m.g<number>
+ >m.g : typeof m.g
+ >m : typeof m
+@@= skipped -22, +22 lines =@@
+ >foo9 : () => (() => c)[]
+
+     return [() => new c()];
+->[() => new c()] : (() => c)[]
++>[() => new c()] : Array<() => c>
+ >() => new c() : () => c
+ >new c() : c
+ >c : typeof c
+ }
+ function foo10() {
+->foo10 : () => (() => c)[]
++>foo10 : () => Array<() => c>
+
+     return [() => new c()];
+->[() => new c()] : (() => c)[]
++>[() => new c()] : Array<() => c>
+ >() => new c() : () => c
+ >new c() : c
+ >c : typeof c

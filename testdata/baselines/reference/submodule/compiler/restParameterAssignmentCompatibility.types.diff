@@ -1,0 +1,13 @@
+--- old.restParameterAssignmentCompatibility.types
++++ new.restParameterAssignmentCompatibility.types
+@@= skipped -4, +4 lines =@@
+ >T : T
+
+     m(...p3) {
+->m : (...p3: any[]) => void
+->p3 : any[]
++>m : (...p3: Array<any>) => void
++>p3 : Array<any>
+
+     }
+ }

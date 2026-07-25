@@ -1,0 +1,9 @@
+--- old.conditionalTypesASI.types
++++ new.conditionalTypesASI.types
+@@= skipped -7, +7 lines =@@
+ >a : number | undefined
+
+   extends?: string | string[]
+->extends : string | string[] | undefined
++>extends : string | Array<string> | undefined
+ }

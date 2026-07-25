@@ -6,8 +6,8 @@ declare var STRING: string;
 >STRING : string
 
 var STRING1: string[] = ["", "abc"];
->STRING1 : string[]
->["", "abc"] : string[]
+>STRING1 : Array<string>
+>["", "abc"] : Array<string>
 >"" : ""
 >"abc" : "abc"
 
@@ -46,7 +46,7 @@ var ResultIsBoolean1 = !STRING;
 var ResultIsBoolean2 = !STRING1;
 >ResultIsBoolean2 : boolean
 >!STRING1 : false
->STRING1 : string[]
+>STRING1 : Array<string>
 
 // string type literal
 var ResultIsBoolean3 = !"";
@@ -93,7 +93,7 @@ var ResultIsBoolean8 = !STRING1[0];
 >ResultIsBoolean8 : boolean
 >!STRING1[0] : boolean
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 var ResultIsBoolean9 = !foo();
@@ -155,7 +155,7 @@ var ResultIsBoolean14 = !!!(STRING + STRING);
 
 !STRING1;
 >!STRING1 : false
->STRING1 : string[]
+>STRING1 : Array<string>
 
 !foo();
 >!foo() : boolean

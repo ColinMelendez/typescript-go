@@ -1,6 +1,17 @@
 --- old.thisInPropertyBoundDeclarations.types
 +++ new.thisInPropertyBoundDeclarations.types
-@@= skipped -80, +80 lines =@@
+@@= skipped -7, +7 lines =@@
+ >name : string
+
+     private static func: Function[] = [
+->func : Function[]
+->[     (that: Bug, name: string) => {         that.foo(name);     }    ] : ((that: Bug, name: string) => void)[]
++>func : Array<Function>
++>[     (that: Bug, name: string) => {         that.foo(name);     }    ] : Array<(that: Bug, name: string) => void>
+
+      (that: Bug, name: string) => {
+ >(that: Bug, name: string) => {         that.foo(name);     } : (that: Bug, name: string) => void
+@@= skipped -73, +73 lines =@@
 
      prop4 = {
  >prop4 : { a: () => any; }

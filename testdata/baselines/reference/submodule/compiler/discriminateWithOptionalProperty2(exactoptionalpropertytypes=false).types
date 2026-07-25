@@ -185,8 +185,8 @@ function mapAsyncIterable<T, U, R = undefined>(
 }
 
 const items = [1, 2, 3];
->items : number[]
->[1, 2, 3] : number[]
+>items : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -211,13 +211,13 @@ const iterable = {
     const value = items[0];
 >value : number
 >items[0] : number
->items : number[]
+>items : Array<number>
 >0 : 0
 
     items.shift();
 >items.shift() : number | undefined
 >items.shift : () => number | undefined
->items : number[]
+>items : Array<number>
 >shift : () => number | undefined
 
     return Promise.resolve({
@@ -231,7 +231,7 @@ const iterable = {
 >done : boolean
 >items.length === 0 : boolean
 >items.length : number
->items : number[]
+>items : Array<number>
 >length : number
 >0 : 0
 

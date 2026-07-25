@@ -1,0 +1,8 @@
+--- old.declarationEmitNoNonRequiredParens.js
++++ new.declarationEmitNoNonRequiredParens.js
+@@= skipped -28, +28 lines =@@
+     C = 2
+ }
+ export type TestType = typeof Test;
+-export declare const bar: Test[];
++export declare const bar: Array<Test>;

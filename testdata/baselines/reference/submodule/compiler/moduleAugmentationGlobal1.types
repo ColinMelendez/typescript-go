@@ -20,8 +20,8 @@ declare global {
 }
 
 let x = [1];
->x : number[]
->[1] : number[]
+>x : Array<number>
+>[1] : Array<number>
 >1 : 1
 
 let y = x.getA().x;
@@ -29,7 +29,7 @@ let y = x.getA().x;
 >x.getA().x : number
 >x.getA() : A
 >x.getA : () => A
->x : number[]
+>x : Array<number>
 >getA : () => A
 >x : number
 

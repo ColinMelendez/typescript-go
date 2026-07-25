@@ -9,14 +9,14 @@ function foo<T extends { a: string, b: string }>() {
 >b : string
 
     let a: (keyof T)[] = ["a", "b"];
->a : (keyof T)[]
->["a", "b"] : ("a" | "b")[]
+>a : Array<keyof T>
+>["a", "b"] : Array<"a" | "b">
 >"a" : "a"
 >"b" : "b"
 
     let b: (keyof T)[] = ["a", "b", "c"];
->b : (keyof T)[]
->["a", "b", "c"] : ("a" | "b" | "c")[]
+>b : Array<keyof T>
+>["a", "b", "c"] : Array<"a" | "b" | "c">
 >"a" : "a"
 >"b" : "b"
 >"c" : "c"
@@ -27,7 +27,7 @@ function foo<T extends { a: string, b: string }>() {
 declare function pick<T, K extends keyof T>(obj: T, propNames: K[]): Pick<T, K>;
 >pick : <T, K extends keyof T>(obj: T, propNames: K[]) => Pick<T, K>
 >obj : T
->propNames : K[]
+>propNames : Array<K>
 
 let x = pick({ a: 10, b: 20, c: 30 }, ["a", "c"]);
 >x : Pick<{ a: number; b: number; c: number; }, "a" | "c">
@@ -40,7 +40,7 @@ let x = pick({ a: 10, b: 20, c: 30 }, ["a", "c"]);
 >20 : 20
 >c : number
 >30 : 30
->["a", "c"] : ("a" | "c")[]
+>["a", "c"] : Array<"a" | "c">
 >"a" : "a"
 >"c" : "c"
 

@@ -1,0 +1,11 @@
+--- old.cannotInvokeNewOnIndexExpression.types
++++ new.cannotInvokeNewOnIndexExpression.types
+@@= skipped -1, +1 lines =@@
+
+ === cannotInvokeNewOnIndexExpression.ts ===
+ var test: any[] = new any[1];
+->test : any[]
++>test : Array<any>
+ >new any[1] : any
+ >any[1] : any
+ >any : any

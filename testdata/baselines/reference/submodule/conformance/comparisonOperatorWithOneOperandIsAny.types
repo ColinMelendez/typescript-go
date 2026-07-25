@@ -130,7 +130,7 @@ var f: {};
 >f : {}
 
 var g: string[];
->g : string[]
+>g : Array<string>
 
 // operator <
 var r1a1 = x < a;
@@ -173,7 +173,7 @@ var r1a7 = x < g;
 >r1a7 : boolean
 >x < g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r1b1 = a < x;
 >r1b1 : boolean
@@ -214,7 +214,7 @@ var r1b6 = f < x;
 var r1b7 = g < x;
 >r1b7 : boolean
 >g < x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator >
@@ -258,7 +258,7 @@ var r2a7 = x > g;
 >r2a7 : boolean
 >x > g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r2b1 = a > x;
 >r2b1 : boolean
@@ -299,7 +299,7 @@ var r2b6 = f > x;
 var r2b7 = g > x;
 >r2b7 : boolean
 >g > x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator <=
@@ -343,7 +343,7 @@ var r3a7 = x <= g;
 >r3a7 : boolean
 >x <= g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r3b1 = a <= x;
 >r3b1 : boolean
@@ -384,7 +384,7 @@ var r3b6 = f <= x;
 var r3b7 = g <= x;
 >r3b7 : boolean
 >g <= x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator >=
@@ -428,7 +428,7 @@ var r4a7 = x >= g;
 >r4a7 : boolean
 >x >= g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r4b1 = a >= x;
 >r4b1 : boolean
@@ -469,7 +469,7 @@ var r4b6 = f >= x;
 var r4b7 = g >= x;
 >r4b7 : boolean
 >g >= x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator ==
@@ -513,7 +513,7 @@ var r5a7 = x == g;
 >r5a7 : boolean
 >x == g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r5b1 = a == x;
 >r5b1 : boolean
@@ -554,7 +554,7 @@ var r5b6 = f == x;
 var r5b7 = g == x;
 >r5b7 : boolean
 >g == x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator !=
@@ -598,7 +598,7 @@ var r6a7 = x != g;
 >r6a7 : boolean
 >x != g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r6b1 = a != x;
 >r6b1 : boolean
@@ -639,7 +639,7 @@ var r6b6 = f != x;
 var r6b7 = g != x;
 >r6b7 : boolean
 >g != x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator ===
@@ -683,7 +683,7 @@ var r7a7 = x === g;
 >r7a7 : boolean
 >x === g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r7b1 = a === x;
 >r7b1 : boolean
@@ -724,7 +724,7 @@ var r7b6 = f === x;
 var r7b7 = g === x;
 >r7b7 : boolean
 >g === x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 
 // operator !==
@@ -768,7 +768,7 @@ var r8a7 = x !== g;
 >r8a7 : boolean
 >x !== g : boolean
 >x : any
->g : string[]
+>g : Array<string>
 
 var r8b1 = a !== x;
 >r8b1 : boolean
@@ -809,6 +809,6 @@ var r8b6 = f !== x;
 var r8b7 = g !== x;
 >r8b7 : boolean
 >g !== x : boolean
->g : string[]
+>g : Array<string>
 >x : any
 

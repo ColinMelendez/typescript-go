@@ -14,7 +14,7 @@ interface Prop {
 >b : string
 
     children: JSX.Element | JSX.Element[];
->children : JSX.Element[] | JSX.Element
+>children : Array<JSX.Element> | JSX.Element
 >JSX : any
 >JSX : any
 }

@@ -3,7 +3,7 @@
 === callChain.ts ===
 declare const o1: undefined | ((...args: any[]) => number);
 >o1 : ((...args: any[]) => number) | undefined
->args : any[]
+>args : Array<any>
 
 o1?.();
 >o1?.() : number | undefined
@@ -35,7 +35,7 @@ o1?.(1, ...[2, 3], 4);
 declare const o2: undefined | { b: (...args: any[]) => number };
 >o2 : { b: (...args: any[]) => number; } | undefined
 >b : (...args: any[]) => number
->args : any[]
+>args : Array<any>
 
 o2?.b();
 >o2?.b() : number | undefined
@@ -110,7 +110,7 @@ o2?.["b"](1, ...[2, 3], 4);
 declare const o3: { b: ((...args: any[]) => { c: string }) | undefined };
 >o3 : { b: ((...args: any[]) => { c: string; }) | undefined; }
 >b : ((...args: any[]) => { c: string; }) | undefined
->args : any[]
+>args : Array<any>
 >c : string
 
 o3.b?.().c;

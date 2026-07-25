@@ -68,7 +68,7 @@ var a = <Blah>
 
 interface PropsArr {
   children: ((x: number) => string)[];
->children : ((x: number) => string)[]
+>children : Array<(x: number) => string>
 >x : number
 }
 
@@ -129,7 +129,7 @@ type Cb = (x: number) => string;
 
 interface PropsMixed {
   children: Cb | Cb[];
->children : Cb[] | Cb
+>children : Array<Cb> | Cb
 }
 
 export function Blah3(props: PropsMixed) {

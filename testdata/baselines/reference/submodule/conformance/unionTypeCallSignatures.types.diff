@@ -1,0 +1,40 @@
+--- old.unionTypeCallSignatures.types
++++ new.unionTypeCallSignatures.types
+@@= skipped -235, +235 lines =@@
+ declare var unionWithRestParameter1: { (a: string, ...b: number[]): string; } | { (a: string, ...b: number[]): number };
+ >unionWithRestParameter1 : ((a: string, ...b: number[]) => string) | ((a: string, ...b: number[]) => number)
+ >a : string
+->b : number[]
++>b : Array<number>
+ >a : string
+->b : number[]
++>b : Array<number>
+
+ strOrNum = unionWithRestParameter1('hello');
+ >strOrNum = unionWithRestParameter1('hello') : string | number
+@@= skipped -45, +45 lines =@@
+ declare var unionWithRestParameter2: { (a: string, ...b: number[]): string; } | { (a: string, b: number): number };
+ >unionWithRestParameter2 : ((a: string, ...b: number[]) => string) | ((a: string, b: number) => number)
+ >a : string
+->b : number[]
++>b : Array<number>
+ >a : string
+ >b : number
+
+@@= skipped -45, +45 lines =@@
+ declare var unionWithRestParameter3: { (a: string, ...b: number[]): string; } | { (a: string): number };
+ >unionWithRestParameter3 : ((a: string, ...b: number[]) => string) | ((a: string) => number)
+ >a : string
+->b : number[]
++>b : Array<number>
+ >a : string
+
+ strOrNum = unionWithRestParameter3('hello');
+@@= skipped -43, +43 lines =@@
+
+ declare var unionWithRestParameter4: { (...a: string[]): string; } | { (a: string, b: string): number; };
+ >unionWithRestParameter4 : ((...a: string[]) => string) | ((a: string, b: string) => number)
+->a : string[]
++>a : Array<string>
+ >a : string
+ >b : string

@@ -1,0 +1,40 @@
+--- old.indexSignatureTypeInference.types
++++ new.indexSignatureTypeInference.types
+@@= skipped -25, +25 lines =@@
+ >stringMap : StringMap<Function>
+
+ var v1: Function[];
+->v1 : Function[]
++>v1 : Array<Function>
+
+ var v1 = numberMapToArray(numberMap);  // Ok
+->v1 : Function[]
+->numberMapToArray(numberMap) : Function[]
++>v1 : Array<Function>
++>numberMapToArray(numberMap) : Array<Function>
+ >numberMapToArray : <T>(object: NumberMap<T>) => T[]
+ >numberMap : NumberMap<Function>
+
+ var v1 = numberMapToArray(stringMap);  // Ok
+->v1 : Function[]
+->numberMapToArray(stringMap) : Function[]
++>v1 : Array<Function>
++>numberMapToArray(stringMap) : Array<Function>
+ >numberMapToArray : <T>(object: NumberMap<T>) => T[]
+ >stringMap : StringMap<Function>
+
+ var v1 = stringMapToArray(numberMap);  // Error expected here
+->v1 : Function[]
+->stringMapToArray(numberMap) : unknown[]
++>v1 : Array<Function>
++>stringMapToArray(numberMap) : Array<unknown>
+ >stringMapToArray : <T>(object: StringMap<T>) => T[]
+ >numberMap : NumberMap<Function>
+
+ var v1 = stringMapToArray(stringMap);  // Ok
+->v1 : Function[]
+->stringMapToArray(stringMap) : Function[]
++>v1 : Array<Function>
++>stringMapToArray(stringMap) : Array<Function>
+ >stringMapToArray : <T>(object: StringMap<T>) => T[]
+ >stringMap : StringMap<Function>

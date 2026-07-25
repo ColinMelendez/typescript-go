@@ -1,0 +1,20 @@
+--- old.nodeModulesImportAttributesTypeModeDeclarationEmitErrors(module=node18).errors.txt
++++ new.nodeModulesImportAttributesTypeModeDeclarationEmitErrors(module=node18).errors.txt
+@@= skipped -38, +38 lines =@@
+ /other3.ts(3,55): error TS1005: ';' expected.
+ /other3.ts(3,56): error TS1128: Declaration or statement expected.
+ /other3.ts(3,57): error TS2304: Cannot find name 'RequireInterface'.
+-/other3.ts(4,21): error TS2559: Type '{ "resolution-mode": string; }[]' has no properties in common with type 'ImportCallOptions'.
++/other3.ts(4,21): error TS2559: Type 'Array<{ "resolution-mode": string; }>' has no properties in common with type 'ImportCallOptions'.
+ /other3.ts(4,56): error TS2339: Property 'ImportInterface' does not exist on type 'Promise<{ default: typeof import("/node_modules/pkg/import"); }>'.
+ /other3.ts(6,34): error TS1340: Module 'pkg' does not refer to a type, but is used as a type here. Did you mean 'typeof import('pkg')'?
+ /other3.ts(6,48): error TS1005: '{' expected.
+@@= skipped -169, +169 lines =@@
+ !!! error TS2304: Cannot find name 'RequireInterface'.
+         & import("pkg", [ {"resolution-mode": "import"} ]).ImportInterface;
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2559: Type '{ "resolution-mode": string; }[]' has no properties in common with type 'ImportCallOptions'.
++!!! error TS2559: Type 'Array<{ "resolution-mode": string; }>' has no properties in common with type 'ImportCallOptions'.
+                                                            ~~~~~~~~~~~~~~~
+ !!! error TS2339: Property 'ImportInterface' does not exist on type 'Promise<{ default: typeof import("/node_modules/pkg/import"); }>'.
+     

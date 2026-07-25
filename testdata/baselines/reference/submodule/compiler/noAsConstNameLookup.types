@@ -15,8 +15,8 @@ export class FeatureRunner<W extends Store> {
 >FeatureRunner : FeatureRunner<W>
 
     private readonly cleaners: Cleaner[] = []
->cleaners : Cleaner[]
->[] : never[]
+>cleaners : Array<Cleaner>
+>[] : Array<never>
 
     async runFeature(): Promise<any> {
 >runFeature : () => Promise<any>
@@ -48,11 +48,11 @@ export class FeatureRunner<W extends Store> {
 
         this.cleaners.forEach(c => c(this))
 >this.cleaners.forEach(c => c(this)) : void
->this.cleaners.forEach : (callbackfn: (value: Cleaner, index: number, array: Cleaner[]) => void, thisArg?: any) => void
->this.cleaners : Cleaner[]
+>this.cleaners.forEach : (callbackfn: (value: Cleaner, index: number, array: Array<Cleaner>) => void, thisArg?: any) => void
+>this.cleaners : Array<Cleaner>
 >this : this
->cleaners : Cleaner[]
->forEach : (callbackfn: (value: Cleaner, index: number, array: Cleaner[]) => void, thisArg?: any) => void
+>cleaners : Array<Cleaner>
+>forEach : (callbackfn: (value: Cleaner, index: number, array: Array<Cleaner>) => void, thisArg?: any) => void
 >c => c(this) : (c: Cleaner) => Promise<any>
 >c : Cleaner
 >c(this) : Promise<any>

@@ -14,8 +14,8 @@ class Foo<T> {
 >b : T
 
     static c: T[] = [];
->c : T[]
->[] : undefined[]
+>c : Array<T>
+>[] : Array<undefined>
 
     static d = false || ((x: T) => x || undefined)(null)
 >d : any
@@ -36,13 +36,13 @@ class Foo<T> {
 
     static f(xs: T[]): T[] {
 >f : (xs: T[]) => T[]
->xs : T[]
+>xs : Array<T>
 
         return xs.reverse();
->xs.reverse() : T[]
->xs.reverse : () => T[]
->xs : T[]
->reverse : () => T[]
+>xs.reverse() : Array<T>
+>xs.reverse : () => Array<T>
+>xs : Array<T>
+>reverse : () => Array<T>
     }
 }
 

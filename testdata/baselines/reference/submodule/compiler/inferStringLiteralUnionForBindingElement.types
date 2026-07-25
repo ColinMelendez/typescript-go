@@ -4,8 +4,8 @@
 declare function func<T extends string>(arg: { keys: T[] }): { readonly keys: T[]; readonly firstKey: T; };
 >func : <T extends string>(arg: { keys: T[]; }) => { readonly keys: T[]; readonly firstKey: T; }
 >arg : { keys: T[]; }
->keys : T[]
->keys : T[]
+>keys : Array<T>
+>keys : Array<T>
 >firstKey : T
 
 function func1() {
@@ -13,11 +13,11 @@ function func1() {
 
     const { firstKey } = func({keys: ["aa", "bb"]})
 >firstKey : "aa" | "bb"
->func({keys: ["aa", "bb"]}) : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
+>func({keys: ["aa", "bb"]}) : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
 >func : <T extends string>(arg: { keys: T[]; }) => { readonly keys: T[]; readonly firstKey: T; }
->{keys: ["aa", "bb"]} : { keys: ("aa" | "bb")[]; }
->keys : ("aa" | "bb")[]
->["aa", "bb"] : ("aa" | "bb")[]
+>{keys: ["aa", "bb"]} : { keys: Array<"aa" | "bb">; }
+>keys : Array<"aa" | "bb">
+>["aa", "bb"] : Array<"aa" | "bb">
 >"aa" : "aa"
 >"bb" : "bb"
 
@@ -26,31 +26,31 @@ function func1() {
 >firstKey : "aa" | "bb"
 
     const { keys } = func({keys: ["aa", "bb"]})
->keys : ("aa" | "bb")[]
->func({keys: ["aa", "bb"]}) : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
+>keys : Array<"aa" | "bb">
+>func({keys: ["aa", "bb"]}) : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
 >func : <T extends string>(arg: { keys: T[]; }) => { readonly keys: T[]; readonly firstKey: T; }
->{keys: ["aa", "bb"]} : { keys: ("aa" | "bb")[]; }
->keys : ("aa" | "bb")[]
->["aa", "bb"] : ("aa" | "bb")[]
+>{keys: ["aa", "bb"]} : { keys: Array<"aa" | "bb">; }
+>keys : Array<"aa" | "bb">
+>["aa", "bb"] : Array<"aa" | "bb">
 >"aa" : "aa"
 >"bb" : "bb"
 
     const b: ("aa" | "bb")[] = keys;
->b : ("aa" | "bb")[]
->keys : ("aa" | "bb")[]
+>b : Array<"aa" | "bb">
+>keys : Array<"aa" | "bb">
 }
   
 function func2() {
 >func2 : () => void
 
     const { keys, firstKey } = func({keys: ["aa", "bb"]})
->keys : ("aa" | "bb")[]
+>keys : Array<"aa" | "bb">
 >firstKey : "aa" | "bb"
->func({keys: ["aa", "bb"]}) : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
+>func({keys: ["aa", "bb"]}) : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
 >func : <T extends string>(arg: { keys: T[]; }) => { readonly keys: T[]; readonly firstKey: T; }
->{keys: ["aa", "bb"]} : { keys: ("aa" | "bb")[]; }
->keys : ("aa" | "bb")[]
->["aa", "bb"] : ("aa" | "bb")[]
+>{keys: ["aa", "bb"]} : { keys: Array<"aa" | "bb">; }
+>keys : Array<"aa" | "bb">
+>["aa", "bb"] : Array<"aa" | "bb">
 >"aa" : "aa"
 >"bb" : "bb"
 
@@ -59,33 +59,33 @@ function func2() {
 >firstKey : "aa" | "bb"
 
     const b: ("aa" | "bb")[] = keys;
->b : ("aa" | "bb")[]
->keys : ("aa" | "bb")[]
+>b : Array<"aa" | "bb">
+>keys : Array<"aa" | "bb">
 }
 
 function func3() {
 >func3 : () => void
 
     const x = func({keys: ["aa", "bb"]})
->x : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
->func({keys: ["aa", "bb"]}) : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
+>x : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
+>func({keys: ["aa", "bb"]}) : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
 >func : <T extends string>(arg: { keys: T[]; }) => { readonly keys: T[]; readonly firstKey: T; }
->{keys: ["aa", "bb"]} : { keys: ("aa" | "bb")[]; }
->keys : ("aa" | "bb")[]
->["aa", "bb"] : ("aa" | "bb")[]
+>{keys: ["aa", "bb"]} : { keys: Array<"aa" | "bb">; }
+>keys : Array<"aa" | "bb">
+>["aa", "bb"] : Array<"aa" | "bb">
 >"aa" : "aa"
 >"bb" : "bb"
 
     const a: "aa" | "bb" = x.firstKey;
 >a : "aa" | "bb"
 >x.firstKey : "aa" | "bb"
->x : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
+>x : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
 >firstKey : "aa" | "bb"
 
     const b: ("aa" | "bb")[] = x.keys;
->b : ("aa" | "bb")[]
->x.keys : ("aa" | "bb")[]
->x : { readonly keys: ("aa" | "bb")[]; readonly firstKey: "aa" | "bb"; }
->keys : ("aa" | "bb")[]
+>b : Array<"aa" | "bb">
+>x.keys : Array<"aa" | "bb">
+>x : { readonly keys: Array<"aa" | "bb">; readonly firstKey: "aa" | "bb"; }
+>keys : Array<"aa" | "bb">
 }
 

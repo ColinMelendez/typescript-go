@@ -20,7 +20,7 @@ var v = {
 
     [[]]: 0,
 >[[]] : number
->[] : undefined[]
+>[] : Array<undefined>
 >0 : 0
 
     [{}]: 0,

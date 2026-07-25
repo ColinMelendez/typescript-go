@@ -1,0 +1,133 @@
+--- old.destructuringParameterDeclaration3ES5.types
++++ new.destructuringParameterDeclaration3ES5.types
+@@= skipped -17, +17 lines =@@
+
+ function a1(...x: (number|string)[]) { }
+ >a1 : (...x: (number | string)[]) => void
+->x : (string | number)[]
++>x : Array<string | number>
+
+ function a2(...a) { }
+->a2 : (...a: any[]) => void
+->a : any[]
++>a2 : (...a: Array<any>) => void
++>a : Array<any>
+
+ function a3(...a: Array<String>) { }
+ >a3 : (...a: Array<String>) => void
+->a : String[]
++>a : Array<String>
+
+ function a4(...a: arrayString) { }
+ >a4 : (...a: arrayString) => void
+@@= skipped -25, +25 lines =@@
+ >c : any
+
+ function a10([a, b, [[c]], ...x]) { }
+->a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...any[]]) => void
++>a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...Array<any>]) => void
+ >a : any
+ >b : any
+ >c : any
+->x : any[]
++>x : Array<any>
+
+ function a11([a, b, c, ...x]: number[]) { }
+ >a11 : ([a, b, c, ...x]: number[]) => void
+ >a : number
+ >b : number
+ >c : number
+->x : number[]
++>x : Array<number>
+
+
+ var array = [1, 2, 3];
+->array : number[]
+->[1, 2, 3] : number[]
++>array : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ var array2 = [true, false, "hello"];
+->array2 : (string | boolean)[]
+->[true, false, "hello"] : (string | boolean)[]
++>array2 : Array<string | boolean>
++>[true, false, "hello"] : Array<string | boolean>
+ >true : true
+ >false : false
+ >"hello" : "hello"
+
+ a2([...array]);
+ >a2([...array]) : void
+->a2 : (...a: any[]) => void
+->[...array] : number[]
++>a2 : (...a: Array<any>) => void
++>[...array] : Array<number>
+ >...array : number
+->array : number[]
++>array : Array<number>
+
+ a1(...array);
+ >a1(...array) : void
+ >a1 : (...x: (number | string)[]) => void
+ >...array : number
+->array : number[]
++>array : Array<number>
+
+ a9([1, 2, [["string"]], false, true]);   // Parameter type is [any, any, [[any]]]
+ >a9([1, 2, [["string"]], false, true]) : void
+@@= skipped -55, +55 lines =@@
+
+ a10([1, 2, [["string"]], false, true]);   // Parameter type is any[]
+ >a10([1, 2, [["string"]], false, true]) : void
+->a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...any[]]) => void
++>a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...Array<any>]) => void
+ >[1, 2, [["string"]], false, true] : [number, number, [[string]], boolean, boolean]
+ >1 : 1
+ >2 : 2
+@@= skipped -12, +12 lines =@@
+
+ a10([1, 2, 3, false, true]);              // Parameter type is any[]
+ >a10([1, 2, 3, false, true]) : void
+->a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...any[]]) => void
++>a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...Array<any>]) => void
+ >[1, 2, 3, false, true] : [number, number, number, boolean, boolean]
+ >1 : 1
+ >2 : 2
+@@= skipped -10, +10 lines =@@
+
+ a10([1, 2]);                              // Parameter type is any[]
+ >a10([1, 2]) : void
+->a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...any[]]) => void
++>a10 : ([a, b, [[c]], ...x]: [any, any, [[any]], ...Array<any>]) => void
+ >[1, 2] : [number, number]
+ >1 : 1
+ >2 : 2
+@@= skipped -8, +8 lines =@@
+ a11([1, 2]);                              // Parameter type is number[]
+ >a11([1, 2]) : void
+ >a11 : ([a, b, c, ...x]: number[]) => void
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ // Rest parameter with generic
+ function foo<T>(...a: T[]) { }
+ >foo : <T>(...a: T[]) => void
+->a : T[]
++>a : Array<T>
+
+ foo<number|string>("hello", 1, 2);
+ >foo<number|string>("hello", 1, 2) : void
+@@= skipped -34, +34 lines =@@
+
+ function foo1<T extends Number>(...a: T[]) { }
+ >foo1 : <T extends Number>(...a: T[]) => void
+->a : T[]
++>a : Array<T>
+
+ foo1(1, 2, 3, E.a);
+ >foo1(1, 2, 3, E.a) : void

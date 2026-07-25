@@ -23,9 +23,9 @@ export function foo(x: Map<number, Foo<string>>) {
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
 	f.VerifyCodeFix(t, fourslash.VerifyCodeFixOptions{
-		Description: "Add return type 'Map<number, Foo<string, string[]>>'",
+		Description: "Add return type 'Map<number, Foo<string, Array<string>>>'",
 		NewFileContent: `export interface Foo<T, U = T[]> {}
-export function foo(x: Map<number, Foo<string>>): Map<number, Foo<string, string[]>> {
+export function foo(x: Map<number, Foo<string>>): Map<number, Foo<string, Array<string>>> {
     return x;
 }`,
 		Index: 0,

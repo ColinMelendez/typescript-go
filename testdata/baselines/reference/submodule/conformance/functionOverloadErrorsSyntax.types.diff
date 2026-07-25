@@ -1,0 +1,11 @@
+--- old.functionOverloadErrorsSyntax.types
++++ new.functionOverloadErrorsSyntax.types
+@@= skipped -22, +22 lines =@@
+ function fn5(x: string, ...y: any[], z: string);
+ >fn5 : (x: string, ...y: any[], z: string) => any
+ >x : string
+->y : any[]
++>y : Array<any>
+ >z : string
+
+ function fn5() { }

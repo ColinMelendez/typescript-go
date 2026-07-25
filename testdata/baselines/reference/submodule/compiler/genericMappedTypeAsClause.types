@@ -45,7 +45,7 @@ function f1<T extends string>() {
 
     const x3: MappedModel<T> = [1, 2, 3];  // Error
 >x3 : MappedModel<T>
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

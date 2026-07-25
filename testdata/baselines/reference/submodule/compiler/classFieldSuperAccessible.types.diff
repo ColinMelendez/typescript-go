@@ -1,0 +1,20 @@
+--- old.classFieldSuperAccessible.types
++++ new.classFieldSuperAccessible.types
+@@= skipped -33, +33 lines =@@
+ }
+ class C extends Array {
+ >C : C
+->Array : any[]
++>Array : Array<any>
+
+     foo() {
+ >foo : () => void
+@@= skipped -11, +11 lines =@@
+ >console : Console
+ >log : (...data: any[]) => void
+ >super.length : number
+->super : any[]
++>super : Array<any>
+ >length : number
+     }
+ }

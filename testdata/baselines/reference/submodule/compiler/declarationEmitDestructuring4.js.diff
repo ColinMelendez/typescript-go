@@ -1,0 +1,13 @@
+--- old.declarationEmitDestructuring4.js
++++ new.declarationEmitDestructuring4.js
+@@= skipped -26, +26 lines =@@
+
+ //// [declarationEmitDestructuring4.d.ts]
+ declare function baz([]: Iterable<any, void, undefined>): void;
+-declare function baz1([]?: number[]): void;
+-declare function baz2([[]]?: [number[]]): void;
++declare function baz1([]?: Array<number>): void;
++declare function baz2([[]]?: [Array<number>]): void;
+ declare function baz3({}: {}): void;
+ declare function baz4({}?: {
+     x: number;

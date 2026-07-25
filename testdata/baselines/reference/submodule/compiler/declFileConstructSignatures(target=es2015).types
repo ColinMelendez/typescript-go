@@ -19,7 +19,7 @@ export interface IConstructSignatureWithParameters {
 export interface IConstructSignatureWithRestParameters {
     new (a: string, ...rests: string[]): string;
 >a : string
->rests : string[]
+>rests : Array<string>
 }
 
 export interface IConstructSignatureWithOverloads {
@@ -61,7 +61,7 @@ interface IGlobalConstructSignatureWithRestParameters {
 
     new (a: string, ...rests: string[]): string;
 >a : string
->rests : string[]
+>rests : Array<string>
 
 }
 

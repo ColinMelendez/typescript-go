@@ -1,0 +1,11 @@
+--- old.crashInResolveInterface.types
++++ new.crashInResolveInterface.types
+@@= skipped -13, +13 lines =@@
+     log(message?: any, ...optionalParams: any[]): void;
+ >log : (message?: any, ...optionalParams: any[]) => void
+ >message : any
+->optionalParams : any[]
++>optionalParams : Array<any>
+ }
+
+ === file1.ts ===

@@ -142,7 +142,7 @@ do {
 
 for (let x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     use(x);
 >use(x) : any
@@ -152,7 +152,7 @@ for (let x in []) {
 
 for (const x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     use(x);
 >use(x) : any
@@ -162,7 +162,7 @@ for (const x in []) {
 
 for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     use(x);
 >use(x) : any

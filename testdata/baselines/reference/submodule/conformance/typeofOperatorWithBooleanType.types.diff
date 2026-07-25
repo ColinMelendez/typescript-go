@@ -1,0 +1,11 @@
+--- old.typeofOperatorWithBooleanType.types
++++ new.typeofOperatorWithBooleanType.types
+@@= skipped -124, +124 lines =@@
+ >z : boolean
+
+ declare var x: boolean[];
+->x : boolean[]
++>x : Array<boolean>
+
+ declare var r: () => boolean;
+ >r : () => boolean

@@ -3,7 +3,7 @@
 === varArgParamTypeCheck.ts ===
 function sequence(...sequences:{():void;}[]) {
 >sequence : (...sequences: { (): void; }[]) => void
->sequences : (() => void)[]
+>sequences : Array<() => void>
 }
 
 function callback(clb:()=>void) {

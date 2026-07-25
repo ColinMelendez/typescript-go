@@ -1,0 +1,52 @@
+--- old.spyComparisonChecking.types
++++ new.spyComparisonChecking.types
+@@= skipped -2, +2 lines =@@
+ === spyComparisonChecking.ts ===
+ interface Spy {
+     (...params: any[]): any;
+->params : any[]
++>params : Array<any>
+
+     identity: string;
+ >identity : string
+@@= skipped -10, +10 lines =@@
+
+     mostRecentCall: { args: any[]; };
+ >mostRecentCall : { args: any[]; }
+->args : any[]
++>args : Array<any>
+
+     argsForCall: any[];
+->argsForCall : any[]
++>argsForCall : Array<any>
+ }
+
+ type SpyObj<T> = T & {
+@@= skipped -17, +17 lines =@@
+
+     name: string, names: Array<keyof T>): SpyObj<T>;
+ >name : string
+->names : (keyof T)[]
++>names : Array<keyof T>
+
+ function mock<T>(spyName: string, methodNames: Array<keyof T>): SpyObj<T> {
+ >mock : <T>(spyName: string, methodNames: Array<keyof T>) => SpyObj<T>
+ >spyName : string
+->methodNames : (keyof T)[]
++>methodNames : Array<keyof T>
+
+     const spyObj = createSpyObj<T>(spyName, methodNames);
+ >spyObj : SpyObj<T>
+ >createSpyObj<T>(spyName, methodNames) : SpyObj<T>
+ >createSpyObj : <T_1>(name: string, names: Array<keyof T_1>) => SpyObj<T_1>
+ >spyName : string
+->methodNames : (keyof T)[]
++>methodNames : Array<keyof T>
+
+     for (const methodName of methodNames) {
+ >methodName : keyof T
+->methodNames : (keyof T)[]
++>methodNames : Array<keyof T>
+
+         spyObj[methodName].and.returnValue(1);
+ >spyObj[methodName].and.returnValue(1) : any

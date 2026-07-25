@@ -1,0 +1,11 @@
+--- old.tsxLibraryManagedAttributes.types
++++ new.tsxLibraryManagedAttributes.types
+@@= skipped -58, +58 lines =@@
+
+     props: P & Readonly<{children: ReactNode[]}>;
+ >props : P & Readonly<{ children: ReactNode[]; }>
+->children : ReactNode[]
++>children : Array<ReactNode>
+
+     setState(s: Partial<S>): S;
+ >setState : (s: Partial<S>) => S

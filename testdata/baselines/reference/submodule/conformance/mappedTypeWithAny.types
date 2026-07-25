@@ -80,26 +80,26 @@ type IndirectArrayish<U extends unknown[]> = Objectish<U>;
 
 function bar(arrayish: Arrayish<any>, objectish: Objectish<any>, indirectArrayish: IndirectArrayish<any>) {
 >bar : (arrayish: Arrayish<any>, objectish: Objectish<any>, indirectArrayish: IndirectArrayish<any>) => void
->arrayish : any[]
+>arrayish : Array<any>
 >objectish : Objectish<any>
 >indirectArrayish : Objectish<any>
 
     let arr: any[];
->arr : any[]
+>arr : Array<any>
 
     arr = arrayish;
->arr = arrayish : any[]
->arr : any[]
->arrayish : any[]
+>arr = arrayish : Array<any>
+>arr : Array<any>
+>arrayish : Array<any>
 
     arr = objectish;
 >arr = objectish : Objectish<any>
->arr : any[]
+>arr : Array<any>
 >objectish : Objectish<any>
 
     arr = indirectArrayish;
 >arr = indirectArrayish : Objectish<any>
->arr : any[]
+>arr : Array<any>
 >indirectArrayish : Objectish<any>
 }
 
@@ -108,8 +108,8 @@ declare function stringifyArray<T extends readonly any[]>(arr: T): { -readonly [
 >arr : T
 
 let abc: any[] = stringifyArray(void 0 as any);
->abc : any[]
->stringifyArray(void 0 as any) : string[]
+>abc : Array<any>
+>stringifyArray(void 0 as any) : Array<string>
 >stringifyArray : <T extends readonly any[]>(arr: T) => { -readonly [K in keyof T]: string; }
 >void 0 as any : any
 >void 0 : undefined
@@ -121,7 +121,7 @@ declare function stringifyPair<T extends readonly [any, any]>(arr: T): { -readon
 
 let def: [any, any] = stringifyPair(void 0 as any);
 >def : [any, any]
->stringifyPair(void 0 as any) : string[]
+>stringifyPair(void 0 as any) : Array<string>
 >stringifyPair : <T extends readonly [any, any]>(arr: T) => { -readonly [K in keyof T]: string; }
 >void 0 as any : any
 >void 0 : undefined

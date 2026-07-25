@@ -5,7 +5,7 @@
 
 type Constructor<T> = new (...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 const WithLocation = <T extends Constructor<Point>>(Base: T) => class extends Base {
 >WithLocation : <T extends Constructor<Point>>(Base: T) => { new (...args: any[]): (Anonymous class); prototype: WithLocation.(Anonymous class); } & T

@@ -1,0 +1,38 @@
+--- old.keyofIsLiteralContexualType.types
++++ new.keyofIsLiteralContexualType.types
+@@= skipped -8, +8 lines =@@
+ >b : string
+
+     let a: (keyof T)[] = ["a", "b"];
+->a : (keyof T)[]
+->["a", "b"] : ("a" | "b")[]
++>a : Array<keyof T>
++>["a", "b"] : Array<"a" | "b">
+ >"a" : "a"
+ >"b" : "b"
+
+     let b: (keyof T)[] = ["a", "b", "c"];
+->b : (keyof T)[]
+->["a", "b", "c"] : ("a" | "b" | "c")[]
++>b : Array<keyof T>
++>["a", "b", "c"] : Array<"a" | "b" | "c">
+ >"a" : "a"
+ >"b" : "b"
+ >"c" : "c"
+@@= skipped -18, +18 lines =@@
+ declare function pick<T, K extends keyof T>(obj: T, propNames: K[]): Pick<T, K>;
+ >pick : <T, K extends keyof T>(obj: T, propNames: K[]) => Pick<T, K>
+ >obj : T
+->propNames : K[]
++>propNames : Array<K>
+
+ let x = pick({ a: 10, b: 20, c: 30 }, ["a", "c"]);
+ >x : Pick<{ a: number; b: number; c: number; }, "a" | "c">
+@@= skipped -13, +13 lines =@@
+ >20 : 20
+ >c : number
+ >30 : 30
+->["a", "c"] : ("a" | "c")[]
++>["a", "c"] : Array<"a" | "c">
+ >"a" : "a"
+ >"c" : "c"

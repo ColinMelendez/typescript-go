@@ -9,7 +9,14 @@
  >kind : "apple"
  >kind : "banana"
  >kind : "cherry"
-@@= skipped -14, +14 lines =@@
+@@= skipped -8, +8 lines =@@
+ declare function isOneOf<T, U extends T>(item: T, array: readonly U[]): item is U
+ >isOneOf : <T, U extends T>(item: T, array: readonly U[]) => item is U
+ >item : T
+->array : readonly U[]
++>array : ReadonlyArray<U>
+
+ if (isOneOf(fruit.kind, ['apple', 'banana'] as const)) {
  >isOneOf(fruit.kind, ['apple', 'banana'] as const) : boolean
  >isOneOf : <T, U extends T>(item: T, array: readonly U[]) => item is U
  >fruit.kind : "apple" | "banana" | "cherry"
@@ -18,7 +25,7 @@
  >kind : "apple" | "banana" | "cherry"
  >['apple', 'banana'] as const : readonly ["apple", "banana"]
  >['apple', 'banana'] : readonly ["apple", "banana"]
-@@= skipped -9, +9 lines =@@
+@@= skipped -15, +15 lines =@@
 
      fruit.kind
  >fruit.kind : "apple" | "banana"

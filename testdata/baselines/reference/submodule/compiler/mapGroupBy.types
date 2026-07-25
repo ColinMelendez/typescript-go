@@ -2,12 +2,12 @@
 
 === mapGroupBy.ts ===
 const basic = Map.groupBy([0, 2, 8], x => x < 5 ? 'small' : 'large');
->basic : Map<"large" | "small", number[]>
->Map.groupBy([0, 2, 8], x => x < 5 ? 'small' : 'large') : Map<"large" | "small", number[]>
+>basic : Map<"large" | "small", Array<number>>
+>Map.groupBy([0, 2, 8], x => x < 5 ? 'small' : 'large') : Map<"large" | "small", Array<number>>
 >Map.groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
 >Map : MapConstructor
 >groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
->[0, 2, 8] : number[]
+>[0, 2, 8] : Array<number>
 >0 : 0
 >2 : 2
 >8 : 8
@@ -21,8 +21,8 @@ const basic = Map.groupBy([0, 2, 8], x => x < 5 ? 'small' : 'large');
 >'large' : "large"
 
 const chars = Map.groupBy('a string', c => c);
->chars : Map<string, string[]>
->Map.groupBy('a string', c => c) : Map<string, string[]>
+>chars : Map<string, Array<string>>
+>Map.groupBy('a string', c => c) : Map<string, Array<string>>
 >Map.groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
 >Map : MapConstructor
 >groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
@@ -42,8 +42,8 @@ const employees: Set<Employee> = new Set();
 >Set : SetConstructor
 
 const byRole = Map.groupBy(employees, x => x.role);
->byRole : Map<"ic" | "manager", Employee[]>
->Map.groupBy(employees, x => x.role) : Map<"ic" | "manager", Employee[]>
+>byRole : Map<"ic" | "manager", Array<Employee>>
+>Map.groupBy(employees, x => x.role) : Map<"ic" | "manager", Array<Employee>>
 >Map.groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
 >Map : MapConstructor
 >groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
@@ -55,8 +55,8 @@ const byRole = Map.groupBy(employees, x => x.role);
 >role : "ic" | "manager"
 
 const byNonKey = Map.groupBy(employees, x => x);
->byNonKey : Map<Employee, Employee[]>
->Map.groupBy(employees, x => x) : Map<Employee, Employee[]>
+>byNonKey : Map<Employee, Array<Employee>>
+>Map.groupBy(employees, x => x) : Map<Employee, Array<Employee>>
 >Map.groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>
 >Map : MapConstructor
 >groupBy : <K, T>(items: Iterable<T>, keySelector: (item: T, index: number) => K) => Map<K, T[]>

@@ -1,0 +1,22 @@
+--- old.for-of48.types
++++ new.for-of48.types
+@@= skipped -5, +5 lines =@@
+ >y : number
+
+ var array = [{ x: "", y: true }]
+->array : { x: string; y: boolean; }[]
+->[{ x: "", y: true }] : { x: string; y: boolean; }[]
++>array : Array<{ x: string; y: boolean; }>
++>[{ x: "", y: true }] : Array<{ x: string; y: boolean; }>
+ >{ x: "", y: true } : { x: string; y: boolean; }
+ >x : string
+ >"" : ""
+@@= skipped -19, +19 lines =@@
+ >E.x : E
+ >E : typeof E
+ >x : E
+->array : { x: string; y: boolean; }[]
++>array : Array<{ x: string; y: boolean; }>
+
+     x;
+ >x : string

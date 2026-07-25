@@ -45,7 +45,7 @@ function func2() {
   const optionalProp = ["hello" as const][Math.random()];
 >optionalProp : "hello" | undefined
 >["hello" as const][Math.random()] : "hello" | undefined
->["hello" as const] : "hello"[]
+>["hello" as const] : Array<"hello">
 >"hello" as const : "hello"
 >"hello" : "hello"
 >Math.random() : number

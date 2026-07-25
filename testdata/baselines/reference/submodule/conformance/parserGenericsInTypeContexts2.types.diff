@@ -1,0 +1,11 @@
+--- old.parserGenericsInTypeContexts2.types
++++ new.parserGenericsInTypeContexts2.types
+@@= skipped -21, +21 lines =@@
+ >H : any
+
+ var v6: K<X<T>, Y<Z<T>>>[];
+->v6 : K<X<T>, Y<Z<T>>>[]
++>v6 : Array<K<X<T>, Y<Z<T>>>>
+
+
+ function f1(a: E<X<T>, Y<Z<T>>>) {

@@ -1,0 +1,13 @@
+--- old.genericContextualTypes1.js
++++ new.genericContextualTypes1.js
+@@= skipped -95, +95 lines =@@
+ declare const f11: <T>(x: T) => Box<T[]>;
+ declare const f12: <T>(x: Box<T[]>) => T;
+ declare const f13: <T>(x: Box<T[]>) => T;
+-declare const arrayMap: <T, U>(f: (x: T) => U) => (a: T[]) => U[];
+-declare const arrayFilter: <T>(f: (x: T) => boolean) => (a: T[]) => T[];
++declare const arrayMap: <T, U>(f: (x: T) => U) => (a: T[]) => Array<U>;
++declare const arrayFilter: <T>(f: (x: T) => boolean) => (a: T[]) => Array<T>;
+ declare const f20: (a: string[]) => number[];
+ declare const f21: <A>(a: A[]) => A[][];
+ declare const f22: <A>(a: A[]) => A[];

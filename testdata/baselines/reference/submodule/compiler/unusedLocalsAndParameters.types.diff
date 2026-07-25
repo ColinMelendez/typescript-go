@@ -1,0 +1,11 @@
+--- old.unusedLocalsAndParameters.types
++++ new.unusedLocalsAndParameters.types
+@@= skipped -93, +93 lines =@@
+ // in a for..of statment
+ for (let i of [1, 2, 3]) {
+ >i : number
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

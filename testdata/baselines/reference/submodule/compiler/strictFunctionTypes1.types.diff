@@ -1,0 +1,58 @@
+--- old.strictFunctionTypes1.types
++++ new.strictFunctionTypes1.types
+@@= skipped -99, +99 lines =@@
+
+ declare function foo<T>(a: ReadonlyArray<T>): T;
+ >foo : <T>(a: ReadonlyArray<T>) => T
+->a : readonly T[]
++>a : ReadonlyArray<T>
+
+ let x = foo([]);  // never
+ >x : never
+ >foo([]) : never
+ >foo : <T>(a: ReadonlyArray<T>) => T
+->[] : never[]
++>[] : Array<never>
+
+ // Modified repros from #26127
+
+@@= skipped -59, +59 lines =@@
+
+ declare function coAndContraArray<T>(value: T[], func: (t: T) => void): T[];
+ >coAndContraArray : <T>(value: T[], func: (t: T) => void) => T[]
+->value : T[]
++>value : Array<T>
+ >func : (t: T) => void
+ >t : T
+
+ const t4: A[] = coAndContraArray([a], acceptUnion);
+->t4 : A[]
+->coAndContraArray([a], acceptUnion) : A[]
++>t4 : Array<A>
++>coAndContraArray([a], acceptUnion) : Array<A>
+ >coAndContraArray : <T>(value: T[], func: (t: T) => void) => T[]
+->[a] : A[]
++>[a] : Array<A>
+ >a : A
+ >acceptUnion : (x: A | number) => void
+
+ const t5: B[] = coAndContraArray([b], acceptA);
+->t5 : B[]
+->coAndContraArray([b], acceptA) : B[]
++>t5 : Array<B>
++>coAndContraArray([b], acceptA) : Array<B>
+ >coAndContraArray : <T>(value: T[], func: (t: T) => void) => T[]
+->[b] : B[]
++>[b] : Array<B>
+ >b : B
+ >acceptA : (x: A) => void
+
+ const t6: A[] = coAndContraArray([], acceptA);
+->t6 : A[]
+->coAndContraArray([], acceptA) : A[]
++>t6 : Array<A>
++>coAndContraArray([], acceptA) : Array<A>
+ >coAndContraArray : <T>(value: T[], func: (t: T) => void) => T[]
+->[] : never[]
++>[] : Array<never>
+ >acceptA : (x: A) => void

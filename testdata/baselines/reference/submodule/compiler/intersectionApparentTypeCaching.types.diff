@@ -1,0 +1,8 @@
+--- old.intersectionApparentTypeCaching.types
++++ new.intersectionApparentTypeCaching.types
+@@= skipped -9, +9 lines =@@
+ >T0 : U
+
+ type T1 = T0<string[]>;
+->T1 : string[]
++>T1 : Array<string>

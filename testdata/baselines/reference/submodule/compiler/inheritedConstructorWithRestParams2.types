@@ -23,12 +23,12 @@ declare class BaseBase<T, U> extends BaseBase2 implements IBase<T, U> {
 
     constructor(x: T, ...y: U[]);
 >x : T
->y : U[]
+>y : Array<U>
 
     constructor(x1: T, x2: T, ...y: U[]);
 >x1 : T
 >x2 : T
->y : U[]
+>y : Array<U>
 
     constructor(x1: T, x2: U, y: T);
 >x1 : T

@@ -1,0 +1,56 @@
+--- old.expandoFunctionNestedAssigmentsDeclared.types
++++ new.expandoFunctionNestedAssigmentsDeclared.types
+@@= skipped -60, +60 lines =@@
+ >forIncr : number
+
+     var forOf: any[];
+->forOf : any[]
++>forOf : Array<any>
+
+     var fromForOfBody: number;
+ >fromForOfBody : number
+@@= skipped -9, +9 lines =@@
+ >fromForOfBodyNested : number
+
+     var forIn: any[];
+->forIn : any[]
++>forIn : Array<any>
+
+     var fromForInBody: number;
+ >fromForInBody : number
+@@= skipped -133, +133 lines =@@
+
+ for(let f of (Foo.forOf = []) ){
+ >f : any
+->(Foo.forOf = []) : undefined[]
+->Foo.forOf = [] : undefined[]
+->Foo.forOf : any[]
++>(Foo.forOf = []) : Array<undefined>
++>Foo.forOf = [] : Array<undefined>
++>Foo.forOf : Array<any>
+ >Foo : typeof Foo
+->forOf : any[]
+->[] : undefined[]
++>forOf : Array<any>
++>[] : Array<undefined>
+
+     Foo.fromForOfBody = 1;
+ >Foo.fromForOfBody = 1 : 1
+@@= skipped -26, +26 lines =@@
+
+ for(let f in (Foo.forIn = []) ){
+ >f : string
+->(Foo.forIn = []) : undefined[]
+->Foo.forIn = [] : undefined[]
+->Foo.forIn : any[]
++>(Foo.forIn = []) : Array<undefined>
++>Foo.forIn = [] : Array<undefined>
++>Foo.forIn : Array<any>
+ >Foo : typeof Foo
+->forIn : any[]
+->[] : undefined[]
++>forIn : Array<any>
++>[] : Array<undefined>
+
+     Foo.fromForInBody = 1;
+ >Foo.fromForInBody = 1 : 1

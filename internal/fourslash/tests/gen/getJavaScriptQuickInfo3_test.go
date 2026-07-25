@@ -20,5 +20,5 @@ func TestGetJavaScriptQuickInfo3(t *testing.T) {
 function /**/f(a) { }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "function f(a?: number[]): void", "")
+	f.VerifyQuickInfoAt(t, "", "function f(a?: Array<number>): void", "")
 }

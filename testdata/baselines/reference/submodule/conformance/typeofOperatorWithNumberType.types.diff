@@ -1,0 +1,58 @@
+--- old.typeofOperatorWithNumberType.types
++++ new.typeofOperatorWithNumberType.types
+@@= skipped -5, +5 lines =@@
+ >NUMBER : number
+
+ var NUMBER1: number[] = [1, 2];
+->NUMBER1 : number[]
+->[1, 2] : number[]
++>NUMBER1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsString2 = typeof NUMBER1;
+ >ResultIsString2 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >typeof NUMBER1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ // number type literal
+ var ResultIsString3 = typeof 1;
+@@= skipped -47, +47 lines =@@
+ >ResultIsString8 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >typeof NUMBER1[0] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ var ResultIsString9 = typeof foo();
+@@= skipped -53, +53 lines =@@
+
+ typeof NUMBER1;
+ >typeof NUMBER1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ typeof foo();
+ >typeof foo() : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+@@= skipped -34, +34 lines =@@
+ >z : number
+
+ declare var x: number[];
+->x : number[]
++>x : Array<number>
+
+ declare var r: () => number;
+ >r : () => number
+@@= skipped -13, +13 lines =@@
+ x: typeof NUMBER1;
+ >x : any
+ >typeof NUMBER1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ r: typeof foo;
+ >r : any

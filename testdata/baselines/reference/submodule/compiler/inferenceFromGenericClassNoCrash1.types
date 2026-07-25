@@ -5,7 +5,7 @@
 
 function RenderFlagsMixin<T extends new (...args: any[]) => object>(Base?: T) {}
 >RenderFlagsMixin : <T extends new (...args: any[]) => object>(Base?: T) => void
->args : any[]
+>args : Array<any>
 >Base : T | undefined
 
 class Container<T> {

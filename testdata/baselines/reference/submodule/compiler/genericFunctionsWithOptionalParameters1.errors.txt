@@ -1,10 +1,10 @@
 genericFunctionsWithOptionalParameters1.ts(7,1): error TS2454: Variable 'utils' is used before being assigned.
 genericFunctionsWithOptionalParameters1.ts(8,1): error TS2454: Variable 'utils' is used before being assigned.
-genericFunctionsWithOptionalParameters1.ts(8,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+genericFunctionsWithOptionalParameters1.ts(8,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
 genericFunctionsWithOptionalParameters1.ts(9,1): error TS2454: Variable 'utils' is used before being assigned.
-genericFunctionsWithOptionalParameters1.ts(9,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+genericFunctionsWithOptionalParameters1.ts(9,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
 genericFunctionsWithOptionalParameters1.ts(10,1): error TS2454: Variable 'utils' is used before being assigned.
-genericFunctionsWithOptionalParameters1.ts(10,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+genericFunctionsWithOptionalParameters1.ts(10,12): error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
 
 
 ==== genericFunctionsWithOptionalParameters1.ts (7 errors) ====
@@ -21,15 +21,15 @@ genericFunctionsWithOptionalParameters1.ts(10,12): error TS2345: Argument of typ
     ~~~~~
 !!! error TS2454: Variable 'utils' is used before being assigned.
                ~~~~
-!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
     utils.fold(null, null); // no error
     ~~~~~
 !!! error TS2454: Variable 'utils' is used before being assigned.
                ~~~~
-!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
     utils.fold(null, null, null); // no error
     ~~~~~
 !!! error TS2454: Variable 'utils' is used before being assigned.
                ~~~~
-!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'unknown[] | undefined'.
+!!! error TS2345: Argument of type 'null' is not assignable to parameter of type 'Array<unknown> | undefined'.
     

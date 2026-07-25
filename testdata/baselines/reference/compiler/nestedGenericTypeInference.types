@@ -5,18 +5,18 @@
 
 declare function flat<T>(args: T[] | T[][]): void;
 >flat : <T>(args: T[] | T[][]) => void
->args : T[] | T[][]
+>args : Array<T> | Array<Array<T>>
 
 type Value = 1 | 2;
 >Value : Value
 
 declare const n: Value[] | Value[][];
->n : Value[][] | Value[]
+>n : Array<Array<Value>> | Array<Value>
 
 flat(n);
 >flat(n) : void
 >flat : <T>(args: T[] | T[][]) => void
->n : Value[][] | Value[]
+>n : Array<Array<Value>> | Array<Value>
 
 type Box<T> = { value: T };
 >Box : Box<T>
@@ -36,51 +36,51 @@ flat0(arg0);
 
 declare function flat1<T>(args: Array<T> | Array<Box<T>>): void;
 >flat1 : <T>(args: Array<T> | Array<Box<T>>) => void
->args : T[] | Box<T>[]
+>args : Array<T> | Array<Box<T>>
 
 declare const arg1: Array<string> | Array<Box<string>>;
->arg1 : string[] | Box<string>[]
+>arg1 : Array<string> | Array<Box<string>>
 
 flat1(arg1);
 >flat1(arg1) : void
 >flat1 : <T>(args: Array<T> | Array<Box<T>>) => void
->arg1 : string[] | Box<string>[]
+>arg1 : Array<string> | Array<Box<string>>
 
 declare function flat2<T>(args: Box<T> | Box<Array<T>>): void;
 >flat2 : <T>(args: Box<T> | Box<Array<T>>) => void
->args : Box<T> | Box<T[]>
+>args : Box<T> | Box<Array<T>>
 
 declare const arg2: Box<string> | Box<Array<string>>;
->arg2 : Box<string> | Box<string[]>
+>arg2 : Box<string> | Box<Array<string>>
 
 flat2(arg2);
 >flat2(arg2) : void
 >flat2 : <T>(args: Box<T> | Box<Array<T>>) => void
->arg2 : Box<string> | Box<string[]>
+>arg2 : Box<string> | Box<Array<string>>
 
 // https://github.com/oxc-project/tsgolint/issues/1058
 
 interface Column<T> {
   dataIndex?: (T | (string & {}))[]
->dataIndex : (T | (string & {}))[] | undefined
+>dataIndex : Array<T | (string & {})> | undefined
 }
 
 declare function table<T>(rows: readonly T[], columns: Column<T>[]): void
 >table : <T>(rows: readonly T[], columns: Column<T>[]) => void
->rows : readonly T[]
->columns : Column<T>[]
+>rows : ReadonlyArray<T>
+>columns : Array<Column<T>>
 
 declare const rows: { id: number }[]
->rows : { id: number; }[]
+>rows : Array<{ id: number; }>
 >id : number
 
 table(rows, [{ dataIndex: ['id'] }])
 >table(rows, [{ dataIndex: ['id'] }]) : void
 >table : <T>(rows: readonly T[], columns: Column<T>[]) => void
->rows : { id: number; }[]
->[{ dataIndex: ['id'] }] : { dataIndex: string[]; }[]
->{ dataIndex: ['id'] } : { dataIndex: string[]; }
->dataIndex : string[]
->['id'] : string[]
+>rows : Array<{ id: number; }>
+>[{ dataIndex: ['id'] }] : Array<{ dataIndex: Array<string>; }>
+>{ dataIndex: ['id'] } : { dataIndex: Array<string>; }
+>dataIndex : Array<string>
+>['id'] : Array<string>
 >'id' : "id"
 

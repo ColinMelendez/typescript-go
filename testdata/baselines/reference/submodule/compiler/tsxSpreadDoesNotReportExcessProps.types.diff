@@ -1,0 +1,11 @@
+--- old.tsxSpreadDoesNotReportExcessProps.types
++++ new.tsxSpreadDoesNotReportExcessProps.types
+@@= skipped -10, +10 lines =@@
+ >React.Component : React.Component<{ dataSource: number[]; onClick?: any; }, {}, any>
+ >React : typeof React
+ >Component : typeof React.Component
+->dataSource : number[]
++>dataSource : Array<number>
+ >onClick : any
+
+     render() {

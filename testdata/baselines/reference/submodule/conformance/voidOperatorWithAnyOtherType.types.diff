@@ -1,0 +1,40 @@
+--- old.voidOperatorWithAnyOtherType.types
++++ new.voidOperatorWithAnyOtherType.types
+@@= skipped -9, +9 lines =@@
+ >ANY1 : any
+
+ var ANY2: any[] = ["", ""];
+->ANY2 : any[]
+->["", ""] : string[]
++>ANY2 : Array<any>
++>["", ""] : Array<string>
+ >"" : ""
+ >"" : ""
+
+@@= skipped -61, +61 lines =@@
+ var ResultIsAny2 = void ANY2;
+ >ResultIsAny2 : undefined
+ >void ANY2 : undefined
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsAny3 = void A;
+ >ResultIsAny3 : undefined
+@@= skipped -37, +37 lines =@@
+ >ResultIsAny9 : undefined
+ >void ANY2[0] : undefined
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsAny10 = void obj1.x;
+@@= skipped -103, +103 lines =@@
+ void ANY2[0];
+ >void ANY2[0] : undefined
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ void ANY, ANY1;

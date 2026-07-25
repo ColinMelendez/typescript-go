@@ -1,0 +1,71 @@
+--- old.extendArray.types
++++ new.extendArray.types
+@@= skipped -1, +1 lines =@@
+
+ === extendArray.ts ===
+ var a = [1,2];
+->a : number[]
+->[1,2] : number[]
++>a : Array<number>
++>[1,2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ a.forEach(function (v,i,a) {});
+ >a.forEach(function (v,i,a) {}) : void
+->a.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->a : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->function (v,i,a) {} : (v: number, i: number, a: number[]) => void
++>a.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>a : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>function (v,i,a) {} : (v: number, i: number, a: Array<number>) => void
+ >v : number
+ >i : number
+->a : number[]
++>a : Array<number>
+
+
+ declare namespace _Core {
+@@= skipped -35, +35 lines =@@
+ >prototype : any
+
+ arr.collect = function (fn) {
+->arr.collect = function (fn) {    var res = [];    for (var i = 0; i < this.length; ++i) {        var tmp = fn(this[i]);        for (var j = 0; j < tmp.length; ++j) {            res.push(tmp[j]);        }    }    return res;} : (fn: any) => any[]
++>arr.collect = function (fn) {    var res = [];    for (var i = 0; i < this.length; ++i) {        var tmp = fn(this[i]);        for (var j = 0; j < tmp.length; ++j) {            res.push(tmp[j]);        }    }    return res;} : (fn: any) => Array<any>
+ >arr.collect : any
+ >arr : any
+ >collect : any
+->function (fn) {    var res = [];    for (var i = 0; i < this.length; ++i) {        var tmp = fn(this[i]);        for (var j = 0; j < tmp.length; ++j) {            res.push(tmp[j]);        }    }    return res;} : (fn: any) => any[]
++>function (fn) {    var res = [];    for (var i = 0; i < this.length; ++i) {        var tmp = fn(this[i]);        for (var j = 0; j < tmp.length; ++j) {            res.push(tmp[j]);        }    }    return res;} : (fn: any) => Array<any>
+ >fn : any
+
+     var res = [];
+->res : any[]
+->[] : undefined[]
++>res : Array<any>
++>[] : Array<undefined>
+
+     for (var i = 0; i < this.length; ++i) {
+ >i : number
+@@= skipped -43, +43 lines =@@
+
+             res.push(tmp[j]);
+ >res.push(tmp[j]) : number
+->res.push : (...items: any[]) => number
+->res : any[]
+->push : (...items: any[]) => number
++>res.push : (...items: Array<any>) => number
++>res : Array<any>
++>push : (...items: Array<any>) => number
+ >tmp[j] : any
+ >tmp : any
+ >j : number
+         }
+     }
+     return res;
+->res : any[]
++>res : Array<any>
+
+ };

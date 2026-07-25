@@ -1,0 +1,47 @@
+--- old.typeGuardFunctionOfFormThisErrors.types
++++ new.typeGuardFunctionOfFormThisErrors.types
+@@= skipped -94, +94 lines =@@
+ }
+
+ declare var c: number | number[];
+->c : number | number[]
++>c : number | Array<number>
+
+ if (invalidGuard(c)) {
+ >invalidGuard(c) : boolean
+ >invalidGuard : (c: any) => this is number
+->c : number | number[]
++>c : number | Array<number>
+
+     c;
+->c : number | number[]
++>c : number | Array<number>
+ }
+ else {
+     c;
+->c : number | number[]
++>c : number | Array<number>
+ }
+
+ let holder = {invalidGuard};
+@@= skipped -25, +25 lines =@@
+ >holder.invalidGuard : (c: any) => this is number
+ >holder : { invalidGuard: (c: any) => this is number; }
+ >invalidGuard : (c: any) => this is number
+->c : number | number[]
++>c : number | Array<number>
+
+     c;
+->c : number | number[]
++>c : number | Array<number>
+
+     holder;
+ >holder : { invalidGuard: (c: any) => this is number; } & number
+ }
+ else {
+     c;
+->c : number | number[]
++>c : number | Array<number>
+
+     holder;
+ >holder : { invalidGuard: (c: any) => this is number; }

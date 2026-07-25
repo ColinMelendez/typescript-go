@@ -1,0 +1,52 @@
+--- old.unknownSymbolInGenericReturnType.types
++++ new.unknownSymbolInGenericReturnType.types
+@@= skipped -5, +5 lines =@@
+
+     public static select<T, S>(values: T[], func: (v: T) => A): any[] {
+ >select : <T, S>(values: T[], func: (v: T) => A) => any[]
+->values : T[]
++>values : Array<T>
+ >func : (v: T) => A
+ >v : T
+
+         var result = new Array(values.length);
+->result : any[]
+->new Array(values.length) : any[]
++>result : Array<any>
++>new Array(values.length) : Array<any>
+ >Array : ArrayConstructor
+ >values.length : number
+->values : T[]
++>values : Array<T>
+ >length : number
+  
+         for (var i = 0; i < values.length; i++) {
+@@= skipped -18, +18 lines =@@
+ >i < values.length : boolean
+ >i : number
+ >values.length : number
+->values : T[]
++>values : Array<T>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -8, +8 lines =@@
+             result[i] = func(values[i]);
+ >result[i] = func(values[i]) : A
+ >result[i] : any
+->result : any[]
++>result : Array<any>
+ >i : number
+ >func(values[i]) : A
+ >func : (v: T) => A
+ >values[i] : T
+->values : T[]
++>values : Array<T>
+ >i : number
+         }
+  
+         return result;
+->result : any[]
++>result : Array<any>
+     }
+ }

@@ -1,5 +1,5 @@
 types.asyncGenerators.es2018.2.ts(2,12): error TS2504: Type '{}' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
-types.asyncGenerators.es2018.2.ts(8,12): error TS2504: Type 'Promise<number[]>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
+types.asyncGenerators.es2018.2.ts(8,12): error TS2504: Type 'Promise<Array<number>>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
 types.asyncGenerators.es2018.2.ts(10,7): error TS2322: Type '() => AsyncGenerator<string, void, any>' is not assignable to type '() => AsyncIterableIterator<number>'.
   Type 'AsyncGenerator<string, void, any>' is not assignable to type 'AsyncIterableIterator<number>'.
     The types returned by 'next(...)' are incompatible between these types.
@@ -101,7 +101,7 @@ types.asyncGenerators.es2018.2.ts(74,12): error TS2504: Type '{}' must have a '[
     async function * inferReturnType3() {
         yield* Promise.resolve([1, 2]);
                ~~~~~~~~~~~~~~~~~~~~~~~
-!!! error TS2504: Type 'Promise<number[]>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
+!!! error TS2504: Type 'Promise<Array<number>>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
 !!! related TS2773 types.asyncGenerators.es2018.2.ts:8:12: Did you forget to use 'await'?
     }
     const assignability1: () => AsyncIterableIterator<number> = async function * () {

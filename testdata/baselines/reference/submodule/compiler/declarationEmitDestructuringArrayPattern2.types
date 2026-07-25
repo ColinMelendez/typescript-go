@@ -58,10 +58,10 @@ var [x13, y13] = [1, "hello"];
 >"hello" : "hello"
 
 var [a3, b3] = [[x13, y13], { x: x13, y: y13 }];
->a3 : (string | number)[]
+>a3 : Array<string | number>
 >b3 : { x: number; y: string; }
->[[x13, y13], { x: x13, y: y13 }] : [(string | number)[], { x: number; y: string; }]
->[x13, y13] : (string | number)[]
+>[[x13, y13], { x: x13, y: y13 }] : [Array<string | number>, { x: number; y: string; }]
+>[x13, y13] : Array<string | number>
 >x13 : number
 >y13 : string
 >{ x: x13, y: y13 } : { x: number; y: string; }

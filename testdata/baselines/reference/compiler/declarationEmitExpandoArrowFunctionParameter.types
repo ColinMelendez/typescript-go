@@ -3,7 +3,7 @@
 === component.ts ===
 interface Props<T extends string = string> {
     colors: Array<T>;
->colors : T[]
+>colors : Array<T>
 
     value: T;
 >value : T
@@ -56,7 +56,7 @@ function Inner<T extends string>(
 >disabled : boolean | undefined
 >value : T
 >onValueChange : (value: T) => void
->colors : T[]
+>colors : Array<T>
 
     ref: { current: HTMLButtonElement | null }
 >ref : { current: HTMLButtonElement | null; }

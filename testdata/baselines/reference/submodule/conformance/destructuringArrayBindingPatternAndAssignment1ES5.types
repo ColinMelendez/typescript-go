@@ -58,10 +58,10 @@ var [b3, b4, b5]: [number, number, string] = [1, 2, "string"];
 >"string" : "string"
 
 function foo() {
->foo : () => number[]
+>foo : () => Array<number>
 
     return [1, 2, 3];
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -70,18 +70,18 @@ function foo() {
 var [b6, b7] = foo();
 >b6 : number
 >b7 : number
->foo() : number[]
->foo : () => number[]
+>foo() : Array<number>
+>foo : () => Array<number>
 
 var [...b8] = foo();
->b8 : number[]
->foo() : number[]
->foo : () => number[]
+>b8 : Array<number>
+>foo() : Array<number>
+>foo : () => Array<number>
 
 //      S is not a tuple- like type and the numeric index signature type of S is assignable to the target given in E.
 var temp = [1,2,3]
->temp : number[]
->[1,2,3] : number[]
+>temp : Array<number>
+>[1,2,3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -89,9 +89,9 @@ var temp = [1,2,3]
 var [c0, c1] = [...temp];
 >c0 : number
 >c1 : number
->[...temp] : number[]
+>[...temp] : Array<number>
 >...temp : number
->temp : number[]
+>temp : Array<number>
 
 var [c2] = [];
 >c2 : undefined

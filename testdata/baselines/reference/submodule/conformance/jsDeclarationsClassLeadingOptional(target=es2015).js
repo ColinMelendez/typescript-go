@@ -21,5 +21,5 @@ exports.Z = Z;
 
 //// [bar.d.ts]
 export declare class Z {
-    f(x: number, y: any): any[];
+    f(x: number, y: any): Array<any>;
 }

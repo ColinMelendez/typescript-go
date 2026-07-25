@@ -1,0 +1,10 @@
+--- old.ES5For-of28(target=es2015).types
++++ new.ES5For-of28(target=es2015).types
+@@= skipped -5, +5 lines =@@
+ >0 : 0
+ >b : any
+ >1 : 1
+->[2, 3] : number[]
++>[2, 3] : Array<number>
+ >2 : 2
+ >3 : 3

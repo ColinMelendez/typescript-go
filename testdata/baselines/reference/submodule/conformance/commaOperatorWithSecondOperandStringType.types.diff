@@ -1,0 +1,20 @@
+--- old.commaOperatorWithSecondOperandStringType.types
++++ new.commaOperatorWithSecondOperandStringType.types
+@@= skipped -107, +107 lines =@@
+
+ ["a", "b"], NUMBER.toString();
+ >["a", "b"], NUMBER.toString() : string
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ >NUMBER.toString() : string
+@@= skipped -54, +54 lines =@@
+ >resultIsString10 : string
+ >(["a", "b"], NUMBER.toString()) : string
+ >["a", "b"], NUMBER.toString() : string
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ >NUMBER.toString() : string

@@ -13,7 +13,7 @@ type Success<T> = T extends Micro<infer _A, infer _E, infer _R> ? _A : never;
 interface MicroIterator<T extends Micro<any, any, any>> {
   next(...args: ReadonlyArray<any>): IteratorResult<T, Success<T>>;
 >next : (...args: ReadonlyArray<any>) => IteratorResult<T, Success<T>>
->args : readonly any[]
+>args : ReadonlyArray<any>
 }
 
 interface Micro<out A, out E = never, out R = never> {

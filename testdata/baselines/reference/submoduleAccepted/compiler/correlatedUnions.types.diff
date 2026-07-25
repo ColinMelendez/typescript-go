@@ -1,6 +1,90 @@
 --- old.correlatedUnions.types
 +++ new.correlatedUnions.types
-@@= skipped -661, +661 lines =@@
+@@= skipped -77, +77 lines =@@
+
+ type SelectFieldData = { options: string[], selectedValue: string }
+ >SelectFieldData : SelectFieldData
+->options : string[]
++>options : Array<string>
+ >selectedValue : string
+
+ type FieldMap = {
+@@= skipped -123, +123 lines =@@
+ }}[K];
+
+ const data: DataEntry[] = [
+->data : DataEntry<keyof TypeMap>[]
+->[    { type: 'foo', data: 'abc' },    { type: 'foo', data: 'def' },    { type: 'bar', data: 42 },] : ({ type: "foo"; data: string; } | { type: "bar"; data: number; })[]
++>data : Array<DataEntry<keyof TypeMap>>
++>[    { type: 'foo', data: 'abc' },    { type: 'foo', data: 'def' },    { type: 'bar', data: 42 },] : Array<{ type: "foo"; data: string; } | { type: "bar"; data: number; }>
+
+     { type: 'foo', data: 'abc' },
+ >{ type: 'foo', data: 'abc' } : { type: "foo"; data: string; }
+@@= skipped -28, +28 lines =@@
+
+ function process<K extends Keys>(data: DataEntry<K>[]) {
+ >process : <K extends Keys>(data: DataEntry<K>[]) => void
+->data : DataEntry<K>[]
++>data : Array<DataEntry<K>>
+
+     data.forEach(block => {
+ >data.forEach(block => {        if (block.type in handlers) {            handlers[block.type](block.data)        }    }) : void
+->data.forEach : (callbackfn: (value: DataEntry<K>, index: number, array: DataEntry<K>[]) => void, thisArg?: any) => void
+->data : DataEntry<K>[]
+->forEach : (callbackfn: (value: DataEntry<K>, index: number, array: DataEntry<K>[]) => void, thisArg?: any) => void
++>data.forEach : (callbackfn: (value: DataEntry<K>, index: number, array: Array<DataEntry<K>>) => void, thisArg?: any) => void
++>data : Array<DataEntry<K>>
++>forEach : (callbackfn: (value: DataEntry<K>, index: number, array: Array<DataEntry<K>>) => void, thisArg?: any) => void
+ >block => {        if (block.type in handlers) {            handlers[block.type](block.data)        }    } : (block: DataEntry<K>) => void
+ >block : DataEntry<K>
+
+@@= skipped -34, +34 lines =@@
+ process(data);
+ >process(data) : void
+ >process : <K extends Keys>(data: DataEntry<K>[]) => void
+->data : DataEntry<keyof TypeMap>[]
++>data : Array<DataEntry<keyof TypeMap>>
+
+ process([{ type: 'foo', data: 'abc' }]);
+ >process([{ type: 'foo', data: 'abc' }]) : void
+ >process : <K extends Keys>(data: DataEntry<K>[]) => void
+->[{ type: 'foo', data: 'abc' }] : { type: "foo"; data: string; }[]
++>[{ type: 'foo', data: 'abc' }] : Array<{ type: "foo"; data: string; }>
+ >{ type: 'foo', data: 'abc' } : { type: "foo"; data: string; }
+ >type : "foo"
+ >'foo' : "foo"
+@@= skipped -83, +83 lines =@@
+
+ function processEvents<K extends keyof DocumentEventMap>(events: Ev<K>[]) {
+ >processEvents : <K extends keyof DocumentEventMap>(events: Ev<K>[]) => void
+->events : Ev<K>[]
++>events : Array<Ev<K>>
+
+     for (const event of events) {
+ >event : Ev<K>
+->events : Ev<K>[]
++>events : Array<Ev<K>>
+
+         document.addEventListener(event.name, (ev) => event.callback(ev), { once: event.once });
+ >document.addEventListener(event.name, (ev) => event.callback(ev), { once: event.once }) : void
+@@= skipped -90, +90 lines =@@
+ processEvents([clickEvent, scrollEvent]);
+ >processEvents([clickEvent, scrollEvent]) : void
+ >processEvents : <K extends keyof DocumentEventMap>(events: Ev<K>[]) => void
+->[clickEvent, scrollEvent] : ({ readonly name: "click"; readonly once?: boolean; readonly callback: (ev: PointerEvent) => void; } | { readonly name: "scroll"; readonly once?: boolean; readonly callback: (ev: Event) => void; })[]
++>[clickEvent, scrollEvent] : Array<{ readonly name: "click"; readonly once?: boolean; readonly callback: (ev: PointerEvent) => void; } | { readonly name: "scroll"; readonly once?: boolean; readonly callback: (ev: Event) => void; }>
+ >clickEvent : { readonly name: "click"; readonly once?: boolean; readonly callback: (ev: PointerEvent) => void; }
+ >scrollEvent : { readonly name: "scroll"; readonly once?: boolean; readonly callback: (ev: Event) => void; }
+
+ processEvents([
+ >processEvents([    { name: "click", callback: ev => console.log(ev) },    { name: "scroll", callback: ev => console.log(ev) },]) : void
+ >processEvents : <K extends keyof DocumentEventMap>(events: Ev<K>[]) => void
+->[    { name: "click", callback: ev => console.log(ev) },    { name: "scroll", callback: ev => console.log(ev) },] : ({ name: "click"; callback: (ev: PointerEvent) => void; } | { name: "scroll"; callback: (ev: Event) => void; })[]
++>[    { name: "click", callback: ev => console.log(ev) },    { name: "scroll", callback: ev => console.log(ev) },] : Array<{ name: "click"; callback: (ev: PointerEvent) => void; } | { name: "scroll"; callback: (ev: Event) => void; }>
+
+     { name: "click", callback: ev => console.log(ev) },
+ >{ name: "click", callback: ev => console.log(ev) } : { name: "click"; callback: (ev: PointerEvent) => void; }
+@@= skipped -226, +226 lines =@@
  };
 
  function func<K extends keyof MyObj>(k: K): MyObj[K]['name'] | undefined {

@@ -1,0 +1,11 @@
+--- old.alwaysStrictES6.types
++++ new.alwaysStrictES6.types
+@@= skipped -4, +4 lines =@@
+ >f : () => void
+
+     var arguments = [];
+->arguments : any[]
+->[] : never[]
++>arguments : Array<any>
++>[] : Array<never>
+ }

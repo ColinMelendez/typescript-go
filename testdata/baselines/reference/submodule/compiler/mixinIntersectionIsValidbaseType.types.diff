@@ -1,6 +1,20 @@
 --- old.mixinIntersectionIsValidbaseType.types
 +++ new.mixinIntersectionIsValidbaseType.types
-@@= skipped -14, +14 lines =@@
+@@= skipped -2, +2 lines =@@
+ === mixinIntersectionIsValidbaseType.ts ===
+ export type Constructor<T extends object = object> = new (...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ export interface Initable {
+     init(...args: any[]): void;
+ >init : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ /**
   * Plain mixin where the superclass must be Initable
   */
  export const Serializable = <K extends Constructor<Initable> & Initable>(
@@ -43,7 +57,7 @@
 
  };
 
-@@= skipped -35, +35 lines =@@
+@@= skipped -47, +47 lines =@@
  >SuperClass : K
 
      let SomeHowOkay = class A extends SuperClass {

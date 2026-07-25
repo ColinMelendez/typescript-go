@@ -1,0 +1,13 @@
+--- old.es2022IntlAPIs.types
++++ new.es2022IntlAPIs.types
+@@= skipped -52, +52 lines =@@
+ >enumerationKeys : readonly ["calendar", "collation", "currency", "numberingSystem", "timeZone", "unit"]
+
+   var supported = Intl.supportedValuesOf(key);
+->supported : string[]
+->Intl.supportedValuesOf(key) : string[]
++>supported : Array<string>
++>Intl.supportedValuesOf(key) : Array<string>
+ >Intl.supportedValuesOf : (key: "calendar" | "collation" | "currency" | "numberingSystem" | "timeZone" | "unit") => string[]
+ >Intl : typeof Intl
+ >supportedValuesOf : (key: "calendar" | "collation" | "currency" | "numberingSystem" | "timeZone" | "unit") => string[]

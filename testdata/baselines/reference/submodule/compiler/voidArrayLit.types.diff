@@ -1,0 +1,13 @@
+--- old.voidArrayLit.types
++++ new.voidArrayLit.types
+@@= skipped -1, +1 lines =@@
+
+ === voidArrayLit.ts ===
+ var va = [(() => {})()]; // ok
+->va : void[]
+->[(() => {})()] : void[]
++>va : Array<void>
++>[(() => {})()] : Array<void>
+ >(() => {})() : void
+ >(() => {}) : () => void
+ >() => {} : () => void

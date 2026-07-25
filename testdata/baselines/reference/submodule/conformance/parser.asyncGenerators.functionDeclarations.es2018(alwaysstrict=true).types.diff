@@ -1,0 +1,11 @@
+--- old.parser.asyncGenerators.functionDeclarations.es2018(alwaysstrict=true).types
++++ new.parser.asyncGenerators.functionDeclarations.es2018(alwaysstrict=true).types
+@@= skipped -109, +109 lines =@@
+
+     yield * [];
+ >yield * [] : any
+->[] : undefined[]
++>[] : Array<undefined>
+ }
+ === awaitWithValueIsOk.ts ===
+ async function * f17() {

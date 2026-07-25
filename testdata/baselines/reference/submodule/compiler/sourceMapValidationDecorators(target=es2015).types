@@ -68,7 +68,7 @@ class Greeter {
 >30 : 30
 
       ...b: string[]) {
->b : string[]
+>b : Array<string>
     }
     
     @PropertyDecorator1

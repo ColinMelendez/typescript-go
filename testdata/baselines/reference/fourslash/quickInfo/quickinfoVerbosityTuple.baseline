@@ -136,14 +136,14 @@
 //      ^^^^^^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | type ManyFruits = ({
+// | type ManyFruits = Array<{
 // |     color: string;
 // |     other: {
 // |         color: string;
 // |     };
 // | } | {
 // |     color: string;
-// | })[]
+// | }>
 // | ```
 // | 
 // | (verbosity level: 2)
@@ -151,12 +151,12 @@
 //      ^^^^^^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | type ManyFruits = ({
+// | type ManyFruits = Array<{
 // |     color: string;
 // |     other: Orange;
 // | } | {
 // |     color: string;
-// | })[]
+// | }>
 // | ```
 // | 
 // | (verbosity level: 1)
@@ -164,7 +164,7 @@
 //      ^^^^^^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | type ManyFruits = (Apple | Orange)[]
+// | type ManyFruits = Array<Apple | Orange>
 // | ```
 // | 
 // | (verbosity level: 0)
@@ -173,14 +173,14 @@
 //       ^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | const mf: ({
+// | const mf: Array<{
 // |     color: string;
 // |     other: {
 // |         color: string;
 // |     };
 // | } | {
 // |     color: string;
-// | })[]
+// | }>
 // | ```
 // | 
 // | (verbosity level: 3)
@@ -188,12 +188,12 @@
 //       ^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | const mf: ({
+// | const mf: Array<{
 // |     color: string;
 // |     other: Orange;
 // | } | {
 // |     color: string;
-// | })[]
+// | }>
 // | ```
 // | 
 // | (verbosity level: 2)
@@ -201,7 +201,7 @@
 //       ^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | const mf: (Apple | Orange)[]
+// | const mf: Array<Apple | Orange>
 // | ```
 // | 
 // | (verbosity level: 1)
@@ -536,7 +536,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\ntype ManyFruits = (Apple | Orange)[]\n```\n"
+          "value": "```typescript\ntype ManyFruits = Array<Apple | Orange>\n```\n"
         },
         "range": {
           "start": {
@@ -567,7 +567,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\ntype ManyFruits = ({\n    color: string;\n    other: Orange;\n} | {\n    color: string;\n})[]\n```\n"
+          "value": "```typescript\ntype ManyFruits = Array<{\n    color: string;\n    other: Orange;\n} | {\n    color: string;\n}>\n```\n"
         },
         "range": {
           "start": {
@@ -598,7 +598,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\ntype ManyFruits = ({\n    color: string;\n    other: {\n        color: string;\n    };\n} | {\n    color: string;\n})[]\n```\n"
+          "value": "```typescript\ntype ManyFruits = Array<{\n    color: string;\n    other: {\n        color: string;\n    };\n} | {\n    color: string;\n}>\n```\n"
         },
         "range": {
           "start": {
@@ -659,7 +659,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\nconst mf: (Apple | Orange)[]\n```\n"
+          "value": "```typescript\nconst mf: Array<Apple | Orange>\n```\n"
         },
         "range": {
           "start": {
@@ -690,7 +690,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\nconst mf: ({\n    color: string;\n    other: Orange;\n} | {\n    color: string;\n})[]\n```\n"
+          "value": "```typescript\nconst mf: Array<{\n    color: string;\n    other: Orange;\n} | {\n    color: string;\n}>\n```\n"
         },
         "range": {
           "start": {
@@ -721,7 +721,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\nconst mf: ({\n    color: string;\n    other: {\n        color: string;\n    };\n} | {\n    color: string;\n})[]\n```\n"
+          "value": "```typescript\nconst mf: Array<{\n    color: string;\n    other: {\n        color: string;\n    };\n} | {\n    color: string;\n}>\n```\n"
         },
         "range": {
           "start": {

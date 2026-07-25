@@ -5,7 +5,7 @@
 
 interface Node {
     children?: readonly Node[];
->children : readonly Node[] | undefined
+>children : ReadonlyArray<Node> | undefined
 
     index?: number;
 >index : number | undefined
@@ -56,7 +56,7 @@ function IterateNodes(data: { node: Node }) {
 // Simplified repro
 interface MyNode {
     children: MyNode[];
->children : MyNode[]
+>children : Array<MyNode>
 
     index?: number;
 >index : number | undefined

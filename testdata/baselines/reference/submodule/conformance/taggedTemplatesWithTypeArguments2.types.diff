@@ -1,0 +1,17 @@
+--- old.taggedTemplatesWithTypeArguments2.types
++++ new.taggedTemplatesWithTypeArguments2.types
+@@= skipped -3, +3 lines =@@
+ export interface SomethingTaggable {
+     <T>(t: TemplateStringsArray, ...args: T[]): SomethingNewable;
+ >t : TemplateStringsArray
+->args : T[]
++>args : Array<T>
+ }
+
+ export interface SomethingNewable {
+     new <T>(...args: T[]): any;
+->args : T[]
++>args : Array<T>
+ }
+
+ declare const tag: SomethingTaggable;

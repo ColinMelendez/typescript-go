@@ -1,0 +1,11 @@
+--- old.iteratorSpreadInCall8.types
++++ new.iteratorSpreadInCall8.types
+@@= skipped -4, +4 lines =@@
+ >Foo : Foo<T>
+
+     constructor(...s: T[]) { }
+->s : T[]
++>s : Array<T>
+ }
+
+ class SymbolIterator {

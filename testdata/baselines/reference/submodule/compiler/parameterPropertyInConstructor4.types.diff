@@ -1,0 +1,13 @@
+--- old.parameterPropertyInConstructor4.types
++++ new.parameterPropertyInConstructor4.types
+@@= skipped -4, +4 lines =@@
+ >C : C
+
+     constructor(public a: number[] = [], b: number) {
+->a : number[]
+->[] : never[]
++>a : Array<number>
++>[] : Array<never>
+ >b : number
+     }
+ }

@@ -88,7 +88,7 @@ ae = a;
 >a : any
 
 var m: number[] = a;
->m : number[]
+>m : Array<number>
 >a : any
 
 var n: { foo: string } = a;

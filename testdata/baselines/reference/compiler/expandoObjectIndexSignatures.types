@@ -76,11 +76,11 @@ obj3.x = 1;
 >1 : 1
 
 obj3.y = Object.values(obj3);  // Circularity error
->obj3.y = Object.values(obj3) : any[]
+>obj3.y = Object.values(obj3) : Array<any>
 >obj3.y : any
 >obj3 : { x: number; y: any; }
 >y : any
->Object.values(obj3) : any[]
+>Object.values(obj3) : Array<any>
 >Object.values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
 >Object : ObjectConstructor
 >values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
@@ -101,11 +101,11 @@ function f3() {
 >1 : 1
 
     obj3.y = Object.values(obj3);  // Circularity error
->obj3.y = Object.values(obj3) : any[]
+>obj3.y = Object.values(obj3) : Array<any>
 >obj3.y : any
 >obj3 : { x: number; y: any; }
 >y : any
->Object.values(obj3) : any[]
+>Object.values(obj3) : Array<any>
 >Object.values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
 >Object : ObjectConstructor
 >values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }

@@ -2,23 +2,23 @@
 
 === noImplicitAnyForIn.ts ===
 var x: {}[] = [[1, 2, 3], ["hello"]];
->x : {}[]
->[[1, 2, 3], ["hello"]] : (string[] | number[])[]
->[1, 2, 3] : number[]
+>x : Array<{}>
+>[[1, 2, 3], ["hello"]] : Array<Array<string> | Array<number>>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
->["hello"] : string[]
+>["hello"] : Array<string>
 >"hello" : "hello"
 
 for (var i in x) {
 >i : string
->x : {}[]
+>x : Array<{}>
 
     for (var j in x[i]) {
 >j : string
 >x[i] : {}
->x : {}[]
+>x : Array<{}>
 >i : string
 
         //Should yield an implicit 'any' error
@@ -26,7 +26,7 @@ for (var i in x) {
 >_j : any
 >x[i][j] : any
 >x[i] : {}
->x : {}[]
+>x : Array<{}>
 >i : string
 >j : string
     }
@@ -34,13 +34,13 @@ for (var i in x) {
     for (var k in x[0]) {
 >k : string
 >x[0] : {}
->x : {}[]
+>x : Array<{}>
 >0 : 0
 
         var k1 = x[0];
 >k1 : {}
 >x[0] : {}
->x : {}[]
+>x : Array<{}>
 >0 : 0
 
         //Should yield an implicit 'any' error
@@ -54,7 +54,7 @@ for (var i in x) {
 
 for (var a in x) {
 >a : string
->x : {}[]
+>x : Array<{}>
 
     // Should yield an implicit 'any' error.
     var b;
@@ -72,8 +72,8 @@ var idx = 0;
 >0 : 0
 
 var m = [1, 2, 3, 4, 5];
->m : number[]
->[1, 2, 3, 4, 5] : number[]
+>m : Array<number>
+>[1, 2, 3, 4, 5] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -82,16 +82,16 @@ var m = [1, 2, 3, 4, 5];
 
 // Should yield an implicit 'any' error.
 var n = [[]] || [];
->n : never[][]
->[[]] || [] : never[][]
->[[]] : never[][]
->[] : never[]
->[] : never[]
+>n : Array<Array<never>>
+>[[]] || [] : Array<Array<never>>
+>[[]] : Array<Array<never>>
+>[] : Array<never>
+>[] : Array<never>
 
 for (n[idx++] in m);
->n[idx++] : never[]
->n : never[][]
+>n[idx++] : Array<never>
+>n : Array<Array<never>>
 >idx++ : number
 >idx : number
->m : number[]
+>m : Array<number>
 

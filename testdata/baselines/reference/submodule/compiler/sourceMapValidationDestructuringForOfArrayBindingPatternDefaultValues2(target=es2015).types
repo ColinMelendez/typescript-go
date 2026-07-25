@@ -29,16 +29,16 @@ let robotB: Robot = [2, "trimmer", "trimming"];
 >"trimming" : "trimming"
 
 let robots = [robotA, robotB];
->robots : Robot[]
->[robotA, robotB] : Robot[]
+>robots : Array<Robot>
+>[robotA, robotB] : Array<Robot>
 >robotA : Robot
 >robotB : Robot
 
 function getRobots() {
->getRobots : () => Robot[]
+>getRobots : () => Array<Robot>
 
     return robots;
->robots : Robot[]
+>robots : Array<Robot>
 }
 
 let multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
@@ -58,16 +58,16 @@ let multiRobotB: MultiSkilledRobot = ["trimmer", ["trimming", "edging"]];
 >"edging" : "edging"
 
 let multiRobots = [multiRobotA, multiRobotB];
->multiRobots : MultiSkilledRobot[]
->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
+>multiRobots : Array<MultiSkilledRobot>
+>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
 >multiRobotA : MultiSkilledRobot
 >multiRobotB : MultiSkilledRobot
 
 function getMultiRobots() {
->getMultiRobots : () => MultiSkilledRobot[]
+>getMultiRobots : () => Array<MultiSkilledRobot>
 
     return multiRobots;
->multiRobots : MultiSkilledRobot[]
+>multiRobots : Array<MultiSkilledRobot>
 }
 
 let nameA: string, primarySkillA: string, secondarySkillA: string;
@@ -87,15 +87,15 @@ let numberA2: number, nameA2: string, skillA2: string, nameMA: string;
 
 let numberA3: number, robotAInfo: (number | string)[], multiRobotAInfo: (string | [string, string])[];
 >numberA3 : number
->robotAInfo : (string | number)[]
->multiRobotAInfo : (string | [string, string])[]
+>robotAInfo : Array<string | number>
+>multiRobotAInfo : Array<string | [string, string]>
 
 for ([, nameA = "noName"] of robots) {
 >[, nameA = "noName"] : [undefined, string]
 >nameA = "noName" : "noName"
 >nameA : string
 >"noName" : "noName"
->robots : Robot[]
+>robots : Array<Robot>
 
     console.log(nameA);
 >console.log(nameA) : void
@@ -109,8 +109,8 @@ for ([, nameA = "noName"] of getRobots()) {
 >nameA = "noName" : "noName"
 >nameA : string
 >"noName" : "noName"
->getRobots() : Robot[]
->getRobots : () => Robot[]
+>getRobots() : Array<Robot>
+>getRobots : () => Array<Robot>
 
     console.log(nameA);
 >console.log(nameA) : void
@@ -124,7 +124,7 @@ for ([, nameA = "noName"] of [robotA, robotB]) {
 >nameA = "noName" : "noName"
 >nameA : string
 >"noName" : "noName"
->[robotA, robotB] : Robot[]
+>[robotA, robotB] : Array<Robot>
 >robotA : Robot
 >robotB : Robot
 
@@ -154,7 +154,7 @@ for ([, [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->multiRobots : MultiSkilledRobot[]
+>multiRobots : Array<MultiSkilledRobot>
 
     console.log(primarySkillA);
 >console.log(primarySkillA) : void
@@ -182,8 +182,8 @@ for ([, [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->getMultiRobots() : MultiSkilledRobot[]
->getMultiRobots : () => MultiSkilledRobot[]
+>getMultiRobots() : Array<MultiSkilledRobot>
+>getMultiRobots : () => Array<MultiSkilledRobot>
 
     console.log(primarySkillA);
 >console.log(primarySkillA) : void
@@ -211,7 +211,7 @@ for ([, [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
+>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
 >multiRobotA : MultiSkilledRobot
 >multiRobotB : MultiSkilledRobot
 
@@ -229,7 +229,7 @@ for ([numberB = -1] of robots) {
 >numberB : number
 >-1 : -1
 >1 : 1
->robots : Robot[]
+>robots : Array<Robot>
 
     console.log(numberB);
 >console.log(numberB) : void
@@ -244,8 +244,8 @@ for ([numberB = -1] of getRobots()) {
 >numberB : number
 >-1 : -1
 >1 : 1
->getRobots() : Robot[]
->getRobots : () => Robot[]
+>getRobots() : Array<Robot>
+>getRobots : () => Array<Robot>
 
     console.log(numberB);
 >console.log(numberB) : void
@@ -260,7 +260,7 @@ for ([numberB = -1] of [robotA, robotB]) {
 >numberB : number
 >-1 : -1
 >1 : 1
->[robotA, robotB] : Robot[]
+>[robotA, robotB] : Array<Robot>
 >robotA : Robot
 >robotB : Robot
 
@@ -276,7 +276,7 @@ for ([nameB = "noName"] of multiRobots) {
 >nameB = "noName" : "noName"
 >nameB : string
 >"noName" : "noName"
->multiRobots : MultiSkilledRobot[]
+>multiRobots : Array<MultiSkilledRobot>
 
     console.log(nameB);
 >console.log(nameB) : void
@@ -290,8 +290,8 @@ for ([nameB = "noName"] of getMultiRobots()) {
 >nameB = "noName" : "noName"
 >nameB : string
 >"noName" : "noName"
->getMultiRobots() : MultiSkilledRobot[]
->getMultiRobots : () => MultiSkilledRobot[]
+>getMultiRobots() : Array<MultiSkilledRobot>
+>getMultiRobots : () => Array<MultiSkilledRobot>
 
     console.log(nameB);
 >console.log(nameB) : void
@@ -305,7 +305,7 @@ for ([nameB = "noName"] of [multiRobotA, multiRobotB]) {
 >nameB = "noName" : "noName"
 >nameB : string
 >"noName" : "noName"
->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
+>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
 >multiRobotA : MultiSkilledRobot
 >multiRobotB : MultiSkilledRobot
 
@@ -329,7 +329,7 @@ for ([numberA2 = -1, nameA2 = "noName", skillA2 = "skill"] of robots) {
 >skillA2 = "skill" : "skill"
 >skillA2 : string
 >"skill" : "skill"
->robots : Robot[]
+>robots : Array<Robot>
 
     console.log(nameA2);
 >console.log(nameA2) : void
@@ -350,8 +350,8 @@ for ([numberA2 = -1, nameA2 = "noName", skillA2 = "skill"] of getRobots()) {
 >skillA2 = "skill" : "skill"
 >skillA2 : string
 >"skill" : "skill"
->getRobots() : Robot[]
->getRobots : () => Robot[]
+>getRobots() : Array<Robot>
+>getRobots : () => Array<Robot>
 
     console.log(nameA2);
 >console.log(nameA2) : void
@@ -372,7 +372,7 @@ for ([numberA2 = -1, nameA2 = "noName", skillA2 = "skill"] of [robotA, robotB]) 
 >skillA2 = "skill" : "skill"
 >skillA2 : string
 >"skill" : "skill"
->[robotA, robotB] : Robot[]
+>[robotA, robotB] : Array<Robot>
 >robotA : Robot
 >robotB : Robot
 
@@ -405,7 +405,7 @@ for ([nameMA = "noName", [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->multiRobots : MultiSkilledRobot[]
+>multiRobots : Array<MultiSkilledRobot>
 
     console.log(nameMA);
 >console.log(nameMA) : void
@@ -436,8 +436,8 @@ for ([nameMA = "noName", [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->getMultiRobots() : MultiSkilledRobot[]
->getMultiRobots : () => MultiSkilledRobot[]
+>getMultiRobots() : Array<MultiSkilledRobot>
+>getMultiRobots : () => Array<MultiSkilledRobot>
 
     console.log(nameMA);
 >console.log(nameMA) : void
@@ -468,7 +468,7 @@ for ([nameMA = "noName", [
 >["skill1", "skill2"] : [string, string]
 >"skill1" : "skill1"
 >"skill2" : "skill2"
->[multiRobotA, multiRobotB] : MultiSkilledRobot[]
+>[multiRobotA, multiRobotB] : Array<MultiSkilledRobot>
 >multiRobotA : MultiSkilledRobot
 >multiRobotB : MultiSkilledRobot
 
@@ -481,14 +481,14 @@ for ([nameMA = "noName", [
 }
 
 for ([numberA3 = -1, ...robotAInfo] of robots) {
->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 = -1 : -1
 >numberA3 : number
 >-1 : -1
 >1 : 1
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
->robots : Robot[]
+>robotAInfo : Array<string | number>
+>robots : Array<Robot>
 
     console.log(numberA3);
 >console.log(numberA3) : void
@@ -498,15 +498,15 @@ for ([numberA3 = -1, ...robotAInfo] of robots) {
 >numberA3 : number
 }
 for ([numberA3 = -1, ...robotAInfo] of getRobots()) {
->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 = -1 : -1
 >numberA3 : number
 >-1 : -1
 >1 : 1
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
->getRobots() : Robot[]
->getRobots : () => Robot[]
+>robotAInfo : Array<string | number>
+>getRobots() : Array<Robot>
+>getRobots : () => Array<Robot>
 
     console.log(numberA3);
 >console.log(numberA3) : void
@@ -516,14 +516,14 @@ for ([numberA3 = -1, ...robotAInfo] of getRobots()) {
 >numberA3 : number
 }
 for ([numberA3 = -1, ...robotAInfo] of [robotA, robotB]) {
->[numberA3 = -1, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3 = -1, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 = -1 : -1
 >numberA3 : number
 >-1 : -1
 >1 : 1
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
->[robotA, robotB] : Robot[]
+>robotAInfo : Array<string | number>
+>[robotA, robotB] : Array<Robot>
 >robotA : Robot
 >robotB : Robot
 

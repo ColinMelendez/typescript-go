@@ -17,7 +17,7 @@ class Concrete extends Abstract {
 
 type Constructor<T = {}> = new (...args?: any[]) => T;
 >Constructor : Constructor<T>
->args : any[] | undefined
+>args : Array<any> | undefined
 
 function Mixin<TBase extends Constructor>(Base: TBase) {
 >Mixin : <TBase extends Constructor>(Base: TBase) => { new (...args?: any[]): (Anonymous class); prototype: Mixin.(Anonymous class); } & TBase

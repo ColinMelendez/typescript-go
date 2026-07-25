@@ -3,16 +3,16 @@
 === nullishCoalescingOperator12.ts ===
 const obj: { arr: any[] } = { arr: [] };
 >obj : { arr: any[]; }
->arr : any[]
->{ arr: [] } : { arr: never[]; }
->arr : never[]
->[] : never[]
+>arr : Array<any>
+>{ arr: [] } : { arr: Array<never>; }
+>arr : Array<never>
+>[] : Array<never>
 
 for (const i of obj?.arr ?? []) { }
 >i : any
->obj?.arr ?? [] : any[]
->obj?.arr : any[]
+>obj?.arr ?? [] : Array<any>
+>obj?.arr : Array<any>
 >obj : { arr: any[]; }
->arr : any[]
->[] : never[]
+>arr : Array<any>
+>[] : Array<never>
 

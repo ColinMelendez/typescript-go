@@ -19,7 +19,7 @@ interface I {
     call(thisArg: number, ...argArray: number[]): any;
 >call : (thisArg: number, ...argArray: number[]) => any
 >thisArg : number
->argArray : number[]
+>argArray : Array<number>
 }
 
 var i: I;
@@ -36,7 +36,7 @@ var r1: (a: any, b?: any) => void = i.apply;
 var r1b: (thisArg: number, ...argArray: number[]) => void = i.call;
 >r1b : (thisArg: number, ...argArray: number[]) => void
 >thisArg : number
->argArray : number[]
+>argArray : Array<number>
 >i.call : (thisArg: number, ...argArray: number[]) => any
 >i : I
 >call : (thisArg: number, ...argArray: number[]) => any
@@ -71,7 +71,7 @@ var x: {
     call(thisArg: number, ...argArray: number[]): any;
 >call : (thisArg: number, ...argArray: number[]) => any
 >thisArg : number
->argArray : number[]
+>argArray : Array<number>
 }
 
 var r2: (a: any, b?: any) => void = x.apply;
@@ -85,7 +85,7 @@ var r2: (a: any, b?: any) => void = x.apply;
 var r2b: (thisArg: number, ...argArray: number[]) => void = x.call;
 >r2b : (thisArg: number, ...argArray: number[]) => void
 >thisArg : number
->argArray : number[]
+>argArray : Array<number>
 >x.call : (thisArg: number, ...argArray: number[]) => any
 >x : { new (): number; apply(a: any, b?: any): void; call(thisArg: number, ...argArray: number[]): any; }
 >call : (thisArg: number, ...argArray: number[]) => any

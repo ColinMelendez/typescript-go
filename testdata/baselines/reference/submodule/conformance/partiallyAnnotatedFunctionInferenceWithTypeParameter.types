@@ -27,7 +27,7 @@ declare function testRest<T extends C>(a: (t: T, t1: T, ...ts: T[]) => void): T
 >a : (t: T, t1: T, ...ts: T[]) => void
 >t : T
 >t1 : T
->ts : T[]
+>ts : Array<T>
 
 
 // exactly
@@ -69,7 +69,7 @@ test((...ts: D[]) => {})
 >test((...ts: D[]) => {}) : D
 >test : <T extends C>(a: (t: T, t1: T) => void) => T
 >(...ts: D[]) => {} : (...ts: D[]) => void
->ts : D[]
+>ts : Array<D>
 
 // source function has rest arg
 testRest((t1: D) => {})
@@ -105,14 +105,14 @@ testRest((t1, t2: D, t3) => {})
 testRest((t2: D, ...t3) => {})
 >testRest((t2: D, ...t3) => {}) : D
 >testRest : <T extends C>(a: (t: T, t1: T, ...ts: T[]) => void) => T
->(t2: D, ...t3) => {} : (t2: D, t1: D, ...ts: D[]) => void
+>(t2: D, ...t3) => {} : (t2: D, t1: D, ...ts: Array<D>) => void
 >t2 : D
->t3 : [t1: D, ...ts: D[]]
+>t3 : [t1: D, ...ts: Array<D>]
 
 testRest((t2, ...t3: D[]) => {})
 >testRest((t2, ...t3: D[]) => {}) : C
 >testRest : <T extends C>(a: (t: T, t1: T, ...ts: T[]) => void) => T
 >(t2, ...t3: D[]) => {} : (t2: C, ...t3: D[]) => void
 >t2 : C
->t3 : D[]
+>t3 : Array<D>
 

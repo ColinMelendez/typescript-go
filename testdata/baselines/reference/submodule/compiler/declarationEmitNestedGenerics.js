@@ -25,4 +25,4 @@ function g(x) {
 
 //// [declarationEmitNestedGenerics.d.ts]
 declare function f<T>(p: T): <T_1>(x: T_1) => typeof p;
-declare function g<T>(x: T): T extends (infer T_1)[] ? T_1 : T;
+declare function g<T>(x: T): T extends Array<infer T_1> ? T_1 : T;

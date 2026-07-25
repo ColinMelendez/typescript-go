@@ -1,0 +1,24 @@
+--- old.crashInsourcePropertyIsRelatableToTargetProperty.types
++++ new.crashInsourcePropertyIsRelatableToTargetProperty.types
+@@= skipped -14, +14 lines =@@
+ function foo(x: "hi", items: string[]): typeof foo;
+ >foo : (x: "hi", items: string[]) => typeof foo
+ >x : "hi"
+->items : string[]
++>items : Array<string>
+ >foo : (x: "hi", items: string[]) => typeof foo
+
+ function foo(x: string, items: string[]): typeof foo {
+ >foo : (x: "hi", items: string[]) => typeof foo
+ >x : string
+->items : string[]
++>items : Array<string>
+ >foo : (x: "hi", items: string[]) => typeof foo
+
+     return null;
+@@= skipped -16, +16 lines =@@
+ >foo("hi", []) : (x: "hi", items: string[]) => typeof foo
+ >foo : (x: "hi", items: string[]) => typeof foo
+ >"hi" : "hi"
+->[] : never[]
++>[] : Array<never>

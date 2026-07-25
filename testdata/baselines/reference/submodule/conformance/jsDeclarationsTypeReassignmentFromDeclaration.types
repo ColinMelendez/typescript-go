@@ -6,21 +6,21 @@ interface Item {
 >x : string
 }
 declare const items: Item[];
->items : Item[]
+>items : Array<Item>
 
 export = items;
->items : Item[]
+>items : Array<Item>
 
 === index.js ===
 /** @type {typeof import("/some-mod")} */
 const items = [];
->items : Item[]
->[] : never[]
+>items : Array<Item>
+>[] : Array<never>
 
 module.exports = items;
->module.exports = items : Item[]
->module.exports : Item[]
->module : { exports: Item[]; }
->exports : Item[]
->items : Item[]
+>module.exports = items : Array<Item>
+>module.exports : Array<Item>
+>module : { exports: Array<Item>; }
+>exports : Array<Item>
+>items : Array<Item>
 

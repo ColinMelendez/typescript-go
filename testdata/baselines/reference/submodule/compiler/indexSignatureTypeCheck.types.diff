@@ -1,0 +1,18 @@
+--- old.indexSignatureTypeCheck.types
++++ new.indexSignatureTypeCheck.types
+@@= skipped -28, +28 lines =@@
+ >p2 : string | undefined
+
+     [...p3: any[]];
+->p3 : any[]
++>p3 : Array<any>
+
+     [p4: string, p5?: string];
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+     [p6: string, ...p7: any[]];
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+ }

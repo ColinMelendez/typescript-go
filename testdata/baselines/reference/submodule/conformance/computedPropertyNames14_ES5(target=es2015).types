@@ -17,7 +17,7 @@ class C {
 
     [[]]() { }
 >[[]] : () => void
->[] : never[]
+>[] : Array<never>
 
     static [{}]() { }
 >[{}] : () => void

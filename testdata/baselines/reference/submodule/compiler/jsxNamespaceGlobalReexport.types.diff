@@ -1,0 +1,20 @@
+--- old.jsxNamespaceGlobalReexport.types
++++ new.jsxNamespaceGlobalReexport.types
+@@= skipped -139, +139 lines =@@
+ >JSXInternal : any
+
+         Record<string, any> & { children?: ComponentChild[] },
+->children : ComponentChild[] | undefined
++>children : Array<ComponentChild> | undefined
+
+     key?: string
+ >key : string | undefined
+@@= skipped -14, +14 lines =@@
+
+     props: Attributes & P & { children?: ComponentChild[] },
+ >props : P & { children?: ComponentChild[]; }
+->children : ComponentChild[] | undefined
++>children : Array<ComponentChild> | undefined
+
+     key?: string
+ >key : string | undefined

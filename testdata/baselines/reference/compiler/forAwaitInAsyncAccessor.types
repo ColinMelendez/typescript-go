@@ -9,7 +9,7 @@ class C {
 
         for await (const y of []) {
 >y : never
->[] : never[]
+>[] : Array<never>
         }
     }
 }

@@ -1,0 +1,21 @@
+--- old.inferenceOptionalPropertiesToIndexSignatures.types
++++ new.inferenceOptionalPropertiesToIndexSignatures.types
+@@= skipped -84, +84 lines =@@
+ >query : string
+ >Object.entries(obj).map(    ([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&') : string
+ >Object.entries(obj).map(    ([k, v]) => `${k}=${encodeURIComponent(v)}`).join : (separator?: string) => string
+->Object.entries(obj).map(    ([k, v]) => `${k}=${encodeURIComponent(v)}`) : string[]
+->Object.entries(obj).map : <U>(callbackfn: (value: [string, string], index: number, array: [string, string][]) => U, thisArg?: any) => U[]
+->Object.entries(obj) : [string, string][]
++>Object.entries(obj).map(    ([k, v]) => `${k}=${encodeURIComponent(v)}`) : Array<string>
++>Object.entries(obj).map : <U>(callbackfn: (value: [string, string], index: number, array: Array<[string, string]>) => U, thisArg?: any) => Array<U>
++>Object.entries(obj) : Array<[string, string]>
+ >Object.entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }
+ >Object : ObjectConstructor
+ >entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }
+ >obj : { param1: string; param2?: string | undefined; }
+->map : <U>(callbackfn: (value: [string, string], index: number, array: [string, string][]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: [string, string], index: number, array: Array<[string, string]>) => U, thisArg?: any) => Array<U>
+
+     ([k, v]) => `${k}=${encodeURIComponent(v)}`
+ >([k, v]) => `${k}=${encodeURIComponent(v)}` : ([k, v]: [string, string]) => string

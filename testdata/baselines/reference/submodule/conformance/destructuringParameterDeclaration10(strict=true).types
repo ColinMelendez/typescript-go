@@ -8,32 +8,32 @@ export function prepareConfig({
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : never[]
+>json : Array<string>
+>[] : Array<never>
 
     } = {}
 >{} : {}
 
 }: {
   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>> | undefined
+>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>> | undefined
 
 } = {}) {
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 
 export function prepareConfigWithoutAnnotation({
->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: never[] | undefined; } | undefined; }) => void
+>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<never> | undefined; } | undefined; }) => void
 
     additionalFiles: {
 >additionalFiles : any
 
         json = []
->json : never[]
->[] : never[]
+>json : Array<never>
+>[] : Array<never>
 
     } = {}
 >{} : {}
@@ -42,7 +42,7 @@ export function prepareConfigWithoutAnnotation({
 >{} : {}
 
     json
->json : never[]
+>json : Array<never>
 }
 
 export const prepareConfigWithContextualSignature: (param:{
@@ -50,7 +50,7 @@ export const prepareConfigWithContextualSignature: (param:{
 >param : { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }
 
   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>> | undefined
+>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>> | undefined
 
 }) => void = ({
 >({    additionalFiles: {        json = []    } = {}} = {}) => {    json // string[]} : ({ additionalFiles: { json } }?: { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }) => void
@@ -59,8 +59,8 @@ export const prepareConfigWithContextualSignature: (param:{
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : never[]
+>json : Array<string>
+>[] : Array<never>
 
     } = {}
 >{} : {}
@@ -69,6 +69,6 @@ export const prepareConfigWithContextualSignature: (param:{
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 

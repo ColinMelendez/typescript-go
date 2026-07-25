@@ -1,0 +1,102 @@
+--- old.parserRealSource7.types
++++ new.parserRealSource7.types
+@@= skipped -21, +21 lines =@@
+     }
+
+     function getBaseTypeLinks(bases: ASTList, baseTypeLinks: TypeLink[]) {
+->getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => TypeLink[]
++>getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => Array<TypeLink>
+ >bases : ASTList
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+
+         if (bases) {
+ >bases : ASTList
+@@= skipped -17, +17 lines =@@
+
+             if (baseTypeLinks == null) {
+ >baseTypeLinks == null : boolean
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+
+                 baseTypeLinks = new TypeLink[];
+ >baseTypeLinks = new TypeLink[] : any
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+ >new TypeLink[] : any
+ >TypeLink[] : any
+ >TypeLink : any
+@@= skipped -46, +46 lines =@@
+                 baseTypeLinks[baseTypeLinks.length] = typeLink;
+ >baseTypeLinks[baseTypeLinks.length] = typeLink : any
+ >baseTypeLinks[baseTypeLinks.length] : TypeLink
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+ >baseTypeLinks.length : number
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+ >length : number
+ >typeLink : any
+             }
+         }
+         return baseTypeLinks;
+->baseTypeLinks : TypeLink[]
++>baseTypeLinks : Array<TypeLink>
+     }
+
+     function getBases(type: Type, typeDecl: TypeDeclaration) {
+@@= skipped -17, +17 lines =@@
+ >typeDecl : TypeDeclaration
+
+         type.extendsTypeLinks = getBaseTypeLinks(typeDecl.extendsList, type.extendsTypeLinks);
+->type.extendsTypeLinks = getBaseTypeLinks(typeDecl.extendsList, type.extendsTypeLinks) : TypeLink[]
++>type.extendsTypeLinks = getBaseTypeLinks(typeDecl.extendsList, type.extendsTypeLinks) : Array<TypeLink>
+ >type.extendsTypeLinks : any
+ >type : Type
+ >extendsTypeLinks : any
+->getBaseTypeLinks(typeDecl.extendsList, type.extendsTypeLinks) : TypeLink[]
+->getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => TypeLink[]
++>getBaseTypeLinks(typeDecl.extendsList, type.extendsTypeLinks) : Array<TypeLink>
++>getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => Array<TypeLink>
+ >typeDecl.extendsList : any
+ >typeDecl : TypeDeclaration
+ >extendsList : any
+@@= skipped -14, +14 lines =@@
+ >extendsTypeLinks : any
+
+         type.implementsTypeLinks = getBaseTypeLinks(typeDecl.implementsList, type.implementsTypeLinks);
+->type.implementsTypeLinks = getBaseTypeLinks(typeDecl.implementsList, type.implementsTypeLinks) : TypeLink[]
++>type.implementsTypeLinks = getBaseTypeLinks(typeDecl.implementsList, type.implementsTypeLinks) : Array<TypeLink>
+ >type.implementsTypeLinks : any
+ >type : Type
+ >implementsTypeLinks : any
+->getBaseTypeLinks(typeDecl.implementsList, type.implementsTypeLinks) : TypeLink[]
+->getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => TypeLink[]
++>getBaseTypeLinks(typeDecl.implementsList, type.implementsTypeLinks) : Array<TypeLink>
++>getBaseTypeLinks : (bases: ASTList, baseTypeLinks: TypeLink[]) => Array<TypeLink>
+ >typeDecl.implementsList : any
+ >typeDecl : TypeDeclaration
+ >implementsList : any
+@@= skipped -143, +143 lines =@@
+ >instanceType : any
+
+         signature.parameters = [];
+->signature.parameters = [] : never[]
++>signature.parameters = [] : Array<never>
+ >signature.parameters : any
+ >signature : any
+ >parameters : any
+->[] : never[]
++>[] : Array<never>
+
+         type.construct = new SignatureGroup();
+ >type.construct = new SignatureGroup() : any
+@@= skipped -3681, +3681 lines =@@
+ >type : any
+ >construct : any
+ >signatures : any
+->[] : never[]
++>[] : Array<never>
+
+                 (fgSym.type.construct.signatures[0].declAST == null ||
+ >(fgSym.type.construct.signatures[0].declAST == null ||                    !hasFlag(fgSym.type.construct.signatures[0].declAST.fncFlags, FncFlags.Ambient)) : boolean

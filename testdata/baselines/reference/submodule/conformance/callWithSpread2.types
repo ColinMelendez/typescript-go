@@ -22,7 +22,7 @@ declare function rest(s: string, a?: number, b?: number,  ...rest: number[]): vo
 >s : string
 >a : number | undefined
 >b : number | undefined
->rest : number[]
+>rest : Array<number>
 
 declare function normal(s: string): void;
 >normal : (s: string) => void
@@ -39,10 +39,10 @@ declare function prefix2(s: string, n: number, a?: number, b?: number): void;
 >b : number | undefined
 
 declare var ns: number[];
->ns : number[]
+>ns : Array<number>
 
 declare var mixed: (number | string)[];
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 declare var tuple: [number, string];
 >tuple : [number, string]
@@ -52,19 +52,19 @@ all(...ns)
 >all(...ns) : void
 >all : (a?: number, b?: number) => void
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 weird(...ns)
 >weird(...ns) : void
 >weird : (a?: number | string, b?: number | string) => void
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 weird(...mixed)
 >weird(...mixed) : void
 >weird : (a?: number | string, b?: number | string) => void
 >...mixed : string | number
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 weird(...tuple)
 >weird(...tuple) : void
@@ -77,14 +77,14 @@ prefix("a", ...ns)
 >prefix : (s: string, a?: number, b?: number) => void
 >"a" : "a"
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 rest("d", ...ns)
 >rest("d", ...ns) : void
 >rest : (s: string, a?: number, b?: number, ...rest: number[]) => void
 >"d" : "d"
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 
 // extra arguments
@@ -93,20 +93,20 @@ normal("g", ...ns)
 >normal : (s: string) => void
 >"g" : "g"
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 thunk(...ns)
 >thunk(...ns) : string
 >thunk : () => string
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 // bad
 all(...mixed)
 >all(...mixed) : void
 >all : (a?: number, b?: number) => void
 >...mixed : string | number
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 all(...tuple)
 >all(...tuple) : void
@@ -119,7 +119,7 @@ prefix("b", ...mixed)
 >prefix : (s: string, a?: number, b?: number) => void
 >"b" : "b"
 >...mixed : string | number
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 prefix("c", ...tuple)
 >prefix("c", ...tuple) : void
@@ -133,7 +133,7 @@ rest("e", ...mixed)
 >rest : (s: string, a?: number, b?: number, ...rest: number[]) => void
 >"e" : "e"
 >...mixed : string | number
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 rest("f", ...tuple)
 >rest("f", ...tuple) : void
@@ -146,13 +146,13 @@ prefix(...ns) // required parameters are required
 >prefix(...ns) : void
 >prefix : (s: string, a?: number, b?: number) => void
 >...ns : number
->ns : number[]
+>ns : Array<number>
 
 prefix(...mixed)
 >prefix(...mixed) : void
 >prefix : (s: string, a?: number, b?: number) => void
 >...mixed : string | number
->mixed : (string | number)[]
+>mixed : Array<string | number>
 
 prefix(...tuple)
 >prefix(...tuple) : void
@@ -165,5 +165,5 @@ prefix2("g", ...ns);
 >prefix2 : (s: string, n: number, a?: number, b?: number) => void
 >"g" : "g"
 >...ns : number
->ns : number[]
+>ns : Array<number>
 

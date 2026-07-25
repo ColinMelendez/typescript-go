@@ -2,7 +2,8 @@
 +++ new.types.asyncGenerators.es2018.2.errors.txt
 @@= skipped -0, +0 lines =@@
  types.asyncGenerators.es2018.2.ts(2,12): error TS2504: Type '{}' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
- types.asyncGenerators.es2018.2.ts(8,12): error TS2504: Type 'Promise<number[]>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
+-types.asyncGenerators.es2018.2.ts(8,12): error TS2504: Type 'Promise<number[]>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
++types.asyncGenerators.es2018.2.ts(8,12): error TS2504: Type 'Promise<Array<number>>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
  types.asyncGenerators.es2018.2.ts(10,7): error TS2322: Type '() => AsyncGenerator<string, void, any>' is not assignable to type '() => AsyncIterableIterator<number>'.
 -  Call signature return types 'AsyncGenerator<string, void, any>' and 'AsyncIterableIterator<number>' are incompatible.
 +  Type 'AsyncGenerator<string, void, any>' is not assignable to type 'AsyncIterableIterator<number>'.
@@ -81,7 +82,14 @@
      The types returned by 'next(...)' are incompatible between these types.
        Type 'Promise<IteratorResult<string, void>>' is not assignable to type 'Promise<IteratorResult<number, any>>'.
          Type 'IteratorResult<string, void>' is not assignable to type 'IteratorResult<number, any>'.
-@@= skipped -42, +42 lines =@@
+@@= skipped -36, +36 lines =@@
+     async function * inferReturnType3() {
+         yield* Promise.resolve([1, 2]);
+                ~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2504: Type 'Promise<number[]>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
++!!! error TS2504: Type 'Promise<Array<number>>' must have a '[Symbol.asyncIterator]()' method that returns an async iterator.
+ !!! related TS2773 types.asyncGenerators.es2018.2.ts:8:12: Did you forget to use 'await'?
+     }
      const assignability1: () => AsyncIterableIterator<number> = async function * () {
            ~~~~~~~~~~~~~~
  !!! error TS2322: Type '() => AsyncGenerator<string, void, any>' is not assignable to type '() => AsyncIterableIterator<number>'.
@@ -90,7 +98,7 @@
  !!! error TS2322:     The types returned by 'next(...)' are incompatible between these types.
  !!! error TS2322:       Type 'Promise<IteratorResult<string, void>>' is not assignable to type 'Promise<IteratorResult<number, any>>'.
  !!! error TS2322:         Type 'IteratorResult<string, void>' is not assignable to type 'IteratorResult<number, any>'.
-@@= skipped -12, +12 lines =@@
+@@= skipped -18, +18 lines =@@
      const assignability2: () => AsyncIterableIterator<number> = async function * () {
            ~~~~~~~~~~~~~~
  !!! error TS2322: Type '() => AsyncGenerator<string, void, unknown>' is not assignable to type '() => AsyncIterableIterator<number>'.

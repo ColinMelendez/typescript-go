@@ -21,10 +21,10 @@ export const c = { foo: foo() };`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
 	f.VerifyCodeFix(t, fourslash.VerifyCodeFixOptions{
-		Description: "Add annotation of type '{ foo: number[]; }'",
+		Description: "Add annotation of type '{ foo: Array<number>; }'",
 		NewFileContent: `function foo(): number[] { return [42]; }
 export const c: {
-    foo: number[];
+    foo: Array<number>;
 } = { foo: foo() };`,
 		Index: 0,
 	})

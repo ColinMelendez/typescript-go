@@ -2,6 +2,6 @@
 
 === parserTypeQuery7.ts ===
 var v: typeof A[]
->v : any[]
+>v : Array<any>
 >A : any
 

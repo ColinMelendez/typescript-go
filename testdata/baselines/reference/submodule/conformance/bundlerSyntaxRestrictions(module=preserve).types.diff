@@ -1,0 +1,11 @@
+--- old.bundlerSyntaxRestrictions(module=preserve).types
++++ new.bundlerSyntaxRestrictions(module=preserve).types
+@@= skipped -2, +2 lines =@@
+ === /node_modules/@types/node/index.d.ts ===
+ declare var require: (...args: any[]) => any;
+ >require : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ === /ambient.d.ts ===
+ declare module "fs" {

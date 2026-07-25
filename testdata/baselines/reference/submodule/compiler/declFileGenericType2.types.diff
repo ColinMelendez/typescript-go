@@ -1,0 +1,27 @@
+--- old.declFileGenericType2.types
++++ new.declFileGenericType2.types
+@@= skipped -84, +84 lines =@@
+ >AbstractElementController : typeof AbstractElementController
+
+         public _controllers: templa.mvc.IController<templa.mvc.IModel>[];
+->_controllers : templa.mvc.IController<templa.mvc.IModel>[]
++>_controllers : Array<templa.mvc.IController<templa.mvc.IModel>>
+ >templa : any
+ >mvc : any
+ >templa : any
+@@= skipped -12, +12 lines =@@
+ >super : typeof AbstractElementController
+
+             this._controllers = [];
+->this._controllers = [] : never[]
+->this._controllers : templa.mvc.IController<templa.mvc.IModel>[]
++>this._controllers = [] : Array<never>
++>this._controllers : Array<templa.mvc.IController<templa.mvc.IModel>>
+ >this : this
+->_controllers : templa.mvc.IController<templa.mvc.IModel>[]
+->[] : never[]
++>_controllers : Array<templa.mvc.IController<templa.mvc.IModel>>
++>[] : Array<never>
+         }
+     }
+ }

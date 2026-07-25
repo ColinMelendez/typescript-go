@@ -760,7 +760,7 @@ declare module "Function/Return" {
 
     export type Return<F extends Function> = F extends ((...args: any[]) => infer R) ? R : never;
 >Return : Return<F>
->args : any[]
+>args : Array<any>
 }
 declare module "Iteration/Prev" {
 >"Iteration/Prev" : typeof import("Iteration/Prev")

@@ -1,0 +1,11 @@
+--- old.checkSuperCallBeforeThisAccessing8.types
++++ new.checkSuperCallBeforeThisAccessing8.types
+@@= skipped -4, +4 lines =@@
+ >Base : Base
+
+     constructor(...arg) {
+->arg : any[]
++>arg : Array<any>
+     }
+ }
+ class Super extends Base {

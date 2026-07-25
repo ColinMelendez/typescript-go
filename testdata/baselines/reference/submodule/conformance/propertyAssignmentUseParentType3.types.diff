@@ -23,8 +23,9 @@
 +>foo2 : { (): any[]; join: string; }
 
      return [];
- >[] : undefined[]
-@@= skipped -13, +13 lines =@@
+->[] : undefined[]
++>[] : Array<undefined>
+ }
  foo2.join = "";
  >foo2.join = "" : ""
  >foo2.join : string
@@ -39,7 +40,7 @@
 
      return "";
  >"" : ""
-@@= skipped -13, +13 lines =@@
+@@= skipped -26, +26 lines =@@
  foo3.trim = "";
  >foo3.trim = "" : ""
  >foo3.trim : string

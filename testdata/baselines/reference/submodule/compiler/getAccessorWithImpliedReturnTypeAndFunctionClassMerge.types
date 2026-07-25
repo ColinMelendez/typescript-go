@@ -3,7 +3,7 @@
 === getAccessorWithImpliedReturnTypeAndFunctionClassMerge.ts ===
 declare function _<T>(value: Array<T>): _<T>;
 >_ : typeof _
->value : T[]
+>value : Array<T>
 
 declare function _<T>(value: T): _<T>;
 >_ : typeof _
@@ -24,7 +24,7 @@ declare namespace _ {
         (value: T, index: number, list: T[]): TResult;
 >value : T
 >index : number
->list : T[]
+>list : Array<T>
     }
 }
 

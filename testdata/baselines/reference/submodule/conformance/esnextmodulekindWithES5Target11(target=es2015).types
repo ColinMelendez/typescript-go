@@ -3,7 +3,7 @@
 === esnextmodulekindWithES5Target11.ts ===
 declare function foo(...args: any[]): any;
 >foo : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 @foo
 >foo : (...args: any[]) => any

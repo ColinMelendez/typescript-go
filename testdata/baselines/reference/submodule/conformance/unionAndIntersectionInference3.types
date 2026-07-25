@@ -8,12 +8,12 @@ type Maybe<T> = T | undefined;
 
 declare function concatMaybe<T>(...args: (Maybe<T> | Maybe<T>[])[]): T[];
 >concatMaybe : <T>(...args: (Maybe<T> | Maybe<T>[])[]) => T[]
->args : (Maybe<T>[] | Maybe<T>)[]
+>args : Array<Array<Maybe<T>> | Maybe<T>>
 
 concatMaybe([1, 2, 3], 4);
->concatMaybe([1, 2, 3], 4) : number[]
+>concatMaybe([1, 2, 3], 4) : Array<number>
 >concatMaybe : <T>(...args: (Maybe<T> | Maybe<T>[])[]) => T[]
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -100,42 +100,42 @@ g2 = g1;
 
 declare function foo1<T>(obj: string[] & Iterable<T>): T;
 >foo1 : <T>(obj: string[] & Iterable<T>) => T
->obj : string[] & Iterable<T>
+>obj : Array<string> & Iterable<T>
 
 declare function foo2<T>(obj: string[] & T): T;
 >foo2 : <T>(obj: string[] & T) => T
->obj : string[] & T
+>obj : Array<string> & T
 
 declare let sa: string[];
->sa : string[]
+>sa : Array<string>
 
 declare let sx: string[] & { extra: number };
->sx : string[] & { extra: number; }
+>sx : Array<string> & { extra: number; }
 >extra : number
 
 let x1 = foo1(sa);  // string
 >x1 : string
 >foo1(sa) : string
 >foo1 : <T>(obj: string[] & Iterable<T>) => T
->sa : string[]
+>sa : Array<string>
 
 let y1 = foo1(sx);  // string
 >y1 : string
 >foo1(sx) : string
 >foo1 : <T>(obj: string[] & Iterable<T>) => T
->sx : string[] & { extra: number; }
+>sx : Array<string> & { extra: number; }
 
 let x2 = foo2(sa);  // unknown
 >x2 : unknown
 >foo2(sa) : unknown
 >foo2 : <T>(obj: string[] & T) => T
->sa : string[]
+>sa : Array<string>
 
 let y2 = foo2(sx);  // { extra: number }
 >y2 : { extra: number; }
 >foo2(sx) : { extra: number; }
 >foo2 : <T>(obj: string[] & T) => T
->sx : string[] & { extra: number; }
+>sx : Array<string> & { extra: number; }
 
 // Repro from #33490
 

@@ -1,0 +1,78 @@
+--- old.ifDoWhileStatements.types
++++ new.ifDoWhileStatements.types
+@@= skipped -146, +146 lines =@@
+ >/[a-z]/ : RegExp
+
+ if ([]) { }
+->[] : never[]
++>[] : Array<never>
+
+ while ([]) { }
+->[] : never[]
++>[] : Array<never>
+
+ do { }while([])
+->[] : never[]
++>[] : Array<never>
+
+ if ([1, 2]) { }
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ while ([1, 2]) { }
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ do { }while([1, 2])
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -181, +181 lines =@@
+ >g : RegExp
+
+ var h = [];
+->h : any[]
+->[] : never[]
++>h : Array<any>
++>[] : Array<never>
+
+ if (h) { }
+->h : any[]
++>h : Array<any>
+
+ while (h) { }
+->h : any[]
++>h : Array<any>
+
+ do { }while(h)
+->h : any[]
++>h : Array<any>
+
+ var i = [1, 2];
+->i : number[]
+->[1, 2] : number[]
++>i : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ if (i) { }
+->i : number[]
++>i : Array<number>
+
+ while (i) { }
+->i : number[]
++>i : Array<number>
+
+ do { }while(i)
+->i : number[]
++>i : Array<number>
+
+ var j = {};
+ >j : {}

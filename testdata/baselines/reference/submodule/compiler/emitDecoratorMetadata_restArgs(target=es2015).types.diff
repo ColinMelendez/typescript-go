@@ -1,0 +1,36 @@
+--- old.emitDecoratorMetadata_restArgs(target=es2015).types
++++ new.emitDecoratorMetadata_restArgs(target=es2015).types
+@@= skipped -13, +13 lines =@@
+ >A : A
+
+     constructor(...args) {}
+->args : any[]
++>args : Array<any>
+
+     @MyMethodDecorator
+ >MyMethodDecorator : MethodDecorator
+
+     method(...args) {}
+->method : (...args: any[]) => void
+->args : any[]
++>method : (...args: Array<any>) => void
++>args : Array<any>
+ }
+
+ @MyClassDecorator
+@@= skipped -17, +17 lines =@@
+ >B : B
+
+     constructor(...args: number[]) {}
+->args : number[]
++>args : Array<number>
+
+     @MyMethodDecorator
+ >MyMethodDecorator : MethodDecorator
+@@= skipped -8, +8 lines =@@
+     method(this: this, ...args: string[]) {}
+ >method : (this: this, ...args: string[]) => void
+ >this : this
+->args : string[]
++>args : Array<string>
+ }

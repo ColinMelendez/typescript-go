@@ -1,0 +1,11 @@
+--- old.taggedTemplatesInDifferentScopes.types
++++ new.taggedTemplatesInDifferentScopes.types
+@@= skipped -3, +3 lines =@@
+ export function tag(parts: TemplateStringsArray, ...values: any[]) {
+ >tag : (parts: TemplateStringsArray, ...values: any[]) => string
+ >parts : TemplateStringsArray
+->values : any[]
++>values : Array<any>
+
+     return parts[0];
+ >parts[0] : string

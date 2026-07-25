@@ -6,7 +6,7 @@ type Unpacked<T> =
 
     T extends (infer U)[] ? U :
     T extends (...args: any[]) => infer U ? U :
->args : any[]
+>args : Array<any>
 
     T extends Promise<infer U> ? U :
     T;
@@ -79,7 +79,7 @@ type T12 = ReturnType<(<T>() => T)>;  // {}
 >T12 : unknown
 
 type T13 = ReturnType<(<T extends U, U extends number[]>() => T)>;  // number[]
->T13 : number[]
+>T13 : Array<number>
 
 type T14 = ReturnType<typeof f1>;  // { a: number, b: string }
 >T14 : { a: number; b: string; }
@@ -98,7 +98,7 @@ type T18 = ReturnType<Function>;  // Error
 >T18 : any
 
 type T19<T extends any[]> = ReturnType<(x: string, ...args: T) => T[]>;  // T[]
->T19 : T[]
+>T19 : Array<T>
 >x : string
 >args : T
 
@@ -123,12 +123,12 @@ type U15 = InstanceType<typeof Abstract>;  // Abstract
 >Abstract : typeof Abstract
 
 type U16<T extends any[]> = InstanceType<new (x: string, ...args: T) => T[]>;  // T[]
->U16 : T[]
+>U16 : Array<T>
 >x : string
 >args : T
 
 type U17<T extends any[]> = InstanceType<abstract new (x: string, ...args: T) => T[]>;  // T[]
->U17 : T[]
+>U17 : Array<T>
 >x : string
 >args : T
 
@@ -150,7 +150,7 @@ type T22 = ArgumentType<(x?: string) => number>;  // string | undefined
 
 type T23 = ArgumentType<(...args: string[]) => number>;  // string
 >T23 : string
->args : string[]
+>args : Array<string>
 
 type T24 = ArgumentType<(x: string, y: string) => number>;  // Error
 >T24 : any

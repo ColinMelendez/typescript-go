@@ -1,0 +1,26 @@
+--- old.inferredNonidentifierTypesGetQuotes.js
++++ new.inferredNonidentifierTypesGetQuotes.js
+@@= skipped -11, +11 lines =@@
+
+
+ //// [inferredNonidentifierTypesGetQuotes.d.ts]
+-declare var x: ({
+-    "a-b": string;
+-} | {
+-    "a-b"?: undefined;
+-})[];
+-declare var y: ({
+-    "a-b": string;
+-} | {
+-    "a-b"?: undefined;
+-})[];
++declare var x: Array<{
++    "a-b": string;
++} | {
++    "a-b"?: undefined;
++}>;
++declare var y: Array<{
++    "a-b": string;
++} | {
++    "a-b"?: undefined;
++}>;

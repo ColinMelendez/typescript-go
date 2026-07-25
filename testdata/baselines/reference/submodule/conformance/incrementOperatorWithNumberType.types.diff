@@ -1,0 +1,40 @@
+--- old.incrementOperatorWithNumberType.types
++++ new.incrementOperatorWithNumberType.types
+@@= skipped -5, +5 lines =@@
+ >NUMBER : number
+
+ var NUMBER1: number[] = [1, 2];
+->NUMBER1 : number[]
+->[1, 2] : number[]
++>NUMBER1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -67, +67 lines =@@
+ >ResultIsNumber7 : number
+ >NUMBER1[0]++ : number
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ // miss assignment operators
+@@= skipped -11, +11 lines =@@
+ ++NUMBER1[0];
+ >++NUMBER1[0] : number
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ ++objA.a;
+@@= skipped -32, +32 lines =@@
+ NUMBER1[0]++;
+ >NUMBER1[0]++ : number
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ objA.a++;

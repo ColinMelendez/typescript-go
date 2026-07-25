@@ -6,9 +6,9 @@ class C {
 
     set X(...v) { }
 >X : any
->v : any[]
+>v : Array<any>
 
     static set X(...v2) { }
 >X : any
->v2 : any[]
+>v2 : Array<any>
 }

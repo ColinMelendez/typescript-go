@@ -1,0 +1,38 @@
+--- old.badArraySyntax.types
++++ new.badArraySyntax.types
+@@= skipped -9, +9 lines =@@
+ }
+
+ var a1: Z[] = [];
+->a1 : Z[]
+->[] : undefined[]
++>a1 : Array<Z>
++>[] : Array<undefined>
+
+ var a2 = new Z[];
+ >a2 : any
+@@= skipped -18, +18 lines =@@
+ > : any
+
+ var a4: Z[] = new Z[];
+->a4 : Z[]
++>a4 : Array<Z>
+ >new Z[] : any
+ >Z[] : any
+ >Z : typeof Z
+ > : any
+
+ var a5: Z[] = new Z[]();
+->a5 : Z[]
++>a5 : Array<Z>
+ >new Z[]() : any
+ >Z[] : any
+ >Z : typeof Z
+ > : any
+
+ var a6: Z[][] = new   Z     [      ]   [  ];
+->a6 : Z[][]
++>a6 : Array<Array<Z>>
+ >new   Z     [      ]   [  ] : any
+ >Z     [      ]   [  ] : any
+ >Z     [      ] : any

@@ -1,0 +1,13 @@
+--- old.typeParameterConstraintInstantiation.types
++++ new.typeParameterConstraintInstantiation.types
+@@= skipped -13, +13 lines =@@
+ >m : Mapper<string>
+
+ var a = m.map((x: string) => x);  // string[]
+->a : string[]
+->m.map((x: string) => x) : string[]
++>a : Array<string>
++>m.map((x: string) => x) : Array<string>
+ >m.map : <U extends string, V extends U[]>(f: (item: string) => U) => V
+ >m : Mapper<string>
+ >map : <U extends string, V extends U[]>(f: (item: string) => U) => V

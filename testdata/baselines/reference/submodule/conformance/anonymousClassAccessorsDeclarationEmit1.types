@@ -26,7 +26,7 @@ class A {
 >A : A
 
   constructor(...args: any[]) {}
->args : any[]
+>args : Array<any>
 }
 
 export function Mixin<T extends typeof A>(Super: T) {

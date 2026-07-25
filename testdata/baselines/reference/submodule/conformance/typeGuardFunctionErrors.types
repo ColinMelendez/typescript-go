@@ -283,8 +283,8 @@ interface I2 {
 
 // Reference to rest parameter
 function b4(...a): a is A {
->b4 : (...a: any[]) => a is A
->a : any[]
+>b4 : (...a: Array<any>) => a is A
+>a : Array<any>
 
     return true;
 >true : true

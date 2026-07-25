@@ -1,0 +1,11 @@
+--- old.thisCapture1.types
++++ new.thisCapture1.types
+@@= skipped -9, +9 lines =@@
+
+     public getSettings(keys: string[]): any {
+ >getSettings : (keys: string[]) => any
+->keys : string[]
++>keys : Array<string>
+
+         var ret: any;
+ >ret : any

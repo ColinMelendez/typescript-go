@@ -10,8 +10,8 @@ var ANY1;
 >ANY1 : any
 
 var ANY2: any[] = ["", ""];
->ANY2 : any[]
->["", ""] : string[]
+>ANY2 : Array<any>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -71,7 +71,7 @@ var ResultIsBoolean1 = !ANY1;
 var ResultIsBoolean2 = !ANY2;
 >ResultIsBoolean2 : boolean
 >!ANY2 : false
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsBoolean3 = !A;
 >ResultIsBoolean3 : boolean
@@ -108,7 +108,7 @@ var ResultIsBoolean9 = !ANY2[0];
 >ResultIsBoolean9 : boolean
 >!ANY2[0] : boolean
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsBoolean10 = !obj1.x;
@@ -211,7 +211,7 @@ var ResultIsBoolean21 = !!!(ANY + ANY1);
 !ANY2[0];
 >!ANY2[0] : boolean
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 !ANY, ANY1;

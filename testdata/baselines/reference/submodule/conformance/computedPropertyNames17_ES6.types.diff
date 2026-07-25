@@ -1,0 +1,11 @@
+--- old.computedPropertyNames17_ES6.types
++++ new.computedPropertyNames17_ES6.types
+@@= skipped -18, +18 lines =@@
+
+     get [[]]() { return 0; }
+ >[[]] : number
+->[] : undefined[]
++>[] : Array<undefined>
+ >0 : 0
+
+     set [{}](v) { }

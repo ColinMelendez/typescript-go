@@ -79,10 +79,10 @@ class MyMap implements Map<string, number> {
 >MyMap : MyMap
 
     declare private _keys: string[];
->_keys : string[]
+>_keys : Array<string>
 
     declare private _values: number[];
->_values : number[]
+>_values : Array<number>
 
     declare size: number;
 >size : number
@@ -169,9 +169,9 @@ class MyMap implements Map<string, number> {
 
         yield* this._values;
 >yield* this._values : any
->this._values : number[]
+>this._values : Array<number>
 >this : this
->_values : number[]
+>_values : Array<number>
     }
 }
 

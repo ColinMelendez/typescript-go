@@ -1,0 +1,11 @@
+--- old.functionWithDefaultParameterWithNoStatements15.types
++++ new.functionWithDefaultParameterWithNoStatements15.types
+@@= skipped -1, +1 lines =@@
+
+ === functionWithDefaultParameterWithNoStatements15.ts ===
+ var v: any[];
+->v : any[]
++>v : Array<any>
+
+ function foo(a = (1 + 1)) { }
+ >foo : (a?: number) => void

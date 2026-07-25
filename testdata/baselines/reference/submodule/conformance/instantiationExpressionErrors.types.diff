@@ -1,0 +1,11 @@
+--- old.instantiationExpressionErrors.types
++++ new.instantiationExpressionErrors.types
+@@= skipped -48, +48 lines =@@
+ >f<number : boolean
+ >f : { <T>(): T; g<U>(): U; }
+ >number : any
+->['g'] : string[]
++>['g'] : Array<string>
+ >'g' : "g"
+
+ const a7 = (f<number>)['g'];

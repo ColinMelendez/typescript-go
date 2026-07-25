@@ -329,7 +329,7 @@ declare function tag<T>(
 >strings : TemplateStringsArray
 
   ...values: number[]
->values : number[]
+>values : Array<number>
 
 ): T | null;
 

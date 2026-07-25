@@ -1,0 +1,20 @@
+--- old.constructorOverloadsWithOptionalParameters.types
++++ new.constructorOverloadsWithOptionalParameters.types
+@@= skipped -8, +8 lines =@@
+
+     constructor(x?, y?: any[]); 
+ >x : any
+->y : any[]
++>y : Array<any>
+
+     constructor() {
+     }
+@@= skipped -14, +14 lines =@@
+
+     constructor(x?, y?: any[]); 
+ >x : any
+->y : any[]
++>y : Array<any>
+
+     constructor() {
+     }

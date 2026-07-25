@@ -11,7 +11,7 @@ declare var t2: [number, number];
 >t2 : [number, number]
 
 declare var arr: number[];
->arr : number[]
+>arr : Array<number>
 
 var len0: 0 = t0.length;
 >len0 : 0
@@ -34,7 +34,7 @@ var len2: 2 = t2.length;
 var lena: number = arr.length;
 >lena : number
 >arr.length : number
->arr : number[]
+>arr : Array<number>
 >length : number
 
 var t1 = t2; // error
@@ -56,12 +56,12 @@ var c: 1 = b;
 >b : 1
 
 t1 = arr; // error with or without strict
->t1 = arr : number[]
+>t1 = arr : Array<number>
 >t1 : [number]
->arr : number[]
+>arr : Array<number>
 
 arr = t1; // ok with or without strict
 >arr = t1 : [number]
->arr : number[]
+>arr : Array<number>
 >t1 : [number]
 

@@ -1,0 +1,11 @@
+--- old.functionOverloads22.types
++++ new.functionOverloads22.types
+@@= skipped -16, +16 lines =@@
+ >bar : any
+ >a : any
+ >b : any
+->[{a:""}] : { a: string; }[]
++>[{a:""}] : Array<{ a: string; }>
+ >{a:""} : { a: string; }
+ >a : string
+ >"" : ""

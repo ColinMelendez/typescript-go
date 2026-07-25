@@ -1,0 +1,20 @@
+--- old.sourceMapValidationFunctions.types
++++ new.sourceMapValidationFunctions.types
+@@= skipped -21, +21 lines =@@
+ >n : number
+ >10 : 10
+ >x : string | undefined
+->restParams : string[]
++>restParams : Array<string>
+
+     greetings++;
+ >greetings++ : number
+@@= skipped -15, +15 lines =@@
+ >n : number
+ >10 : 10
+ >x : string | undefined
+->restParams : string[]
++>restParams : Array<string>
+ {
+     return;
+ }

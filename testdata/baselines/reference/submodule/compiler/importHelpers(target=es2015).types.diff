@@ -1,0 +1,24 @@
+--- old.importHelpers(target=es2015).types
++++ new.importHelpers(target=es2015).types
+@@= skipped -84, +84 lines =@@
+ export declare function __assign(t: any, ...sources: any[]): any;
+ >__assign : (t: any, ...sources: any[]) => any
+ >t : any
+->sources : any[]
++>sources : Array<any>
+
+ export declare function __decorate(decorators: Function[], target: any, key?: string | symbol, desc?: any): any;
+ >__decorate : (decorators: Function[], target: any, key?: string | symbol, desc?: any) => any
+->decorators : Function[]
++>decorators : Array<Function>
+ >target : any
+ >key : string | symbol | undefined
+ >desc : any
+@@= skipped -28, +28 lines =@@
+
+ export declare function __makeTemplateObject(cooked: string[], raw: string[]): TemplateStringsArray;
+ >__makeTemplateObject : (cooked: string[], raw: string[]) => TemplateStringsArray
+->cooked : string[]
+->raw : string[]
++>cooked : Array<string>
++>raw : Array<string>

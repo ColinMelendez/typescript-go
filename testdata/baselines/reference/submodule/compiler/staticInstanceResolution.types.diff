@@ -1,0 +1,17 @@
+--- old.staticInstanceResolution.types
++++ new.staticInstanceResolution.types
+@@= skipped -11, +11 lines =@@
+
+     static getDocCommentText(comments: Comment[])
+ >getDocCommentText : (comments: Comment[]) => void
+->comments : Comment[]
++>comments : Array<Comment>
+     {
+         comments[0].getDocCommentText();
+ >comments[0].getDocCommentText() : void
+ >comments[0].getDocCommentText : () => void
+ >comments[0] : Comment
+->comments : Comment[]
++>comments : Array<Comment>
+ >0 : 0
+ >getDocCommentText : () => void

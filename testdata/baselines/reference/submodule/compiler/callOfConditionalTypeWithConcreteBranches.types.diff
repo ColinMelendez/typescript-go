@@ -1,0 +1,20 @@
+--- old.callOfConditionalTypeWithConcreteBranches.types
++++ new.callOfConditionalTypeWithConcreteBranches.types
+@@= skipped -95, +95 lines =@@
+
+ type X<V> = V extends (...args: any[]) => any ? (...args: Parameters<V>) => void : Function;
+ >X : X<V>
+->args : any[]
++>args : Array<any>
+ >args : Parameters<V>
+
+ // vscode - another `Parameters` example
+@@= skipped -8, +8 lines =@@
+ >AddFirstParameterToFunctions : AddFirstParameterToFunctions<Target>
+
+   [K in keyof Target]: Target[K] extends (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+       ? (...args: Parameters<Target[K]>) => void
+ >args : Parameters<Target[K]>

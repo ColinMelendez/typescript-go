@@ -55,7 +55,7 @@ type t1 = DeepMap<tpl, number>;  // [number, [number, [number]]]
 >t1 : [number, [number, [number]]]
 
 type t2 = DeepMap<arr, number>;  // number[][]
->t2 : number[][]
+>t2 : Array<Array<number>>
 
 // Repro from #29577
 
@@ -74,16 +74,16 @@ interface Guest {
 
 interface Product {
     users: (User | Guest)[];
->users : (Guest | User)[]
+>users : Array<Guest | User>
 }
 
 declare var product: Transform<Product>;
 >product : Transform<Product>
 
 product.users;  // (Transform<User> | Transform<Guest>)[]
->product.users : Transform<Guest | User>[]
+>product.users : Array<Transform<Guest | User>>
 >product : Transform<Product>
->users : Transform<Guest | User>[]
+>users : Array<Transform<Guest | User>>
 
 // Repro from #29702
 
@@ -94,10 +94,10 @@ type Remap2<T> = T extends object ? { [P in keyof T]: Remap2<T[P]>; } : T;
 >Remap2 : Remap2<T>
   
 type a = Remap1<string[]>;  // string[]
->a : string[]
+>a : Array<string>
 
 type b = Remap2<string[]>;  // string[]
->b : string[]
+>b : Array<string>
 
 // Repro from #29992
 

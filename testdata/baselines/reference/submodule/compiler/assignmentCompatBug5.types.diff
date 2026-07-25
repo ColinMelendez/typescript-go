@@ -1,0 +1,16 @@
+--- old.assignmentCompatBug5.types
++++ new.assignmentCompatBug5.types
+@@= skipped -14, +14 lines =@@
+
+ function foo2(x: number[]) { }
+ >foo2 : (x: number[]) => void
+->x : number[]
++>x : Array<number>
+
+ foo2(["s", "t"]);
+ >foo2(["s", "t"]) : void
+ >foo2 : (x: number[]) => void
+->["s", "t"] : string[]
++>["s", "t"] : Array<string>
+ >"s" : "s"
+ >"t" : "t"

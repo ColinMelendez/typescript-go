@@ -1,0 +1,19 @@
+--- old.declFilePrivateMethodOverloads.types
++++ new.declFilePrivateMethodOverloads.types
+@@= skipped -15, +15 lines =@@
+
+     private _forEachBindingContext(bindingContextArray: Array<IContext>, fn: (bindingContext: IContext) => void);
+ >_forEachBindingContext : { (bindingContext: IContext, fn: (bindingContext: IContext) => void): any; (bindingContextArray: Array<IContext>, fn: (bindingContext: IContext) => void): any; }
+->bindingContextArray : IContext[]
++>bindingContextArray : Array<IContext>
+ >fn : (bindingContext: IContext) => void
+ >bindingContext : IContext
+
+@@= skipped -19, +19 lines =@@
+
+     private overloadWithArityDifference(bindingContextArray: Array<IContext>, fn: (bindingContext: IContext) => void);
+ >overloadWithArityDifference : { (bindingContext: IContext): any; (bindingContextArray: Array<IContext>, fn: (bindingContext: IContext) => void): any; }
+->bindingContextArray : IContext[]
++>bindingContextArray : Array<IContext>
+ >fn : (bindingContext: IContext) => void
+ >bindingContext : IContext

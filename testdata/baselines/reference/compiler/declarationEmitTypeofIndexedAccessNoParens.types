@@ -20,13 +20,13 @@ export type C2 = (typeof C)[keyof typeof C];
 
 // IndexedAccessType: index access of a parsed typeof should preserve source
 export const arr = [C];
->arr : { A: number; }[]
->[C] : { A: number; }[]
+>arr : Array<{ A: number; }>
+>[C] : Array<{ A: number; }>
 >C : { A: number; }
 
 export type ArrAlias = typeof arr[number];
 >ArrAlias : { A: number; }
->arr : { A: number; }[]
+>arr : Array<{ A: number; }>
 
 // ArrayType: array of a parsed typeof should preserve source
 export type CArr = typeof C[];

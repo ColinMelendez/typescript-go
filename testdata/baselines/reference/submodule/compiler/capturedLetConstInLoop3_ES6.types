@@ -12,7 +12,7 @@ function foo0(x) {
 
     for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         var v = x;
 >v : any
@@ -45,7 +45,7 @@ function foo0_1(x) {
 
     for (let x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
         var v = x;
 >v : string
@@ -408,7 +408,7 @@ function foo0_c(x) {
 
     for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         var v = x;
 >v : any
@@ -441,7 +441,7 @@ function foo0_1_c(x) {
 
     for (const x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
         var v = x;
 >v : string

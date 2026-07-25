@@ -76,7 +76,7 @@ function mapUntilCant<a, b>(
 >mapUntilCant : <a, b>(values: a[], canTake: (value: a, index: number) => boolean, mapping: (value: a, index: number) => b) => b[]
 
     values: a[],
->values : a[]
+>values : Array<a>
 
     canTake: (value: a, index: number) => boolean,
 >canTake : (value: a, index: number) => boolean
@@ -90,15 +90,15 @@ function mapUntilCant<a, b>(
 
 ): b[] {
     let result: b[] = [];
->result : b[]
->[] : never[]
+>result : Array<b>
+>[] : Array<never>
 
     for (let index = 0, length = values.length; index < length; index++) {
 >index : number
 >0 : 0
 >length : number
 >values.length : number
->values : a[]
+>values : Array<a>
 >length : number
 >index < length : boolean
 >index : number
@@ -109,7 +109,7 @@ function mapUntilCant<a, b>(
         let value = values[index];
 >value : a
 >values[index] : a
->values : a[]
+>values : Array<a>
 >index : number
 
         if (canTake(value, index)) {
@@ -120,9 +120,9 @@ function mapUntilCant<a, b>(
 
             result.push(mapping(value, index));
 >result.push(mapping(value, index)) : number
->result.push : (...items: b[]) => number
->result : b[]
->push : (...items: b[]) => number
+>result.push : (...items: Array<b>) => number
+>result : Array<b>
+>push : (...items: Array<b>) => number
 >mapping(value, index) : b
 >mapping : (value: a, index: number) => b
 >value : a
@@ -130,10 +130,10 @@ function mapUntilCant<a, b>(
 
         } else {
             return result;
->result : b[]
+>result : Array<b>
         }
     }
     return result;
->result : b[]
+>result : Array<b>
 }
 

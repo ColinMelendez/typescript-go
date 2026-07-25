@@ -1,0 +1,26 @@
+--- old.comparableRelationBidirectional.types
++++ new.comparableRelationBidirectional.types
+@@= skipped -32, +32 lines =@@
+
+ interface UserSettings {
+     presets: ThemePreset[];
+->presets : ThemePreset[]
++>presets : Array<ThemePreset>
+
+     automation: Automation;
+ >automation : Automation
+@@= skipped -20, +20 lines =@@
+         settings: {
+ >settings : UserSettings
+ >{            presets: [],            automation: {                mode: "",            },        } as UserSettings : UserSettings
+->{            presets: [],            automation: {                mode: "",            },        } : { presets: never[]; automation: { mode: ""; }; }
++>{            presets: [],            automation: {                mode: "",            },        } : { presets: Array<never>; automation: { mode: ""; }; }
+
+             presets: [],
+->presets : never[]
+->[] : never[]
++>presets : Array<never>
++>[] : Array<never>
+
+             automation: {
+ >automation : { mode: ""; }

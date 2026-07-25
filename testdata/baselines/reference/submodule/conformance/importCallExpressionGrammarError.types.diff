@@ -1,0 +1,22 @@
+--- old.importCallExpressionGrammarError.types
++++ new.importCallExpressionGrammarError.types
+@@= skipped -7, +7 lines =@@
+ >whatToLoad : boolean
+
+ var a = ["./0"];
+->a : string[]
+->["./0"] : string[]
++>a : Array<string>
++>["./0"] : Array<string>
+ >"./0" : "./0"
+
+ import(...["PathModule"]);
+@@= skipped -14, +14 lines =@@
+ >p1 : Promise<any>
+ >import(...a) : Promise<any>
+ >...a : string
+->a : string[]
++>a : Array<string>
+
+ const p2 = import();
+ >p2 : Promise<any>

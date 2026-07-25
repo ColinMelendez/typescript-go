@@ -1,0 +1,32 @@
+--- old.baseTypeAfterDerivedType.types
++++ new.baseTypeAfterDerivedType.types
+@@= skipped -3, +3 lines =@@
+ interface Derived extends Base {
+     method(...args: any[]): void;
+ >method : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ interface Base {
+     method(...args: any[]): void;
+ >method : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ class Derived2 implements Base2 {
+@@= skipped -14, +14 lines =@@
+
+     method(...args: any[]): void { }
+ >method : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ interface Base2 {
+     method(...args: any[]): void;
+ >method : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }

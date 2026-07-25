@@ -14,8 +14,8 @@ Outer.Inner = class I {
 >I : typeof I
 
     messages() { return [] }
->messages : () => any[]
->[] : undefined[]
+>messages : () => Array<any>
+>[] : Array<undefined>
 }
 /** @type {!Outer.Inner} */
 Outer.i

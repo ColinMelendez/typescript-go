@@ -1,0 +1,24 @@
+--- old.noUncheckedIndexedAccess.types
++++ new.noUncheckedIndexedAccess.types
+@@= skipped -352, +352 lines =@@
+
+ // Variadic tuples
+ declare const nonEmptyStringArray: [string, ...string[]];
+->nonEmptyStringArray : [string, ...string[]]
++>nonEmptyStringArray : [string, ...Array<string>]
+
+ const variadicOk1: string = nonEmptyStringArray[0];  // Should OK
+ >variadicOk1 : string
+ >nonEmptyStringArray[0] : string
+->nonEmptyStringArray : [string, ...string[]]
++>nonEmptyStringArray : [string, ...Array<string>]
+ >0 : 0
+
+ const variadicError1: string = nonEmptyStringArray[1]; // Should error
+ >variadicError1 : string
+ >nonEmptyStringArray[1] : string | undefined
+->nonEmptyStringArray : [string, ...string[]]
++>nonEmptyStringArray : [string, ...Array<string>]
+ >1 : 1
+
+ // Generic index type

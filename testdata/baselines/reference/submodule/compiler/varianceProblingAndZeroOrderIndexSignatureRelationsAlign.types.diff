@@ -1,0 +1,11 @@
+--- old.varianceProblingAndZeroOrderIndexSignatureRelationsAlign.types
++++ new.varianceProblingAndZeroOrderIndexSignatureRelationsAlign.types
+@@= skipped -105, +105 lines =@@
+     readonly validate: (input: I, context: {}[]) => Either<{}[], A>,
+ >validate : (input: I, context: {}[]) => Either<{}[], A>
+ >input : I
+->context : {}[]
++>context : Array<{}>
+
+     /** converts a value of type A to a value of type O */
+     readonly encode: (a: A) => O

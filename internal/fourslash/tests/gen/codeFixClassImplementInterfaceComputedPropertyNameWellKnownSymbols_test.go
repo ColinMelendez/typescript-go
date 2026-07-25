@@ -60,7 +60,7 @@ class C implements I<number> {
         throw new Error("Method not implemented.");
     }
     [Symbol.match]: boolean;
-    [Symbol.replace](...args: any[]) {
+    [Symbol.replace](...args: Array<any>) {
         throw new Error("Method not implemented.");
     }
     [Symbol.search](str: string): number {

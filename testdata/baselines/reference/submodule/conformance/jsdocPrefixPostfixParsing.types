@@ -20,19 +20,19 @@
  */
 function f(x, y, z, a, b, c, e, f, g, h, i, j, k, l, m) {
 >f : (x: number[], y: number[], z: (number[]), a: number, b: number[] | null, c: (number[]) | null, e: (number | null)[], f: (number | null)[], g: (number | null)[], h: number[], i: number[][], j: (number[] | null)[], k: number[], l: number extends number ? true : false, m: [number, number?]) => void
->x : number[]
->y : number[]
->z : number[]
+>x : Array<number>
+>y : Array<number>
+>z : Array<number>
 >a : number
->b : number[] | null
->c : number[] | null
->e : (number | null)[]
->f : (number | null)[]
->g : (number | null)[]
->h : number[]
->i : number[][]
->j : (number[] | null)[]
->k : number[]
+>b : Array<number> | null
+>c : Array<number> | null
+>e : Array<number | null>
+>f : Array<number | null>
+>g : Array<number | null>
+>h : Array<number>
+>i : Array<Array<number>>
+>j : Array<Array<number> | null>
+>k : Array<number>
 >l : true
 >m : [number, (number | undefined)?]
 }

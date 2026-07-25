@@ -2,8 +2,8 @@
 
 === logicalAndOperatorStrictMode.ts ===
 const a = [0];
->a : number[]
->[0] : number[]
+>a : Array<number>
+>[0] : Array<number>
 >0 : 0
 
 const s = "";
@@ -38,58 +38,58 @@ const z = s || x || u;
 >u : undefined
 
 const a1 = a && a;
->a1 : number[]
->a && a : number[]
->a : number[]
->a : number[]
+>a1 : Array<number>
+>a && a : Array<number>
+>a : Array<number>
+>a : Array<number>
 
 const a2 = a && s;
 >a2 : ""
 >a && s : ""
->a : number[]
+>a : Array<number>
 >s : ""
 
 const a3 = a && x;
 >a3 : 0
 >a && x : 0
->a : number[]
+>a : Array<number>
 >x : 0
 
 const a4 = a && b;
 >a4 : false
 >a && b : false
->a : number[]
+>a : Array<number>
 >b : false
 
 const a5 = a && v;
 >a5 : void
 >a && v : void
->a : number[]
+>a : Array<number>
 >v : void
 
 const a6 = a && u;
 >a6 : undefined
 >a && u : undefined
->a : number[]
+>a : Array<number>
 >u : undefined
 
 const a7 = a && n;
 >a7 : null
 >a && n : null
->a : number[]
+>a : Array<number>
 >n : null
 
 const a8 = a && z;
 >a8 : undefined
 >a && z : undefined
->a : number[]
+>a : Array<number>
 >z : undefined
 
 const s1 = s && a;
 >s1 : ""
 >s && a : ""
 >s : ""
->a : number[]
+>a : Array<number>
 
 const s2 = s && s;
 >s2 : ""
@@ -137,7 +137,7 @@ const x1 = x && a;
 >x1 : 0
 >x && a : 0
 >x : 0
->a : number[]
+>a : Array<number>
 
 const x2 = x && s;
 >x2 : 0
@@ -185,7 +185,7 @@ const b1 = b && a;
 >b1 : false
 >b && a : false
 >b : false
->a : number[]
+>a : Array<number>
 
 const b2 = b && s;
 >b2 : false
@@ -233,7 +233,7 @@ const v1 = v && a;
 >v1 : void
 >v && a : void
 >v : void
->a : number[]
+>a : Array<number>
 
 const v2 = v && s;
 >v2 : void
@@ -281,7 +281,7 @@ const u1 = u && a;
 >u1 : undefined
 >u && a : undefined
 >u : undefined
->a : number[]
+>a : Array<number>
 
 const u2 = u && s;
 >u2 : undefined
@@ -329,7 +329,7 @@ const n1 = n && a;
 >n1 : null
 >n && a : null
 >n : null
->a : number[]
+>a : Array<number>
 
 const n2 = n && s;
 >n2 : null
@@ -377,7 +377,7 @@ const z1 = z && a;
 >z1 : undefined
 >z && a : undefined
 >z : undefined
->a : number[]
+>a : Array<number>
 
 const z2 = z && s;
 >z2 : undefined

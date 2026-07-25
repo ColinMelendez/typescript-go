@@ -1,0 +1,11 @@
+--- old.declarationEmitIndexTypeArray.types
++++ new.declarationEmitIndexTypeArray.types
+@@= skipped -2, +2 lines =@@
+ === declarationEmitIndexTypeArray.ts ===
+ function doSomethingWithKeys<T>(...keys: (keyof T)[]) { }
+ >doSomethingWithKeys : <T>(...keys: (keyof T)[]) => void
+->keys : (keyof T)[]
++>keys : Array<keyof T>
+
+ const utilityFunctions = {
+ >utilityFunctions : { doSomethingWithKeys: <T>(...keys: (keyof T)[]) => void; }

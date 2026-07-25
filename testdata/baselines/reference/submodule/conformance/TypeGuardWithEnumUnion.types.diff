@@ -1,0 +1,69 @@
+--- old.TypeGuardWithEnumUnion.types
++++ new.TypeGuardWithEnumUnion.types
+@@= skipped -35, +35 lines =@@
+
+ function f2(x: Color | string | string[]) {
+ >f2 : (x: Color | string | string[]) => void
+->x : string | string[] | Color
++>x : string | Array<string> | Color
+
+     if (typeof x === "object") {
+ >typeof x === "object" : boolean
+ >typeof x : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->x : string | string[] | Color
++>x : string | Array<string> | Color
+ >"object" : "object"
+
+         var y = x;
+->y : string[]
+->x : string[]
++>y : Array<string>
++>x : Array<string>
+
+         var y: string[];
+->y : string[]
++>y : Array<string>
+     }
+     if (typeof x === "number") {
+ >typeof x === "number" : boolean
+ >typeof x : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->x : string | string[] | Color
++>x : string | Array<string> | Color
+ >"number" : "number"
+
+         var z = x;
+@@= skipped -30, +30 lines =@@
+     }
+     else {
+         var w = x;
+->w : string | string[]
+->x : string | string[]
++>w : string | Array<string>
++>x : string | Array<string>
+
+         var w: string | string[];
+->w : string | string[]
++>w : string | Array<string>
+     }
+     if (typeof x === "string") {
+ >typeof x === "string" : boolean
+ >typeof x : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->x : string | string[] | Color
++>x : string | Array<string> | Color
+ >"string" : "string"
+
+         var a = x;
+@@= skipped -21, +21 lines =@@
+     }
+     else {
+         var b = x;
+->b : string[] | Color
+->x : string[] | Color
++>b : Array<string> | Color
++>x : Array<string> | Color
+
+         var b: Color | string[];
+->b : string[] | Color
++>b : Array<string> | Color
+     }
+ }

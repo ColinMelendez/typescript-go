@@ -153,13 +153,13 @@ export function compose<R>(f1: (a: any) => R, ...funcs: Function[]): (...args: a
 >compose : { (): <R_1>(a: R_1) => R_1; <F extends Function>(f: F): F; <A, B, C>(f1: (b: B) => C, f2: (a: A) => B): (a: A) => C; <A, B, C, D>(f1: (c: C) => D, f2: (b: B) => C, f3: (a: A) => B): (a: A) => D; <R>(f1: (a: any) => R, ...funcs: Function[]): (...args: any[]) => R; <R_1>(...funcs: Function[]): (...args: any[]) => R_1; }
 >f1 : (a: any) => R
 >a : any
->funcs : Function[]
->args : any[]
+>funcs : Array<Function>
+>args : Array<any>
 
 export function compose<R>(...funcs: Function[]): (...args: any[]) => R;
 >compose : { (): <R_1>(a: R_1) => R_1; <F extends Function>(f: F): F; <A, B, C>(f1: (b: B) => C, f2: (a: A) => B): (a: A) => C; <A, B, C, D>(f1: (c: C) => D, f2: (b: B) => C, f3: (a: A) => B): (a: A) => D; <R_1>(f1: (a: any) => R_1, ...funcs: Function[]): (...args: any[]) => R_1; <R>(...funcs: Function[]): (...args: any[]) => R; }
->funcs : Function[]
->args : any[]
+>funcs : Array<Function>
+>args : Array<any>
 
 === node_modules/react-redux/index.d.ts ===
 import * as React from "react";

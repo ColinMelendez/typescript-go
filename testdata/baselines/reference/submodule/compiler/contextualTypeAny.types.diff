@@ -1,0 +1,12 @@
+--- old.contextualTypeAny.types
++++ new.contextualTypeAny.types
+@@= skipped -13, +13 lines =@@
+ >x : any
+
+ var arr: number[] = ["", x];
+->arr : number[]
+->["", x] : any[]
++>arr : Array<number>
++>["", x] : Array<any>
+ >"" : ""
+ >x : any

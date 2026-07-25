@@ -5,6 +5,6 @@ class C {
 >C : C
 
     constructor(...public rest: string[]) {}
->public : any[]
->rest : string[]
+>public : Array<any>
+>rest : Array<string>
 }

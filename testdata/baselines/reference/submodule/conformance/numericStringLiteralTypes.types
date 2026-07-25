@@ -18,25 +18,25 @@ type T4<T extends string> = string & `${Capitalize<`${T}`>}`;  // `${Capitalize<
 
 function f1(a: boolean[], x: `${number}`) {
 >f1 : (a: boolean[], x: `${number}`) => void
->a : boolean[]
+>a : Array<boolean>
 >x : `${number}`
 
     let s = a[x];  // boolean
 >s : boolean
 >a[x] : boolean
->a : boolean[]
+>a : Array<boolean>
 >x : `${number}`
 }
 
 function f2(a: boolean[], x: number | `${number}`) {
 >f2 : (a: boolean[], x: number | `${number}`) => void
->a : boolean[]
+>a : Array<boolean>
 >x : number | `${number}`
 
     let s = a[x];  // boolean
 >s : boolean
 >a[x] : boolean
->a : boolean[]
+>a : Array<boolean>
 >x : number | `${number}`
 }
 

@@ -3,5 +3,5 @@
 === parserIndexSignature1.ts ===
 interface I {
   [...a]
->a : any[]
+>a : Array<any>
 }

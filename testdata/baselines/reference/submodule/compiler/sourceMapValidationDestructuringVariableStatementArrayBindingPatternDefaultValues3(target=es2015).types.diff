@@ -1,0 +1,151 @@
+--- old.sourceMapValidationDestructuringVariableStatementArrayBindingPatternDefaultValues3(target=es2015).types
++++ new.sourceMapValidationDestructuringVariableStatementArrayBindingPatternDefaultValues3(target=es2015).types
+@@= skipped -29, +29 lines =@@
+
+ var multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
+ >multiRobotA : MultiSkilledRobot
+->["mower", ["mowing", ""]] : [string, string[]]
++>["mower", ["mowing", ""]] : [string, Array<string>]
+ >"mower" : "mower"
+->["mowing", ""] : string[]
++>["mowing", ""] : Array<string>
+ >"mowing" : "mowing"
+ >"" : ""
+
+ var multiRobotB: MultiSkilledRobot = ["trimmer", ["trimming", "edging"]];
+ >multiRobotB : MultiSkilledRobot
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+
+@@= skipped -21, +21 lines =@@
+ >skillB : string
+
+ let robotAInfo: (number | string)[];
+->robotAInfo : (string | number)[]
++>robotAInfo : Array<string | number>
+
+ let multiSkillB: string[], nameMB: string, primarySkillB: string, secondarySkillB: string;
+->multiSkillB : string[]
++>multiSkillB : Array<string>
+ >nameMB : string
+ >primarySkillB : string
+ >secondarySkillB : string
+
+ let multiRobotAInfo: (string | string[])[];
+->multiRobotAInfo : (string | string[])[]
++>multiRobotAInfo : Array<string | Array<string>>
+
+ [, nameA = "helloNoName"] = robotA;
+ >[, nameA = "helloNoName"] = robotA : Robot
+@@= skipped -41, +41 lines =@@
+
+ [, multiSkillB = []] = multiRobotB;
+ >[, multiSkillB = []] = multiRobotB : MultiSkilledRobot
+->[, multiSkillB = []] : [undefined, never[]]
+->multiSkillB = [] : never[]
+->multiSkillB : string[]
+->[] : never[]
++>[, multiSkillB = []] : [undefined, Array<never>]
++>multiSkillB = [] : Array<never>
++>multiSkillB : Array<string>
++>[] : Array<never>
+ >multiRobotB : MultiSkilledRobot
+
+ [, multiSkillB = []] = getMultiRobotB();
+ >[, multiSkillB = []] = getMultiRobotB() : MultiSkilledRobot
+->[, multiSkillB = []] : [undefined, never[]]
+->multiSkillB = [] : never[]
+->multiSkillB : string[]
+->[] : never[]
++>[, multiSkillB = []] : [undefined, Array<never>]
++>multiSkillB = [] : Array<never>
++>multiSkillB : Array<string>
++>[] : Array<never>
+ >getMultiRobotB() : MultiSkilledRobot
+ >getMultiRobotB : () => MultiSkilledRobot
+
+ [, multiSkillB = []] = ["roomba", ["vacuum", "mopping"]];
+->[, multiSkillB = []] = ["roomba", ["vacuum", "mopping"]] : [string, string[]]
+->[, multiSkillB = []] : [undefined, never[]]
+->multiSkillB = [] : never[]
+->multiSkillB : string[]
+->[] : never[]
+->["roomba", ["vacuum", "mopping"]] : [string, string[]]
++>[, multiSkillB = []] = ["roomba", ["vacuum", "mopping"]] : [string, Array<string>]
++>[, multiSkillB = []] : [undefined, Array<never>]
++>multiSkillB = [] : Array<never>
++>multiSkillB : Array<string>
++>[] : Array<never>
++>["roomba", ["vacuum", "mopping"]] : [string, Array<string>]
+ >"roomba" : "roomba"
+->["vacuum", "mopping"] : string[]
++>["vacuum", "mopping"] : Array<string>
+ >"vacuum" : "vacuum"
+ >"mopping" : "mopping"
+
+@@= skipped -76, +76 lines =@@
+ >getMultiRobotB : () => MultiSkilledRobot
+
+ [nameMB = "helloNoName"] = ["trimmer", ["trimming", "edging"]];
+->[nameMB = "helloNoName"] = ["trimmer", ["trimming", "edging"]] : [string, string[]]
++>[nameMB = "helloNoName"] = ["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >[nameMB = "helloNoName"] : [string]
+ >nameMB = "helloNoName" : "helloNoName"
+ >nameMB : string
+ >"helloNoName" : "helloNoName"
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+
+@@= skipped -120, +120 lines =@@
+
+ [numberB = -1, ...robotAInfo] = robotB;
+ >[numberB = -1, ...robotAInfo] = robotB : Robot
+->[numberB = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberB = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberB = -1 : -1
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
++>robotAInfo : Array<string | number>
+ >robotB : Robot
+
+ [numberB = -1, ...robotAInfo] = getRobotB();
+ >[numberB = -1, ...robotAInfo] = getRobotB() : Robot
+->[numberB = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberB = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberB = -1 : -1
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
++>robotAInfo : Array<string | number>
+ >getRobotB() : Robot
+ >getRobotB : () => Robot
+
+ [numberB = -1, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"];
+ >[numberB = -1, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"] : Robot
+->[numberB = -1, ...robotAInfo] : [number, ...(string | number)[]]
++>[numberB = -1, ...robotAInfo] : [number, ...Array<string | number>]
+ >numberB = -1 : -1
+ >numberB : number
+ >-1 : -1
+ >1 : 1
+ >...robotAInfo : string | number
+->robotAInfo : (string | number)[]
++>robotAInfo : Array<string | number>
+ ><Robot>[2, "trimmer", "trimming"] : Robot
+ >[2, "trimmer", "trimming"] : [number, string, string]
+ >2 : 2

@@ -1,0 +1,11 @@
+--- old.override19.types
++++ new.override19.types
+@@= skipped -10, +10 lines =@@
+ >Base : T
+
+    new (...args: any[]): { context: InstanceType<C> }
+->args : any[]
++>args : Array<any>
+ >context : InstanceType<C>
+ }
+ class Context {}

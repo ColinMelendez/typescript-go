@@ -116,12 +116,12 @@ var b10: { fn(a?: Derived): void };
 var a11: { fn(...a: Base[]): void };
 >a11 : { fn(...a: Base[]): void; }
 >fn : (...a: Base[]) => void
->a : Base[]
+>a : Array<Base>
 
 var b11: { fn(...a: Derived[]): void };
 >b11 : { fn(...a: Derived[]): void; }
 >fn : (...a: Derived[]) => void
->a : Derived[]
+>a : Array<Derived>
 
 //var a12: { fn<T, U extends T>(t: T, u: U): T[] };
 //var b12: { fn<A, B extends A>(a: A, b: B): A[] };

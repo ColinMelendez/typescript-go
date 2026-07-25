@@ -1,0 +1,26 @@
+--- old.genericFunctions2.types
++++ new.genericFunctions2.types
+@@= skipped -2, +2 lines =@@
+ === genericFunctions2.ts ===
+ declare function map <T, U > (items: T[], f: (x: T) => U): U[];
+ >map : <T, U>(items: T[], f: (x: T) => U) => U[]
+->items : T[]
++>items : Array<T>
+ >f : (x: T) => U
+ >x : T
+
+ var myItems: string[];
+->myItems : string[]
++>myItems : Array<string>
+
+ var lengths = map(myItems, x => x.length);
+->lengths : number[]
+->map(myItems, x => x.length) : number[]
++>lengths : Array<number>
++>map(myItems, x => x.length) : Array<number>
+ >map : <T, U>(items: T[], f: (x: T) => U) => U[]
+->myItems : string[]
++>myItems : Array<string>
+ >x => x.length : (x: string) => number
+ >x : string
+ >x.length : number

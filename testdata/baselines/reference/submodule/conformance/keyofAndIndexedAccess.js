@@ -1104,7 +1104,7 @@ declare class Component<PropType> {
     setProperty<K extends keyof PropType>(key: K, value: PropType[K]): void;
 }
 declare function f20(component: Component<Shape>): void;
-declare function pluck<T, K extends keyof T>(array: T[], key: K): T[K][];
+declare function pluck<T, K extends keyof T>(array: T[], key: K): Array<T[K]>;
 declare function f30(shapes: Shape[]): void;
 declare function f31<K extends keyof Shape>(key: K): Shape[K];
 declare function f32<K extends "width" | "height">(key: K): Shape[K];
@@ -1235,7 +1235,7 @@ type SomeMethodDescriptor = {
     args: [string, number];
     returnValue: string[];
 };
-declare let result: string[];
+declare let result: Array<string>;
 type KeyTypes = "a" | "b";
 declare let MyThingy: {
     [key in KeyTypes]: string[];

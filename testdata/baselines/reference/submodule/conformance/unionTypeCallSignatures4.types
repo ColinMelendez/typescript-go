@@ -15,13 +15,13 @@ type F2 = (a: string, b?: string, c?: string) => void;
 type F3 = (a: string, ...rest: string[]) => void;
 >F3 : F3
 >a : string
->rest : string[]
+>rest : Array<string>
 
 type F4 = (a: string, b?: string, ...rest: string[]) => void;
 >F4 : F4
 >a : string
 >b : string | undefined
->rest : string[]
+>rest : Array<string>
 
 type F5 = (a: string, b: string) => void;
 >F5 : F5

@@ -1,0 +1,28 @@
+--- old.instantiateContextuallyTypedGenericThis.types
++++ new.instantiateContextuallyTypedGenericThis.types
+@@= skipped -5, +5 lines =@@
+ >each : <T>(collection: T[], callback: (this: T, dit: T) => T) => T[]
+
+         collection: T[], callback: (this: T, dit: T) => T
+->collection : T[]
++>collection : Array<T>
+ >callback : (this: T, dit: T) => T
+ >this : T
+ >dit : T
+@@= skipped -12, +12 lines =@@
+ >$ : JQuery
+
+ let lines: string[];
+->lines : string[]
++>lines : Array<string>
+
+ $.each(lines, function(dit) {
+->$.each(lines, function(dit) {    return dit.charAt(0) + this.charAt(1);}) : string[]
++>$.each(lines, function(dit) {    return dit.charAt(0) + this.charAt(1);}) : Array<string>
+ >$.each : <T>(collection: T[], callback: (this: T, dit: T) => T) => T[]
+ >$ : JQuery
+ >each : <T>(collection: T[], callback: (this: T, dit: T) => T) => T[]
+->lines : string[]
++>lines : Array<string>
+ >function(dit) {    return dit.charAt(0) + this.charAt(1);} : (this: string, dit: string) => string
+ >dit : string

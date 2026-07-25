@@ -16,3 +16,27 @@
 +>A : { B: typeof B; }
  >B : typeof B
  >class {    m() {        /** @type {string[]} */        var x = [];        /** @type {number[]} */        var y;        y = x;    }} : typeof B
+
+@@= skipped -15, +15 lines =@@
+
+         /** @type {string[]} */
+         var x = [];
+->x : string[]
+->[] : never[]
++>x : Array<string>
++>[] : Array<never>
+
+         /** @type {number[]} */
+         var y;
+->y : number[]
++>y : Array<number>
+
+         y = x;
+->y = x : string[]
+->y : number[]
+->x : string[]
++>y = x : Array<string>
++>y : Array<number>
++>x : Array<string>
+     }
+ };

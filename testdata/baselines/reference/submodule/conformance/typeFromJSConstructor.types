@@ -36,11 +36,11 @@ function Installer () {
 
     // twices: any[] | null
     this.twices = []
->this.twices = [] : never[]
+>this.twices = [] : Array<never>
 >this.twices : any
 >this : any
 >twices : any
->[] : never[]
+>[] : Array<never>
 
     this.twices = null
 >this.twices = null : null

@@ -1,0 +1,29 @@
+--- old.parserRealSource1.types
++++ new.parserRealSource1.types
+@@= skipped -262, +262 lines =@@
+ >BufferedLogger : BufferedLogger
+
+         public logContents = [];
+->logContents : any[]
+->[] : undefined[]
++>logContents : Array<any>
++>[] : Array<undefined>
+
+         public information(): boolean { return false; }
+ >information : () => boolean
+@@= skipped -29, +29 lines =@@
+
+             this.logContents.push(s);
+ >this.logContents.push(s) : number
+->this.logContents.push : (...items: any[]) => number
+->this.logContents : any[]
++>this.logContents.push : (...items: Array<any>) => number
++>this.logContents : Array<any>
+ >this : this
+->logContents : any[]
+->push : (...items: any[]) => number
++>logContents : Array<any>
++>push : (...items: Array<any>) => number
+ >s : string
+         }
+     }

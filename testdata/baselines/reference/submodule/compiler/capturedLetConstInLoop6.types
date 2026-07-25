@@ -4,7 +4,7 @@
 // ====let
 for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => any
@@ -34,7 +34,7 @@ for (let x of []) {
 
 for (let x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => string
@@ -369,7 +369,7 @@ for (let y = 0; y < 1; ++y) {
 
 for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => any
@@ -399,7 +399,7 @@ for (const x of []) {
 
 for (const x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     (function() { return x});
 >(function() { return x}) : () => string

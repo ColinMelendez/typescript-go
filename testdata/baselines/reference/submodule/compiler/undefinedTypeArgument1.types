@@ -2,7 +2,7 @@
 
 === undefinedTypeArgument1.ts ===
 var cats = new Array<WAWA>();
->cats : WAWA[]
->new Array<WAWA>() : WAWA[]
+>cats : Array<WAWA>
+>new Array<WAWA>() : Array<WAWA>
 >Array : ArrayConstructor
 

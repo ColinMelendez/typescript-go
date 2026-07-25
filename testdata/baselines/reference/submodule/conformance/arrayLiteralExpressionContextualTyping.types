@@ -5,15 +5,15 @@
 //      the type of the property with the numeric name N in the contextual type, if any, or otherwise
 //      the numeric index type of the contextual type, if any.
 var array = [1, 2, 3];
->array : number[]
->[1, 2, 3] : number[]
+>array : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
 var array1 = [true, 2, 3];  // Contextual type by the numeric index type of the contextual type
->array1 : (number | boolean)[]
->[true, 2, 3] : (number | boolean)[]
+>array1 : Array<number | boolean>
+>[true, 2, 3] : Array<number | boolean>
 >true : true
 >2 : 2
 >3 : 3
@@ -45,17 +45,17 @@ var tup2: [number, number, number] = [1, 2, 3, "string"];  // Error
 // In a contextually typed array literal expression containing one or more spread elements,
 // an element expression at index N is contextually typed by the numeric index type of the contextual type, if any.
 var spr = [1, 2, 3, ...array];
->spr : number[]
->[1, 2, 3, ...array] : number[]
+>spr : Array<number>
+>[1, 2, 3, ...array] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 >...array : number
->array : number[]
+>array : Array<number>
 
 var spr1 = [1, 2, 3, ...tup];
->spr1 : number[]
->[1, 2, 3, ...tup] : number[]
+>spr1 : Array<number>
+>[1, 2, 3, ...tup] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

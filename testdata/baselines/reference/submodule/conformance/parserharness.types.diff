@@ -1,6 +1,2585 @@
 --- old.parserharness.types
 +++ new.parserharness.types
-@@= skipped -8335, +8335 lines =@@
+@@= skipped -64, +64 lines =@@
+ >fullPath : string
+
+     var components = fullPath.split("/");
+->components : string[]
+->fullPath.split("/") : string[]
++>components : Array<string>
++>fullPath.split("/") : Array<string>
+ >fullPath.split : (separator: string | RegExp, limit?: number) => string[]
+ >fullPath : string
+ >split : (separator: string | RegExp, limit?: number) => string[]
+ >"/" : "/"
+
+     var path: string[] = components.slice(0, components.length - 1);
+->path : string[]
+->components.slice(0, components.length - 1) : string[]
+->components.slice : (start?: number, end?: number) => string[]
+->components : string[]
+->slice : (start?: number, end?: number) => string[]
++>path : Array<string>
++>components.slice(0, components.length - 1) : Array<string>
++>components.slice : (start?: number, end?: number) => Array<string>
++>components : Array<string>
++>slice : (start?: number, end?: number) => Array<string>
+ >0 : 0
+ >components.length - 1 : number
+ >components.length : number
+->components : string[]
++>components : Array<string>
+ >length : number
+ >1 : 1
+
+@@= skipped -24, +24 lines =@@
+ >path.join("/") + "/" : string
+ >path.join("/") : string
+ >path.join : (separator?: string) => string
+->path : string[]
++>path : Array<string>
+ >join : (separator?: string) => string
+ >"/" : "/"
+ >"/" : "/"
+@@= skipped -124, +124 lines =@@
+ >stdDev : number
+
+             trials: number[];
+->trials : number[]
++>trials : Array<number>
+
+         };
+     }
+@@= skipped -15, +15 lines =@@
+ >pass : boolean
+
+         bugs: string[];
+->bugs : string[]
++>bugs : Array<string>
+     }
+
+     // Assert functions
+@@= skipped -8, +8 lines =@@
+ >Assert : typeof Assert
+
+         export var bugIds: string[] = [];
+->bugIds : string[]
+->[] : never[]
++>bugIds : Array<string>
++>[] : Array<never>
+
+         export var throwAssertError = (error: Error) => {
+ >throwAssertError : (error: Error) => never
+@@= skipped -22, +22 lines =@@
+ >bugIds.indexOf(id) < 0 : boolean
+ >bugIds.indexOf(id) : number
+ >bugIds.indexOf : (searchElement: string, fromIndex?: number) => number
+->bugIds : string[]
++>bugIds : Array<string>
+ >indexOf : (searchElement: string, fromIndex?: number) => number
+ >id : string
+ >0 : 0
+
+                 bugIds.push(id);
+ >bugIds.push(id) : number
+->bugIds.push : (...items: string[]) => number
+->bugIds : string[]
+->push : (...items: string[]) => number
++>bugIds.push : (...items: Array<string>) => number
++>bugIds : Array<string>
++>push : (...items: Array<string>) => number
+ >id : string
+             }
+         }
+@@= skipped -32, +32 lines =@@
+
+                 bugs.forEach(bug => assert.bug(bug));
+ >bugs.forEach(bug => assert.bug(bug)) : void
+->bugs.forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
++>bugs.forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
+ >bugs : RegExpMatchArray
+->forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
++>forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
+ >bug => assert.bug(bug) : (bug: string) => any
+ >bug : string
+ >assert.bug(bug) : any
+@@= skipped -35, +35 lines =@@
+
+         export function arrayLengthIs(arr: any[], length: number) {
+ >arrayLengthIs : (arr: any[], length: number) => void
+->arr : any[]
++>arr : Array<any>
+ >length : number
+
+             if (arr.length != length) {
+ >arr.length != length : boolean
+ >arr.length : number
+->arr : any[]
++>arr : Array<any>
+ >length : number
+ >length : number
+
+@@= skipped -16, +16 lines =@@
+
+                 arr.forEach(n => actual = actual + '\n      ' + n.toString());
+ >arr.forEach(n => actual = actual + '\n      ' + n.toString()) : void
+->arr.forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
+->arr : any[]
+->forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
++>arr.forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
++>arr : Array<any>
++>forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
+ >n => actual = actual + '\n      ' + n.toString() : (n: any) => string
+ >n : any
+ >actual = actual + '\n      ' + n.toString() : string
+@@= skipped -126, +126 lines =@@
+
+                 result.errors.forEach(err => {
+ >result.errors.forEach(err => {                    actual = actual + '\n     ' + err.toString();                }) : void
+->result.errors.forEach : (callbackfn: (value: Compiler.CompilerError, index: number, array: Compiler.CompilerError[]) => void, thisArg?: any) => void
+->result.errors : Compiler.CompilerError[]
++>result.errors.forEach : (callbackfn: (value: Compiler.CompilerError, index: number, array: Array<Compiler.CompilerError>) => void, thisArg?: any) => void
++>result.errors : Array<Compiler.CompilerError>
+ >result : Compiler.CompilerResult
+->errors : Compiler.CompilerError[]
+->forEach : (callbackfn: (value: Compiler.CompilerError, index: number, array: Compiler.CompilerError[]) => void, thisArg?: any) => void
++>errors : Array<Compiler.CompilerError>
++>forEach : (callbackfn: (value: Compiler.CompilerError, index: number, array: Array<Compiler.CompilerError>) => void, thisArg?: any) => void
+ >err => {                    actual = actual + '\n     ' + err.toString();                } : (err: Compiler.CompilerError) => void
+ >err : Compiler.CompilerError
+
+@@= skipped -171, +171 lines =@@
+
+         export function arrayContains(arr: any[], contains: any[]) {
+ >arrayContains : (arr: any[], contains: any[]) => void
+->arr : any[]
+->contains : any[]
++>arr : Array<any>
++>contains : Array<any>
+
+             var found;
+ >found : any
+@@= skipped -12, +12 lines =@@
+ >i < contains.length : boolean
+ >i : number
+ >contains.length : number
+->contains : any[]
++>contains : Array<any>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -16, +16 lines =@@
+ >j < arr.length : boolean
+ >j : number
+ >arr.length : number
+->arr : any[]
++>arr : Array<any>
+ >length : number
+ >j++ : number
+ >j : number
+@@= skipped -8, +8 lines =@@
+                     if (arr[j] === contains[i]) {
+ >arr[j] === contains[i] : boolean
+ >arr[j] : any
+->arr : any[]
++>arr : Array<any>
+ >j : number
+ >contains[i] : any
+->contains : any[]
++>contains : Array<any>
+ >i : number
+
+                         found = true;
+@@= skipped -28, +28 lines =@@
+ >"Expected array to contain \"" + contains[i] : string
+ >"Expected array to contain \"" : "Expected array to contain \""
+ >contains[i] : any
+->contains : any[]
++>contains : Array<any>
+ >i : number
+ >"\"" : "\""
+                 }
+@@= skipped -9, +9 lines =@@
+
+         export function arrayContainsOnce(arr: any[], filter: (item: any) => boolean) {
+ >arrayContainsOnce : (arr: any[], filter: (item: any) => boolean) => void
+->arr : any[]
++>arr : Array<any>
+ >filter : (item: any) => boolean
+ >item : any
+
+@@= skipped -14, +14 lines =@@
+ >i < arr.length : boolean
+ >i : number
+ >arr.length : number
+->arr : any[]
++>arr : Array<any>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -9, +9 lines =@@
+ >filter(arr[i]) : boolean
+ >filter : (item: any) => boolean
+ >arr[i] : any
+->arr : any[]
++>arr : Array<any>
+ >i : number
+
+                     foundCount++;
+@@= skipped -30, +30 lines =@@
+
+     /** Splits the given string on \r\n or on only \n if that fails */
+     export function splitContentByNewlines(content: string) {
+->splitContentByNewlines : (content: string) => string[]
++>splitContentByNewlines : (content: string) => Array<string>
+ >content : string
+
+         // Split up the input file by line
+         // Note: IE JS engine incorrectly handles consecutive delimiters here when using RegExp split, so
+         // we have to string-based splitting instead and try to figure out the delimiting chars
+         var lines = content.split('\r\n');
+->lines : string[]
+->content.split('\r\n') : string[]
++>lines : Array<string>
++>content.split('\r\n') : Array<string>
+ >content.split : (separator: string | RegExp, limit?: number) => string[]
+ >content : string
+ >split : (separator: string | RegExp, limit?: number) => string[]
+@@= skipped -17, +17 lines =@@
+         if (lines.length === 1) {
+ >lines.length === 1 : boolean
+ >lines.length : number
+->lines : string[]
++>lines : Array<string>
+ >length : number
+ >1 : 1
+
+             lines = content.split('\n');
+->lines = content.split('\n') : string[]
+->lines : string[]
+->content.split('\n') : string[]
++>lines = content.split('\n') : Array<string>
++>lines : Array<string>
++>content.split('\n') : Array<string>
+ >content.split : (separator: string | RegExp, limit?: number) => string[]
+ >content : string
+ >split : (separator: string | RegExp, limit?: number) => string[]
+ >'\n' : "\n"
+         }
+         return lines;
+->lines : string[]
++>lines : Array<string>
+     }
+
+     /** Reads a file under /tests */
+@@= skipped -184, +184 lines =@@
+
+     // Logger-related functions
+     var loggers: ILogger[] = [];
+->loggers : ILogger[]
+->[] : never[]
++>loggers : Array<ILogger>
++>[] : Array<never>
+
+     export function registerLogger(logger: ILogger) {
+ >registerLogger : (logger: ILogger) => void
+@@= skipped -9, +9 lines =@@
+
+         loggers.push(logger);
+ >loggers.push(logger) : number
+->loggers.push : (...items: ILogger[]) => number
+->loggers : ILogger[]
+->push : (...items: ILogger[]) => number
++>loggers.push : (...items: Array<ILogger>) => number
++>loggers : Array<ILogger>
++>push : (...items: Array<ILogger>) => number
+ >logger : ILogger
+     }
+     export function emitLog(field: string, ...params: any[]) {
+ >emitLog : (field: string, ...params: any[]) => void
+ >field : string
+->params : any[]
++>params : Array<any>
+
+         for (var i = 0; i < loggers.length; i++) {
+ >i : number
+@@= skipped -16, +16 lines =@@
+ >i < loggers.length : boolean
+ >i : number
+ >loggers.length : number
+->loggers : ILogger[]
++>loggers : Array<ILogger>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -10, +10 lines =@@
+ >typeof loggers[i][field] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >loggers[i][field] : any
+ >loggers[i] : ILogger
+->loggers : ILogger[]
++>loggers : Array<ILogger>
+ >i : number
+ >field : string
+ >'function' : "function"
+@@= skipped -10, +10 lines =@@
+ >loggers[i][field].apply : any
+ >loggers[i][field] : any
+ >loggers[i] : ILogger
+->loggers : ILogger[]
++>loggers : Array<ILogger>
+ >i : number
+ >field : string
+ >apply : any
+ >loggers[i] : ILogger
+->loggers : ILogger[]
++>loggers : Array<ILogger>
+ >i : number
+->params : any[]
++>params : Array<any>
+             }
+         }
+     }
+@@= skipped -26, +26 lines =@@
+
+         // The current stack of Runnable objects
+         static currentStack: Runnable[] = [];
+->currentStack : Runnable[]
+->[] : never[]
++>currentStack : Array<Runnable>
++>[] : Array<never>
+
+         // The error, if any, that occurred when running 'block'
+         public error: Error = null;
+@@= skipped -13, +13 lines =@@
+
+         // A list of bugs impacting this object
+         public bugs: string[] = [];
+->bugs : string[]
+->[] : never[]
++>bugs : Array<string>
++>[] : Array<never>
+
+         // A list of all our child Runnables
+         public children: Runnable[] = [];
+->children : Runnable[]
+->[] : never[]
++>children : Array<Runnable>
++>[] : Array<never>
+
+         public addChild(child: Runnable): void {
+ >addChild : (child: Runnable) => void
+@@= skipped -14, +14 lines =@@
+
+             this.children.push(child);
+ >this.children.push(child) : number
+->this.children.push : (...items: Runnable[]) => number
+->this.children : Runnable[]
++>this.children.push : (...items: Array<Runnable>) => number
++>this.children : Array<Runnable>
+ >this : this
+->children : Runnable[]
+->push : (...items: Runnable[]) => number
++>children : Array<Runnable>
++>push : (...items: Array<Runnable>) => number
+ >child : Runnable
+         }
+
+@@= skipped -127, +127 lines =@@
+ >this.children[index].run(done) : void
+ >this.children[index].run : (done: IDone) => void
+ >this.children[index] : Runnable
+->this.children : Runnable[]
++>this.children : Array<Runnable>
+ >this : this
+->children : Runnable[]
++>children : Array<Runnable>
+ >index : number
+ >run : (done: IDone) => void
+ >done : any
+@@= skipped -10, +10 lines =@@
+         }
+
+         static errorHandlerStack: { (e: Error): void; }[] = [];
+->errorHandlerStack : ((e: Error) => void)[]
++>errorHandlerStack : Array<(e: Error) => void>
+ >e : Error
+->[] : never[]
++>[] : Array<never>
+
+         static pushGlobalErrorHandler(done: IDone) {
+ >pushGlobalErrorHandler : (done: IDone) => void
+@@= skipped -124, +124 lines =@@
+
+             Runnable.currentStack.push(this);
+ >Runnable.currentStack.push(this) : number
+->Runnable.currentStack.push : (...items: Runnable[]) => number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack.push : (...items: Array<Runnable>) => number
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
+->push : (...items: Runnable[]) => number
++>currentStack : Array<Runnable>
++>push : (...items: Array<Runnable>) => number
+ >this : this
+
+             emitLog('testStart', { desc: this.description });
+@@= skipped -86, +86 lines =@@
+                     Runnable.currentStack.pop();
+ >Runnable.currentStack.pop() : Runnable | undefined
+ >Runnable.currentStack.pop : () => Runnable | undefined
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >pop : () => Runnable | undefined
+
+                     done()
+@@= skipped -61, +61 lines =@@
+
+             Runnable.currentStack.push(this);
+ >Runnable.currentStack.push(this) : number
+->Runnable.currentStack.push : (...items: Runnable[]) => number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack.push : (...items: Array<Runnable>) => number
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
+->push : (...items: Runnable[]) => number
++>currentStack : Array<Runnable>
++>push : (...items: Array<Runnable>) => number
+ >this : this
+
+             emitLog('scenarioStart', { desc: this.description });
+@@= skipped -30, +30 lines =@@
+                 Runnable.currentStack.pop();
+ >Runnable.currentStack.pop() : Runnable | undefined
+ >Runnable.currentStack.pop : () => Runnable | undefined
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >pop : () => Runnable | undefined
+
+                 if (e) {
+@@= skipped -105, +105 lines =@@
+ >index < this.children.length : boolean
+ >index : number
+ >this.children.length : number
+->this.children : Runnable[]
++>this.children : Array<Runnable>
+ >this : this
+->children : Runnable[]
++>children : Array<Runnable>
+ >length : number
+ >index++ : number
+ >index : number
+@@= skipped -30, +30 lines =@@
+ >passed : null
+ >that.children[index].passed : null
+ >that.children[index] : Runnable
+->that.children : Runnable[]
++>that.children : Array<Runnable>
+ >that : this
+->children : Runnable[]
++>children : Array<Runnable>
+ >index : number
+ >passed : null
+
+@@= skipped -115, +115 lines =@@
+ >index < this.children.length : boolean
+ >index : number
+ >this.children.length : number
+->this.children : Runnable[]
++>this.children : Array<Runnable>
+ >this : this
+->children : Runnable[]
++>children : Array<Runnable>
+ >length : number
+ >index++ : number
+ >index : number
+
+                 // Clear out bug descriptions
+                 assert.bugIds = [];
+->assert.bugIds = [] : never[]
++>assert.bugIds = [] : Array<never>
+ >assert.bugIds : any
+ >assert : Harness.Assert
+ >bugIds : any
+->[] : never[]
++>[] : Array<never>
+
+                 async = this.runChild(index, <any>function (e) {
+ >async = this.runChild(index, <any>function (e) {                    if (async) {                        that.runChildren(index + 1);                    }                }) : boolean
+@@= skipped -217, +217 lines =@@
+ >Dataset : Dataset
+
+             public data: number[] = [];
+->data : number[]
+->[] : never[]
++>data : Array<number>
++>[] : Array<never>
+
+             public add(value: number) {
+ >add : (value: number) => void
+@@= skipped -9, +9 lines =@@
+
+                 this.data.push(value);
+ >this.data.push(value) : number
+->this.data.push : (...items: number[]) => number
+->this.data : number[]
++>this.data.push : (...items: Array<number>) => number
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->push : (...items: number[]) => number
++>data : Array<number>
++>push : (...items: Array<number>) => number
+ >value : number
+             }
+
+@@= skipped -21, +21 lines =@@
+ >i < this.data.length : boolean
+ >i : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -11, +11 lines =@@
+ >sum += this.data[i] : number
+ >sum : number
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+                 }
+
+@@= skipped -10, +10 lines =@@
+ >sum / this.data.length : number
+ >sum : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+             }
+
+@@= skipped -12, +12 lines =@@
+                 var min = this.data[0];
+ >min : number
+ >this.data[0] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >0 : 0
+
+                 for (var i = 1; i < this.data.length; i++) {
+@@= skipped -11, +11 lines =@@
+ >i < this.data.length : boolean
+ >i : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -10, +10 lines =@@
+                     if (this.data[i] < min) {
+ >this.data[i] < min : boolean
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+ >min : number
+
+@@= skipped -10, +10 lines =@@
+ >min = this.data[i] : number
+ >min : number
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+                     }
+                 }
+@@= skipped -17, +17 lines =@@
+                 var max = this.data[0];
+ >max : number
+ >this.data[0] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >0 : 0
+
+                 for (var i = 1; i < this.data.length; i++) {
+@@= skipped -11, +11 lines =@@
+ >i < this.data.length : boolean
+ >i : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -10, +10 lines =@@
+                     if (this.data[i] > max) {
+ >this.data[i] > max : boolean
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+ >max : number
+
+@@= skipped -10, +10 lines =@@
+ >max = this.data[i] : number
+ >max : number
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+                     }
+                 }
+@@= skipped -31, +31 lines =@@
+ >i < this.data.length : boolean
+ >i : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -16, +16 lines =@@
+ >pow : (x: number, y: number) => number
+ >this.data[i] - sampleMean : number
+ >this.data[i] : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >i : number
+ >sampleMean : number
+ >2 : 2
+@@= skipped -16, +16 lines =@@
+ >sumOfSquares / this.data.length : number
+ >sumOfSquares : number
+ >this.data.length : number
+->this.data : number[]
++>this.data : Array<number>
+ >this : this
+->data : number[]
++>data : Array<number>
+ >length : number
+             }
+         }
+@@= skipped -77, +77 lines =@@
+         }
+
+         export var benchmarks: { new (): Benchmark; }[] = [];
+->benchmarks : (new () => Benchmark)[]
+->[] : never[]
++>benchmarks : Array<new () => Benchmark>
++>[] : Array<never>
+
+         var timeFunction: (
+ >timeFunction : (benchmark: Benchmark, description?: string, name?: string, f?: (bench?: { (): void; }) => void) => void
+@@= skipped -107, +107 lines =@@
+ >i < benchmarks.length : boolean
+ >i : number
+ >benchmarks.length : number
+->benchmarks : (new () => Benchmark)[]
++>benchmarks : Array<new () => Benchmark>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -9, +9 lines =@@
+ >b : Benchmark
+ >new benchmarks[i]() : Benchmark
+ >benchmarks[i] : new () => Benchmark
+->benchmarks : (new () => Benchmark)[]
++>benchmarks : Array<new () => Benchmark>
+ >i : number
+
+
+@@= skipped -81, +81 lines =@@
+ >emitLog('pass', {                        desc: description, pass: true, perfResults: {                            mean: b.results[prop].mean(),                            min: b.results[prop].min(),                            max: b.results[prop].max(),                            stdDev: b.results[prop].stdDev(),                            trials: b.results[prop].data                        }                    }) : void
+ >emitLog : (field: string, ...params: any[]) => void
+ >'pass' : "pass"
+->{                        desc: description, pass: true, perfResults: {                            mean: b.results[prop].mean(),                            min: b.results[prop].min(),                            max: b.results[prop].max(),                            stdDev: b.results[prop].stdDev(),                            trials: b.results[prop].data                        }                    } : { desc: string; pass: boolean; perfResults: { mean: number; min: number; max: number; stdDev: number; trials: number[]; }; }
++>{                        desc: description, pass: true, perfResults: {                            mean: b.results[prop].mean(),                            min: b.results[prop].min(),                            max: b.results[prop].max(),                            stdDev: b.results[prop].stdDev(),                            trials: b.results[prop].data                        }                    } : { desc: string; pass: boolean; perfResults: { mean: number; min: number; max: number; stdDev: number; trials: Array<number>; }; }
+
+                         desc: description, pass: true, perfResults: {
+ >desc : string
+ >description : string
+ >pass : boolean
+ >true : true
+->perfResults : { mean: number; min: number; max: number; stdDev: number; trials: number[]; }
+->{                            mean: b.results[prop].mean(),                            min: b.results[prop].min(),                            max: b.results[prop].max(),                            stdDev: b.results[prop].stdDev(),                            trials: b.results[prop].data                        } : { mean: number; min: number; max: number; stdDev: number; trials: number[]; }
++>perfResults : { mean: number; min: number; max: number; stdDev: number; trials: Array<number>; }
++>{                            mean: b.results[prop].mean(),                            min: b.results[prop].min(),                            max: b.results[prop].max(),                            stdDev: b.results[prop].stdDev(),                            trials: b.results[prop].data                        } : { mean: number; min: number; max: number; stdDev: number; trials: Array<number>; }
+
+                             mean: b.results[prop].mean(),
+ >mean : number
+@@= skipped -55, +55 lines =@@
+ >stdDev : () => number
+
+                             trials: b.results[prop].data
+->trials : number[]
+->b.results[prop].data : number[]
++>trials : Array<number>
++>b.results[prop].data : Array<number>
+ >b.results[prop] : Dataset
+ >b.results : { [x: string]: Dataset; }
+ >b : Benchmark
+ >results : { [x: string]: Dataset; }
+ >prop : string
+->data : number[]
++>data : Array<number>
+                         }
+                     });
+                 }
+@@= skipped -24, +24 lines =@@
+
+             benchmarks.push(BenchmarkClass);
+ >benchmarks.push(BenchmarkClass) : number
+->benchmarks.push : (...items: (new () => Benchmark)[]) => number
+->benchmarks : (new () => Benchmark)[]
+->push : (...items: (new () => Benchmark)[]) => number
++>benchmarks.push : (...items: Array<new () => Benchmark>) => number
++>benchmarks : Array<new () => Benchmark>
++>push : (...items: Array<new () => Benchmark>) => number
+ >BenchmarkClass : any
+         }
+
+@@= skipped -19, +19 lines =@@
+ >WriterAggregator : WriterAggregator
+
+             public lines: string[] = [];
+->lines : string[]
+->[] : never[]
++>lines : Array<string>
++>[] : Array<never>
+
+             public currentLine = "";
+ >currentLine : string
+@@= skipped -25, +25 lines =@@
+
+                 this.lines.push(this.currentLine + str);
+ >this.lines.push(this.currentLine + str) : number
+->this.lines.push : (...items: string[]) => number
+->this.lines : string[]
++>this.lines.push : (...items: Array<string>) => number
++>this.lines : Array<string>
+ >this : this
+->lines : string[]
+->push : (...items: string[]) => number
++>lines : Array<string>
++>push : (...items: Array<string>) => number
+ >this.currentLine + str : string
+ >this.currentLine : string
+ >this : this
+@@= skipped -31, +31 lines =@@
+ >length : number
+ >0 : 0
+ >this.lines.push(this.currentLine) : number
+->this.lines.push : (...items: string[]) => number
+->this.lines : string[]
++>this.lines.push : (...items: Array<string>) => number
++>this.lines : Array<string>
+ >this : this
+->lines : string[]
+->push : (...items: string[]) => number
++>lines : Array<string>
++>push : (...items: Array<string>) => number
+ >this.currentLine : string
+ >this : this
+ >currentLine : string
+@@= skipped -21, +21 lines =@@
+ >reset : () => void
+
+                 this.lines = [];
+->this.lines = [] : never[]
+->this.lines : string[]
++>this.lines = [] : Array<never>
++>this.lines : Array<string>
+ >this : this
+->lines : string[]
+->[] : never[]
++>lines : Array<string>
++>[] : Array<never>
+
+                 this.currentLine = "";
+ >this.currentLine = "" : ""
+@@= skipped -104, +104 lines =@@
+ >file : WriterAggregator
+
+                 var result: { filename: string; file: WriterAggregator; }[] = [];
+->result : { filename: string; file: WriterAggregator; }[]
++>result : Array<{ filename: string; file: WriterAggregator; }>
+ >filename : string
+ >file : WriterAggregator
+->[] : never[]
++>[] : Array<never>
+
+                 for (var p in this.fileCollection) {
+ >p : string
+@@= skipped -34, +34 lines =@@
+                         if (current.lines.length > 0) {
+ >current.lines.length > 0 : boolean
+ >current.lines.length : number
+->current.lines : string[]
++>current.lines : Array<string>
+ >current : WriterAggregator
+->lines : string[]
++>lines : Array<string>
+ >length : number
+ >0 : 0
+
+@@= skipped -11, +11 lines =@@
+ >p : string
+ >'0.js' : "0.js"
+ >current.lines.unshift('////[' + p + ']') : number
+->current.lines.unshift : (...items: string[]) => number
+->current.lines : string[]
++>current.lines.unshift : (...items: Array<string>) => number
++>current.lines : Array<string>
+ >current : WriterAggregator
+->lines : string[]
+->unshift : (...items: string[]) => number
++>lines : Array<string>
++>unshift : (...items: Array<string>) => number
+ >'////[' + p + ']' : string
+ >'////[' + p : string
+ >'////[' : "////["
+@@= skipped -13, +13 lines =@@
+
+                             result.push({ filename: p, file: this.fileCollection[p] });
+ >result.push({ filename: p, file: this.fileCollection[p] }) : number
+->result.push : (...items: { filename: string; file: WriterAggregator; }[]) => number
+->result : { filename: string; file: WriterAggregator; }[]
+->push : (...items: { filename: string; file: WriterAggregator; }[]) => number
++>result.push : (...items: Array<{ filename: string; file: WriterAggregator; }>) => number
++>result : Array<{ filename: string; file: WriterAggregator; }>
++>push : (...items: Array<{ filename: string; file: WriterAggregator; }>) => number
+ >{ filename: p, file: this.fileCollection[p] } : { filename: string; file: any; }
+ >filename : string
+ >p : string
+@@= skipped -16, +16 lines =@@
+                     }
+                 }
+                 return result;
+->result : { filename: string; file: WriterAggregator; }[]
++>result : Array<{ filename: string; file: WriterAggregator; }>
+             }
+         }
+
+@@= skipped -257, +257 lines =@@
+ >identifier : any
+
+             public normalizeToArray(arg: any) {
+->normalizeToArray : (arg: any) => any[]
++>normalizeToArray : (arg: any) => Array<any>
+ >arg : any
+
+                 if ((Array.isArray && Array.isArray(arg)) || arg instanceof Array)
+@@= skipped -20, +20 lines =@@
+ >Array : ArrayConstructor
+
+                     return arg;
+->arg : any[]
++>arg : Array<any>
+
+                 return [arg];
+->[arg] : any[]
++>[arg] : Array<any>
+ >arg : any
+             }
+
+@@= skipped -23, +23 lines =@@
+ >compilerResult : CompilerResult
+
+                     errors = compilerResult.errors;
+->errors = compilerResult.errors : CompilerError[]
++>errors = compilerResult.errors : Array<CompilerError>
+ >errors : any
+->compilerResult.errors : CompilerError[]
++>compilerResult.errors : Array<CompilerError>
+ >compilerResult : CompilerResult
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+
+                 })
+
+@@= skipped -135, +135 lines =@@
+ >others : any
+
+                 others = this.normalizeToArray(others);
+->others = this.normalizeToArray(others) : any[]
++>others = this.normalizeToArray(others) : Array<any>
+ >others : any
+->this.normalizeToArray(others) : any[]
+->this.normalizeToArray : (arg: any) => any[]
++>this.normalizeToArray(others) : Array<any>
++>this.normalizeToArray : (arg: any) => Array<any>
+ >this : this
+->normalizeToArray : (arg: any) => any[]
++>normalizeToArray : (arg: any) => Array<any>
+ >others : any
+
+                 for (var i = 0; i < others.length; i++) {
+@@= skipped -54, +54 lines =@@
+ >others : any
+
+                 others = this.normalizeToArray(others);
+->others = this.normalizeToArray(others) : any[]
++>others = this.normalizeToArray(others) : Array<any>
+ >others : any
+->this.normalizeToArray(others) : any[]
+->this.normalizeToArray : (arg: any) => any[]
++>this.normalizeToArray(others) : Array<any>
++>this.normalizeToArray : (arg: any) => Array<any>
+ >this : this
+->normalizeToArray : (arg: any) => any[]
++>normalizeToArray : (arg: any) => Array<any>
+ >others : any
+
+                 for (var i = 0; i < others.length; i++) {
+@@= skipped -155, +155 lines =@@
+ >others : any
+
+                 others = this.normalizeToArray(others);
+->others = this.normalizeToArray(others) : any[]
++>others = this.normalizeToArray(others) : Array<any>
+ >others : any
+->this.normalizeToArray(others) : any[]
+->this.normalizeToArray : (arg: any) => any[]
++>this.normalizeToArray(others) : Array<any>
++>this.normalizeToArray : (arg: any) => Array<any>
+ >this : this
+->normalizeToArray : (arg: any) => any[]
++>normalizeToArray : (arg: any) => Array<any>
+ >others : any
+
+                 for (var i = 0; i < others.length; i++) {
+@@= skipped -56, +56 lines =@@
+ >others : any
+
+                 others = this.normalizeToArray(others);
+->others = this.normalizeToArray(others) : any[]
++>others = this.normalizeToArray(others) : Array<any>
+ >others : any
+->this.normalizeToArray(others) : any[]
+->this.normalizeToArray : (arg: any) => any[]
++>this.normalizeToArray(others) : Array<any>
++>this.normalizeToArray : (arg: any) => Array<any>
+ >this : this
+->normalizeToArray : (arg: any) => any[]
++>normalizeToArray : (arg: any) => Array<any>
+ >others : any
+
+                 for (var i = 0; i < others.length; i++) {
+@@= skipped -53, +53 lines =@@
+             public assertThisCanBeAssignedTo(desc: string, these: any[], notThese: any[]) {
+ >assertThisCanBeAssignedTo : (desc: string, these: any[], notThese: any[]) => void
+ >desc : string
+->these : any[]
+->notThese : any[]
++>these : Array<any>
++>notThese : Array<any>
+
+                 it(desc + " is assignable to ", () => {
+ >it(desc + " is assignable to ", () => {                    this.assertAssignmentCompatibleWith(these);                }) : void
+@@= skipped -16, +16 lines =@@
+ >this.assertAssignmentCompatibleWith : (others: any) => void
+ >this : this
+ >assertAssignmentCompatibleWith : (others: any) => void
+->these : any[]
++>these : Array<any>
+
+                 });
+         
+@@= skipped -17, +17 lines =@@
+ >this.assertNotAssignmentCompatibleWith : (others: any) => void
+ >this : this
+ >assertNotAssignmentCompatibleWith : (others: any) => void
+->notThese : any[]
++>notThese : Array<any>
+
+                 });
+             }
+@@= skipped -131, +131 lines =@@
+ >compilerResult : CompilerResult
+
+                     errors = compilerResult.errors;
+->errors = compilerResult.errors : CompilerError[]
++>errors = compilerResult.errors : Array<CompilerError>
+ >errors : any
+->compilerResult.errors : CompilerError[]
++>compilerResult.errors : Array<CompilerError>
+ >compilerResult : CompilerResult
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+
+                 })
+
+@@= skipped -27, +27 lines =@@
+ >"," : ","
+
+                 var matchingIdentifiers: Type[] = [];
+->matchingIdentifiers : Type[]
+->[] : never[]
++>matchingIdentifiers : Array<Type>
++>[] : Array<never>
+
+                 if (!usePull) {
+ >!usePull : boolean
+@@= skipped -90, +90 lines =@@
+
+                                 matchingIdentifiers.push(new Type(entries[i].type, code, targetIdentifier));
+ >matchingIdentifiers.push(new Type(entries[i].type, code, targetIdentifier)) : number
+->matchingIdentifiers.push : (...items: Type[]) => number
+->matchingIdentifiers : Type[]
+->push : (...items: Type[]) => number
++>matchingIdentifiers.push : (...items: Array<Type>) => number
++>matchingIdentifiers : Array<Type>
++>push : (...items: Array<Type>) => number
+ >new Type(entries[i].type, code, targetIdentifier) : Type
+ >Type : typeof Type
+ >entries[i].type : any
+@@= skipped -91, +91 lines =@@
+                                 if (!matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type))) {
+ >!matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type)) : boolean
+ >matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type)) : boolean
+->matchingIdentifiers.some : (predicate: (value: Type, index: number, array: Type[]) => unknown, thisArg?: any) => boolean
+->matchingIdentifiers : Type[]
+->some : (predicate: (value: Type, index: number, array: Type[]) => unknown, thisArg?: any) => boolean
++>matchingIdentifiers.some : (predicate: (value: Type, index: number, array: Array<Type>) => unknown, thisArg?: any) => boolean
++>matchingIdentifiers : Array<Type>
++>some : (predicate: (value: Type, index: number, array: Array<Type>) => unknown, thisArg?: any) => boolean
+ >value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type) : (value: Type) => boolean
+ >value : Type
+ >(value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type) : boolean
+@@= skipped -34, +34 lines =@@
+
+                                     matchingIdentifiers.push(foundValue);
+ >matchingIdentifiers.push(foundValue) : number
+->matchingIdentifiers.push : (...items: Type[]) => number
+->matchingIdentifiers : Type[]
+->push : (...items: Type[]) => number
++>matchingIdentifiers.push : (...items: Array<Type>) => number
++>matchingIdentifiers : Array<Type>
++>push : (...items: Array<Type>) => number
+ >foundValue : Type
+                                 }
+                             }
+@@= skipped -55, +55 lines =@@
+                                         if (!matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type))) {
+ >!matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type)) : boolean
+ >matchingIdentifiers.some(value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type)) : boolean
+->matchingIdentifiers.some : (predicate: (value: Type, index: number, array: Type[]) => unknown, thisArg?: any) => boolean
+->matchingIdentifiers : Type[]
+->some : (predicate: (value: Type, index: number, array: Type[]) => unknown, thisArg?: any) => boolean
++>matchingIdentifiers.some : (predicate: (value: Type, index: number, array: Array<Type>) => unknown, thisArg?: any) => boolean
++>matchingIdentifiers : Array<Type>
++>some : (predicate: (value: Type, index: number, array: Array<Type>) => unknown, thisArg?: any) => boolean
+ >value => (value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type) : (value: Type) => boolean
+ >value : Type
+ >(value.identifier === foundValue.identifier) && (value.code === foundValue.code) && (value.type === foundValue.type) : boolean
+@@= skipped -34, +34 lines =@@
+
+                                             matchingIdentifiers.push(foundValue);
+ >matchingIdentifiers.push(foundValue) : number
+->matchingIdentifiers.push : (...items: Type[]) => number
+->matchingIdentifiers : Type[]
+->push : (...items: Type[]) => number
++>matchingIdentifiers.push : (...items: Array<Type>) => number
++>matchingIdentifiers : Array<Type>
++>push : (...items: Array<Type>) => number
+ >foundValue : Type
+                                         }
+                                     }
+@@= skipped -15, +15 lines =@@
+                 if (matchingIdentifiers.length === 0) {
+ >matchingIdentifiers.length === 0 : boolean
+ >matchingIdentifiers.length : number
+->matchingIdentifiers : Type[]
++>matchingIdentifiers : Array<Type>
+ >length : number
+ >0 : 0
+
+@@= skipped -31, +31 lines =@@
+                 else if (matchingIdentifiers.length > 1) {
+ >matchingIdentifiers.length > 1 : boolean
+ >matchingIdentifiers.length : number
+->matchingIdentifiers : Type[]
++>matchingIdentifiers : Array<Type>
+ >length : number
+ >1 : 1
+
+@@= skipped -14, +14 lines =@@
+                 else {
+                     return matchingIdentifiers[0];
+ >matchingIdentifiers[0] : Type
+->matchingIdentifiers : Type[]
++>matchingIdentifiers : Array<Type>
+ >0 : 0
+                 }
+             }
+@@= skipped -364, +364 lines =@@
+ >compilationContext : CompilationContext | undefined
+ >Harness : any
+ >Compiler : any
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+ >TypeScript : any
+
+             reset();
+@@= skipped -54, +54 lines =@@
+ >unitName : string | undefined
+ >false : false
+ >false : false
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+
+                 compiler.reTypeCheck();
+ >compiler.reTypeCheck() : any
+@@= skipped -113, +113 lines =@@
+ >results : string
+ >writer.lines.join('\n') : string
+ >writer.lines.join : (separator?: string) => string
+->writer.lines : string[]
++>writer.lines : Array<string>
+ >writer : WriterAggregator
+->lines : string[]
++>lines : Array<string>
+ >join : (separator?: string) => string
+ >'\n' : "\n"
+
+@@= skipped -104, +104 lines =@@
+ >code : string
+
+             public errors: CompilerError[];
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+
+             /** @param fileResults an array of strings for the filename and an ITextWriter with its code */
+             constructor(public fileResults: { filename: string; file: WriterAggregator; }[], errorLines: string[], public scripts: TypeScript.Script[]) {
+->fileResults : { filename: string; file: WriterAggregator; }[]
++>fileResults : Array<{ filename: string; file: WriterAggregator; }>
+ >filename : string
+ >file : WriterAggregator
+->errorLines : string[]
+->scripts : TypeScript.Script[]
++>errorLines : Array<string>
++>scripts : Array<TypeScript.Script>
+ >TypeScript : any
+
+                 var lines = [];
+->lines : any[]
+->[] : never[]
++>lines : Array<any>
++>[] : Array<never>
+
+                 fileResults.forEach(v => lines = lines.concat(v.file.lines));
+ >fileResults.forEach(v => lines = lines.concat(v.file.lines)) : void
+->fileResults.forEach : (callbackfn: (value: { filename: string; file: WriterAggregator; }, index: number, array: { filename: string; file: WriterAggregator; }[]) => void, thisArg?: any) => void
+->fileResults : { filename: string; file: WriterAggregator; }[]
+->forEach : (callbackfn: (value: { filename: string; file: WriterAggregator; }, index: number, array: { filename: string; file: WriterAggregator; }[]) => void, thisArg?: any) => void
+->v => lines = lines.concat(v.file.lines) : (v: { filename: string; file: WriterAggregator; }) => any[]
++>fileResults.forEach : (callbackfn: (value: { filename: string; file: WriterAggregator; }, index: number, array: Array<{ filename: string; file: WriterAggregator; }>) => void, thisArg?: any) => void
++>fileResults : Array<{ filename: string; file: WriterAggregator; }>
++>forEach : (callbackfn: (value: { filename: string; file: WriterAggregator; }, index: number, array: Array<{ filename: string; file: WriterAggregator; }>) => void, thisArg?: any) => void
++>v => lines = lines.concat(v.file.lines) : (v: { filename: string; file: WriterAggregator; }) => Array<any>
+ >v : { filename: string; file: WriterAggregator; }
+->lines = lines.concat(v.file.lines) : any[]
+->lines : any[]
+->lines.concat(v.file.lines) : any[]
+->lines.concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+->lines : any[]
+->concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+->v.file.lines : string[]
++>lines = lines.concat(v.file.lines) : Array<any>
++>lines : Array<any>
++>lines.concat(v.file.lines) : Array<any>
++>lines.concat : { (...items: Array<ConcatArray<any>>): Array<any>; (...items: Array<any>): Array<any>; }
++>lines : Array<any>
++>concat : { (...items: Array<ConcatArray<any>>): Array<any>; (...items: Array<any>): Array<any>; }
++>v.file.lines : Array<string>
+ >v.file : WriterAggregator
+ >v : { filename: string; file: WriterAggregator; }
+ >file : WriterAggregator
+->lines : string[]
++>lines : Array<string>
+
+                 this.code = lines.join("\n")
+ >this.code = lines.join("\n") : string
+@@= skipped -41, +41 lines =@@
+ >code : string
+ >lines.join("\n") : string
+ >lines.join : (separator?: string) => string
+->lines : any[]
++>lines : Array<any>
+ >join : (separator?: string) => string
+ >"\n" : "\n"
+
+                 this.errors = [];
+->this.errors = [] : never[]
+->this.errors : CompilerError[]
++>this.errors = [] : Array<never>
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
+->[] : never[]
++>errors : Array<CompilerError>
++>[] : Array<never>
+
+                 for (var i = 0; i < errorLines.length; i++) {
+ >i : number
+@@= skipped -17, +17 lines =@@
+ >i < errorLines.length : boolean
+ >i : number
+ >errorLines.length : number
+->errorLines : string[]
++>errorLines : Array<string>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -14, +14 lines =@@
+ >err : any
+ ><any>errorLines[i] : any
+ >errorLines[i] : string
+->errorLines : string[]
++>errorLines : Array<string>
+ >i : number
+
+                         this.errors.push(new CompilerError(err.filename, 0, 0, err.message));
+ >this.errors.push(new CompilerError(err.filename, 0, 0, err.message)) : number
+->this.errors.push : (...items: CompilerError[]) => number
+->this.errors : CompilerError[]
++>this.errors.push : (...items: Array<CompilerError>) => number
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
+->push : (...items: CompilerError[]) => number
++>errors : Array<CompilerError>
++>push : (...items: Array<CompilerError>) => number
+ >new CompilerError(err.filename, 0, 0, err.message) : CompilerError
+ >CompilerError : typeof CompilerError
+ >err.filename : any
+@@= skipped -27, +27 lines =@@
+ >errorLines[i].match(/([^\(]*)\((\d+),(\d+)\):\s+((.*[\s\r\n]*.*)+)\s*$/) : RegExpMatchArray | null
+ >errorLines[i].match : (regexp: string | RegExp) => RegExpMatchArray | null
+ >errorLines[i] : string
+->errorLines : string[]
++>errorLines : Array<string>
+ >i : number
+ >match : (regexp: string | RegExp) => RegExpMatchArray | null
+ >/([^\(]*)\((\d+),(\d+)\):\s+((.*[\s\r\n]*.*)+)\s*$/ : RegExp
+@@= skipped -10, +10 lines =@@
+
+                             this.errors.push(new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4]));
+ >this.errors.push(new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4])) : number
+->this.errors.push : (...items: CompilerError[]) => number
+->this.errors : CompilerError[]
++>this.errors.push : (...items: Array<CompilerError>) => number
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
+->push : (...items: CompilerError[]) => number
++>errors : Array<CompilerError>
++>push : (...items: Array<CompilerError>) => number
+ >new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4]) : CompilerError
+ >CompilerError : typeof CompilerError
+ >match[1] : string
+@@= skipped -33, +33 lines =@@
+ >"non-match on: " + errorLines[i] : string
+ >"non-match on: " : "non-match on: "
+ >errorLines[i] : string
+->errorLines : string[]
++>errorLines : Array<string>
+ >i : number
+                         }
+                     }
+@@= skipped -19, +19 lines =@@
+ >i < this.errors.length : boolean
+ >i : number
+ >this.errors.length : number
+->this.errors : CompilerError[]
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -13, +13 lines =@@
+ >this.errors[i].line === line : boolean
+ >this.errors[i].line : number
+ >this.errors[i] : CompilerError
+->this.errors : CompilerError[]
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+ >i : number
+ >line : number
+ >line : number
+ >this.errors[i].column === column : boolean
+ >this.errors[i].column : number
+ >this.errors[i] : CompilerError
+->this.errors : CompilerError[]
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+ >i : number
+ >column : number
+ >column : number
+ >this.errors[i].message === message : boolean
+ >this.errors[i].message : string
+ >this.errors[i] : CompilerError
+->this.errors : CompilerError[]
++>this.errors : Array<CompilerError>
+ >this : this
+->errors : CompilerError[]
++>errors : Array<CompilerError>
+ >i : number
+ >message : string
+ >message : string
+@@= skipped -195, +195 lines =@@
+ >unitName : string | undefined
+ >isResident : boolean | undefined
+ >isDeclareFile : boolean | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+ >TypeScript : any
+
+             var script: TypeScript.Script = null;
+@@= skipped -81, +81 lines =@@
+ >code : string
+ >uName : string
+ >isResident : boolean | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+
+                 needsFullTypeCheck = true;
+ >needsFullTypeCheck = true : true
+@@= skipped -57, +57 lines =@@
+ >settings : any
+ >TypeScript : any
+ >context : CompilationContext | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+ >TypeScript : any
+
+             path = switchToForwardSlashes(path);
+@@= skipped -34, +34 lines =@@
+ >callback : (res: CompilerResult) => void
+ >settingsCallback : ((settings?: TypeScript.CompilationSettings) => void) | undefined
+ >context : CompilationContext | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+         }
+
+         export function compileUnit(code: string, filename: string, callback: (res: CompilerResult) => void , settingsCallback?: (settings?: TypeScript.CompilationSettings) => void , context?: CompilationContext, references?: TypeScript.IFileReference[]) {
+@@= skipped -13, +13 lines =@@
+ >settings : any
+ >TypeScript : any
+ >context : CompilationContext | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+ >TypeScript : any
+
+             // not recursive
+@@= skipped -94, +94 lines =@@
+ >filename : string
+ >callback : (res: CompilerResult) => void
+ >context : CompilationContext | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+
+             } finally {
+                 // If settingsCallback exists, assume that it modified the global compiler instance's settings in some way.
+@@= skipped -34, +34 lines =@@
+
+         export function compileUnits(units: TestCaseParser.TestUnitData[], callback: (res: Compiler.CompilerResult) => void , settingsCallback?: () => void ) {
+ >compileUnits : (units: TestCaseParser.TestUnitData[], callback: (res: Compiler.CompilerResult) => void, settingsCallback?: () => void) => void
+->units : TestCaseParser.TestUnitData[]
++>units : Array<TestCaseParser.TestUnitData>
+ >TestCaseParser : any
+ >callback : (res: Compiler.CompilerResult) => void
+ >res : CompilerResult
+@@= skipped -10, +10 lines =@@
+             var lastUnit = units[units.length - 1];
+ >lastUnit : TestCaseParser.TestUnitData
+ >units[units.length - 1] : TestCaseParser.TestUnitData
+->units : TestCaseParser.TestUnitData[]
++>units : Array<TestCaseParser.TestUnitData>
+ >units.length - 1 : number
+ >units.length : number
+->units : TestCaseParser.TestUnitData[]
++>units : Array<TestCaseParser.TestUnitData>
+ >length : number
+ >1 : 1
+
+@@= skipped -22, +22 lines =@@
+ >0 : 0
+
+             var dependencies = units.slice(0, units.length - 1);
+->dependencies : TestCaseParser.TestUnitData[]
+->units.slice(0, units.length - 1) : TestCaseParser.TestUnitData[]
+->units.slice : (start?: number, end?: number) => TestCaseParser.TestUnitData[]
+->units : TestCaseParser.TestUnitData[]
+->slice : (start?: number, end?: number) => TestCaseParser.TestUnitData[]
++>dependencies : Array<TestCaseParser.TestUnitData>
++>units.slice(0, units.length - 1) : Array<TestCaseParser.TestUnitData>
++>units.slice : (start?: number, end?: number) => Array<TestCaseParser.TestUnitData>
++>units : Array<TestCaseParser.TestUnitData>
++>slice : (start?: number, end?: number) => Array<TestCaseParser.TestUnitData>
+ >0 : 0
+ >units.length - 1 : number
+ >units.length : number
+->units : TestCaseParser.TestUnitData[]
++>units : Array<TestCaseParser.TestUnitData>
+ >length : number
+ >1 : 1
+
+@@= skipped -21, +21 lines =@@
+ >Compiler : typeof Compiler
+ >defineCompilationContextForTest : (filename: string, dependencies: TestCaseParser.TestUnitData[]) => CompilationContext
+ >unitName : string
+->dependencies : TestCaseParser.TestUnitData[]
++>dependencies : Array<TestCaseParser.TestUnitData>
+
+             compileUnit(lastUnit.content, unitName, callback, settingsCallback, compilationContext, lastUnit.references);
+ >compileUnit(lastUnit.content, unitName, callback, settingsCallback, compilationContext, lastUnit.references) : void
+@@= skipped -12, +12 lines =@@
+ >callback : (res: Compiler.CompilerResult) => void
+ >settingsCallback : (() => void) | undefined
+ >compilationContext : CompilationContext
+->lastUnit.references : TypeScript.IFileReference[]
++>lastUnit.references : Array<TypeScript.IFileReference>
+ >lastUnit : TestCaseParser.TestUnitData
+->references : TypeScript.IFileReference[]
++>references : Array<TypeScript.IFileReference>
+         }
+
+         export function emitToOutfile(outfile: WriterAggregator) {
+@@= skipped -40, +40 lines =@@
+ >res : CompilerResult
+ >Compiler : any
+ >context : CompilationContext | undefined
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+ >TypeScript : any
+
+             var scripts: TypeScript.Script[] = [];
+->scripts : TypeScript.Script[]
++>scripts : Array<TypeScript.Script>
+ >TypeScript : any
+->[] : never[]
++>[] : Array<never>
+
+             reset();
+ >reset() : void
+@@= skipped -47, +47 lines =@@
+
+             scripts.push(addUnit(code, uName, false, isDeclareFile, references));
+ >scripts.push(addUnit(code, uName, false, isDeclareFile, references)) : number
+->scripts.push : (...items: TypeScript.Script[]) => number
+->scripts : TypeScript.Script[]
+->push : (...items: TypeScript.Script[]) => number
++>scripts.push : (...items: Array<TypeScript.Script>) => number
++>scripts : Array<TypeScript.Script>
++>push : (...items: Array<TypeScript.Script>) => number
+ >addUnit(code, uName, false, isDeclareFile, references) : TypeScript.Script
+ >addUnit : (code: string, unitName?: string, isResident?: boolean, isDeclareFile?: boolean, references?: TypeScript.IFileReference[]) => TypeScript.Script
+ >code : string
+ >uName : string
+ >false : false
+ >isDeclareFile : boolean
+->references : TypeScript.IFileReference[] | undefined
++>references : Array<TypeScript.IFileReference> | undefined
+
+             compile(code, uName);
+ >compile(code, uName) : void
+@@= skipped -41, +41 lines =@@
+             }
+             else {
+                 errors = stderr.lines;
+->errors = stderr.lines : string[]
++>errors = stderr.lines : Array<string>
+ >errors : any
+->stderr.lines : string[]
++>stderr.lines : Array<string>
+ >stderr : WriterAggregator
+->lines : string[]
++>lines : Array<string>
+
+                 emit(stdout, false);
+ >emit(stdout, false) : void
+@@= skipped -35, +35 lines =@@
+ >callback : (res: Compiler.CompilerResult) => void
+ >new CompilerResult(stdout.toArray(), errors, scripts) : CompilerResult
+ >CompilerResult : typeof CompilerResult
+->stdout.toArray() : { filename: string; file: WriterAggregator; }[]
++>stdout.toArray() : Array<{ filename: string; file: WriterAggregator; }>
+ >stdout.toArray : () => { filename: string; file: WriterAggregator; }[]
+ >stdout : EmitterIOHost
+ >toArray : () => { filename: string; file: WriterAggregator; }[]
+ >errors : any
+->scripts : TypeScript.Script[]
++>scripts : Array<TypeScript.Script>
+         }
+
+         /** Returns a set of functions which can be later executed to add and remove given dependencies to the compiler so that
+@@= skipped -14, +14 lines =@@
+         export function defineCompilationContextForTest(filename: string, dependencies: TestCaseParser.TestUnitData[]): CompilationContext {
+ >defineCompilationContextForTest : (filename: string, dependencies: TestCaseParser.TestUnitData[]) => CompilationContext
+ >filename : string
+->dependencies : TestCaseParser.TestUnitData[]
++>dependencies : Array<TestCaseParser.TestUnitData>
+ >TestCaseParser : any
+
+             // if the given file has no dependencies, there is no context to return, it can be compiled without additional work
+             if (dependencies.length == 0) {
+ >dependencies.length == 0 : boolean
+ >dependencies.length : number
+->dependencies : TestCaseParser.TestUnitData[]
++>dependencies : Array<TestCaseParser.TestUnitData>
+ >length : number
+ >0 : 0
+
+                 return null;
+             } else {
+                 var addedFiles = [];
+->addedFiles : any[]
+->[] : never[]
++>addedFiles : Array<any>
++>[] : Array<never>
+
+                 var precompile = () => {
+ >precompile : () => void
+@@= skipped -25, +25 lines =@@
+                     // easy enough to do if so, prefer to avoid the recreate cost until it proves to be an issue
+                     dependencies.forEach(dep => {
+ >dependencies.forEach(dep => {                        addUnit(dep.content, dep.name, false, Harness.Compiler.isDeclareFile(dep.name));                        addedFiles.push(dep.name);                    }) : void
+->dependencies.forEach : (callbackfn: (value: TestCaseParser.TestUnitData, index: number, array: TestCaseParser.TestUnitData[]) => void, thisArg?: any) => void
+->dependencies : TestCaseParser.TestUnitData[]
+->forEach : (callbackfn: (value: TestCaseParser.TestUnitData, index: number, array: TestCaseParser.TestUnitData[]) => void, thisArg?: any) => void
++>dependencies.forEach : (callbackfn: (value: TestCaseParser.TestUnitData, index: number, array: Array<TestCaseParser.TestUnitData>) => void, thisArg?: any) => void
++>dependencies : Array<TestCaseParser.TestUnitData>
++>forEach : (callbackfn: (value: TestCaseParser.TestUnitData, index: number, array: Array<TestCaseParser.TestUnitData>) => void, thisArg?: any) => void
+ >dep => {                        addUnit(dep.content, dep.name, false, Harness.Compiler.isDeclareFile(dep.name));                        addedFiles.push(dep.name);                    } : (dep: TestCaseParser.TestUnitData) => void
+ >dep : TestCaseParser.TestUnitData
+
+@@= skipped -28, +28 lines =@@
+
+                         addedFiles.push(dep.name);
+ >addedFiles.push(dep.name) : number
+->addedFiles.push : (...items: any[]) => number
+->addedFiles : any[]
+->push : (...items: any[]) => number
++>addedFiles.push : (...items: Array<any>) => number
++>addedFiles : Array<any>
++>push : (...items: Array<any>) => number
+ >dep.name : string
+ >dep : TestCaseParser.TestUnitData
+ >name : string
+@@= skipped -15, +15 lines =@@
+
+                     addedFiles.forEach(file => {
+ >addedFiles.forEach(file => {                        updateUnit('', file);                    }) : void
+->addedFiles.forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
+->addedFiles : any[]
+->forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
++>addedFiles.forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
++>addedFiles : Array<any>
++>forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
+ >file => {                        updateUnit('', file);                    } : (file: any) => void
+ >file : any
+
+@@= skipped -64, +64 lines =@@
+ >originalFilePath : string
+
+             references: TypeScript.IFileReference[];
+->references : TypeScript.IFileReference[]
++>references : Array<TypeScript.IFileReference>
+ >TypeScript : any
+         }
+
+@@= skipped -12, +12 lines =@@
+
+         // List of allowed metadata names
+         var fileMetadataNames = ["filename", "comments", "declaration", "module", "nolib", "sourcemap", "target", "out"];
+->fileMetadataNames : string[]
+->["filename", "comments", "declaration", "module", "nolib", "sourcemap", "target", "out"] : string[]
++>fileMetadataNames : Array<string>
++>["filename", "comments", "declaration", "module", "nolib", "sourcemap", "target", "out"] : Array<string>
+ >"filename" : "filename"
+ >"comments" : "comments"
+ >"declaration" : "declaration"
+@@= skipped -16, +16 lines =@@
+ >content : string
+
+             var opts = [];
+->opts : any[]
+->[] : never[]
++>opts : Array<any>
++>[] : Array<never>
+
+             var match;
+ >match : any
+@@= skipped -19, +19 lines =@@
+
+                 opts.push({ flag: match[1], value: match[2] });
+ >opts.push({ flag: match[1], value: match[2] }) : number
+->opts.push : (...items: any[]) => number
+->opts : any[]
+->push : (...items: any[]) => number
++>opts.push : (...items: Array<any>) => number
++>opts : Array<any>
++>push : (...items: Array<any>) => number
+ >{ flag: match[1], value: match[2] } : { flag: any; value: any; }
+ >flag : any
+ >match[1] : any
+@@= skipped -15, +15 lines =@@
+             }
+
+             return opts;
+->opts : { flag: any; value: any; }[]
++>opts : Array<{ flag: any; value: any; }>
+         }
+
+         /** Given a test file containing // @Filename directives, return an array of named units of code to be added to an existing compiler instance */
+@@= skipped -8, +8 lines =@@
+ >makeUnitsFromTest : (code: string, filename: string) => { settings: CompilerSetting[]; testUnitData: TestUnitData[]; }
+ >code : string
+ >filename : string
+->settings : CompilerSetting[]
+->testUnitData : TestUnitData[]
++>settings : Array<CompilerSetting>
++>testUnitData : Array<TestUnitData>
+
+             var settings = extractCompilerSettings(code);
+->settings : CompilerSetting[]
+->extractCompilerSettings(code) : CompilerSetting[]
++>settings : Array<CompilerSetting>
++>extractCompilerSettings(code) : Array<CompilerSetting>
+ >extractCompilerSettings : (content: string) => CompilerSetting[]
+ >code : string
+
+             // List of all the subfiles we've parsed out
+             var files: TestUnitData[] = [];
+->files : TestUnitData[]
+->[] : never[]
++>files : Array<TestUnitData>
++>[] : Array<never>
+
+             var lines = splitContentByNewlines(code);
+->lines : string[]
+->splitContentByNewlines(code) : string[]
+->splitContentByNewlines : (content: string) => string[]
++>lines : Array<string>
++>splitContentByNewlines(code) : Array<string>
++>splitContentByNewlines : (content: string) => Array<string>
+ >code : string
+
+             // Stuff related to the subfile we're parsing
+@@= skipped -32, +32 lines =@@
+ >currentFileName : any
+
+             var refs: TypeScript.IFileReference[] = [];
+->refs : TypeScript.IFileReference[]
++>refs : Array<TypeScript.IFileReference>
+ >TypeScript : any
+->[] : never[]
++>[] : Array<never>
+
+             for (var i = 0; i < lines.length; i++) {
+ >i : number
+@@= skipped -10, +10 lines =@@
+ >i < lines.length : boolean
+ >i : number
+ >lines.length : number
+->lines : string[]
++>lines : Array<string>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -8, +8 lines =@@
+                 var line = lines[i];
+ >line : string
+ >lines[i] : string
+->lines : string[]
++>lines : Array<string>
+ >i : number
+
+                 var isTripleSlashReference = /[\/]{3}\s*<reference path/.test(line);
+@@= skipped -68, +68 lines =@@
+
+                         refs.push(ref);
+ >refs.push(ref) : number
+->refs.push : (...items: TypeScript.IFileReference[]) => number
+->refs : TypeScript.IFileReference[]
+->push : (...items: TypeScript.IFileReference[]) => number
++>refs.push : (...items: Array<TypeScript.IFileReference>) => number
++>refs : Array<TypeScript.IFileReference>
++>push : (...items: Array<TypeScript.IFileReference>) => number
+ >ref : { minChar: number; limChar: number; startLine: number; startCol: number; path: string; isResident: boolean; }
+                     }
+                 } else if (testMetaData) {
+@@= skipped -20, +20 lines =@@
+ >fileNameIndex : number
+ >fileMetadataNames.indexOf(testMetaData[1].toLowerCase()) : number
+ >fileMetadataNames.indexOf : (searchElement: string, fromIndex?: number) => number
+->fileMetadataNames : string[]
++>fileMetadataNames : Array<string>
+ >indexOf : (searchElement: string, fromIndex?: number) => number
+ >testMetaData[1].toLowerCase() : any
+ >testMetaData[1].toLowerCase : any
+@@= skipped -28, +28 lines =@@
+ >'". Available file metadata names are: ' : "\". Available file metadata names are: "
+ >fileMetadataNames.join(', ') : string
+ >fileMetadataNames.join : (separator?: string) => string
+->fileMetadataNames : string[]
++>fileMetadataNames : Array<string>
+ >join : (separator?: string) => string
+ >', ' : ", "
+
+@@= skipped -30, +30 lines =@@
+
+                         // Store result file
+                         var newTestFile =
+->newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
++>newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
+                             {
+->{                                content: currentFileContent,                                name: currentFileName,                                fileOptions: currentFileOptions,                                originalFilePath: filename,                                references: refs                            } : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
++>{                                content: currentFileContent,                                name: currentFileName,                                fileOptions: currentFileOptions,                                originalFilePath: filename,                                references: refs                            } : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
+
+                                 content: currentFileContent,
+ >content : string
+@@= skipped -21, +21 lines =@@
+ >filename : string
+
+                                 references: refs
+->references : TypeScript.IFileReference[]
+->refs : TypeScript.IFileReference[]
++>references : Array<TypeScript.IFileReference>
++>refs : Array<TypeScript.IFileReference>
+
+                             };
+                         files.push(newTestFile);
+ >files.push(newTestFile) : number
+->files.push : (...items: TestUnitData[]) => number
+->files : TestUnitData[]
+->push : (...items: TestUnitData[]) => number
+->newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
++>files.push : (...items: Array<TestUnitData>) => number
++>files : Array<TestUnitData>
++>push : (...items: Array<TestUnitData>) => number
++>newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
+
+                         // Reset local data
+                         currentFileContent = null;
+@@= skipped -29, +29 lines =@@
+ >2 : 2
+
+                         refs = [];
+->refs = [] : never[]
+->refs : TypeScript.IFileReference[]
+->[] : never[]
++>refs = [] : Array<never>
++>refs : Array<TypeScript.IFileReference>
++>[] : Array<never>
+
+                     } else {
+                         // First metadata marker in the file
+@@= skipped -50, +50 lines =@@
+ >files.length > 0 ? currentFileName : '0.ts' : any
+ >files.length > 0 : boolean
+ >files.length : number
+->files : TestUnitData[]
++>files : Array<TestUnitData>
+ >length : number
+ >0 : 0
+ >currentFileName : any
+@@= skipped -8, +8 lines =@@
+
+             // EOF, push whatever remains
+             var newTestFile = {
+->newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
+->{                content: currentFileContent || '',                name: currentFileName,                fileOptions: currentFileOptions,                originalFilePath: filename,                references: refs            } : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
++>newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
++>{                content: currentFileContent || '',                name: currentFileName,                fileOptions: currentFileOptions,                originalFilePath: filename,                references: refs            } : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
+
+                 content: currentFileContent || '',
+ >content : string
+@@= skipped -22, +22 lines =@@
+ >filename : string
+
+                 references: refs
+->references : TypeScript.IFileReference[]
+->refs : TypeScript.IFileReference[]
++>references : Array<TypeScript.IFileReference>
++>refs : Array<TypeScript.IFileReference>
+
+             };
+             files.push(newTestFile);
+ >files.push(newTestFile) : number
+->files.push : (...items: TestUnitData[]) => number
+->files : TestUnitData[]
+->push : (...items: TestUnitData[]) => number
+->newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
++>files.push : (...items: Array<TestUnitData>) => number
++>files : Array<TestUnitData>
++>push : (...items: Array<TestUnitData>) => number
++>newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: Array<TypeScript.IFileReference>; }
+
+             return { settings: settings, testUnitData: files };
+->{ settings: settings, testUnitData: files } : { settings: CompilerSetting[]; testUnitData: TestUnitData[]; }
+->settings : CompilerSetting[]
+->settings : CompilerSetting[]
+->testUnitData : TestUnitData[]
+->files : TestUnitData[]
++>{ settings: settings, testUnitData: files } : { settings: Array<CompilerSetting>; testUnitData: Array<TestUnitData>; }
++>settings : Array<CompilerSetting>
++>settings : Array<CompilerSetting>
++>testUnitData : Array<TestUnitData>
++>files : Array<TestUnitData>
+         }
+     }
+
+@@= skipped -27, +27 lines =@@
+ >version : number
+
+         public editRanges: { length: number; editRange: TypeScript.ScriptEditRange; }[] = [];
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >length : number
+ >editRange : TypeScript.ScriptEditRange
+ >TypeScript : any
+->[] : never[]
++>[] : Array<never>
+
+         constructor(public name: string, public content: string, public isResident: boolean, public maxScriptVersions: number) {
+ >name : string
+@@= skipped -26, +26 lines =@@
+ >isResident : boolean
+
+             this.editRanges = [];
+->this.editRanges = [] : never[]
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges = [] : Array<never>
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->[] : never[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>[] : Array<never>
+
+             this.content = content;
+ >this.content = content : string
+@@= skipped -73, +73 lines =@@
+             // Store edit range + new length of script
+             this.editRanges.push({
+ >this.editRanges.push({                length: this.content.length,                editRange: new TypeScript.ScriptEditRange(minChar, limChar, (limChar - minChar) + newText.length)            }) : number
+->this.editRanges.push : (...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges.push : (...items: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => number
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->push : (...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>push : (...items: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => number
+ >{                length: this.content.length,                editRange: new TypeScript.ScriptEditRange(minChar, limChar, (limChar - minChar) + newText.length)            } : { length: number; editRange: any; }
+
+                 length: this.content.length,
+@@= skipped -37, +37 lines =@@
+             if (this.editRanges.length > this.maxScriptVersions) {
+ >this.editRanges.length > this.maxScriptVersions : boolean
+ >this.editRanges.length : number
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >length : number
+ >this.maxScriptVersions : number
+ >this : this
+ >maxScriptVersions : number
+
+                 this.editRanges.splice(0, this.maxScriptVersions - this.editRanges.length);
+->this.editRanges.splice(0, this.maxScriptVersions - this.editRanges.length) : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->this.editRanges.splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges.splice(0, this.maxScriptVersions - this.editRanges.length) : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>this.editRanges.splice : { (start: number, deleteCount?: number): Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>; (start: number, deleteCount: number, ...items: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>): Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>; }
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>splice : { (start: number, deleteCount?: number): Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>; (start: number, deleteCount: number, ...items: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>): Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>; }
+ >0 : 0
+ >this.maxScriptVersions - this.editRanges.length : number
+ >this.maxScriptVersions : number
+ >this : this
+ >maxScriptVersions : number
+ >this.editRanges.length : number
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >length : number
+             }
+
+@@= skipped -55, +55 lines =@@
+ >initialEditRangeIndex : number
+ >this.editRanges.length - (this.version - version) : number
+ >this.editRanges.length : number
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >length : number
+ >(this.version - version) : number
+ >this.version - version : number
+@@= skipped -19, +19 lines =@@
+ >initialEditRangeIndex >= this.editRanges.length : boolean
+ >initialEditRangeIndex : number
+ >this.editRanges.length : number
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >length : number
+
+                 // Too far away from what we know
+@@= skipped -16, +16 lines =@@
+             }
+
+             var entries = this.editRanges.slice(initialEditRangeIndex);
+->entries : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->this.editRanges.slice(initialEditRangeIndex) : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->this.editRanges.slice : (start?: number, end?: number) => { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>entries : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>this.editRanges.slice(initialEditRangeIndex) : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>this.editRanges.slice : (start?: number, end?: number) => Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>this.editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >this : this
+->editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->slice : (start?: number, end?: number) => { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>editRanges : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>slice : (start?: number, end?: number) => Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >initialEditRangeIndex : number
+
+             var minDistFromStart = entries.map(x => x.editRange.minChar).reduce((prev, current) => Math.min(prev, current));
+ >minDistFromStart : any
+ >entries.map(x => x.editRange.minChar).reduce((prev, current) => Math.min(prev, current)) : any
+->entries.map(x => x.editRange.minChar).reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
+->entries.map(x => x.editRange.minChar) : any[]
+->entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
+->entries : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
++>entries.map(x => x.editRange.minChar).reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
++>entries.map(x => x.editRange.minChar) : Array<any>
++>entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
++>entries : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
+ >x => x.editRange.minChar : (x: { length: number; editRange: TypeScript.ScriptEditRange; }) => any
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >x.editRange.minChar : any
+@@= skipped -24, +24 lines =@@
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >editRange : TypeScript.ScriptEditRange
+ >minChar : any
+->reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
++>reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
+ >(prev, current) => Math.min(prev, current) : (prev: any, current: any) => number
+ >prev : any
+ >current : any
+@@= skipped -14, +14 lines =@@
+             var minDistFromEnd = entries.map(x => x.length - x.editRange.limChar).reduce((prev, current) => Math.min(prev, current));
+ >minDistFromEnd : number
+ >entries.map(x => x.length - x.editRange.limChar).reduce((prev, current) => Math.min(prev, current)) : number
+->entries.map(x => x.length - x.editRange.limChar).reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
+->entries.map(x => x.length - x.editRange.limChar) : number[]
+->entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
+->entries : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
++>entries.map(x => x.length - x.editRange.limChar).reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
++>entries.map(x => x.length - x.editRange.limChar) : Array<number>
++>entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
++>entries : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
+ >x => x.length - x.editRange.limChar : (x: { length: number; editRange: TypeScript.ScriptEditRange; }) => number
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >x.length - x.editRange.limChar : number
+@@= skipped -16, +16 lines =@@
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >editRange : TypeScript.ScriptEditRange
+ >limChar : any
+->reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: number[]) => U, initialValue: U): U; }
++>reduce : { (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number): number; (callbackfn: (previousValue: number, currentValue: number, currentIndex: number, array: Array<number>) => number, initialValue: number): number; <U>(callbackfn: (previousValue: U, currentValue: number, currentIndex: number, array: Array<number>) => U, initialValue: U): U; }
+ >(prev, current) => Math.min(prev, current) : (prev: number, current: number) => number
+ >prev : number
+ >current : number
+@@= skipped -14, +14 lines =@@
+             var aggDelta = entries.map(x => x.editRange.delta).reduce((prev, current) => prev + current);
+ >aggDelta : any
+ >entries.map(x => x.editRange.delta).reduce((prev, current) => prev + current) : any
+->entries.map(x => x.editRange.delta).reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
+->entries.map(x => x.editRange.delta) : any[]
+->entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
+->entries : { length: number; editRange: TypeScript.ScriptEditRange; }[]
+->map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => U, thisArg?: any) => U[]
++>entries.map(x => x.editRange.delta).reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
++>entries.map(x => x.editRange.delta) : Array<any>
++>entries.map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
++>entries : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
++>map : <U>(callbackfn: (value: { length: number; editRange: TypeScript.ScriptEditRange; }, index: number, array: Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>) => U, thisArg?: any) => Array<U>
+ >x => x.editRange.delta : (x: { length: number; editRange: TypeScript.ScriptEditRange; }) => any
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >x.editRange.delta : any
+@@= skipped -12, +12 lines =@@
+ >x : { length: number; editRange: TypeScript.ScriptEditRange; }
+ >editRange : TypeScript.ScriptEditRange
+ >delta : any
+->reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
++>reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
+ >(prev, current) => prev + current : (prev: any, current: any) => any
+ >prev : any
+ >current : any
+@@= skipped -17, +17 lines =@@
+ >entries[0].length - minDistFromEnd : number
+ >entries[0].length : number
+ >entries[0] : { length: number; editRange: TypeScript.ScriptEditRange; }
+->entries : { length: number; editRange: TypeScript.ScriptEditRange; }[]
++>entries : Array<{ length: number; editRange: TypeScript.ScriptEditRange; }>
+ >0 : 0
+ >length : number
+ >minDistFromEnd : number
+@@= skipped -17, +17 lines =@@
+ >Services : any
+
+         public scripts: ScriptInfo[] = [];
+->scripts : ScriptInfo[]
+->[] : never[]
++>scripts : Array<ScriptInfo>
++>[] : Array<never>
+
+         public maxScriptVersions = 100;
+ >maxScriptVersions : number
+@@= skipped -66, +66 lines =@@
+
+             this.scripts.push(script);
+ >this.scripts.push(script) : number
+->this.scripts.push : (...items: ScriptInfo[]) => number
+->this.scripts : ScriptInfo[]
++>this.scripts.push : (...items: Array<ScriptInfo>) => number
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
+->push : (...items: ScriptInfo[]) => number
++>scripts : Array<ScriptInfo>
++>push : (...items: Array<ScriptInfo>) => number
+ >script : ScriptInfo
+         }
+
+@@= skipped -21, +21 lines =@@
+ >i < this.scripts.length : boolean
+ >i : number
+ >this.scripts.length : number
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -11, +11 lines =@@
+ >this.scripts[i].name == name : boolean
+ >this.scripts[i].name : string
+ >this.scripts[i] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >i : number
+ >name : string
+ >name : string
+@@= skipped -11, +11 lines =@@
+ >this.scripts[i].updateContent(content, isResident) : void
+ >this.scripts[i].updateContent : (content: string, isResident: boolean) => void
+ >this.scripts[i] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >i : number
+ >updateContent : (content: string, isResident: boolean) => void
+ >content : string
+@@= skipped -35, +35 lines =@@
+ >i < this.scripts.length : boolean
+ >i : number
+ >this.scripts.length : number
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -11, +11 lines =@@
+ >this.scripts[i].name == name : boolean
+ >this.scripts[i].name : string
+ >this.scripts[i] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >i : number
+ >name : string
+ >name : string
+@@= skipped -11, +11 lines =@@
+ >this.scripts[i].editContent(minChar, limChar, newText) : void
+ >this.scripts[i].editContent : (minChar: number, limChar: number, newText: string) => void
+ >this.scripts[i] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >i : number
+ >editContent : (minChar: number, limChar: number, newText: string) => void
+ >minChar : number
+@@= skipped -30, +30 lines =@@
+             return this.scripts[scriptIndex].content;
+ >this.scripts[scriptIndex].content : string
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >content : string
+         }
+@@= skipped -54, +54 lines =@@
+
+             return this.scripts.length;
+ >this.scripts.length : number
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >length : number
+         }
+
+@@= skipped -17, +17 lines =@@
+ >this.scripts[scriptIndex].content.substring : (start: number, end?: number) => string
+ >this.scripts[scriptIndex].content : string
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >content : string
+ >substring : (start: number, end?: number) => string
+@@= skipped -18, +18 lines =@@
+ >this.scripts[scriptIndex].content.length : number
+ >this.scripts[scriptIndex].content : string
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >content : string
+ >length : number
+@@= skipped -15, +15 lines =@@
+             return this.scripts[scriptIndex].name;
+ >this.scripts[scriptIndex].name : string
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >name : string
+         }
+@@= skipped -14, +14 lines =@@
+             return this.scripts[scriptIndex].isResident;
+ >this.scripts[scriptIndex].isResident : boolean
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >isResident : boolean
+         }
+@@= skipped -14, +14 lines =@@
+             return this.scripts[scriptIndex].version;
+ >this.scripts[scriptIndex].version : number
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >version : number
+         }
+@@= skipped -17, +17 lines =@@
+ >this.scripts[scriptIndex].getEditRangeSinceVersion(scriptVersion) : TypeScript.ScriptEditRange
+ >this.scripts[scriptIndex].getEditRangeSinceVersion : (version: number) => TypeScript.ScriptEditRange
+ >this.scripts[scriptIndex] : ScriptInfo
+->this.scripts : ScriptInfo[]
++>this.scripts : Array<ScriptInfo>
+ >this : this
+->scripts : ScriptInfo[]
++>scripts : Array<ScriptInfo>
+ >scriptIndex : number
+ >getEditRangeSinceVersion : (version: number) => TypeScript.ScriptEditRange
+ >scriptVersion : number
+@@= skipped -283, +283 lines =@@
+ >checkEdits : (sourceFileName: string, baselineFileName: string, edits: Services.TextEdit[]) => void
+ >sourceFileName : string
+ >baselineFileName : string
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >Services : any
+
+             var script = readFile(sourceFileName);
+@@= skipped -16, +16 lines =@@
+ >this : this
+ >applyEdits : (content: string, edits: Services.TextEdit[]) => string
+ >script : any
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+
+             var baseline = readFile(baselineFileName);
+ >baseline : any
+@@= skipped -30, +30 lines =@@
+         public applyEdits(content: string, edits: Services.TextEdit[]): string {
+ >applyEdits : (content: string, edits: Services.TextEdit[]) => string
+ >content : string
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >Services : any
+
+             var result = content;
+@@= skipped -8, +8 lines =@@
+ >content : string
+
+             edits = this.normalizeEdits(edits);
+->edits = this.normalizeEdits(edits) : Services.TextEdit[]
+->edits : Services.TextEdit[]
+->this.normalizeEdits(edits) : Services.TextEdit[]
++>edits = this.normalizeEdits(edits) : Array<Services.TextEdit>
++>edits : Array<Services.TextEdit>
++>this.normalizeEdits(edits) : Array<Services.TextEdit>
+ >this.normalizeEdits : (edits: Services.TextEdit[]) => Services.TextEdit[]
+ >this : this
+ >normalizeEdits : (edits: Services.TextEdit[]) => Services.TextEdit[]
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+
+             for (var i = edits.length - 1; i >= 0; i--) {
+ >i : number
+ >edits.length - 1 : number
+ >edits.length : number
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >length : number
+ >1 : 1
+ >i >= 0 : boolean
+@@= skipped -24, +24 lines =@@
+                 var edit = edits[i];
+ >edit : Services.TextEdit
+ >edits[i] : Services.TextEdit
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >i : number
+
+                 var prefix = result.substring(0, edit.minChar);
+@@= skipped -46, +46 lines =@@
+         /** Normalize an array of edits by removing overlapping entries and sorting entries on the minChar position. */
+         private normalizeEdits(edits: Services.TextEdit[]): Services.TextEdit[] {
+ >normalizeEdits : (edits: Services.TextEdit[]) => Services.TextEdit[]
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >Services : any
+ >Services : any
+
+             var result: Services.TextEdit[] = [];
+->result : Services.TextEdit[]
++>result : Array<Services.TextEdit>
+ >Services : any
+->[] : never[]
++>[] : Array<never>
+
+             function mapEdits(edits: Services.TextEdit[]): { edit: Services.TextEdit; index: number; }[] {
+ >mapEdits : (edits: Services.TextEdit[]) => { edit: Services.TextEdit; index: number; }[]
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >Services : any
+ >edit : Services.TextEdit
+ >Services : any
+ >index : number
+
+                 var result = [];
+->result : any[]
+->[] : never[]
++>result : Array<any>
++>[] : Array<never>
+
+                 for (var i = 0; i < edits.length; i++) {
+ >i : number
+@@= skipped -27, +27 lines =@@
+ >i < edits.length : boolean
+ >i : number
+ >edits.length : number
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >length : number
+ >i++ : number
+ >i : number
+
+                     result.push({ edit: edits[i], index: i });
+ >result.push({ edit: edits[i], index: i }) : number
+->result.push : (...items: any[]) => number
+->result : any[]
+->push : (...items: any[]) => number
++>result.push : (...items: Array<any>) => number
++>result : Array<any>
++>push : (...items: Array<any>) => number
+ >{ edit: edits[i], index: i } : { edit: Services.TextEdit; index: number; }
+ >edit : Services.TextEdit
+ >edits[i] : Services.TextEdit
+->edits : Services.TextEdit[]
++>edits : Array<Services.TextEdit>
+ >i : number
+ >index : number
+ >i : number
+                 }
+                 return result;
+->result : { edit: Services.TextEdit; index: number; }[]
++>result : Array<{ edit: Services.TextEdit; index: number; }>
+             }
+
+             var temp = mapEdits(edits).sort(function (a, b) {
+->temp : { edit: Services.TextEdit; index: number; }[]
+->mapEdits(edits).sort(function (a, b) {                var result = a.edit.minChar - b.edit.minChar;                if (result == 0)                    result = a.index - b.index;                return result;            }) : { edit: Services.TextEdit; index: number; }[]
+->mapEdits(edits).sort : (compareFn?: ((a: { edit: Services.TextEdit; index: number; }, b: { edit: Services.TextEdit; index: number; }) => number) | undefined) => { edit: Services.TextEdit; index: number; }[]
+->mapEdits(edits) : { edit: Services.TextEdit; index: number; }[]
++>temp : Array<{ edit: Services.TextEdit; index: number; }>
++>mapEdits(edits).sort(function (a, b) {                var result = a.edit.minChar - b.edit.minChar;                if (result == 0)                    result = a.index - b.index;                return result;            }) : Array<{ edit: Services.TextEdit; index: number; }>
++>mapEdits(edits).sort : (compareFn?: ((a: { edit: Services.TextEdit; index: number; }, b: { edit: Services.TextEdit; index: number; }) => number) | undefined) => Array<{ edit: Services.TextEdit; index: number; }>
++>mapEdits(edits) : Array<{ edit: Services.TextEdit; index: number; }>
+ >mapEdits : (edits: Services.TextEdit[]) => { edit: Services.TextEdit; index: number; }[]
+->edits : Services.TextEdit[]
+->sort : (compareFn?: ((a: { edit: Services.TextEdit; index: number; }, b: { edit: Services.TextEdit; index: number; }) => number) | undefined) => { edit: Services.TextEdit; index: number; }[]
++>edits : Array<Services.TextEdit>
++>sort : (compareFn?: ((a: { edit: Services.TextEdit; index: number; }, b: { edit: Services.TextEdit; index: number; }) => number) | undefined) => Array<{ edit: Services.TextEdit; index: number; }>
+ >function (a, b) {                var result = a.edit.minChar - b.edit.minChar;                if (result == 0)                    result = a.index - b.index;                return result;            } : (a: { edit: Services.TextEdit; index: number; }, b: { edit: Services.TextEdit; index: number; }) => number
+ >a : { edit: Services.TextEdit; index: number; }
+ >b : { edit: Services.TextEdit; index: number; }
+@@= skipped -81, +81 lines =@@
+ >current < temp.length : boolean
+ >current : number
+ >temp.length : number
+->temp : { edit: Services.TextEdit; index: number; }[]
++>temp : Array<{ edit: Services.TextEdit; index: number; }>
+ >length : number
+
+                 var currentEdit = temp[current].edit;
+ >currentEdit : Services.TextEdit
+ >temp[current].edit : Services.TextEdit
+ >temp[current] : { edit: Services.TextEdit; index: number; }
+->temp : { edit: Services.TextEdit; index: number; }[]
++>temp : Array<{ edit: Services.TextEdit; index: number; }>
+ >current : number
+ >edit : Services.TextEdit
+
+@@= skipped -16, +16 lines =@@
+ >next >= temp.length : boolean
+ >next : number
+ >temp.length : number
+->temp : { edit: Services.TextEdit; index: number; }[]
++>temp : Array<{ edit: Services.TextEdit; index: number; }>
+ >length : number
+
+                     result.push(currentEdit);
+ >result.push(currentEdit) : number
+->result.push : (...items: Services.TextEdit[]) => number
+->result : Services.TextEdit[]
+->push : (...items: Services.TextEdit[]) => number
++>result.push : (...items: Array<Services.TextEdit>) => number
++>result : Array<Services.TextEdit>
++>push : (...items: Array<Services.TextEdit>) => number
+ >currentEdit : Services.TextEdit
+
+                     current++;
+@@= skipped -20, +20 lines =@@
+ >nextEdit : Services.TextEdit
+ >temp[next].edit : Services.TextEdit
+ >temp[next] : { edit: Services.TextEdit; index: number; }
+->temp : { edit: Services.TextEdit; index: number; }[]
++>temp : Array<{ edit: Services.TextEdit; index: number; }>
+ >next : number
+ >edit : Services.TextEdit
+
+@@= skipped -22, +22 lines =@@
+
+                     result.push(currentEdit);
+ >result.push(currentEdit) : number
+->result.push : (...items: Services.TextEdit[]) => number
+->result : Services.TextEdit[]
+->push : (...items: Services.TextEdit[]) => number
++>result.push : (...items: Array<Services.TextEdit>) => number
++>result : Array<Services.TextEdit>
++>push : (...items: Array<Services.TextEdit>) => number
+ >currentEdit : Services.TextEdit
+
+                     current = next;
+@@= skipped -43, +43 lines =@@
+             }
+
+             return result;
+->result : Services.TextEdit[]
++>result : Array<Services.TextEdit>
+         }
+
+         public getHostSettings(): string {
+@@= skipped -33, +33 lines =@@
+         if (Runnable.currentStack.length === 0) {
+ >Runnable.currentStack.length === 0 : boolean
+ >Runnable.currentStack.length : number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >length : number
+ >0 : 0
+
+             Runnable.currentStack.push(currentRun);
+ >Runnable.currentStack.push(currentRun) : number
+->Runnable.currentStack.push : (...items: Runnable[]) => number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack.push : (...items: Array<Runnable>) => number
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
+->push : (...items: Runnable[]) => number
++>currentStack : Array<Runnable>
++>push : (...items: Array<Runnable>) => number
+ >currentRun : Run
+         }
+
+@@= skipped -20, +20 lines =@@
+ >Runnable.currentStack[Runnable.currentStack.length - 1].addChild(newScenario) : void
+ >Runnable.currentStack[Runnable.currentStack.length - 1].addChild : (child: Runnable) => void
+ >Runnable.currentStack[Runnable.currentStack.length - 1] : Runnable
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >Runnable.currentStack.length - 1 : number
+ >Runnable.currentStack.length : number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >length : number
+ >1 : 1
+ >addChild : (child: Runnable) => void
+@@= skipped -29, +29 lines =@@
+ >Runnable.currentStack[Runnable.currentStack.length - 1].addChild(testCase) : void
+ >Runnable.currentStack[Runnable.currentStack.length - 1].addChild : (child: Runnable) => void
+ >Runnable.currentStack[Runnable.currentStack.length - 1] : Runnable
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >Runnable.currentStack.length - 1 : number
+ >Runnable.currentStack.length : number
+->Runnable.currentStack : Runnable[]
++>Runnable.currentStack : Array<Runnable>
+ >Runnable : typeof Runnable
+->currentStack : Runnable[]
++>currentStack : Array<Runnable>
+ >length : number
+ >1 : 1
+ >addChild : (child: Runnable) => void
+@@= skipped -91, +91 lines =@@
+             // List of names that get overriden by various test code we eval
+             var dangerNames: any = ['Array'];
+ >dangerNames : any
+->['Array'] : string[]
++>['Array'] : Array<string>
+ >'Array' : "Array"
+
+             var globalBackup: any = {};
+@@= skipped -640, +640 lines =@@
          }
 
          export function runBaseline(

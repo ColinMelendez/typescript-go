@@ -20,7 +20,7 @@ interface TodoProp {
 }
 interface TodoListProps {
     todos: TodoProp[];
->todos : TodoProp[]
+>todos : Array<TodoProp>
 }
 function Todo(prop: { key: number, todo: string }) {
 >Todo : (prop: { key: number; todo: string; }) => JSX.Element
@@ -45,17 +45,17 @@ function Todo(prop: { key: number, todo: string }) {
 }
 function TodoList({ todos }: TodoListProps) {
 >TodoList : ({ todos }: TodoListProps) => JSX.Element
->todos : TodoProp[]
+>todos : Array<TodoProp>
 
     return <div>
 ><div>        {...todos.map(todo => <Todo key={todo.id} todo={todo.todo}/>)}    </div> : JSX.Element
 >div : any
 
         {...todos.map(todo => <Todo key={todo.id} todo={todo.todo}/>)}
->todos.map(todo => <Todo key={todo.id} todo={todo.todo}/>) : JSX.Element[]
->todos.map : <U>(callbackfn: (value: TodoProp, index: number, array: TodoProp[]) => U, thisArg?: any) => U[]
->todos : TodoProp[]
->map : <U>(callbackfn: (value: TodoProp, index: number, array: TodoProp[]) => U, thisArg?: any) => U[]
+>todos.map(todo => <Todo key={todo.id} todo={todo.todo}/>) : Array<JSX.Element>
+>todos.map : <U>(callbackfn: (value: TodoProp, index: number, array: Array<TodoProp>) => U, thisArg?: any) => Array<U>
+>todos : Array<TodoProp>
+>map : <U>(callbackfn: (value: TodoProp, index: number, array: Array<TodoProp>) => U, thisArg?: any) => Array<U>
 >todo => <Todo key={todo.id} todo={todo.todo}/> : (todo: TodoProp) => JSX.Element
 >todo : TodoProp
 ><Todo key={todo.id} todo={todo.todo}/> : JSX.Element

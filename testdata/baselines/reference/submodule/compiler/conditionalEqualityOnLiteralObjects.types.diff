@@ -1,0 +1,151 @@
+--- old.conditionalEqualityOnLiteralObjects.types
++++ new.conditionalEqualityOnLiteralObjects.types
+@@= skipped -7, +7 lines =@@
+ >1 : 1
+
+ const b = [1]
+->b : number[]
+->[1] : number[]
++>b : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ if ({ a: 1 } === { a: 1 }) {
+@@= skipped -15, +15 lines =@@
+ }
+ if ([1] === [1]) {
+ >[1] === [1] : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+ }
+ if (a === { a: 1 }) {
+@@= skipped -14, +14 lines =@@
+ }
+ if (b === [1]) {
+ >b === [1] : boolean
+->b : number[]
+->[1] : number[]
++>b : Array<number>
++>[1] : Array<number>
+ >1 : 1
+ }
+ if ({ a: 1 } === a) {
+@@= skipped -13, +13 lines =@@
+ }
+ if ([1] === b) {
+ >[1] === b : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->b : number[]
++>b : Array<number>
+ }
+
+ if ({ a: 1 } !== { a: 1 }) {
+@@= skipped -16, +16 lines =@@
+ }
+ if ([1] !== [1]) {
+ >[1] !== [1] : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+ }
+ if (a !== { a: 1 }) {
+@@= skipped -14, +14 lines =@@
+ }
+ if (b !== [1]) {
+ >b !== [1] : boolean
+->b : number[]
+->[1] : number[]
++>b : Array<number>
++>[1] : Array<number>
+ >1 : 1
+ }
+ if ({ a: 1 } !== a) {
+@@= skipped -13, +13 lines =@@
+ }
+ if ([1] !== b) {
+ >[1] !== b : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->b : number[]
++>b : Array<number>
+ }
+
+ if ({ a: 1 } == { a: 1 }) {
+@@= skipped -16, +16 lines =@@
+ }
+ if ([1] == [1]) {
+ >[1] == [1] : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+ }
+ if (a == { a: 1 }) {
+@@= skipped -14, +14 lines =@@
+ }
+ if (b == [1]) {
+ >b == [1] : boolean
+->b : number[]
+->[1] : number[]
++>b : Array<number>
++>[1] : Array<number>
+ >1 : 1
+ }
+ if ({ a: 1 } == a) {
+@@= skipped -13, +13 lines =@@
+ }
+ if ([1] == b) {
+ >[1] == b : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->b : number[]
++>b : Array<number>
+ }
+
+ if ({ a: 1 } != { a: 1 }) {
+@@= skipped -16, +16 lines =@@
+ }
+ if ([1] != [1]) {
+ >[1] != [1] : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+ }
+ if (a != { a: 1 }) {
+@@= skipped -14, +14 lines =@@
+ }
+ if (b != [1]) {
+ >b != [1] : boolean
+->b : number[]
+->[1] : number[]
++>b : Array<number>
++>[1] : Array<number>
+ >1 : 1
+ }
+ if ({ a: 1 } != a) {
+@@= skipped -13, +13 lines =@@
+ }
+ if ([1] != b) {
+ >[1] != b : boolean
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+->b : number[]
++>b : Array<number>
+ }

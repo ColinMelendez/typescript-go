@@ -176,7 +176,7 @@ declare let g0: () => string;
 declare let g1: (x: any, y: any) => number;
 declare let g2: (x: number, y: any) => number;
 declare let g3: (x: number, y: number) => number;
-declare let g4: (...args: any[]) => boolean;
+declare let g4: (...args: Array<any>) => boolean;
 declare function pipe<A extends any[], B, C>(f: (...args: A) => B, g: (x: B) => C): (...args: A) => C;
 declare let g5: () => number;
 declare let g6: (x: any) => number;

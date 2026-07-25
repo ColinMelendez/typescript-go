@@ -125,7 +125,7 @@ declare var z: boolean;
 >z : boolean
 
 declare var x: boolean[];
->x : boolean[]
+>x : Array<boolean>
 
 declare var r: () => boolean;
 >r : () => boolean

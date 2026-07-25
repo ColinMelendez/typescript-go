@@ -1,0 +1,21 @@
+--- old.moduleAugmentationGlobal3.types
++++ new.moduleAugmentationGlobal3.types
+@@= skipped -21, +21 lines =@@
+ import "./f2";
+
+ let x = [1];
+->x : number[]
+->[1] : number[]
++>x : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ let y = x.getCountAsString().toLowerCase();
+@@= skipped -10, +10 lines =@@
+ >x.getCountAsString().toLowerCase : () => string
+ >x.getCountAsString() : string
+ >x.getCountAsString : () => string
+->x : number[]
++>x : Array<number>
+ >getCountAsString : () => string
+ >toLowerCase : () => string

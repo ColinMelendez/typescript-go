@@ -1,0 +1,40 @@
+--- old.topLevelAwait.1(module=es2022,target=es2015).types
++++ new.topLevelAwait.1(module=es2022,target=es2015).types
+@@= skipped -10, +10 lines =@@
+
+ // reparse element access as await
+ await [x];
+->await [x] : number[]
+->[x] : number[]
++>await [x] : Array<number>
++>[x] : Array<number>
+ >x : 1
+
+ await [x, x];
+->await [x, x] : number[]
+->[x, x] : number[]
++>await [x, x] : Array<number>
++>[x, x] : Array<number>
+ >x : 1
+ >x : 1
+
+@@= skipped -169, +169 lines =@@
+
+ // for-await-of
+ const arr = [Promise.resolve()];
+->arr : Promise<void>[]
+->[Promise.resolve()] : Promise<void>[]
++>arr : Array<Promise<void>>
++>[Promise.resolve()] : Array<Promise<void>>
+ >Promise.resolve() : Promise<void>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -9, +9 lines =@@
+
+ for await (const item of arr) {
+ >item : void
+->arr : Promise<void>[]
++>arr : Array<Promise<void>>
+
+   item;
+ >item : void

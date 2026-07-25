@@ -1,0 +1,11 @@
+--- old.isolatedDeclarationErrorsClassesExpressions.types
++++ new.isolatedDeclarationErrorsClassesExpressions.types
+@@= skipped -12, +12 lines =@@
+
+ function id<T extends new (...a: any[]) => any>(cls: T) {
+ >id : <T extends new (...a: any[]) => any>(cls: T) => T
+->a : any[]
++>a : Array<any>
+ >cls : T
+
+     return cls;

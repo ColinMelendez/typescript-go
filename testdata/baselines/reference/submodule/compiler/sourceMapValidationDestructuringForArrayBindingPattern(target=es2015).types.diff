@@ -1,0 +1,35 @@
+--- old.sourceMapValidationDestructuringForArrayBindingPattern(target=es2015).types
++++ new.sourceMapValidationDestructuringForArrayBindingPattern(target=es2015).types
+@@= skipped -268, +268 lines =@@
+ }
+ for (let [nameB] = ["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
+ >nameB : string
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+ >i : number
+@@= skipped -250, +250 lines =@@
+ >multiRobotAInfo : [string, [string, string]]
+ }
+ for (let [...multiRobotAInfo] = ["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
+->multiRobotAInfo : (string | string[])[]
+->["trimmer", ["trimming", "edging"]] : (string | string[])[]
++>multiRobotAInfo : Array<string | Array<string>>
++>["trimmer", ["trimming", "edging"]] : Array<string | Array<string>>
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+ >i : number
+@@= skipped -19, +19 lines =@@
+ >console.log : (msg: any) => void
+ >console : { log(msg: any): void; }
+ >log : (msg: any) => void
+->multiRobotAInfo : (string | string[])[]
++>multiRobotAInfo : Array<string | Array<string>>
+ }

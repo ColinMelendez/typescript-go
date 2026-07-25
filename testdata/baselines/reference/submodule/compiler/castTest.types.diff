@@ -1,0 +1,13 @@
+--- old.castTest.types
++++ new.castTest.types
+@@= skipped -31, +31 lines =@@
+ >"" : ""
+
+ var ar = <any[]>null;
+->ar : any[]
+-><any[]>null : any[]
++>ar : Array<any>
++><any[]>null : Array<any>
+
+ var f = <(res : number) => void>null;
+ >f : (res: number) => void

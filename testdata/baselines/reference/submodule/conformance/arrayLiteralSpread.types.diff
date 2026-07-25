@@ -1,0 +1,185 @@
+--- old.arrayLiteralSpread.types
++++ new.arrayLiteralSpread.types
+@@= skipped -4, +4 lines =@@
+ >f0 : () => void
+
+     var a = [1, 2, 3];
+->a : number[]
+->[1, 2, 3] : number[]
++>a : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+     var a1 = [...a];
+->a1 : number[]
+->[...a] : number[]
++>a1 : Array<number>
++>[...a] : Array<number>
+ >...a : number
+->a : number[]
++>a : Array<number>
+
+     var a2 = [1, ...a];
+->a2 : number[]
+->[1, ...a] : number[]
++>a2 : Array<number>
++>[1, ...a] : Array<number>
+ >1 : 1
+ >...a : number
+->a : number[]
++>a : Array<number>
+
+     var a3 = [1, 2, ...a];
+->a3 : number[]
+->[1, 2, ...a] : number[]
++>a3 : Array<number>
++>[1, 2, ...a] : Array<number>
+ >1 : 1
+ >2 : 2
+ >...a : number
+->a : number[]
++>a : Array<number>
+
+     var a4 = [...a, 1];
+->a4 : number[]
+->[...a, 1] : number[]
++>a4 : Array<number>
++>[...a, 1] : Array<number>
+ >...a : number
+->a : number[]
++>a : Array<number>
+ >1 : 1
+
+     var a5 = [...a, 1, 2];
+->a5 : number[]
+->[...a, 1, 2] : number[]
++>a5 : Array<number>
++>[...a, 1, 2] : Array<number>
+ >...a : number
+->a : number[]
++>a : Array<number>
+ >1 : 1
+ >2 : 2
+
+     var a6 = [1, 2, ...a, 1, 2];
+->a6 : number[]
+->[1, 2, ...a, 1, 2] : number[]
++>a6 : Array<number>
++>[1, 2, ...a, 1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ >...a : number
+->a : number[]
++>a : Array<number>
+ >1 : 1
+ >2 : 2
+
+     var a7 = [1, ...a, 2, ...a];
+->a7 : number[]
+->[1, ...a, 2, ...a] : number[]
++>a7 : Array<number>
++>[1, ...a, 2, ...a] : Array<number>
+ >1 : 1
+ >...a : number
+->a : number[]
++>a : Array<number>
+ >2 : 2
+ >...a : number
+->a : number[]
++>a : Array<number>
+
+     var a8 = [...a, ...a, ...a];
+->a8 : number[]
+->[...a, ...a, ...a] : number[]
+->...a : number
+->a : number[]
+->...a : number
+->a : number[]
+->...a : number
+->a : number[]
++>a8 : Array<number>
++>[...a, ...a, ...a] : Array<number>
++>...a : number
++>a : Array<number>
++>...a : number
++>a : Array<number>
++>...a : number
++>a : Array<number>
+ }
+
+ function f1() {
+ >f1 : () => void
+
+     var a = [1, 2, 3];
+->a : number[]
+->[1, 2, 3] : number[]
++>a : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+     var b = ["hello", ...a, true];
+->b : (string | number | boolean)[]
+->["hello", ...a, true] : (string | number | boolean)[]
++>b : Array<string | number | boolean>
++>["hello", ...a, true] : Array<string | number | boolean>
+ >"hello" : "hello"
+ >...a : number
+->a : number[]
++>a : Array<number>
+ >true : true
+
+     var b: (string | number | boolean)[];
+->b : (string | number | boolean)[]
++>b : Array<string | number | boolean>
+ }
+
+ function f2() {
+ >f2 : () => void
+
+     var a = [...[...[...[...[...[]]]]]];
+->a : any[]
+->[...[...[...[...[...[]]]]]] : undefined[]
++>a : Array<any>
++>[...[...[...[...[...[]]]]]] : Array<undefined>
+ >...[...[...[...[...[]]]]] : undefined
+->[...[...[...[...[]]]]] : undefined[]
++>[...[...[...[...[]]]]] : Array<undefined>
+ >...[...[...[...[]]]] : undefined
+->[...[...[...[]]]] : undefined[]
++>[...[...[...[]]]] : Array<undefined>
+ >...[...[...[]]] : undefined
+->[...[...[]]] : undefined[]
++>[...[...[]]] : Array<undefined>
+ >...[...[]] : undefined
+->[...[]] : undefined[]
++>[...[]] : Array<undefined>
+ >...[] : undefined
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var b = [...[...[...[...[...[5]]]]]];
+->b : number[]
+->[...[...[...[...[...[5]]]]]] : number[]
++>b : Array<number>
++>[...[...[...[...[...[5]]]]]] : Array<number>
+ >...[...[...[...[...[5]]]]] : number
+->[...[...[...[...[5]]]]] : number[]
++>[...[...[...[...[5]]]]] : Array<number>
+ >...[...[...[...[5]]]] : number
+->[...[...[...[5]]]] : number[]
++>[...[...[...[5]]]] : Array<number>
+ >...[...[...[5]]] : number
+->[...[...[5]]] : number[]
++>[...[...[5]]] : Array<number>
+ >...[...[5]] : number
+->[...[5]] : number[]
++>[...[5]] : Array<number>
+ >...[5] : number
+->[5] : number[]
++>[5] : Array<number>
+ >5 : 5
+ }

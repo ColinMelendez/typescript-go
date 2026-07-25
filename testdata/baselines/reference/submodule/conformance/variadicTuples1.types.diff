@@ -1,0 +1,538 @@
+--- old.variadicTuples1.types
++++ new.variadicTuples1.types
+@@= skipped -12, +12 lines =@@
+ >TV2 : [string, ...T, number, ...T]
+
+ type TV3<T extends unknown[]> = [string, ...T, ...number[], ...T];
+->TV3 : [string, ...T, ...number[], ...T]
++>TV3 : [string, ...T, ...Array<number>, ...T]
+
+ // Normalization
+
+@@= skipped -14, +14 lines =@@
+ >TN3 : [string, boolean | undefined, number]
+
+ type TN4 = TV1<string[]>;
+->TN4 : [string, ...string[], number]
++>TN4 : [string, ...Array<string>, number]
+
+ type TN5 = TV1<[boolean] | [symbol, symbol]>;
+ >TN5 : [string, boolean, number] | [string, symbol, symbol, number]
+
+ type TN6 = TV1<any>;
+->TN6 : [string, ...any[], number]
++>TN6 : [string, ...Array<any>, number]
+
+ type TN7 = TV1<never>;
+ >TN7 : never
+@@= skipped -54, +54 lines =@@
+ }
+
+ declare const sa: string[];
+->sa : string[]
++>sa : Array<string>
+
+ const tc1 = concat([], []);
+ >tc1 : []
+@@= skipped -19, +19 lines =@@
+ >42 : 42
+
+ const tc3 = concat([1, 2, 3], sa);
+->tc3 : [number, number, number, ...string[]]
+->concat([1, 2, 3], sa) : [number, number, number, ...string[]]
++>tc3 : [number, number, number, ...Array<string>]
++>concat([1, 2, 3], sa) : [number, number, number, ...Array<string>]
+ >concat : <T extends unknown[], U extends unknown[]>(t: [...T], u: [...U]) => [...T, ...U]
+ >[1, 2, 3] : [number, number, number]
+ >1 : 1
+ >2 : 2
+ >3 : 3
+->sa : string[]
++>sa : Array<string>
+
+ const tc4 = concat(sa, [1, 2, 3]);  // Ideally would be [...string[], number, number, number]
+->tc4 : [...string[], number, number, number]
+->concat(sa, [1, 2, 3]) : [...string[], number, number, number]
++>tc4 : [...Array<string>, number, number, number]
++>concat(sa, [1, 2, 3]) : [...Array<string>, number, number, number]
+ >concat : <T extends unknown[], U extends unknown[]>(t: [...T], u: [...U]) => [...T, ...U]
+->sa : string[]
++>sa : Array<string>
+ >[1, 2, 3] : [number, number, number]
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ function concat2<T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U) {
+->concat2 : <T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U) => (T[number] | U[number])[]
++>concat2 : <T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U) => Array<T[number] | U[number]>
+ >t : T
+ >u : U
+
+     return [...t, ...u];  // (T[number] | U[number])[]
+->[...t, ...u] : (T[number] | U[number])[]
++>[...t, ...u] : Array<T[number] | U[number]>
+ >...t : unknown
+ >t : T
+ >...u : unknown
+@@= skipped -33, +33 lines =@@
+ }
+
+ const tc5 = concat2([1, 2, 3] as const, [4, 5, 6] as const);  // (1 | 2 | 3 | 4 | 5 | 6)[]
+->tc5 : (1 | 2 | 3 | 4 | 5 | 6)[]
+->concat2([1, 2, 3] as const, [4, 5, 6] as const) : (1 | 2 | 3 | 4 | 5 | 6)[]
+->concat2 : <T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U) => (T[number] | U[number])[]
++>tc5 : Array<1 | 2 | 3 | 4 | 5 | 6>
++>concat2([1, 2, 3] as const, [4, 5, 6] as const) : Array<1 | 2 | 3 | 4 | 5 | 6>
++>concat2 : <T extends readonly unknown[], U extends readonly unknown[]>(t: T, u: U) => Array<T[number] | U[number]>
+ >[1, 2, 3] as const : readonly [1, 2, 3]
+ >[1, 2, 3] : readonly [1, 2, 3]
+ >1 : 1
+@@= skipped -21, +21 lines =@@
+ >a : number
+ >b : string
+ >c : boolean
+->d : number[]
++>d : Array<number>
+
+ function foo2(t1: [number, string], t2: [boolean], a1: number[]) {
+ >foo2 : (t1: [number, string], t2: [boolean], a1: number[]) => void
+ >t1 : [number, string]
+ >t2 : [boolean]
+->a1 : number[]
++>a1 : Array<number>
+
+     foo1(1, 'abc', true, 42, 43, 44);
+ >foo1(1, 'abc', true, 42, 43, 44) : void
+@@= skipped -47, +47 lines =@@
+ >...t2 : boolean
+ >t2 : [boolean]
+ >...a1 : number
+->a1 : number[]
++>a1 : Array<number>
+
+     foo1(...t1);  // Error
+ >foo1(...t1) : void
+@@= skipped -49, +49 lines =@@
+ >2 : 2
+
+     foo3(1);
+->foo3(1) : unknown[]
++>foo3(1) : Array<unknown>
+ >foo3 : <T extends unknown[]>(x: number, ...args: [...T, number]) => T
+ >1 : 1
+ }
+@@= skipped -24, +24 lines =@@
+ >t : [...T]
+
+ ft1(['hello', 42]);  // (string | number)[]
+->ft1(['hello', 42]) : (string | number)[]
++>ft1(['hello', 42]) : Array<string | number>
+ >ft1 : <T extends unknown[]>(t: T) => T
+->['hello', 42] : (string | number)[]
++>['hello', 42] : Array<string | number>
+ >'hello' : "hello"
+ >42 : 42
+
+ ft2(['hello', 42]);  // readonly (string | number)[]
+->ft2(['hello', 42]) : readonly (string | number)[]
++>ft2(['hello', 42]) : ReadonlyArray<string | number>
+ >ft2 : <T extends unknown[]>(t: T) => readonly [...T]
+->['hello', 42] : (string | number)[]
++>['hello', 42] : Array<string | number>
+ >'hello' : "hello"
+ >42 : 42
+
+@@= skipped -107, +107 lines =@@
+     let [c1, c2, ...cx] = t;  // string, [string, ...T][1], T[number][]
+ >c1 : string
+ >c2 : [string, ...T][1]
+->cx : T[number][]
++>cx : Array<T[number]>
+ >t : [string, ...T]
+ }
+
+@@= skipped -20, +20 lines =@@
+     let [c1, c2, ...cx] = t;  // string, number | T[number], (number | T[number])[]
+ >c1 : string
+ >c2 : number | T[number]
+->cx : (number | T[number])[]
++>cx : Array<number | T[number]>
+ >t : [string, ...T, number]
+ }
+
+@@= skipped -10, +10 lines =@@
+ >Arrayify : Arrayify<T>
+
+ type TM1<U extends unknown[]> = Arrayify<readonly [string, number?, ...U, ...boolean[]]>;  // [string[], (number | undefined)[]?, Arrayify<U>, ...boolean[][]]
+->TM1 : readonly [string[], ((number | undefined)[] | undefined)?, ...Arrayify<U>, ...boolean[][]]
++>TM1 : readonly [Array<string>, (Array<number | undefined> | undefined)?, ...Arrayify<U>, ...Array<Array<boolean>>]
+
+ type TP1<T extends unknown[]> = Partial<[string, ...T, number]>;  // [string?, Partial<T>, number?]
+ >TP1 : [(string | undefined)?, ...Partial<T>, (number | undefined)?]
+
+ type TP2<T extends unknown[]> = Partial<[string, ...T, ...number[]]>;  // [string?, Partial<T>, ...(number | undefined)[]]
+->TP2 : [(string | undefined)?, ...Partial<T>, ...(number | undefined)[]]
++>TP2 : [(string | undefined)?, ...Partial<T>, ...Array<number | undefined>]
+
+ // Reverse mapping through mapped type applied to variadic tuple type
+
+ declare function fm1<T extends unknown[]>(t: Arrayify<[string, number, ...T]>): T;
+ >fm1 : <T extends unknown[]>(t: Arrayify<[string, number, ...T]>) => T
+->t : [string[], number[], ...Arrayify<T>]
++>t : [Array<string>, Array<number>, ...Arrayify<T>]
+
+ let tm1 = fm1([['abc'], [42], [true], ['def']]);  // [boolean, string]
+ >tm1 : [boolean, string]
+ >fm1([['abc'], [42], [true], ['def']]) : [boolean, string]
+ >fm1 : <T extends unknown[]>(t: Arrayify<[string, number, ...T]>) => T
+->[['abc'], [42], [true], ['def']] : [string[], number[], true[], string[]]
+->['abc'] : string[]
++>[['abc'], [42], [true], ['def']] : [Array<string>, Array<number>, Array<true>, Array<string>]
++>['abc'] : Array<string>
+ >'abc' : "abc"
+->[42] : number[]
++>[42] : Array<number>
+ >42 : 42
+->[true] : true[]
++>[true] : Array<true>
+ >true : true
+->['def'] : string[]
++>['def'] : Array<string>
+ >'def' : "def"
+
+ // Spread of readonly array-like infers mutable array-like
+@@= skipped -122, +122 lines =@@
+
+ function f10<T extends string[], U extends T>(x: [string, ...unknown[]], y: [string, ...T], z: [string, ...U]) {
+ >f10 : <T extends string[], U extends T>(x: [string, ...unknown[]], y: [string, ...T], z: [string, ...U]) => void
+->x : [string, ...unknown[]]
++>x : [string, ...Array<unknown>]
+ >y : [string, ...T]
+ >z : [string, ...U]
+
+     x = y;
+ >x = y : [string, ...T]
+->x : [string, ...unknown[]]
++>x : [string, ...Array<unknown>]
+ >y : [string, ...T]
+
+     x = z;
+ >x = z : [string, ...U]
+->x : [string, ...unknown[]]
++>x : [string, ...Array<unknown>]
+ >z : [string, ...U]
+
+     y = x;  // Error
+->y = x : [string, ...unknown[]]
++>y = x : [string, ...Array<unknown>]
+ >y : [string, ...T]
+->x : [string, ...unknown[]]
++>x : [string, ...Array<unknown>]
+
+     y = z;
+ >y = z : [string, ...U]
+@@= skipped -25, +25 lines =@@
+ >z : [string, ...U]
+
+     z = x;  // Error
+->z = x : [string, ...unknown[]]
++>z = x : [string, ...Array<unknown>]
+ >z : [string, ...U]
+->x : [string, ...unknown[]]
++>x : [string, ...Array<unknown>]
+
+     z = y;  // Error
+ >z = y : [string, ...T]
+@@= skipped -310, +310 lines =@@
+ >T12 : []
+
+ type T13 = DropFirst<[number, symbol, ...string[]]>;
+->T13 : [symbol, ...string[]]
++>T13 : [symbol, ...Array<string>]
+
+ type T14 = DropFirst<[symbol, ...string[]]>;
+->T14 : string[]
++>T14 : Array<string>
+
+ type T15 = DropFirst<[string?]>;
+ >T15 : []
+
+ type T16 = DropFirst<string[]>;
+->T16 : string[]
++>T16 : Array<string>
+
+ type T17 = DropFirst<[]>;
+->T17 : unknown[]
++>T17 : Array<unknown>
+
+ type T18 = DropFirst<any>;
+->T18 : any[] | unknown[]
++>T18 : Array<any> | Array<unknown>
+
+ type T19 = DropFirst<never>;
+ >T19 : never
+@@= skipped -60, +60 lines =@@
+ >T32 : []
+
+ type T33 = DropLast<[number, symbol, ...string[]]>;
+->T33 : [number, symbol, ...string[]]
++>T33 : [number, symbol, ...Array<string>]
+
+ type T34 = DropLast<[symbol, ...string[]]>;
+->T34 : [symbol, ...string[]]
++>T34 : [symbol, ...Array<string>]
+
+ type T35 = DropLast<[string?]>;
+ >T35 : [(string | undefined)?]
+
+ type T36 = DropLast<string[]>;
+->T36 : string[]
++>T36 : Array<string>
+
+ type T37 = DropLast<[]>;  // unknown[], maybe should be []
+ >T37 : []
+
+ type T38 = DropLast<any>;
+->T38 : any[] | unknown[]
++>T38 : Array<any> | Array<unknown>
+
+ type T39 = DropLast<never>;
+ >T39 : never
+@@= skipped -51, +51 lines =@@
+ >R12 : []
+
+ type R13 = DropFirst<readonly [number, symbol, ...string[]]>;
+->R13 : [symbol, ...string[]]
++>R13 : [symbol, ...Array<string>]
+
+ type R14 = DropFirst<readonly [symbol, ...string[]]>;
+->R14 : string[]
++>R14 : Array<string>
+
+ type R15 = DropFirst<readonly string[]>;
+->R15 : string[]
++>R15 : Array<string>
+
+ type R16 = DropFirst<readonly []>;
+->R16 : unknown[]
++>R16 : Array<unknown>
+
+ type R20 = Last<readonly [number, symbol, string]>;
+ >R20 : string
+@@= skipped -42, +42 lines =@@
+ >R32 : []
+
+ type R33 = DropLast<readonly [number, symbol, ...string[]]>;
+->R33 : [number, symbol, ...string[]]
++>R33 : [number, symbol, ...Array<string>]
+
+ type R34 = DropLast<readonly [symbol, ...string[]]>;
+->R34 : [symbol, ...string[]]
++>R34 : [symbol, ...Array<string>]
+
+ type R35 = DropLast<readonly string[]>;
+->R35 : string[]
++>R35 : Array<string>
+
+ type R36 = DropLast<readonly []>;
+ >R36 : []
+@@= skipped -36, +36 lines =@@
+ >a : number
+ >b : string
+ >c : boolean
+->d : string[]
++>d : Array<string>
+ >0 : 0
+
+ const c0 = curry(fn1);  // (a: number, b: string, c: boolean, d: string[]) => number
+->c0 : (a: number, b: string, c: boolean, d: string[]) => number
+->curry(fn1) : (a: number, b: string, c: boolean, d: string[]) => number
++>c0 : (a: number, b: string, c: boolean, d: Array<string>) => number
++>curry(fn1) : (a: number, b: string, c: boolean, d: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn1 : (a: number, b: string, c: boolean, d: string[]) => number
+
+ const c1 = curry(fn1, 1);  // (b: string, c: boolean, d: string[]) => number
+->c1 : (b: string, c: boolean, d: string[]) => number
+->curry(fn1, 1) : (b: string, c: boolean, d: string[]) => number
++>c1 : (b: string, c: boolean, d: Array<string>) => number
++>curry(fn1, 1) : (b: string, c: boolean, d: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn1 : (a: number, b: string, c: boolean, d: string[]) => number
+ >1 : 1
+
+ const c2 = curry(fn1, 1, 'abc');  // (c: boolean, d: string[]) => number
+->c2 : (c: boolean, d: string[]) => number
+->curry(fn1, 1, 'abc') : (c: boolean, d: string[]) => number
++>c2 : (c: boolean, d: Array<string>) => number
++>curry(fn1, 1, 'abc') : (c: boolean, d: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn1 : (a: number, b: string, c: boolean, d: string[]) => number
+ >1 : 1
+ >'abc' : "abc"
+
+ const c3 = curry(fn1, 1, 'abc', true);  // (d: string[]) => number
+->c3 : (d: string[]) => number
+->curry(fn1, 1, 'abc', true) : (d: string[]) => number
++>c3 : (d: Array<string>) => number
++>curry(fn1, 1, 'abc', true) : (d: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn1 : (a: number, b: string, c: boolean, d: string[]) => number
+ >1 : 1
+@@= skipped -41, +41 lines =@@
+ >1 : 1
+ >'abc' : "abc"
+ >true : true
+->['x', 'y'] : string[]
++>['x', 'y'] : Array<string>
+ >'x' : "x"
+ >'y' : "y"
+
+@@= skipped -9, +9 lines =@@
+ >(x: number, b: boolean, ...args: string[]) => 0 : (x: number, b: boolean, ...args: string[]) => number
+ >x : number
+ >b : boolean
+->args : string[]
++>args : Array<string>
+ >0 : 0
+
+ const c10 = curry(fn2);  // (x: number, b: boolean, ...args: string[]) => number
+->c10 : (x: number, b: boolean, ...args: string[]) => number
+->curry(fn2) : (x: number, b: boolean, ...args: string[]) => number
++>c10 : (x: number, b: boolean, ...args: Array<string>) => number
++>curry(fn2) : (x: number, b: boolean, ...args: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn2 : (x: number, b: boolean, ...args: string[]) => number
+
+ const c11 = curry(fn2, 1);  // (b: boolean, ...args: string[]) => number
+->c11 : (b: boolean, ...args: string[]) => number
+->curry(fn2, 1) : (b: boolean, ...args: string[]) => number
++>c11 : (b: boolean, ...args: Array<string>) => number
++>curry(fn2, 1) : (b: boolean, ...args: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn2 : (x: number, b: boolean, ...args: string[]) => number
+ >1 : 1
+
+ const c12 = curry(fn2, 1, true);  // (...args: string[]) => number
+->c12 : (...b: string[]) => number
+->curry(fn2, 1, true) : (...b: string[]) => number
++>c12 : (...b: Array<string>) => number
++>curry(fn2, 1, true) : (...b: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn2 : (x: number, b: boolean, ...args: string[]) => number
+ >1 : 1
+ >true : true
+
+ const c13 = curry(fn2, 1, true, 'abc', 'def');  // (...args: string[]) => number
+->c13 : (...b: string[]) => number
+->curry(fn2, 1, true, 'abc', 'def') : (...b: string[]) => number
++>c13 : (...b: Array<string>) => number
++>curry(fn2, 1, true, 'abc', 'def') : (...b: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn2 : (x: number, b: boolean, ...args: string[]) => number
+ >1 : 1
+@@= skipped -37, +37 lines =@@
+ const fn3 = (...args: string[]) => 0;
+ >fn3 : (...args: string[]) => number
+ >(...args: string[]) => 0 : (...args: string[]) => number
+->args : string[]
++>args : Array<string>
+ >0 : 0
+
+ const c20 = curry(fn3);  // (...args: string[]) => number
+->c20 : (...b: string[]) => number
+->curry(fn3) : (...b: string[]) => number
++>c20 : (...b: Array<string>) => number
++>curry(fn3) : (...b: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn3 : (...args: string[]) => number
+
+ const c21 = curry(fn3, 'abc', 'def');  // (...args: string[]) => number
+->c21 : (...b: string[]) => number
+->curry(fn3, 'abc', 'def') : (...b: string[]) => number
++>c21 : (...b: Array<string>) => number
++>curry(fn3, 'abc', 'def') : (...b: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn3 : (...args: string[]) => number
+ >'abc' : "abc"
+ >'def' : "def"
+
+ const c22 = curry(fn3, ...sa);  // (...args: string[]) => number
+->c22 : (...b: string[]) => number
+->curry(fn3, ...sa) : (...b: string[]) => number
++>c22 : (...b: Array<string>) => number
++>curry(fn3, ...sa) : (...b: Array<string>) => number
+ >curry : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, ...a: T) => (...b: U) => R
+ >fn3 : (...args: string[]) => number
+ >...sa : string
+->sa : string[]
++>sa : Array<string>
+
+ // No inference to [...T, ...U] when there is no implied arity
+
+@@= skipped -50, +50 lines =@@
+ >c : boolean
+
+ curry2(fn10, ['hello', 42], [true]);
+->curry2(fn10, ['hello', 42], [true]) : string[]
++>curry2(fn10, ['hello', 42], [true]) : Array<string>
+ >curry2 : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, t: [...T], u: [...U]) => R
+ >fn10 : (a: string, b: number, c: boolean) => string[]
+ >['hello', 42] : [string, number]
+@@= skipped -10, +10 lines =@@
+ >true : true
+
+ curry2(fn10, ['hello'], [42, true]);
+->curry2(fn10, ['hello'], [42, true]) : string[]
++>curry2(fn10, ['hello'], [42, true]) : Array<string>
+ >curry2 : <T extends unknown[], U extends unknown[], R>(f: (...args: [...T, ...U]) => R, t: [...T], u: [...U]) => R
+ >fn10 : (a: string, b: number, c: boolean) => string[]
+ >['hello'] : [string]
+@@= skipped -78, +78 lines =@@
+ >42 : 42
+
+ call(...sa, (...x) => 42);
+->call(...sa, (...x) => 42) : [string[], number]
++>call(...sa, (...x) => 42) : [Array<string>, number]
+ >call : <T extends unknown[], R>(...args: [...T, (...args: T) => R]) => [T, R]
+ >...sa : string
+->sa : string[]
+->(...x) => 42 : (...x: string[]) => number
+->x : string[]
++>sa : Array<string>
++>(...x) => 42 : (...x: Array<string>) => number
++>x : Array<string>
+ >42 : 42
+
+ // No inference to ending optional elements (except with identical structure)
+@@= skipped -148, +148 lines =@@
+ >Numbers : Numbers
+
+ type Unbounded = [...Numbers, boolean];
+->Unbounded : [...number[], boolean]
++>Unbounded : [...Array<number>, boolean]
+
+ const data: Unbounded = [false, false];  // Error
+->data : [...number[], boolean]
++>data : [...Array<number>, boolean]
+ >[false, false] : [boolean, false]
+ >false : false
+ >false : false
+
+ type U1 = [string, ...Numbers, boolean];
+->U1 : [string, ...number[], boolean]
++>U1 : [string, ...Array<number>, boolean]
+
+ type U2 = [...[string, ...Numbers], boolean];
+->U2 : [string, ...number[], boolean]
++>U2 : [string, ...Array<number>, boolean]
+
+ type U3 = [...[string, number], boolean];
+ >U3 : [string, number, boolean]
+@@= skipped -26, +26 lines =@@
+ >ToStringLength2 : `${[...T]["length"]}`
+
+ type AnyArr = [...any];
+->AnyArr : any[]
++>AnyArr : Array<any>

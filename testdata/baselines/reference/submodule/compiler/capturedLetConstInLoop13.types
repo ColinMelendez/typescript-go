@@ -17,11 +17,11 @@ class Main {
 
     private register(...names: string[]): void {
 >register : (...names: string[]) => void
->names : string[]
+>names : Array<string>
 
         for (let name of names) {
 >name : string
->names : string[]
+>names : Array<string>
 
             this.bar({
 >this.bar({                [name + ".a"]: () => { this.foo(name); },            }) : void

@@ -14,7 +14,7 @@ interface IndexedWithThis {
     [propName: string]: number | string | boolean | symbol | undefined | null | {} | ((this: any, ...args:any[]) => any);
 >propName : string
 >this : any
->args : any[]
+>args : Array<any>
 }
 interface IndexedWithoutThis {
     // this is what React would like to write (and what they write today)

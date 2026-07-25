@@ -1,0 +1,26 @@
+--- old.importAssertionNonstring.errors.txt
++++ new.importAssertionNonstring.errors.txt
+@@= skipped -6, +6 lines =@@
+   Property 'field' is incompatible with index signature.
+     Type 'RegExp' is not assignable to type 'string'.
+ mod.mts(5,50): error TS2858: Import attribute values must be string literal expressions.
+-mod.mts(7,37): error TS2322: Type '{ field: string[]; }' is not assignable to type 'ImportAttributes'.
++mod.mts(7,37): error TS2322: Type '{ field: Array<string>; }' is not assignable to type 'ImportAttributes'.
+   Property 'field' is incompatible with index signature.
+-    Type 'string[]' is not assignable to type 'string'.
++    Type 'Array<string>' is not assignable to type 'string'.
+ mod.mts(7,50): error TS2858: Import attribute values must be string literal expressions.
+ mod.mts(9,37): error TS2322: Type '{ field: { a: number; }; }' is not assignable to type 'ImportAttributes'.
+   Property 'field' is incompatible with index signature.
+@@= skipped -34, +34 lines =@@
+     
+     import * as thing4 from "./mod.mjs" with {field: ["a"]};
+                                         ~~~~~~~~~~~~~~~~~~~
+-!!! error TS2322: Type '{ field: string[]; }' is not assignable to type 'ImportAttributes'.
++!!! error TS2322: Type '{ field: Array<string>; }' is not assignable to type 'ImportAttributes'.
+ !!! error TS2322:   Property 'field' is incompatible with index signature.
+-!!! error TS2322:     Type 'string[]' is not assignable to type 'string'.
++!!! error TS2322:     Type 'Array<string>' is not assignable to type 'string'.
+                                                      ~~~~~
+ !!! error TS2858: Import attribute values must be string literal expressions.
+     

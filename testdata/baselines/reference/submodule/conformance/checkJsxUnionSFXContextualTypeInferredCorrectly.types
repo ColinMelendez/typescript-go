@@ -25,11 +25,11 @@ interface PM {
 >true : true
 
     value: string[]
->value : string[]
+>value : Array<string>
 
     onChange: (selection: string[]) => void
 >onChange : (selection: string[]) => void
->selection : string[]
+>selection : Array<string>
 }
 
 export function ComponentWithUnion(props: PM | PS) {

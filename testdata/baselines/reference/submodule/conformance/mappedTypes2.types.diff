@@ -1,0 +1,11 @@
+--- old.mappedTypes2.types
++++ new.mappedTypes2.types
+@@= skipped -63, +63 lines =@@
+ declare function pick<T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K>;
+ >pick : <T, K extends keyof T>(obj: T, ...keys: K[]) => Pick<T, K>
+ >obj : T
+->keys : K[]
++>keys : Array<K>
+
+ declare function mapObject<K extends string, T, U>(obj: Record<K, T>, f: (x: T) => U): Record<K, U>;
+ >mapObject : <K extends string, T, U>(obj: Record<K, T>, f: (x: T) => U) => Record<K, U>

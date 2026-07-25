@@ -5,7 +5,7 @@
 
 function f<T extends [string]>(args: [...string[], ...T]) {
 >f : <T extends [string]>(args: [...string[], ...T]) => void
->args : [...string[], ...T]
+>args : [...Array<string>, ...T]
 
   // ...
 }

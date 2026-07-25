@@ -5,10 +5,10 @@
  * @param {Array<*>} list
  */
 function thing(list) {
->thing : (list: Array<any>) => any[]
->list : any[]
+>thing : (list: Array<any>) => Array<any>
+>list : Array<any>
 
     return list;
->list : any[]
+>list : Array<any>
 }
 

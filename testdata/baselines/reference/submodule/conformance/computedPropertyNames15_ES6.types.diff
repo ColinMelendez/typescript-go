@@ -1,0 +1,20 @@
+--- old.computedPropertyNames15_ES6.types
++++ new.computedPropertyNames15_ES6.types
+@@= skipped -4, +4 lines =@@
+ >p1 : string | number
+
+ var p2: number | number[];
+->p2 : number | number[]
++>p2 : number | Array<number>
+
+ var p3: string | boolean;
+ >p3 : string | boolean
+@@= skipped -14, +14 lines =@@
+
+     [p2]() { }
+ >[p2] : () => void
+->p2 : number | number[]
++>p2 : number | Array<number>
+
+     [p3]() { }
+ >[p3] : () => void

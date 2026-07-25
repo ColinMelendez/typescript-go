@@ -44,10 +44,10 @@ namespace TypeScript {
 >analysisPass : any
 
         public preComments: Comment[] = null;
->preComments : Comment[]
+>preComments : Array<Comment>
 
         public postComments: Comment[] = null;
->postComments : Comment[]
+>postComments : Array<Comment>
 
         public isParenthesized = false;
 >isParenthesized : boolean
@@ -833,7 +833,7 @@ namespace TypeScript {
 >enclosingScope : SymbolScope
 
         public members: AST[] = new AST[];
->members : AST[]
+>members : Array<AST>
 >new AST[] : any
 >AST[] : any
 >AST : typeof AST
@@ -855,9 +855,9 @@ namespace TypeScript {
             var len = this.members.length;
 >len : number
 >this.members.length : number
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >length : number
 
             for (var i = 0; i < len; i++) {
@@ -880,9 +880,9 @@ namespace TypeScript {
 >context : ControlFlowContext
 >addUnreachable : any
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 
                     break;
@@ -891,18 +891,18 @@ namespace TypeScript {
                     this.members[i] = context.walk(this.members[i], this);
 >this.members[i] = context.walk(this.members[i], this) : any
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 >context.walk(this.members[i], this) : any
 >context.walk : any
 >context : ControlFlowContext
 >walk : any
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 >this : this
                 }
@@ -926,13 +926,13 @@ namespace TypeScript {
             this.members[this.members.length] = ast;
 >this.members[this.members.length] = ast : AST
 >this.members[this.members.length] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >this.members.length : number
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >length : number
 >ast : AST
 
@@ -963,9 +963,9 @@ namespace TypeScript {
 >0 : 0
 >len : number
 >list.members.length : number
->list.members : AST[]
+>list.members : Array<AST>
 >list : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >i < len : boolean
 >i : number
@@ -979,9 +979,9 @@ namespace TypeScript {
 >this : this
 >append : (ast: AST) => this
 >list.members[i] : AST
->list.members : AST[]
+>list.members : Array<AST>
 >list : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
                 }
             }
@@ -1038,9 +1038,9 @@ namespace TypeScript {
             var len = this.members.length;
 >len : number
 >this.members.length : number
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >length : number
 
             typeFlow.nestingLevel++;
@@ -1060,24 +1060,24 @@ namespace TypeScript {
 
                 if (this.members[i]) {
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 
                     this.members[i] = this.members[i].typeCheck(typeFlow);
 >this.members[i] = this.members[i].typeCheck(typeFlow) : any
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 >this.members[i].typeCheck(typeFlow) : any
 >this.members[i].typeCheck : (typeFlow: TypeFlow) => any
 >this.members[i] : AST
->this.members : AST[]
+>this.members : Array<AST>
 >this : this
->members : AST[]
+>members : Array<AST>
 >i : number
 >typeCheck : (typeFlow: TypeFlow) => any
 >typeFlow : TypeFlow
@@ -4320,10 +4320,10 @@ namespace TypeScript {
 >signature : Signature
 
         public envids: Identifier[];
->envids : Identifier[]
+>envids : Array<Identifier>
 
         public jumpRefs: Identifier[] = null;
->jumpRefs : Identifier[]
+>jumpRefs : Array<Identifier>
 
         public internalNameCache: string = null;
 >internalNameCache : string
@@ -4336,8 +4336,8 @@ namespace TypeScript {
 >enclosingFnc : FuncDecl
 
         public freeVariables: Symbol[] = [];
->freeVariables : Symbol[]
->[] : undefined[]
+>freeVariables : Array<Symbol>
+>[] : Array<undefined>
 
         public unitIndex = -1;
 >unitIndex : number
@@ -4355,8 +4355,8 @@ namespace TypeScript {
 >false : false
 
         public innerStaticFuncs: FuncDecl[] = [];
->innerStaticFuncs : FuncDecl[]
->[] : undefined[]
+>innerStaticFuncs : Array<FuncDecl>
+>[] : Array<undefined>
 
         public isTargetTypedAsMethod = false;
 >isTargetTypedAsMethod : boolean
@@ -4378,8 +4378,8 @@ namespace TypeScript {
 >0 : 0
 
         public returnStatementsWithExpressions: ReturnStatement[] = [];
->returnStatementsWithExpressions : ReturnStatement[]
->[] : undefined[]
+>returnStatementsWithExpressions : Array<ReturnStatement>
+>[] : Array<undefined>
 
         public scopeType: Type = null; // Type of the FuncDecl, before target typing
 >scopeType : Type
@@ -4481,15 +4481,15 @@ namespace TypeScript {
 
             if (this.envids == null) {
 >this.envids == null : boolean
->this.envids : Identifier[]
+>this.envids : Array<Identifier>
 >this : this
->envids : Identifier[]
+>envids : Array<Identifier>
 
                 this.envids = new Identifier[];
 >this.envids = new Identifier[] : any
->this.envids : Identifier[]
+>this.envids : Array<Identifier>
 >this : this
->envids : Identifier[]
+>envids : Array<Identifier>
 >new Identifier[] : any
 >Identifier[] : any
 >Identifier : typeof Identifier
@@ -4498,13 +4498,13 @@ namespace TypeScript {
             this.envids[this.envids.length] = id;
 >this.envids[this.envids.length] = id : Identifier
 >this.envids[this.envids.length] : Identifier
->this.envids : Identifier[]
+>this.envids : Array<Identifier>
 >this : this
->envids : Identifier[]
+>envids : Array<Identifier>
 >this.envids.length : number
->this.envids : Identifier[]
+>this.envids : Array<Identifier>
 >this : this
->envids : Identifier[]
+>envids : Array<Identifier>
 >length : number
 >id : Identifier
 
@@ -4549,9 +4549,9 @@ namespace TypeScript {
             return this.envids.length - 1;
 >this.envids.length - 1 : number
 >this.envids.length : number
->this.envids : Identifier[]
+>this.envids : Array<Identifier>
 >this : this
->envids : Identifier[]
+>envids : Array<Identifier>
 >length : number
 >1 : 1
         }
@@ -4562,15 +4562,15 @@ namespace TypeScript {
 
             if (this.jumpRefs == null) {
 >this.jumpRefs == null : boolean
->this.jumpRefs : Identifier[]
+>this.jumpRefs : Array<Identifier>
 >this : this
->jumpRefs : Identifier[]
+>jumpRefs : Array<Identifier>
 
                 this.jumpRefs = new Identifier[];
 >this.jumpRefs = new Identifier[] : any
->this.jumpRefs : Identifier[]
+>this.jumpRefs : Array<Identifier>
 >this : this
->jumpRefs : Identifier[]
+>jumpRefs : Array<Identifier>
 >new Identifier[] : any
 >Identifier[] : any
 >Identifier : typeof Identifier
@@ -4587,13 +4587,13 @@ namespace TypeScript {
             this.jumpRefs[this.jumpRefs.length] = id;
 >this.jumpRefs[this.jumpRefs.length] = id : Identifier
 >this.jumpRefs[this.jumpRefs.length] : Identifier
->this.jumpRefs : Identifier[]
+>this.jumpRefs : Array<Identifier>
 >this : this
->jumpRefs : Identifier[]
+>jumpRefs : Array<Identifier>
 >this.jumpRefs.length : number
->this.jumpRefs : Identifier[]
+>this.jumpRefs : Array<Identifier>
 >this : this
->jumpRefs : Identifier[]
+>jumpRefs : Array<Identifier>
 >length : number
 >id : Identifier
 
@@ -4972,18 +4972,18 @@ namespace TypeScript {
 >this.statics.members.length > 0 || this.innerStaticFuncs.length > 0 : boolean
 >this.statics.members.length > 0 : boolean
 >this.statics.members.length : number
->this.statics.members : AST[]
+>this.statics.members : Array<AST>
 >this.statics : ASTList
 >this : this
 >statics : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >0 : 0
 >this.innerStaticFuncs.length > 0 : boolean
 >this.innerStaticFuncs.length : number
->this.innerStaticFuncs : FuncDecl[]
+>this.innerStaticFuncs : Array<FuncDecl>
 >this : this
->innerStaticFuncs : FuncDecl[]
+>innerStaticFuncs : Array<FuncDecl>
 >length : number
 >0 : 0
     }
@@ -4993,7 +4993,7 @@ namespace TypeScript {
 
         constructor (public filename: string, public lineMap: number[], public unitIndex) { }
 >filename : string
->lineMap : number[]
+>lineMap : Array<number>
 >unitIndex : any
     }
 
@@ -5013,8 +5013,8 @@ namespace TypeScript {
 >locationInfo : LocationInfo
 
         public referencedFiles: IFileReference[] = [];
->referencedFiles : IFileReference[]
->[] : undefined[]
+>referencedFiles : Array<IFileReference>
+>[] : Array<undefined>
 
         public requiresGlobal = false;
 >requiresGlobal : boolean
@@ -5136,11 +5136,11 @@ namespace TypeScript {
 >0 : 0
 >len : number
 >this.bod.members.length : number
->this.bod.members : AST[]
+>this.bod.members : Array<AST>
 >this.bod : ASTList
 >this : this
 >bod : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >i < len : boolean
 >i : number
@@ -5151,11 +5151,11 @@ namespace TypeScript {
                     var stmt = this.bod.members[i];
 >stmt : AST
 >this.bod.members[i] : AST
->this.bod.members : AST[]
+>this.bod.members : Array<AST>
 >this.bod : ASTList
 >this : this
 >bod : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
 
                     if (stmt.nodeType == NodeType.ModuleDeclaration) {
@@ -5397,8 +5397,8 @@ namespace TypeScript {
 >prettyName : string
 
         public amdDependencies: string[] = [];
->amdDependencies : string[]
->[] : undefined[]
+>amdDependencies : Array<string>
+>[] : Array<undefined>
 
         public vars: ASTList;
 >vars : ASTList
@@ -5852,11 +5852,11 @@ namespace TypeScript {
                 var labelsLen = this.labels.members.length;
 >labelsLen : number
 >this.labels.members.length : number
->this.labels.members : AST[]
+>this.labels.members : Array<AST>
 >this.labels : ASTList
 >this : this
 >labels : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 
                 for (var i = 0; i < labelsLen; i++) {
@@ -5872,11 +5872,11 @@ namespace TypeScript {
 >this.labels.members[i].emit(emitter, tokenId, startLine) : void
 >this.labels.members[i].emit : (emitter: Emitter, tokenId: TokenID, startLine: boolean) => void
 >this.labels.members[i] : AST
->this.labels.members : AST[]
+>this.labels.members : Array<AST>
 >this.labels : ASTList
 >this : this
 >labels : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
 >emit : (emitter: Emitter, tokenId: TokenID, startLine: boolean) => void
 >emitter : Emitter
@@ -6038,11 +6038,11 @@ namespace TypeScript {
 >emitter : Emitter
 >setInVarBlock : any
 >this.statements.members.length : number
->this.statements.members : AST[]
+>this.statements.members : Array<AST>
 >this.statements : ASTList
 >this : this
 >statements : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
             }
             var temp = emitter.setInObjectLiteral(false);
@@ -6225,11 +6225,11 @@ namespace TypeScript {
 >(this.statements.members.length == 0) : boolean
 >this.statements.members.length == 0 : boolean
 >this.statements.members.length : number
->this.statements.members : AST[]
+>this.statements.members : Array<AST>
 >this.statements : ASTList
 >this : this
 >statements : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >0 : 0
 
@@ -7695,9 +7695,9 @@ namespace TypeScript {
                     if (stmts.members.length == 1) {
 >stmts.members.length == 1 : boolean
 >stmts.members.length : number
->stmts.members : AST[]
+>stmts.members : Array<AST>
 >stmts : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >1 : 1
 
@@ -7705,9 +7705,9 @@ namespace TypeScript {
 >singleItem = stmts.members[0] : AST
 >singleItem : AST
 >stmts.members[0] : AST
->stmts.members : AST[]
+>stmts.members : Array<AST>
 >stmts : ASTList
->members : AST[]
+>members : Array<AST>
 >0 : 0
                     }
                 }
@@ -7748,11 +7748,11 @@ namespace TypeScript {
 >(block.statements.members.length == 1) : boolean
 >block.statements.members.length == 1 : boolean
 >block.statements.members.length : number
->block.statements.members : AST[]
+>block.statements.members : Array<AST>
 >block.statements : ASTList
 >block : Block
 >statements : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >1 : 1
 
@@ -7760,11 +7760,11 @@ namespace TypeScript {
 >singleItem = block.statements.members[0] : AST
 >singleItem : AST
 >block.statements.members[0] : AST
->block.statements.members : AST[]
+>block.statements.members : Array<AST>
 >block.statements : ASTList
 >block : Block
 >statements : ASTList
->members : AST[]
+>members : Array<AST>
 >0 : 0
                         }
                     }
@@ -7890,18 +7890,18 @@ namespace TypeScript {
 >(args.members.length == 1) : boolean
 >args.members.length == 1 : boolean
 >args.members.length : number
->args.members : AST[]
+>args.members : Array<AST>
 >args : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 >1 : 1
 
                                             var arg = args.members[0];
 >arg : AST
 >args.members[0] : AST
->args.members : AST[]
+>args.members : Array<AST>
 >args : ASTList
->members : AST[]
+>members : Array<AST>
 >0 : 0
 
                                             if ((arg.nodeType == NodeType.Name) &&
@@ -8375,13 +8375,13 @@ namespace TypeScript {
 >emitter : Emitter
 >setInVarBlock : any
 >(<ASTList>this.init).members.length : number
->(<ASTList>this.init).members : AST[]
+>(<ASTList>this.init).members : Array<AST>
 >(<ASTList>this.init) : ASTList
 ><ASTList>this.init : ASTList
 >this.init : AST
 >this : this
 >init : AST
->members : AST[]
+>members : Array<AST>
 >length : number
 
                     emitter.emitJavascriptList(this.init, null, TokenID.For, false, false, false);
@@ -9011,11 +9011,11 @@ namespace TypeScript {
             var casesLen = this.caseList.members.length;
 >casesLen : number
 >this.caseList.members.length : number
->this.caseList.members : AST[]
+>this.caseList.members : Array<AST>
 >this.caseList : ASTList
 >this : this
 >caseList : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 
             for (var i = 0; i < casesLen; i++) {
@@ -9030,11 +9030,11 @@ namespace TypeScript {
                 var caseExpr = this.caseList.members[i];
 >caseExpr : AST
 >this.caseList.members[i] : AST
->this.caseList.members : AST[]
+>this.caseList.members : Array<AST>
 >this.caseList : ASTList
 >this : this
 >caseList : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
 
                 emitter.emitJavascript(caseExpr, TokenID.Case, true);
@@ -9106,11 +9106,11 @@ namespace TypeScript {
             var len = this.caseList.members.length;
 >len : number
 >this.caseList.members.length : number
->this.caseList.members : AST[]
+>this.caseList.members : Array<AST>
 >this.caseList : ASTList
 >this : this
 >caseList : ASTList
->members : AST[]
+>members : Array<AST>
 >length : number
 
             this.val = typeFlow.typeCheck(this.val);
@@ -9138,22 +9138,22 @@ namespace TypeScript {
                 this.caseList.members[i] = typeFlow.typeCheck(this.caseList.members[i]);
 >this.caseList.members[i] = typeFlow.typeCheck(this.caseList.members[i]) : any
 >this.caseList.members[i] : AST
->this.caseList.members : AST[]
+>this.caseList.members : Array<AST>
 >this.caseList : ASTList
 >this : this
 >caseList : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
 >typeFlow.typeCheck(this.caseList.members[i]) : any
 >typeFlow.typeCheck : any
 >typeFlow : TypeFlow
 >typeCheck : any
 >this.caseList.members[i] : AST
->this.caseList.members : AST[]
+>this.caseList.members : Array<AST>
 >this.caseList : ASTList
 >this : this
 >caseList : ASTList
->members : AST[]
+>members : Array<AST>
 >i : number
             }
             this.defaultCase = <CaseStatement>typeFlow.typeCheck(this.defaultCase);
@@ -10965,7 +10965,7 @@ namespace TypeScript {
 >AST : AST
 
         public text: string[] = null;
->text : string[]
+>text : Array<string>
 
         constructor (public content: string, public isBlockComment: boolean, public endsLine) {
 >content : string
@@ -10985,9 +10985,9 @@ namespace TypeScript {
 
             if (this.text == null) {
 >this.text == null : boolean
->this.text : string[]
+>this.text : Array<string>
 >this : this
->text : string[]
+>text : Array<string>
 
                 if (this.isBlockComment) {
 >this.isBlockComment : boolean
@@ -10995,11 +10995,11 @@ namespace TypeScript {
 >isBlockComment : boolean
 
                     this.text = this.content.split("\n");
->this.text = this.content.split("\n") : string[]
->this.text : string[]
+>this.text = this.content.split("\n") : Array<string>
+>this.text : Array<string>
 >this : this
->text : string[]
->this.content.split("\n") : string[]
+>text : Array<string>
+>this.content.split("\n") : Array<string>
 >this.content.split : { (separator: string | RegExp, limit?: number): string[]; (splitter: { [Symbol.split](string: string, limit?: number): string[]; }, limit?: number): string[]; }
 >this.content : string
 >this : this
@@ -11013,9 +11013,9 @@ namespace TypeScript {
 >i < this.text.length : boolean
 >i : number
 >this.text.length : number
->this.text : string[]
+>this.text : Array<string>
 >this : this
->text : string[]
+>text : Array<string>
 >length : number
 >i++ : number
 >i : number
@@ -11023,16 +11023,16 @@ namespace TypeScript {
                         this.text[i] = this.text[i].replace(/^\s+|\s+$/g, '');
 >this.text[i] = this.text[i].replace(/^\s+|\s+$/g, '') : string
 >this.text[i] : string
->this.text : string[]
+>this.text : Array<string>
 >this : this
->text : string[]
+>text : Array<string>
 >i : number
 >this.text[i].replace(/^\s+|\s+$/g, '') : string
 >this.text[i].replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; (searchValue: { [Symbol.replace](string: string, replaceValue: string): string; }, replaceValue: string): string; (searchValue: { [Symbol.replace](string: string, replacer: (substring: string, ...args: any[]) => string): string; }, replacer: (substring: string, ...args: any[]) => string): string; }
 >this.text[i] : string
->this.text : string[]
+>this.text : Array<string>
 >this : this
->text : string[]
+>text : Array<string>
 >i : number
 >replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; (searchValue: { [Symbol.replace](string: string, replaceValue: string): string; }, replaceValue: string): string; (searchValue: { [Symbol.replace](string: string, replacer: (substring: string, ...args: any[]) => string): string; }, replacer: (substring: string, ...args: any[]) => string): string; }
 >/^\s+|\s+$/g : RegExp
@@ -11041,11 +11041,11 @@ namespace TypeScript {
                 }
                 else {
                     this.text = [(this.content.replace(/^\s+|\s+$/g, ''))];
->this.text = [(this.content.replace(/^\s+|\s+$/g, ''))] : string[]
->this.text : string[]
+>this.text = [(this.content.replace(/^\s+|\s+$/g, ''))] : Array<string>
+>this.text : Array<string>
 >this : this
->text : string[]
->[(this.content.replace(/^\s+|\s+$/g, ''))] : string[]
+>text : Array<string>
+>[(this.content.replace(/^\s+|\s+$/g, ''))] : Array<string>
 >(this.content.replace(/^\s+|\s+$/g, '')) : string
 >this.content.replace(/^\s+|\s+$/g, '') : string
 >this.content.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; (searchValue: { [Symbol.replace](string: string, replaceValue: string): string; }, replaceValue: string): string; (searchValue: { [Symbol.replace](string: string, replacer: (substring: string, ...args: any[]) => string): string; }, replacer: (substring: string, ...args: any[]) => string): string; }
@@ -11059,9 +11059,9 @@ namespace TypeScript {
             }
 
             return this.text;
->this.text : string[]
+>this.text : Array<string>
 >this : this
->text : string[]
+>text : Array<string>
         }
     }
 

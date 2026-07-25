@@ -1,0 +1,10 @@
+--- old.parserForOfStatement22.types
++++ new.parserForOfStatement22.types
+@@= skipped -5, +5 lines =@@
+
+ for (async of [1, 2]) {}
+ >async : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

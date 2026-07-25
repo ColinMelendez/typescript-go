@@ -1,0 +1,11 @@
+--- old.indexAt(target=esnext).types
++++ new.indexAt(target=esnext).types
+@@= skipped -3, +3 lines =@@
+ [0].at(0);
+ >[0].at(0) : number | undefined
+ >[0].at : (index: number) => number | undefined
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+ >at : (index: number) => number | undefined
+ >0 : 0

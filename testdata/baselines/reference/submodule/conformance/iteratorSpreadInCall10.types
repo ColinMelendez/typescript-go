@@ -3,9 +3,9 @@
 === iteratorSpreadInCall10.ts ===
 function foo<T>(s: T[]) { return s[0] }
 >foo : <T>(s: T[]) => T
->s : T[]
+>s : Array<T>
 >s[0] : T
->s : T[]
+>s : Array<T>
 >0 : 0
 
 class SymbolIterator {

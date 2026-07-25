@@ -44,8 +44,14 @@
  }
  class Y<A, B> {
  >Y : Y<A, B>
-@@= skipped -39, +39 lines =@@
- >prop2 : Y<string[], <Tany>() => Tany>
+ }
+ var prop2: Y<string[], <Tany>() => Tany>; // No space after second type argument
+->prop2 : Y<string[], <Tany>() => Tany>
++>prop2 : Y<Array<string>, <Tany>() => Tany>
+
+ var prop2: Y<string[], <Tany>() => Tany>; // space after second type argument
+->prop2 : Y<string[], <Tany>() => Tany>
++>prop2 : Y<Array<string>, <Tany>() => Tany>
 
  var prop3: Y< <Tany>() => Tany, <Tany>() => Tany>; // space before first type argument
 ->prop3 : Y<(<Tany>() => Tany), <Tany>() => Tany>

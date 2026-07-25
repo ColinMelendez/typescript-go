@@ -1,0 +1,18 @@
+--- old.genericMemberFunction.errors.txt
++++ new.genericMemberFunction.errors.txt
+@@= skipped -0, +0 lines =@@
+ genericMemberFunction.ts(3,5): error TS2322: Type 'undefined' is not assignable to type 'FileWithErrors<A, B, C>'.
+-genericMemberFunction.ts(8,5): error TS2322: Type 'undefined' is not assignable to type 'BuildError<A, B, C>[]'.
++genericMemberFunction.ts(8,5): error TS2322: Type 'undefined' is not assignable to type 'Array<BuildError<A, B, C>>'.
+ genericMemberFunction.ts(11,5): error TS2322: Type 'undefined' is not assignable to type 'BuildResult<A, B, C>'.
+ genericMemberFunction.ts(16,5): error TS2304: Cannot find name 'a'.
+ genericMemberFunction.ts(17,5): error TS2304: Cannot find name 'removedFiles'.
+@@= skipped -17, +17 lines =@@
+       public errors<A, B extends A, C>(): BuildError<A, B, C>[] {
+         return undefined;
+         ~~~~~~
+-!!! error TS2322: Type 'undefined' is not assignable to type 'BuildError<A, B, C>[]'.
++!!! error TS2322: Type 'undefined' is not assignable to type 'Array<BuildError<A, B, C>>'.
+       }
+       public parent<A, B extends A, C>(): BuildResult<A, B, C> {
+         return undefined;

@@ -2,15 +2,15 @@
 
 === contextualTyping21.ts ===
 var foo:{id:number;}[] = [{id:1}]; foo = [{id:1}, 1];
->foo : { id: number; }[]
+>foo : Array<{ id: number; }>
 >id : number
->[{id:1}] : { id: number; }[]
+>[{id:1}] : Array<{ id: number; }>
 >{id:1} : { id: number; }
 >id : number
 >1 : 1
->foo = [{id:1}, 1] : (number | { id: number; })[]
->foo : { id: number; }[]
->[{id:1}, 1] : (number | { id: number; })[]
+>foo = [{id:1}, 1] : Array<number | { id: number; }>
+>foo : Array<{ id: number; }>
+>[{id:1}, 1] : Array<number | { id: number; }>
 >{id:1} : { id: number; }
 >id : number
 >1 : 1

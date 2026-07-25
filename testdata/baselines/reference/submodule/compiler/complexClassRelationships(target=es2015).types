@@ -25,9 +25,9 @@ class BaseCollection<T extends Base> {
 >f : () => T
 
         (item: Thing) => { return [item.Components]; };
->(item: Thing) => { return [item.Components]; } : (item: Thing) => ComponentCollection<any>[]
+>(item: Thing) => { return [item.Components]; } : (item: Thing) => Array<ComponentCollection<any>>
 >item : Thing
->[item.Components] : ComponentCollection<any>[]
+>[item.Components] : Array<ComponentCollection<any>>
 >item.Components : ComponentCollection<any>
 >item : Thing
 >Components : ComponentCollection<any>

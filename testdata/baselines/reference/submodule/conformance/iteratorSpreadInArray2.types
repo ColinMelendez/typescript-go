@@ -65,8 +65,8 @@ class NumberIterator {
 }
 
 var array = [...new NumberIterator, ...new SymbolIterator];
->array : (number | symbol)[]
->[...new NumberIterator, ...new SymbolIterator] : (number | symbol)[]
+>array : Array<number | symbol>
+>[...new NumberIterator, ...new SymbolIterator] : Array<number | symbol>
 >...new NumberIterator : number
 >new NumberIterator : NumberIterator
 >NumberIterator : typeof NumberIterator

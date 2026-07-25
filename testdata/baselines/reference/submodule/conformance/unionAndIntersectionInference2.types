@@ -9,10 +9,10 @@ var a1: string;
 >a1 : string
 
 var b1: string | string[];
->b1 : string | string[]
+>b1 : string | Array<string>
 
 var c1: string[] | string;
->c1 : string | string[]
+>c1 : string | Array<string>
 
 var d1: string | { name: string };
 >d1 : string | { name: string; }
@@ -27,14 +27,14 @@ f1(a1); // string
 >a1 : string
 
 f1(b1); // string[]
->f1(b1) : string[]
+>f1(b1) : Array<string>
 >f1 : <T>(x: T | string) => T
->b1 : string | string[]
+>b1 : string | Array<string>
 
 f1(c1); // string[]
->f1(c1) : string[]
+>f1(c1) : Array<string>
 >f1 : <T>(x: T | string) => T
->c1 : string | string[]
+>c1 : string | Array<string>
 
 f1(d1); // { name: string }
 >f1(d1) : { name: string; }
@@ -56,7 +56,7 @@ var a2: string & { name: string };
 >name : string
 
 var b2: { name: string } & string[];
->b2 : { name: string; } & string[]
+>b2 : { name: string; } & Array<string>
 >name : string
 
 var c2: string & { name: string } & number;
@@ -74,9 +74,9 @@ f2(a2); // string
 >a2 : string & { name: string; }
 
 f2(b2); // string[]
->f2(b2) : string[]
+>f2(b2) : Array<string>
 >f2 : <T>(x: T & { name: string; }) => T
->b2 : { name: string; } & string[]
+>b2 : { name: string; } & Array<string>
 
 f2(c2); // never
 >f2(c2) : never

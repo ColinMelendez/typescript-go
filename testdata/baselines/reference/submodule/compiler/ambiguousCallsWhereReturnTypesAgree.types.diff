@@ -1,0 +1,38 @@
+--- old.ambiguousCallsWhereReturnTypesAgree.types
++++ new.ambiguousCallsWhereReturnTypesAgree.types
+@@= skipped -9, +9 lines =@@
+
+     public bar(x: string[]): void;
+ >bar : { (x: string): void; (x: string[]): void; }
+->x : string[]
++>x : Array<string>
+
+     public bar(x: any): void {
+ >bar : { (x: string): void; (x: string[]): void; }
+@@= skipped -14, +14 lines =@@
+
+     public foo(x: string[]): void;
+ >foo : { (x: string): void; (x: string[]): void; }
+->x : string[]
++>x : Array<string>
+
+     public foo(x: any): void {
+ >foo : { (x: string): void; (x: string[]): void; }
+@@= skipped -24, +24 lines =@@
+
+     public bar(x: string[]): number;
+ >bar : { (x: string): number; (x: string[]): number; }
+->x : string[]
++>x : Array<string>
+
+     public bar(x: any): number {
+ >bar : { (x: string): number; (x: string[]): number; }
+@@= skipped -16, +16 lines =@@
+
+     public foo(x: string[]): number;
+ >foo : { (x: string): number; (x: string[]): number; }
+->x : string[]
++>x : Array<string>
+
+     public foo(x: any): number {
+ >foo : { (x: string): number; (x: string[]): number; }

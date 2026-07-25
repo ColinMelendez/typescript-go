@@ -1,0 +1,17 @@
+--- old.destructuringParameterDeclaration9(strict=true).errors.txt
++++ new.destructuringParameterDeclaration9(strict=true).errors.txt
+@@= skipped -0, +0 lines =@@
+-index.js(15,9): error TS7031: Binding element 'json' implicitly has an 'any[]' type.
++index.js(15,9): error TS7031: Binding element 'json' implicitly has an 'Array<any>' type.
+
+
+ ==== index.js (1 errors) ====
+@@= skipped -17, +17 lines =@@
+         additionalFiles: {
+             json = []
+             ~~~~
+-!!! error TS7031: Binding element 'json' implicitly has an 'any[]' type.
++!!! error TS7031: Binding element 'json' implicitly has an 'Array<any>' type.
+         } = {}
+     } = {}) {
+         json

@@ -1,0 +1,11 @@
+--- old.accessorsOverrideProperty8.types
++++ new.accessorsOverrideProperty8.types
+@@= skipped -12, +12 lines =@@
+
+ type AnyCtor<P extends object> = new (...a: any[]) => P
+ >AnyCtor : AnyCtor<P>
+->a : any[]
++>a : Array<any>
+
+ declare function classWithProperties<T extends { [key: string]: Types }, P extends object>(properties: T, klass: AnyCtor<P>): {
+ >classWithProperties : <T extends { [key: string]: Types; }, P extends object>(properties: T, klass: AnyCtor<P>) => { new (): P & Properties<T>; prototype: P & Properties<T>; }

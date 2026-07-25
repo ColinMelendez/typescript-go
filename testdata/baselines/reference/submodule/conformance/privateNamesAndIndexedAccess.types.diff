@@ -1,0 +1,10 @@
+--- old.privateNamesAndIndexedAccess.types
++++ new.privateNamesAndIndexedAccess.types
+@@= skipped -18, +18 lines =@@
+
+         // not supported yet, could support in future:
+         const badForNow: C[#bar] = 3;   // Error
+->badForNow : C[]
++>badForNow : Array<C>
+ >#bar : any
+ >3 : 3

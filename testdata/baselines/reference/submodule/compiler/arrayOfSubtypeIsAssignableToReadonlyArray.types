@@ -12,14 +12,14 @@ class B extends A { b }
 
 class C<T> extends Array<T> { c }
 >C : C<T>
->Array : T[]
+>Array : Array<T>
 >c : any
 
 declare var ara: A[];
->ara : A[]
+>ara : Array<A>
 
 declare var arb: B[];
->arb : B[]
+>arb : Array<B>
 
 declare var cra: C<A>;
 >cra : C<A>
@@ -28,48 +28,48 @@ declare var crb: C<B>;
 >crb : C<B>
 
 declare var rra: ReadonlyArray<A>;
->rra : readonly A[]
+>rra : ReadonlyArray<A>
 
 declare var rrb: ReadonlyArray<B>;
->rrb : readonly B[]
+>rrb : ReadonlyArray<B>
 
 rra = ara;
->rra = ara : A[]
->rra : readonly A[]
->ara : A[]
+>rra = ara : Array<A>
+>rra : ReadonlyArray<A>
+>ara : Array<A>
 
 rrb = arb; // OK, Array<B> is assignable to ReadonlyArray<A>
->rrb = arb : B[]
->rrb : readonly B[]
->arb : B[]
+>rrb = arb : Array<B>
+>rrb : ReadonlyArray<B>
+>arb : Array<B>
 
 rra = arb;
->rra = arb : B[]
->rra : readonly A[]
->arb : B[]
+>rra = arb : Array<B>
+>rra : ReadonlyArray<A>
+>arb : Array<B>
 
 rrb = ara; // error: 'A' is not assignable to 'B'
->rrb = ara : A[]
->rrb : readonly B[]
->ara : A[]
+>rrb = ara : Array<A>
+>rrb : ReadonlyArray<B>
+>ara : Array<A>
 
 rra = cra;
 >rra = cra : C<A>
->rra : readonly A[]
+>rra : ReadonlyArray<A>
 >cra : C<A>
 
 rra = crb; // OK, C<B> is assignable to ReadonlyArray<A>
 >rra = crb : C<B>
->rra : readonly A[]
+>rra : ReadonlyArray<A>
 >crb : C<B>
 
 rrb = crb;
 >rrb = crb : C<B>
->rrb : readonly B[]
+>rrb : ReadonlyArray<B>
 >crb : C<B>
 
 rrb = cra; // error: 'A' is not assignable to 'B'
 >rrb = cra : C<A>
->rrb : readonly B[]
+>rrb : ReadonlyArray<B>
 >cra : C<A>
 

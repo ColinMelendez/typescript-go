@@ -27,8 +27,8 @@ export async function myFunction(param: T1) {
 >param : T1
 
   const awaited = await param
->awaited : 1 | T1[]
->await param : 1 | T1[]
+>awaited : 1 | Array<T1>
+>await param : 1 | Array<T1>
 >param : T1
 }
 

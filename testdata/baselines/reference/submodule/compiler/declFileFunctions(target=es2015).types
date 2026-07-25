@@ -21,14 +21,14 @@ export function fooWithParameters(/** this is comment about a*/a: string,
 export function fooWithRestParameters(a: string, ...rests: string[]) {
 >fooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
     return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
 }
@@ -85,9 +85,9 @@ export function fooWithTypeTypePredicateAndGeneric<T>(a: any): a is T {
 >true : true
 }
 export function fooWithTypeTypePredicateAndRestParam(a: any, ...rest): a is number {
->fooWithTypeTypePredicateAndRestParam : (a: any, ...rest: any[]) => a is number
+>fooWithTypeTypePredicateAndRestParam : (a: any, ...rest: Array<any>) => a is number
 >a : any
->rest : any[]
+>rest : Array<any>
 
     return true;
 >true : true
@@ -113,14 +113,14 @@ function nonExportedFooWithParameters(/** this is comment about a*/a: string,
 function nonExportedFooWithRestParameters(a: string, ...rests: string[]) {
 >nonExportedFooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
     return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
 }
@@ -162,14 +162,14 @@ function globalfooWithParameters(/** this is comment about a*/a: string,
 function globalfooWithRestParameters(a: string, ...rests: string[]) {
 >globalfooWithRestParameters : (a: string, ...rests: string[]) => string
 >a : string
->rests : string[]
+>rests : Array<string>
 
     return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
 }

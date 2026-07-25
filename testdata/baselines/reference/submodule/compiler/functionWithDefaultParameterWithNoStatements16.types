@@ -2,7 +2,7 @@
 
 === functionWithDefaultParameterWithNoStatements16.ts ===
 var v: any[];
->v : any[]
+>v : Array<any>
 
 function foo(a = bar()) { }
 >foo : (a?: void) => void

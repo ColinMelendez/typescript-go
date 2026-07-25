@@ -1,0 +1,25 @@
+--- old.ES5For-of7(target=es2015).types
++++ new.ES5For-of7(target=es2015).types
+@@= skipped -2, +2 lines =@@
+ === ES5For-of7.ts ===
+ for (var w of []) {
+ >w : never
+->[] : never[]
++>[] : Array<never>
+
+     var x = w;
+ >x : never
+@@= skipped -9, +9 lines =@@
+
+ for (var v of []) {
+ >v : never
+->[] : never[]
++>[] : Array<never>
+
+     var x = [w, v];
+ >x : never
+->[w, v] : never[]
++>[w, v] : Array<never>
+ >w : never
+ >v : never
+ }

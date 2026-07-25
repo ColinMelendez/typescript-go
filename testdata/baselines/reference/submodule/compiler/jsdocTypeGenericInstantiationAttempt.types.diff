@@ -1,0 +1,15 @@
+--- old.jsdocTypeGenericInstantiationAttempt.types
++++ new.jsdocTypeGenericInstantiationAttempt.types
+@@= skipped -4, +4 lines =@@
+  * @param {Array<*>} list
+  */
+ function thing(list) {
+->thing : (list: Array<any>) => any[]
+->list : any[]
++>thing : (list: Array<any>) => Array<any>
++>list : Array<any>
+
+     return list;
+->list : any[]
++>list : Array<any>
+ }

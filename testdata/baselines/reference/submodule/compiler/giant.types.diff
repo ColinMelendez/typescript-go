@@ -1,0 +1,290 @@
+--- old.giant.types
++++ new.giant.types
+@@= skipped -101, +101 lines =@@
+ >p2 : string
+
+     (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+     (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+     (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+     //(p8?: string, ...p9: any[]);
+     //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+     new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+     new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+     new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+     //Index Signature
+     [p];
+@@= skipped -135, +135 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];
+@@= skipped -168, +168 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];
+@@= skipped -265, +265 lines =@@
+ >p2 : string
+
+     (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+     (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+     (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+     //(p8?: string, ...p9: any[]);
+     //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+     new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+     new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+     new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+     //Index Signature
+     [p];
+@@= skipped -135, +135 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];
+@@= skipped -168, +168 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];
+@@= skipped -290, +290 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];
+@@= skipped -123, +123 lines =@@
+ >p2 : string
+
+         (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //(p8?: string, ...p9: any[]);
+         //(p10:string, p8?: string, ...p9: any[]);
+@@= skipped -15, +15 lines =@@
+ >p2 : string
+
+         new (...p3: any[]);
+->p3 : any[]
++>p3 : Array<any>
+
+         new (p4: string, p5?: string);
+ >p4 : string
+@@= skipped -8, +8 lines =@@
+
+         new (p6: string, ...p7: any[]);
+ >p6 : string
+->p7 : any[]
++>p7 : Array<any>
+
+         //Index Signature
+         [p];

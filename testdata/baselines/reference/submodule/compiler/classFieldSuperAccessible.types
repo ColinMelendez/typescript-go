@@ -34,7 +34,7 @@ class B extends Number {
 }
 class C extends Array {
 >C : C
->Array : any[]
+>Array : Array<any>
 
     foo() {
 >foo : () => void
@@ -45,7 +45,7 @@ class C extends Array {
 >console : Console
 >log : (...data: any[]) => void
 >super.length : number
->super : any[]
+>super : Array<any>
 >length : number
     }
 }

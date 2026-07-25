@@ -1,0 +1,10 @@
+--- old.subtypesOfAny.types
++++ new.subtypesOfAny.types
+@@= skipped -71, +71 lines =@@
+ >x : string
+
+     foo: number[];
+->foo : number[]
++>foo : Array<number>
+ }
+

@@ -5,5 +5,5 @@ function foo(a?:string, b?:number, ...b:number[]){}
 >foo : (a?: string, b?: number, ...b: number[]) => void
 >a : string | undefined
 >b : number | undefined
->b : number[]
+>b : Array<number>
 

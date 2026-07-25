@@ -1,0 +1,27 @@
+--- old.lambdaParamTypes.types
++++ new.lambdaParamTypes.types
+@@= skipped -3, +3 lines =@@
+ interface MyArrayWrapper<T> {
+     constructor(initialItems?: T[]);
+ >constructor : (initialItems?: T[]) => any
+->initialItems : T[]
++>initialItems : Array<T>
+
+     doSomething(predicate: (x: T, y: T) => string): void;
+ >doSomething : (predicate: (x: T, y: T) => string) => void
+@@= skipped -11, +11 lines =@@
+
+ declare function create<T>(initialValues?: T[]): MyArrayWrapper<T>;
+ >create : <T>(initialValues?: T[]) => MyArrayWrapper<T>
+->initialValues : T[]
++>initialValues : Array<T>
+
+ var thing = create([{ name: "bob", id: 24 }, { name: "doug", id: 32 }]);
+ >thing : MyArrayWrapper<{ name: string; id: number; }>
+ >create([{ name: "bob", id: 24 }, { name: "doug", id: 32 }]) : MyArrayWrapper<{ name: string; id: number; }>
+ >create : <T>(initialValues?: T[]) => MyArrayWrapper<T>
+->[{ name: "bob", id: 24 }, { name: "doug", id: 32 }] : { name: string; id: number; }[]
++>[{ name: "bob", id: 24 }, { name: "doug", id: 32 }] : Array<{ name: string; id: number; }>
+ >{ name: "bob", id: 24 } : { name: string; id: number; }
+ >name : string
+ >"bob" : "bob"

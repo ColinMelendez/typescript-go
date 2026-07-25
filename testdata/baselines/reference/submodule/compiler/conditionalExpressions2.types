@@ -50,8 +50,8 @@ var g = true ? {g:5} : null;
 >5 : 5
 
 var h = [{h:5}, null];
->h : { h: number; }[]
->[{h:5}, null] : { h: number; }[]
+>h : Array<{ h: number; }>
+>[{h:5}, null] : Array<{ h: number; }>
 >{h:5} : { h: number; }
 >h : number
 >5 : 5

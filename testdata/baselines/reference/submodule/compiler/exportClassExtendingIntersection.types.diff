@@ -1,6 +1,15 @@
 --- old.exportClassExtendingIntersection.types
 +++ new.exportClassExtendingIntersection.types
-@@= skipped -28, +28 lines =@@
+@@= skipped -2, +2 lines =@@
+ === BaseClass.ts ===
+ export type Constructor<T> = new (...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ export class MyBaseClass<T> {
+ >MyBaseClass : MyBaseClass<T>
+@@= skipped -26, +26 lines =@@
  >base : T
 
      return class extends base {

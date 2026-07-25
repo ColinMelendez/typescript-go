@@ -1,0 +1,38 @@
+--- old.thislessFunctionsNotContextSensitive1.types
++++ new.thislessFunctionsNotContextSensitive1.types
+@@= skipped -130, +130 lines =@@
+ export type StateFunction<State> = (s: State, ...args: any[]) => any;
+ >StateFunction : StateFunction<State>
+ >s : State
+->args : any[]
++>args : Array<any>
+
+ export type VuexStoreOptions<State, Modules> = {
+ >VuexStoreOptions : VuexStoreOptions<State, Modules>
+@@= skipped -240, +240 lines =@@
+ >'value' : "value"
+
+ doSomething(['v']); // ok
+->doSomething(['v']) : string[]
++>doSomething(['v']) : Array<string>
+ >doSomething : <T>(value: NonStringIterable<T>) => T
+->['v'] : string[]
++>['v'] : Array<string>
+ >'v' : "v"
+
+ doSomething([o]); // ok
+->doSomething([o]) : { foo(): void; }[]
++>doSomething([o]) : Array<{ foo(): void; }>
+ >doSomething : <T>(value: NonStringIterable<T>) => T
+->[o] : { foo(): void; }[]
++>[o] : Array<{ foo(): void; }>
+ >o : { foo(): void; }
+
+ doSomething([{ foo() {} }]); // ok
+->doSomething([{ foo() {} }]) : { foo(): void; }[]
++>doSomething([{ foo() {} }]) : Array<{ foo(): void; }>
+ >doSomething : <T>(value: NonStringIterable<T>) => T
+->[{ foo() {} }] : { foo(): void; }[]
++>[{ foo() {} }] : Array<{ foo(): void; }>
+ >{ foo() {} } : { foo(): void; }
+ >foo : () => void

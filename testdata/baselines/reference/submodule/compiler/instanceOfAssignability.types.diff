@@ -1,0 +1,47 @@
+--- old.instanceOfAssignability.types
++++ new.instanceOfAssignability.types
+@@= skipped -44, +44 lines =@@
+
+ function fn1(x: Array<number>|Array<string>|boolean) {
+ >fn1 : (x: Array<number> | Array<string> | boolean) => void
+->x : boolean | string[] | number[]
++>x : boolean | Array<string> | Array<number>
+
+ 	if(x instanceof Array) {
+ >x instanceof Array : boolean
+->x : boolean | string[] | number[]
++>x : boolean | Array<string> | Array<number>
+ >Array : ArrayConstructor
+
+ 		// 1.5: y: Array<number>|Array<string>
+ 		// Want: y: Array<number>|Array<string>
+ 		let y = x;
+->y : string[] | number[]
+->x : string[] | number[]
++>y : Array<string> | Array<number>
++>x : Array<string> | Array<number>
+ 	}
+ }
+
+@@= skipped -102, +102 lines =@@
+
+ function fn7(x: Array<number>|Array<string>) {
+ >fn7 : (x: Array<number> | Array<string>) => void
+->x : string[] | number[]
++>x : Array<string> | Array<number>
+
+ 	if(x instanceof Array) {
+ >x instanceof Array : boolean
+->x : string[] | number[]
++>x : Array<string> | Array<number>
+ >Array : ArrayConstructor
+
+ 		// 1.5: y: Array<number>|Array<string>
+ 		// Want: y: Array<number>|Array<string>
+ 		let y = x;
+->y : string[] | number[]
+->x : string[] | number[]
++>y : Array<string> | Array<number>
++>x : Array<string> | Array<number>
+ 	}
+ }

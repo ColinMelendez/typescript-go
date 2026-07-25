@@ -1,0 +1,38 @@
+--- old.capturedLetConstInLoop2.types
++++ new.capturedLetConstInLoop2.types
+@@= skipped -7, +7 lines =@@
+
+     for (let x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         let a = arguments.length;
+ >a : number
+@@= skipped -30, +30 lines =@@
+
+     for (let x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+         let a = arguments.length;
+ >a : number
+@@= skipped -333, +333 lines =@@
+
+     for (const x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         const a = arguments.length;
+ >a : number
+@@= skipped -30, +30 lines =@@
+
+     for (const x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+         const a = arguments.length;
+ >a : number

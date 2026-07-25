@@ -26,10 +26,10 @@ type T07 = [...string[], string];  // Error
 >T07 : T07
 
 type T08 = [...string];  // Error
->T08 : any[]
+>T08 : Array<any>
 
 type T09 = [...string?];  // Error
->T09 : any[]
+>T09 : Array<any>
 
 type T10 = [string, ...[...string[]]];
 >T10 : T10
@@ -167,7 +167,7 @@ let ex = t[x];  // number | string | boolean
 
 declare function f0<T, U>(x: [T, ...U[]]): [T, U];
 >f0 : <T, U>(x: [T, ...U[]]) => [T, U]
->x : [T, ...U[]]
+>x : [T, ...Array<U>]
 
 f0([]);  // Error
 >f0([]) : [unknown, unknown]
@@ -198,13 +198,13 @@ f0([1, "hello", true]);
 
 declare function f1(a: [(x: number) => number, ...((x: string) => number)[]]): void;
 >f1 : (a: [(x: number) => number, ...((x: string) => number)[]]) => void
->a : [(x: number) => number, ...((x: string) => number)[]]
+>a : [(x: number) => number, ...Array<(x: string) => number>]
 >x : number
 >x : string
 
 declare function f2(...a: [(x: number) => number, ...((x: string) => number)[]]): void;
->f2 : (a_0: (x: number) => number, ...a: ((x: string) => number)[]) => void
->a : [(x: number) => number, ...((x: string) => number)[]]
+>f2 : (a_0: (x: number) => number, ...a: Array<(x: string) => number>) => void
+>a : [(x: number) => number, ...Array<(x: string) => number>]
 >x : number
 >x : string
 
@@ -232,7 +232,7 @@ f1([x => x * 2, x => x.length, x => x.charCodeAt(0)]);
 
 f2(x => x * 2, x => x.length, x => x.charCodeAt(0));
 >f2(x => x * 2, x => x.length, x => x.charCodeAt(0)) : void
->f2 : (a_0: (x: number) => number, ...a: ((x: string) => number)[]) => void
+>f2 : (a_0: (x: number) => number, ...a: Array<(x: string) => number>) => void
 >x => x * 2 : (x: number) => number
 >x : number
 >x * 2 : number

@@ -24,3 +24,9 @@
  >'hi' : "hi"
 
  /**
+@@= skipped -17, +17 lines =@@
+ >prototype : Element
+ >animate : (keyframes: Keyframe[] | PropertyIndexedKeyframes | null, options?: number | KeyframeAnimationOptions) => Animation
+ >function(keyframes) {} : (keyframes: Array<any>) => void
+->keyframes : any[]
++>keyframes : Array<any>

@@ -1,0 +1,40 @@
+--- old.conditionalOperatorConditionIsNumberType.types
++++ new.conditionalOperatorConditionIsNumberType.types
+@@= skipped -115, +115 lines =@@
+ >1 : 1
+
+ var array = [1, 2, 3];
+->array : number[]
+->[1, 2, 3] : number[]
++>array : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -43, +43 lines =@@
+ >foo() : number
+ >foo : () => number
+ >array[1] : number
+->array : number[]
++>array : Array<number>
+ >1 : 1
+ >exprIsObject1 : Object
+ >exprIsObject2 : Object
+@@= skipped -140, +140 lines =@@
+ >foo() : number
+ >foo : () => number
+ >array[1] : number
+->array : number[]
++>array : Array<number>
+ >1 : 1
+ >exprIsObject1 : Object
+ >exprIsObject2 : Object
+@@= skipped -12, +12 lines =@@
+ >foo() : number
+ >foo : () => number
+ >array[1] : number
+->array : number[]
++>array : Array<number>
+ >1 : 1
+ >exprString1 : string
+ >exprBoolean1 : boolean

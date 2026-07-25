@@ -26,11 +26,11 @@ export class C {
 >'bar' : "bar"
 
         obj.buzz = Object.values(obj);
->obj.buzz = Object.values(obj) : any[]
+>obj.buzz = Object.values(obj) : Array<any>
 >obj.buzz : any
 >obj : { foo: string; bar: string; buzz: any; }
 >buzz : any
->Object.values(obj) : any[]
+>Object.values(obj) : Array<any>
 >Object.values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
 >Object : ObjectConstructor
 >values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }

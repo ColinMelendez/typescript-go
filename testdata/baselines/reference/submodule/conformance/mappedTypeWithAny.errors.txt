@@ -1,7 +1,7 @@
 mappedTypeWithAny.ts(23,16): error TS2339: Property 'notAValue' does not exist on type 'Data'.
-mappedTypeWithAny.ts(45,5): error TS2740: Type 'Objectish<any>' is missing the following properties from type 'any[]': length, pop, push, concat, and 25 more.
-mappedTypeWithAny.ts(46,5): error TS2740: Type 'Objectish<any>' is missing the following properties from type 'any[]': length, pop, push, concat, and 25 more.
-mappedTypeWithAny.ts(53,5): error TS2322: Type 'string[]' is not assignable to type '[any, any]'.
+mappedTypeWithAny.ts(45,5): error TS2740: Type 'Objectish<any>' is missing the following properties from type 'Array<any>': length, pop, push, concat, and 25 more.
+mappedTypeWithAny.ts(46,5): error TS2740: Type 'Objectish<any>' is missing the following properties from type 'Array<any>': length, pop, push, concat, and 25 more.
+mappedTypeWithAny.ts(53,5): error TS2322: Type 'Array<string>' is not assignable to type '[any, any]'.
   Target requires 2 element(s) but source may have fewer.
 
 
@@ -54,10 +54,10 @@ mappedTypeWithAny.ts(53,5): error TS2322: Type 'string[]' is not assignable to t
         arr = arrayish;
         arr = objectish;
         ~~~
-!!! error TS2740: Type 'Objectish<any>' is missing the following properties from type 'any[]': length, pop, push, concat, and 25 more.
+!!! error TS2740: Type 'Objectish<any>' is missing the following properties from type 'Array<any>': length, pop, push, concat, and 25 more.
         arr = indirectArrayish;
         ~~~
-!!! error TS2740: Type 'Objectish<any>' is missing the following properties from type 'any[]': length, pop, push, concat, and 25 more.
+!!! error TS2740: Type 'Objectish<any>' is missing the following properties from type 'Array<any>': length, pop, push, concat, and 25 more.
     }
     
     declare function stringifyArray<T extends readonly any[]>(arr: T): { -readonly [K in keyof T]: string };
@@ -66,7 +66,7 @@ mappedTypeWithAny.ts(53,5): error TS2322: Type 'string[]' is not assignable to t
     declare function stringifyPair<T extends readonly [any, any]>(arr: T): { -readonly [K in keyof T]: string };
     let def: [any, any] = stringifyPair(void 0 as any);
         ~~~
-!!! error TS2322: Type 'string[]' is not assignable to type '[any, any]'.
+!!! error TS2322: Type 'Array<string>' is not assignable to type '[any, any]'.
 !!! error TS2322:   Target requires 2 element(s) but source may have fewer.
     
     // Repro from #46582

@@ -43,13 +43,13 @@ class FooIterator {
 }
 
 function fun([a, ...b]) { }
->fun : ([a, ...b]: [any, ...any[]]) => void
+>fun : ([a, ...b]: [any, ...Array<any>]) => void
 >a : any
->b : any[]
+>b : Array<any>
 
 fun(new FooIterator);
 >fun(new FooIterator) : void
->fun : ([a, ...b]: [any, ...any[]]) => void
+>fun : ([a, ...b]: [any, ...Array<any>]) => void
 >new FooIterator : FooIterator
 >FooIterator : typeof FooIterator
 

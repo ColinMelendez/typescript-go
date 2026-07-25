@@ -13,14 +13,14 @@ export type T = {
 /** @import { T } from "./types.d.ts" */
 
 export default async function f() {
->f : () => Promise<T[]>
+>f : () => Promise<Array<T>>
 
 	/** @type {T[]} */
 	const types = [];
->types : T[]
->[] : never[]
+>types : Array<T>
+>[] : Array<never>
 
 	return types;
->types : T[]
+>types : Array<T>
 }
 

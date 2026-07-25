@@ -10,8 +10,8 @@ declare var ANY1;
 >ANY1 : any
 
 var ANY2: any[] = ["", ""];
->ANY2 : any[]
->["", ""] : string[]
+>ANY2 : Array<any>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -71,7 +71,7 @@ var ResultIsString1 = typeof ANY1;
 var ResultIsString2 = typeof ANY2;
 >ResultIsString2 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
 >typeof ANY2 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsString3 = typeof A;
 >ResultIsString3 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
@@ -113,7 +113,7 @@ var ResultIsString10 = typeof ANY2[0];
 >ResultIsString10 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
 >typeof ANY2[0] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsString11 = typeof objA.a;
@@ -209,7 +209,7 @@ typeof ANY1;
 typeof ANY2[0];
 >typeof ANY2[0] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 typeof ANY, ANY1;
@@ -245,7 +245,7 @@ var z!: any;
 >z : any
 
 var x!: any[];
->x : any[]
+>x : Array<any>
 
 var r!: () => any;
 >r : () => any
@@ -258,7 +258,7 @@ z: typeof ANY;
 x: typeof ANY2;
 >x : any
 >typeof ANY2 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
->ANY2 : any[]
+>ANY2 : Array<any>
 
 r: typeof foo;
 >r : any

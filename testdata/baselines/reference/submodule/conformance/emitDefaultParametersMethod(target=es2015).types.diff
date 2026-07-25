@@ -1,0 +1,36 @@
+--- old.emitDefaultParametersMethod(target=es2015).types
++++ new.emitDefaultParametersMethod(target=es2015).types
+@@= skipped -17, +17 lines =@@
+ >false : false
+
+     public foo1(x: string, t = false, ...rest) { }
+->foo1 : (x: string, t?: boolean, ...rest: any[]) => void
++>foo1 : (x: string, t?: boolean, ...rest: Array<any>) => void
+ >x : string
+ >t : boolean
+ >false : false
+->rest : any[]
++>rest : Array<any>
+
+     public bar(t = false) { }
+ >bar : (t?: boolean) => void
+@@= skipped -12, +12 lines =@@
+ >false : false
+
+     public boo(t = false, ...rest) { }
+->boo : (t?: boolean, ...rest: any[]) => void
++>boo : (t?: boolean, ...rest: Array<any>) => void
+ >t : boolean
+ >false : false
+->rest : any[]
++>rest : Array<any>
+ }
+
+ class D {
+@@= skipped -20, +20 lines =@@
+     constructor(y = "hello", ...rest) { }
+ >y : string
+ >"hello" : "hello"
+->rest : any[]
++>rest : Array<any>
+ }

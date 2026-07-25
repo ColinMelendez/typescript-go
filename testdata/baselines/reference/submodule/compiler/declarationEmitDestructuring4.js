@@ -27,8 +27,8 @@ function baz4({} = { x: 10 }) { }
 
 //// [declarationEmitDestructuring4.d.ts]
 declare function baz([]: Iterable<any, void, undefined>): void;
-declare function baz1([]?: number[]): void;
-declare function baz2([[]]?: [number[]]): void;
+declare function baz1([]?: Array<number>): void;
+declare function baz2([[]]?: [Array<number>]): void;
 declare function baz3({}: {}): void;
 declare function baz4({}?: {
     x: number;

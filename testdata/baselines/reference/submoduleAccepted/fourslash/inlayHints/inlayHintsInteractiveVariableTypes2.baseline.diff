@@ -1,6 +1,25 @@
 --- old.inlayHintsInteractiveVariableTypes2.baseline
 +++ new.inlayHintsInteractiveVariableTypes2.baseline
-@@= skipped -30, +30 lines =@@
+@@= skipped -6, +6 lines =@@
+       "value": ": "
+     },
+     {
++      "value": "Array",
++      "location": {},
++    },
++    {
++      "value": "<"
++    },
++    {
+       "value": "number"
+     },
+     {
+-      "value": "[]"
++      "value": ">"
+     }
+   ],
+   "kind": 1,
+@@= skipped -24, +31 lines =@@
        "value": " "
      },
      {
@@ -20,3 +39,22 @@
      },
      {
        "value": ": "
+@@= skipped -27, +28 lines =@@
+       "value": ": "
+     },
+     {
++      "value": "Array",
++      "location": {},
++    },
++    {
++      "value": "<"
++    },
++    {
+       "value": "number"
+     },
+     {
+-      "value": "[]"
++      "value": ">"
+     }
+   ],
+   "kind": 1,

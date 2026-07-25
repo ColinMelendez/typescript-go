@@ -101,7 +101,7 @@ class D6 extends Base {
 >Base : Base
 
     foo: number[];
->foo : number[]
+>foo : Array<number>
 }
 
 class D7 extends Base {

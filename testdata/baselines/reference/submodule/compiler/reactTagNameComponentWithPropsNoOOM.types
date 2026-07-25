@@ -19,8 +19,8 @@ const rest: {} = {};
 >{} : {}
 
 const children: any[] = [];
->children : any[]
->[] : never[]
+>children : Array<any>
+>[] : Array<never>
 
 <Tag className={classes} {...rest}>
 ><Tag className={classes} {...rest}>{children}</Tag> : JSX.Element
@@ -30,7 +30,7 @@ const children: any[] = [];
 >rest : {}
 
 {children}
->children : any[]
+>children : Array<any>
 
 </Tag>
 >Tag : keyof React.ReactHTML

@@ -20,6 +20,6 @@ func TestGenericCombinatorWithConstraints1(t *testing.T) {
 }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "(local var) xs: U[]", "")
-	f.VerifyQuickInfoAt(t, "2", "(local var) xs2: U[]", "")
+	f.VerifyQuickInfoAt(t, "1", "(local var) xs: Array<U>", "")
+	f.VerifyQuickInfoAt(t, "2", "(local var) xs2: Array<U>", "")
 }

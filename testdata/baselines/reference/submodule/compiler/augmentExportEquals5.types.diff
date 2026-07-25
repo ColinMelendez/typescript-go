@@ -1,0 +1,18 @@
+--- old.augmentExportEquals5.types
++++ new.augmentExportEquals5.types
+@@= skipped -19, +19 lines =@@
+         interface IRoute {
+             all(...handler: RequestHandler[]): IRoute;
+ >all : (...handler: RequestHandler[]) => IRoute
+->handler : RequestHandler[]
++>handler : Array<RequestHandler>
+         }
+
+         interface IRouterMatcher<T> {
+             (name: string|RegExp, ...handlers: RequestHandler[]): T;
+ >name : string | RegExp
+->handlers : RequestHandler[]
++>handlers : Array<RequestHandler>
+         }
+
+         interface IRouter<T> extends RequestHandler {

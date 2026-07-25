@@ -3,7 +3,7 @@
 === for-of54.ts ===
 for (let v of []) {
 >v : never
->[] : never[]
+>[] : Array<never>
 
     var v = 0;
 >v : number

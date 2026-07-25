@@ -1,0 +1,18 @@
+--- old.doNotWidenAtObjectLiteralPropertyAssignment.types
++++ new.doNotWidenAtObjectLiteralPropertyAssignment.types
+@@= skipped -10, +10 lines =@@
+ >interval : ITestEventInterval
+
+     children?: IIntervalTreeNode[];
+->children : IIntervalTreeNode[] | undefined
++>children : Array<IIntervalTreeNode> | undefined
+ }
+
+ var test: IIntervalTreeNode[] = [{ interval: { begin: 0 }, children: null }]; // was error here because best common type is {}
+->test : IIntervalTreeNode[]
+->[{ interval: { begin: 0 }, children: null }] : { interval: { begin: number; }; children: null; }[]
++>test : Array<IIntervalTreeNode>
++>[{ interval: { begin: 0 }, children: null }] : Array<{ interval: { begin: number; }; children: null; }>
+ >{ interval: { begin: 0 }, children: null } : { interval: { begin: number; }; children: null; }
+ >interval : { begin: number; }
+ >{ begin: 0 } : { begin: number; }

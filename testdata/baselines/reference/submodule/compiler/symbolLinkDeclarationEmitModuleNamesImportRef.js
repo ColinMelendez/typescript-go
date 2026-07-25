@@ -31,4 +31,4 @@ function getStyles() {
 
 
 //// [index.d.ts]
-export declare function getStyles(): import("styled-components").InterpolationValue[];
+export declare function getStyles(): Array<import("styled-components").InterpolationValue>;

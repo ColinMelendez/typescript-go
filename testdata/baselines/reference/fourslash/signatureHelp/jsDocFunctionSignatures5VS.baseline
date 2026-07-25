@@ -14,7 +14,7 @@
 // pathFilter('foo', 'bar', 'baz', {});
 //            ^
 // | ----------------------------------------------------------------------
-// | pathFilter(**basePath: string**, pattern: string, type: string, options: Object): any[]
+// | pathFilter(**basePath: string**, pattern: string, type: string, options: Object): Array<any>
 // | - `basePath: string`: The base path where the search will be performed.
 // | Filters a path based on a regexp or glob pattern.
 // | ----------------------------------------------------------------------
@@ -32,7 +32,7 @@
     "item": {
       "signatures": [
         {
-          "label": "pathFilter(basePath: string, pattern: string, type: string, options: Object): any[]",
+          "label": "pathFilter(basePath: string, pattern: string, type: string, options: Object): Array<any>",
           "documentation": {
             "kind": "markdown",
             "value": "Filters a path based on a regexp or glob pattern."
@@ -186,18 +186,23 @@
                 "_vs_type": "ClassifiedTextRun"
               },
               {
+                "ClassificationTypeName": "text",
+                "Text": "Array",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
+                "ClassificationTypeName": "punctuation",
+                "Text": "<",
+                "_vs_type": "ClassifiedTextRun"
+              },
+              {
                 "ClassificationTypeName": "keyword",
                 "Text": "any",
                 "_vs_type": "ClassifiedTextRun"
               },
               {
                 "ClassificationTypeName": "punctuation",
-                "Text": "[",
-                "_vs_type": "ClassifiedTextRun"
-              },
-              {
-                "ClassificationTypeName": "punctuation",
-                "Text": "]",
+                "Text": ">",
                 "_vs_type": "ClassifiedTextRun"
               }
             ],

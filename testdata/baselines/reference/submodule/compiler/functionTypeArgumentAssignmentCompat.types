@@ -13,8 +13,8 @@ var g : {
 
  <S>() : S[];
 } = () => [];
->() => [] : () => never[]
->[] : never[]
+>() => [] : () => Array<never>
+>[] : Array<never>
 
 f = g;
 >f = g : <S>() => S[]

@@ -1,0 +1,34 @@
+--- old.functionOverloadErrors.types
++++ new.functionOverloadErrors.types
+@@= skipped -22, +22 lines =@@
+ }
+ function fn2b(n: number[]);
+ >fn2b : { (n: number[]): any; (n: Array<number>): any; }
+->n : number[]
++>n : Array<number>
+
+ function fn2b(n: Array<number>);
+ >fn2b : { (n: number[]): any; (n: Array<number>): any; }
+->n : number[]
++>n : Array<number>
+
+ function fn2b() {
+ >fn2b : { (n: number[]): any; (n: Array<number>): any; }
+@@= skipped -28, +28 lines =@@
+ //Function overload with rest param and another with only an optional parameter
+ function fn6(...t: any[]);
+ >fn6 : { (...t: any[]): any; (x?: any): any; }
+->t : any[]
++>t : Array<any>
+
+ function fn6(x?: any);
+ >fn6 : { (...t: any[]): any; (x?: any): any; }
+@@= skipped -12, +12 lines =@@
+ //Function overload with rest param and another with only optional parameters
+ function fn7(...t: any[]);
+ >fn7 : { (...t: any[]): any; (x?: any, y?: any, z?: any): any; }
+->t : any[]
++>t : Array<any>
+
+ function fn7(x?: any, y?: any, z?: any);
+ >fn7 : { (...t: any[]): any; (x?: any, y?: any, z?: any): any; }

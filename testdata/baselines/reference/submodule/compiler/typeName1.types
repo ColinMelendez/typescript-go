@@ -88,17 +88,17 @@ var x9:I=3;
 >3 : 3
 
 var x10:I[][][][]=3;
->x10 : I[][][][]
+>x10 : Array<Array<Array<Array<I>>>>
 >3 : 3
 
 var x11:{z:I;x:boolean;}[][]=3;
->x11 : { z: I; x: boolean; }[][]
+>x11 : Array<Array<{ z: I; x: boolean; }>>
 >z : I
 >x : boolean
 >3 : 3
 
 var x12:{z:I;x:boolean;y:(s:string)=>boolean;w:{ z:I;[s:string]:{ x; y; };[n:number]:{x; y;};():boolean; };}[][]=3;
->x12 : { z: I; x: boolean; y: (s: string) => boolean; w: { z: I; [s: string]: { x: any; y: any; }; [n: number]: { x: any; y: any; }; (): boolean; }; }[][]
+>x12 : Array<Array<{ z: I; x: boolean; y: (s: string) => boolean; w: { z: I; [s: string]: { x: any; y: any; }; [n: number]: { x: any; y: any; }; (): boolean; }; }>>
 >z : I
 >x : boolean
 >y : (s: string) => boolean

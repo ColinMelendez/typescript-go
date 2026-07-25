@@ -1,0 +1,10 @@
+--- old.tslibReExportHelpers.types
++++ new.tslibReExportHelpers.types
+@@= skipped -2, +2 lines =@@
+ === /node_modules/tslib/index.d.ts ===
+ export declare function __decorate(...args: any[]): any;
+ >__decorate : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ === /node_modules/tslib/index.d.mts ===

@@ -1,0 +1,77 @@
+--- old.arrayLiteralTypeInference.types
++++ new.arrayLiteralTypeInference.types
+@@= skipped -24, +24 lines =@@
+ }
+
+ var x1: Action[] = [
+->x1 : Action[]
+->[    { id: 2, trueness: false },    { id: 3, name: "three" }] : ({ id: number; trueness: boolean; } | { id: number; name: string; })[]
++>x1 : Array<Action>
++>[    { id: 2, trueness: false },    { id: 3, name: "three" }] : Array<{ id: number; trueness: boolean; } | { id: number; name: string; }>
+
+     { id: 2, trueness: false },
+ >{ id: 2, trueness: false } : { id: number; trueness: boolean; }
+@@= skipped -20, +20 lines =@@
+ ]
+
+ var x2: Action[] = [
+->x2 : Action[]
+->[    new ActionA(),    new ActionB()] : (ActionA | ActionB)[]
++>x2 : Array<Action>
++>[    new ActionA(),    new ActionB()] : Array<ActionA | ActionB>
+
+     new ActionA(),
+ >new ActionA() : ActionA
+@@= skipped -14, +14 lines =@@
+ ]
+
+ var x3: Action[] = [
+->x3 : Action[]
+->[    new Action(),    new ActionA(),    new ActionB()] : Action[]
++>x3 : Array<Action>
++>[    new Action(),    new ActionA(),    new ActionB()] : Array<Action>
+
+     new Action(),
+ >new Action() : Action
+@@= skipped -18, +18 lines =@@
+ ]
+
+ var z1: { id: number }[] =
+->z1 : { id: number; }[]
++>z1 : Array<{ id: number; }>
+ >id : number
+
+     [
+->[        { id: 2, trueness: false },        { id: 3, name: "three" }    ] : ({ id: number; trueness: boolean; } | { id: number; name: string; })[]
++>[        { id: 2, trueness: false },        { id: 3, name: "three" }    ] : Array<{ id: number; trueness: boolean; } | { id: number; name: string; }>
+
+         { id: 2, trueness: false },
+ >{ id: 2, trueness: false } : { id: number; trueness: boolean; }
+@@= skipped -23, +23 lines =@@
+     ]
+
+ var z2: { id: number }[] =
+->z2 : { id: number; }[]
++>z2 : Array<{ id: number; }>
+ >id : number
+
+     [
+->[        new ActionA(),        new ActionB()    ] : (ActionA | ActionB)[]
++>[        new ActionA(),        new ActionB()    ] : Array<ActionA | ActionB>
+
+         new ActionA(),
+ >new ActionA() : ActionA
+@@= skipped -17, +17 lines =@@
+     ]
+
+ var z3: { id: number }[] =
+->z3 : { id: number; }[]
++>z3 : Array<{ id: number; }>
+ >id : number
+
+     [
+->[        new Action(),        new ActionA(),        new ActionB()    ] : Action[]
++>[        new Action(),        new ActionA(),        new ActionB()    ] : Array<Action>
+
+         new Action(),
+ >new Action() : Action

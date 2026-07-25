@@ -1,0 +1,20 @@
+--- old.unparenthesizedConstructorTypeInUnionOrIntersection.types
++++ new.unparenthesizedConstructorTypeInUnionOrIntersection.types
+@@= skipped -24, +24 lines =@@
+
+   | string
+   | new (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+   | number;
+
+@@= skipped -9, +9 lines =@@
+
+ type I2 = string & new (...foo: number[]) => void;
+ >I2 : I2
+->foo : number[]
++>foo : Array<number>
+
+ type I3 = & new () => boolean
+ >I3 : new () => boolean

@@ -33,7 +33,7 @@ interface Automation {
 
 interface UserSettings {
     presets: ThemePreset[];
->presets : ThemePreset[]
+>presets : Array<ThemePreset>
 
     automation: Automation;
 >automation : Automation
@@ -53,11 +53,11 @@ export function getMockData(): ExtensionData {
         settings: {
 >settings : UserSettings
 >{            presets: [],            automation: {                mode: "",            },        } as UserSettings : UserSettings
->{            presets: [],            automation: {                mode: "",            },        } : { presets: never[]; automation: { mode: ""; }; }
+>{            presets: [],            automation: {                mode: "",            },        } : { presets: Array<never>; automation: { mode: ""; }; }
 
             presets: [],
->presets : never[]
->[] : never[]
+>presets : Array<never>
+>[] : Array<never>
 
             automation: {
 >automation : { mode: ""; }

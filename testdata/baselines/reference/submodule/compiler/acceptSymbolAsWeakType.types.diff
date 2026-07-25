@@ -1,0 +1,20 @@
+--- old.acceptSymbolAsWeakType.types
++++ new.acceptSymbolAsWeakType.types
+@@= skipped -10, +10 lines =@@
+ >ws : WeakSet<symbol>
+ >new WeakSet([s]) : WeakSet<symbol>
+ >WeakSet : WeakSetConstructor
+->[s] : symbol[]
++>[s] : Array<symbol>
+ >s : symbol
+
+ ws.add(s);
+@@= skipped -28, +28 lines =@@
+ >wm : WeakMap<symbol, boolean>
+ >new WeakMap([[s, false]]) : WeakMap<symbol, boolean>
+ >WeakMap : WeakMapConstructor
+->[[s, false]] : [symbol, false][]
++>[[s, false]] : Array<[symbol, false]>
+ >[s, false] : [symbol, false]
+ >s : symbol
+ >false : false

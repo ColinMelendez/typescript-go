@@ -1,0 +1,13 @@
+--- old.conditionalTypeDoesntSpinForever.types
++++ new.conditionalTypeDoesntSpinForever.types
+@@= skipped -409, +409 lines =@@
+ >() => new Set(Object.keys(soFar) as (keyof SO_FAR)[]) : () => Set<keyof SO_FAR>
+ >new Set(Object.keys(soFar) as (keyof SO_FAR)[]) : Set<keyof SO_FAR>
+ >Set : SetConstructor
+->Object.keys(soFar) as (keyof SO_FAR)[] : (keyof SO_FAR)[]
+->Object.keys(soFar) : string[]
++>Object.keys(soFar) as (keyof SO_FAR)[] : Array<keyof SO_FAR>
++>Object.keys(soFar) : Array<string>
+ >Object.keys : { (o: object): string[]; (o: {}): string[]; }
+ >Object : ObjectConstructor
+ >keys : { (o: object): string[]; (o: {}): string[]; }

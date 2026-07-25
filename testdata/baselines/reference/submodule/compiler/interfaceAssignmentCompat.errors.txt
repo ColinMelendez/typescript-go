@@ -3,7 +3,7 @@ interfaceAssignmentCompat.ts(32,18): error TS2345: Argument of type '(a: IFrench
     Property 'coleur' is missing in type 'IEye' but required in type 'IFrenchEye'.
 interfaceAssignmentCompat.ts(37,29): error TS2339: Property '_map' does not exist on type 'typeof Color'.
 interfaceAssignmentCompat.ts(42,13): error TS2741: Property 'coleur' is missing in type 'IEye' but required in type 'IFrenchEye'.
-interfaceAssignmentCompat.ts(44,9): error TS2322: Type 'IEye[]' is not assignable to type 'IFrenchEye[]'.
+interfaceAssignmentCompat.ts(44,9): error TS2322: Type 'Array<IEye>' is not assignable to type 'Array<IFrenchEye>'.
   Property 'coleur' is missing in type 'IEye' but required in type 'IFrenchEye'.
 
 
@@ -63,7 +63,7 @@ interfaceAssignmentCompat.ts(44,9): error TS2322: Type 'IEye[]' is not assignabl
             }
             eeks=z; // nope: array assignment
             ~~~~
-!!! error TS2322: Type 'IEye[]' is not assignable to type 'IFrenchEye[]'.
+!!! error TS2322: Type 'Array<IEye>' is not assignable to type 'Array<IFrenchEye>'.
 !!! error TS2322:   Property 'coleur' is missing in type 'IEye' but required in type 'IFrenchEye'.
 !!! related TS2728 interfaceAssignmentCompat.ts:13:9: 'coleur' is declared here.
             return result;

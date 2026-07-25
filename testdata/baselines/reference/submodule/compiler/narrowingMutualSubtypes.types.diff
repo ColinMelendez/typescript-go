@@ -1,0 +1,182 @@
+--- old.narrowingMutualSubtypes.types
++++ new.narrowingMutualSubtypes.types
+@@= skipped -11, +11 lines =@@
+ >x : string
+
+ const a1a = [ru1, ra1];  // { [x: string]: any }[]
+->a1a : { [x: string]: any; }[]
+->[ru1, ra1] : { [x: string]: any; }[]
++>a1a : Array<{ [x: string]: any; }>
++>[ru1, ra1] : Array<{ [x: string]: any; }>
+ >ru1 : { [x: string]: unknown; }
+ >ra1 : { [x: string]: any; }
+
+ const a1b = [ra1, ru1];  // { [x: string]: any }[]
+->a1b : { [x: string]: any; }[]
+->[ra1, ru1] : { [x: string]: any; }[]
++>a1b : Array<{ [x: string]: any; }>
++>[ra1, ru1] : Array<{ [x: string]: any; }>
+ >ra1 : { [x: string]: any; }
+ >ru1 : { [x: string]: unknown; }
+
+@@= skipped -20, +20 lines =@@
+ >x : string
+
+ const a2a = [ru2, ra2];  // { [x: string]: any }[]
+->a2a : { [x: string]: any; }[]
+->[ru2, ra2] : { [x: string]: any; }[]
++>a2a : Array<{ [x: string]: any; }>
++>[ru2, ra2] : Array<{ [x: string]: any; }>
+ >ru2 : { [x: string]: unknown; }
+ >ra2 : { [x: string]: any; }
+
+ const a2b = [ra2, ru2];  // { [x: string]: any }[]
+->a2b : { [x: string]: any; }[]
+->[ra2, ru2] : { [x: string]: any; }[]
++>a2b : Array<{ [x: string]: any; }>
++>[ra2, ru2] : Array<{ [x: string]: any; }>
+ >ra2 : { [x: string]: any; }
+ >ru2 : { [x: string]: unknown; }
+
+@@= skipped -22, +22 lines =@@
+ >x : string
+
+ const a3a = [c3, r3];  // {}[]
+->a3a : {}[]
+->[c3, r3] : {}[]
++>a3a : Array<{}>
++>[c3, r3] : Array<{}>
+ >c3 : {}
+ >r3 : { [x: string]: unknown; }
+
+ const a3b = [r3, c3];  // {}[]
+->a3b : {}[]
+->[r3, c3] : {}[]
++>a3b : Array<{}>
++>[r3, c3] : Array<{}>
+ >r3 : { [x: string]: unknown; }
+ >c3 : {}
+
+@@= skipped -20, +20 lines =@@
+ >{} : {}
+
+ const a4a = [c4, r4];  // {}[]
+->a4a : {}[]
+->[c4, r4] : {}[]
++>a4a : Array<{}>
++>[c4, r4] : Array<{}>
+ >c4 : {}
+ >r4 : { [x: string]: unknown; }
+
+ const a4b = [r4, c4];  // {}[]
+->a4b : {}[]
+->[r4, c4] : {}[]
++>a4b : Array<{}>
++>[r4, c4] : Array<{}>
+ >r4 : { [x: string]: unknown; }
+ >c4 : {}
+
+@@= skipped -183, +183 lines =@@
+
+ function checksArrayOrObject1(obj: Record<string, any> | Record<string, any>[]) {
+ >checksArrayOrObject1 : (obj: Record<string, any> | Record<string, any>[]) => void
+->obj : Record<string, any>[] | Record<string, any>
++>obj : Array<Record<string, any>> | Record<string, any>
+
+     // "accidentally" guards the first branch on the length
+     if (Array.isArray(obj) && obj.length) {
+@@= skipped -9, +9 lines =@@
+ >Array.isArray : (arg: any) => arg is any[]
+ >Array : ArrayConstructor
+ >isArray : (arg: any) => arg is any[]
+->obj : Record<string, any>[] | Record<string, any>
++>obj : Array<Record<string, any>> | Record<string, any>
+ >obj.length : number
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+ >length : number
+
+         for (let key in obj) {
+ >key : string
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+
+             if (obj[key] !== undefined) {
+ >obj[key] !== undefined : boolean
+ >obj[key] : any
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+ >key : string
+ >undefined : undefined
+
+@@= skipped -22, +22 lines =@@
+ >console : Console
+ >log : (...data: any[]) => void
+ >obj[key] : any
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+ >key : string
+             }
+         }
+@@= skipped -9, +9 lines =@@
+         // 'obj' should probably not include an array type here.
+         for (let key in obj) {
+ >key : string
+->obj : any[] | Record<string, any>
++>obj : Array<any> | Record<string, any>
+
+             if (obj[key] !== undefined) {
+ >obj[key] !== undefined : boolean
+ >obj[key] : any
+->obj : any[] | Record<string, any>
++>obj : Array<any> | Record<string, any>
+ >key : string
+ >undefined : undefined
+
+@@= skipped -15, +15 lines =@@
+ >console : Console
+ >log : (...data: any[]) => void
+ >obj[key] : any
+->obj : any[] | Record<string, any>
++>obj : Array<any> | Record<string, any>
+ >key : string
+             }
+         }
+@@= skipped -9, +9 lines =@@
+
+ function checksArrayOrObject2(obj: Record<string, any> | Record<string, any>[]) {
+ >checksArrayOrObject2 : (obj: Record<string, any> | Record<string, any>[]) => void
+->obj : Record<string, any>[] | Record<string, any>
++>obj : Array<Record<string, any>> | Record<string, any>
+
+     if (Array.isArray(obj)) {
+ >Array.isArray(obj) : boolean
+ >Array.isArray : (arg: any) => arg is any[]
+ >Array : ArrayConstructor
+ >isArray : (arg: any) => arg is any[]
+->obj : Record<string, any>[] | Record<string, any>
++>obj : Array<Record<string, any>> | Record<string, any>
+
+         // obj should only be an array type here
+         for (let key in obj) {
+ >key : string
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+
+             if (obj[key] !== undefined) {
+ >obj[key] !== undefined : boolean
+ >obj[key] : any
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+ >key : string
+ >undefined : undefined
+
+@@= skipped -27, +27 lines =@@
+ >console : Console
+ >log : (...data: any[]) => void
+ >obj[key] : any
+->obj : any[] | Record<string, any>[]
++>obj : Array<any> | Array<Record<string, any>>
+ >key : string
+             }
+         }

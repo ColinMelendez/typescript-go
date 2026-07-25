@@ -1,0 +1,11 @@
+--- old.intersectionPropertyCheck.types
++++ new.intersectionPropertyCheck.types
+@@= skipped -44, +44 lines =@@
+
+ interface Test {
+   readonly hi?: string[]
+->hi : string[] | undefined
++>hi : Array<string> | undefined
+ }
+
+ function test<T extends object>(value: T): Test {

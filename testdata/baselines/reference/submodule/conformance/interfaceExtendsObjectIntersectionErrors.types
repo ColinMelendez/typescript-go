@@ -53,7 +53,7 @@ class C2 extends Constructor<T2>() { b: string }
 
 class C3 extends Constructor<T3>() { length: string }
 >C3 : C3
->Constructor<T3>() : number[]
+>Constructor<T3>() : Array<number>
 >Constructor : <T>() => Constructor<T>
 >length : string
 

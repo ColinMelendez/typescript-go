@@ -111,19 +111,19 @@ var f = (x: number) => '';
 >'' : ""
 
 var arr: string[];
->arr : string[]
+>arr : Array<string>
 
 var arr = [1, 2, 3, 4];
->arr : string[]
->[1, 2, 3, 4] : number[]
+>arr : Array<string>
+>[1, 2, 3, 4] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 >4 : 4
 
 var arr = [new C(), new C2(), new D<string>()];
->arr : string[]
->[new C(), new C2(), new D<string>()] : (C | D<string>)[]
+>arr : Array<string>
+>[new C(), new C2(), new D<string>()] : Array<C | D<string>>
 >new C() : C
 >C : typeof C
 >new C2() : C2
@@ -132,14 +132,14 @@ var arr = [new C(), new C2(), new D<string>()];
 >D : typeof D
 
 var arr2 = [new D<string>()];
->arr2 : D<string>[]
->[new D<string>()] : D<string>[]
+>arr2 : Array<D<string>>
+>[new D<string>()] : Array<D<string>>
 >new D<string>() : D<string>
 >D : typeof D
 
 var arr2 = new Array<D<number>>();
->arr2 : D<string>[]
->new Array<D<number>>() : D<number>[]
+>arr2 : Array<D<string>>
+>new Array<D<number>>() : Array<D<number>>
 >Array : ArrayConstructor
 
 var m: typeof M;

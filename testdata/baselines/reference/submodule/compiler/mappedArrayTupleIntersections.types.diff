@@ -1,0 +1,26 @@
+--- old.mappedArrayTupleIntersections.types
++++ new.mappedArrayTupleIntersections.types
+@@= skipped -8, +8 lines =@@
+ >Boxify : Boxify<T>
+
+ type T1 = Boxify<string[]>;
+->T1 : Box<string>[]
++>T1 : Array<Box<string>>
+
+ type T2 = Boxify<[string, string]>;
+ >T2 : [Box<string>, Box<string>]
+
+ type T3 = Boxify<string[] & unknown[]>;
+->T3 : Box<string>[] & Box<unknown>[]
++>T3 : Array<Box<string>> & Array<Box<unknown>>
+
+ type T4 = Boxify<string[] & [string, string]>;
+->T4 : Box<string>[] & [Box<string>, Box<string>]
++>T4 : Array<Box<string>> & [Box<string>, Box<string>]
+
+ type T5 = Boxify<string[] & { x: string }>;
+->T5 : Boxify<string[] & { x: string; }>
++>T5 : Boxify<Array<string> & { x: string; }>
+ >x : string
+
+ // https://github.com/microsoft/TypeScript/issues/57744

@@ -1,0 +1,72 @@
+--- old.typeArgInference.types
++++ new.typeArgInference.types
+@@= skipped -3, +3 lines =@@
+ interface I {
+     f<T, U>(a1: { a: T; b: U }[], a2: { a: T; b: U }[]): { c: T; d: U };
+ >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
+->a1 : { a: T; b: U; }[]
++>a1 : Array<{ a: T; b: U; }>
+ >a : T
+ >b : U
+->a2 : { a: T; b: U; }[]
++>a2 : Array<{ a: T; b: U; }>
+ >a : T
+ >b : U
+ >c : T
+@@= skipped -11, +11 lines =@@
+
+     g<T, U>(...arg: { a: T; b: U }[][]): { c: T; d: U };
+ >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
+->arg : { a: T; b: U; }[][]
++>arg : Array<Array<{ a: T; b: U; }>>
+ >a : T
+ >b : U
+ >c : T
+@@= skipped -23, +23 lines =@@
+ >x.f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
+ >x : I
+ >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+
+ var t1: { c: number; d: string }; 
+@@= skipped -16, +16 lines =@@
+ >x.f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
+ >x : I
+ >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+
+ var t2: { c: number; d: string }; 
+@@= skipped -16, +16 lines =@@
+ >x.g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
+ >x : I
+ >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+
+ var t3: { c: number; d: string };
+@@= skipped -16, +16 lines =@@
+ >x.g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
+ >x : I
+ >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+->[o] : { a: number; b: string; }[]
++>[o] : Array<{ a: number; b: string; }>
+ >o : { a: number; b: string; }
+
+ var t4: { c: number; d: string };

@@ -1,0 +1,24 @@
+--- old.typeOfThisInInstanceMember.types
++++ new.typeOfThisInInstanceMember.types
+@@= skipped -85, +85 lines =@@
+ >foo : () => C
+
+ var rs = [r, r2, r3];
+->rs : C[]
+->[r, r2, r3] : C[]
++>rs : Array<C>
++>[r, r2, r3] : Array<C>
+ >r : C
+ >r2 : C
+ >r3 : C
+
+ rs.forEach(x => {
+ >rs.forEach(x => {    x.foo;    x.x;    x.y;}) : void
+->rs.forEach : (callbackfn: (value: C, index: number, array: C[]) => void, thisArg?: any) => void
+->rs : C[]
+->forEach : (callbackfn: (value: C, index: number, array: C[]) => void, thisArg?: any) => void
++>rs.forEach : (callbackfn: (value: C, index: number, array: Array<C>) => void, thisArg?: any) => void
++>rs : Array<C>
++>forEach : (callbackfn: (value: C, index: number, array: Array<C>) => void, thisArg?: any) => void
+ >x => {    x.foo;    x.x;    x.y;} : (x: C) => void
+ >x : C

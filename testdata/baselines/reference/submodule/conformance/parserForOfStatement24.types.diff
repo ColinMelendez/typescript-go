@@ -1,0 +1,10 @@
+--- old.parserForOfStatement24.types
++++ new.parserForOfStatement24.types
+@@= skipped -6, +6 lines =@@
+ for ((async) of [1, 2]);
+ >(async) : any
+ >async : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

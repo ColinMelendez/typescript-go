@@ -5,6 +5,7 @@
 
  //// [bar.d.ts]
 -export class Z {
+-    f(x: number, y: any): any[];
 +export declare class Z {
-     f(x: number, y: any): any[];
++    f(x: number, y: any): Array<any>;
  }

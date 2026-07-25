@@ -1,0 +1,10 @@
+--- old.reservedWords2.types
++++ new.reservedWords2.types
+@@= skipped -56, +56 lines =@@
+ var [debugger, if] = [1, 2];
+ > : any
+ > : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

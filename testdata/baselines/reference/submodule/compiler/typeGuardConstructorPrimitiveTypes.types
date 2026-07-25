@@ -3,12 +3,12 @@
 === typeGuardConstructorPrimitiveTypes.ts ===
 // Narrow a union of primitive types
 let var1: string | number | boolean | any[] | symbol | bigint;
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 
 if (var1.constructor === String) {
 >var1.constructor === String : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >String : StringConstructor
 
@@ -18,7 +18,7 @@ if (var1.constructor === String) {
 if (var1.constructor === Number) {
 >var1.constructor === Number : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >Number : NumberConstructor
 
@@ -28,7 +28,7 @@ if (var1.constructor === Number) {
 if (var1.constructor === Boolean) {
 >var1.constructor === Boolean : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >Boolean : BooleanConstructor
 
@@ -38,17 +38,17 @@ if (var1.constructor === Boolean) {
 if (var1.constructor === Array) {
 >var1.constructor === Array : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >Array : ArrayConstructor
 
     var1; // any[]
->var1 : any[]
+>var1 : Array<any>
 }
 if (var1.constructor === Symbol) {
 >var1.constructor === Symbol : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >Symbol : SymbolConstructor
 
@@ -58,7 +58,7 @@ if (var1.constructor === Symbol) {
 if (var1.constructor === BigInt) {
 >var1.constructor === BigInt : boolean
 >var1.constructor : Function
->var1 : string | number | bigint | symbol | boolean | any[]
+>var1 : string | number | bigint | symbol | boolean | Array<any>
 >constructor : Function
 >BigInt : BigIntConstructor
 

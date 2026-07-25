@@ -2,8 +2,8 @@
 
 === regularExpressionExtendedUnicodeEscapes.ts ===
 const regexes: RegExp[] = [
->regexes : RegExp[]
->[	/\u{10000}[\u{10000}]/,	/\u{10000}[\u{10000}]/u,	/\u{10000}[\u{10000}]/v,] : RegExp[]
+>regexes : Array<RegExp>
+>[	/\u{10000}[\u{10000}]/,	/\u{10000}[\u{10000}]/u,	/\u{10000}[\u{10000}]/v,] : Array<RegExp>
 
 	/\u{10000}[\u{10000}]/,
 >/\u{10000}[\u{10000}]/ : RegExp

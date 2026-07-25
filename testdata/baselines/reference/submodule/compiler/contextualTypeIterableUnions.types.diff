@@ -1,0 +1,36 @@
+--- old.contextualTypeIterableUnions.types
++++ new.contextualTypeIterableUnions.types
+@@= skipped -9, +9 lines =@@
+ new DMap([["1", 2]]);
+ >new DMap([["1", 2]]) : DMap<string, number>
+ >DMap : typeof DMap
+->[["1", 2]] : [string, number][]
++>[["1", 2]] : Array<[string, number]>
+ >["1", 2] : [string, number]
+ >"1" : "1"
+ >2 : 2
+@@= skipped -9, +9 lines =@@
+ >i1 : Iterable<{ a: true; }> | undefined
+ >a : true
+ >true : true
+->[{ a: true }] : { a: true; }[]
++>[{ a: true }] : Array<{ a: true; }>
+ >{ a: true } : { a: true; }
+ >a : true
+ >true : true
+@@= skipped -11, +11 lines =@@
+ >true : true
+ >b : false
+ >false : false
+->[{ b: false }] : { b: false; }[]
++>[{ b: false }] : Array<{ b: false; }>
+ >{ b: false } : { b: false; }
+ >b : false
+ >false : false
+
+ const i3: Iterable<number> | 1[] = [2];
+->i3 : 1[] | Iterable<number>
+->[2] : 2[]
++>i3 : Array<1> | Iterable<number>
++>[2] : Array<2>
+ >2 : 2

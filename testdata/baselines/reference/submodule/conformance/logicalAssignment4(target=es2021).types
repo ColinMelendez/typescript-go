@@ -3,65 +3,65 @@
 === logicalAssignment4.ts ===
 function foo1(results: number[] | undefined) {
 >foo1 : (results: number[] | undefined) => void
->results : number[] | undefined
+>results : Array<number> | undefined
 
     (results ||= []).push(100);
 >(results ||= []).push(100) : number
->(results ||= []).push : (...items: number[]) => number
->(results ||= []) : number[]
->results ||= [] : number[]
->results : number[] | undefined
->[] : never[]
->push : (...items: number[]) => number
+>(results ||= []).push : (...items: Array<number>) => number
+>(results ||= []) : Array<number>
+>results ||= [] : Array<number>
+>results : Array<number> | undefined
+>[] : Array<never>
+>push : (...items: Array<number>) => number
 >100 : 100
 }
 
 function foo2(results: number[] | undefined) {
 >foo2 : (results: number[] | undefined) => void
->results : number[] | undefined
+>results : Array<number> | undefined
 
     (results ??= []).push(100);
 >(results ??= []).push(100) : number
->(results ??= []).push : (...items: number[]) => number
->(results ??= []) : number[]
->results ??= [] : number[]
->results : number[] | undefined
->[] : never[]
->push : (...items: number[]) => number
+>(results ??= []).push : (...items: Array<number>) => number
+>(results ??= []) : Array<number>
+>results ??= [] : Array<number>
+>results : Array<number> | undefined
+>[] : Array<never>
+>push : (...items: Array<number>) => number
 >100 : 100
 }
 
 function foo3(results: number[] | undefined) {
 >foo3 : (results: number[] | undefined) => void
->results : number[] | undefined
+>results : Array<number> | undefined
 
     results ||= [];
->results ||= [] : number[]
->results : number[] | undefined
->[] : never[]
+>results ||= [] : Array<number>
+>results : Array<number> | undefined
+>[] : Array<never>
 
     results.push(100);
 >results.push(100) : number
->results.push : (...items: number[]) => number
->results : number[]
->push : (...items: number[]) => number
+>results.push : (...items: Array<number>) => number
+>results : Array<number>
+>push : (...items: Array<number>) => number
 >100 : 100
 }
 
 function foo4(results: number[] | undefined) {
 >foo4 : (results: number[] | undefined) => void
->results : number[] | undefined
+>results : Array<number> | undefined
 
     results ??= [];
->results ??= [] : number[]
->results : number[] | undefined
->[] : never[]
+>results ??= [] : Array<number>
+>results : Array<number> | undefined
+>[] : Array<never>
 
     results.push(100);
 >results.push(100) : number
->results.push : (...items: number[]) => number
->results : number[]
->push : (...items: number[]) => number
+>results.push : (...items: Array<number>) => number
+>results : Array<number>
+>push : (...items: Array<number>) => number
 >100 : 100
 }
 

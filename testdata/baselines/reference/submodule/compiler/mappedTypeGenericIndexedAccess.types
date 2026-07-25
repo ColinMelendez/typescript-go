@@ -26,14 +26,14 @@ class Test {
 >Test : Test
 
     entries: { [T in keyof Types]?: Types[T][] };
->entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 
     constructor() {
         this.entries = {};
 >this.entries = {} : {}
->this.entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>this.entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >this : this
->entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >{} : {}
     }
 
@@ -44,30 +44,30 @@ class Test {
 
         if (!this.entries[name]) {
 >!this.entries[name] : boolean
->this.entries[name] : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }[T]
->this.entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>this.entries[name] : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }[T]
+>this.entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >this : this
->entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >name : T
 
             this.entries[name] = [];
->this.entries[name] = [] : never[]
->this.entries[name] : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }[T]
->this.entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>this.entries[name] = [] : Array<never>
+>this.entries[name] : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }[T]
+>this.entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >this : this
->entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >name : T
->[] : never[]
+>[] : Array<never>
         }
         this.entries[name]?.push(entry);
 >this.entries[name]?.push(entry) : number
->this.entries[name]?.push : (...items: Types[T][]) => number
->this.entries[name] : Types[T][]
->this.entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>this.entries[name]?.push : (...items: Array<Types[T]>) => number
+>this.entries[name] : Array<Types[T]>
+>this.entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >this : this
->entries : { first?: { a1: true; }[] | undefined; second?: { a2: true; }[] | undefined; third?: { a3: true; }[] | undefined; }
+>entries : { first?: Array<{ a1: true; }> | undefined; second?: Array<{ a2: true; }> | undefined; third?: Array<{ a3: true; }> | undefined; }
 >name : T
->push : (...items: Types[T][]) => number
+>push : (...items: Array<Types[T]>) => number
 >entry : Types[T]
     }
 }

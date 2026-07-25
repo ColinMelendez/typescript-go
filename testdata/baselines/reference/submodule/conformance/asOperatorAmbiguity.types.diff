@@ -1,0 +1,20 @@
+--- old.asOperatorAmbiguity.types
++++ new.asOperatorAmbiguity.types
+@@= skipped -11, +11 lines =@@
+ >x : any
+
+ var y = x as A<B>[];
+->y : A<B>[]
+->x as A<B>[] : A<B>[]
++>y : Array<A<B>>
++>x as A<B>[] : Array<A<B>>
+ >x : any
+
+ var z = y[0].m; // z should be string
+ >z : any
+ >y[0].m : any
+ >y[0] : A<B>
+->y : A<B>[]
++>y : Array<A<B>>
+ >0 : 0
+ >m : any

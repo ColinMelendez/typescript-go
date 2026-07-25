@@ -1,0 +1,155 @@
+--- old.for-inStatementsArray.types
++++ new.for-inStatementsArray.types
+@@= skipped -1, +1 lines =@@
+
+ === for-inStatementsArray.ts ===
+ let a: Date[];
+->a : Date[]
++>a : Array<Date>
+
+ let b: boolean[];
+->b : boolean[]
++>b : Array<boolean>
+
+ for (let x in a) {
+ >x : string
+->a : Date[]
++>a : Array<Date>
+
+     let a1 = a[x];
+ >a1 : Date
+ >a[x] : Date
+->a : Date[]
++>a : Array<Date>
+ >x : string
+
+     let a2 = a[(x)];
+ >a2 : Date
+ >a[(x)] : Date
+->a : Date[]
++>a : Array<Date>
+ >(x) : string
+ >x : string
+
+     let a3 = a[+x];
+ >a3 : Date
+ >a[+x] : Date
+->a : Date[]
++>a : Array<Date>
+ >+x : number
+ >x : string
+
+     let b1 = b[x];
+ >b1 : boolean
+ >b[x] : boolean
+->b : boolean[]
++>b : Array<boolean>
+ >x : string
+
+     let b2 = b[(x)];
+ >b2 : boolean
+ >b[(x)] : boolean
+->b : boolean[]
++>b : Array<boolean>
+ >(x) : string
+ >x : string
+
+     let b3 = b[+x];
+ >b3 : boolean
+ >b[+x] : boolean
+->b : boolean[]
++>b : Array<boolean>
+ >+x : number
+ >x : string
+ }
+
+ for (let x in a) {
+ >x : string
+->a : Date[]
++>a : Array<Date>
+
+     for (let y in a) {
+ >y : string
+->a : Date[]
++>a : Array<Date>
+
+         for (let z in a) {
+ >z : string
+->a : Date[]
++>a : Array<Date>
+
+             let a1 = a[x];
+ >a1 : Date
+ >a[x] : Date
+->a : Date[]
++>a : Array<Date>
+ >x : string
+
+             let a2 = a[y];
+ >a2 : Date
+ >a[y] : Date
+->a : Date[]
++>a : Array<Date>
+ >y : string
+
+             let a3 = a[z];
+ >a3 : Date
+ >a[z] : Date
+->a : Date[]
++>a : Array<Date>
+ >z : string
+         }
+     }
+@@= skipped -91, +91 lines =@@
+
+ for (i in a) {
+ >i : string
+->a : Date[]
++>a : Array<Date>
+
+     for (j in b) {
+ >j : string
+->b : boolean[]
++>b : Array<boolean>
+
+         let a1 = a[i];
+ >a1 : Date
+ >a[i] : Date
+->a : Date[]
++>a : Array<Date>
+ >i : string
+
+         let a2 = a[j];
+ >a2 : Date
+ >a[j] : Date
+->a : Date[]
++>a : Array<Date>
+ >j : string
+     }
+ }
+@@= skipped -25, +25 lines =@@
+
+ for (var s in a) {
+ >s : string
+->a : Date[]
++>a : Array<Date>
+
+     let a1 = a[s];
+ >a1 : Date
+ >a[s] : Date
+->a : Date[]
++>a : Array<Date>
+ >s : string
+ }
+ for (s in a) {
+ >s : string
+->a : Date[]
++>a : Array<Date>
+
+     let a1 = a[s];
+ >a1 : Date
+ >a[s] : Date
+->a : Date[]
++>a : Array<Date>
+ >s : string
+ }

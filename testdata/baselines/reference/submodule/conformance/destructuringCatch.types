@@ -3,7 +3,7 @@
 === destructuringCatch.ts ===
 try {
     throw [0, 1];
->[0, 1] : number[]
+>[0, 1] : Array<number>
 >0 : 0
 >1 : 1
 }
@@ -37,10 +37,10 @@ catch ({a, b}) {
 
 try {
     throw [{ x: [0], z: 1 }];
->[{ x: [0], z: 1 }] : { x: number[]; z: number; }[]
->{ x: [0], z: 1 } : { x: number[]; z: number; }
->x : number[]
->[0] : number[]
+>[{ x: [0], z: 1 }] : Array<{ x: Array<number>; z: number; }>
+>{ x: [0], z: 1 } : { x: Array<number>; z: number; }
+>x : Array<number>
+>[0] : Array<number>
 >0 : 0
 >z : number
 >1 : 1

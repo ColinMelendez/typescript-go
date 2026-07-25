@@ -11,7 +11,7 @@ declare module "punycode" {
 
         encode(codePoints: number[]): string;
 >encode : (codePoints: number[]) => string
->codePoints : number[]
+>codePoints : Array<number>
     }
 
     export let ucs2: ucs2;

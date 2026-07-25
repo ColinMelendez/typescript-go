@@ -1,0 +1,24 @@
+--- old.narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.errors.txt
++++ new.narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.errors.txt
+@@= skipped -0, +0 lines =@@
+-narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts(1,5): error TS7034: Variable 'foo' implicitly has type 'any[]' in some locations where its type cannot be determined.
+-narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts(5,5): error TS7005: Variable 'foo' implicitly has an 'any[]' type.
++narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts(1,5): error TS7034: Variable 'foo' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
++narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts(5,5): error TS7005: Variable 'foo' implicitly has an 'Array<any>' type.
+
+
+ ==== narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts (2 errors) ====
+     let foo = [];
+         ~~~
+-!!! error TS7034: Variable 'foo' implicitly has type 'any[]' in some locations where its type cannot be determined.
++!!! error TS7034: Variable 'foo' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
+     
+     switch (foo?.length) {
+       case 1:
+         foo[0];
+         ~~~
+-!!! error TS7005: Variable 'foo' implicitly has an 'any[]' type.
++!!! error TS7005: Variable 'foo' implicitly has an 'Array<any>' type.
+     }
+     
+     let bar = [];

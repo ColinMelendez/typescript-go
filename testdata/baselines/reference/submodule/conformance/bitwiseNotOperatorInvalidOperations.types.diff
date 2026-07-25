@@ -1,0 +1,11 @@
+--- old.bitwiseNotOperatorInvalidOperations.types
++++ new.bitwiseNotOperatorInvalidOperations.types
+@@= skipped -15, +15 lines =@@
+ var mul = ~[1, 2, "abc"], "";  //expect error
+ >mul : number
+ >~[1, 2, "abc"] : number
+->[1, 2, "abc"] : (string | number)[]
++>[1, 2, "abc"] : Array<string | number>
+ >1 : 1
+ >2 : 2
+ >"abc" : "abc"

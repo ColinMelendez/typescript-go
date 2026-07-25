@@ -1,0 +1,20 @@
+--- old.signatureCombiningRestParameters5.types
++++ new.signatureCombiningRestParameters5.types
+@@= skipped -19, +19 lines =@@
+ >test1(42, [true]) : void
+ >test1 : ((a: string | number, b: number | boolean) => void) | ((c: number | boolean, d: string | boolean) => void)
+ >42 : 42
+->[true] : boolean[]
++>[true] : Array<boolean>
+ >true : true
+
+ declare function test2<
+@@= skipped -53, +53 lines =@@
+ >cb(true, [42]) : void
+ >cb : ((a: number | boolean, b: string | number) => void) | ((c: string | boolean, d: number | boolean) => void)
+ >true : true
+->[42] : number[]
++>[42] : Array<number>
+ >42 : 42
+
+   },

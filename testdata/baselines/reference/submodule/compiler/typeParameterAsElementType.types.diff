@@ -1,0 +1,13 @@
+--- old.typeParameterAsElementType.types
++++ new.typeParameterAsElementType.types
+@@= skipped -7, +7 lines =@@
+ >t : T
+
+     var arr = [t, ""];
+->arr : (string | T)[]
+->[t, ""] : (string | T)[]
++>arr : Array<string | T>
++>[t, ""] : Array<string | T>
+ >t : T
+ >"" : ""
+ }

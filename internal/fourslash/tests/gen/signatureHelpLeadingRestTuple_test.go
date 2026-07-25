@@ -23,9 +23,9 @@ leading("ok", "ok", /*3*/);`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
 	f.GoToMarker(t, "1")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: string[], allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: Array<string>, allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
 	f.GoToMarker(t, "2")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: string[], allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: Array<string>, allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
 	f.GoToMarker(t, "3")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: string[], allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(...names: Array<string>, allCaps: boolean): void", ParameterCount: 2, OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
 }

@@ -5,8 +5,9 @@
 
  function mixin<T extends { new (...args: any[]): {} }>(superclass: T) {
 ->mixin : <T extends { new (...args: any[]): {}; }>(superclass: T) => { new (...args: any[]): (Anonymous class); prototype: mixin<any>.(Anonymous class); } & T
+->args : any[]
 +>mixin : <T extends { new (...args: any[]): {}; }>(superclass: T) => { new (...args: any[]): (Anonymous class); prototype: mixin.(Anonymous class); } & T
- >args : any[]
++>args : Array<any>
  >superclass : T
 
    return class extends superclass {

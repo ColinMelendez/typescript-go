@@ -15,20 +15,20 @@ function select<
   TValueProp extends FilterPropsByType<TList, T>
 >(property: T, list: TList[], valueProp: TValueProp) {}
 >property : T
->list : TList[]
+>list : Array<TList>
 >valueProp : TValueProp
 
 export function func<XX extends string>(x: XX, tipos: { value: XX }[]) {
 >func : <XX extends string>(x: XX, tipos: { value: XX; }[]) => void
 >x : XX
->tipos : { value: XX; }[]
+>tipos : Array<{ value: XX; }>
 >value : XX
 
   select(x, tipos, "value");
 >select(x, tipos, "value") : void
 >select : <T extends string | number, TList extends object, TValueProp extends FilterPropsByType<TList, T>>(property: T, list: TList[], valueProp: TValueProp) => void
 >x : XX
->tipos : { value: XX; }[]
+>tipos : Array<{ value: XX; }>
 >"value" : "value"
 }
 

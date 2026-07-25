@@ -43,7 +43,7 @@ function getPredicate(alwaysTrue: boolean) {
 
 declare function compact<T>(array: T[]): T[];
 >compact : <T>(array: T[]) => T[]
->array : T[]
+>array : Array<T>
 
 declare function makeFooer(): Fooer;
 >makeFooer : () => Fooer
@@ -57,10 +57,10 @@ function f() {
 >f : () => void
 
     const _ = compact([makeFooer(), { foo: (v) => v }]);
->_ : Fooer[]
->compact([makeFooer(), { foo: (v) => v }]) : Fooer[]
+>_ : Array<Fooer>
+>compact([makeFooer(), { foo: (v) => v }]) : Array<Fooer>
 >compact : <T>(array: T[]) => T[]
->[makeFooer(), { foo: (v) => v }] : Fooer[]
+>[makeFooer(), { foo: (v) => v }] : Array<Fooer>
 >makeFooer() : Fooer
 >makeFooer : () => Fooer
 >{ foo: (v) => v } : { foo: (v: string) => string; }

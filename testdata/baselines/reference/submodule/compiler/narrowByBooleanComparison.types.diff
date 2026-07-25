@@ -1,0 +1,11 @@
+--- old.narrowByBooleanComparison.types
++++ new.narrowByBooleanComparison.types
+@@= skipped -161, +161 lines =@@
+ >'Not a string or an array' : "Not a string or an array"
+     }
+     foo;
+->foo : string | any[]
++>foo : string | Array<any>
+ }
+
+ // https://github.com/microsoft/TypeScript/issues/55395

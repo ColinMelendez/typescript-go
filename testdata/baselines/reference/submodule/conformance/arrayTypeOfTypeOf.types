@@ -8,7 +8,7 @@ var x = 1;
 >1 : 1
 
 var xs: typeof x[];  // Not an error.  This is equivalent to Array<typeof x>
->xs : number[]
+>xs : Array<number>
 >x : number
 
 var xs2: typeof Array;

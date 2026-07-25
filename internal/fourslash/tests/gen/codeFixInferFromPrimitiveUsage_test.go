@@ -20,5 +20,5 @@ function wrap( [| s |] ) {
 }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyRangeAfterCodeFix(t, `s: string | string[]`, false, 0, 0)
+	f.VerifyRangeAfterCodeFix(t, `s: string | Array<string>`, false, 0, 0)
 }

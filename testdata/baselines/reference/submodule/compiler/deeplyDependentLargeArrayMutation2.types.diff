@@ -1,0 +1,7325 @@
+--- old.deeplyDependentLargeArrayMutation2.types
++++ new.deeplyDependentLargeArrayMutation2.types
+@@= skipped -6, +6 lines =@@
+ // polygons or verticies into a buffer from a formulaic object definition! So while this is a lot more regular than a real piece
+ // of code, this is still representative of a common pattern.
+ function build() {
+->build : () => any[]
++>build : () => Array<any>
+
+     let i = 0;
+ >i : number
+ >0 : 0
+
+     const arr = [];
+->arr : any[]
+->[] : undefined[]
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
+->i : number
+->1 : 1
+-
+-    arr[i++] = arr[i] + 1;
+->arr[i++] = arr[i] + 1 : any
+->arr[i++] : any
+->arr : any[]
+->i++ : number
+->i : number
+->arr[i] + 1 : any
+->arr[i] : any
+->arr : any[]
++>arr : Array<any>
++>[] : Array<undefined>
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
++>i : number
++>1 : 1
++
++    arr[i++] = arr[i] + 1;
++>arr[i++] = arr[i] + 1 : any
++>arr[i++] : any
++>arr : Array<any>
++>i++ : number
++>i : number
++>arr[i] + 1 : any
++>arr[i] : any
++>arr : Array<any>
+ >i : number
+ >1 : 1
+
+     return arr;
+->arr : any[]
++>arr : Array<any>
+ }
+
+ const a = build();
+->a : any[]
+->build() : any[]
+->build : () => any[]
++>a : Array<any>
++>build() : Array<any>
++>build : () => Array<any>

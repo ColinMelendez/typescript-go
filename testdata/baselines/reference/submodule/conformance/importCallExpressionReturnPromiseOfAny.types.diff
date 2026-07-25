@@ -1,0 +1,16 @@
+--- old.importCallExpressionReturnPromiseOfAny.types
++++ new.importCallExpressionReturnPromiseOfAny.types
+@@= skipped -96, +96 lines =@@
+
+ function * loadModule(directories: string[]) {
+ >loadModule : (directories: string[]) => Generator<string, void, string>
+->directories : string[]
++>directories : Array<string>
+
+     for (const directory of directories) {
+ >directory : string
+->directories : string[]
++>directories : Array<string>
+
+         const path = `${directory}\\moduleFile`;
+ >path : string

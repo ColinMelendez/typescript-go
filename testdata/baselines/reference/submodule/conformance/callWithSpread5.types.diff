@@ -1,0 +1,11 @@
+--- old.callWithSpread5.types
++++ new.callWithSpread5.types
+@@= skipped -14, +14 lines =@@
+ >a : number
+ >b : number
+ >bb : number
+->c : number[]
++>c : Array<number>
+
+ fn(...nnnu, x)
+ >fn(...nnnu, x) : number

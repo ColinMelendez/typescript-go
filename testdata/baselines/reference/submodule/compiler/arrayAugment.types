@@ -8,18 +8,18 @@ interface Array<T> {
 }
 
 var x = [''];
->x : string[]
->[''] : string[]
+>x : Array<string>
+>[''] : Array<string>
 >'' : ""
 
 var y = x.split(4);
->y : string[][]
->x.split(4) : string[][]
->x.split : (parts: number) => string[][]
->x : string[]
->split : (parts: number) => string[][]
+>y : Array<Array<string>>
+>x.split(4) : Array<Array<string>>
+>x.split : (parts: number) => Array<Array<string>>
+>x : Array<string>
+>split : (parts: number) => Array<Array<string>>
 >4 : 4
 
 var y: string[][]; // Expect no error here
->y : string[][]
+>y : Array<Array<string>>
 

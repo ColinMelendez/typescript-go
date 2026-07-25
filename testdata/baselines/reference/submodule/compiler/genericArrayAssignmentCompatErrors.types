@@ -2,18 +2,18 @@
 
 === genericArrayAssignmentCompatErrors.ts ===
 var myCars=new Array(); 
->myCars : any[]
->new Array() : any[]
+>myCars : Array<any>
+>new Array() : Array<any>
 >Array : ArrayConstructor
 
 var myCars2 = new [];
 >myCars2 : any
 >new [] : any
->[] : never[]
+>[] : Array<never>
 
 var myCars3 = new Array({});
->myCars3 : {}[]
->new Array({}) : {}[]
+>myCars3 : Array<{}>
+>new Array({}) : Array<{}>
 >Array : ArrayConstructor
 >{} : {}
 
@@ -21,37 +21,37 @@ declare var myCars4: Array; // error
 >myCars4 : any
 
 declare var myCars5: Array<any>[];
->myCars5 : any[][]
+>myCars5 : Array<Array<any>>
  
 myCars = myCars2;
 >myCars = myCars2 : any
->myCars : any[]
+>myCars : Array<any>
 >myCars2 : any
 
 myCars = myCars3;
->myCars = myCars3 : {}[]
->myCars : any[]
->myCars3 : {}[]
+>myCars = myCars3 : Array<{}>
+>myCars : Array<any>
+>myCars3 : Array<{}>
 
 myCars = myCars4;
 >myCars = myCars4 : any
->myCars : any[]
+>myCars : Array<any>
 >myCars4 : any
 
 myCars = myCars5;
->myCars = myCars5 : any[][]
->myCars : any[]
->myCars5 : any[][]
+>myCars = myCars5 : Array<Array<any>>
+>myCars : Array<any>
+>myCars5 : Array<Array<any>>
  
 myCars2 = myCars;
->myCars2 = myCars : any[]
+>myCars2 = myCars : Array<any>
 >myCars2 : any
->myCars : any[]
+>myCars : Array<any>
 
 myCars2 = myCars3;
->myCars2 = myCars3 : {}[]
+>myCars2 = myCars3 : Array<{}>
 >myCars2 : any
->myCars3 : {}[]
+>myCars3 : Array<{}>
 
 myCars2 = myCars4;
 >myCars2 = myCars4 : any
@@ -59,27 +59,27 @@ myCars2 = myCars4;
 >myCars4 : any
 
 myCars2 = myCars5;
->myCars2 = myCars5 : any[][]
+>myCars2 = myCars5 : Array<Array<any>>
 >myCars2 : any
->myCars5 : any[][]
+>myCars5 : Array<Array<any>>
  
 myCars3 = myCars;
->myCars3 = myCars : any[]
->myCars3 : {}[]
->myCars : any[]
+>myCars3 = myCars : Array<any>
+>myCars3 : Array<{}>
+>myCars : Array<any>
 
 myCars3 = myCars2;
 >myCars3 = myCars2 : any
->myCars3 : {}[]
+>myCars3 : Array<{}>
 >myCars2 : any
 
 myCars3 = myCars4;
 >myCars3 = myCars4 : any
->myCars3 : {}[]
+>myCars3 : Array<{}>
 >myCars4 : any
 
 myCars3 = myCars5;   
->myCars3 = myCars5 : any[][]
->myCars3 : {}[]
->myCars5 : any[][]
+>myCars3 = myCars5 : Array<Array<any>>
+>myCars3 : Array<{}>
+>myCars5 : Array<Array<any>>
 

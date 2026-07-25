@@ -1,0 +1,16 @@
+--- old.inferentiallyTypingAnEmptyArray.types
++++ new.inferentiallyTypingAnEmptyArray.types
+@@= skipped -17, +17 lines =@@
+ // the undefined[] type.
+ declare function foo<T>(arr: T[]): T;
+ >foo : <T>(arr: T[]) => T
+->arr : T[]
++>arr : Array<T>
+
+ foo([]).bar;
+ >foo([]).bar : any
+ >foo([]) : never
+ >foo : <T>(arr: T[]) => T
+->[] : never[]
++>[] : Array<never>
+ >bar : any

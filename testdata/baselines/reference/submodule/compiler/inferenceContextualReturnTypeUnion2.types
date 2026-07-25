@@ -8,7 +8,7 @@ type Query = (
 >container : HTMLElement
 
   ...args: any[]
->args : any[]
+>args : Array<any>
 
 ) =>
   | Error

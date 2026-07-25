@@ -35,11 +35,11 @@ export class Cls {
 
 //// [classAccessorInitializationInferenceWithElementAccess1.d.ts]
 export declare class Cls {
-    accessor x: number[];
+    accessor x: Array<number>;
     accessor y: {
         seed: number;
     };
     accessor z: string;
-    accessor 0: number[];
+    accessor 0: Array<number>;
     constructor(seed: number);
 }

@@ -1,0 +1,27 @@
+--- old.functionWithDefaultParameterWithNoStatements14.types
++++ new.functionWithDefaultParameterWithNoStatements14.types
+@@= skipped -1, +1 lines =@@
+
+ === functionWithDefaultParameterWithNoStatements14.ts ===
+ var v: any[];
+->v : any[]
++>v : Array<any>
+
+ function foo(a = v[1 + 1]) { }
+ >foo : (a?: any) => void
+ >a : any
+ >v[1 + 1] : any
+->v : any[]
++>v : Array<any>
+ >1 + 1 : number
+ >1 : 1
+ >1 : 1
+@@= skipped -15, +15 lines =@@
+ >bar : (a?: any) => void
+ >a : any
+ >v[1 + 1] : any
+->v : any[]
++>v : Array<any>
+ >1 + 1 : number
+ >1 : 1
+ >1 : 1

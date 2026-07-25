@@ -15,7 +15,7 @@ for ({ a: b = 1, b: a = ""} of []) {
 >a = "" : ""
 >a : string
 >"" : ""
->[] : never[]
+>[] : Array<never>
 
     a;
 >a : string

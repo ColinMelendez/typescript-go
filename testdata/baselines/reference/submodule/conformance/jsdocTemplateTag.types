@@ -51,5 +51,5 @@ Element.prototype.animate = function(keyframes) {};
 >prototype : Element
 >animate : (keyframes: Keyframe[] | PropertyIndexedKeyframes | null, options?: number | KeyframeAnimationOptions) => Animation
 >function(keyframes) {} : (keyframes: Array<any>) => void
->keyframes : any[]
+>keyframes : Array<any>
 

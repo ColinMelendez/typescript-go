@@ -6,8 +6,8 @@ declare var STRING: string;
 >STRING : string
 
 var STRING1: string[] = ["", ""];
->STRING1 : string[]
->["", ""] : string[]
+>STRING1 : Array<string>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -46,7 +46,7 @@ var ResultIsNumber1 = --STRING;
 var ResultIsNumber2 = --STRING1;
 >ResultIsNumber2 : number
 >--STRING1 : number
->STRING1 : string[]
+>STRING1 : Array<string>
 
 var ResultIsNumber3 = STRING--;
 >ResultIsNumber3 : number
@@ -56,7 +56,7 @@ var ResultIsNumber3 = STRING--;
 var ResultIsNumber4 = STRING1--;
 >ResultIsNumber4 : number
 >STRING1-- : number
->STRING1 : string[]
+>STRING1 : Array<string>
 
 // string type literal
 var ResultIsNumber5 = --"";
@@ -128,7 +128,7 @@ var ResultIsNumber13 = --STRING1[0];
 >ResultIsNumber13 : number
 >--STRING1[0] : number
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 var ResultIsNumber14 = --foo();
@@ -171,7 +171,7 @@ var ResultIsNumber19 = STRING1[0]--;
 >ResultIsNumber19 : number
 >STRING1[0]-- : number
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 var ResultIsNumber20 = foo()--;
@@ -207,12 +207,12 @@ var ResultIsNumber22 = (STRING + STRING)--;
 
 --STRING1;
 >--STRING1 : number
->STRING1 : string[]
+>STRING1 : Array<string>
 
 --STRING1[0];
 >--STRING1[0] : number
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 --foo();
@@ -252,12 +252,12 @@ STRING--;
 
 STRING1--;
 >STRING1-- : number
->STRING1 : string[]
+>STRING1 : Array<string>
 
 STRING1[0]--;
 >STRING1[0]-- : number
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 foo()--;

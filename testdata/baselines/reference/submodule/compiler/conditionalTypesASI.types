@@ -8,6 +8,6 @@ interface JSONSchema4 {
 >a : number | undefined
 
   extends?: string | string[]
->extends : string | string[] | undefined
+>extends : string | Array<string> | undefined
 }
 

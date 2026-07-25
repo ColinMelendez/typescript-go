@@ -1,0 +1,16 @@
+--- old.indexTypeCheck.types
++++ new.indexTypeCheck.types
+@@= skipped -107, +107 lines =@@
+ >blue : Blue
+
+ declare var x:number[];
+->x : number[]
++>x : Array<number>
+
+ x[0];
+ >x[0] : number
+->x : number[]
++>x : Array<number>
+ >0 : 0
+
+ class Benchmark {

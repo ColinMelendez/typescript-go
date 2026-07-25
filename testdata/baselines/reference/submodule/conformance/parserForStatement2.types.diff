@@ -1,0 +1,30 @@
+--- old.parserForStatement2.types
++++ new.parserForStatement2.types
+@@= skipped -4, +4 lines =@@
+ >a : any
+
+ var b = [];
+->b : any[]
+->[] : undefined[]
++>b : Array<any>
++>[] : Array<undefined>
+
+ var c;
+ >c : any
+@@= skipped -11, +11 lines =@@
+ >b[c] = b[c] || [], d : any
+ >b[c] = b[c] || [] : any
+ >b[c] : any
+->b : any[]
++>b : Array<any>
+ >c : any
+ >b[c] || [] : any
+ >b[c] : any
+->b : any[]
++>b : Array<any>
+ >c : any
+->[] : undefined[]
++>[] : Array<undefined>
+ >d : any
+
+ }

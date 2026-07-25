@@ -1,4 +1,4 @@
-assignmentToAnyArrayRestParameters.ts(15,25): error TS2339: Property '0.0' does not exist on type 'string[]'.
+assignmentToAnyArrayRestParameters.ts(15,25): error TS2339: Property '0.0' does not exist on type 'Array<string>'.
 assignmentToAnyArrayRestParameters.ts(18,16): error TS2536: Type '"0.0"' cannot be used to index type 'T'.
 
 
@@ -19,7 +19,7 @@ assignmentToAnyArrayRestParameters.ts(18,16): error TS2536: Type '"0.0"' cannot 
         type T00 = string[]["0"];
         type T01 = string[]["0.0"];  // Error
                             ~~~~~
-!!! error TS2339: Property '0.0' does not exist on type 'string[]'.
+!!! error TS2339: Property '0.0' does not exist on type 'Array<string>'.
         type T02 = string[][K | "0"];
         type T10 = T["0"];
         type T11 = T["0.0"];  // Error

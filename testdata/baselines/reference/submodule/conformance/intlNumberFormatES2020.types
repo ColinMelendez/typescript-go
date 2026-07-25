@@ -105,9 +105,9 @@ new Intl.NumberFormat('en-NZ', { signDisplay: 'always' });
 
 // New additions to NumberFormatPartTypes
 const types: Intl.NumberFormatPartTypes[] = [ 'compact', 'unit', 'unknown' ];
->types : (keyof Intl.NumberFormatPartTypeRegistry)[]
+>types : Array<keyof Intl.NumberFormatPartTypeRegistry>
 >Intl : any
->[ 'compact', 'unit', 'unknown' ] : ("compact" | "unit" | "unknown")[]
+>[ 'compact', 'unit', 'unknown' ] : Array<"compact" | "unit" | "unknown">
 >'compact' : "compact"
 >'unit' : "unit"
 >'unknown' : "unknown"

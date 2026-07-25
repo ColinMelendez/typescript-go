@@ -2,9 +2,9 @@
 
 === ES5For-ofTypeCheck9.ts ===
 declare var union: string | string[] | number | symbol;
->union : string | number | symbol | string[]
+>union : string | number | symbol | Array<string>
 
 for (let v of union) { }
 >v : any
->union : string | number | symbol | string[]
+>union : string | number | symbol | Array<string>
 

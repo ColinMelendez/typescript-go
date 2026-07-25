@@ -1,0 +1,22 @@
+--- old.contextualTypeArrayReturnType.types
++++ new.contextualTypeArrayReturnType.types
+@@= skipped -18, +18 lines =@@
+
+ var style: IBookStyle = {
+ >style : IBookStyle
+->{    initialLeftPageTransforms: (width: number) => {        return [            {'ry': null }        ];    }} : { initialLeftPageTransforms: (width: number) => { ry: null; }[]; }
++>{    initialLeftPageTransforms: (width: number) => {        return [            {'ry': null }        ];    }} : { initialLeftPageTransforms: (width: number) => Array<{ ry: null; }>; }
+
+     initialLeftPageTransforms: (width: number) => {
+->initialLeftPageTransforms : (width: number) => { ry: null; }[]
+->(width: number) => {        return [            {'ry': null }        ];    } : (width: number) => { ry: null; }[]
++>initialLeftPageTransforms : (width: number) => Array<{ ry: null; }>
++>(width: number) => {        return [            {'ry': null }        ];    } : (width: number) => Array<{ ry: null; }>
+ >width : number
+
+         return [
+->[            {'ry': null }        ] : { ry: null; }[]
++>[            {'ry': null }        ] : Array<{ ry: null; }>
+
+             {'ry': null }
+ >{'ry': null } : { ry: null; }

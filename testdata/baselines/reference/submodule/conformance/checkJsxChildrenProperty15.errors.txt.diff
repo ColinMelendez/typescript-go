@@ -1,0 +1,19 @@
+--- old.checkJsxChildrenProperty15.errors.txt
++++ new.checkJsxChildrenProperty15.errors.txt
+@@= skipped -1, +1 lines =@@
+   Property 'children' does not exist on type 'IntrinsicAttributes'.
+ file.tsx(13,13): error TS2322: Type '{ key: string; children: Element; }' is not assignable to type 'IntrinsicAttributes'.
+   Property 'children' does not exist on type 'IntrinsicAttributes'.
+-file.tsx(14,13): error TS2322: Type '{ key: string; children: Element[]; }' is not assignable to type 'IntrinsicAttributes'.
++file.tsx(14,13): error TS2322: Type '{ key: string; children: Array<Element>; }' is not assignable to type 'IntrinsicAttributes'.
+   Property 'children' does not exist on type 'IntrinsicAttributes'.
+
+
+@@= skipped -26, +26 lines =@@
+ !!! error TS2322:   Property 'children' does not exist on type 'IntrinsicAttributes'.
+     const k5 = <Tag key="1"><div></div><div></div></Tag>;
+                 ~~~
+-!!! error TS2322: Type '{ key: string; children: Element[]; }' is not assignable to type 'IntrinsicAttributes'.
++!!! error TS2322: Type '{ key: string; children: Array<Element>; }' is not assignable to type 'IntrinsicAttributes'.
+ !!! error TS2322:   Property 'children' does not exist on type 'IntrinsicAttributes'.
+     

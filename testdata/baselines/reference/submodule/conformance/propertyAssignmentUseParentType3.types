@@ -20,7 +20,7 @@ function foo2(): any[] {
 >foo2 : { (): any[]; join: string; }
 
     return [];
->[] : undefined[]
+>[] : Array<undefined>
 }
 foo2.join = "";
 >foo2.join = "" : ""

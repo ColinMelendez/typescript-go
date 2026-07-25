@@ -32,7 +32,7 @@ class C3 {
 >C3 : C3
 
     a: this[];
->a : this[]
+>a : Array<this>
 
     b: [this, this];
 >b : [this, this]

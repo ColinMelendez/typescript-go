@@ -10,7 +10,7 @@ interface Effect {
 
     next(...args: ReadonlyArray<any>): IteratorResult<any, any>;
 >next : (...args: ReadonlyArray<any>) => IteratorResult<any, any>
->args : readonly any[]
+>args : ReadonlyArray<any>
 
   };
 }

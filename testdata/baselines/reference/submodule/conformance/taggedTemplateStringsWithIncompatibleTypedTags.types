@@ -4,7 +4,7 @@
 interface I {
     (stringParts: TemplateStringsArray, ...rest: boolean[]): I;
 >stringParts : TemplateStringsArray
->rest : boolean[]
+>rest : Array<boolean>
 
     g: I;
 >g : I

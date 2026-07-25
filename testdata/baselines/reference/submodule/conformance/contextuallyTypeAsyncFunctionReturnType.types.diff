@@ -1,0 +1,59 @@
+--- old.contextuallyTypeAsyncFunctionReturnType.types
++++ new.contextuallyTypeAsyncFunctionReturnType.types
+@@= skipped -113, +113 lines =@@
+ >commandLine : string | undefined
+
+   children: ProcessTreeNode[];
+->children : ProcessTreeNode[]
++>children : Array<ProcessTreeNode>
+ }
+
+ export declare function getProcessTree(
+@@= skipped -80, +80 lines =@@
+ >copyExtensions : (fromExtensions: ILocalExtension[]) => Promise<void>
+
+   fromExtensions: ILocalExtension[]
+->fromExtensions : ILocalExtension[]
++>fromExtensions : Array<ILocalExtension>
+
+ ): Promise<void> {
+   const extensions: [ILocalExtension, Metadata | undefined][] =
+->extensions : [ILocalExtension, Metadata | undefined][]
++>extensions : Array<[ILocalExtension, Metadata | undefined]>
+
+     await Promise.all(
+->await Promise.all(      fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)])    ) : [ILocalExtension, Metadata | undefined][]
+->Promise.all(      fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)])    ) : Promise<[ILocalExtension, Metadata | undefined][]>
++>await Promise.all(      fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)])    ) : Array<[ILocalExtension, Metadata | undefined]>
++>Promise.all(      fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)])    ) : Promise<Array<[ILocalExtension, Metadata | undefined]>>
+ >Promise.all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
+ >Promise : PromiseConstructor
+ >all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
+
+       fromExtensions
+->fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)]) : Promise<[ILocalExtension, Metadata | undefined]>[]
+->fromExtensions        .filter((e) => !e.isApplicationScoped)        .map : <U>(callbackfn: (value: ILocalExtension, index: number, array: ILocalExtension[]) => U, thisArg?: any) => U[]
+->fromExtensions        .filter((e) => !e.isApplicationScoped) : ILocalExtension[]
+->fromExtensions        .filter : { <S extends ILocalExtension>(predicate: (value: ILocalExtension, index: number, array: ILocalExtension[]) => value is S, thisArg?: any): S[]; (predicate: (value: ILocalExtension, index: number, array: ILocalExtension[]) => unknown, thisArg?: any): ILocalExtension[]; }
+->fromExtensions : ILocalExtension[]
++>fromExtensions        .filter((e) => !e.isApplicationScoped)        .map(async (e) => [e, await scanMetadata(e)]) : Array<Promise<[ILocalExtension, Metadata | undefined]>>
++>fromExtensions        .filter((e) => !e.isApplicationScoped)        .map : <U>(callbackfn: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => U, thisArg?: any) => Array<U>
++>fromExtensions        .filter((e) => !e.isApplicationScoped) : Array<ILocalExtension>
++>fromExtensions        .filter : { <S extends ILocalExtension>(predicate: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => value is S, thisArg?: any): Array<S>; (predicate: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => unknown, thisArg?: any): Array<ILocalExtension>; }
++>fromExtensions : Array<ILocalExtension>
+
+         .filter((e) => !e.isApplicationScoped)
+->filter : { <S extends ILocalExtension>(predicate: (value: ILocalExtension, index: number, array: ILocalExtension[]) => value is S, thisArg?: any): S[]; (predicate: (value: ILocalExtension, index: number, array: ILocalExtension[]) => unknown, thisArg?: any): ILocalExtension[]; }
++>filter : { <S extends ILocalExtension>(predicate: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => value is S, thisArg?: any): Array<S>; (predicate: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => unknown, thisArg?: any): Array<ILocalExtension>; }
+ >(e) => !e.isApplicationScoped : (e: ILocalExtension) => boolean
+ >e : ILocalExtension
+ >!e.isApplicationScoped : boolean
+@@= skipped -30, +30 lines =@@
+ >isApplicationScoped : boolean
+
+         .map(async (e) => [e, await scanMetadata(e)])
+->map : <U>(callbackfn: (value: ILocalExtension, index: number, array: ILocalExtension[]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: ILocalExtension, index: number, array: Array<ILocalExtension>) => U, thisArg?: any) => Array<U>
+ >async (e) => [e, await scanMetadata(e)] : (e: ILocalExtension) => Promise<[ILocalExtension, Metadata | undefined]>
+ >e : ILocalExtension
+ >[e, await scanMetadata(e)] : [ILocalExtension, Metadata | undefined]

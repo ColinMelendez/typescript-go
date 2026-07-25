@@ -1,0 +1,17 @@
+--- old.additionOperatorWithConstrainedTypeParameter.types
++++ new.additionOperatorWithConstrainedTypeParameter.types
+@@= skipped -26, +26 lines =@@
+ function realSum<T extends Record<K, number>, K extends string>(n: number, vs: T[], k: K) {
+ >realSum : <T extends Record<K, number>, K extends string>(n: number, vs: T[], k: K) => void
+ >n : number
+->vs : T[]
++>vs : Array<T>
+ >k : K
+
+     for (const v of vs) {
+ >v : T
+->vs : T[]
++>vs : Array<T>
+
+         n = n + v[k];
+ >n = n + v[k] : number

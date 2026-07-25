@@ -1,0 +1,16 @@
+--- old.checkJsxUnionSFXContextualTypeInferredCorrectly.types
++++ new.checkJsxUnionSFXContextualTypeInferredCorrectly.types
+@@= skipped -24, +24 lines =@@
+ >true : true
+
+     value: string[]
+->value : string[]
++>value : Array<string>
+
+     onChange: (selection: string[]) => void
+ >onChange : (selection: string[]) => void
+->selection : string[]
++>selection : Array<string>
+ }
+
+ export function ComponentWithUnion(props: PM | PS) {

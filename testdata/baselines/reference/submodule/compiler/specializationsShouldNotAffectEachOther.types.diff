@@ -1,0 +1,50 @@
+--- old.specializationsShouldNotAffectEachOther.types
++++ new.specializationsShouldNotAffectEachOther.types
+@@= skipped -2, +2 lines =@@
+ === specializationsShouldNotAffectEachOther.ts ===
+ interface Series  {
+     data: string[];
+->data : string[]
++>data : Array<string>
+ }
+
+ var series: Series;
+@@= skipped -16, +16 lines =@@
+ >series : any
+
+     var series2: number[];
+->series2 : number[]
++>series2 : Array<number>
+
+     series2.map(seriesExtent);
+->series2.map(seriesExtent) : any[]
+->series2.map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
+->series2 : number[]
+->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
++>series2.map(seriesExtent) : Array<any>
++>series2.map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
++>series2 : Array<number>
++>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+ >seriesExtent : (series: any) => any
+
+     return null;
+@@= skipped -14, +14 lines =@@
+
+
+ var keyExtent2: any[] = series.data.map(function (d: string) { return d; });
+->keyExtent2 : any[]
+->series.data.map(function (d: string) { return d; }) : string[]
+->series.data.map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
+->series.data : string[]
++>keyExtent2 : Array<any>
++>series.data.map(function (d: string) { return d; }) : Array<string>
++>series.data.map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
++>series.data : Array<string>
+ >series : Series
+->data : string[]
+->map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
++>data : Array<string>
++>map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
+ >function (d: string) { return d; } : (d: string) => string
+ >d : string
+ >d : string

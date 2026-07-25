@@ -1,0 +1,11 @@
+--- old.assignmentCompatability29.types
++++ new.assignmentCompatability29.types
+@@= skipped -20, +20 lines =@@
+
+     export declare var aa:{one:any[];};;
+ >aa : { one: any[]; }
+->one : any[]
++>one : Array<any>
+
+     export var __val__aa = aa;
+ >__val__aa : { one: any[]; }

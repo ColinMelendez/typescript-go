@@ -1,0 +1,32 @@
+--- old.assignmentCompatability21.types
++++ new.assignmentCompatability21.types
+@@= skipped -19, +19 lines =@@
+ >__test2__ : typeof __test2__
+
+     export var obj = {two: ["1"]};
+->obj : { two: string[]; }
+->{two: ["1"]} : { two: string[]; }
+->two : string[]
+->["1"] : string[]
++>obj : { two: Array<string>; }
++>{two: ["1"]} : { two: Array<string>; }
++>two : Array<string>
++>["1"] : Array<string>
+ >"1" : "1"
+
+     export var __val__obj = obj;
+->__val__obj : { two: string[]; }
+->obj : { two: string[]; }
++>__val__obj : { two: Array<string>; }
++>obj : { two: Array<string>; }
+ }
+ __test2__.__val__obj = __test1__.__val__obj4
+ >__test2__.__val__obj = __test1__.__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>
+->__test2__.__val__obj : { two: string[]; }
++>__test2__.__val__obj : { two: Array<string>; }
+ >__test2__ : typeof __test2__
+->__val__obj : { two: string[]; }
++>__val__obj : { two: Array<string>; }
+ >__test1__.__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>
+ >__test1__ : typeof __test1__
+ >__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>

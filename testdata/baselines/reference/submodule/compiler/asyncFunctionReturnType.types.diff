@@ -1,0 +1,16 @@
+--- old.asyncFunctionReturnType.types
++++ new.asyncFunctionReturnType.types
+@@= skipped -1, +1 lines =@@
+
+ === asyncFunctionReturnType.ts ===
+ async function fAsync() {
+->fAsync : () => Promise<(number | boolean)[]>
++>fAsync : () => Promise<Array<number | boolean>>
+
+     // Without explicit type annotation, this is just an array.
+     return [1, true];
+->[1, true] : (number | boolean)[]
++>[1, true] : Array<number | boolean>
+ >1 : 1
+ >true : true
+ }

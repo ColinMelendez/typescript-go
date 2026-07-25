@@ -18,5 +18,5 @@ func TestCodeFixAddParameterNames2(t *testing.T) {
 type Rest = ([|...number|]) => void;`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyRangeAfterCodeFix(t, `...arg0: number[]`, false, 0, 0)
+	f.VerifyRangeAfterCodeFix(t, `...arg0: Array<number>`, false, 0, 0)
 }

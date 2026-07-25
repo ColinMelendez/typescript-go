@@ -13,7 +13,7 @@ interface I {
 
 //// [declFileForInterfaceWithRestParams.d.ts]
 interface I {
-    foo(...x: any[]): typeof x;
-    foo2(a: number, ...x: any[]): typeof x;
+    foo(...x: Array<any>): typeof x;
+    foo2(a: number, ...x: Array<any>): typeof x;
     foo3(b: string, ...x: string[]): typeof x;
 }

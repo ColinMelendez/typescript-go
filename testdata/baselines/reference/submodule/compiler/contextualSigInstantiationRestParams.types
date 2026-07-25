@@ -8,7 +8,7 @@ declare function toInstantiate<A, B>(a?: A, b?: B): B;
 
 declare function contextual(...s: string[]): string
 >contextual : (...s: string[]) => string
->s : string[]
+>s : Array<string>
 
 var sig: typeof contextual = toInstantiate;
 >sig : (...s: string[]) => string

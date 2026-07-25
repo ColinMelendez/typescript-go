@@ -1,0 +1,51 @@
+--- old.builtinIteratorReturn(strictbuiltiniteratorreturn=false).types
++++ new.builtinIteratorReturn(strictbuiltiniteratorreturn=false).types
+@@= skipped -1, +1 lines =@@
+
+ === builtinIteratorReturn.ts ===
+ declare const array: number[];
+->array : number[]
++>array : Array<number>
+
+ declare const map: Map<string, number>;
+ >map : Map<string, number>
+@@= skipped -12, +12 lines =@@
+ >i0 : ArrayIterator<number>
+ >array[Symbol.iterator]() : ArrayIterator<number>
+ >array[Symbol.iterator] : () => ArrayIterator<number>
+->array : number[]
++>array : Array<number>
+ >Symbol.iterator : unique symbol
+ >Symbol : SymbolConstructor
+ >iterator : unique symbol
+@@= skipped -9, +9 lines =@@
+ >i1 : ArrayIterator<number>
+ >array.values() : ArrayIterator<number>
+ >array.values : () => ArrayIterator<number>
+->array : number[]
++>array : Array<number>
+ >values : () => ArrayIterator<number>
+
+ const i2 = array.keys();
+ >i2 : ArrayIterator<number>
+ >array.keys() : ArrayIterator<number>
+ >array.keys : () => ArrayIterator<number>
+->array : number[]
++>array : Array<number>
+ >keys : () => ArrayIterator<number>
+
+ const i3 = array.entries();
+ >i3 : ArrayIterator<[number, number]>
+ >array.entries() : ArrayIterator<[number, number]>
+ >array.entries : () => ArrayIterator<[number, number]>
+->array : number[]
++>array : Array<number>
+ >entries : () => ArrayIterator<[number, number]>
+
+ for (const x of array);
+ >x : number
+->array : number[]
++>array : Array<number>
+
+ const i4 = map[Symbol.iterator]();
+ >i4 : MapIterator<[string, number]>

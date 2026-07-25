@@ -1,0 +1,11 @@
+--- old.esnextmodulekindWithES5Target11(target=es2015).types
++++ new.esnextmodulekindWithES5Target11(target=es2015).types
+@@= skipped -2, +2 lines =@@
+ === esnextmodulekindWithES5Target11.ts ===
+ declare function foo(...args: any[]): any;
+ >foo : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ @foo
+ >foo : (...args: any[]) => any

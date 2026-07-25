@@ -1,0 +1,50 @@
+--- old.varianceAnnotations.types
++++ new.varianceAnnotations.types
+@@= skipped -135, +135 lines =@@
+
+ type FooFn1<T> = (foo: Bar1<T[]>) => void;
+ >FooFn1 : FooFn1<T>
+->foo : Bar1<T[]>
++>foo : Bar1<Array<T>>
+
+ type Bar1<T> = {
+ >Bar1 : Bar1<T>
+
+     value: Foo1<T[]>;
+->value : Foo1<T[]>
++>value : Foo1<Array<T>>
+ }
+
+ type Foo2<out T> = {  // Error
+@@= skipped -21, +21 lines =@@
+
+ type FooFn2<T> = (foo: Bar2<T[]>) => void;
+ >FooFn2 : FooFn2<T>
+->foo : Bar2<T[]>
++>foo : Bar2<Array<T>>
+
+ type Bar2<T> = {
+ >Bar2 : Bar2<T>
+
+     value: Foo2<T[]>;
+->value : Foo2<T[]>
++>value : Foo2<Array<T>>
+ }
+
+ type Foo3<in out T> = {
+@@= skipped -21, +21 lines =@@
+
+ type FooFn3<T> = (foo: Bar3<T[]>) => void;
+ >FooFn3 : FooFn3<T>
+->foo : Bar3<T[]>
++>foo : Bar3<Array<T>>
+
+ type Bar3<T> = {
+ >Bar3 : Bar3<T>
+
+     value: Foo3<T[]>;
+->value : Foo3<T[]>
++>value : Foo3<Array<T>>
+ }
+
+ // Wrong modifier usage

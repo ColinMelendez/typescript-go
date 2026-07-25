@@ -9,18 +9,18 @@ class Road {
 >Road : Road
 
     public cars: Car[];
->cars : Car[]
+>cars : Array<Car>
 
     public AddCars(cars: Car[]) {
 >AddCars : (cars: Car[]) => void
->cars : Car[]
+>cars : Array<Car>
 
         this.cars = cars;
->this.cars = cars : Car[]
->this.cars : Car[]
+>this.cars = cars : Array<Car>
+>this.cars : Array<Car>
 >this : this
->cars : Car[]
->cars : Car[]
+>cars : Array<Car>
+>cars : Array<Car>
     }
 }
 

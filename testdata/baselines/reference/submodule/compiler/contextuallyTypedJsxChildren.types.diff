@@ -1,0 +1,11 @@
+--- old.contextuallyTypedJsxChildren.types
++++ new.contextuallyTypedJsxChildren.types
+@@= skipped -26, +26 lines =@@
+   }
+   interface PropsWithControls extends BaseProps {
+     controls: Control[];
+->controls : Control[]
++>controls : Array<Control>
+
+     children?: never | undefined;
+ >children : undefined

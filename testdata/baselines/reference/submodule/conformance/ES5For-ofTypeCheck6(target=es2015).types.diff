@@ -1,0 +1,13 @@
+--- old.ES5For-ofTypeCheck6(target=es2015).types
++++ new.ES5For-ofTypeCheck6(target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === ES5For-ofTypeCheck6.ts ===
+ var union: string[] | number[];
+->union : string[] | number[]
++>union : Array<string> | Array<number>
+
+ for (var v of union) { }
+ >v : string | number
+->union : string[] | number[]
++>union : Array<string> | Array<number>

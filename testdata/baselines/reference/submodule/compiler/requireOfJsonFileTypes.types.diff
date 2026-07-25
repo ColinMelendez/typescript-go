@@ -1,0 +1,75 @@
+--- old.requireOfJsonFileTypes.types
++++ new.requireOfJsonFileTypes.types
+@@= skipped -4, +4 lines =@@
+ >b : { a: boolean; b: string; c: null; d: boolean; }
+
+ import c = require('./c.json');
+->c : (string | null)[]
++>c : Array<string | null>
+
+ import d = require('./d.json');
+ >d : string
+@@= skipped -9, +9 lines =@@
+ >e : number
+
+ import f = require('./f.json');
+->f : number[]
++>f : Array<number>
+
+ import g = require('./g.json');
+->g : boolean[]
++>g : Array<boolean>
+
+ let booleanLiteral: boolean, nullLiteral: null;
+ >booleanLiteral : boolean
+@@= skipped -46, +46 lines =@@
+ const stringOrNumberOrNull: string | number | null = c[0];
+ >stringOrNumberOrNull : string | number | null
+ >c[0] : string | null
+->c : (string | null)[]
++>c : Array<string | null>
+ >0 : 0
+
+ stringLiteral = d;
+@@= skipped -17, +17 lines =@@
+ >numberLiteral = f[0] : number
+ >numberLiteral : number
+ >f[0] : number
+->f : number[]
++>f : Array<number>
+ >0 : 0
+
+ booleanLiteral = g[0];
+ >booleanLiteral = g[0] : boolean
+ >booleanLiteral : boolean
+ >g[0] : boolean
+->g : boolean[]
++>g : Array<boolean>
+ >0 : 0
+
+ === b.json ===
+@@= skipped -32, +32 lines =@@
+
+ === c.json ===
+ ["a", null, "string"]
+->["a", null, "string"] : (string | null)[]
++>["a", null, "string"] : Array<string | null>
+ >"a" : "a"
+ >"string" : "string"
+
+@@= skipped -15, +15 lines =@@
+
+ === f.json ===
+ [-10, 30]
+->[-10, 30] : number[]
++>[-10, 30] : Array<number>
+ >-10 : -10
+ >10 : 10
+ >30 : 30
+
+ === g.json ===
+ [true, false]
+->[true, false] : boolean[]
++>[true, false] : Array<boolean>
+ >true : true
+ >false : false

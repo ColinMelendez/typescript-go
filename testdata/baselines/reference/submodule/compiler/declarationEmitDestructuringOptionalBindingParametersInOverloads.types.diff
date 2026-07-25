@@ -1,0 +1,19 @@
+--- old.declarationEmitDestructuringOptionalBindingParametersInOverloads.types
++++ new.declarationEmitDestructuringOptionalBindingParametersInOverloads.types
+@@= skipped -8, +8 lines =@@
+
+ function foo(...rest: any[]) {
+ >foo : ([x, y, z]?: [string, number, boolean]) => any
+->rest : any[]
++>rest : Array<any>
+ }
+
+ function foo2( { x, y, z }?: { x: string; y: number; z: boolean });
+@@= skipped -14, +14 lines =@@
+
+ function foo2(...rest: any[]) {
+ >foo2 : ({ x, y, z }?: { x: string; y: number; z: boolean; }) => any
+->rest : any[]
++>rest : Array<any>
+
+ }

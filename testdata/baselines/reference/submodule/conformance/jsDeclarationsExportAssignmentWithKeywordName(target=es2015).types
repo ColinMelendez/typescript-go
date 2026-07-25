@@ -6,23 +6,23 @@ var x = 12;
 >12 : 12
 
 module.exports = {
->module.exports = {    extends: 'base',    more: {        others: ['strs']    },    x} : { extends: string; more: { others: string[]; }; x: number; }
->module.exports : { extends: string; more: { others: string[]; }; x: number; }
->module : { exports: { extends: string; more: { others: string[]; }; x: number; }; }
->exports : { extends: string; more: { others: string[]; }; x: number; }
->{    extends: 'base',    more: {        others: ['strs']    },    x} : { extends: string; more: { others: string[]; }; x: number; }
+>module.exports = {    extends: 'base',    more: {        others: ['strs']    },    x} : { extends: string; more: { others: Array<string>; }; x: number; }
+>module.exports : { extends: string; more: { others: Array<string>; }; x: number; }
+>module : { exports: { extends: string; more: { others: Array<string>; }; x: number; }; }
+>exports : { extends: string; more: { others: Array<string>; }; x: number; }
+>{    extends: 'base',    more: {        others: ['strs']    },    x} : { extends: string; more: { others: Array<string>; }; x: number; }
 
     extends: 'base',
 >extends : string
 >'base' : "base"
 
     more: {
->more : { others: string[]; }
->{        others: ['strs']    } : { others: string[]; }
+>more : { others: Array<string>; }
+>{        others: ['strs']    } : { others: Array<string>; }
 
         others: ['strs']
->others : string[]
->['strs'] : string[]
+>others : Array<string>
+>['strs'] : Array<string>
 >'strs' : "strs"
 
     },

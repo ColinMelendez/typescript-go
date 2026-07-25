@@ -20,21 +20,21 @@ namespace __test2__ {
 >__test2__ : typeof __test2__
 
     export var obj = {two: [1]};
->obj : { two: number[]; }
->{two: [1]} : { two: number[]; }
->two : number[]
->[1] : number[]
+>obj : { two: Array<number>; }
+>{two: [1]} : { two: Array<number>; }
+>two : Array<number>
+>[1] : Array<number>
 >1 : 1
 
     export var __val__obj = obj;
->__val__obj : { two: number[]; }
->obj : { two: number[]; }
+>__val__obj : { two: Array<number>; }
+>obj : { two: Array<number>; }
 }
 __test2__.__val__obj = __test1__.__val__obj4
 >__test2__.__val__obj = __test1__.__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>
->__test2__.__val__obj : { two: number[]; }
+>__test2__.__val__obj : { two: Array<number>; }
 >__test2__ : typeof __test2__
->__val__obj : { two: number[]; }
+>__val__obj : { two: Array<number>; }
 >__test1__.__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>
 >__test1__ : typeof __test1__
 >__val__obj4 : __test1__.interfaceWithPublicAndOptional<number, string>

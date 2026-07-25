@@ -216,11 +216,11 @@ const obj: Partial<MyAPI> = {};
 >{} : {}
 
 declare var keys: (keyof MyAPI)[];
->keys : (keyof MyAPI)[]
+>keys : Array<keyof MyAPI>
 
 for (const k of keys) {
 >k : keyof MyAPI
->keys : (keyof MyAPI)[]
+>keys : Array<keyof MyAPI>
 
     obj[k] = () => "12"; // shouldn't cause a complexity error
 >obj[k] = () => "12" : () => string
@@ -240,7 +240,7 @@ const obj2: PartialNull<MyAPI> = {};
 
 for (const k of keys) {
 >k : keyof MyAPI
->keys : (keyof MyAPI)[]
+>keys : Array<keyof MyAPI>
 
     obj2[k] = () => "12"; // shouldn't cause a complexity error
 >obj2[k] = () => "12" : () => string

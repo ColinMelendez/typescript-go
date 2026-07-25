@@ -47,5 +47,5 @@ declare class Thing {
     static doSomething: () => void;
 }
 declare class ElementsArray extends Array {
-    static isArray: (arg: any) => arg is any[];
+    static isArray: (arg: any) => arg is Array<any>;
 }

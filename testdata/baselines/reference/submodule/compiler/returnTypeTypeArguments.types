@@ -111,7 +111,7 @@ class X<T>
 >idx : number
 
     p3: X[]
->p3 : any[]
+>p3 : Array<any>
 
     p4: I<X>
 >p4 : I<any>
@@ -127,7 +127,7 @@ class X<T>
 >idx : number
 
     p8: Y[]
->p8 : any[]
+>p8 : Array<any>
 
     p9: I<Y>
 >p9 : I<any>
@@ -147,7 +147,7 @@ declare var a: {
 >idx : number
 
     p3: X[]
->p3 : any[]
+>p3 : Array<any>
 
     p4: I<X>
 >p4 : I<any>
@@ -163,7 +163,7 @@ declare var a: {
 >idx : number
 
     p8: Y[]
->p8 : any[]
+>p8 : Array<any>
 
     p9: I<Y>
 >p9 : I<any>

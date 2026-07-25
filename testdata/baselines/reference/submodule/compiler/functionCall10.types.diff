@@ -1,0 +1,11 @@
+--- old.functionCall10.types
++++ new.functionCall10.types
+@@= skipped -2, +2 lines =@@
+ === functionCall10.ts ===
+ function foo(...a:number[]){};
+ >foo : (...a: number[]) => void
+->a : number[]
++>a : Array<number>
+
+ foo(0, 1); 
+ >foo(0, 1) : void

@@ -14,11 +14,11 @@ interface Node {
 
 declare function toArray<T>(value: T | T[]): T[];
 >toArray : { <T>(value: T | T[]): T[]; <T_1>(value: T_1 | readonly T_1[]): readonly T_1[]; }
->value : T | T[]
+>value : T | Array<T>
 
 declare function toArray<T>(value: T | readonly T[]): readonly T[];
 >toArray : { <T_1>(value: T_1 | T_1[]): T_1[]; <T>(value: T | readonly T[]): readonly T[]; }
->value : T | readonly T[]
+>value : T | ReadonlyArray<T>
 
 function flatMapChildren<T>(node: Node, cb: (child: Node) => readonly T[] | T | undefined): readonly T[] {
 >flatMapChildren : <T>(node: Node, cb: (child: Node) => readonly T[] | T | undefined) => readonly T[]
@@ -27,8 +27,8 @@ function flatMapChildren<T>(node: Node, cb: (child: Node) => readonly T[] | T | 
 >child : Node
 
     const result: T[] = [];
->result : T[]
->[] : never[]
+>result : Array<T>
+>[] : Array<never>
 
     node.forEachChild(child => {
 >node.forEachChild(child => {        const value = cb(child);        if (value !== undefined) {            result.push(...toArray(value));        }    }) : undefined
@@ -39,29 +39,29 @@ function flatMapChildren<T>(node: Node, cb: (child: Node) => readonly T[] | T | 
 >child : Node
 
         const value = cb(child);
->value : T | readonly T[] | undefined
->cb(child) : T | readonly T[] | undefined
+>value : T | ReadonlyArray<T> | undefined
+>cb(child) : T | ReadonlyArray<T> | undefined
 >cb : (child: Node) => readonly T[] | T | undefined
 >child : Node
 
         if (value !== undefined) {
 >value !== undefined : boolean
->value : T | readonly T[] | undefined
+>value : T | ReadonlyArray<T> | undefined
 >undefined : undefined
 
             result.push(...toArray(value));
 >result.push(...toArray(value)) : number
->result.push : (...items: T[]) => number
->result : T[]
->push : (...items: T[]) => number
+>result.push : (...items: Array<T>) => number
+>result : Array<T>
+>push : (...items: Array<T>) => number
 >...toArray(value) : T
->toArray(value) : readonly T[]
+>toArray(value) : ReadonlyArray<T>
 >toArray : { <T_1>(value: T_1 | T_1[]): T_1[]; <T_1>(value: T_1 | readonly T_1[]): readonly T_1[]; }
->value : readonly T[] | (T & ({} | null))
+>value : ReadonlyArray<T> | (T & ({} | null))
         }
     });
     return result;
->result : T[]
+>result : Array<T>
 }
 
 function flatMapChildren2<T>(node: Node, cb: (child: Node) => readonly T[] | T | null): readonly T[] {
@@ -71,8 +71,8 @@ function flatMapChildren2<T>(node: Node, cb: (child: Node) => readonly T[] | T |
 >child : Node
 
     const result: T[] = [];
->result : T[]
->[] : never[]
+>result : Array<T>
+>[] : Array<never>
 
     node.forEachChild(child => {
 >node.forEachChild(child => {        const value = cb(child);        if (value !== null) {            result.push(...toArray(value));        }    }) : undefined
@@ -83,27 +83,27 @@ function flatMapChildren2<T>(node: Node, cb: (child: Node) => readonly T[] | T |
 >child : Node
 
         const value = cb(child);
->value : T | readonly T[] | null
->cb(child) : T | readonly T[] | null
+>value : T | ReadonlyArray<T> | null
+>cb(child) : T | ReadonlyArray<T> | null
 >cb : (child: Node) => readonly T[] | T | null
 >child : Node
 
         if (value !== null) {
 >value !== null : boolean
->value : T | readonly T[] | null
+>value : T | ReadonlyArray<T> | null
 
             result.push(...toArray(value));
 >result.push(...toArray(value)) : number
->result.push : (...items: T[]) => number
->result : T[]
->push : (...items: T[]) => number
+>result.push : (...items: Array<T>) => number
+>result : Array<T>
+>push : (...items: Array<T>) => number
 >...toArray(value) : T
->toArray(value) : readonly T[]
+>toArray(value) : ReadonlyArray<T>
 >toArray : { <T_1>(value: T_1 | T_1[]): T_1[]; <T_1>(value: T_1 | readonly T_1[]): readonly T_1[]; }
->value : readonly T[] | (T & ({} | undefined))
+>value : ReadonlyArray<T> | (T & ({} | undefined))
         }
     });
     return result;
->result : T[]
+>result : Array<T>
 }
 

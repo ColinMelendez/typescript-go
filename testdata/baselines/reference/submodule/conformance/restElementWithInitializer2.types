@@ -2,17 +2,17 @@
 
 === restElementWithInitializer2.ts ===
 declare var a: number[];
->a : number[]
+>a : Array<number>
 
 var x: number[];
->x : number[]
+>x : Array<number>
 
 [...x = a] = a;  // Error, rest element cannot have initializer
->[...x = a] = a : number[]
->[...x = a] : number[]
+>[...x = a] = a : Array<number>
+>[...x = a] : Array<number>
 >...x = a : number
->x = a : number[]
->x : number[]
->a : number[]
->a : number[]
+>x = a : Array<number>
+>x : Array<number>
+>a : Array<number>
+>a : Array<number>
 

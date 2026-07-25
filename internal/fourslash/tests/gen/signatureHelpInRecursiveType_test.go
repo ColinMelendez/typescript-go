@@ -28,5 +28,6 @@ type Foo = Reverse<[0,/**/]>;`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
 	f.GoToMarker(t, "")
+	// Constraint reuses the source annotation `any[]`.
 	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "Reverse<List extends any[]>"})
 }

@@ -1,0 +1,76 @@
+--- old.spliceTuples.types
++++ new.spliceTuples.types
+@@= skipped -27, +27 lines =@@
+ >1 : 1
+
+ declare const sb_: [string, ...boolean[]];
+->sb_ : [string, ...boolean[]]
++>sb_ : [string, ...Array<boolean>]
+
+ let k3: [number, string, ...boolean[]];
+->k3 : [number, string, ...boolean[]]
++>k3 : [number, string, ...Array<boolean>]
+
+ k3 = [1, ...sb_];
+->k3 = [1, ...sb_] : [number, string, ...boolean[]]
+->k3 : [number, string, ...boolean[]]
+->[1, ...sb_] : [number, string, ...boolean[]]
++>k3 = [1, ...sb_] : [number, string, ...Array<boolean>]
++>k3 : [number, string, ...Array<boolean>]
++>[1, ...sb_] : [number, string, ...Array<boolean>]
+ >1 : 1
+ >...sb_ : string | boolean
+->sb_ : [string, ...boolean[]]
++>sb_ : [string, ...Array<boolean>]
+
+ declare const sbb_: [string, boolean, ...boolean[]];
+->sbb_ : [string, boolean, ...boolean[]]
++>sbb_ : [string, boolean, ...Array<boolean>]
+
+ let k4: [number, string, ...boolean[]];
+->k4 : [number, string, ...boolean[]]
++>k4 : [number, string, ...Array<boolean>]
+
+ k4 = [1, ...sbb_];
+->k4 = [1, ...sbb_] : [number, string, boolean, ...boolean[]]
+->k4 : [number, string, ...boolean[]]
+->[1, ...sbb_] : [number, string, boolean, ...boolean[]]
++>k4 = [1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
++>k4 : [number, string, ...Array<boolean>]
++>[1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
+ >1 : 1
+ >...sbb_ : string | boolean
+->sbb_ : [string, boolean, ...boolean[]]
++>sbb_ : [string, boolean, ...Array<boolean>]
+
+ let k5: [number, string, boolean, ...boolean[]];
+->k5 : [number, string, boolean, ...boolean[]]
++>k5 : [number, string, boolean, ...Array<boolean>]
+
+ k5 = [1, ...sbb_];
+->k5 = [1, ...sbb_] : [number, string, boolean, ...boolean[]]
+->k5 : [number, string, boolean, ...boolean[]]
+->[1, ...sbb_] : [number, string, boolean, ...boolean[]]
++>k5 = [1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
++>k5 : [number, string, boolean, ...Array<boolean>]
++>[1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
+ >1 : 1
+ >...sbb_ : string | boolean
+->sbb_ : [string, boolean, ...boolean[]]
++>sbb_ : [string, boolean, ...Array<boolean>]
+
+ let k6: [number, string, boolean, boolean, ...boolean[]];
+->k6 : [number, string, boolean, boolean, ...boolean[]]
++>k6 : [number, string, boolean, boolean, ...Array<boolean>]
+
+ k6 = [1, ...sbb_];
+->k6 = [1, ...sbb_] : [number, string, boolean, ...boolean[]]
+->k6 : [number, string, boolean, boolean, ...boolean[]]
+->[1, ...sbb_] : [number, string, boolean, ...boolean[]]
++>k6 = [1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
++>k6 : [number, string, boolean, boolean, ...Array<boolean>]
++>[1, ...sbb_] : [number, string, boolean, ...Array<boolean>]
+ >1 : 1
+ >...sbb_ : string | boolean
+->sbb_ : [string, boolean, ...boolean[]]
++>sbb_ : [string, boolean, ...Array<boolean>]

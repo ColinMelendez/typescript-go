@@ -59,7 +59,7 @@ var nl;
 
 /** @type {Array} */
 var A;
->A : any[]
+>A : Array<any>
 
 /** @type {array} */
 var a;
@@ -141,7 +141,7 @@ var nl: null;
 >nl : null
 
 var A: any[];
->A : any[]
+>A : Array<any>
 
 var a: any[];
 >a : array

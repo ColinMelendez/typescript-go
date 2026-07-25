@@ -18,3 +18,32 @@
  >__typename : "Feature" | undefined
  >colors : { light: number; }
  >light : number
+@@= skipped -55, +55 lines =@@
+
+     // there are other fields
+     items: BaseItem[];
+->items : BaseItem[]
++>items : Array<BaseItem>
+ }
+ type ExtendedValue = BaseValue & {
+ >ExtendedValue : ExtendedValue
+
+     // there are other fields
+     items: ExtendedItem[];
+->items : ExtendedItem[]
++>items : Array<ExtendedItem>
+ }
+
+ const TEST_VALUE: ExtendedValue = {
+ >TEST_VALUE : ExtendedValue
+->{    items: [        {id: 1, description: null},        {id: 2, description: 'wigglytubble'},    ]} : { items: ({ id: number; description: null; } | { id: number; description: string; })[]; }
++>{    items: [        {id: 1, description: null},        {id: 2, description: 'wigglytubble'},    ]} : { items: Array<{ id: number; description: null; } | { id: number; description: string; }>; }
+
+     items: [
+->items : ({ id: number; description: null; } | { id: number; description: string; })[]
+->[        {id: 1, description: null},        {id: 2, description: 'wigglytubble'},    ] : ({ id: number; description: null; } | { id: number; description: string; })[]
++>items : Array<{ id: number; description: null; } | { id: number; description: string; }>
++>[        {id: 1, description: null},        {id: 2, description: 'wigglytubble'},    ] : Array<{ id: number; description: null; } | { id: number; description: string; }>
+
+         {id: 1, description: null},
+ >{id: 1, description: null} : { id: number; description: null; }

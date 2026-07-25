@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsHexadecimalEscapes.types
++++ new.taggedTemplateStringsHexadecimalEscapes.types
+@@= skipped -2, +2 lines =@@
+ === taggedTemplateStringsHexadecimalEscapes.ts ===
+ function f(...args: any[]) {
+ >f : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ f `\x0D${ "Interrupted CRLF" }\x0A`;

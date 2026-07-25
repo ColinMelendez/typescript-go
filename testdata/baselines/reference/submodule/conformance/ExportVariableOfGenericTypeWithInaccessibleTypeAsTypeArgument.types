@@ -12,10 +12,10 @@ namespace A {
     }
 
     export var beez: Array<B>;
->beez : B[]
+>beez : Array<B>
 
     export var beez2 = new Array<B>();
->beez2 : B[]
->new Array<B>() : B[]
+>beez2 : Array<B>
+>new Array<B>() : Array<B>
 >Array : ArrayConstructor
 }

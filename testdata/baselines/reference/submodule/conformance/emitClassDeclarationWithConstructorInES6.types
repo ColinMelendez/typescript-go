@@ -35,7 +35,7 @@ class B {
 >x : number
 >z : string
 >"hello" : "hello"
->args : any[]
+>args : Array<any>
 
         this.y = 10;
 >this.y = 10 : 10
@@ -45,11 +45,11 @@ class B {
 >10 : 10
     }
     baz(...args): string;
->baz : (...args: any[]) => string
->args : any[]
+>baz : (...args: Array<any>) => string
+>args : Array<any>
 
     baz(z: string, v: number): string {
->baz : (...args: any[]) => string
+>baz : (...args: Array<any>) => string
 >z : string
 >v : number
 

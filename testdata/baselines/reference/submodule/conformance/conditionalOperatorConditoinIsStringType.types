@@ -115,8 +115,8 @@ function foo() { return "string" };
 >"string" : "string"
 
 var array = ["1", "2", "3"];
->array : string[]
->["1", "2", "3"] : string[]
+>array : Array<string>
+>["1", "2", "3"] : Array<string>
 >"1" : "1"
 >"2" : "2"
 >"3" : "3"
@@ -154,7 +154,7 @@ foo() ? exprString1 : exprString2;
 array[1] ? exprIsObject1 : exprIsObject2;
 >array[1] ? exprIsObject1 : exprIsObject2 : Object
 >array[1] : string
->array : string[]
+>array : Array<string>
 >1 : 1
 >exprIsObject1 : Object
 >exprIsObject2 : Object
@@ -289,7 +289,7 @@ var resultIsObject3 = array[1] ? exprIsObject1 : exprIsObject2;
 >resultIsObject3 : Object
 >array[1] ? exprIsObject1 : exprIsObject2 : Object
 >array[1] : string
->array : string[]
+>array : Array<string>
 >1 : 1
 >exprIsObject1 : Object
 >exprIsObject2 : Object

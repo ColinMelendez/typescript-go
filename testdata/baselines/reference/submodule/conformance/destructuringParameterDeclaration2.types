@@ -15,21 +15,21 @@ function a0([a, b, [[c]]]: [number, number, string[][]]) { }
 a0([1, "string", [["world"]]);      // Error
 >a0([1, "string", [["world"]]) : void
 >a0 : ([a, b, [[c]]]: [number, number, string[][]]) => void
->[1, "string", [["world"]] : [number, string, string[][]]
+>[1, "string", [["world"]] : [number, string, Array<Array<string>>]
 >1 : 1
 >"string" : "string"
->[["world"]] : string[][]
->["world"] : string[]
+>[["world"]] : Array<Array<string>>
+>["world"] : Array<string>
 >"world" : "world"
 
 a0([1, 2, [["world"]], "string"]);  // Error
 >a0([1, 2, [["world"]], "string"]) : void
 >a0 : ([a, b, [[c]]]: [number, number, string[][]]) => void
->[1, 2, [["world"]], "string"] : [number, number, string[][], string]
+>[1, 2, [["world"]], "string"] : [number, number, Array<Array<string>>, string]
 >1 : 1
 >2 : 2
->[["world"]] : string[][]
->["world"] : string[]
+>[["world"]] : Array<Array<string>>
+>["world"] : Array<string>
 >"world" : "world"
 >"string" : "string"
 

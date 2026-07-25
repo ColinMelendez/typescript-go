@@ -2,12 +2,12 @@
 
 === emitRestParametersFunction.ts ===
 function bar(...rest) { }
->bar : (...rest: any[]) => void
->rest : any[]
+>bar : (...rest: Array<any>) => void
+>rest : Array<any>
 
 function foo(x: number, y: string, ...rest) { }
->foo : (x: number, y: string, ...rest: any[]) => void
+>foo : (x: number, y: string, ...rest: Array<any>) => void
 >x : number
 >y : string
->rest : any[]
+>rest : Array<any>
 

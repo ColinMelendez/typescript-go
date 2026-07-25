@@ -18,12 +18,12 @@ declare const e1: A[typeof a]; // no error, `A` has `symbol` index
 
 type Constructor = new (...args: any[]) => {};
 >Constructor : Constructor
->args : any[]
+>args : Array<any>
 
 declare function Mix<T extends Constructor>(classish: T): T & (new (...args: any[]) => {mixed: true});
 >Mix : <T extends Constructor>(classish: T) => T & (new (...args: any[]) => { mixed: true; })
 >classish : T
->args : any[]
+>args : Array<any>
 >mixed : true
 >true : true
 

@@ -1,0 +1,12 @@
+--- old.derivedTypeDoesNotRequireExtendsClause.types
++++ new.derivedTypeDoesNotRequireExtendsClause.types
+@@= skipped -45, +45 lines =@@
+ >d2 : Derived2
+
+ var r: Base[] = [d1, d2];
+->r : Base[]
+->[d1, d2] : (Derived | Derived2)[]
++>r : Array<Base>
++>[d1, d2] : Array<Derived | Derived2>
+ >d1 : Derived
+ >d2 : Derived2

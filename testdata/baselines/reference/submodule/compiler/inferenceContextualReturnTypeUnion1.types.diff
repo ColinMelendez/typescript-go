@@ -1,0 +1,11 @@
+--- old.inferenceContextualReturnTypeUnion1.types
++++ new.inferenceContextualReturnTypeUnion1.types
+@@= skipped -36, +36 lines =@@
+
+ declare function useCallback2<T extends (...args: any[]) => any>(
+ >useCallback2 : <T extends (...args: any[]) => any>(callback: T) => T
+->args : any[]
++>args : Array<any>
+
+   callback: T,
+ >callback : T

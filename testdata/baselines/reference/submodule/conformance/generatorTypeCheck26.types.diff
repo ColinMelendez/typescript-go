@@ -1,0 +1,11 @@
+--- old.generatorTypeCheck26.types
++++ new.generatorTypeCheck26.types
+@@= skipped -15, +15 lines =@@
+
+     yield *[x => x.length];
+ >yield *[x => x.length] : undefined
+->[x => x.length] : ((x: string) => number)[]
++>[x => x.length] : Array<(x: string) => number>
+ >x => x.length : (x: string) => number
+ >x : string
+ >x.length : number

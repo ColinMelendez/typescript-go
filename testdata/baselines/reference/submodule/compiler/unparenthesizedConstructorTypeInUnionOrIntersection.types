@@ -25,7 +25,7 @@ type U6 =
 
   | string
   | new (...args: any[]) => void
->args : any[]
+>args : Array<any>
 
   | number;
 
@@ -34,7 +34,7 @@ type I1 = string & new () => void;
 
 type I2 = string & new (...foo: number[]) => void;
 >I2 : I2
->foo : number[]
+>foo : Array<number>
 
 type I3 = & new () => boolean
 >I3 : new () => boolean

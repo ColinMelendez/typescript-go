@@ -1,0 +1,16 @@
+--- old.for-of58.types
++++ new.for-of58.types
+@@= skipped -9, +9 lines =@@
+ >y : "y"
+
+ declare const arr: X[] & Y[];
+->arr : X[] & Y[]
++>arr : Array<X> & Array<Y>
+
+ for (const item of arr) {
+ >item : X & Y
+->arr : X[] & Y[]
++>arr : Array<X> & Array<Y>
+
+     item.x;
+ >item.x : "x"

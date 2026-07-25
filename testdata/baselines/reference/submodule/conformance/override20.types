@@ -29,12 +29,12 @@ interface I2 {
 
 interface C1 {
     new(...args: any[]): I1;
->args : any[]
+>args : Array<any>
 }
 
 interface C2 {
     new(...args: any[]): I2;
->args : any[]
+>args : Array<any>
 }
 
 export class Bar extends Foo {

@@ -122,29 +122,29 @@ var fn: typeof fn;
 >fn : (s: string) => number
 
 var a: string[]; 
->a : string[]
+>a : Array<string>
 
 var a = ['a', 'b']
->a : string[]
->['a', 'b'] : string[]
+>a : Array<string>
+>['a', 'b'] : Array<string>
 >'a' : "a"
 >'b' : "b"
 
 var a = <string[]>[];
->a : string[]
-><string[]>[] : string[]
->[] : never[]
+>a : Array<string>
+><string[]>[] : Array<string>
+>[] : Array<never>
 
 var a: string[] = [];
->a : string[]
->[] : never[]
+>a : Array<string>
+>[] : Array<never>
 
 var a = new Array<string>();
->a : string[]
->new Array<string>() : string[]
+>a : Array<string>
+>new Array<string>() : Array<string>
 >Array : ArrayConstructor
 
 var a: typeof a;
->a : string[]
->a : string[]
+>a : Array<string>
+>a : Array<string>
 

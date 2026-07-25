@@ -3,7 +3,7 @@
 === ES5For-of19.ts ===
 for (let v of []) {
 >v : any
->[] : undefined[]
+>[] : Array<undefined>
 
     v;
 >v : any
@@ -13,7 +13,7 @@ for (let v of []) {
 
         for (const v of []) {
 >v : any
->[] : undefined[]
+>[] : Array<undefined>
 
             v;
 >v : any

@@ -1,6 +1,15 @@
 --- old.controlFlowOptionalChain.types
 +++ new.controlFlowOptionalChain.types
-@@= skipped -1891, +1891 lines =@@
+@@= skipped -11, +11 lines =@@
+ >key : number
+
+     (...args: any[]): any;
+->args : any[]
++>args : Array<any>
+
+ };
+
+@@= skipped -1880, +1880 lines =@@
  >PI : number
  >shape.radius ** 2 : number
  >shape.radius : number
@@ -22,3 +31,56 @@
  >height : number
 
          default:
+@@= skipped -25, +25 lines =@@
+ >type : string
+
+     coordinates: number[];
+->coordinates : number[]
++>coordinates : Array<number>
+
+   };
+ };
+@@= skipped -20, +20 lines =@@
+ >'test' : "test"
+
+         return [];
+->[] : never[]
++>[] : Array<never>
+     }
+     return f.geometry.coordinates;
+->f.geometry.coordinates : number[]
++>f.geometry.coordinates : Array<number>
+ >f.geometry : { type: string; coordinates: number[]; }
+ >f : Feature
+ >geometry : { type: string; coordinates: number[]; }
+->coordinates : number[]
++>coordinates : Array<number>
+ }
+
+ // Repro from #35842
+@@= skipped -83, +83 lines =@@
+ >0 : 0
+
+ declare const arr: { tag: ("left" | "right") }[];
+->arr : { tag: ("left" | "right"); }[]
++>arr : Array<{ tag: ("left" | "right"); }>
+ >tag : "left" | "right"
+
+ while (arr[i]?.tag === "left") {
+ >arr[i]?.tag === "left" : boolean
+ >arr[i]?.tag : "left" | "right"
+ >arr[i] : { tag: ("left" | "right"); }
+->arr : { tag: ("left" | "right"); }[]
++>arr : Array<{ tag: ("left" | "right"); }>
+ >i : number
+ >tag : "left" | "right"
+ >"left" : "left"
+@@= skipped -21, +21 lines =@@
+ >arr[i]?.tag === "right" : boolean
+ >arr[i]?.tag : "left" | "right"
+ >arr[i] : { tag: ("left" | "right"); }
+->arr : { tag: ("left" | "right"); }[]
++>arr : Array<{ tag: ("left" | "right"); }>
+ >i : number
+ >tag : "left" | "right"
+ >"right" : "right"

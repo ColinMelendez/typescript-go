@@ -1,0 +1,29 @@
+--- old.trailingCommaInHeterogenousArrayLiteral1.types
++++ new.trailingCommaInHeterogenousArrayLiteral1.types
+@@= skipped -5, +5 lines =@@
+
+     test(arg1: number[]) {    }
+ >test : (arg1: number[]) => void
+->arg1 : number[]
++>arg1 : Array<number>
+
+     callTest() {
+ >callTest : () => void
+@@= skipped -11, +11 lines =@@
+ >this.test : (arg1: number[]) => void
+ >this : this
+ >test : (arg1: number[]) => void
+->[1, 2, "hi", 5, ] : (string | number)[]
++>[1, 2, "hi", 5, ] : Array<string | number>
+ >1 : 1
+ >2 : 2
+ >"hi" : "hi"
+@@= skipped -11, +11 lines =@@
+ >this.test : (arg1: number[]) => void
+ >this : this
+ >test : (arg1: number[]) => void
+->[1, 2, "hi", 5] : (string | number)[]
++>[1, 2, "hi", 5] : Array<string | number>
+ >1 : 1
+ >2 : 2
+ >"hi" : "hi"

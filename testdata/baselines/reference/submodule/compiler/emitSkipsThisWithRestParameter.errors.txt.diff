@@ -1,0 +1,17 @@
+--- old.emitSkipsThisWithRestParameter.errors.txt
++++ new.emitSkipsThisWithRestParameter.errors.txt
+@@= skipped -0, +0 lines =@@
+-emitSkipsThisWithRestParameter.ts(3,31): error TS2345: Argument of type 'any[]' is not assignable to parameter of type '[base: any, ...args: any[]]'.
++emitSkipsThisWithRestParameter.ts(3,31): error TS2345: Argument of type 'Array<any>' is not assignable to parameter of type '[base: any, ...args: Array<any>]'.
+   Source provides no match for required element at position 0 in target.
+
+
+@@= skipped -6, +6 lines =@@
+         return function(this: any, ...args: any[]) {
+             return fn.apply(this, [ this ].concat(args));
+                                   ~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2345: Argument of type 'any[]' is not assignable to parameter of type '[base: any, ...args: any[]]'.
++!!! error TS2345: Argument of type 'Array<any>' is not assignable to parameter of type '[base: any, ...args: Array<any>]'.
+ !!! error TS2345:   Source provides no match for required element at position 0 in target.
+         };
+     }

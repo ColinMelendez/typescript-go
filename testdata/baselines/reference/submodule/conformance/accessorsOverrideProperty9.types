@@ -6,7 +6,7 @@
 // Mixin utilities
 export type Constructor<T = {}> = new (...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 export type PropertiesOf<T> = { [K in keyof T]: T[K] };
 >PropertiesOf : PropertiesOf<T>
@@ -19,10 +19,10 @@ class ApiItem {
 >ApiItem : ApiItem
 
   public get members(): ReadonlyArray<ApiItem> {
->members : readonly ApiItem[]
+>members : ReadonlyArray<ApiItem>
 
     return [];
->[] : never[]
+>[] : Array<never>
   }
 }
 
@@ -35,7 +35,7 @@ class ApiEnumMember extends ApiItem {
 // Mixin base class
 interface ApiItemContainerMixin extends ApiItem {
   readonly members: ReadonlyArray<ApiItem>;
->members : readonly ApiItem[]
+>members : ReadonlyArray<ApiItem>
 }
 
 function ApiItemContainerMixin<TBaseClass extends IApiItemConstructor>(
@@ -45,27 +45,27 @@ function ApiItemContainerMixin<TBaseClass extends IApiItemConstructor>(
 >baseClass : TBaseClass
 
 ): TBaseClass & (new (...args: any[]) => ApiItemContainerMixin) {
->args : any[]
+>args : Array<any>
 
   abstract class MixedClass extends baseClass implements ApiItemContainerMixin {
 >MixedClass : MixedClass
 >baseClass : ApiItem
 
     public constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
       super(...args);
 >super(...args) : void
 >super : TBaseClass
 >...args : any
->args : any[]
+>args : Array<any>
     }
 
     public get members(): ReadonlyArray<ApiItem> {
->members : readonly ApiItem[]
+>members : ReadonlyArray<ApiItem>
 
       return [];
->[] : never[]
+>[] : Array<never>
     }
   }
 
@@ -82,10 +82,10 @@ export class ApiEnum extends ApiItemContainerMixin(ApiItem) {
 
   // This worked prior to TypeScript 4.0:
   public get members(): ReadonlyArray<ApiEnumMember> {
->members : readonly ApiEnumMember[]
+>members : ReadonlyArray<ApiEnumMember>
 
     return [];
->[] : never[]
+>[] : Array<never>
   }
 }
 

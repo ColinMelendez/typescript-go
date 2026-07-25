@@ -7,7 +7,7 @@ declare function test1<
   TContext,
   TMethods extends Record<string, (ctx: TContext, ...args: never[]) => unknown>,
 >ctx : TContext
->args : never[]
+>args : Array<never>
 
 >(context: TContext, methods: TMethods): void;
 >context : TContext

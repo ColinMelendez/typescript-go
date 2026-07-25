@@ -1,0 +1,49 @@
+--- old.jsonFileImportChecksCallCorrectlyTwice.types
++++ new.jsonFileImportChecksCallCorrectlyTwice.types
+@@= skipped -1, +1 lines =@@
+
+ === index.ts ===
+ import data from "./data.json";
+->data : { foo: { bool: boolean; str: string; }[]; }
++>data : { foo: Array<{ bool: boolean; str: string; }>; }
+
+ interface Foo {
+   str: string;
+@@= skipped -10, +10 lines =@@
+ fn(data.foo);
+ >fn(data.foo) : void
+ >fn : (arg: Foo[]) => void
+->data.foo : { bool: boolean; str: string; }[]
+->data : { foo: { bool: boolean; str: string; }[]; }
+->foo : { bool: boolean; str: string; }[]
++>data.foo : Array<{ bool: boolean; str: string; }>
++>data : { foo: Array<{ bool: boolean; str: string; }>; }
++>foo : Array<{ bool: boolean; str: string; }>
+
+ fn(data.foo); // <-- shouldn't error!
+ >fn(data.foo) : void
+ >fn : (arg: Foo[]) => void
+->data.foo : { bool: boolean; str: string; }[]
+->data : { foo: { bool: boolean; str: string; }[]; }
+->foo : { bool: boolean; str: string; }[]
++>data.foo : Array<{ bool: boolean; str: string; }>
++>data : { foo: Array<{ bool: boolean; str: string; }>; }
++>foo : Array<{ bool: boolean; str: string; }>
+
+ function fn(arg: Foo[]) { }
+ >fn : (arg: Foo[]) => void
+->arg : Foo[]
++>arg : Array<Foo>
+
+ === data.json ===
+ {
+->{    "foo": [      {        "bool": true,        "str": "123"      }    ]} : { foo: { bool: boolean; str: string; }[]; }
++>{    "foo": [      {        "bool": true,        "str": "123"      }    ]} : { foo: Array<{ bool: boolean; str: string; }>; }
+
+     "foo": [
+->"foo" : { bool: boolean; str: string; }[]
+->[      {        "bool": true,        "str": "123"      }    ] : { bool: boolean; str: string; }[]
++>"foo" : Array<{ bool: boolean; str: string; }>
++>[      {        "bool": true,        "str": "123"      }    ] : Array<{ bool: boolean; str: string; }>
+       {
+ >{        "bool": true,        "str": "123"      } : { bool: boolean; str: string; }

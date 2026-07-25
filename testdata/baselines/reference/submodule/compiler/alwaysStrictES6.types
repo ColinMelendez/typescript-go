@@ -5,6 +5,6 @@ function f() {
 >f : () => void
 
     var arguments = [];
->arguments : any[]
->[] : never[]
+>arguments : Array<any>
+>[] : Array<never>
 }

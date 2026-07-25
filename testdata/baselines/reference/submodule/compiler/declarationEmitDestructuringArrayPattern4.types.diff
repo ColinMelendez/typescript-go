@@ -1,0 +1,24 @@
+--- old.declarationEmitDestructuringArrayPattern4.types
++++ new.declarationEmitDestructuringArrayPattern4.types
+@@= skipped -1, +1 lines =@@
+
+ === declarationEmitDestructuringArrayPattern4.ts ===
+ var [...a5] = [1, 2, 3];
+->a5 : number[]
+->[1, 2, 3] : number[]
++>a5 : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -34, +34 lines =@@
+ >3 : 3
+
+ var [...a9] = [1, "hello", true];
+->a9 : (string | number | boolean)[]
+->[1, "hello", true] : (string | number | boolean)[]
++>a9 : Array<string | number | boolean>
++>[1, "hello", true] : Array<string | number | boolean>
+ >1 : 1
+ >"hello" : "hello"
+ >true : true

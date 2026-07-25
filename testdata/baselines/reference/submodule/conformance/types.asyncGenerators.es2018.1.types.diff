@@ -1,0 +1,128 @@
+--- old.types.asyncGenerators.es2018.1.types
++++ new.types.asyncGenerators.es2018.1.types
+@@= skipped -47, +47 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ }
+@@= skipped -9, +9 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -46, +46 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -11, +11 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -49, +49 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -11, +11 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -49, +49 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -11, +11 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -44, +44 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ }
+@@= skipped -9, +9 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -41, +41 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ }
+@@= skipped -9, +9 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+@@= skipped -41, +41 lines =@@
+
+     yield* [1, 2];
+ >yield* [1, 2] : any
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ }
+@@= skipped -9, +9 lines =@@
+
+     yield* [Promise.resolve(1)];
+ >yield* [Promise.resolve(1)] : any
+->[Promise.resolve(1)] : Promise<number>[]
++>[Promise.resolve(1)] : Array<Promise<number>>
+ >Promise.resolve(1) : Promise<number>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor

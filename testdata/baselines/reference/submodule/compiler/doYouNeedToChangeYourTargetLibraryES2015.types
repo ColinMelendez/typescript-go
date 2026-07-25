@@ -23,7 +23,7 @@ const testReflectConstruct = Reflect.construct(noOp, []);
 >Reflect : typeof Reflect
 >construct : { <A extends readonly any[], R>(target: new (...args: A) => R, argumentsList: Readonly<A>, newTarget?: new (...args: any) => any): R; (target: Function, argumentsList: ArrayLike<any>, newTarget?: Function): any; }
 >noOp : () => void
->[] : never[]
+>[] : Array<never>
 
 const testReflectDefineProperty = Reflect.defineProperty({}, "", {});
 >testReflectDefineProperty : boolean
@@ -79,8 +79,8 @@ const testReflectIsExtensible = Reflect.isExtensible({});
 >{} : {}
 
 const testReflectOwnKeys = Reflect.ownKeys({});
->testReflectOwnKeys : (string | symbol)[]
->Reflect.ownKeys({}) : (string | symbol)[]
+>testReflectOwnKeys : Array<string | symbol>
+>Reflect.ownKeys({}) : Array<string | symbol>
 >Reflect.ownKeys : (target: object) => (string | symbol)[]
 >Reflect : typeof Reflect
 >ownKeys : (target: object) => (string | symbol)[]
@@ -116,14 +116,14 @@ const testReflectSetPrototypeOf = Reflect.setPrototypeOf({}, {});
 const testArrayFind = [""].find((val, idx, obj) => {
 >testArrayFind : string | undefined
 >[""].find((val, idx, obj) => {    return true;}) : string | undefined
->[""].find : { <S extends string>(predicate: (value: string, index: number, obj: string[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: string, index: number, obj: string[]) => unknown, thisArg?: any): string | undefined; }
->[""] : string[]
+>[""].find : { <S extends string>(predicate: (value: string, index: number, obj: Array<string>) => value is S, thisArg?: any): S | undefined; (predicate: (value: string, index: number, obj: Array<string>) => unknown, thisArg?: any): string | undefined; }
+>[""] : Array<string>
 >"" : ""
->find : { <S extends string>(predicate: (value: string, index: number, obj: string[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: string, index: number, obj: string[]) => unknown, thisArg?: any): string | undefined; }
->(val, idx, obj) => {    return true;} : (val: string, idx: number, obj: string[]) => true
+>find : { <S extends string>(predicate: (value: string, index: number, obj: Array<string>) => value is S, thisArg?: any): S | undefined; (predicate: (value: string, index: number, obj: Array<string>) => unknown, thisArg?: any): string | undefined; }
+>(val, idx, obj) => {    return true;} : (val: string, idx: number, obj: Array<string>) => true
 >val : string
 >idx : number
->obj : string[]
+>obj : Array<string>
 
     return true;
 >true : true
@@ -132,35 +132,35 @@ const testArrayFind = [""].find((val, idx, obj) => {
 const testArrayFindIndex = [""].findIndex((val, idx, obj) => {
 >testArrayFindIndex : number
 >[""].findIndex((val, idx, obj) => {    return true;}) : number
->[""].findIndex : (predicate: (value: string, index: number, obj: string[]) => unknown, thisArg?: any) => number
->[""] : string[]
+>[""].findIndex : (predicate: (value: string, index: number, obj: Array<string>) => unknown, thisArg?: any) => number
+>[""] : Array<string>
 >"" : ""
->findIndex : (predicate: (value: string, index: number, obj: string[]) => unknown, thisArg?: any) => number
->(val, idx, obj) => {    return true;} : (val: string, idx: number, obj: string[]) => boolean
+>findIndex : (predicate: (value: string, index: number, obj: Array<string>) => unknown, thisArg?: any) => number
+>(val, idx, obj) => {    return true;} : (val: string, idx: number, obj: Array<string>) => boolean
 >val : string
 >idx : number
->obj : string[]
+>obj : Array<string>
 
     return true;
 >true : true
 
 });
 const testArrayFill = [""].fill("fill");
->testArrayFill : string[]
->[""].fill("fill") : string[]
->[""].fill : (value: string, start?: number, end?: number) => string[]
->[""] : string[]
+>testArrayFill : Array<string>
+>[""].fill("fill") : Array<string>
+>[""].fill : (value: string, start?: number, end?: number) => Array<string>
+>[""] : Array<string>
 >"" : ""
->fill : (value: string, start?: number, end?: number) => string[]
+>fill : (value: string, start?: number, end?: number) => Array<string>
 >"fill" : "fill"
 
 const testArrayCopyWithin = [""].copyWithin(0, 0);
->testArrayCopyWithin : string[]
->[""].copyWithin(0, 0) : string[]
->[""].copyWithin : (target: number, start: number, end?: number) => string[]
->[""] : string[]
+>testArrayCopyWithin : Array<string>
+>[""].copyWithin(0, 0) : Array<string>
+>[""].copyWithin : (target: number, start: number, end?: number) => Array<string>
+>[""] : Array<string>
 >"" : ""
->copyWithin : (target: number, start: number, end?: number) => string[]
+>copyWithin : (target: number, start: number, end?: number) => Array<string>
 >0 : 0
 >0 : 0
 
@@ -168,7 +168,7 @@ const testArrayEntries = [""].entries();
 >testArrayEntries : ArrayIterator<[number, string]>
 >[""].entries() : ArrayIterator<[number, string]>
 >[""].entries : () => ArrayIterator<[number, string]>
->[""] : string[]
+>[""] : Array<string>
 >"" : ""
 >entries : () => ArrayIterator<[number, string]>
 
@@ -176,7 +176,7 @@ const testArrayKeys = [""].keys();
 >testArrayKeys : ArrayIterator<number>
 >[""].keys() : ArrayIterator<number>
 >[""].keys : () => ArrayIterator<number>
->[""] : string[]
+>[""] : Array<string>
 >"" : ""
 >keys : () => ArrayIterator<number>
 
@@ -184,25 +184,25 @@ const testArrayValues = [""].values();
 >testArrayValues : ArrayIterator<string>
 >[""].values() : ArrayIterator<string>
 >[""].values : () => ArrayIterator<string>
->[""] : string[]
+>[""] : Array<string>
 >"" : ""
 >values : () => ArrayIterator<string>
 
 const testArrayConstructorFrom = Array.from([]);
->testArrayConstructorFrom : never[]
->Array.from([]) : never[]
+>testArrayConstructorFrom : Array<never>
+>Array.from([]) : Array<never>
 >Array.from : { <T>(arrayLike: ArrayLike<T>): T[]; <T, U>(arrayLike: ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; <T>(iterable: Iterable<T> | ArrayLike<T>): T[]; <T, U>(iterable: Iterable<T> | ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; }
 >Array : ArrayConstructor
 >from : { <T>(arrayLike: ArrayLike<T>): T[]; <T, U>(arrayLike: ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; <T>(iterable: Iterable<T> | ArrayLike<T>): T[]; <T, U>(iterable: Iterable<T> | ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; }
->[] : never[]
+>[] : Array<never>
 
 const testArrayConstructorOf = Array.of([]);
->testArrayConstructorOf : never[][]
->Array.of([]) : never[][]
+>testArrayConstructorOf : Array<Array<never>>
+>Array.of([]) : Array<Array<never>>
 >Array.of : <T>(...items: T[]) => T[]
 >Array : ArrayConstructor
 >of : <T>(...items: T[]) => T[]
->[] : never[]
+>[] : Array<never>
 
 const testObjectConstructorAssign = Object.assign({}, {});
 >testObjectConstructorAssign : {}
@@ -214,16 +214,16 @@ const testObjectConstructorAssign = Object.assign({}, {});
 >{} : {}
 
 const testObjectConstructorGetOwnPropertySymbols = Object.getOwnPropertySymbols({});
->testObjectConstructorGetOwnPropertySymbols : symbol[]
->Object.getOwnPropertySymbols({}) : symbol[]
+>testObjectConstructorGetOwnPropertySymbols : Array<symbol>
+>Object.getOwnPropertySymbols({}) : Array<symbol>
 >Object.getOwnPropertySymbols : (o: any) => symbol[]
 >Object : ObjectConstructor
 >getOwnPropertySymbols : (o: any) => symbol[]
 >{} : {}
 
 const testObjectConstructorKeys = Object.keys({});
->testObjectConstructorKeys : string[]
->Object.keys({}) : string[]
+>testObjectConstructorKeys : Array<string>
+>Object.keys({}) : Array<string>
 >Object.keys : { (o: object): string[]; (o: {}): string[]; }
 >Object : ObjectConstructor
 >keys : { (o: object): string[]; (o: {}): string[]; }

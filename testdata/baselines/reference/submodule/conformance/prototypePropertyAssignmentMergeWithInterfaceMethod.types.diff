@@ -1,6 +1,24 @@
 --- old.prototypePropertyAssignmentMergeWithInterfaceMethod.types
 +++ new.prototypePropertyAssignmentMergeWithInterfaceMethod.types
-@@= skipped -30, +30 lines =@@
+@@= skipped -10, +10 lines =@@
+
+     begin(scope: Array<schema.Table>): Promise<void>
+ >begin : (scope: Array<schema.Table>) => Promise<void>
+->scope : schema.Table[]
++>scope : Array<schema.Table>
+ >schema : any
+
+     commit(): Promise<void>
+@@= skipped -8, +8 lines =@@
+
+     exec(queries: Array<query.Builder>): Promise<Array<Array<Object>>>
+ >exec : (queries: Array<query.Builder>) => Promise<Array<Array<Object>>>
+->queries : query.Builder[]
++>queries : Array<query.Builder>
+ >query : any
+
+     rollback(): Promise<void>
+@@= skipped -12, +12 lines =@@
  }
  === lovefield.js ===
  lf.Transaction = function() {};
@@ -30,3 +48,5 @@
  >prototype : any
  >begin : any
  >function(scope) {} : (scope: Array<lf.schema.Table>) => IThenable
+->scope : lf.schema.Table[]
++>scope : Array<lf.schema.Table>

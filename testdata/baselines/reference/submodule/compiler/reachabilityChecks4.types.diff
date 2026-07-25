@@ -1,0 +1,62 @@
+--- old.reachabilityChecks4.types
++++ new.reachabilityChecks4.types
+@@= skipped -105, +105 lines =@@
+ >'LEFT' : "LEFT"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'RIGHT':
+ >'RIGHT' : "RIGHT"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'TOP':
+ >'TOP' : "TOP"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'BOTTOM':
+ >'BOTTOM' : "BOTTOM"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+             }
+         case 'SLIDE_OUT':
+ >'SLIDE_OUT' : "SLIDE_OUT"
+@@= skipped -32, +32 lines =@@
+ >'LEFT' : "LEFT"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'RIGHT':
+ >'RIGHT' : "RIGHT"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'TOP':
+ >'TOP' : "TOP"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+
+                 case 'BOTTOM':
+ >'BOTTOM' : "BOTTOM"
+
+                     return []
+->[] : undefined[]
++>[] : Array<undefined>
+             }
+     }
+ }

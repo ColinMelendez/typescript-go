@@ -1,0 +1,11 @@
+--- old.iterableArrayPattern29.types
++++ new.iterableArrayPattern29.types
+@@= skipped -13, +13 lines =@@
+ >...new Map([["", true], ["hello", true]]) : [string, boolean]
+ >new Map([["", true], ["hello", true]]) : Map<string, boolean>
+ >Map : MapConstructor
+->[["", true], ["hello", true]] : [string, true][]
++>[["", true], ["hello", true]] : Array<[string, true]>
+ >["", true] : [string, true]
+ >"" : ""
+ >true : true

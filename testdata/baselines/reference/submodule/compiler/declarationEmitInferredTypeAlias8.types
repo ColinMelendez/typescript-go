@@ -6,11 +6,11 @@ type Foo<T> = T | { x: Foo<T> };
 >x : Foo<T>
 
 var x: Foo<number[]>;
->x : Foo<number[]>
+>x : Foo<Array<number>>
 
 function returnSomeGlobalValue() {
->returnSomeGlobalValue : () => Foo<number[]>
+>returnSomeGlobalValue : () => Foo<Array<number>>
 
     return x;
->x : Foo<number[]>
+>x : Foo<Array<number>>
 }

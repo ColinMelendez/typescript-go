@@ -22,7 +22,7 @@ if (typeof x !== "string") {
 >x.push : any
 >x : StringTree
 >push : any
->[""] : string[]
+>[""] : Array<string>
 >"" : ""
 }
 

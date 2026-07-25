@@ -1,0 +1,22 @@
+--- old.inferFromGenericFunctionReturnTypes3.errors.txt
++++ new.inferFromGenericFunctionReturnTypes3.errors.txt
+@@= skipped -0, +0 lines =@@
+ inferFromGenericFunctionReturnTypes3.ts(28,30): error TS2345: Argument of type 'string' is not assignable to parameter of type '"bar"'.
+-inferFromGenericFunctionReturnTypes3.ts(180,26): error TS2322: Type '{ state: State.A; }[] | { state: State.B; }[]' is not assignable to type '{ state: State.A; }[]'.
+-  Type '{ state: State.B; }[]' is not assignable to type '{ state: State.A; }[]'.
++inferFromGenericFunctionReturnTypes3.ts(180,26): error TS2322: Type 'Array<{ state: State.A; }> | Array<{ state: State.B; }>' is not assignable to type 'Array<{ state: State.A; }>'.
++  Type 'Array<{ state: State.B; }>' is not assignable to type 'Array<{ state: State.A; }>'.
+     Type '{ state: State.B; }' is not assignable to type '{ state: State.A; }'.
+       Types of property 'state' are incompatible.
+         Type 'State.B' is not assignable to type 'State.A'.
+@@= skipped -189, +189 lines =@@
+     declare function bar<T>(f: () => T[]): T[];
+     let x: Foo[] = bar(() => !!true ? [{ state: State.A }] : [{ state: State.B }]);  // Error
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2322: Type '{ state: State.A; }[] | { state: State.B; }[]' is not assignable to type '{ state: State.A; }[]'.
+-!!! error TS2322:   Type '{ state: State.B; }[]' is not assignable to type '{ state: State.A; }[]'.
++!!! error TS2322: Type 'Array<{ state: State.A; }> | Array<{ state: State.B; }>' is not assignable to type 'Array<{ state: State.A; }>'.
++!!! error TS2322:   Type 'Array<{ state: State.B; }>' is not assignable to type 'Array<{ state: State.A; }>'.
+ !!! error TS2322:     Type '{ state: State.B; }' is not assignable to type '{ state: State.A; }'.
+ !!! error TS2322:       Types of property 'state' are incompatible.
+ !!! error TS2322:         Type 'State.B' is not assignable to type 'State.A'.

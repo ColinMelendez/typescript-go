@@ -1,0 +1,18 @@
+--- old.derivedTypeCallingBaseImplWithOptionalParams.types
++++ new.derivedTypeCallingBaseImplWithOptionalParams.types
+@@= skipped -3, +3 lines =@@
+ interface MyInterface {
+     myMethod(...myList: any[]);
+ >myMethod : (...myList: any[]) => any
+->myList : any[]
++>myList : Array<any>
+ }
+ class MyClass implements MyInterface {
+ >MyClass : MyClass
+
+     myMethod(myList: any[]) { // valid
+ >myMethod : (myList: any[]) => void
+->myList : any[]
++>myList : Array<any>
+     }
+ }

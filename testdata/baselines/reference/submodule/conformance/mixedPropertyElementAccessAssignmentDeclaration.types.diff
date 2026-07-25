@@ -1,0 +1,21 @@
+--- old.mixedPropertyElementAccessAssignmentDeclaration.types
++++ new.mixedPropertyElementAccessAssignmentDeclaration.types
+@@= skipped -2, +2 lines =@@
+ === mixedPropertyElementAccessAssignmentDeclaration.ts ===
+ // Should not crash: #34642
+ var arr = [];
+->arr : any[]
+->[] : undefined[]
++>arr : Array<any>
++>[] : Array<undefined>
+
+ arr[0].prop[2] = {};
+ >arr[0].prop[2] = {} : {}
+ >arr[0].prop[2] : any
+ >arr[0].prop : any
+ >arr[0] : any
+->arr : any[]
++>arr : Array<any>
+ >0 : 0
+ >prop : any
+ >2 : 2

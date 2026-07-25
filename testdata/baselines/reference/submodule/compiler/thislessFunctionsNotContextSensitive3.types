@@ -95,7 +95,7 @@ Extension.create({
 >Extension.create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
 >Extension : typeof Extension
 >create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
->{  name: "slash-command",  addOptions() {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions(): { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Plugin[]; }
+>{  name: "slash-command",  addOptions() {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions(): { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Array<Plugin>; }
 
   name: "slash-command",
 >name : string
@@ -120,10 +120,10 @@ Extension.create({
     };
   },
   addProseMirrorPlugins() {
->addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Plugin[]
+>addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Array<Plugin>
 
     return [
->[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Plugin[]
+>[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Array<Plugin>
 
       Suggestion({
 >Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }) : Plugin
@@ -153,7 +153,7 @@ Extension.create({
 >Extension.create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
 >Extension : typeof Extension
 >create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
->{  name: "slash-command",  addOptions: () => {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions: () => { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Plugin[]; }
+>{  name: "slash-command",  addOptions: () => {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions: () => { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Array<Plugin>; }
 
   name: "slash-command",
 >name : string
@@ -179,10 +179,10 @@ Extension.create({
     };
   },
   addProseMirrorPlugins() {
->addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Plugin[]
+>addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Array<Plugin>
 
     return [
->[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Plugin[]
+>[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Array<Plugin>
 
       Suggestion({
 >Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }) : Plugin

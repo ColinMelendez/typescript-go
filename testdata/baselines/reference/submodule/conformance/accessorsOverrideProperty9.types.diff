@@ -1,6 +1,67 @@
 --- old.accessorsOverrideProperty9.types
 +++ new.accessorsOverrideProperty9.types
-@@= skipped -69, +69 lines =@@
+@@= skipped -5, +5 lines =@@
+ // Mixin utilities
+ export type Constructor<T = {}> = new (...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ export type PropertiesOf<T> = { [K in keyof T]: T[K] };
+ >PropertiesOf : PropertiesOf<T>
+@@= skipped -13, +13 lines =@@
+ >ApiItem : ApiItem
+
+   public get members(): ReadonlyArray<ApiItem> {
+->members : readonly ApiItem[]
++>members : ReadonlyArray<ApiItem>
+
+     return [];
+->[] : never[]
++>[] : Array<never>
+   }
+ }
+
+@@= skipped -16, +16 lines =@@
+ // Mixin base class
+ interface ApiItemContainerMixin extends ApiItem {
+   readonly members: ReadonlyArray<ApiItem>;
+->members : readonly ApiItem[]
++>members : ReadonlyArray<ApiItem>
+ }
+
+ function ApiItemContainerMixin<TBaseClass extends IApiItemConstructor>(
+@@= skipped -10, +10 lines =@@
+ >baseClass : TBaseClass
+
+ ): TBaseClass & (new (...args: any[]) => ApiItemContainerMixin) {
+->args : any[]
++>args : Array<any>
+
+   abstract class MixedClass extends baseClass implements ApiItemContainerMixin {
+ >MixedClass : MixedClass
+ >baseClass : ApiItem
+
+     public constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+       super(...args);
+ >super(...args) : void
+ >super : TBaseClass
+ >...args : any
+->args : any[]
++>args : Array<any>
+     }
+
+     public get members(): ReadonlyArray<ApiItem> {
+->members : readonly ApiItem[]
++>members : ReadonlyArray<ApiItem>
+
+       return [];
+->[] : never[]
++>[] : Array<never>
+     }
    }
 
    return MixedClass;
@@ -9,3 +70,15 @@
  }
 
  // Subclass inheriting from mixin
+@@= skipped -37, +37 lines =@@
+
+   // This worked prior to TypeScript 4.0:
+   public get members(): ReadonlyArray<ApiEnumMember> {
+->members : readonly ApiEnumMember[]
++>members : ReadonlyArray<ApiEnumMember>
+
+     return [];
+->[] : never[]
++>[] : Array<never>
+   }
+ }

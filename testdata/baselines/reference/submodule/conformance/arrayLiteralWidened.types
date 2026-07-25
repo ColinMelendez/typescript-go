@@ -4,54 +4,54 @@
 // array literals are widened upon assignment according to their element type
 
 var a = []; // any[]
->a : any[]
->[] : undefined[]
+>a : Array<any>
+>[] : Array<undefined>
 
 var a = [,,];
->a : any[]
->[,,] : undefined[]
+>a : Array<any>
+>[,,] : Array<undefined>
 
 var a = [null, null];
->a : any[]
->[null, null] : null[]
+>a : Array<any>
+>[null, null] : Array<null>
 
 var a = [undefined, undefined];
->a : any[]
->[undefined, undefined] : undefined[]
+>a : Array<any>
+>[undefined, undefined] : Array<undefined>
 >undefined : undefined
 >undefined : undefined
 
 var b = [[], [null, null]]; // any[][]
->b : any[][]
->[[], [null, null]] : undefined[][]
->[] : undefined[]
->[null, null] : null[]
+>b : Array<Array<any>>
+>[[], [null, null]] : Array<Array<undefined>>
+>[] : Array<undefined>
+>[null, null] : Array<null>
 
 var b = [[], []];
->b : any[][]
->[[], []] : undefined[][]
->[] : undefined[]
->[] : undefined[]
+>b : Array<Array<any>>
+>[[], []] : Array<Array<undefined>>
+>[] : Array<undefined>
+>[] : Array<undefined>
 
 var b = [[undefined, undefined]];
->b : any[][]
->[[undefined, undefined]] : undefined[][]
->[undefined, undefined] : undefined[]
+>b : Array<Array<any>>
+>[[undefined, undefined]] : Array<Array<undefined>>
+>[undefined, undefined] : Array<undefined>
 >undefined : undefined
 >undefined : undefined
 
 var c = [[[]]]; // any[][][]
->c : any[][][]
->[[[]]] : undefined[][][]
->[[]] : undefined[][]
->[] : undefined[]
+>c : Array<Array<Array<any>>>
+>[[[]]] : Array<Array<Array<undefined>>>
+>[[]] : Array<Array<undefined>>
+>[] : Array<undefined>
 
 var c = [[[null]],[undefined]]
->c : any[][][]
->[[[null]],[undefined]] : null[][][]
->[[null]] : null[][]
->[null] : null[]
->[undefined] : undefined[]
+>c : Array<Array<Array<any>>>
+>[[[null]],[undefined]] : Array<Array<Array<null>>>
+>[[null]] : Array<Array<null>>
+>[null] : Array<null>
+>[undefined] : Array<undefined>
 >undefined : undefined
 
 // no widening when one or more elements are non-widening
@@ -61,18 +61,18 @@ var x: undefined = undefined;
 >undefined : undefined
 
 var d = [x];
->d : undefined[]
->[x] : undefined[]
+>d : Array<undefined>
+>[x] : Array<undefined>
 >x : undefined
 
 var d = [, x];
->d : undefined[]
->[, x] : undefined[]
+>d : Array<undefined>
+>[, x] : Array<undefined>
 >x : undefined
 
 var d = [undefined, x];
->d : undefined[]
->[undefined, x] : undefined[]
+>d : Array<undefined>
+>[undefined, x] : Array<undefined>
 >undefined : undefined
 >x : undefined
 

@@ -1,0 +1,14 @@
+--- old.shadowedReservedCompilerDeclarationsWithNoEmit(target=es2015).types
++++ new.shadowedReservedCompilerDeclarationsWithNoEmit(target=es2015).types
+@@= skipped -42, +42 lines =@@
+
+ /// shadowed arguments
+ function f1(arguments, ...a) {
+->f1 : (arguments: any, ...a: any[]) => void
++>f1 : (arguments: any, ...a: Array<any>) => void
+ >arguments : any
+->a : any[]
++>a : Array<any>
+ }
+
+ class C2 extends Base {

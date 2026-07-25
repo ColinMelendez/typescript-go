@@ -1,0 +1,56 @@
+--- old.capturedLetConstInLoop10.types
++++ new.capturedLetConstInLoop10.types
+@@= skipped -8, +8 lines =@@
+
+         for (let x of [0]) {
+ >x : number
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+
+             let f = function() { return x; };
+@@= skipped -27, +27 lines =@@
+
+         for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+             let a = function() {  return x; };
+@@= skipped -10, +10 lines =@@
+
+             for (let y of [1]) {
+ >y : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+                 let b = function() { return y; };
+@@= skipped -30, +30 lines =@@
+
+         for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+             let a = function() {  return x; };
+@@= skipped -18, +18 lines =@@
+
+             for (let y of [1]) {
+ >y : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+                 let b = function() { return y; };
+@@= skipped -34, +34 lines =@@
+
+                 for (let x of [0]) {
+ >x : number
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+
+                     let f = () => x;

@@ -1,0 +1,13 @@
+--- old.regExpWithOpenBracketInCharClass(target=es2015).types
++++ new.regExpWithOpenBracketInCharClass(target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === regExpWithOpenBracketInCharClass.ts ===
+ const regexes: RegExp[] = [
+->regexes : RegExp[]
+->[  /[[]/,  // Valid  /[[]/u, // Valid  /[[]/v, // Well-terminated regex with an incomplete character class] : RegExp[]
++>regexes : Array<RegExp>
++>[  /[[]/,  // Valid  /[[]/u, // Valid  /[[]/v, // Well-terminated regex with an incomplete character class] : Array<RegExp>
+
+   /[[]/,  // Valid
+ >/[[]/ : RegExp

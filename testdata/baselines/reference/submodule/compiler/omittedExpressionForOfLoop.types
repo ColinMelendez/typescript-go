@@ -10,9 +10,9 @@ for (const [,] of undefined) {
 }
 
 for (const [,] of []) {
->[] : never[]
+>[] : Array<never>
 }
 
 for (const [] of []) {
->[] : never[]
+>[] : Array<never>
 }

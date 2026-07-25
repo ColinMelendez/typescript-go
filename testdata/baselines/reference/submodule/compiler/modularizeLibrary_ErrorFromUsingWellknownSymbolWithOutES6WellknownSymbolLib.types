@@ -2,13 +2,13 @@
 
 === modularizeLibrary_ErrorFromUsingWellknownSymbolWithOutES6WellknownSymbolLib.ts ===
 function f(x: number, y: number, z: number) {
->f : (x: number, y: number, z: number) => any[]
+>f : (x: number, y: number, z: number) => Array<any>
 >x : number
 >y : number
 >z : number
 
     return Array.from(arguments);
->Array.from(arguments) : any[]
+>Array.from(arguments) : Array<any>
 >Array.from : { <T>(arrayLike: ArrayLike<T>): T[]; <T, U>(arrayLike: ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; }
 >Array : ArrayConstructor
 >from : { <T>(arrayLike: ArrayLike<T>): T[]; <T, U>(arrayLike: ArrayLike<T>, mapfn: (v: T, k: number) => U, thisArg?: any): U[]; }
@@ -16,22 +16,22 @@ function f(x: number, y: number, z: number) {
 }
 
 f(1, 2, 3);   // no error
->f(1, 2, 3) : any[]
->f : (x: number, y: number, z: number) => any[]
+>f(1, 2, 3) : Array<any>
+>f : (x: number, y: number, z: number) => Array<any>
 >1 : 1
 >2 : 2
 >3 : 3
 
 let a = ['c', 'd'];
->a : string[]
->['c', 'd'] : string[]
+>a : Array<string>
+>['c', 'd'] : Array<string>
 >'c' : "c"
 >'d' : "d"
 
 a[Symbol.isConcatSpreadable] = false;
 >a[Symbol.isConcatSpreadable] = false : false
 >a[Symbol.isConcatSpreadable] : string
->a : string[]
+>a : Array<string>
 >Symbol.isConcatSpreadable : any
 >Symbol : any
 >isConcatSpreadable : any

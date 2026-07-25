@@ -1,0 +1,25 @@
+--- old.privateNameClassExpressionLoop.types
++++ new.privateNameClassExpressionLoop.types
+@@= skipped -1, +1 lines =@@
+
+ === privateNameClassExpressionLoop.ts ===
+ const array = [];
+->array : any[]
+->[] : never[]
++>array : Array<any>
++>[] : Array<never>
+
+ for (let i = 0; i < 10; ++i) {
+ >i : number
+@@= skipped -14, +14 lines =@@
+
+     array.push(class C {
+ >array.push(class C {        #myField = "hello";        #method() {}        get #accessor() { return 42; }        set #accessor(val) { }    }) : number
+->array.push : (...items: any[]) => number
+->array : any[]
+->push : (...items: any[]) => number
++>array.push : (...items: Array<any>) => number
++>array : Array<any>
++>push : (...items: Array<any>) => number
+ >class C {        #myField = "hello";        #method() {}        get #accessor() { return 42; }        set #accessor(val) { }    } : typeof C
+ >C : typeof C

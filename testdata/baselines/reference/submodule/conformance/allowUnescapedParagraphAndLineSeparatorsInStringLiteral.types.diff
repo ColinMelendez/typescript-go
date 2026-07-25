@@ -1,0 +1,13 @@
+--- old.allowUnescapedParagraphAndLineSeparatorsInStringLiteral.types
++++ new.allowUnescapedParagraphAndLineSeparatorsInStringLiteral.types
+@@= skipped -47, +47 lines =@@
+ // Array of unescaped line / paragraph separators
+
+ var arr = [
+->arr : string[]
+->[    "  STRING_CONTENT  ",    "   STRING_CONTENT   ",    "STRING_CONTENT ",    " STRING_CONTENT",    `\ `,    ' '] : string[]
++>arr : Array<string>
++>[    "  STRING_CONTENT  ",    "   STRING_CONTENT   ",    "STRING_CONTENT ",    " STRING_CONTENT",    `\ `,    ' '] : Array<string>
+
+     "
+ >"  STRING_CONTENT  " : "\u2029\u2028STRING_CONTENT\u2028\u2029"

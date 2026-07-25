@@ -12,7 +12,7 @@ namespace Underscore {
     export interface Static {
         all<T>(list: T[], iterator?: Iterator<T, boolean>, context?: any): boolean;
 >all : <T>(list: T[], iterator?: Iterator<T, boolean>, context?: any) => boolean
->list : T[]
+>list : Array<T>
 >iterator : Iterator<T, boolean> | undefined
 >context : any
 
@@ -33,7 +33,7 @@ _.all([true, 1, null, 'yes'], _.identity);
 >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => boolean
 >_ : Underscore.Static
 >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => boolean
->[true, 1, null, 'yes'] : (string | number | true | null)[]
+>[true, 1, null, 'yes'] : Array<string | number | true | null>
 >true : true
 >1 : 1
 >'yes' : "yes"
@@ -47,7 +47,7 @@ _.all([true], _.identity);
 >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => boolean
 >_ : Underscore.Static
 >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => boolean
->[true] : true[]
+>[true] : Array<true>
 >true : true
 >_.identity : <T>(value: T) => T
 >_ : Underscore.Static

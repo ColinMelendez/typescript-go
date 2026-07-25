@@ -1,0 +1,40 @@
+--- old.voidOperatorWithStringType.types
++++ new.voidOperatorWithStringType.types
+@@= skipped -5, +5 lines =@@
+ >STRING : string
+
+ var STRING1: string[] = ["", "abc"];
+->STRING1 : string[]
+->["", "abc"] : string[]
++>STRING1 : Array<string>
++>["", "abc"] : Array<string>
+ >"" : ""
+ >"abc" : "abc"
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsAny2 = void STRING1;
+ >ResultIsAny2 : any
+ >void STRING1 : undefined
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ // string type literal
+ var ResultIsAny3 = void "";
+@@= skipped -47, +47 lines =@@
+ >ResultIsAny8 : any
+ >void STRING1[0] : undefined
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ var ResultIsAny9 = void foo();
+@@= skipped -62, +62 lines =@@
+
+ void STRING1;
+ >void STRING1 : undefined
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ void foo();
+ >void foo() : undefined

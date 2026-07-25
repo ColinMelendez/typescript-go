@@ -1,5 +1,5 @@
 inheritedGenericCallSignature.ts(24,9): error TS2454: Variable 'x' is used before being assigned.
-inheritedGenericCallSignature.ts(24,11): error TS2345: Argument of type 'undefined' is not assignable to parameter of type 'Date[]'.
+inheritedGenericCallSignature.ts(24,11): error TS2345: Argument of type 'undefined' is not assignable to parameter of type 'Array<Date>'.
 
 
 ==== inheritedGenericCallSignature.ts (2 errors) ====
@@ -30,7 +30,7 @@ inheritedGenericCallSignature.ts(24,11): error TS2345: Argument of type 'undefin
             ~
 !!! error TS2454: Variable 'x' is used before being assigned.
               ~~~~~~~~~
-!!! error TS2345: Argument of type 'undefined' is not assignable to parameter of type 'Date[]'.
+!!! error TS2345: Argument of type 'undefined' is not assignable to parameter of type 'Array<Date>'.
     
     y.length;  // should not error
     

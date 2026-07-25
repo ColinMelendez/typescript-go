@@ -1,0 +1,35 @@
+--- old.instanceofWithStructurallyIdenticalTypes.types
++++ new.instanceofWithStructurallyIdenticalTypes.types
+@@= skipped -8, +8 lines =@@
+
+ class C2 { item: string[] }
+ >C2 : C2
+->item : string[]
++>item : Array<string>
+
+ class C3 { item: string }
+ >C3 : C3
+@@= skipped -27, +27 lines =@@
+
+         return x.item[0];
+ >x.item[0] : string
+->x.item : string[]
++>x.item : Array<string>
+ >x : C2
+->item : string[]
++>item : Array<string>
+ >0 : 0
+     }
+     else if (x instanceof C3) {
+@@= skipped -61, +61 lines =@@
+
+         return x.item[0];
+ >x.item[0] : string
+->x.item : string[]
++>x.item : Array<string>
+ >x : C2
+->item : string[]
++>item : Array<string>
+ >0 : 0
+     }
+     else if (isC3(x)) {

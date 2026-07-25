@@ -1,0 +1,11 @@
+--- old.indexedAccessKeyofNestedSimplifiedSubstituteUnwrapped.types
++++ new.indexedAccessKeyofNestedSimplifiedSubstituteUnwrapped.types
+@@= skipped -2, +2 lines =@@
+ === indexedAccessKeyofNestedSimplifiedSubstituteUnwrapped.ts ===
+ type AnyFunction = (...args: any[]) => any;
+ >AnyFunction : AnyFunction
+->args : any[]
++>args : Array<any>
+
+ type Params<T> = Parameters<Extract<T, AnyFunction>>;
+ >Params : Params<T>

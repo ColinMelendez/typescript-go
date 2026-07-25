@@ -1,0 +1,72 @@
+--- old.emitCompoundExponentiationAssignmentWithIndexingOnLHS4(target=es2015).types
++++ new.emitCompoundExponentiationAssignmentWithIndexingOnLHS4(target=es2015).types
+@@= skipped -31, +31 lines =@@
+ }
+
+ var array1 = [1, 2, 3, 4, 5];
+->array1 : number[]
+->[1, 2, 3, 4, 5] : number[]
++>array1 : Array<number>
++>[1, 2, 3, 4, 5] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -11, +11 lines =@@
+ array1[incrementIdx(array1.length)] **= 3;
+ >array1[incrementIdx(array1.length)] **= 3 : number
+ >array1[incrementIdx(array1.length)] : number
+->array1 : number[]
++>array1 : Array<number>
+ >incrementIdx(array1.length) : number
+ >incrementIdx : (max: number) => number
+ >array1.length : number
+->array1 : number[]
++>array1 : Array<number>
+ >length : number
+ >3 : 3
+
+ array1[incrementIdx(array1.length)] **= array1[incrementIdx(array1.length)] **= 2;
+ >array1[incrementIdx(array1.length)] **= array1[incrementIdx(array1.length)] **= 2 : number
+ >array1[incrementIdx(array1.length)] : number
+->array1 : number[]
++>array1 : Array<number>
+ >incrementIdx(array1.length) : number
+ >incrementIdx : (max: number) => number
+ >array1.length : number
+->array1 : number[]
++>array1 : Array<number>
+ >length : number
+ >array1[incrementIdx(array1.length)] **= 2 : number
+ >array1[incrementIdx(array1.length)] : number
+->array1 : number[]
++>array1 : Array<number>
+ >incrementIdx(array1.length) : number
+ >incrementIdx : (max: number) => number
+ >array1.length : number
+->array1 : number[]
++>array1 : Array<number>
+ >length : number
+ >2 : 2
+
+ array1[incrementIdx(array1.length)] **= array1[incrementIdx(array1.length)] ** 2;
+ >array1[incrementIdx(array1.length)] **= array1[incrementIdx(array1.length)] ** 2 : number
+ >array1[incrementIdx(array1.length)] : number
+->array1 : number[]
++>array1 : Array<number>
+ >incrementIdx(array1.length) : number
+ >incrementIdx : (max: number) => number
+ >array1.length : number
+->array1 : number[]
++>array1 : Array<number>
+ >length : number
+ >array1[incrementIdx(array1.length)] ** 2 : number
+ >array1[incrementIdx(array1.length)] : number
+->array1 : number[]
++>array1 : Array<number>
+ >incrementIdx(array1.length) : number
+ >incrementIdx : (max: number) => number
+ >array1.length : number
+->array1 : number[]
++>array1 : Array<number>
+ >length : number
+ >2 : 2

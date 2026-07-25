@@ -9,7 +9,7 @@ export const fn = { o: (a?: (X | undefined)[]) => {} };
 >{ o: (a?: (X | undefined)[]) => {} } : { o: (a?: (X | undefined)[]) => void; }
 >o : (a?: (X | undefined)[]) => void
 >(a?: (X | undefined)[]) => {} : (a?: (X | undefined)[]) => void
->a : (string | undefined)[] | undefined
+>a : Array<string | undefined> | undefined
 
 === b.ts ===
 import {fn} from "./a";

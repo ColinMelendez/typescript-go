@@ -1,0 +1,11 @@
+--- old.assignmentCompatWithGenericCallSignatures.types
++++ new.assignmentCompatWithGenericCallSignatures.types
+@@= skipped -10, +10 lines =@@
+ var g: <T extends { p: string }>(x: T[]) => void
+ >g : <T extends { p: string; }>(x: T[]) => void
+ >p : string
+->x : T[]
++>x : Array<T>
+
+ f = g; // ok
+ >f = g : <T extends { p: string; }>(x: T[]) => void

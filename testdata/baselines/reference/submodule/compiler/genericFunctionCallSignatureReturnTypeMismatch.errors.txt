@@ -1,6 +1,6 @@
-genericFunctionCallSignatureReturnTypeMismatch.ts(6,1): error TS2322: Type '<S>() => S[]' is not assignable to type '<T>(x: T) => T'.
-  Type 'unknown[]' is not assignable to type 'T'.
-    'T' could be instantiated with an arbitrary type which could be unrelated to 'unknown[]'.
+genericFunctionCallSignatureReturnTypeMismatch.ts(6,1): error TS2322: Type '<S>() => Array<S>' is not assignable to type '<T>(x: T) => T'.
+  Type 'Array<unknown>' is not assignable to type 'T'.
+    'T' could be instantiated with an arbitrary type which could be unrelated to 'Array<unknown>'.
 
 
 ==== genericFunctionCallSignatureReturnTypeMismatch.ts (1 errors) ====
@@ -11,9 +11,9 @@ genericFunctionCallSignatureReturnTypeMismatch.ts(6,1): error TS2322: Type '<S>(
     declare var g : { <S>() : S[]; };
     f = g;
     ~
-!!! error TS2322: Type '<S>() => S[]' is not assignable to type '<T>(x: T) => T'.
-!!! error TS2322:   Type 'unknown[]' is not assignable to type 'T'.
-!!! error TS2322:     'T' could be instantiated with an arbitrary type which could be unrelated to 'unknown[]'.
+!!! error TS2322: Type '<S>() => Array<S>' is not assignable to type '<T>(x: T) => T'.
+!!! error TS2322:   Type 'Array<unknown>' is not assignable to type 'T'.
+!!! error TS2322:     'T' could be instantiated with an arbitrary type which could be unrelated to 'Array<unknown>'.
     
     var s = f("str").toUpperCase();
     

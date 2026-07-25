@@ -1,0 +1,11 @@
+--- old.iteratorSpreadInCall4.types
++++ new.iteratorSpreadInCall4.types
+@@= skipped -3, +3 lines =@@
+ function foo(s1: symbol, ...s: symbol[]) { }
+ >foo : (s1: symbol, ...s: symbol[]) => void
+ >s1 : symbol
+->s : symbol[]
++>s : Array<symbol>
+
+ class SymbolIterator {
+ >SymbolIterator : SymbolIterator

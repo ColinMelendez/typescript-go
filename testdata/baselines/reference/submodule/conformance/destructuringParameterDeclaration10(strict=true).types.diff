@@ -1,0 +1,78 @@
+--- old.destructuringParameterDeclaration10(strict=true).types
++++ new.destructuringParameterDeclaration10(strict=true).types
+@@= skipped -7, +7 lines =@@
+ >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : never[]
++>json : Array<string>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+
+ }: {
+   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
+->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>> | undefined
++>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>> | undefined
+
+ } = {}) {
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }
+
+ export function prepareConfigWithoutAnnotation({
+->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: never[] | undefined; } | undefined; }) => void
++>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<never> | undefined; } | undefined; }) => void
+
+     additionalFiles: {
+ >additionalFiles : any
+
+         json = []
+->json : never[]
+->[] : never[]
++>json : Array<never>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+@@= skipped -34, +34 lines =@@
+ >{} : {}
+
+     json
+->json : never[]
++>json : Array<never>
+ }
+
+ export const prepareConfigWithContextualSignature: (param:{
+@@= skipped -8, +8 lines =@@
+ >param : { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }
+
+   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
+->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>> | undefined
++>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>> | undefined
+
+ }) => void = ({
+ >({    additionalFiles: {        json = []    } = {}} = {}) => {    json // string[]} : ({ additionalFiles: { json } }?: { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }) => void
+@@= skipped -9, +9 lines =@@
+ >additionalFiles : any
+
+         json = []
+->json : string[]
+->[] : never[]
++>json : Array<string>
++>[] : Array<never>
+
+     } = {}
+ >{} : {}
+@@= skipped -10, +10 lines =@@
+ >{} : {}
+
+     json // string[]
+->json : string[]
++>json : Array<string>
+ }

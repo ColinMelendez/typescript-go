@@ -1,0 +1,11 @@
+--- old.nullAssignableToEveryType.types
++++ new.nullAssignableToEveryType.types
+@@= skipped -70, +70 lines =@@
+ >ae : E
+
+ var m: number[] = null;
+->m : number[]
++>m : Array<number>
+
+ var n: { foo: string } = null;
+ >n : { foo: string; }

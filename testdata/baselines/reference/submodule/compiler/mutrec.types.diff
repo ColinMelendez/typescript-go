@@ -1,0 +1,17 @@
+--- old.mutrec.types
++++ new.mutrec.types
+@@= skipped -2, +2 lines =@@
+ === mutrec.ts ===
+ interface A {
+     x:B[];
+->x : B[]
++>x : Array<B>
+ }
+
+ interface B {
+     x:A[];
+->x : A[]
++>x : Array<A>
+ }
+
+ function f(p: A) { return p };

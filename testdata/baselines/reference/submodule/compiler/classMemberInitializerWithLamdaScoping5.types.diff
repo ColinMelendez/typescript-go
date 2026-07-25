@@ -1,0 +1,11 @@
+--- old.classMemberInitializerWithLamdaScoping5.types
++++ new.classMemberInitializerWithLamdaScoping5.types
+@@= skipped -6, +6 lines =@@
+     log(message?: any, ...optionalParams: any[]): void;
+ >log : (message?: any, ...optionalParams: any[]) => void
+ >message : any
+->optionalParams : any[]
++>optionalParams : Array<any>
+
+ };
+ class Greeter {

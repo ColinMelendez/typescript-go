@@ -102,7 +102,7 @@ interface I {
 >p2 : string
 
     (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     (p4: string, p5?: string);
 >p4 : string
@@ -110,7 +110,7 @@ interface I {
 
     (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
     //(p8?: string, ...p9: any[]);
     //(p10:string, p8?: string, ...p9: any[]);
@@ -125,7 +125,7 @@ interface I {
 >p2 : string
 
     new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     new (p4: string, p5?: string);
 >p4 : string
@@ -133,7 +133,7 @@ interface I {
 
     new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
     //Index Signature
     [p];
@@ -268,7 +268,7 @@ namespace M {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -276,7 +276,7 @@ namespace M {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -291,7 +291,7 @@ namespace M {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -299,7 +299,7 @@ namespace M {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];
@@ -467,7 +467,7 @@ namespace M {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -475,7 +475,7 @@ namespace M {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -490,7 +490,7 @@ namespace M {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -498,7 +498,7 @@ namespace M {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];
@@ -763,7 +763,7 @@ export interface eI {
 >p2 : string
 
     (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     (p4: string, p5?: string);
 >p4 : string
@@ -771,7 +771,7 @@ export interface eI {
 
     (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
     //(p8?: string, ...p9: any[]);
     //(p10:string, p8?: string, ...p9: any[]);
@@ -786,7 +786,7 @@ export interface eI {
 >p2 : string
 
     new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
     new (p4: string, p5?: string);
 >p4 : string
@@ -794,7 +794,7 @@ export interface eI {
 
     new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
     //Index Signature
     [p];
@@ -929,7 +929,7 @@ export namespace eM {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -937,7 +937,7 @@ export namespace eM {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -952,7 +952,7 @@ export namespace eM {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -960,7 +960,7 @@ export namespace eM {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];
@@ -1128,7 +1128,7 @@ export namespace eM {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -1136,7 +1136,7 @@ export namespace eM {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -1151,7 +1151,7 @@ export namespace eM {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -1159,7 +1159,7 @@ export namespace eM {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];
@@ -1449,7 +1449,7 @@ export declare namespace eaM {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -1457,7 +1457,7 @@ export declare namespace eaM {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -1472,7 +1472,7 @@ export declare namespace eaM {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -1480,7 +1480,7 @@ export declare namespace eaM {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];
@@ -1603,7 +1603,7 @@ export declare namespace eaM {
 >p2 : string
 
         (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         (p4: string, p5?: string);
 >p4 : string
@@ -1611,7 +1611,7 @@ export declare namespace eaM {
 
         (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //(p8?: string, ...p9: any[]);
         //(p10:string, p8?: string, ...p9: any[]);
@@ -1626,7 +1626,7 @@ export declare namespace eaM {
 >p2 : string
 
         new (...p3: any[]);
->p3 : any[]
+>p3 : Array<any>
 
         new (p4: string, p5?: string);
 >p4 : string
@@ -1634,7 +1634,7 @@ export declare namespace eaM {
 
         new (p6: string, ...p7: any[]);
 >p6 : string
->p7 : any[]
+>p7 : Array<any>
 
         //Index Signature
         [p];

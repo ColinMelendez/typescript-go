@@ -3,7 +3,7 @@
 === /node_modules/@types/node/index.d.ts ===
 declare var require: (...args: any[]) => any;
 >require : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 === /ambient.d.ts ===
 declare module "fs" {

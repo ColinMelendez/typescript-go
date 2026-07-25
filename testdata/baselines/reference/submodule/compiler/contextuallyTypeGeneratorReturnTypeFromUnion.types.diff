@@ -1,0 +1,46 @@
+--- old.contextuallyTypeGeneratorReturnTypeFromUnion.types
++++ new.contextuallyTypeGeneratorReturnTypeFromUnion.types
+@@= skipped -7, +7 lines =@@
+
+ const test1: Action = function* () {
+ >test1 : Action
+->function* () {    const next = yield ''    return next[0]} : () => Generator<string, string, string[]>
++>function* () {    const next = yield ''    return next[0]} : () => Generator<string, string, Array<string>>
+
+     const next = yield ''
+->next : string[]
+->yield '' : string[]
++>next : Array<string>
++>yield '' : Array<string>
+ >'' : ""
+
+     return next[0]
+ >next[0] : string
+->next : string[]
++>next : Array<string>
+ >0 : 0
+ }
+
+@@= skipped -18, +18 lines =@@
+
+ const test2: Action2 = async function* () {
+ >test2 : Action2
+->async function* () {    const next = yield await Promise.resolve('')    return next[0]} : () => AsyncGenerator<string, string, string[]>
++>async function* () {    const next = yield await Promise.resolve('')    return next[0]} : () => AsyncGenerator<string, string, Array<string>>
+
+     const next = yield await Promise.resolve('')
+->next : string[]
+->yield await Promise.resolve('') : string[]
++>next : Array<string>
++>yield await Promise.resolve('') : Array<string>
+ >await Promise.resolve('') : string
+ >Promise.resolve('') : Promise<string>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+@@= skipped -14, +14 lines =@@
+
+     return next[0]
+ >next[0] : string
+->next : string[]
++>next : Array<string>
+ >0 : 0
+ }

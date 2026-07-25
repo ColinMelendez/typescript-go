@@ -1,0 +1,11 @@
+--- old.generatorReturnTypeInference.types
++++ new.generatorReturnTypeInference.types
+@@= skipped -34, +34 lines =@@
+
+     yield* [];
+ >yield* [] : undefined
+->[] : never[]
++>[] : Array<never>
+ }
+
+ function* g004() { // Generator<number, void, undefined>

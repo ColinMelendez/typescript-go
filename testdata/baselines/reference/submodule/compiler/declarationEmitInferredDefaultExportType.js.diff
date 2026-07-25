@@ -1,0 +1,11 @@
+--- old.declarationEmitInferredDefaultExportType.js
++++ new.declarationEmitInferredDefaultExportType.js
+@@= skipped -20, +20 lines =@@
+
+ //// [declarationEmitInferredDefaultExportType.d.ts]
+ declare const _default: {
+-    foo: never[];
++    foo: Array<never>;
+     bar: undefined;
+     baz: null;
+ };

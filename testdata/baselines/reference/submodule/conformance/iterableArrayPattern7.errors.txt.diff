@@ -1,0 +1,14 @@
+--- old.iterableArrayPattern7.errors.txt
++++ new.iterableArrayPattern7.errors.txt
+@@= skipped -0, +0 lines =@@
+-iterableArrayPattern7.ts(17,5): error TS2740: Type 'Foo' is missing the following properties from type 'string[]': length, pop, push, concat, and 25 more.
++iterableArrayPattern7.ts(17,5): error TS2740: Type 'Foo' is missing the following properties from type 'Array<string>': length, pop, push, concat, and 25 more.
+
+
+ ==== iterableArrayPattern7.ts (1 errors) ====
+@@= skipped -19, +19 lines =@@
+     var a: Bar, b: string[];
+     [a, b] = new FooIterator;
+         ~
+-!!! error TS2740: Type 'Foo' is missing the following properties from type 'string[]': length, pop, push, concat, and 25 more.
++!!! error TS2740: Type 'Foo' is missing the following properties from type 'Array<string>': length, pop, push, concat, and 25 more.

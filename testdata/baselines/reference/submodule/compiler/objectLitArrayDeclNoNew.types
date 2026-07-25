@@ -18,7 +18,7 @@ namespace Test {
 
     export interface ILineTokens {
         tokens: IToken[];
->tokens : IToken[]
+>tokens : Array<IToken>
 
         endState: IState;
 >endState : IState

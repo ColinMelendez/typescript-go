@@ -1,0 +1,10 @@
+--- old.declFileTypeAnnotationTypeLiteral(target=es2015).types
++++ new.declFileTypeAnnotationTypeLiteral(target=es2015).types
+@@= skipped -55, +55 lines =@@
+ >m2 : (a: string, b?: number, ...c: c[]) => string
+ >a : string
+ >b : number | undefined
+->c : c[]
++>c : Array<c>
+
+ };

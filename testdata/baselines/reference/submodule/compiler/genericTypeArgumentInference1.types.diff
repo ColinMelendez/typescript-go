@@ -1,0 +1,47 @@
+--- old.genericTypeArgumentInference1.types
++++ new.genericTypeArgumentInference1.types
+@@= skipped -10, +10 lines =@@
+     export interface Static {
+         all<T>(list: T[], iterator?: Iterator<T, boolean>, context?: any): T;
+ >all : <T>(list: T[], iterator?: Iterator<T, boolean>, context?: any) => T
+->list : T[]
++>list : Array<T>
+ >iterator : Iterator<T, boolean> | undefined
+ >context : any
+
+@@= skipped -19, +19 lines =@@
+ >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+ >_ : Underscore.Static
+ >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+->[true, 1, null, 'yes'] : (string | number | true | null)[]
++>[true, 1, null, 'yes'] : Array<string | number | true | null>
+ >true : true
+ >1 : 1
+ >'yes' : "yes"
+@@= skipped -14, +14 lines =@@
+ >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+ >_ : Underscore.Static
+ >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+->[true] : true[]
++>[true] : Array<true>
+ >true : true
+ >_.identity : <T>(value: T) => T
+ >_ : Underscore.Static
+@@= skipped -12, +12 lines =@@
+ >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+ >_ : Underscore.Static
+ >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+->[] : never[]
++>[] : Array<never>
+ >_.identity : <T>(value: T) => T
+ >_ : Underscore.Static
+ >identity : <T>(value: T) => T
+@@= skipped -11, +11 lines =@@
+ >_.all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+ >_ : Underscore.Static
+ >all : <T>(list: T[], iterator?: Underscore.Iterator<T, boolean>, context?: any) => T
+->[<any>true] : any[]
++>[<any>true] : Array<any>
+ ><any>true : any
+ >true : true
+ >_.identity : <T>(value: T) => T

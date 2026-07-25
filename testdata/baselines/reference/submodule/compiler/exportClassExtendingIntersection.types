@@ -3,7 +3,7 @@
 === BaseClass.ts ===
 export type Constructor<T> = new (...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 export class MyBaseClass<T> {
 >MyBaseClass : MyBaseClass<T>

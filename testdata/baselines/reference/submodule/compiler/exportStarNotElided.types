@@ -2,8 +2,8 @@
 
 === register.ts ===
 const r: any[] = [];
->r : any[]
->[] : never[]
+>r : Array<any>
+>[] : Array<never>
 
 export function register(data: any) {
 >register : (data: any) => void
@@ -11,9 +11,9 @@ export function register(data: any) {
 
   r.push(data);
 >r.push(data) : number
->r.push : (...items: any[]) => number
->r : any[]
->push : (...items: any[]) => number
+>r.push : (...items: Array<any>) => number
+>r : Array<any>
+>push : (...items: Array<any>) => number
 >data : any
 }
 === data1.ts ===

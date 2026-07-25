@@ -1,0 +1,20 @@
+--- old.mixinClassesMembers.types
++++ new.mixinClassesMembers.types
+@@= skipped -23, +23 lines =@@
+ >M1 : M1
+
+     constructor(...args: any[]);
+->args : any[]
++>args : Array<any>
+
+     p: number;
+ >p : number
+@@= skipped -13, +13 lines =@@
+ >M2 : M2
+
+     constructor(...args: any[]);
+->args : any[]
++>args : Array<any>
+
+     f(): number;
+ >f : () => number

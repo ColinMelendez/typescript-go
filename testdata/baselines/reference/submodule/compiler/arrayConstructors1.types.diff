@@ -1,0 +1,76 @@
+--- old.arrayConstructors1.types
++++ new.arrayConstructors1.types
+@@= skipped -1, +1 lines =@@
+
+ === arrayConstructors1.ts ===
+ var x: string[];
+->x : string[]
++>x : Array<string>
+
+ x = new Array(1);
+->x = new Array(1) : any[]
+->x : string[]
+->new Array(1) : any[]
++>x = new Array(1) : Array<any>
++>x : Array<string>
++>new Array(1) : Array<any>
+ >Array : ArrayConstructor
+ >1 : 1
+
+ x = new Array('hi', 'bye'); 
+->x = new Array('hi', 'bye') : string[]
+->x : string[]
+->new Array('hi', 'bye') : string[]
++>x = new Array('hi', 'bye') : Array<string>
++>x : Array<string>
++>new Array('hi', 'bye') : Array<string>
+ >Array : ArrayConstructor
+ >'hi' : "hi"
+ >'bye' : "bye"
+
+ x = new Array<string>('hi', 'bye');
+->x = new Array<string>('hi', 'bye') : string[]
+->x : string[]
+->new Array<string>('hi', 'bye') : string[]
++>x = new Array<string>('hi', 'bye') : Array<string>
++>x : Array<string>
++>new Array<string>('hi', 'bye') : Array<string>
+ >Array : ArrayConstructor
+ >'hi' : "hi"
+ >'bye' : "bye"
+
+ var y: number[];
+->y : number[]
++>y : Array<number>
+
+ y = new Array(1);
+->y = new Array(1) : any[]
+->y : number[]
+->new Array(1) : any[]
++>y = new Array(1) : Array<any>
++>y : Array<number>
++>new Array(1) : Array<any>
+ >Array : ArrayConstructor
+ >1 : 1
+
+ y = new Array(1,2);
+->y = new Array(1,2) : number[]
+->y : number[]
+->new Array(1,2) : number[]
++>y = new Array(1,2) : Array<number>
++>y : Array<number>
++>new Array(1,2) : Array<number>
+ >Array : ArrayConstructor
+ >1 : 1
+ >2 : 2
+
+ y = new Array<number>(1, 2);
+->y = new Array<number>(1, 2) : number[]
+->y : number[]
+->new Array<number>(1, 2) : number[]
++>y = new Array<number>(1, 2) : Array<number>
++>y : Array<number>
++>new Array<number>(1, 2) : Array<number>
+ >Array : ArrayConstructor
+ >1 : 1
+ >2 : 2

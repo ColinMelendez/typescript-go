@@ -85,7 +85,7 @@ ae = undefined;
 >undefined : undefined
 
 var m: number[] = undefined;
->m : number[]
+>m : Array<number>
 >undefined : undefined
 
 var n: { foo: string } = undefined;

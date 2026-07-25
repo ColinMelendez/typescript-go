@@ -1,0 +1,37 @@
+--- old.jsxComplexSignatureHasApplicabilityError.types
++++ new.jsxComplexSignatureHasApplicabilityError.types
+@@= skipped -436, +436 lines =@@
+      */
+     removeValue?: (value: TValue | TValue[]) => void;
+ >removeValue : ((value: TValue | TValue[]) => void) | undefined
+->value : TValue | TValue[]
++>value : TValue | Array<TValue>
+
+     /**
+      * Callback to invoke to select an option. (Not necessarily the one being rendered)
+      */
+     selectValue?: (value: TValue | TValue[]) => void;
+ >selectValue : ((value: TValue | TValue[]) => void) | undefined
+->value : TValue | TValue[]
++>value : TValue | Array<TValue>
+ }
+
+ export interface ArrowRendererProps {
+@@= skipped -48, +48 lines =@@
+ >value : Option<TValue>
+
+     values?: Array<Option<TValue>>;
+->values : Option<TValue>[] | undefined
++>values : Array<Option<TValue>> | undefined
+ }
+
+ export interface ReactSelectProps<TValue = OptionValues> extends React.Props<ReactSelectClass<TValue>> {
+@@= skipped -452, +452 lines =@@
+      * initial field value
+      */
+     value?: Option<TValue> | Options<TValue> | string | string[] | number | number[] | boolean;
+->value : string | number | boolean | string[] | number[] | Option<TValue> | Options<TValue> | undefined
++>value : string | number | boolean | Array<string> | Array<number> | Option<TValue> | Options<TValue> | undefined
+
+     /**
+      * the option property to use for the value

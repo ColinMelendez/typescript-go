@@ -5,12 +5,12 @@ function f(x: number, y: number, ...z: string[]) {
 >f : (x: number, y: number, ...z: string[]) => void
 >x : number
 >y : number
->z : string[]
+>z : Array<string>
 }
 
 function f2(...x: string[]) {
 >f2 : (...x: string[]) => void
->x : string[]
+>x : Array<string>
 }
 
 interface A {
@@ -20,7 +20,7 @@ interface A {
         new (x: number, y: number, ...z: string[]);
 >x : number
 >y : number
->z : string[]
+>z : Array<string>
     }
 }
 
@@ -30,7 +30,7 @@ class B {
     constructor(x: number, y: number, ...z: string[]) {}
 >x : number
 >y : number
->z : string[]
+>z : Array<string>
 }
 
 interface C {
@@ -46,7 +46,7 @@ interface D {
 }
 
 var a: string[];
->a : string[]
+>a : Array<string>
 
 var b: A;
 >b : A
@@ -55,21 +55,21 @@ var c: C;
 >c : C
 
 var d: A[];
->d : A[]
+>d : Array<A>
 
 var e: { [key: string]: A };
 >e : { [key: string]: A; }
 >key : string
 
 var g: C[];
->g : C[]
+>g : Array<C>
 
 var h: { [key: string]: C };
 >h : { [key: string]: C; }
 >key : string
 
 var i: C[][];
->i : C[][]
+>i : Array<Array<C>>
 
 // Basic expression
 new f(1, 2, "string");
@@ -85,7 +85,7 @@ new f(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new f(1, 2, ...a, "string");
 >new f(1, 2, ...a, "string") : any
@@ -93,7 +93,7 @@ new f(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Multiple spreads arguments
@@ -101,9 +101,9 @@ new f2(...a, ...a);
 >new f2(...a, ...a) : any
 >f2 : (...x: string[]) => void
 >...a : string
->a : string[]
+>a : Array<string>
 >...a : string
->a : string[]
+>a : Array<string>
 
 new f(1 ,2, ...a, ...a);
 >new f(1 ,2, ...a, ...a) : any
@@ -111,9 +111,9 @@ new f(1 ,2, ...a, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >...a : string
->a : string[]
+>a : Array<string>
 
 // Call expression
 new f(1, 2, "string")();
@@ -131,7 +131,7 @@ new f(1, 2, ...a)();
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new f(1, 2, ...a, "string")();
 >new f(1, 2, ...a, "string")() : any
@@ -140,7 +140,7 @@ new f(1, 2, ...a, "string")();
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Property access expression
@@ -161,7 +161,7 @@ new b.f(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new b.f(1, 2, ...a, "string"); 
 >new b.f(1, 2, ...a, "string") : any
@@ -171,7 +171,7 @@ new b.f(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Parenthesised expression
@@ -194,7 +194,7 @@ new (b.f)(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new (b.f)(1, 2, ...a, "string"); 
 >new (b.f)(1, 2, ...a, "string") : any
@@ -205,7 +205,7 @@ new (b.f)(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Element access expression
@@ -213,7 +213,7 @@ new d[1].f(1, 2, "string");
 >new d[1].f(1, 2, "string") : any
 >d[1].f : new (x: number, y: number, ...z: string[]) => any
 >d[1] : A
->d : A[]
+>d : Array<A>
 >1 : 1
 >f : new (x: number, y: number, ...z: string[]) => any
 >1 : 1
@@ -224,25 +224,25 @@ new d[1].f(1, 2, ...a);
 >new d[1].f(1, 2, ...a) : any
 >d[1].f : new (x: number, y: number, ...z: string[]) => any
 >d[1] : A
->d : A[]
+>d : Array<A>
 >1 : 1
 >f : new (x: number, y: number, ...z: string[]) => any
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new d[1].f(1, 2, ...a, "string");
 >new d[1].f(1, 2, ...a, "string") : any
 >d[1].f : new (x: number, y: number, ...z: string[]) => any
 >d[1] : A
->d : A[]
+>d : Array<A>
 >1 : 1
 >f : new (x: number, y: number, ...z: string[]) => any
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Element access expression with a punctuated key
@@ -267,7 +267,7 @@ new e["a-b"].f(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new e["a-b"].f(1, 2, ...a, "string");
 >new e["a-b"].f(1, 2, ...a, "string") : any
@@ -279,7 +279,7 @@ new e["a-b"].f(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Basic expression
@@ -296,7 +296,7 @@ new B(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new B(1, 2, ...a, "string");
 >new B(1, 2, ...a, "string") : B
@@ -304,7 +304,7 @@ new B(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Property access expression
@@ -325,7 +325,7 @@ new c["a-b"](1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new c["a-b"](1, 2, ...a, "string");
 >new c["a-b"](1, 2, ...a, "string") : B
@@ -335,7 +335,7 @@ new c["a-b"](1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Parenthesised expression
@@ -358,7 +358,7 @@ new (c["a-b"])(1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new (c["a-b"])(1, 2, ...a, "string");
 >new (c["a-b"])(1, 2, ...a, "string") : B
@@ -369,7 +369,7 @@ new (c["a-b"])(1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Element access expression
@@ -377,7 +377,7 @@ new g[1]["a-b"](1, 2, "string");
 >new g[1]["a-b"](1, 2, "string") : B
 >g[1]["a-b"] : typeof B
 >g[1] : C
->g : C[]
+>g : Array<C>
 >1 : 1
 >"a-b" : "a-b"
 >1 : 1
@@ -388,25 +388,25 @@ new g[1]["a-b"](1, 2, ...a);
 >new g[1]["a-b"](1, 2, ...a) : B
 >g[1]["a-b"] : typeof B
 >g[1] : C
->g : C[]
+>g : Array<C>
 >1 : 1
 >"a-b" : "a-b"
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new g[1]["a-b"](1, 2, ...a, "string");
 >new g[1]["a-b"](1, 2, ...a, "string") : B
 >g[1]["a-b"] : typeof B
 >g[1] : C
->g : C[]
+>g : Array<C>
 >1 : 1
 >"a-b" : "a-b"
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Element access expression with a punctuated key
@@ -431,7 +431,7 @@ new h["a-b"]["a-b"](1, 2, ...a);
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new h["a-b"]["a-b"](1, 2, ...a, "string");
 >new h["a-b"]["a-b"](1, 2, ...a, "string") : B
@@ -443,7 +443,7 @@ new h["a-b"]["a-b"](1, 2, ...a, "string");
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 
 // Element access expression with a number
@@ -451,7 +451,7 @@ new i["a-b"][1](1, 2, "string");
 >new i["a-b"][1](1, 2, "string") : error
 >i["a-b"][1] : error
 >i["a-b"] : error
->i : C[][]
+>i : Array<Array<C>>
 >"a-b" : "a-b"
 >1 : 1
 >1 : 1
@@ -462,24 +462,24 @@ new i["a-b"][1](1, 2, ...a);
 >new i["a-b"][1](1, 2, ...a) : error
 >i["a-b"][1] : error
 >i["a-b"] : error
->i : C[][]
+>i : Array<Array<C>>
 >"a-b" : "a-b"
 >1 : 1
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 
 new i["a-b"][1](1, 2, ...a, "string");
 >new i["a-b"][1](1, 2, ...a, "string") : error
 >i["a-b"][1] : error
 >i["a-b"] : error
->i : C[][]
+>i : Array<Array<C>>
 >"a-b" : "a-b"
 >1 : 1
 >1 : 1
 >2 : 2
 >...a : string
->a : string[]
+>a : Array<string>
 >"string" : "string"
 

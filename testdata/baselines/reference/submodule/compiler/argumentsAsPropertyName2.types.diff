@@ -1,0 +1,14 @@
+--- old.argumentsAsPropertyName2.types
++++ new.argumentsAsPropertyName2.types
+@@= skipped -19, +19 lines =@@
+
+         [].forEach(function () { i });
+ >[].forEach(function () { i }) : void
+->[].forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
+->[] : undefined[]
+->forEach : (callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void
++>[].forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
++>[] : Array<undefined>
++>forEach : (callbackfn: (value: any, index: number, array: Array<any>) => void, thisArg?: any) => void
+ >function () { i } : () => void
+ >i : number

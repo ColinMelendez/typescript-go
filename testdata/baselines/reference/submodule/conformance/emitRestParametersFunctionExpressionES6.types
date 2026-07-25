@@ -2,20 +2,20 @@
 
 === emitRestParametersFunctionExpressionES6.ts ===
 var funcExp = (...rest) => { }
->funcExp : (...rest: any[]) => void
->(...rest) => { } : (...rest: any[]) => void
->rest : any[]
+>funcExp : (...rest: Array<any>) => void
+>(...rest) => { } : (...rest: Array<any>) => void
+>rest : Array<any>
 
 var funcExp1 = (X: number, ...rest) => { }
->funcExp1 : (X: number, ...rest: any[]) => void
->(X: number, ...rest) => { } : (X: number, ...rest: any[]) => void
+>funcExp1 : (X: number, ...rest: Array<any>) => void
+>(X: number, ...rest) => { } : (X: number, ...rest: Array<any>) => void
 >X : number
->rest : any[]
+>rest : Array<any>
 
 var funcExp2 = function (...rest) { }
->funcExp2 : (...rest: any[]) => void
->function (...rest) { } : (...rest: any[]) => void
->rest : any[]
+>funcExp2 : (...rest: Array<any>) => void
+>function (...rest) { } : (...rest: Array<any>) => void
+>rest : Array<any>
 
 var funcExp3 = (function (...rest) { })()
 >funcExp3 : void

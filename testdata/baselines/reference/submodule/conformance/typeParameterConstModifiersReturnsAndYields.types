@@ -255,84 +255,84 @@ const FileRouter = UploadThingServerHelper({
 });
 
 function outer1<const T>(cb: () => T) {
->outer1 : <const T>(cb: () => T) => <const U>(cb2: () => U) => (T | U)[]
+>outer1 : <const T>(cb: () => T) => <const U>(cb2: () => U) => Array<T | U>
 >cb : () => T
 
   function inner1<const U>(cb2: () => U) {
->inner1 : <const U>(cb2: () => U) => (T | U)[]
+>inner1 : <const U>(cb2: () => U) => Array<T | U>
 >cb2 : () => U
 
     return [cb(), cb2()];
->[cb(), cb2()] : (T | U)[]
+>[cb(), cb2()] : Array<T | U>
 >cb() : T
 >cb : () => T
 >cb2() : U
 >cb2 : () => U
   }
   return inner1;
->inner1 : <const U>(cb2: () => U) => (T | U)[]
+>inner1 : <const U>(cb2: () => U) => Array<T | U>
 }
 const nestedResult1 = outer1(() => 1)(() => "foo");
->nestedResult1 : ("foo" | 1)[]
->outer1(() => 1)(() => "foo") : ("foo" | 1)[]
->outer1(() => 1) : <const U>(cb2: () => U) => (1 | U)[]
->outer1 : <const T>(cb: () => T) => <const U>(cb2: () => U) => (T | U)[]
+>nestedResult1 : Array<"foo" | 1>
+>outer1(() => 1)(() => "foo") : Array<"foo" | 1>
+>outer1(() => 1) : <const U>(cb2: () => U) => Array<1 | U>
+>outer1 : <const T>(cb: () => T) => <const U>(cb2: () => U) => Array<T | U>
 >() => 1 : () => 1
 >1 : 1
 >() => "foo" : () => "foo"
 >"foo" : "foo"
 
 function outer2<T>(cb: () => T) {
->outer2 : <T>(cb: () => T) => <const U>(cb2: () => U) => (T | U)[]
+>outer2 : <T>(cb: () => T) => <const U>(cb2: () => U) => Array<T | U>
 >cb : () => T
 
   function inner2<const U>(cb2: () => U) {
->inner2 : <const U>(cb2: () => U) => (T | U)[]
+>inner2 : <const U>(cb2: () => U) => Array<T | U>
 >cb2 : () => U
 
     return [cb(), cb2()];
->[cb(), cb2()] : (T | U)[]
+>[cb(), cb2()] : Array<T | U>
 >cb() : T
 >cb : () => T
 >cb2() : U
 >cb2 : () => U
   }
   return inner2;
->inner2 : <const U>(cb2: () => U) => (T | U)[]
+>inner2 : <const U>(cb2: () => U) => Array<T | U>
 }
 const nestedResult2 = outer2(() => 1)(() => "foo");
->nestedResult2 : (number | "foo")[]
->outer2(() => 1)(() => "foo") : (number | "foo")[]
->outer2(() => 1) : <const U>(cb2: () => U) => (number | U)[]
->outer2 : <T>(cb: () => T) => <const U>(cb2: () => U) => (T | U)[]
+>nestedResult2 : Array<number | "foo">
+>outer2(() => 1)(() => "foo") : Array<number | "foo">
+>outer2(() => 1) : <const U>(cb2: () => U) => Array<number | U>
+>outer2 : <T>(cb: () => T) => <const U>(cb2: () => U) => Array<T | U>
 >() => 1 : () => number
 >1 : 1
 >() => "foo" : () => "foo"
 >"foo" : "foo"
 
 function outer3<const T>(cb: () => T) {
->outer3 : <const T>(cb: () => T) => <U>(cb2: () => U) => (T | U)[]
+>outer3 : <const T>(cb: () => T) => <U>(cb2: () => U) => Array<T | U>
 >cb : () => T
 
   function inner3<U>(cb2: () => U) {
->inner3 : <U>(cb2: () => U) => (T | U)[]
+>inner3 : <U>(cb2: () => U) => Array<T | U>
 >cb2 : () => U
 
     return [cb(), cb2()];
->[cb(), cb2()] : (T | U)[]
+>[cb(), cb2()] : Array<T | U>
 >cb() : T
 >cb : () => T
 >cb2() : U
 >cb2 : () => U
   }
   return inner3;
->inner3 : <U>(cb2: () => U) => (T | U)[]
+>inner3 : <U>(cb2: () => U) => Array<T | U>
 }
 const nestedResult3 = outer3(() => 1)(() => "foo");
->nestedResult3 : (string | 1)[]
->outer3(() => 1)(() => "foo") : (string | 1)[]
->outer3(() => 1) : <U>(cb2: () => U) => (1 | U)[]
->outer3 : <const T>(cb: () => T) => <U>(cb2: () => U) => (T | U)[]
+>nestedResult3 : Array<string | 1>
+>outer3(() => 1)(() => "foo") : Array<string | 1>
+>outer3(() => 1) : <U>(cb2: () => U) => Array<1 | U>
+>outer3 : <const T>(cb: () => T) => <U>(cb2: () => U) => Array<T | U>
 >() => 1 : () => 1
 >1 : 1
 >() => "foo" : () => string

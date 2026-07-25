@@ -108,7 +108,7 @@ BOOLEAN == undefined, "";
 
 ["a", "b"], NUMBER.toString();
 >["a", "b"], NUMBER.toString() : string
->["a", "b"] : string[]
+>["a", "b"] : Array<string>
 >"a" : "a"
 >"b" : "b"
 >NUMBER.toString() : string
@@ -162,7 +162,7 @@ var resultIsString10 = (["a", "b"], NUMBER.toString());
 >resultIsString10 : string
 >(["a", "b"], NUMBER.toString()) : string
 >["a", "b"], NUMBER.toString() : string
->["a", "b"] : string[]
+>["a", "b"] : Array<string>
 >"a" : "a"
 >"b" : "b"
 >NUMBER.toString() : string

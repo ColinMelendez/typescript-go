@@ -1,0 +1,8 @@
+--- old.additionOperatorWithStringAndEveryType.types
++++ new.additionOperatorWithStringAndEveryType.types
+@@= skipped -156, +156 lines =@@
+ >r20 : string
+ >x + [] : string
+ >x : string
+->[] : never[]
++>[] : Array<never>

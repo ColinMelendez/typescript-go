@@ -45,7 +45,7 @@ declare const Base: <T>(val: T) => {
     new (): T;
 };
 declare const C_base: new () => {
-    x: C[];
+    x: Array<C>;
 };
 declare class C extends C_base {
 }

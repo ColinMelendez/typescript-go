@@ -1,0 +1,13 @@
+--- old.enumAssignmentCompat4.types
++++ new.enumAssignmentCompat4.types
+@@= skipped -46, +46 lines =@@
+ }
+
+ let broken = [
+->broken : ({ foo: M.MyEnum; } | { foo: N.MyEnum; })[]
+->[    N.object1,    M.object2] : ({ foo: M.MyEnum; } | { foo: N.MyEnum; })[]
++>broken : Array<{ foo: M.MyEnum; } | { foo: N.MyEnum; }>
++>[    N.object1,    M.object2] : Array<{ foo: M.MyEnum; } | { foo: N.MyEnum; }>
+
+     N.object1,
+ >N.object1 : { foo: N.MyEnum; }

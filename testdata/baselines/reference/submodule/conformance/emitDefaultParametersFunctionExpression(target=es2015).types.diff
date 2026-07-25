@@ -1,0 +1,38 @@
+--- old.emitDefaultParametersFunctionExpression(target=es2015).types
++++ new.emitDefaultParametersFunctionExpression(target=es2015).types
+@@= skipped -14, +14 lines =@@
+ >"hello" : "hello"
+
+ var lambda3 = (x: number, y = "hello", ...rest) => { }
+->lambda3 : (x: number, y?: string, ...rest: any[]) => void
+->(x: number, y = "hello", ...rest) => { } : (x: number, y?: string, ...rest: any[]) => void
++>lambda3 : (x: number, y?: string, ...rest: Array<any>) => void
++>(x: number, y = "hello", ...rest) => { } : (x: number, y?: string, ...rest: Array<any>) => void
+ >x : number
+ >y : string
+ >"hello" : "hello"
+->rest : any[]
++>rest : Array<any>
+
+ var lambda4 = (y = "hello", ...rest) => { }
+->lambda4 : (y?: string, ...rest: any[]) => void
+->(y = "hello", ...rest) => { } : (y?: string, ...rest: any[]) => void
++>lambda4 : (y?: string, ...rest: Array<any>) => void
++>(y = "hello", ...rest) => { } : (y?: string, ...rest: Array<any>) => void
+ >y : string
+ >"hello" : "hello"
+->rest : any[]
++>rest : Array<any>
+
+ var x = function (str = "hello", ...rest) { }
+->x : (str?: string, ...rest: any[]) => void
+->function (str = "hello", ...rest) { } : (str?: string, ...rest: any[]) => void
++>x : (str?: string, ...rest: Array<any>) => void
++>function (str = "hello", ...rest) { } : (str?: string, ...rest: Array<any>) => void
+ >str : string
+ >"hello" : "hello"
+->rest : any[]
++>rest : Array<any>
+
+ var y = (function (num = 10, boo = false, ...rest) { })()
+ >y : void

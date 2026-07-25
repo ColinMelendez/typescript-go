@@ -1,0 +1,11 @@
+--- old.parser.asyncGenerators.objectLiteralMethods.es2018(alwaysstrict=true).types
++++ new.parser.asyncGenerators.objectLiteralMethods.es2018(alwaysstrict=true).types
+@@= skipped -188, +188 lines =@@
+
+         yield * [];
+ >yield * [] : any
+->[] : undefined[]
++>[] : Array<undefined>
+     }
+ };
+ === awaitWithValueIsOk.ts ===

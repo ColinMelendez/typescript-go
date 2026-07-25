@@ -49,7 +49,7 @@ declare namespace Data {
         //removeIndices: WinJS.Promise<IListItem<T>[]>;
         removeIndices(indices: number[], options?: any): WinJS.Promise<IListItem<T>[]>;
 >removeIndices : (indices: number[], options?: any) => WinJS.Promise<IListItem<T>[]>
->indices : number[]
+>indices : Array<number>
 >options : any
 >WinJS : any
     }
@@ -59,7 +59,7 @@ declare namespace Data {
         //removeIndices: WinJS.Promise<IListItem<T>[]>;
         public removeIndices(indices: number[], options?: any): WinJS.Promise<IListItem<T>[]>;
 >removeIndices : (indices: number[], options?: any) => WinJS.Promise<IListItem<T>[]>
->indices : number[]
+>indices : Array<number>
 >options : any
 >WinJS : any
     }

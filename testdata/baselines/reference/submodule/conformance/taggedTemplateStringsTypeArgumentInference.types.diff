@@ -1,0 +1,29 @@
+--- old.taggedTemplateStringsTypeArgumentInference.types
++++ new.taggedTemplateStringsTypeArgumentInference.types
+@@= skipped -299, +299 lines =@@
+ >`${ '' }${ 0 }${ [] }` : string
+ >'' : ""
+ >0 : 0
+->[] : never[]
++>[] : Array<never>
+
+ var a9a: {};
+ >a9a : string
+@@= skipped -80, +80 lines =@@
+
+ // Generic tag with multiple parameters of generic type where one argument is [] and the other is not 'any'
+ var arr = someGenerics9 `${ [] }${ null }${ undefined }`;
+->arr : never[] | null | undefined
+->someGenerics9 `${ [] }${ null }${ undefined }` : never[] | null | undefined
++>arr : Array<never> | null | undefined
++>someGenerics9 `${ [] }${ null }${ undefined }` : Array<never> | null | undefined
+ >someGenerics9 : <T>(strs: TemplateStringsArray, a: T, b: T, c: T) => T
+ >`${ [] }${ null }${ undefined }` : string
+->[] : never[]
++>[] : Array<never>
+ >undefined : undefined
+
+ var arr: any[];
+->arr : never[] | null | undefined
++>arr : Array<never> | null | undefined
+

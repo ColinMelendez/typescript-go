@@ -68,54 +68,54 @@ function f2() {
 >Giraffe : typeof Giraffe
 
     var aa = [ a, a, a ];
->aa : Animal[]
->[ a, a, a ] : Animal[]
+>aa : Array<Animal>
+>[ a, a, a ] : Array<Animal>
 >a : Animal
 >a : Animal
 >a : Animal
 
     var gg = [ g, g, g ];
->gg : Giraffe[]
->[ g, g, g ] : Giraffe[]
+>gg : Array<Giraffe>
+>[ g, g, g ] : Array<Giraffe>
 >g : Giraffe
 >g : Giraffe
 >g : Giraffe
 
     aa = gg;
->aa = gg : Giraffe[]
->aa : Animal[]
->gg : Giraffe[]
+>aa = gg : Array<Giraffe>
+>aa : Array<Animal>
+>gg : Array<Giraffe>
 
     gg = aa; // error
->gg = aa : Animal[]
->gg : Giraffe[]
->aa : Animal[]
+>gg = aa : Array<Animal>
+>gg : Array<Giraffe>
+>aa : Array<Animal>
 
     var xa = { f1: 5, f2: aa };
->xa : { f1: number; f2: Animal[]; }
->{ f1: 5, f2: aa } : { f1: number; f2: Animal[]; }
+>xa : { f1: number; f2: Array<Animal>; }
+>{ f1: 5, f2: aa } : { f1: number; f2: Array<Animal>; }
 >f1 : number
 >5 : 5
->f2 : Animal[]
->aa : Animal[]
+>f2 : Array<Animal>
+>aa : Array<Animal>
 
     var xb = { f1: 5, f2: gg };
->xb : { f1: number; f2: Giraffe[]; }
->{ f1: 5, f2: gg } : { f1: number; f2: Giraffe[]; }
+>xb : { f1: number; f2: Array<Giraffe>; }
+>{ f1: 5, f2: gg } : { f1: number; f2: Array<Giraffe>; }
 >f1 : number
 >5 : 5
->f2 : Giraffe[]
->gg : Giraffe[]
+>f2 : Array<Giraffe>
+>gg : Array<Giraffe>
 
     xa = xb; // Should be ok
->xa = xb : { f1: number; f2: Giraffe[]; }
->xa : { f1: number; f2: Animal[]; }
->xb : { f1: number; f2: Giraffe[]; }
+>xa = xb : { f1: number; f2: Array<Giraffe>; }
+>xa : { f1: number; f2: Array<Animal>; }
+>xb : { f1: number; f2: Array<Giraffe>; }
 
     xb = xa; // Not ok
->xb = xa : { f1: number; f2: Animal[]; }
->xb : { f1: number; f2: Giraffe[]; }
->xa : { f1: number; f2: Animal[]; }
+>xb = xa : { f1: number; f2: Array<Animal>; }
+>xb : { f1: number; f2: Array<Giraffe>; }
+>xa : { f1: number; f2: Array<Animal>; }
 }
 
 function f4() {

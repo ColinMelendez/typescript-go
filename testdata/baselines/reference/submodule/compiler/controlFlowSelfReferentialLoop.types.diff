@@ -1,0 +1,611 @@
+--- old.controlFlowSelfReferentialLoop.types
++++ new.controlFlowSelfReferentialLoop.types
+@@= skipped -67, +67 lines =@@
+     };
+
+     var x=Array();
+->x : any[]
+->Array() : any[]
++>x : Array<any>
++>Array() : Array<any>
+ >Array : ArrayConstructor
+
+     var k,AA,BB,CC,DD,a,b,c,d;
+@@= skipped -56, +56 lines =@@
+ >21 : 21
+
+     x = [1];
+->x = [1] : number[]
+->x : any[]
+->[1] : number[]
++>x = [1] : Array<number>
++>x : Array<any>
++>[1] : Array<number>
+ >1 : 1
+
+     a = 0x67452301; b = 0xEFCDAB89; c = 0x98BADCFE; d = 0x10325476;
+@@= skipped -26, +26 lines =@@
+ >k<x.length : boolean
+ >k : number
+ >x.length : number
+->x : any[]
++>x : Array<any>
+ >length : number
+ >k+=16 : number
+ >k : number
+@@= skipped -30, +30 lines =@@
+ >c : number
+ >d : number
+ >x[k+0] : any
+->x : any[]
++>x : Array<any>
+ >k+0 : number
+ >k : number
+ >0 : 0
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+1] : any
+->x : any[]
++>x : Array<any>
+ >k+1 : number
+ >k : number
+ >1 : 1
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+2] : any
+->x : any[]
++>x : Array<any>
+ >k+2 : number
+ >k : number
+ >2 : 2
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+3] : any
+->x : any[]
++>x : Array<any>
+ >k+3 : number
+ >k : number
+ >3 : 3
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+4] : any
+->x : any[]
++>x : Array<any>
+ >k+4 : number
+ >k : number
+ >4 : 4
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+5] : any
+->x : any[]
++>x : Array<any>
+ >k+5 : number
+ >k : number
+ >5 : 5
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+6] : any
+->x : any[]
++>x : Array<any>
+ >k+6 : number
+ >k : number
+ >6 : 6
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+7] : any
+->x : any[]
++>x : Array<any>
+ >k+7 : number
+ >k : number
+ >7 : 7
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+8] : any
+->x : any[]
++>x : Array<any>
+ >k+8 : number
+ >k : number
+ >8 : 8
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+9] : any
+->x : any[]
++>x : Array<any>
+ >k+9 : number
+ >k : number
+ >9 : 9
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+10] : any
+->x : any[]
++>x : Array<any>
+ >k+10 : number
+ >k : number
+ >10 : 10
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+11] : any
+->x : any[]
++>x : Array<any>
+ >k+11 : number
+ >k : number
+ >11 : 11
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+12] : any
+->x : any[]
++>x : Array<any>
+ >k+12 : number
+ >k : number
+ >12 : 12
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+13] : any
+->x : any[]
++>x : Array<any>
+ >k+13 : number
+ >k : number
+ >13 : 13
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+14] : any
+->x : any[]
++>x : Array<any>
+ >k+14 : number
+ >k : number
+ >14 : 14
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+15] : any
+->x : any[]
++>x : Array<any>
+ >k+15 : number
+ >k : number
+ >15 : 15
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+1] : any
+->x : any[]
++>x : Array<any>
+ >k+1 : number
+ >k : number
+ >1 : 1
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+6] : any
+->x : any[]
++>x : Array<any>
+ >k+6 : number
+ >k : number
+ >6 : 6
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+11] : any
+->x : any[]
++>x : Array<any>
+ >k+11 : number
+ >k : number
+ >11 : 11
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+0] : any
+->x : any[]
++>x : Array<any>
+ >k+0 : number
+ >k : number
+ >0 : 0
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+5] : any
+->x : any[]
++>x : Array<any>
+ >k+5 : number
+ >k : number
+ >5 : 5
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+10] : any
+->x : any[]
++>x : Array<any>
+ >k+10 : number
+ >k : number
+ >10 : 10
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+15] : any
+->x : any[]
++>x : Array<any>
+ >k+15 : number
+ >k : number
+ >15 : 15
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+4] : any
+->x : any[]
++>x : Array<any>
+ >k+4 : number
+ >k : number
+ >4 : 4
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+9] : any
+->x : any[]
++>x : Array<any>
+ >k+9 : number
+ >k : number
+ >9 : 9
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+14] : any
+->x : any[]
++>x : Array<any>
+ >k+14 : number
+ >k : number
+ >14 : 14
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+3] : any
+->x : any[]
++>x : Array<any>
+ >k+3 : number
+ >k : number
+ >3 : 3
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+8] : any
+->x : any[]
++>x : Array<any>
+ >k+8 : number
+ >k : number
+ >8 : 8
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+13] : any
+->x : any[]
++>x : Array<any>
+ >k+13 : number
+ >k : number
+ >13 : 13
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+2] : any
+->x : any[]
++>x : Array<any>
+ >k+2 : number
+ >k : number
+ >2 : 2
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+7] : any
+->x : any[]
++>x : Array<any>
+ >k+7 : number
+ >k : number
+ >7 : 7
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+12] : any
+->x : any[]
++>x : Array<any>
+ >k+12 : number
+ >k : number
+ >12 : 12
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+5] : any
+->x : any[]
++>x : Array<any>
+ >k+5 : number
+ >k : number
+ >5 : 5
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+8] : any
+->x : any[]
++>x : Array<any>
+ >k+8 : number
+ >k : number
+ >8 : 8
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+11] : any
+->x : any[]
++>x : Array<any>
+ >k+11 : number
+ >k : number
+ >11 : 11
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+14] : any
+->x : any[]
++>x : Array<any>
+ >k+14 : number
+ >k : number
+ >14 : 14
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+1] : any
+->x : any[]
++>x : Array<any>
+ >k+1 : number
+ >k : number
+ >1 : 1
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+4] : any
+->x : any[]
++>x : Array<any>
+ >k+4 : number
+ >k : number
+ >4 : 4
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+7] : any
+->x : any[]
++>x : Array<any>
+ >k+7 : number
+ >k : number
+ >7 : 7
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+10] : any
+->x : any[]
++>x : Array<any>
+ >k+10 : number
+ >k : number
+ >10 : 10
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+13] : any
+->x : any[]
++>x : Array<any>
+ >k+13 : number
+ >k : number
+ >13 : 13
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+0] : any
+->x : any[]
++>x : Array<any>
+ >k+0 : number
+ >k : number
+ >0 : 0
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+3] : any
+->x : any[]
++>x : Array<any>
+ >k+3 : number
+ >k : number
+ >3 : 3
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+6] : any
+->x : any[]
++>x : Array<any>
+ >k+6 : number
+ >k : number
+ >6 : 6
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+9] : any
+->x : any[]
++>x : Array<any>
+ >k+9 : number
+ >k : number
+ >9 : 9
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+12] : any
+->x : any[]
++>x : Array<any>
+ >k+12 : number
+ >k : number
+ >12 : 12
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+15] : any
+->x : any[]
++>x : Array<any>
+ >k+15 : number
+ >k : number
+ >15 : 15
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+2] : any
+->x : any[]
++>x : Array<any>
+ >k+2 : number
+ >k : number
+ >2 : 2
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+0] : any
+->x : any[]
++>x : Array<any>
+ >k+0 : number
+ >k : number
+ >0 : 0
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+7] : any
+->x : any[]
++>x : Array<any>
+ >k+7 : number
+ >k : number
+ >7 : 7
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+14] : any
+->x : any[]
++>x : Array<any>
+ >k+14 : number
+ >k : number
+ >14 : 14
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+5] : any
+->x : any[]
++>x : Array<any>
+ >k+5 : number
+ >k : number
+ >5 : 5
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+12] : any
+->x : any[]
++>x : Array<any>
+ >k+12 : number
+ >k : number
+ >12 : 12
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+3] : any
+->x : any[]
++>x : Array<any>
+ >k+3 : number
+ >k : number
+ >3 : 3
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+10] : any
+->x : any[]
++>x : Array<any>
+ >k+10 : number
+ >k : number
+ >10 : 10
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+1] : any
+->x : any[]
++>x : Array<any>
+ >k+1 : number
+ >k : number
+ >1 : 1
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+8] : any
+->x : any[]
++>x : Array<any>
+ >k+8 : number
+ >k : number
+ >8 : 8
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+15] : any
+->x : any[]
++>x : Array<any>
+ >k+15 : number
+ >k : number
+ >15 : 15
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+6] : any
+->x : any[]
++>x : Array<any>
+ >k+6 : number
+ >k : number
+ >6 : 6
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+13] : any
+->x : any[]
++>x : Array<any>
+ >k+13 : number
+ >k : number
+ >13 : 13
+@@= skipped -17, +17 lines =@@
+ >c : number
+ >d : number
+ >x[k+4] : any
+->x : any[]
++>x : Array<any>
+ >k+4 : number
+ >k : number
+ >4 : 4
+@@= skipped -17, +17 lines =@@
+ >b : number
+ >c : number
+ >x[k+11] : any
+->x : any[]
++>x : Array<any>
+ >k+11 : number
+ >k : number
+ >11 : 11
+@@= skipped -17, +17 lines =@@
+ >a : number
+ >b : number
+ >x[k+2] : any
+->x : any[]
++>x : Array<any>
+ >k+2 : number
+ >k : number
+ >2 : 2
+@@= skipped -17, +17 lines =@@
+ >d : number
+ >a : number
+ >x[k+9] : any
+->x : any[]
++>x : Array<any>
+ >k+9 : number
+ >k : number
+ >9 : 9

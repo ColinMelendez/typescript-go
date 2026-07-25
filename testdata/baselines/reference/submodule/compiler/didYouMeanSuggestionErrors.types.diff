@@ -1,0 +1,11 @@
+--- old.didYouMeanSuggestionErrors.types
++++ new.didYouMeanSuggestionErrors.types
+@@= skipped -61, +61 lines =@@
+ >Buffer.from : any
+ >Buffer : any
+ >from : any
+->[] : never[]
++>[] : Array<never>
+
+         const z = module.exports;
+ >z : any

@@ -71,7 +71,7 @@ ae = null;
 >ae : E
 
 var m: number[] = null;
->m : number[]
+>m : Array<number>
 
 var n: { foo: string } = null;
 >n : { foo: string; }

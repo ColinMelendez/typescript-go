@@ -1,0 +1,164 @@
+--- old.restParametersWithArrayTypeAnnotations.types
++++ new.restParametersWithArrayTypeAnnotations.types
+@@= skipped -4, +4 lines =@@
+
+ function foo(...x: number[]) { }
+ >foo : (...x: number[]) => void
+->x : number[]
++>x : Array<number>
+
+ var f = function foo(...x: number[]) { }
+ >f : (...x: number[]) => void
+ >function foo(...x: number[]) { } : (...x: number[]) => void
+ >foo : (...x: number[]) => void
+->x : number[]
++>x : Array<number>
+
+ var f2 = (...x: number[], ...y: number[]) => { }
+ >f2 : (...x: number[], ...y: number[]) => void
+ >(...x: number[], ...y: number[]) => { } : (...x: number[], ...y: number[]) => void
+->x : number[]
+->y : number[]
++>x : Array<number>
++>y : Array<number>
+
+ class C {
+ >C : C
+
+     foo(...x: number[]) { }
+ >foo : (...x: number[]) => void
+->x : number[]
++>x : Array<number>
+ }
+
+ interface I {
+     (...x: number[]);
+->x : number[]
++>x : Array<number>
+
+     foo(...x: number[], ...y: number[]);
+ >foo : (...x: number[], ...y: number[]) => any
+->x : number[]
+->y : number[]
++>x : Array<number>
++>y : Array<number>
+ }
+
+ var a: {
+ >a : { (...x: number[]): any; foo(...x: number[]): any; }
+
+     (...x: number[]);
+->x : number[]
++>x : Array<number>
+
+     foo(...x: number[]);
+ >foo : (...x: number[]) => any
+->x : number[]
++>x : Array<number>
+ }
+
+ var b = {
+@@= skipped -49, +49 lines =@@
+
+     foo(...x: number[]) { },
+ >foo : (...x: number[]) => void
+->x : number[]
++>x : Array<number>
+
+     a: function foo(...x: number[], ...y: number[]) { },
+ >a : (...x: number[], ...y: number[]) => void
+ >function foo(...x: number[], ...y: number[]) { } : (...x: number[], ...y: number[]) => void
+ >foo : (...x: number[], ...y: number[]) => void
+->x : number[]
+->y : number[]
++>x : Array<number>
++>y : Array<number>
+
+     b: (...x: number[]) => { }
+ >b : (...x: number[]) => void
+ >(...x: number[]) => { } : (...x: number[]) => void
+->x : number[]
++>x : Array<number>
+ }
+
+
+@@= skipped -20, +20 lines =@@
+
+ function foo2(...x: Array<string>) { }
+ >foo2 : (...x: Array<string>) => void
+->x : string[]
++>x : Array<string>
+
+ var f3 = function foo(...x: Array<string>) { }
+ >f3 : (...x: Array<string>) => void
+ >function foo(...x: Array<string>) { } : (...x: Array<string>) => void
+ >foo : (...x: Array<string>) => void
+->x : string[]
++>x : Array<string>
+
+ var f4 = (...x: Array<string>, ...y: Array<string>) => { }
+ >f4 : (...x: Array<string>, ...y: Array<string>) => void
+ >(...x: Array<string>, ...y: Array<string>) => { } : (...x: Array<string>, ...y: Array<string>) => void
+->x : string[]
+->y : string[]
++>x : Array<string>
++>y : Array<string>
+
+ class C2 {
+ >C2 : C2
+
+     foo(...x: Array<string>) { }
+ >foo : (...x: Array<string>) => void
+->x : string[]
++>x : Array<string>
+ }
+
+ interface I2 {
+     (...x: Array<string>);
+->x : string[]
++>x : Array<string>
+
+     foo(...x: Array<string>, ...y: Array<string>);
+ >foo : (...x: Array<string>, ...y: Array<string>) => any
+->x : string[]
+->y : string[]
++>x : Array<string>
++>y : Array<string>
+ }
+
+ var a2: {
+ >a2 : { (...x: Array<string>): any; foo(...x: Array<string>): any; }
+
+     (...x: Array<string>);
+->x : string[]
++>x : Array<string>
+
+     foo(...x: Array<string>);
+ >foo : (...x: Array<string>) => any
+->x : string[]
++>x : Array<string>
+ }
+
+ var b2 = {
+@@= skipped -49, +49 lines =@@
+
+     foo(...x: Array<string>) { },
+ >foo : (...x: Array<string>) => void
+->x : string[]
++>x : Array<string>
+
+     a: function foo(...x: Array<string>, ...y: Array<string>) { },
+ >a : (...x: Array<string>, ...y: Array<string>) => void
+ >function foo(...x: Array<string>, ...y: Array<string>) { } : (...x: Array<string>, ...y: Array<string>) => void
+ >foo : (...x: Array<string>, ...y: Array<string>) => void
+->x : string[]
+->y : string[]
++>x : Array<string>
++>y : Array<string>
+
+     b: (...x: Array<string>) => { }
+ >b : (...x: Array<string>) => void
+ >(...x: Array<string>) => { } : (...x: Array<string>) => void
+->x : string[]
++>x : Array<string>
+ }

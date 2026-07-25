@@ -3,7 +3,7 @@
 === objectLiteralsAgainstUnionsOfArrays01.ts ===
 interface Foo {
   bar: Bar | Bar[];
->bar : Bar[] | Bar
+>bar : Array<Bar> | Bar
 }
 
 interface Bar {
@@ -12,8 +12,8 @@ interface Bar {
 }
 
 let x: Foo[] = [
->x : Foo[]
->[  { bar: { prop: 100 } }] : { bar: { prop: number; }; }[]
+>x : Array<Foo>
+>[  { bar: { prop: 100 } }] : Array<{ bar: { prop: number; }; }>
 
   { bar: { prop: 100 } }
 >{ bar: { prop: 100 } } : { bar: { prop: number; }; }

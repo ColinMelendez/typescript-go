@@ -1,0 +1,9 @@
+--- old.parserMemberAccessorDeclaration18(target=es2015).types
++++ new.parserMemberAccessorDeclaration18(target=es2015).types
+@@= skipped -5, +5 lines =@@
+
+    set Foo(...a) { }
+ >Foo : any
+->a : any[]
++>a : Array<any>
+ }

@@ -5,14 +5,14 @@ class Module {
 >Module : Module
 
     public members: Class[];
->members : Class[]
+>members : Array<Class>
 }
 
 class Namespace {
 >Namespace : Namespace
 
     public members: (Class | Property)[];
->members : (Class | Property)[]
+>members : Array<Class | Property>
 }
 
 class Class {

@@ -62,7 +62,7 @@ var l: (x: number) => string;
 >x : number
 
 var m: number[];
->m : number[]
+>m : Array<number>
 
 var n: { foo: string };
 >n : { foo: string; }
@@ -134,9 +134,9 @@ a = l;
 >l : (x: number) => string
 
 a = m;
->a = m : number[]
+>a = m : Array<number>
 >a : any
->m : number[]
+>m : Array<number>
 
 a = o;
 >a = o : <T>(x: T) => T

@@ -9,7 +9,7 @@ function foo<T extends string[]>(
     fa: (s: string, ...args: string[]) => string,
 >fa : (s: string, ...args: string[]) => string
 >s : string
->args : string[]
+>args : Array<string>
 
     fb: (s: string, ...args: T) => string
 >fb : (s: string, ...args: T) => string
@@ -24,7 +24,7 @@ function foo<T extends string[]>(
 
     const f2: (...args: any[]) => string = fa;
 >f2 : (...args: any[]) => string
->args : any[]
+>args : Array<any>
 >fa : (s: string, ...args: string[]) => string
 
     const f3: (...args: any) => string = fb;
@@ -34,7 +34,7 @@ function foo<T extends string[]>(
 
     const f4: (...args: any[]) => string = fb;
 >f4 : (...args: any[]) => string
->args : any[]
+>args : Array<any>
 >fb : (s: string, ...args: T) => string
 }
 
@@ -48,7 +48,7 @@ function bar<T extends string[], K extends number>() {
 >T01 : any
 
     type T02 = string[][K | "0"];
->T02 : string[]["0" | K]
+>T02 : Array<string>["0" | K]
 
     type T10 = T["0"];
 >T10 : T["0"]

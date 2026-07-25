@@ -1,0 +1,11 @@
+--- old.reverseMappedTypeInferenceWidening1.types
++++ new.reverseMappedTypeInferenceWidening1.types
+@@= skipped -4, +4 lines =@@
+
+ type TypeFunction<ReturnType = unknown> = (...args: any[]) => ReturnType;
+ >TypeFunction : TypeFunction<ReturnType>
+->args : any[]
++>args : Array<any>
+
+ type Flags = {
+ >Flags : Flags

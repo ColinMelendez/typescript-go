@@ -97,7 +97,7 @@ function foo() {
 
     for (let a of []) {
 >a : any
->[] : undefined[]
+>[] : Array<undefined>
         
         if (a === 1) {
 >a === 1 : boolean
@@ -118,7 +118,7 @@ function foo() {
         
         for (let b of []) {
 >b : any
->[] : undefined[]
+>[] : Array<undefined>
 
             var [{x, y:z}] = [{x:1, y:2}];
 >x : number
@@ -167,7 +167,7 @@ function foo() {
 
         for (let b of []) {
 >b : any
->[] : undefined[]
+>[] : Array<undefined>
 
             var [{x1, y:z1}] = [{x1:1, y:arguments.length}];
 >x1 : number
@@ -238,7 +238,7 @@ function foo2() {
 
     for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         if (x === 1) {
 >x === 1 : boolean
@@ -282,7 +282,7 @@ function foo2() {
         
         for (let y of []) {
 >y : any
->[] : undefined[]
+>[] : Array<undefined>
 
             switch(y) {
 >y : any
@@ -338,7 +338,7 @@ function foo3 () {
 
     for (let y of []) {
 >y : any
->[] : undefined[]
+>[] : Array<undefined>
 
         let z = arguments.length;
 >z : number

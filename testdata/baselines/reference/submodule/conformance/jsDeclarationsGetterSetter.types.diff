@@ -1,0 +1,10 @@
+--- old.jsDeclarationsGetterSetter.types
++++ new.jsDeclarationsGetterSetter.types
+@@= skipped -132, +132 lines =@@
+      */
+     set(...args) {}
+ >set : (...args: number[]) => void
+->args : number[]
++>args : Array<number>
+
+ });

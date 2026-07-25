@@ -1,0 +1,23 @@
+--- old.typeParameterAsTypeParameterConstraint2.errors.txt
++++ new.typeParameterAsTypeParameterConstraint2.errors.txt
+@@= skipped -3, +3 lines =@@
+ typeParameterAsTypeParameterConstraint2.ts(13,17): error TS2454: Variable 'n' is used before being assigned.
+ typeParameterAsTypeParameterConstraint2.ts(16,11): error TS2322: Type 'string' is not assignable to type 'number'.
+ typeParameterAsTypeParameterConstraint2.ts(17,11): error TS2322: Type '{}' is not assignable to type 'number'.
+-typeParameterAsTypeParameterConstraint2.ts(18,10): error TS2345: Argument of type 'string[]' is not assignable to parameter of type '{ length: never[]; }'.
++typeParameterAsTypeParameterConstraint2.ts(18,10): error TS2345: Argument of type 'Array<string>' is not assignable to parameter of type '{ length: Array<never>; }'.
+   Types of property 'length' are incompatible.
+-    Type 'number' is not assignable to type 'never[]'.
++    Type 'number' is not assignable to type 'Array<never>'.
+
+
+ ==== typeParameterAsTypeParameterConstraint2.ts (7 errors) ====
+@@= skipped -39, +39 lines =@@
+ !!! related TS6500 typeParameterAsTypeParameterConstraint2.ts:15:30: The expected type comes from property 'length' which is declared here on type '{ length: number; }'
+     foo2([], ['']);
+              ~~~~
+-!!! error TS2345: Argument of type 'string[]' is not assignable to parameter of type '{ length: never[]; }'.
++!!! error TS2345: Argument of type 'Array<string>' is not assignable to parameter of type '{ length: Array<never>; }'.
+ !!! error TS2345:   Types of property 'length' are incompatible.
+-!!! error TS2345:     Type 'number' is not assignable to type 'never[]'.
++!!! error TS2345:     Type 'number' is not assignable to type 'Array<never>'.

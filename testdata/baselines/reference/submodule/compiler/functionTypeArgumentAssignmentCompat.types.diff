@@ -1,0 +1,13 @@
+--- old.functionTypeArgumentAssignmentCompat.types
++++ new.functionTypeArgumentAssignmentCompat.types
+@@= skipped -12, +12 lines =@@
+
+  <S>() : S[];
+ } = () => [];
+->() => [] : () => never[]
+->[] : never[]
++>() => [] : () => Array<never>
++>[] : Array<never>
+
+ f = g;
+ >f = g : <S>() => S[]

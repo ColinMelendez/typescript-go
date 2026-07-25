@@ -1,0 +1,11 @@
+--- old.genericInheritedDefaultConstructors.types
++++ new.genericInheritedDefaultConstructors.types
+@@= skipped -3, +3 lines =@@
+ // repro from #8166
+ interface Constructor<T> {
+     new(...args: any[]): T;
+->args : any[]
++>args : Array<any>
+
+     prototype: T;
+ >prototype : T

@@ -1,0 +1,8 @@
+--- old.propagateNonInferrableType.types
++++ new.propagateNonInferrableType.types
+@@= skipped -13, +13 lines =@@
+ >resolver() || [] : () => void
+ >resolver() : () => void
+ >resolver : <T>() => () => void
+->[] : never[]
++>[] : Array<never>

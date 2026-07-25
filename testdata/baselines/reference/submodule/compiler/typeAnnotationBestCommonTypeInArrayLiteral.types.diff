@@ -1,0 +1,12 @@
+--- old.typeAnnotationBestCommonTypeInArrayLiteral.types
++++ new.typeAnnotationBestCommonTypeInArrayLiteral.types
+@@= skipped -20, +20 lines =@@
+ >icon : string | undefined
+ }
+ var menuData: IMenuItem[] = [
+->menuData : IMenuItem[]
+->[    {        "id": "ourLogo",        "type": "image",        "link": "",        "icon": "modules/menu/logo.svg"    }, {        "id": "productName",        "type": "default",        "link": "",        "text": "Product Name"    }] : ({ id: string; type: string; link: string; icon: string; } | { id: string; type: string; link: string; text: string; })[]
++>menuData : Array<IMenuItem>
++>[    {        "id": "ourLogo",        "type": "image",        "link": "",        "icon": "modules/menu/logo.svg"    }, {        "id": "productName",        "type": "default",        "link": "",        "text": "Product Name"    }] : Array<{ id: string; type: string; link: string; icon: string; } | { id: string; type: string; link: string; text: string; }>
+     {
+ >{        "id": "ourLogo",        "type": "image",        "link": "",        "icon": "modules/menu/logo.svg"    } : { id: string; type: string; link: string; icon: string; }

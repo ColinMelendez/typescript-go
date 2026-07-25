@@ -1,0 +1,11 @@
+--- old.ES5For-of31(target=es2015).types
++++ new.ES5For-of31(target=es2015).types
+@@= skipped -14, +14 lines =@@
+ >a = "" : ""
+ >a : string
+ >"" : ""
+->[] : never[]
++>[] : Array<never>
+
+     a;
+ >a : string

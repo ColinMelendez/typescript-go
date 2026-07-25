@@ -1,0 +1,17 @@
+--- old.declarationEmitInferredUndefinedPropFromFunctionInArray.js
++++ new.declarationEmitInferredUndefinedPropFromFunctionInArray.js
+@@= skipped -13, +13 lines =@@
+
+
+ //// [declarationEmitInferredUndefinedPropFromFunctionInArray.d.ts]
+-export declare let b: ({
++export declare let b: Array<{
+     foo: number;
+     m(): void;
+     bar?: undefined;
+@@= skipped -8, +8 lines =@@
+     foo?: undefined;
+     m?: undefined;
+     bar: number;
+-})[];
++}>;

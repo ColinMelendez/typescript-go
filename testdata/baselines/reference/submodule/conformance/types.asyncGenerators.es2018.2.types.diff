@@ -1,0 +1,70 @@
+--- old.types.asyncGenerators.es2018.2.types
++++ new.types.asyncGenerators.es2018.2.types
+@@= skipped -20, +20 lines =@@
+
+     yield* Promise.resolve([1, 2]);
+ >yield* Promise.resolve([1, 2]) : any
+->Promise.resolve([1, 2]) : Promise<number[]>
++>Promise.resolve([1, 2]) : Promise<Array<number>>
+ >Promise.resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+ >Promise : PromiseConstructor
+ >resolve : { (): Promise<void>; <T>(value: T): Promise<Awaited<T>>; <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>; }
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+ }
+@@= skipped -23, +23 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+
+@@= skipped -33, +33 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+
+@@= skipped -33, +33 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+
+@@= skipped -30, +30 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ }
+@@= skipped -27, +27 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ }
+@@= skipped -27, +27 lines =@@
+
+     yield* ["a", "b"];
+ >yield* ["a", "b"] : any
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+ }

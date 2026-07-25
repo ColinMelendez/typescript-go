@@ -1,0 +1,11 @@
+--- old.decoratorReferences.types
++++ new.decoratorReferences.types
+@@= skipped -2, +2 lines =@@
+ === decoratorReferences.ts ===
+ declare function y(...args: any[]): any;
+ >y : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ type T = number;
+ >T : number

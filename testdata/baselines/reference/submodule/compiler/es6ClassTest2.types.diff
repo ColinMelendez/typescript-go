@@ -1,0 +1,16 @@
+--- old.es6ClassTest2.types
++++ new.es6ClassTest2.types
+@@= skipped -227, +227 lines =@@
+ >SplatMonster : SplatMonster
+
+     constructor(...args: string[]) { }
+->args : string[]
++>args : Array<string>
+
+     roar(name: string, ...args: number[]) { }
+ >roar : (name: string, ...args: number[]) => void
+ >name : string
+->args : number[]
++>args : Array<number>
+ }
+

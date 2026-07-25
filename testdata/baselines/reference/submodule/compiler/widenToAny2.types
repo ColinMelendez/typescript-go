@@ -3,7 +3,7 @@
 === widenToAny2.ts ===
 function foo3<T>(x: T[]): T {
 >foo3 : <T>(x: T[]) => T
->x : T[]
+>x : Array<T>
 
     return undefined;
 >undefined : undefined
@@ -12,7 +12,7 @@ var z3:number = foo3([undefined, "def"]);  // Type is any, but should be string
 >z3 : number
 >foo3([undefined, "def"]) : string | undefined
 >foo3 : <T>(x: T[]) => T
->[undefined, "def"] : (string | undefined)[]
+>[undefined, "def"] : Array<string | undefined>
 >undefined : undefined
 >"def" : "def"
 

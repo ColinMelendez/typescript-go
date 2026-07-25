@@ -1,0 +1,11 @@
+--- old.recursiveTypeComparison2.types
++++ new.recursiveTypeComparison2.types
+@@= skipped -63, +63 lines =@@
+
+         withDescription(...args: any[]): Observable<T>;
+ >withDescription : (...args: any[]) => Observable<T>
+->args : any[]
++>args : Array<any>
+     }
+     interface Property<T> extends Observable<T> {
+     }

@@ -141,7 +141,16 @@
  >x : any
 
  class C implements String {
-@@= skipped -201, +201 lines =@@
+@@= skipped -125, +125 lines =@@
+
+     concat(...strings: string[]): string { return null; }
+ >concat : (...strings: string[]) => string
+->strings : string[]
++>strings : Array<string>
+
+     indexOf(searchString: string, position?: number): number { return null; }
+ >indexOf : (searchString: string, position?: number) => number
+@@= skipped -76, +76 lines =@@
 
  // BUG 831846
  function f10(x: 'a');

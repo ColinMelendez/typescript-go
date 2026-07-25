@@ -9,7 +9,7 @@ class C {
     /** @type {Bars} */
     foo = ["abc", "def"]
 >foo : Bars
->["abc", "def"] : string[]
+>["abc", "def"] : Array<string>
 >"abc" : "abc"
 >"def" : "def"
 

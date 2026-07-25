@@ -52,7 +52,7 @@ namespace A {
 >2 : 2
     }
     var array: I[] = null;
->array : I[]
+>array : Array<I>
 
     var fn = (s: string) => {
 >fn : (s: string) => string
@@ -133,7 +133,7 @@ namespace Y {
 >2 : 2
     }
     export var array: I[] = null;
->array : I[]
+>array : Array<I>
 
     export var fn = (s: string) => {
 >fn : (s: string) => string

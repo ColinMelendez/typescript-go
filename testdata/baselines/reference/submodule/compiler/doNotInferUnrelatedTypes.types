@@ -4,17 +4,17 @@
 // #16709
 declare function dearray<T>(ara: ReadonlyArray<T>): T;
 >dearray : <T>(ara: ReadonlyArray<T>) => T
->ara : readonly T[]
+>ara : ReadonlyArray<T>
 
 type LiteralType = "foo" | "bar";
 >LiteralType : LiteralType
 
 declare var alt: Array<LiteralType>;
->alt : LiteralType[]
+>alt : Array<LiteralType>
 
 let foo: LiteralType = dearray(alt);
 >foo : LiteralType
 >dearray(alt) : LiteralType
 >dearray : <T>(ara: ReadonlyArray<T>) => T
->alt : LiteralType[]
+>alt : Array<LiteralType>
 

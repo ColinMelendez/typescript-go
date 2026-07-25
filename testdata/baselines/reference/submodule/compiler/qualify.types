@@ -98,7 +98,7 @@ namespace Everest {
 >v1 : I4
 
         var v3:K1.I3[]=v1;
->v3 : K1.I3[]
+>v3 : Array<K1.I3>
 >K1 : any
 >v1 : I4
 

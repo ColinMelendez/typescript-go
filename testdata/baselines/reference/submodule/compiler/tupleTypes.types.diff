@@ -1,0 +1,58 @@
+--- old.tupleTypes.types
++++ new.tupleTypes.types
+@@= skipped -181, +181 lines =@@
+ >[] : []
+
+ var a: number[];
+->a : number[]
++>a : Array<number>
+
+ var a1: [number, string];
+ >a1 : [number, string]
+@@= skipped -13, +13 lines =@@
+
+ a = a1;   // Error
+ >a = a1 : [number, string]
+->a : number[]
++>a : Array<number>
+ >a1 : [number, string]
+
+ a = a2;
+ >a = a2 : [number, number]
+->a : number[]
++>a : Array<number>
+ >a2 : [number, number]
+
+ a = a3;   // Error
+ >a = a3 : [number, {}]
+->a : number[]
++>a : Array<number>
+ >a3 : [number, {}]
+
+ a1 = a2;  // Error
+@@= skipped -57, +57 lines =@@
+ >0 : 0
+
+ declare const b2: readonly [number, ...number[]];
+->b2 : readonly [number, ...number[]]
++>b2 : readonly [number, ...Array<number>]
+
+ b2.length = 0; // Error
+ >b2.length = 0 : 0
+ >b2.length : any
+->b2 : readonly [number, ...number[]]
++>b2 : readonly [number, ...Array<number>]
+ >length : any
+ >0 : 0
+
+ declare const b3: readonly number[];
+->b3 : readonly number[]
++>b3 : ReadonlyArray<number>
+
+ b3.length = 0; // Error
+ >b3.length = 0 : 0
+ >b3.length : any
+->b3 : readonly number[]
++>b3 : ReadonlyArray<number>
+ >length : any
+ >0 : 0

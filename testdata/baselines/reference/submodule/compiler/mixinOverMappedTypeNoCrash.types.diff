@@ -1,6 +1,27 @@
 --- old.mixinOverMappedTypeNoCrash.types
 +++ new.mixinOverMappedTypeNoCrash.types
-@@= skipped -38, +38 lines =@@
+@@= skipped -10, +10 lines =@@
+ >InstanceInterface : InstanceInterface<I>
+
+     new(...args: any[]): I
+->args : any[]
++>args : Array<any>
+
+     prototype: I
+ >prototype : I
+@@= skipped -18, +18 lines =@@
+ >OriginalClass : {}
+
+         constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+             super(...args)
+ >super(...args) : void
+ >super : T
+ >...args : any
+->args : any[]
++>args : Array<any>
          }
      }
      return AnotherOriginalClass

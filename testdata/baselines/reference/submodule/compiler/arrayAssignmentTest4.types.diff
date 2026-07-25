@@ -1,0 +1,22 @@
+--- old.arrayAssignmentTest4.types
++++ new.arrayAssignmentTest4.types
+@@= skipped -32, +32 lines =@@
+ >1 : 1
+
+ var arr_any: any[] = [];
+->arr_any : any[]
+->[] : undefined[]
++>arr_any : Array<any>
++>[] : Array<undefined>
+
+ arr_any = function () { return null;} // should be an error - is
+ >arr_any = function () { return null;} : () => any
+->arr_any : any[]
++>arr_any : Array<any>
+ >function () { return null;} : () => any
+
+ arr_any = c3; // should be an error - is
+ >arr_any = c3 : C3
+->arr_any : any[]
++>arr_any : Array<any>
+ >c3 : C3

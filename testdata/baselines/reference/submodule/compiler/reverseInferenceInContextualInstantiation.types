@@ -8,12 +8,12 @@ function compare<T>(a: T, b: T): number { return 0; }
 >0 : 0
 
 var x: number[];
->x : number[]
+>x : Array<number>
 
 x.sort(compare); // Error, but shouldn't be
->x.sort(compare) : number[]
->x.sort : (compareFn?: ((a: number, b: number) => number) | undefined) => number[]
->x : number[]
->sort : (compareFn?: ((a: number, b: number) => number) | undefined) => number[]
+>x.sort(compare) : Array<number>
+>x.sort : (compareFn?: ((a: number, b: number) => number) | undefined) => Array<number>
+>x : Array<number>
+>sort : (compareFn?: ((a: number, b: number) => number) | undefined) => Array<number>
 >compare : <T>(a: T, b: T) => number
 

@@ -56,7 +56,7 @@ namespace Test {
 >FileSystemObject : FileSystemObject
 
 		children: FileSystemObject[];
->children : FileSystemObject[]
+>children : Array<FileSystemObject>
 	}
 	export interface Networked {
 		host: string;

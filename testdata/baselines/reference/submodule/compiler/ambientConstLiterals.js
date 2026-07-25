@@ -72,7 +72,7 @@ declare const c8b = E["non identifier"];
 declare const c9: {
     x: string;
 };
-declare const c10: number[];
+declare const c10: Array<number>;
 declare const c11: string;
 declare const c12: number;
 declare const c13: string;

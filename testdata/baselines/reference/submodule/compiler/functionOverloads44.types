@@ -12,12 +12,12 @@ interface Cat extends Animal { cat }
 
 function foo1(bar: { a:number }[]): Dog;
 >foo1 : { (bar: { a: number; }[]): Dog; (bar: { a: string; }[]): Animal; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo1(bar: { a:string }[]): Animal;
 >foo1 : { (bar: { a: number; }[]): Dog; (bar: { a: string; }[]): Animal; }
->bar : { a: string; }[]
+>bar : Array<{ a: string; }>
 >a : string
 
 function foo1([x]: { a:number | string }[]): Dog {
@@ -31,12 +31,12 @@ function foo1([x]: { a:number | string }[]): Dog {
 
 function foo2(bar: { a:number }[]): Cat;
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Cat | Dog; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo2(bar: { a:string }[]): Cat | Dog;
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Cat | Dog; }
->bar : { a: string; }[]
+>bar : Array<{ a: string; }>
 >a : string
 
 function foo2([x]: { a:number | string }[]): Cat {
@@ -53,7 +53,7 @@ var x1 = foo1([{a: "str"}]);
 >x1 : Animal
 >foo1([{a: "str"}]) : Animal
 >foo1 : { (bar: { a: number; }[]): Dog; (bar: { a: string; }[]): Animal; }
->[{a: "str"}] : { a: string; }[]
+>[{a: "str"}] : Array<{ a: string; }>
 >{a: "str"} : { a: string; }
 >a : string
 >"str" : "str"
@@ -62,7 +62,7 @@ var y1 = foo1([{a: 100}]);
 >y1 : Dog
 >foo1([{a: 100}]) : Dog
 >foo1 : { (bar: { a: number; }[]): Dog; (bar: { a: string; }[]): Animal; }
->[{a: 100}] : { a: number; }[]
+>[{a: 100}] : Array<{ a: number; }>
 >{a: 100} : { a: number; }
 >a : number
 >100 : 100
@@ -71,7 +71,7 @@ var x2 = foo2([{a: "str"}]);
 >x2 : Cat | Dog
 >foo2([{a: "str"}]) : Cat | Dog
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Cat | Dog; }
->[{a: "str"}] : { a: string; }[]
+>[{a: "str"}] : Array<{ a: string; }>
 >{a: "str"} : { a: string; }
 >a : string
 >"str" : "str"
@@ -80,7 +80,7 @@ var y2 = foo2([{a: 100}]);
 >y2 : Cat
 >foo2([{a: 100}]) : Cat
 >foo2 : { (bar: { a: number; }[]): Cat; (bar: { a: string; }[]): Cat | Dog; }
->[{a: 100}] : { a: number; }[]
+>[{a: 100}] : Array<{ a: number; }>
 >{a: 100} : { a: number; }
 >a : number
 >100 : 100

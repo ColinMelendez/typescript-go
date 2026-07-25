@@ -1,6 +1,11 @@
 --- old.anonymousClassAccessorsDeclarationEmit1.types
 +++ new.anonymousClassAccessorsDeclarationEmit1.types
-@@= skipped -29, +29 lines =@@
+@@= skipped -25, +25 lines =@@
+ >A : A
+
+   constructor(...args: any[]) {}
+->args : any[]
++>args : Array<any>
  }
 
  export function Mixin<T extends typeof A>(Super: T) {

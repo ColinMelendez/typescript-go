@@ -71,7 +71,7 @@
 /** @type {Null} */ declare const f: null;
 /** @type {Function} */ declare const g: Function;
 /** @type {function} */ declare const h: Function;
-/** @type {array} */ declare const i: any[];
+/** @type {array} */ declare const i: Array<any>;
 /** @type {promise} */ declare const j: Promise<any>;
 /** @type {Object<string, string>} */ declare const k: Record<string, string>;
 /** @type {class} */ declare const l: class;

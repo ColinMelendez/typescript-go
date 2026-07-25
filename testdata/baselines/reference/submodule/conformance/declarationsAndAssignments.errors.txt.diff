@@ -1,0 +1,25 @@
+--- old.declarationsAndAssignments.errors.txt
++++ new.declarationsAndAssignments.errors.txt
+@@= skipped -12, +12 lines =@@
+ declarationsAndAssignments.ts(68,9): error TS2488: Type '{ 0: number; 1: number; }' must have a '[Symbol.iterator]()' method that returns an iterator.
+ declarationsAndAssignments.ts(73,11): error TS2339: Property 'a' does not exist on type '{}'.
+ declarationsAndAssignments.ts(73,14): error TS2339: Property 'b' does not exist on type '{}'.
+-declarationsAndAssignments.ts(74,11): error TS2339: Property 'a' does not exist on type 'undefined[]'.
+-declarationsAndAssignments.ts(74,14): error TS2339: Property 'b' does not exist on type 'undefined[]'.
++declarationsAndAssignments.ts(74,11): error TS2339: Property 'a' does not exist on type 'Array<undefined>'.
++declarationsAndAssignments.ts(74,14): error TS2339: Property 'b' does not exist on type 'Array<undefined>'.
+ declarationsAndAssignments.ts(106,17): error TS2741: Property 'x' is missing in type '{ y: false; }' but required in type '{ x: any; y?: boolean; }'.
+ declarationsAndAssignments.ts(138,6): error TS2322: Type 'string' is not assignable to type 'number'.
+ declarationsAndAssignments.ts(138,9): error TS2322: Type 'number' is not assignable to type 'string'.
+@@= skipped -114, +114 lines =@@
+ !!! error TS2339: Property 'b' does not exist on type '{}'.
+         var { a, b } = [];  // Error
+               ~
+-!!! error TS2339: Property 'a' does not exist on type 'undefined[]'.
++!!! error TS2339: Property 'a' does not exist on type 'Array<undefined>'.
+                  ~
+-!!! error TS2339: Property 'b' does not exist on type 'undefined[]'.
++!!! error TS2339: Property 'b' does not exist on type 'Array<undefined>'.
+     }
+     
+     function f11() {

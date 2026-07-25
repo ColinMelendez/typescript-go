@@ -20,8 +20,8 @@ class Employee {
 >manager : Employee
 
     public reports: Employee[] = [];
->reports : Employee[]
->[] : never[]
+>reports : Array<Employee>
+>[] : Array<never>
 }
 
 class Employee2 {
@@ -40,7 +40,7 @@ class Employee2 {
 >manager : Employee
 
     public reports: Employee[];
->reports : Employee[]
+>reports : Array<Employee>
 
     constructor() {
         this.retired = false;
@@ -57,11 +57,11 @@ class Employee2 {
 >manager : Employee
 
         this.reports = [];
->this.reports = [] : never[]
->this.reports : Employee[]
+>this.reports = [] : Array<never>
+>this.reports : Array<Employee>
 >this : this
->reports : Employee[]
->[] : never[]
+>reports : Array<Employee>
+>[] : Array<never>
     }
 }
 

@@ -171,7 +171,7 @@ createSelector(
 
 declare function example(...args: [...((n: number) => void)[], (x: any) => void]): void
 >example : (...args: [...((n: number) => void)[], (x: any) => void]) => void
->args : [...((n: number) => void)[], (x: any) => void]
+>args : [...Array<(n: number) => void>, (x: any) => void]
 >n : number
 >x : any
 
@@ -206,7 +206,7 @@ example(
 
 declare function test(...args: [...((arg: number) => void)[], (arg: string) => void]): void;
 >test : (...args: [...((arg: number) => void)[], (arg: string) => void]) => void
->args : [...((arg: number) => void)[], (arg: string) => void]
+>args : [...Array<(arg: number) => void>, (arg: string) => void]
 >arg : number
 >arg : string
   

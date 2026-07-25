@@ -1,0 +1,11 @@
+--- old.computedPropertyNames3_ES5(target=es2015).types
++++ new.computedPropertyNames3_ES5(target=es2015).types
+@@= skipped -23, +23 lines =@@
+
+     set [[0, 1]](v) { }
+ >[[0, 1]] : any
+->[0, 1] : number[]
++>[0, 1] : Array<number>
+ >0 : 0
+ >1 : 1
+ >v : any

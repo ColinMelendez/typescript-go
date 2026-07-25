@@ -29,7 +29,7 @@ export class Test {
     for (const [key, value] of Object.entries(e)) {
 >key : string
 >value : unknown
->Object.entries(e) : [string, unknown][]
+>Object.entries(e) : Array<[string, unknown]>
 >Object.entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }
 >Object : ObjectConstructor
 >entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }

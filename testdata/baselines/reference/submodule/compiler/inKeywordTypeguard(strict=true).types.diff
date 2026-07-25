@@ -1,0 +1,24 @@
+--- old.inKeywordTypeguard(strict=true).types
++++ new.inKeywordTypeguard(strict=true).types
+@@= skipped -1098, +1098 lines =@@
+ >Array.isArray : (arg: any) => arg is any[]
+ >Array : ArrayConstructor
+ >isArray : (arg: any) => arg is any[]
+->obj : any[] | Record<string, any>
++>obj : Array<any> | Record<string, any>
+ >'length' in obj : boolean
+ >'length' : "length"
+ >obj : T
+@@= skipped -23, +23 lines =@@
+ >Array.isArray : (arg: any) => arg is any[]
+ >Array : ArrayConstructor
+ >isArray : (arg: any) => arg is any[]
+->obj : any[] | Record<string, any>
++>obj : Array<any> | Record<string, any>
+
+       obj;  // T & any[]
+->obj : T & any[]
++>obj : T & Array<any>
+     }
+     else {
+       obj;  // T

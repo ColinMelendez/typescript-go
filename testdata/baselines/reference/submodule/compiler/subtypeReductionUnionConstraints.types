@@ -10,7 +10,7 @@ type FooNode = {
 >kind : "foo"
 
     children: Node[];
->children : Node[]
+>children : Array<Node>
 
 };
 
@@ -31,7 +31,7 @@ type Document = {
 >kind : "document"
 
     children: Node[];
->children : Node[]
+>children : Array<Node>
 
 };
 
@@ -70,10 +70,10 @@ export function visitNodes<T extends Node>(node: Document | Node, predicate: (te
 >node : Node
 
         const nodes: Node[] = node.children;
->nodes : Node[]
->node.children : Node[]
+>nodes : Array<Node>
+>node.children : Array<Node>
 >node : Document | FooNode
->children : Node[]
+>children : Array<Node>
     }
 }
 
@@ -93,8 +93,8 @@ function f1<T extends A | B>(t: T, x: A | B) {
 >x : A | B
 
     const a = [t, x];  // (A | B)[] by subtype reduction
->a : (A | B)[]
->[t, x] : (A | B)[]
+>a : Array<A | B>
+>[t, x] : Array<A | B>
 >t : T
 >x : A | B
 }

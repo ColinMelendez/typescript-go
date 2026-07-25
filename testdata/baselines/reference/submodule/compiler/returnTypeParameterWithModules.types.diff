@@ -1,0 +1,38 @@
+--- old.returnTypeParameterWithModules.types
++++ new.returnTypeParameterWithModules.types
+@@= skipped -12, +12 lines =@@
+         return Array.prototype.reduce.apply(ar, e ? [f, e] : [f]);
+ >Array.prototype.reduce.apply(ar, e ? [f, e] : [f]) : any
+ >Array.prototype.reduce.apply : (this: Function, thisArg: any, argArray?: any) => any
+->Array.prototype.reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
+->Array.prototype : any[]
++>Array.prototype.reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
++>Array.prototype : Array<any>
+ >Array : ArrayConstructor
+->prototype : any[]
+->reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: any[]) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: any[]) => U, initialValue: U): U; }
++>prototype : Array<any>
++>reduce : { (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any): any; (callbackfn: (previousValue: any, currentValue: any, currentIndex: number, array: Array<any>) => any, initialValue: any): any; <U>(callbackfn: (previousValue: U, currentValue: any, currentIndex: number, array: Array<any>) => U, initialValue: U): U; }
+ >apply : (this: Function, thisArg: any, argArray?: any) => any
+ >ar : any
+->e ? [f, e] : [f] : any[]
++>e ? [f, e] : [f] : Array<any>
+ >e : any
+->[f, e] : any[]
++>[f, e] : Array<any>
+ >f : any
+ >e : any
+->[f] : any[]
++>[f] : Array<any>
+ >f : any
+
+     };
+@@= skipped -28, +28 lines =@@
+ >compose : () => void
+
+         A.reduce(arguments, compose2);
+->A.reduce(arguments, compose2) : unknown[]
++>A.reduce(arguments, compose2) : Array<unknown>
+ >A.reduce : <A>(ar: any, f: any, e?: any) => Array<A>
+ >A : typeof A
+ >reduce : <A>(ar: any, f: any, e?: any) => Array<A>

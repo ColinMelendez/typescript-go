@@ -1,0 +1,40 @@
+--- old.logicalNotOperatorWithAnyOtherType.types
++++ new.logicalNotOperatorWithAnyOtherType.types
+@@= skipped -9, +9 lines =@@
+ >ANY1 : any
+
+ var ANY2: any[] = ["", ""];
+->ANY2 : any[]
+->["", ""] : string[]
++>ANY2 : Array<any>
++>["", ""] : Array<string>
+ >"" : ""
+ >"" : ""
+
+@@= skipped -61, +61 lines =@@
+ var ResultIsBoolean2 = !ANY2;
+ >ResultIsBoolean2 : boolean
+ >!ANY2 : false
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsBoolean3 = !A;
+ >ResultIsBoolean3 : boolean
+@@= skipped -37, +37 lines =@@
+ >ResultIsBoolean9 : boolean
+ >!ANY2[0] : boolean
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsBoolean10 = !obj1.x;
+@@= skipped -103, +103 lines =@@
+ !ANY2[0];
+ >!ANY2[0] : boolean
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ !ANY, ANY1;

@@ -2,8 +2,8 @@
 
 === parserErrorRecoveryArrayLiteralExpression1.ts ===
 var v = [1, 2, 3
->v : number[]
->[1, 2, 34, 5, 6, 7] : number[]
+>v : Array<number>
+>[1, 2, 34, 5, 6, 7] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

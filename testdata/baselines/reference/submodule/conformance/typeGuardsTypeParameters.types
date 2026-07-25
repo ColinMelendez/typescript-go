@@ -67,8 +67,8 @@ function fun<T>(item: { [P in keyof T]: T[P] }) {
 >item : { [P in keyof T]: T[P]; }
 
     const strings: string[] = [];
->strings : string[]
->[] : never[]
+>strings : Array<string>
+>[] : Array<never>
 
     for (const key in item) {
 >key : Extract<keyof T, string>
@@ -88,9 +88,9 @@ function fun<T>(item: { [P in keyof T]: T[P] }) {
 
             strings.push(value);
 >strings.push(value) : number
->strings.push : (...items: string[]) => number
->strings : string[]
->push : (...items: string[]) => number
+>strings.push : (...items: Array<string>) => number
+>strings : Array<string>
+>push : (...items: Array<string>) => number
 >value : { [P in keyof T]: T[P]; }[Extract<keyof T, string>] & string
         }
     }

@@ -1,0 +1,16 @@
+--- old.keyofAndIndexedAccessErrors.types
++++ new.keyofAndIndexedAccessErrors.types
+@@= skipped -457, +457 lines =@@
+ >"hello" : "hello"
+
+     t[k] = [10, 20];  // Error
+->t[k] = [10, 20] : number[]
++>t[k] = [10, 20] : Array<number>
+ >t[k] : T[K]
+ >t : T
+ >k : K
+->[10, 20] : number[]
++>[10, 20] : Array<number>
+ >10 : 10
+ >20 : 20
+ }

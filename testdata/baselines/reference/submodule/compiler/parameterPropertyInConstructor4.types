@@ -5,8 +5,8 @@ export class C {
 >C : C
 
     constructor(public a: number[] = [], b: number) {
->a : number[]
->[] : never[]
+>a : Array<number>
+>[] : Array<never>
 >b : number
     }
 }

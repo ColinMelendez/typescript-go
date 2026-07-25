@@ -5,13 +5,13 @@ export class Z {
 >Z : Z
 
     f(x = 1, y) {
->f : (x: number, y: any) => any[]
+>f : (x: number, y: any) => Array<any>
 >x : number
 >1 : 1
 >y : any
 
         return [x, y];
->[x, y] : any[]
+>[x, y] : Array<any>
 >x : number
 >y : any
     }

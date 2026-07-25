@@ -111,7 +111,7 @@ declare var f: {};
 >f : {}
 
 declare var g: string[];
->g : string[]
+>g : Array<string>
 
 // operator <
 var r1a1 = null < a;
@@ -147,7 +147,7 @@ var r1a6 = null < f;
 var r1a7 = null < g;
 >r1a7 : boolean
 >null < g : boolean
->g : string[]
+>g : Array<string>
 
 var r1b1 = a < null;
 >r1b1 : boolean
@@ -182,7 +182,7 @@ var r1b6 = f < null;
 var r1b7 = g < null;
 >r1b7 : boolean
 >g < null : boolean
->g : string[]
+>g : Array<string>
 
 // operator >
 var r2a1 = null > a;
@@ -218,7 +218,7 @@ var r2a6 = null > f;
 var r2a7 = null > g;
 >r2a7 : boolean
 >null > g : boolean
->g : string[]
+>g : Array<string>
 
 var r2b1 = a > null;
 >r2b1 : boolean
@@ -253,7 +253,7 @@ var r2b6 = f > null;
 var r2b7 = g > null;
 >r2b7 : boolean
 >g > null : boolean
->g : string[]
+>g : Array<string>
 
 // operator <=
 var r3a1 = null <= a;
@@ -289,7 +289,7 @@ var r3a6 = null <= f;
 var r3a7 = null <= g;
 >r3a7 : boolean
 >null <= g : boolean
->g : string[]
+>g : Array<string>
 
 var r3b1 = a <= null;
 >r3b1 : boolean
@@ -324,7 +324,7 @@ var r3b6 = f <= null;
 var r3b7 = g <= null;
 >r3b7 : boolean
 >g <= null : boolean
->g : string[]
+>g : Array<string>
 
 // operator >=
 var r4a1 = null >= a;
@@ -360,7 +360,7 @@ var r4a6 = null >= f;
 var r4a7 = null >= g;
 >r4a7 : boolean
 >null >= g : boolean
->g : string[]
+>g : Array<string>
 
 var r4b1 = a >= null;
 >r4b1 : boolean
@@ -395,7 +395,7 @@ var r4b6 = f >= null;
 var r4b7 = g >= null;
 >r4b7 : boolean
 >g >= null : boolean
->g : string[]
+>g : Array<string>
 
 // operator ==
 var r5a1 = null == a;
@@ -431,7 +431,7 @@ var r5a6 = null == f;
 var r5a7 = null == g;
 >r5a7 : boolean
 >null == g : boolean
->g : string[]
+>g : Array<string>
 
 var r5b1 = a == null;
 >r5b1 : boolean
@@ -466,7 +466,7 @@ var r5b6 = f == null;
 var r5b7 = g == null;
 >r5b7 : boolean
 >g == null : boolean
->g : string[]
+>g : Array<string>
 
 // operator !=
 var r6a1 = null != a;
@@ -502,7 +502,7 @@ var r6a6 = null != f;
 var r6a7 = null != g;
 >r6a7 : boolean
 >null != g : boolean
->g : string[]
+>g : Array<string>
 
 var r6b1 = a != null;
 >r6b1 : boolean
@@ -537,7 +537,7 @@ var r6b6 = f != null;
 var r6b7 = g != null;
 >r6b7 : boolean
 >g != null : boolean
->g : string[]
+>g : Array<string>
 
 // operator ===
 var r7a1 = null === a;
@@ -573,7 +573,7 @@ var r7a6 = null === f;
 var r7a7 = null === g;
 >r7a7 : boolean
 >null === g : boolean
->g : string[]
+>g : Array<string>
 
 var r7b1 = a === null;
 >r7b1 : boolean
@@ -608,7 +608,7 @@ var r7b6 = f === null;
 var r7b7 = g === null;
 >r7b7 : boolean
 >g === null : boolean
->g : string[]
+>g : Array<string>
 
 // operator !==
 var r8a1 = null !== a;
@@ -644,7 +644,7 @@ var r8a6 = null !== f;
 var r8a7 = null !== g;
 >r8a7 : boolean
 >null !== g : boolean
->g : string[]
+>g : Array<string>
 
 var r8b1 = a !== null;
 >r8b1 : boolean
@@ -679,5 +679,5 @@ var r8b6 = f !== null;
 var r8b7 = g !== null;
 >r8b7 : boolean
 >g !== null : boolean
->g : string[]
+>g : Array<string>
 

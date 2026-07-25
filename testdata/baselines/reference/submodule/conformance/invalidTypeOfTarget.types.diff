@@ -1,0 +1,11 @@
+--- old.invalidTypeOfTarget.types
++++ new.invalidTypeOfTarget.types
+@@= skipped -21, +21 lines =@@
+ >'' : ""
+
+ var x5: typeof [];
+->x5 : any[]
++>x5 : Array<any>
+ > : any
+
+ var x6: typeof null;

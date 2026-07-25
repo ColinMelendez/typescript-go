@@ -7,13 +7,13 @@ interface Array<T> {
 }
 
 var arr: string[] = [];
->arr : string[]
->[] : never[]
+>arr : Array<string>
+>[] : Array<never>
 
 var x: number = arr.foo();
 >x : number
 >arr.foo() : string
 >arr.foo : () => string
->arr : string[]
+>arr : Array<string>
 >foo : () => string
 

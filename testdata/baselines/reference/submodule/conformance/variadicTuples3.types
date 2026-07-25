@@ -7,11 +7,11 @@ function test1<T extends any[], P extends any[]>(): [...T, ...P] {
 >test1 : <T extends any[], P extends any[]>() => [...T, ...P]
 
   let x: any[] = [];
->x : any[]
->[] : never[]
+>x : Array<any>
+>[] : Array<never>
 
   return x;
->x : any[]
+>x : Array<any>
 }
 
 function test2<T extends any[], P extends any[]>(): [...T, ...P] {

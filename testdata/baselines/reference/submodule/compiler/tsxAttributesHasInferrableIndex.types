@@ -12,7 +12,7 @@ function createElement(name: string, attributes: Attributes | undefined, ...cont
 >createElement : (name: string, attributes: Attributes | undefined, ...contents: string[]) => string
 >name : string
 >attributes : Attributes | undefined
->contents : string[]
+>contents : Array<string>
 
     return name;
 >name : string
@@ -25,7 +25,7 @@ namespace createElement.JSX {
 function Button(attributes: Attributes | undefined, contents: string[]) {
 >Button : (attributes: Attributes | undefined, contents: string[]) => string
 >attributes : Attributes | undefined
->contents : string[]
+>contents : Array<string>
 
     return '';
 >'' : ""

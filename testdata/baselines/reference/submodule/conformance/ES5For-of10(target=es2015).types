@@ -14,14 +14,14 @@ for (foo().x of []) {
 >foo() : { x: number; }
 >foo : () => { x: number; }
 >x : number
->[] : never[]
+>[] : Array<never>
 
     for (foo().x of [])
 >foo().x : number
 >foo() : { x: number; }
 >foo : () => { x: number; }
 >x : number
->[] : never[]
+>[] : Array<never>
 
         var p = foo().x;
 >p : number

@@ -1,0 +1,21 @@
+--- old.commentInMethodCall.types
++++ new.commentInMethodCall.types
+@@= skipped -2, +2 lines =@@
+ === commentInMethodCall.ts ===
+ //commment here
+ var s: string[];
+->s : string[]
++>s : Array<string>
+
+ s.map(// do something
+->s.map(// do something    function () { }) : void[]
+->s.map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
+->s : string[]
+->map : <U>(callbackfn: (value: string, index: number, array: string[]) => U, thisArg?: any) => U[]
++>s.map(// do something    function () { }) : Array<void>
++>s.map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
++>s : Array<string>
++>map : <U>(callbackfn: (value: string, index: number, array: Array<string>) => U, thisArg?: any) => Array<U>
+
+     function () { });
+ >function () { } : () => void

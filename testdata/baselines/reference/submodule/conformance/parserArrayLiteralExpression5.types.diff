@@ -1,0 +1,11 @@
+--- old.parserArrayLiteralExpression5.types
++++ new.parserArrayLiteralExpression5.types
+@@= skipped -1, +1 lines =@@
+
+ === parserArrayLiteralExpression5.ts ===
+ var v = [1];
+->v : number[]
+->[1] : number[]
++>v : Array<number>
++>[1] : Array<number>
+ >1 : 1

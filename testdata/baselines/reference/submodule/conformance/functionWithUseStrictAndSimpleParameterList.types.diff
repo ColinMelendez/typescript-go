@@ -1,0 +1,23 @@
+--- old.functionWithUseStrictAndSimpleParameterList.types
++++ new.functionWithUseStrictAndSimpleParameterList.types
+@@= skipped -34, +34 lines =@@
+
+ function rest(...args: any[]) {
+ >rest : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+     'use strict';
+ >'use strict' : "use strict"
+ }
+
+ function rest1(a = 1, ...args) {
+->rest1 : (a?: number, ...args: any[]) => void
++>rest1 : (a?: number, ...args: Array<any>) => void
+ >a : number
+ >1 : 1
+->args : any[]
++>args : Array<any>
+
+     'use strict';
+ >'use strict' : "use strict"

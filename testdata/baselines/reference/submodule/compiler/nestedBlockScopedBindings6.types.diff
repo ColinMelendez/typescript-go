@@ -1,0 +1,74 @@
+--- old.nestedBlockScopedBindings6.types
++++ new.nestedBlockScopedBindings6.types
+@@= skipped -5, +5 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -27, +27 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -31, +31 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -31, +31 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -35, +35 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -33, +33 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -32, +32 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;
+@@= skipped -28, +28 lines =@@
+
+     for (let x of [1]) {
+ >x : number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+         x = x + 1;

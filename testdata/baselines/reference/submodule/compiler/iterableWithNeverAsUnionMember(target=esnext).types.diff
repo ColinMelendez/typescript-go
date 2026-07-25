@@ -1,0 +1,23 @@
+--- old.iterableWithNeverAsUnionMember(target=esnext).types
++++ new.iterableWithNeverAsUnionMember(target=esnext).types
+@@= skipped -11, +11 lines =@@
+
+ // https://github.com/microsoft/TypeScript/issues/62462
+ declare var x: number[] | ({ t: "a" } & { t: "b" });
+->x : number[]
++>x : Array<number>
+ >t : "a"
+ >t : "b"
+
+ let [el2] = x; // ok
+ >el2 : number
+->x : number[]
++>x : Array<number>
+
+ for (const elem of x) { // ok
+ >elem : number
+->x : number[]
++>x : Array<number>
+
+   elem.toFixed();
+ >elem.toFixed() : string

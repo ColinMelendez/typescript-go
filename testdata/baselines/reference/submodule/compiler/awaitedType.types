@@ -368,7 +368,7 @@ type _Expect<TActual extends TExpected, TExpected> = TActual;
 // https://github.com/microsoft/TypeScript/issues/48320
 async function f17<T extends (...args: any[]) => Promise<any>>(fn: T) {
 >f17 : <T extends (...args: any[]) => Promise<any>>(fn: T) => Promise<ReturnType<T>>
->args : any[]
+>args : Array<any>
 >fn : T
 
     const ret: Awaited<ReturnType<T>> = await fn(1, 2, 3);
@@ -596,20 +596,20 @@ async function test40330() {
 >async () => {} : () => Promise<void>
 
     const res = await Promise.all([
->res : [number, ...void[]]
->await Promise.all([        promiseNumber,        ...[promiseVoid()]    ]) : [number, ...void[]]
->Promise.all([        promiseNumber,        ...[promiseVoid()]    ]) : Promise<[number, ...void[]]>
+>res : [number, ...Array<void>]
+>await Promise.all([        promiseNumber,        ...[promiseVoid()]    ]) : [number, ...Array<void>]
+>Promise.all([        promiseNumber,        ...[promiseVoid()]    ]) : Promise<[number, ...Array<void>]>
 >Promise.all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
 >Promise : PromiseConstructor
 >all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
->[        promiseNumber,        ...[promiseVoid()]    ] : [Promise<number>, ...Promise<void>[]]
+>[        promiseNumber,        ...[promiseVoid()]    ] : [Promise<number>, ...Array<Promise<void>>]
 
         promiseNumber,
 >promiseNumber : Promise<number>
 
         ...[promiseVoid()]
 >...[promiseVoid()] : Promise<void>
->[promiseVoid()] : Promise<void>[]
+>[promiseVoid()] : Array<Promise<void>>
 >promiseVoid() : Promise<void>
 >promiseVoid : () => Promise<void>
 

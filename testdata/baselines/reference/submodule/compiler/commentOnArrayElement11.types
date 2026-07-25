@@ -2,8 +2,8 @@
 
 === commentOnArrayElement11.ts ===
 const array = [
->array : undefined[]
->[    , /* comment */] : undefined[]
+>array : Array<undefined>
+>[    , /* comment */] : Array<undefined>
 
     , /* comment */
 ];

@@ -47,14 +47,14 @@ function w() { return null; }
 /**
   * @param {Array=} y desc
   */
-declare function x(y?: any[] | undefined): void;
+declare function x(y?: Array<any> | undefined): void;
 /** @param {function (Array)} func Invoked
  */
 declare function y(func: Function): void;
 /**
  * @return {(Array.<> | null)} list of devices
  */
-declare function z(): (any[] | null);
+declare function z(): (Array<any> | null);
 /**
  *
  * @return {?Promise} A promise

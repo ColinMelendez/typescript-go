@@ -9,12 +9,12 @@ function test1<T extends [number] | [string]>(args: T) {
 >args : T
 
   const arr: any[] = [] as HomomorphicMappedType<T>
->arr : any[]
+>arr : Array<any>
 >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
 >[] : []
 
   const arr2: readonly any[] = [] as HomomorphicMappedType<T>
->arr2 : readonly any[]
+>arr2 : ReadonlyArray<any>
 >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
 >[] : []
 }
@@ -24,12 +24,12 @@ function test2<T extends [number] | readonly [string]>(args: T) {
 >args : T
 
   const arr: any[] = [] as HomomorphicMappedType<T> // error
->arr : any[]
+>arr : Array<any>
 >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
 >[] : []
 
   const arr2: readonly any[] = [] as HomomorphicMappedType<T>
->arr2 : readonly any[]
+>arr2 : ReadonlyArray<any>
 >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
 >[] : []
 }

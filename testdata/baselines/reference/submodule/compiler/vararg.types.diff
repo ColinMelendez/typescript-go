@@ -1,0 +1,56 @@
+--- old.vararg.types
++++ new.vararg.types
+@@= skipped -9, +9 lines =@@
+         public f(x:string,...rest:number[]) {
+ >f : (x: string, ...rest: number[]) => string
+ >x : string
+->rest : number[]
++>rest : Array<number>
+
+             var sum=0;
+ >sum : number
+@@= skipped -12, +12 lines =@@
+ >i<rest.length : boolean
+ >i : number
+ >rest.length : number
+->rest : number[]
++>rest : Array<number>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -9, +9 lines =@@
+ >sum+=rest[i] : number
+ >sum : number
+ >rest[i] : number
+->rest : number[]
++>rest : Array<number>
+ >i : number
+             }
+             result+=(x+": "+sum);
+@@= skipped -26, +26 lines =@@
+
+         public fonly(...rest:string[]) {
+ >fonly : (...rest: string[]) => any
+->rest : string[]
++>rest : Array<string>
+
+             builder="";
+ >builder="" : ""
+@@= skipped -13, +13 lines =@@
+ >i<rest.length : boolean
+ >i : number
+ >rest.length : number
+->rest : string[]
++>rest : Array<string>
+ >length : number
+ >i++ : number
+ >i : number
+@@= skipped -9, +9 lines =@@
+ >builder+=rest[i] : string
+ >builder : any
+ >rest[i] : string
+->rest : string[]
++>rest : Array<string>
+ >i : number
+             }
+             return builder;

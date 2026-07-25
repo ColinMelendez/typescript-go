@@ -27,5 +27,5 @@ each(categories, category => {
 function each<T>(items: T[], handler: (item: T) => void) { }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "(local var) changes: string[]", "")
+	f.VerifyQuickInfoAt(t, "1", "(local var) changes: Array<string>", "")
 }

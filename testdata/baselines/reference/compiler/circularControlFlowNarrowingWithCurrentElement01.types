@@ -8,21 +8,21 @@ class A {
 >next : A | null
 
   constructor(readonly children: (A | null)[]) {}
->children : (A | null)[]
+>children : Array<A | null>
 }
 
 function getNodes(): A[] {
 >getNodes : () => A[]
 
   const out: A[] = [];
->out : A[]
->[] : never[]
+>out : Array<A>
+>[] : Array<never>
 
   let current: A | null = new A([]);
 >current : A | null
 >new A([]) : A
 >A : typeof A
->[] : never[]
+>[] : Array<never>
 
   while (current !== null) {
 >current !== null : boolean
@@ -33,7 +33,7 @@ function getNodes(): A[] {
 
     if (out.length) {
 >out.length : number
->out : A[]
+>out : Array<A>
 >length : number
 
       current = current.next;
@@ -52,9 +52,9 @@ function getNodes(): A[] {
 >i < current.children.length : boolean
 >i : number
 >current.children.length : number
->current.children : (A | null)[]
+>current.children : Array<A | null>
 >current : A
->children : (A | null)[]
+>children : Array<A | null>
 >length : number
 >i++ : number
 >i : number
@@ -62,9 +62,9 @@ function getNodes(): A[] {
       const child = current.children[i];
 >child : A | null
 >current.children[i] : A | null
->current.children : (A | null)[]
+>current.children : Array<A | null>
 >current : A
->children : (A | null)[]
+>children : Array<A | null>
 >i : number
 
       if (child) {
@@ -111,5 +111,5 @@ function getNodes(): A[] {
   }
 
   return out;
->out : A[]
+>out : Array<A>
 }

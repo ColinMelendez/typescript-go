@@ -1,0 +1,11 @@
+--- old.aliasOfGenericFunctionWithRestBehavedSameAsUnaliased.types
++++ new.aliasOfGenericFunctionWithRestBehavedSameAsUnaliased.types
+@@= skipped -79, +79 lines =@@
+ >b3 : b3
+ >name : string
+ >mixed : any
+->args : any[]
++>args : Array<any>
+
+ type test3 = a3 extends b3 ? "y" : "n"
+ >test3 : "y"

@@ -2,11 +2,11 @@ typeMatch2.ts(3,2): error TS2739: Type '{}' is missing the following properties 
 typeMatch2.ts(4,5): error TS2741: Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.
 typeMatch2.ts(5,20): error TS2353: Object literal may only specify known properties, and 'z' does not exist in type '{ x: number; y: number; }'.
 typeMatch2.ts(6,17): error TS2353: Object literal may only specify known properties, and 'z' does not exist in type '{ x: number; y: number; }'.
-typeMatch2.ts(18,5): error TS2322: Type 'Animal[]' is not assignable to type 'Giraffe[]'.
+typeMatch2.ts(18,5): error TS2322: Type 'Array<Animal>' is not assignable to type 'Array<Giraffe>'.
   Property 'g' is missing in type 'Animal' but required in type 'Giraffe'.
-typeMatch2.ts(22,5): error TS2322: Type '{ f1: number; f2: Animal[]; }' is not assignable to type '{ f1: number; f2: Giraffe[]; }'.
+typeMatch2.ts(22,5): error TS2322: Type '{ f1: number; f2: Array<Animal>; }' is not assignable to type '{ f1: number; f2: Array<Giraffe>; }'.
   Types of property 'f2' are incompatible.
-    Type 'Animal[]' is not assignable to type 'Giraffe[]'.
+    Type 'Array<Animal>' is not assignable to type 'Array<Giraffe>'.
       Property 'g' is missing in type 'Animal' but required in type 'Giraffe'.
 typeMatch2.ts(34,26): error TS2353: Object literal may only specify known properties, and 'z' does not exist in type '{ x: number; y: number; }'.
 typeMatch2.ts(35,5): error TS2741: Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.
@@ -41,7 +41,7 @@ typeMatch2.ts(35,5): error TS2741: Property 'y' is missing in type '{ x: number;
         aa = gg;
         gg = aa; // error
         ~~
-!!! error TS2322: Type 'Animal[]' is not assignable to type 'Giraffe[]'.
+!!! error TS2322: Type 'Array<Animal>' is not assignable to type 'Array<Giraffe>'.
 !!! error TS2322:   Property 'g' is missing in type 'Animal' but required in type 'Giraffe'.
 !!! related TS2728 typeMatch2.ts:10:40: 'g' is declared here.
         var xa = { f1: 5, f2: aa };
@@ -49,9 +49,9 @@ typeMatch2.ts(35,5): error TS2741: Property 'y' is missing in type '{ x: number;
         xa = xb; // Should be ok
         xb = xa; // Not ok
         ~~
-!!! error TS2322: Type '{ f1: number; f2: Animal[]; }' is not assignable to type '{ f1: number; f2: Giraffe[]; }'.
+!!! error TS2322: Type '{ f1: number; f2: Array<Animal>; }' is not assignable to type '{ f1: number; f2: Array<Giraffe>; }'.
 !!! error TS2322:   Types of property 'f2' are incompatible.
-!!! error TS2322:     Type 'Animal[]' is not assignable to type 'Giraffe[]'.
+!!! error TS2322:     Type 'Array<Animal>' is not assignable to type 'Array<Giraffe>'.
 !!! error TS2322:       Property 'g' is missing in type 'Animal' but required in type 'Giraffe'.
 !!! related TS2728 typeMatch2.ts:10:40: 'g' is declared here.
     }

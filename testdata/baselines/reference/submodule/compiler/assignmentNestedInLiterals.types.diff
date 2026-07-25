@@ -1,0 +1,23 @@
+--- old.assignmentNestedInLiterals.types
++++ new.assignmentNestedInLiterals.types
+@@= skipped -6, +6 lines =@@
+ >y : any
+
+ target = [x = 1, y = x];
+->target = [x = 1, y = x] : number[]
++>target = [x = 1, y = x] : Array<number>
+ >target : any
+->[x = 1, y = x] : number[]
++>[x = 1, y = x] : Array<number>
+ >x = 1 : 1
+ >x : any
+ >1 : 1
+@@= skipped -35, +35 lines =@@
+
+ for (kowloona of [c = 1, d = c]) {
+ >kowloona : any
+->[c = 1, d = c] : number[]
++>[c = 1, d = c] : Array<number>
+ >c = 1 : 1
+ >c : any
+ >1 : 1

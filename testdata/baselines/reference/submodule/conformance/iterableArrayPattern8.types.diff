@@ -1,0 +1,11 @@
+--- old.iterableArrayPattern8.types
++++ new.iterableArrayPattern8.types
+@@= skipped -47, +47 lines =@@
+
+ [a, ...b] = new FooIterator;
+ >[a, ...b] = new FooIterator : FooIterator
+->[a, ...b] : [Bar, ...string[]]
++>[a, ...b] : [Bar, ...Array<string>]
+ >a : Bar
+ >...b : string
+ >b : string

@@ -1,0 +1,12 @@
+--- old.stringLiteralMatchedInSwitch01.types
++++ new.stringLiteralMatchedInSwitch01.types
+@@= skipped -24, +24 lines =@@
+ >foo = (foo as S[])[0] : S
+ >foo : T
+ >(foo as S[])[0] : S
+->(foo as S[]) : S[]
+->foo as S[] : S[]
++>(foo as S[]) : Array<S>
++>foo as S[] : Array<S>
+ >foo : T
+ >0 : 0

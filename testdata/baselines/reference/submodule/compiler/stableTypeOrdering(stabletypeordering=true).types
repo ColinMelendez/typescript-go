@@ -7,14 +7,14 @@ class Message { value: string = ""; }
 >"" : ""
 
 function takeMessageOrArray(message: Message | Message[]) { return message; }
->takeMessageOrArray : (message: Message | Message[]) => Message[] | Message
->message : Message[] | Message
->message : Message[] | Message
+>takeMessageOrArray : (message: Message | Message[]) => Array<Message> | Message
+>message : Array<Message> | Message
+>message : Array<Message> | Message
 
 const result1 = takeMessageOrArray(null!);
->result1 : Message[] | Message
->takeMessageOrArray(null!) : Message[] | Message
->takeMessageOrArray : (message: Message | Message[]) => Message[] | Message
+>result1 : Array<Message> | Message
+>takeMessageOrArray(null!) : Array<Message> | Message
+>takeMessageOrArray : (message: Message | Message[]) => Array<Message> | Message
 >null! : never
 
 function checkType(x: string | number | boolean) {
@@ -31,12 +31,12 @@ function checkType(x: string | number | boolean) {
 }
 
 function mixedUnion(x: string | number[] | { a: number }) {
->mixedUnion : (x: string | number[] | { a: number; }) => string | number[] | { a: number; }
->x : string | number[] | { a: number; }
+>mixedUnion : (x: string | number[] | { a: number; }) => string | Array<number> | { a: number; }
+>x : string | Array<number> | { a: number; }
 >a : number
 
     return x;
->x : string | number[] | { a: number; }
+>x : string | Array<number> | { a: number; }
 }
 
 enum Color { Red, Green, Blue }
@@ -46,11 +46,11 @@ enum Color { Red, Green, Blue }
 >Blue : Color.Blue
 
 function enumUnion(x: Color | string | string[]) {
->enumUnion : (x: Color | string | string[]) => string | string[] | Color
->x : string | string[] | Color
+>enumUnion : (x: Color | string | string[]) => string | Array<string> | Color
+>x : string | Array<string> | Color
 
     return x;
->x : string | string[] | Color
+>x : string | Array<string> | Color
 }
 
 type Named = { name: string };

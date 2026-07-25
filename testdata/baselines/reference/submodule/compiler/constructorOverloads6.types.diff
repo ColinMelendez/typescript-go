@@ -1,0 +1,11 @@
+--- old.constructorOverloads6.types
++++ new.constructorOverloads6.types
+@@= skipped -57, +57 lines =@@
+ >f4 : Foo
+ >new Foo([f1,f2,f3]) : Foo
+ >Foo : typeof Foo
+->[f1,f2,f3] : Foo[]
++>[f1,f2,f3] : Array<Foo>
+ >f1 : Foo
+ >f2 : Foo
+ >f3 : Foo

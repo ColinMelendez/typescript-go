@@ -1,0 +1,10 @@
+--- old.inferTypeParameterConstraints.types
++++ new.inferTypeParameterConstraints.types
+@@= skipped -12, +12 lines =@@
+ >E0 : [1 | 2 | 3 | 4]
+
+ type E1 = [1, 2, 3, 4] extends [...infer B, 2, 3, 4, ...any[]] ? B : never;  // unknown[]
+->E1 : unknown[]
++>E1 : Array<unknown>
+
+ // Repro from #42636

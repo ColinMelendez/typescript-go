@@ -1,0 +1,21 @@
+--- old.moduleAugmentationGlobal2.types
++++ new.moduleAugmentationGlobal2.types
+@@= skipped -18, +18 lines =@@
+ }
+
+ let x = [1];
+->x : number[]
+->[1] : number[]
++>x : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ let y = x.getCountAsString().toLowerCase();
+@@= skipped -10, +10 lines =@@
+ >x.getCountAsString().toLowerCase : () => string
+ >x.getCountAsString() : string
+ >x.getCountAsString : () => string
+->x : number[]
++>x : Array<number>
+ >getCountAsString : () => string
+ >toLowerCase : () => string

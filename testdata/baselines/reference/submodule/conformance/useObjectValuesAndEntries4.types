@@ -11,7 +11,7 @@ var o = { a: 1, b: 2 };
 
 for (var x of Object.values(o)) {
 >x : number
->Object.values(o) : number[]
+>Object.values(o) : Array<number>
 >Object.values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
 >Object : ObjectConstructor
 >values : { <T>(o: { [s: string]: T; } | ArrayLike<T>): T[]; (o: {}): any[]; }
@@ -23,8 +23,8 @@ for (var x of Object.values(o)) {
 }
 
 var entries = Object.entries(o);
->entries : [string, number][]
->Object.entries(o) : [string, number][]
+>entries : Array<[string, number]>
+>Object.entries(o) : Array<[string, number]>
 >Object.entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }
 >Object : ObjectConstructor
 >entries : { <T>(o: { [s: string]: T; } | ArrayLike<T>): [string, T][]; (o: {}): [string, any][]; }

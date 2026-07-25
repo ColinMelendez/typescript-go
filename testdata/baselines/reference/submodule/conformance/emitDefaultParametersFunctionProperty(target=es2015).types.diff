@@ -1,0 +1,34 @@
+--- old.emitDefaultParametersFunctionProperty(target=es2015).types
++++ new.emitDefaultParametersFunctionProperty(target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === emitDefaultParametersFunctionProperty.ts ===
+ var obj2 = {
+->obj2 : { func1(y?: number, ...rest: any[]): void; func2(x?: string): void; func3(x: string, z: number, y?: string): void; func4(x: string, z: number, y?: string, ...rest: any[]): void; }
+->{    func1(y = 10, ...rest) { },    func2(x = "hello") { },    func3(x: string, z: number, y = "hello") { },    func4(x: string, z: number, y = "hello", ...rest) { },} : { func1(y?: number, ...rest: any[]): void; func2(x?: string): void; func3(x: string, z: number, y?: string): void; func4(x: string, z: number, y?: string, ...rest: any[]): void; }
++>obj2 : { func1(y?: number, ...rest: Array<any>): void; func2(x?: string): void; func3(x: string, z: number, y?: string): void; func4(x: string, z: number, y?: string, ...rest: Array<any>): void; }
++>{    func1(y = 10, ...rest) { },    func2(x = "hello") { },    func3(x: string, z: number, y = "hello") { },    func4(x: string, z: number, y = "hello", ...rest) { },} : { func1(y?: number, ...rest: Array<any>): void; func2(x?: string): void; func3(x: string, z: number, y?: string): void; func4(x: string, z: number, y?: string, ...rest: Array<any>): void; }
+
+     func1(y = 10, ...rest) { },
+->func1 : (y?: number, ...rest: any[]) => void
++>func1 : (y?: number, ...rest: Array<any>) => void
+ >y : number
+ >10 : 10
+->rest : any[]
++>rest : Array<any>
+
+     func2(x = "hello") { },
+ >func2 : (x?: string) => void
+@@= skipped -22, +22 lines =@@
+ >"hello" : "hello"
+
+     func4(x: string, z: number, y = "hello", ...rest) { },
+->func4 : (x: string, z: number, y?: string, ...rest: any[]) => void
++>func4 : (x: string, z: number, y?: string, ...rest: Array<any>) => void
+ >x : string
+ >z : number
+ >y : string
+ >"hello" : "hello"
+->rest : any[]
++>rest : Array<any>
+ }

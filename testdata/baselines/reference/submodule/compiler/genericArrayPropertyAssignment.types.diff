@@ -1,0 +1,9 @@
+--- old.genericArrayPropertyAssignment.types
++++ new.genericArrayPropertyAssignment.types
+@@= skipped -16, +16 lines =@@
+ isEmpty([]); // error
+ >isEmpty([]) : boolean
+ >isEmpty : (list: { length: number; }) => boolean
+->[] : never[]
++>[] : Array<never>
+  

@@ -1,0 +1,9 @@
+--- old.parserTypeQuery7.types
++++ new.parserTypeQuery7.types
+@@= skipped -1, +1 lines =@@
+
+ === parserTypeQuery7.ts ===
+ var v: typeof A[]
+->v : any[]
++>v : Array<any>
+ >A : any

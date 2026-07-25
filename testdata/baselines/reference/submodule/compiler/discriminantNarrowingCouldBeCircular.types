@@ -36,7 +36,7 @@ type SomeRecord = { a: string };
 >a : string
 
 declare const kPresentationInheritanceParents: { [tagName: string]: string[] };
->kPresentationInheritanceParents : { [tagName: string]: string[]; }
+>kPresentationInheritanceParents : { [tagName: string]: Array<string>; }
 >tagName : string
 
 declare function parentElementOrShadowHost(element: SomeRecord): SomeRecord | undefined;
@@ -61,9 +61,9 @@ function getImplicitAriaRole(element: SomeRecord) {
 >ancestor : SomeRecord
 
     const parents = kPresentationInheritanceParents[ancestor.a];
->parents : string[]
->kPresentationInheritanceParents[ancestor.a] : string[]
->kPresentationInheritanceParents : { [tagName: string]: string[]; }
+>parents : Array<string>
+>kPresentationInheritanceParents[ancestor.a] : Array<string>
+>kPresentationInheritanceParents : { [tagName: string]: Array<string>; }
 >ancestor.a : string
 >ancestor : SomeRecord
 >a : string
@@ -72,13 +72,13 @@ function getImplicitAriaRole(element: SomeRecord) {
 >!parents || !parent || !parents.includes(parent.a) : boolean
 >!parents || !parent : boolean
 >!parents : false
->parents : string[]
+>parents : Array<string>
 >!parent : boolean
 >parent : SomeRecord | undefined
 >!parents.includes(parent.a) : boolean
 >parents.includes(parent.a) : boolean
 >parents.includes : (searchElement: string, fromIndex?: number) => boolean
->parents : string[]
+>parents : Array<string>
 >includes : (searchElement: string, fromIndex?: number) => boolean
 >parent.a : string
 >parent : SomeRecord
@@ -110,7 +110,7 @@ declare function isPlainObject2<T>(
 
       for (const key of ["a", "b", "c"]) {
 >key : string
->["a", "b", "c"] : string[]
+>["a", "b", "c"] : Array<string>
 >"a" : "a"
 >"b" : "b"
 >"c" : "c"
@@ -122,17 +122,17 @@ declare function isPlainObject2<T>(
 >key : string
 
         const deeperKeys = isPlainObject2(deeper) ? Object.keys(deeper) : [];
->deeperKeys : string[]
->isPlainObject2(deeper) ? Object.keys(deeper) : [] : string[]
+>deeperKeys : Array<string>
+>isPlainObject2(deeper) ? Object.keys(deeper) : [] : Array<string>
 >isPlainObject2(deeper) : boolean
 >isPlainObject2 : <T>(data: unknown) => data is Record<PropertyKey, unknown>
 >deeper : unknown
->Object.keys(deeper) : string[]
+>Object.keys(deeper) : Array<string>
 >Object.keys : { (o: object): string[]; (o: {}): string[]; }
 >Object : ObjectConstructor
 >keys : { (o: object): string[]; (o: {}): string[]; }
 >deeper : Record<PropertyKey, unknown>
->[] : never[]
+>[] : Array<never>
       }
   }
 

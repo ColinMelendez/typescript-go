@@ -1,0 +1,13 @@
+--- old.thisTypeInFunctionsNegative.types
++++ new.thisTypeInFunctionsNegative.types
+@@= skipped -717, +717 lines =@@
+ >n : number
+
+ function restParam(...this: C): number { return this.n; }
+->restParam : (...: any[], this: C) => number
+-> : any[]
++>restParam : (...: Array<any>, this: C) => number
++> : Array<any>
+ >this : C
+ >this.n : any
+ >this : any

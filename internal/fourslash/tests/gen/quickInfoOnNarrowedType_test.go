@@ -50,7 +50,7 @@ class Foo {
 	f.VerifyQuickInfoAt(t, "4", "let s: string | undefined", "")
 	f.VerifyQuickInfoAt(t, "5", "let s: string | undefined", "")
 	f.VerifyQuickInfoAt(t, "6", "let s: string", "")
-	f.VerifyQuickInfoAt(t, "7", "(property) Foo.#privateProperty: string[]", "")
+	f.VerifyQuickInfoAt(t, "7", "(property) Foo.#privateProperty: Array<string>", "")
 	f.VerifyCompletions(t, "1", &fourslash.CompletionsExpectedList{
 		IsIncomplete: false,
 		ItemDefaults: &fourslash.CompletionsExpectedItemDefaults{
@@ -136,7 +136,7 @@ class Foo {
 			Includes: []fourslash.CompletionsExpectedItem{
 				&lsproto.CompletionItem{
 					Label:  "#privateProperty",
-					Detail: new("(property) Foo.#privateProperty: string[]"),
+					Detail: new("(property) Foo.#privateProperty: Array<string>"),
 				},
 			},
 		},

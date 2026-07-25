@@ -38,7 +38,7 @@ export class FooItem {
 
 export type Constructor<T> = new(...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 export function WithTags<T extends Constructor<FooItem>>(Base: T) {
 >WithTags : <T extends Constructor<FooItem>>(Base: T) => { new (...args: any[]): (Anonymous class); getTags(): void; prototype: WithTags.(Anonymous class); } & T

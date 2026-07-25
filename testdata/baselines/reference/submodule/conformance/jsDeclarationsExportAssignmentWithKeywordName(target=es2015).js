@@ -26,7 +26,7 @@ module.exports = {
 declare const _exports: {
     extends: string;
     more: {
-        others: string[];
+        others: Array<string>;
     };
     x: number;
 };

@@ -1,0 +1,63 @@
+--- old.destructuringParameterDeclaration1ES6.types
++++ new.destructuringParameterDeclaration1ES6.types
+@@= skipped -35, +35 lines =@@
+ >l : { m: boolean; n: number; }
+ >m : boolean
+ >n : number
+->q : (string | number)[]
++>q : Array<string | number>
+
+ function a4({x, a}: { x: number, a: number }) { }
+ >a4 : ({ x, a }: { x: number; a: number; }) => void
+@@= skipped -12, +12 lines =@@
+ a1([1, 2, [["world"]]]);
+ >a1([1, 2, [["world"]]]) : void
+ >a1 : ([a, b, [[c]]]: [number, number, string[][]]) => void
+->[1, 2, [["world"]]] : [number, number, string[][]]
++>[1, 2, [["world"]]] : [number, number, Array<Array<string>>]
+ >1 : 1
+ >2 : 2
+->[["world"]] : string[][]
+->["world"] : string[]
++>[["world"]] : Array<Array<string>>
++>["world"] : Array<string>
+ >"world" : "world"
+
+ a1([1, 2, [["world"]], 3]);
+ >a1([1, 2, [["world"]], 3]) : void
+ >a1 : ([a, b, [[c]]]: [number, number, string[][]]) => void
+->[1, 2, [["world"]], 3] : [number, number, string[][], number]
++>[1, 2, [["world"]], 3] : [number, number, Array<Array<string>>, number]
+ >1 : 1
+ >2 : 2
+->[["world"]] : string[][]
+->["world"] : string[]
++>[["world"]] : Array<Array<string>>
++>["world"] : Array<string>
+ >"world" : "world"
+ >3 : 3
+
+@@= skipped -24, +24 lines =@@
+ // the parameter type is the widened form (section 3.11) of the type of the initializer expression.
+
+ function b1(z = [undefined, null]) { };
+->b1 : (z?: (null | undefined)[]) => void
+->z : (null | undefined)[]
+->[undefined, null] : (null | undefined)[]
++>b1 : (z?: Array<null | undefined>) => void
++>z : Array<null | undefined>
++>[undefined, null] : Array<null | undefined>
+ >undefined : undefined
+
+ function b2(z = null, o = { x: 0, y: undefined }) { }
+@@= skipped -70, +70 lines =@@
+
+ b1([1, 2, 3]);  // z is widen to the type any[]
+ >b1([1, 2, 3]) : void
+->b1 : (z?: (null | undefined)[]) => void
+->[1, 2, 3] : number[]
++>b1 : (z?: Array<null | undefined>) => void
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

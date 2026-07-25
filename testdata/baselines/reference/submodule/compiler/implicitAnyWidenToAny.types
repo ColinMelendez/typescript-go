@@ -10,13 +10,13 @@ var x1 = undefined;		             // error at "x1"
 >undefined : undefined
 
 var widenArray = [null, undefined];  // error at "widenArray"
->widenArray : (null | undefined)[]
->[null, undefined] : (null | undefined)[]
+>widenArray : Array<null | undefined>
+>[null, undefined] : Array<null | undefined>
 >undefined : undefined
 
 var emptyArray = [];
->emptyArray : any[]
->[] : never[]
+>emptyArray : Array<any>
+>[] : Array<never>
 
 // these should not be error
 class AnimalObj {
@@ -50,29 +50,29 @@ var c: AnimalObj = { x: null };
 >x : null
 
 var array1 = ["Bob",2];
->array1 : (string | number)[]
->["Bob",2] : (string | number)[]
+>array1 : Array<string | number>
+>["Bob",2] : Array<string | number>
 >"Bob" : "Bob"
 >2 : 2
 
 var array2: any[] = [];
->array2 : any[]
->[] : never[]
+>array2 : Array<any>
+>[] : Array<never>
 
 var array3: any[] = [null, undefined];
->array3 : any[]
->[null, undefined] : (null | undefined)[]
+>array3 : Array<any>
+>[null, undefined] : Array<null | undefined>
 >undefined : undefined
 
 var array4: number[] = [null, undefined];
->array4 : number[]
->[null, undefined] : (null | undefined)[]
+>array4 : Array<number>
+>[null, undefined] : Array<null | undefined>
 >undefined : undefined
 
 var array5 = <any[]>[null, undefined];
->array5 : any[]
-><any[]>[null, undefined] : any[]
->[null, undefined] : (null | undefined)[]
+>array5 : Array<any>
+><any[]>[null, undefined] : Array<any>
+>[null, undefined] : Array<null | undefined>
 >undefined : undefined
 
 declare var objLit: { new (n: number): any; };

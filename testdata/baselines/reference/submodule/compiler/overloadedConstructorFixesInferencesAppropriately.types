@@ -32,7 +32,7 @@ class AsyncLoader<TResult extends {}> {
 >props : AsyncLoaderProps<TResult>
 
     constructor(...args: any[]) {}
->args : any[]
+>args : Array<any>
 }
 
 function load(): Box<{ success: true } | ErrorResult> {

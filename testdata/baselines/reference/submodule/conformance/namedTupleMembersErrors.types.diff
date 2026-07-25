@@ -1,0 +1,24 @@
+--- old.namedTupleMembersErrors.types
++++ new.namedTupleMembersErrors.types
+@@= skipped -7, +7 lines =@@
+ >Segment2 : Segment2
+
+ export type List = [item: any, ...any]; 
+->List : [item: any, ...any[]]
++>List : [item: any, ...Array<any>]
+
+ export type List2 = [any, ...remainder: any]; 
+->List2 : [any, ...remainder: any[]]
++>List2 : [any, ...remainder: Array<any>]
+
+ export type Pair = [item: any, any?]; 
+ >Pair : Pair
+@@= skipped -24, +24 lines =@@
+ >OptRest : OptRest
+
+ export type NonArrayRest = [first: string, ...rest: number]; // non-arraylike rest, disallowed
+->NonArrayRest : [first: string, ...rest: any[]]
++>NonArrayRest : [first: string, ...rest: Array<any>]
+
+ export type RecusiveRestUnlabeled = [string, ...RecusiveRestUnlabeled];
+ >RecusiveRestUnlabeled : any

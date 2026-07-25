@@ -6,7 +6,7 @@ let { [Symbol.iterator]: destructured } = [];
 >Symbol : SymbolConstructor
 >iterator : unique symbol
 >destructured : () => ArrayIterator<never>
->[] : never[]
+>[] : Array<never>
 
 void destructured;
 >void destructured : undefined

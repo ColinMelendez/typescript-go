@@ -1,0 +1,11 @@
+--- old.asyncArrowFunction11_es5(target=es2015).types
++++ new.asyncArrowFunction11_es5(target=es2015).types
+@@= skipped -7, +7 lines =@@
+     b = async (...args: any[]) => {
+ >b : (...args: any[]) => Promise<void>
+ >async (...args: any[]) => {        await Promise.resolve();        const obj = { ["a"]: () => this }; // computed property name after `await` triggers case    } : (...args: any[]) => Promise<void>
+->args : any[]
++>args : Array<any>
+
+         await Promise.resolve();
+ >await Promise.resolve() : void

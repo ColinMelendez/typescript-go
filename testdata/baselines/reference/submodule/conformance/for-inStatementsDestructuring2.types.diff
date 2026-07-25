@@ -1,0 +1,8 @@
+--- old.for-inStatementsDestructuring2.types
++++ new.for-inStatementsDestructuring2.types
+@@= skipped -3, +3 lines =@@
+ for (var {a, b} in []) {}
+ >a : any
+ >b : any
+->[] : never[]
++>[] : Array<never>

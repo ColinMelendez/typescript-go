@@ -1,0 +1,9 @@
+--- old.parser509668.types
++++ new.parser509668.types
+@@= skipped -5, +5 lines =@@
+
+   // Doesn't work, but should
+   constructor (public ...args: string[]) { }
+->args : string[]
++>args : Array<string>
+ }

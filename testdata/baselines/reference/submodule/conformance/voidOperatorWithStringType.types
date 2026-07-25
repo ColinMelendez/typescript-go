@@ -6,8 +6,8 @@ var STRING: string;
 >STRING : string
 
 var STRING1: string[] = ["", "abc"];
->STRING1 : string[]
->["", "abc"] : string[]
+>STRING1 : Array<string>
+>["", "abc"] : Array<string>
 >"" : ""
 >"abc" : "abc"
 
@@ -46,7 +46,7 @@ var ResultIsAny1 = void STRING;
 var ResultIsAny2 = void STRING1;
 >ResultIsAny2 : any
 >void STRING1 : undefined
->STRING1 : string[]
+>STRING1 : Array<string>
 
 // string type literal
 var ResultIsAny3 = void "";
@@ -93,7 +93,7 @@ var ResultIsAny8 = void STRING1[0];
 >ResultIsAny8 : any
 >void STRING1[0] : undefined
 >STRING1[0] : string
->STRING1 : string[]
+>STRING1 : Array<string>
 >0 : 0
 
 var ResultIsAny9 = void foo();
@@ -155,7 +155,7 @@ void STRING;
 
 void STRING1;
 >void STRING1 : undefined
->STRING1 : string[]
+>STRING1 : Array<string>
 
 void foo();
 >void foo() : undefined

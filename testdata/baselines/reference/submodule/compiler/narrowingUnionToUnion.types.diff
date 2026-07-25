@@ -14,7 +14,27 @@
  >value : string | null | undefined
 
  declare function isZero(value: number): value is 0;
-@@= skipped -33, +33 lines =@@
+@@= skipped -17, +17 lines =@@
+
+ declare function isEmptyArray<T>(value: T[]): value is [];
+ >isEmptyArray : <T>(value: T[]) => value is []
+->value : T[]
++>value : Array<T>
+
+ declare function isMaybeEmptyArray<T>(value: T[] | null | undefined): value is [] | null | undefined;
+ >isMaybeEmptyArray : <T>(value: T[] | null | undefined) => value is [] | null | undefined
+->value : T[] | null | undefined
++>value : Array<T> | null | undefined
+
+ const TEST_CASES = [
+->TEST_CASES : (((value: string) => void) | ((value: number) => void) | ((value: string[]) => void))[]
+->[    (value: string) => {        if (isEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }        if (isMaybeEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }    },    (value?: string) => {        if (isMaybeEmptyString(value)) {            value;  // "" | undefined        }        else {            value;  // string        }    },    (value: number) => {        if (isZero(value)) {            value;  // 0        }        else {            value;  // number        }        if (isMaybeZero(value)) {            value; // 0        }        else {            value;  // number        }    },    (value?: number) => {        if (isMaybeZero(value)) {            value;  // 0 | undefined        }        else {            value;  // number        }    },    (value: string[]) => {        if (isEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }        if (isMaybeEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }    },    (value?: string[]) => {        if (isMaybeEmptyArray(value)) {            value;  // [] | undefined        }        else {            value;  // string[]        }    },] : (((value: string) => void) | ((value: number) => void) | ((value: string[]) => void))[]
++>TEST_CASES : Array<((value: string) => void) | ((value: number) => void) | ((value: string[]) => void)>
++>[    (value: string) => {        if (isEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }        if (isMaybeEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }    },    (value?: string) => {        if (isMaybeEmptyString(value)) {            value;  // "" | undefined        }        else {            value;  // string        }    },    (value: number) => {        if (isZero(value)) {            value;  // 0        }        else {            value;  // number        }        if (isMaybeZero(value)) {            value; // 0        }        else {            value;  // number        }    },    (value?: number) => {        if (isMaybeZero(value)) {            value;  // 0 | undefined        }        else {            value;  // number        }    },    (value: string[]) => {        if (isEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }        if (isMaybeEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }    },    (value?: string[]) => {        if (isMaybeEmptyArray(value)) {            value;  // [] | undefined        }        else {            value;  // string[]        }    },] : Array<((value: string) => void) | ((value: number) => void) | ((value: string[]) => void)>
+
+     (value: string) => {
+ >(value: string) => {        if (isEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }        if (isMaybeEmptyString(value)) {            value;  // ""        }        else {            value;  // string        }    } : (value: string) => void
+@@= skipped -16, +16 lines =@@
 
          if (isEmptyString(value)) {
  >isEmptyString(value) : boolean
@@ -41,7 +61,88 @@
  >value : string | undefined
 
              value;  // "" | undefined
-@@= skipped -291, +291 lines =@@
+@@= skipped -59, +59 lines =@@
+     },
+     (value: string[]) => {
+ >(value: string[]) => {        if (isEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }        if (isMaybeEmptyArray(value)) {            value;  // []        }        else {            value;  // string[]        }    } : (value: string[]) => void
+->value : string[]
++>value : Array<string>
+
+         if (isEmptyArray(value)) {
+ >isEmptyArray(value) : boolean
+ >isEmptyArray : <T>(value: T[]) => value is []
+->value : string[]
++>value : Array<string>
+
+             value;  // []
+ >value : []
+         }
+         else {
+             value;  // string[]
+->value : string[]
++>value : Array<string>
+         }
+         if (isMaybeEmptyArray(value)) {
+ >isMaybeEmptyArray(value) : boolean
+ >isMaybeEmptyArray : <T>(value: T[] | null | undefined) => value is [] | null | undefined
+->value : string[]
++>value : Array<string>
+
+             value;  // []
+ >value : []
+         }
+         else {
+             value;  // string[]
+->value : string[]
++>value : Array<string>
+         }
+     },
+     (value?: string[]) => {
+ >(value?: string[]) => {        if (isMaybeEmptyArray(value)) {            value;  // [] | undefined        }        else {            value;  // string[]        }    } : (value?: string[]) => void
+->value : string[] | undefined
++>value : Array<string> | undefined
+
+         if (isMaybeEmptyArray(value)) {
+ >isMaybeEmptyArray(value) : boolean
+ >isMaybeEmptyArray : <T>(value: T[] | null | undefined) => value is [] | null | undefined
+->value : string[] | undefined
++>value : Array<string> | undefined
+
+             value;  // [] | undefined
+ >value : [] | undefined
+         }
+         else {
+             value;  // string[]
+->value : string[]
++>value : Array<string>
+         }
+     },
+ ];
+@@= skipped -183, +183 lines =@@
+
+ function assertRelationIsNullOrStringArray(v: (string | number)[] | null): asserts v is string[] | null {}
+ >assertRelationIsNullOrStringArray : (v: (string | number)[] | null) => asserts v is string[] | null
+->v : (string | number)[] | null
++>v : Array<string | number> | null
+
+ function f1x(obj: (string | number)[] | null) {
+ >f1x : (obj: (string | number)[] | null) => void
+->obj : (string | number)[] | null
++>obj : Array<string | number> | null
+
+     assertRelationIsNullOrStringArray(obj);
+ >assertRelationIsNullOrStringArray(obj) : void
+ >assertRelationIsNullOrStringArray : (v: (string | number)[] | null) => asserts v is string[] | null
+->obj : (string | number)[] | null
++>obj : Array<string | number> | null
+
+     obj;  // string[] | null
+->obj : string[] | null
++>obj : Array<string> | null
+ }
+
+ // Repro from #55425
+@@= skipped -49, +49 lines =@@
  >type : "A" | "B"
  >'A' : "A"
  >working.aProp : number

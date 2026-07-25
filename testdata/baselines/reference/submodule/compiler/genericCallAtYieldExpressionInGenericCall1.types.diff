@@ -1,0 +1,20 @@
+--- old.genericCallAtYieldExpressionInGenericCall1.types
++++ new.genericCallAtYieldExpressionInGenericCall1.types
+@@= skipped -15, +15 lines =@@
+
+       next(...args: ReadonlyArray<any>): IteratorResult<any, A>;
+ >next : (...args: ReadonlyArray<any>) => IteratorResult<any, A>
+->args : readonly any[]
++>args : ReadonlyArray<any>
+
+     };
+   };
+@@= skipped -83, +83 lines =@@
+
+       next(...args: ReadonlyArray<any>): IteratorResult<number, A>;
+ >next : (...args: ReadonlyArray<any>) => IteratorResult<number, A>
+->args : readonly any[]
++>args : ReadonlyArray<any>
+
+     };
+   };

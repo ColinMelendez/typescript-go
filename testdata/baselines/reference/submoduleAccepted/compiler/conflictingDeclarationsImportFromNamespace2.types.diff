@@ -1,6 +1,15 @@
 --- old.conflictingDeclarationsImportFromNamespace2.types
 +++ new.conflictingDeclarationsImportFromNamespace2.types
-@@= skipped -45, +45 lines =@@
+@@= skipped -14, +14 lines =@@
+ >object : T
+
+         ...props: Array<U>
+->props : U[]
++>props : Array<U>
+
+       ) => Pick<T, U>;
+     }
+@@= skipped -31, +31 lines =@@
 
  === index.ts ===
  import * as pick from 'lodash/pick';

@@ -14,14 +14,14 @@ class FooArrayIterator {
 >FooArrayIterator : FooArrayIterator
 
     next() {
->next : () => { value: Foo[]; done: boolean; }
+>next : () => { value: Array<Foo>; done: boolean; }
 
         return {
->{            value: [new Foo],            done: false        } : { value: Foo[]; done: boolean; }
+>{            value: [new Foo],            done: false        } : { value: Array<Foo>; done: boolean; }
 
             value: [new Foo],
->value : Foo[]
->[new Foo] : Foo[]
+>value : Array<Foo>
+>[new Foo] : Array<Foo>
 >new Foo : Foo
 >Foo : typeof Foo
 
@@ -46,7 +46,7 @@ class FooArrayIterator {
 function fun([[a], b]: Bar[][]) { }
 >fun : ([[a], b]: Bar[][]) => void
 >a : Bar
->b : Bar[]
+>b : Array<Bar>
 
 fun(new FooArrayIterator);
 >fun(new FooArrayIterator) : void

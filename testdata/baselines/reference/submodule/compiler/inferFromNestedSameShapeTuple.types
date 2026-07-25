@@ -18,12 +18,12 @@ type Recursive<Id> = {
 >id : Id
 
     children: readonly Recursive<Id>[]
->children : readonly Recursive<Id>[]
+>children : ReadonlyArray<Recursive<Id>>
 }
 
 declare function getIds<Id>(items: readonly Recursive<Id>[]): Id[];
 >getIds : <Id>(items: readonly Recursive<Id>[]) => Id[]
->items : readonly Recursive<Id>[]
+>items : ReadonlyArray<Recursive<Id>>
 
 const items = [{
 >items : readonly [{ readonly id: 'a'; readonly children: readonly [{ readonly id: 'b'; readonly children: readonly []; }]; }]
@@ -53,15 +53,15 @@ const items = [{
 }] as const satisfies readonly Recursive<string>[]
 
 const foo = getIds(items)
->foo : ("a" | "b")[]
->getIds(items) : ("a" | "b")[]
+>foo : Array<"a" | "b">
+>getIds(items) : Array<"a" | "b">
 >getIds : <Id>(items: readonly Recursive<Id>[]) => Id[]
 >items : readonly [{ readonly id: 'a'; readonly children: readonly [{ readonly id: 'b'; readonly children: readonly []; }]; }]
 
 // variant with a fresh argument
 const foo2 = getIds([{
->foo2 : ("a" | "b")[]
->getIds([{    id: 'a',    children: [{        id: 'b',        children: []    }]}] as const) : ("a" | "b")[]
+>foo2 : Array<"a" | "b">
+>getIds([{    id: 'a',    children: [{        id: 'b',        children: []    }]}] as const) : Array<"a" | "b">
 >getIds : <Id>(items: readonly Recursive<Id>[]) => Id[]
 >[{    id: 'a',    children: [{        id: 'b',        children: []    }]}] as const : readonly [{ readonly id: 'a'; readonly children: readonly [{ readonly id: 'b'; readonly children: readonly []; }]; }]
 >[{    id: 'a',    children: [{        id: 'b',        children: []    }]}] : readonly [{ readonly id: 'a'; readonly children: readonly [{ readonly id: 'b'; readonly children: readonly []; }]; }]

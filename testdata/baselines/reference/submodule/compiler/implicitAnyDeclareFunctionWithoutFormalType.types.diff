@@ -1,0 +1,13 @@
+--- old.implicitAnyDeclareFunctionWithoutFormalType.types
++++ new.implicitAnyDeclareFunctionWithoutFormalType.types
+@@= skipped -17, +17 lines =@@
+ >c : any
+
+ function func3(...args) { };     // error at "args" 
+->func3 : (...args: any[]) => void
+->args : any[]
++>func3 : (...args: Array<any>) => void
++>args : Array<any>
+
+ function func4(z= null, w= undefined) { };  // error at "z,w"
+ >func4 : (z?: null, w?: undefined) => void

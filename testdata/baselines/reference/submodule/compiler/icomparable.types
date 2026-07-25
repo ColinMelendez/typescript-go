@@ -9,17 +9,17 @@
 
     declare function sort<U extends IComparable<any>>(items: U[]): U[];
 >sort : <U extends IComparable<any>>(items: U[]) => U[]
->items : U[]
+>items : Array<U>
 
     interface StringComparable extends IComparable<string> {
     }
 
     var sc: StringComparable[];
->sc : StringComparable[]
+>sc : Array<StringComparable>
 
     var x = sort(sc);
->x : StringComparable[]
->sort(sc) : StringComparable[]
+>x : Array<StringComparable>
+>sort(sc) : Array<StringComparable>
 >sort : <U extends IComparable<any>>(items: U[]) => U[]
->sc : StringComparable[]
+>sc : Array<StringComparable>
 

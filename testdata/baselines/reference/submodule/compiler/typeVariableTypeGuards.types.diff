@@ -1,0 +1,11 @@
+--- old.typeVariableTypeGuards.types
++++ new.typeVariableTypeGuards.types
+@@= skipped -178, +178 lines =@@
+         obj[x].length;
+ >obj[x].length : number
+ >obj[x] : string
+->obj : string[]
++>obj : Array<string>
+ >x : number
+ >length : number
+     }

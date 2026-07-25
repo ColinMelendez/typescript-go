@@ -1,0 +1,26 @@
+--- old.destructuringVariableDeclaration2.types
++++ new.destructuringVariableDeclaration2.types
+@@= skipped -74, +74 lines =@@
+ // to the widened form of the type associated with the destructuring variable declaration, binding property, or binding element.
+ var {d: {d1 = ["string", null]}}: { d: { d1: number[] } } = { d: { d1: [1, 2] } };  // Error
+ >d : any
+->d1 : number[]
+->["string", null] : (string | null)[]
++>d1 : Array<number>
++>["string", null] : Array<string | null>
+ >"string" : "string"
+ >d : { d1: number[]; }
+->d1 : number[]
+->{ d: { d1: [1, 2] } } : { d: { d1: number[]; }; }
+->d : { d1: number[]; }
+->{ d1: [1, 2] } : { d1: number[]; }
+->d1 : number[]
+->[1, 2] : number[]
++>d1 : Array<number>
++>{ d: { d1: [1, 2] } } : { d: { d1: Array<number>; }; }
++>d : { d1: Array<number>; }
++>{ d1: [1, 2] } : { d1: Array<number>; }
++>d1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

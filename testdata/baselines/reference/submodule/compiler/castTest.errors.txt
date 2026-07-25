@@ -1,4 +1,4 @@
-castTest.ts(9,10): error TS2352: Conversion of type 'null' to type 'any[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+castTest.ts(9,10): error TS2352: Conversion of type 'null' to type 'Array<any>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
 castTest.ts(11,9): error TS2352: Conversion of type 'null' to type '(res: number) => void' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
 
 
@@ -13,7 +13,7 @@ castTest.ts(11,9): error TS2352: Conversion of type 'null' to type '(res: number
     
     var ar = <any[]>null;
              ~~~~~~~~~~~
-!!! error TS2352: Conversion of type 'null' to type 'any[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+!!! error TS2352: Conversion of type 'null' to type 'Array<any>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
     
     var f = <(res : number) => void>null;
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

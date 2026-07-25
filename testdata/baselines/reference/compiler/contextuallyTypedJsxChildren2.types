@@ -154,12 +154,12 @@ const _result = (
 >Subscribe : <TSelected = State>(props: { selector?: (state: State) => TSelected; children: (state: TSelected) => void; }) => React.ReactElement<any>
 
     selector={(state) => {
->selector : (state: State) => boolean[]
->(state) => {      return [state.value]    } : (state: State) => boolean[]
+>selector : (state: State) => Array<boolean>
+>(state) => {      return [state.value]    } : (state: State) => Array<boolean>
 >state : State
 
       return [state.value]
->[state.value] : boolean[]
+>[state.value] : Array<boolean>
 >state.value : boolean
 >state : State
 >value : boolean
@@ -167,7 +167,7 @@ const _result = (
     }}
   >
     {([value = false]) => {
->([value = false]) => {      console.log(value)    } : ([value]: boolean[]) => void
+>([value = false]) => {      console.log(value)    } : ([value]: Array<boolean>) => void
 >value : boolean
 >false : false
 

@@ -5,7 +5,7 @@
     @return {*=} */
 function f(...args) {
 >f : (...args?: any[] | undefined) => any | undefined
->args : any[] | undefined
+>args : Array<any> | undefined
 
     return null
 }

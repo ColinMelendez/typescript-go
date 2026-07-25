@@ -1,0 +1,11 @@
+--- old.importHelpersES6.types
++++ new.importHelpersES6.types
+@@= skipped -47, +47 lines =@@
+
+ export declare function __decorate(decorators: Function[], target: any, key?: string | symbol, desc?: any): any;
+ >__decorate : (decorators: Function[], target: any, key?: string | symbol, desc?: any) => any
+->decorators : Function[]
++>decorators : Array<Function>
+ >target : any
+ >key : string | symbol
+ >desc : any

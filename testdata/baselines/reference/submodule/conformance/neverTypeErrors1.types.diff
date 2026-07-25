@@ -1,0 +1,32 @@
+--- old.neverTypeErrors1.types
++++ new.neverTypeErrors1.types
+@@= skipped -71, +71 lines =@@
+ >f5 : () => void
+
+     let x: never[] = [];  // Ok
+->x : never[]
+->[] : never[]
++>x : Array<never>
++>[] : Array<never>
+ }
+
+ // Repro from #46032
+@@= skipped -21, +21 lines =@@
+
+ function func(): { value: Union[] } {
+ >func : () => { value: Union[]; }
+->value : never[]
++>value : Array<never>
+
+     return {
+->{        value: [],    } : { value: never[]; }
++>{        value: [],    } : { value: Array<never>; }
+
+         value: [],
+->value : never[]
+->[] : never[]
++>value : Array<never>
++>[] : Array<never>
+
+     };
+ }

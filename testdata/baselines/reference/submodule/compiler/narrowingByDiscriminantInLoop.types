@@ -13,7 +13,7 @@ interface IDLTypeDescription {
 
 interface InterfaceType {
     members: IDLMemberTypes[];
->members : IDLMemberTypes[]
+>members : Array<IDLMemberTypes>
 }
 
 interface OperationMemberType {
@@ -38,9 +38,9 @@ function insertInterface(callbackType: InterfaceType) {
 
     for (const memberType of callbackType.members) {
 >memberType : IDLMemberTypes
->callbackType.members : IDLMemberTypes[]
+>callbackType.members : Array<IDLMemberTypes>
 >callbackType : InterfaceType
->members : IDLMemberTypes[]
+>members : Array<IDLMemberTypes>
 
         if (memberType.type === "const") {
 >memberType.type === "const" : boolean
@@ -84,9 +84,9 @@ function insertInterface2(callbackType: InterfaceType) {
 
     for (const memberType of callbackType.members) {
 >memberType : IDLMemberTypes
->callbackType.members : IDLMemberTypes[]
+>callbackType.members : Array<IDLMemberTypes>
 >callbackType : InterfaceType
->members : IDLMemberTypes[]
+>members : Array<IDLMemberTypes>
 
         if (memberType.type === "operation") {
 >memberType.type === "operation" : boolean

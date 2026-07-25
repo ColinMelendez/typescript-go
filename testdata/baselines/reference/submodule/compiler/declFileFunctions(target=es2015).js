@@ -166,7 +166,7 @@ export declare function fooWithSingleOverload(a: string): string;
 export declare function fooWithTypePredicate(a: any): a is number;
 export declare function fooWithTypePredicateAndMulitpleParams(a: any, b: any, c: any): a is number;
 export declare function fooWithTypeTypePredicateAndGeneric<T>(a: any): a is T;
-export declare function fooWithTypeTypePredicateAndRestParam(a: any, ...rest: any[]): a is number;
+export declare function fooWithTypeTypePredicateAndRestParam(a: any, ...rest: Array<any>): a is number;
 //// [declFileFunctions_1.d.ts]
 /** This comment should appear for foo*/
 declare function globalfoo(): void;

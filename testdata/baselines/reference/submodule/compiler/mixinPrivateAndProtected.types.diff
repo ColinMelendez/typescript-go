@@ -1,6 +1,15 @@
 --- old.mixinPrivateAndProtected.types
 +++ new.mixinPrivateAndProtected.types
-@@= skipped -23, +23 lines =@@
+@@= skipped -4, +4 lines =@@
+
+ type Constructor<T> = new(...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ class A {
+ >A : A
+@@= skipped -19, +19 lines =@@
  }
 
  function mixB<T extends Constructor<{}>>(Cls: T) {
@@ -120,6 +129,18 @@
  >Base : Person
 
  		constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+ 			super(...args);
+ >super(...args) : void
+ >super : T
+ >...args : any
+->args : any[]
++>args : Array<any>
+ 		}
+
+ 		myProtectedFunction() {
 @@= skipped -33, +33 lines =@@
 
  class Customer extends PersonMixin(Person) {

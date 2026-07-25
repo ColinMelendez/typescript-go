@@ -1,0 +1,13 @@
+--- old.classExtendingBuiltinType.types
++++ new.classExtendingBuiltinType.types
+@@= skipped -34, +34 lines =@@
+
+ class C9 extends Array { }
+ >C9 : C9
+->Array : any[]
++>Array : Array<any>
+
+ class C10 extends Array<number> { }
+ >C10 : C10
+->Array : number[]
++>Array : Array<number>

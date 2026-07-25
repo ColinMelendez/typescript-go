@@ -17,7 +17,7 @@ function isS(t: T): t is S {
 >t : T
 >"a" : "a"
 >t === "b" : boolean
->t : "b" | S[]
+>t : "b" | Array<S>
 >"b" : "b"
 }
 
@@ -36,7 +36,7 @@ function f(foo: T) {
     else { 
         return foo[0];
 >foo[0] : S
->foo : S[]
+>foo : Array<S>
 >0 : 0
     }
 }

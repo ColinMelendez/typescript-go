@@ -1,0 +1,48 @@
+--- old.elementAccessChain.3.types
++++ new.elementAccessChain.3.types
+@@= skipped -109, +109 lines =@@
+ >obj?.["a"] : any
+ >obj : any
+ >"a" : "a"
+->[] : never[]
++>[] : Array<never>
+
+ for (obj?.a["b"] of []);
+ >obj?.a["b"] : any
+@@= skipped -8, +8 lines =@@
+ >obj : any
+ >a : any
+ >"b" : "b"
+->[] : never[]
++>[] : Array<never>
+
+ ({ a: obj?.["a"] } = { a: 1 });
+ >({ a: obj?.["a"] } = { a: 1 }) : { a: number; }
+@@= skipped -53, +53 lines =@@
+ >1 : 1
+
+ [...obj?.["a"]] = [];
+->[...obj?.["a"]] = [] : never[]
+->[...obj?.["a"]] : any[]
++>[...obj?.["a"]] = [] : Array<never>
++>[...obj?.["a"]] : Array<any>
+ >...obj?.["a"] : any
+ >obj?.["a"] : any
+ >obj : any
+ >"a" : "a"
+->[] : never[]
++>[] : Array<never>
+
+ [...obj?.a["b"]] = [];
+->[...obj?.a["b"]] = [] : never[]
+->[...obj?.a["b"]] : any[]
++>[...obj?.a["b"]] = [] : Array<never>
++>[...obj?.a["b"]] : Array<any>
+ >...obj?.a["b"] : any
+ >obj?.a["b"] : any
+ >obj?.a : any
+ >obj : any
+ >a : any
+ >"b" : "b"
+->[] : never[]
++>[] : Array<never>

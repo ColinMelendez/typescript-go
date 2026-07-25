@@ -1,6 +1,6 @@
 genericRestParameters1.ts(135,23): error TS2344: Type 'Function' does not satisfy the constraint '(...args: any) => any'.
   Type 'Function' provides no match for the signature '(...args: any): any'.
-genericRestParameters1.ts(164,1): error TS2322: Type '(a: never) => void' is not assignable to type '(...args: any[]) => void'.
+genericRestParameters1.ts(164,1): error TS2322: Type '(a: never) => void' is not assignable to type '(...args: Array<any>) => void'.
   Types of parameters 'a' and 'args' are incompatible.
     Type 'any' is not assignable to type 'never'.
 
@@ -174,7 +174,7 @@ genericRestParameters1.ts(164,1): error TS2322: Type '(a: never) => void' is not
     ff1 = ff3;
     ff1 = ff4;  // Error
     ~~~
-!!! error TS2322: Type '(a: never) => void' is not assignable to type '(...args: any[]) => void'.
+!!! error TS2322: Type '(a: never) => void' is not assignable to type '(...args: Array<any>) => void'.
 !!! error TS2322:   Types of parameters 'a' and 'args' are incompatible.
 !!! error TS2322:     Type 'any' is not assignable to type 'never'.
     

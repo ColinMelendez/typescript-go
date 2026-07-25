@@ -23,7 +23,7 @@ type Explicit = (...args: Tail<Parameters<MyFunctionType>>) => ReturnType<MyFunc
 type Bind1<T extends (head: any, ...tail: any[]) => any> = (...args: Tail<Parameters<T>>) => ReturnType<T>;
 >Bind1 : Bind1<T>
 >head : any
->tail : any[]
+>tail : Array<any>
 >args : Tail<Parameters<T>>
 
 type Generic = Bind1<MyFunctionType>; // (bar: string) => boolean

@@ -6,8 +6,8 @@ declare var NUMBER: number;
 >NUMBER : number
 
 var NUMBER1: number[] = [1, 2];
->NUMBER1 : number[]
->[1, 2] : number[]
+>NUMBER1 : Array<number>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 
@@ -46,7 +46,7 @@ var ResultIsBoolean1 = delete NUMBER;
 var ResultIsBoolean2 = delete NUMBER1;
 >ResultIsBoolean2 : boolean
 >delete NUMBER1 : boolean
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 
 // number type literal
 var ResultIsBoolean3 = delete 1;
@@ -93,7 +93,7 @@ var ResultIsBoolean8 = delete NUMBER1[0];
 >ResultIsBoolean8 : boolean
 >delete NUMBER1[0] : boolean
 >NUMBER1[0] : number
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 >0 : 0
 
 var ResultIsBoolean9 = delete foo();
@@ -146,7 +146,7 @@ delete NUMBER;
 
 delete NUMBER1;
 >delete NUMBER1 : boolean
->NUMBER1 : number[]
+>NUMBER1 : Array<number>
 
 delete foo();
 >delete foo() : boolean

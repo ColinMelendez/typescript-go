@@ -1,0 +1,9 @@
+--- old.parserForStatement3.types
++++ new.parserForStatement3.types
+@@= skipped -15, +15 lines =@@
+ >_ : any
+ >jh : any
+ >a : any
+->[] : never[]
++>[] : Array<never>
+ >b : any

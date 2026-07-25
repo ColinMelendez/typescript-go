@@ -6,15 +6,15 @@ class arrTest {
 
     test(arg1: number[]);
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->arg1 : number[]
+>arg1 : Array<number>
 
     test(arg1: string[]);
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->arg1 : string[]
+>arg1 : Array<string>
 
     test(arg1: any[]) { }
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->arg1 : any[]
+>arg1 : Array<any>
 
     callTest() {
 >callTest : () => void
@@ -24,7 +24,7 @@ class arrTest {
 >this.test : { (arg1: number[]): any; (arg1: string[]): any; }
 >this : this
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->[1, 2, 3, 5] : number[]
+>[1, 2, 3, 5] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -35,7 +35,7 @@ class arrTest {
 >this.test : { (arg1: number[]): any; (arg1: string[]): any; }
 >this : this
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->["hi"] : string[]
+>["hi"] : Array<string>
 >"hi" : "hi"
 
         this.test([]);
@@ -43,14 +43,14 @@ class arrTest {
 >this.test : { (arg1: number[]): any; (arg1: string[]): any; }
 >this : this
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->[] : undefined[]
+>[] : Array<undefined>
 
         this.test([1, 2, "hi", 5]); // Error
 >this.test([1, 2, "hi", 5]) : any
 >this.test : { (arg1: number[]): any; (arg1: string[]): any; }
 >this : this
 >test : { (arg1: number[]): any; (arg1: string[]): any; }
->[1, 2, "hi", 5] : (string | number)[]
+>[1, 2, "hi", 5] : Array<string | number>
 >1 : 1
 >2 : 2
 >"hi" : "hi"

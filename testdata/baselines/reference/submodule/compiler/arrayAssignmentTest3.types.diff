@@ -1,0 +1,10 @@
+--- old.arrayAssignmentTest3.types
++++ new.arrayAssignmentTest3.types
+@@= skipped -12, +12 lines =@@
+     constructor(public x: string, public y: number, z: B[]) { }
+ >x : string
+ >y : number
+->z : B[]
++>z : Array<B>
+ }
+

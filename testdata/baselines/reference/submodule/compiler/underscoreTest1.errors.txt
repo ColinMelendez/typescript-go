@@ -1,7 +1,7 @@
 underscoreTest1_underscoreTests.ts(26,7): error TS2769: No overload matches this call.
   The last overload gave the following error.
-    Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
-      Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
+    Argument of type 'Array<string | number | boolean>' is not assignable to parameter of type 'Dictionary<unknown>'.
+      Index signature for type 'string' is missing in type 'Array<string | number | boolean>'.
 
 
 ==== underscoreTest1_underscoreTests.ts (1 errors) ====
@@ -34,8 +34,8 @@ underscoreTest1_underscoreTests.ts(26,7): error TS2769: No overload matches this
           ~~~~~~~~~~~~~~~~~~~~~~
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   The last overload gave the following error.
-!!! error TS2769:     Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
-!!! error TS2769:       Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
+!!! error TS2769:     Argument of type 'Array<string | number | boolean>' is not assignable to parameter of type 'Dictionary<unknown>'.
+!!! error TS2769:       Index signature for type 'string' is missing in type 'Array<string | number | boolean>'.
 !!! related TS2771 underscoreTest1_underscore.ts:452:9: The last overload is declared here.
     
     _.any([null, 0, 'yes', false]);

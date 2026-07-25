@@ -1,0 +1,63 @@
+--- old.genericTypeAliases.types
++++ new.genericTypeAliases.types
+@@= skipped -176, +176 lines =@@
+ >"test" : "test"
+
+ function f<A>() {
+->f : <A>() => A[] | { x: A[] | any; }
++>f : <A>() => Array<A> | { x: Array<A> | any; }
+
+     type Foo<T> = T | { x: Foo<T> };
+ >Foo : T | { x: T | any; }
+ >x : T | { x: T | any; }
+
+     var x: Foo<A[]>;
+->x : A[] | { x: A[] | any; }
++>x : Array<A> | { x: Array<A> | any; }
+
+     return x;
+->x : A[] | { x: A[] | any; }
++>x : Array<A> | { x: Array<A> | any; }
+ }
+
+ function g<B>() {
+->g : <B>() => B[] | { x: B[] | any; }
++>g : <B>() => Array<B> | { x: Array<B> | any; }
+
+     type Bar<U> = U | { x: Bar<U> };
+ >Bar : U | { x: U | any; }
+ >x : U | { x: U | any; }
+
+     var x: Bar<B[]>;
+->x : B[] | { x: B[] | any; }
++>x : Array<B> | { x: Array<B> | any; }
+
+     return x;
+->x : B[] | { x: B[] | any; }
++>x : Array<B> | { x: Array<B> | any; }
+ }
+
+ // Deeply instantiated generics
+ var a = f<string>();
+->a : string[] | { x: string[] | any; }
+->f<string>() : string[] | { x: string[] | any; }
+->f : <A>() => A[] | { x: A[] | any; }
++>a : Array<string> | { x: Array<string> | any; }
++>f<string>() : Array<string> | { x: Array<string> | any; }
++>f : <A>() => Array<A> | { x: Array<A> | any; }
+
+ var b = g<string>();
+->b : string[] | { x: string[] | any; }
+->g<string>() : string[] | { x: string[] | any; }
+->g : <B>() => B[] | { x: B[] | any; }
++>b : Array<string> | { x: Array<string> | any; }
++>g<string>() : Array<string> | { x: Array<string> | any; }
++>g : <B>() => Array<B> | { x: Array<B> | any; }
+
+ a = b;
+->a = b : string[] | { x: string[] | any; }
+->a : string[] | { x: string[] | any; }
+->b : string[] | { x: string[] | any; }
++>a = b : Array<string> | { x: Array<string> | any; }
++>a : Array<string> | { x: Array<string> | any; }
++>b : Array<string> | { x: Array<string> | any; }

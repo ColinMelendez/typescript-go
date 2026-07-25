@@ -49,7 +49,7 @@ namespace Errors {
 
         declare var a10: new (...x: Base[]) => Base;
 >a10 : new (...x: Base[]) => Base
->x : Base[]
+>x : Array<Base>
 
         declare var a11: new (x: { foo: string }, y: { foo: string; bar: string }) => Base;
 >a11 : new (x: { foo: string; }, y: { foo: string; bar: string; }) => Base
@@ -61,8 +61,8 @@ namespace Errors {
 
         declare var a12: new (x: Array<Base>, y: Array<Derived2>) => Array<Derived>;
 >a12 : new (x: Array<Base>, y: Array<Derived2>) => Array<Derived>
->x : Base[]
->y : Derived2[]
+>x : Array<Base>
+>y : Array<Derived2>
 
         declare var a14: {
 >a14 : { new (x: number): number[]; new (x: string): string[]; }
@@ -181,7 +181,7 @@ namespace Errors {
         
         declare var b10: new <T extends Derived>(...x: T[]) => T; 
 >b10 : new <T extends Derived>(...x: T[]) => T
->x : T[]
+>x : Array<T>
 
         a10 = b10; // ok
 >a10 = b10 : new <T extends Derived>(...x: T[]) => T
@@ -210,8 +210,8 @@ namespace Errors {
 
         declare var b12: new <T extends Array<Derived2>>(x: Array<Base>, y: Array<Base>) => T; 
 >b12 : new <T extends Array<Derived2>>(x: Array<Base>, y: Array<Base>) => T
->x : Base[]
->y : Base[]
+>x : Array<Base>
+>y : Array<Base>
 
         a12 = b12; // ok
 >a12 = b12 : new <T extends Array<Derived2>>(x: Array<Base>, y: Array<Base>) => T

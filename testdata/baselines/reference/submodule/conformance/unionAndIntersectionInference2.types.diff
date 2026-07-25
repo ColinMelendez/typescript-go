@@ -1,0 +1,55 @@
+--- old.unionAndIntersectionInference2.types
++++ new.unionAndIntersectionInference2.types
+@@= skipped -8, +8 lines =@@
+ >a1 : string
+
+ var b1: string | string[];
+->b1 : string | string[]
++>b1 : string | Array<string>
+
+ var c1: string[] | string;
+->c1 : string | string[]
++>c1 : string | Array<string>
+
+ var d1: string | { name: string };
+ >d1 : string | { name: string; }
+@@= skipped -18, +18 lines =@@
+ >a1 : string
+
+ f1(b1); // string[]
+->f1(b1) : string[]
++>f1(b1) : Array<string>
+ >f1 : <T>(x: T | string) => T
+->b1 : string | string[]
++>b1 : string | Array<string>
+
+ f1(c1); // string[]
+->f1(c1) : string[]
++>f1(c1) : Array<string>
+ >f1 : <T>(x: T | string) => T
+->c1 : string | string[]
++>c1 : string | Array<string>
+
+ f1(d1); // { name: string }
+ >f1(d1) : { name: string; }
+@@= skipped -29, +29 lines =@@
+ >name : string
+
+ var b2: { name: string } & string[];
+->b2 : { name: string; } & string[]
++>b2 : { name: string; } & Array<string>
+ >name : string
+
+ var c2: string & { name: string } & number;
+@@= skipped -18, +18 lines =@@
+ >a2 : string & { name: string; }
+
+ f2(b2); // string[]
+->f2(b2) : string[]
++>f2(b2) : Array<string>
+ >f2 : <T>(x: T & { name: string; }) => T
+->b2 : { name: string; } & string[]
++>b2 : { name: string; } & Array<string>
+
+ f2(c2); // never
+ >f2(c2) : never

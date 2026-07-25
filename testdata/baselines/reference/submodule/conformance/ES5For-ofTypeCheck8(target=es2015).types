@@ -2,12 +2,12 @@
 
 === ES5For-ofTypeCheck8.ts ===
 declare var union: string | string[]| number[]| symbol[];
->union : string | string[] | number[] | symbol[]
+>union : string | Array<string> | Array<number> | Array<symbol>
 
 var v: symbol;
 >v : symbol
 
 for (v of union) { }
 >v : symbol
->union : string | string[] | number[] | symbol[]
+>union : string | Array<string> | Array<number> | Array<symbol>
 

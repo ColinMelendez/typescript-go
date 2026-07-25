@@ -723,29 +723,29 @@ declare function nested<T>(arg: {
 }): T;
 
 const resNested = nested({
->resNested : number[]
->nested({  prop: {    produce: (a) => [a],    consume: (arg) => arg.join(","),  },}) : number[]
+>resNested : Array<number>
+>nested({  prop: {    produce: (a) => [a],    consume: (arg) => arg.join(","),  },}) : Array<number>
 >nested : <T>(arg: { prop: { produce: (arg1: number) => T; consume: (arg2: T) => void; }; }) => T
->{  prop: {    produce: (a) => [a],    consume: (arg) => arg.join(","),  },} : { prop: { produce: (a: number) => number[]; consume: (arg: number[]) => string; }; }
+>{  prop: {    produce: (a) => [a],    consume: (arg) => arg.join(","),  },} : { prop: { produce: (a: number) => Array<number>; consume: (arg: Array<number>) => string; }; }
 
   prop: {
->prop : { produce: (a: number) => number[]; consume: (arg: number[]) => string; }
->{    produce: (a) => [a],    consume: (arg) => arg.join(","),  } : { produce: (a: number) => number[]; consume: (arg: number[]) => string; }
+>prop : { produce: (a: number) => Array<number>; consume: (arg: Array<number>) => string; }
+>{    produce: (a) => [a],    consume: (arg) => arg.join(","),  } : { produce: (a: number) => Array<number>; consume: (arg: Array<number>) => string; }
 
     produce: (a) => [a],
->produce : (a: number) => number[]
->(a) => [a] : (a: number) => number[]
+>produce : (a: number) => Array<number>
+>(a) => [a] : (a: number) => Array<number>
 >a : number
->[a] : number[]
+>[a] : Array<number>
 >a : number
 
     consume: (arg) => arg.join(","),
->consume : (arg: number[]) => string
->(arg) => arg.join(",") : (arg: number[]) => string
->arg : number[]
+>consume : (arg: Array<number>) => string
+>(arg) => arg.join(",") : (arg: Array<number>) => string
+>arg : Array<number>
 >arg.join(",") : string
 >arg.join : (separator?: string) => string
->arg : number[]
+>arg : Array<number>
 >join : (separator?: string) => string
 >"," : ","
 
@@ -771,27 +771,27 @@ declare function twoConsumers<T>(arg: {
 }): T;
 
 const resTwoConsumers = twoConsumers({
->resTwoConsumers : string[]
->twoConsumers({  a: (arg) => [arg],  consume1: (arg1) => {},  consume2: (arg2) => {},}) : string[]
+>resTwoConsumers : Array<string>
+>twoConsumers({  a: (arg) => [arg],  consume1: (arg1) => {},  consume2: (arg2) => {},}) : Array<string>
 >twoConsumers : <T>(arg: { a: (arg: string) => T; consume1: (arg1: T) => void; consume2: (arg2: T) => void; }) => T
->{  a: (arg) => [arg],  consume1: (arg1) => {},  consume2: (arg2) => {},} : { a: (arg: string) => string[]; consume1: (arg1: string[]) => void; consume2: (arg2: string[]) => void; }
+>{  a: (arg) => [arg],  consume1: (arg1) => {},  consume2: (arg2) => {},} : { a: (arg: string) => Array<string>; consume1: (arg1: Array<string>) => void; consume2: (arg2: Array<string>) => void; }
 
   a: (arg) => [arg],
->a : (arg: string) => string[]
->(arg) => [arg] : (arg: string) => string[]
+>a : (arg: string) => Array<string>
+>(arg) => [arg] : (arg: string) => Array<string>
 >arg : string
->[arg] : string[]
+>[arg] : Array<string>
 >arg : string
 
   consume1: (arg1) => {},
->consume1 : (arg1: string[]) => void
->(arg1) => {} : (arg1: string[]) => void
->arg1 : string[]
+>consume1 : (arg1: Array<string>) => void
+>(arg1) => {} : (arg1: Array<string>) => void
+>arg1 : Array<string>
 
   consume2: (arg2) => {},
->consume2 : (arg2: string[]) => void
->(arg2) => {} : (arg2: string[]) => void
->arg2 : string[]
+>consume2 : (arg2: Array<string>) => void
+>(arg2) => {} : (arg2: Array<string>) => void
+>arg2 : Array<string>
 
 });
 
@@ -818,16 +818,16 @@ declare function multipleProducersBeforeConsumers<T, T2>(arg: {
 }): [T, T2];
 
 const resMultipleProducersBeforeConsumers = multipleProducersBeforeConsumers({
->resMultipleProducersBeforeConsumers : [string[], number]
->multipleProducersBeforeConsumers({  a: (arg) => [arg],  b: (arg) => Number(arg),  consume1: (arg1) => {},  consume2: (arg2) => {},}) : [string[], number]
+>resMultipleProducersBeforeConsumers : [Array<string>, number]
+>multipleProducersBeforeConsumers({  a: (arg) => [arg],  b: (arg) => Number(arg),  consume1: (arg1) => {},  consume2: (arg2) => {},}) : [Array<string>, number]
 >multipleProducersBeforeConsumers : <T, T2>(arg: { a: (arg: string) => T; b: (arg: string) => T2; consume1: (arg1: T) => void; consume2: (arg2: T2) => void; }) => [T, T2]
->{  a: (arg) => [arg],  b: (arg) => Number(arg),  consume1: (arg1) => {},  consume2: (arg2) => {},} : { a: (arg: string) => string[]; b: (arg: string) => number; consume1: (arg1: string[]) => void; consume2: (arg2: number) => void; }
+>{  a: (arg) => [arg],  b: (arg) => Number(arg),  consume1: (arg1) => {},  consume2: (arg2) => {},} : { a: (arg: string) => Array<string>; b: (arg: string) => number; consume1: (arg1: Array<string>) => void; consume2: (arg2: number) => void; }
 
   a: (arg) => [arg],
->a : (arg: string) => string[]
->(arg) => [arg] : (arg: string) => string[]
+>a : (arg: string) => Array<string>
+>(arg) => [arg] : (arg: string) => Array<string>
 >arg : string
->[arg] : string[]
+>[arg] : Array<string>
 >arg : string
 
   b: (arg) => Number(arg),
@@ -839,9 +839,9 @@ const resMultipleProducersBeforeConsumers = multipleProducersBeforeConsumers({
 >arg : string
 
   consume1: (arg1) => {},
->consume1 : (arg1: string[]) => void
->(arg1) => {} : (arg1: string[]) => void
->arg1 : string[]
+>consume1 : (arg1: Array<string>) => void
+>(arg1) => {} : (arg1: Array<string>) => void
+>arg1 : Array<string>
 
   consume2: (arg2) => {},
 >consume2 : (arg2: number) => void
@@ -869,31 +869,31 @@ declare function withConditionalExpression<T, T2, T3>(arg: {
 }): [T, T2, T3];
 
 const resWithConditionalExpression = withConditionalExpression({
->resWithConditionalExpression : [string[], "first" | "two", boolean]
->withConditionalExpression({  a: (arg) => [arg],  b: Math.random() ? (arg) => "first" as const : (arg) => "two" as const,  c: (arg) => Boolean(arg),}) : [string[], "first" | "two", boolean]
+>resWithConditionalExpression : [Array<string>, "first" | "two", boolean]
+>withConditionalExpression({  a: (arg) => [arg],  b: Math.random() ? (arg) => "first" as const : (arg) => "two" as const,  c: (arg) => Boolean(arg),}) : [Array<string>, "first" | "two", boolean]
 >withConditionalExpression : <T, T2, T3>(arg: { a: (arg1: string) => T; b: (arg2: T) => T2; c: (arg2: T2) => T3; }) => [T, T2, T3]
->{  a: (arg) => [arg],  b: Math.random() ? (arg) => "first" as const : (arg) => "two" as const,  c: (arg) => Boolean(arg),} : { a: (arg: string) => string[]; b: ((arg: string[]) => "first") | ((arg: string[]) => "two"); c: (arg: "first" | "two") => boolean; }
+>{  a: (arg) => [arg],  b: Math.random() ? (arg) => "first" as const : (arg) => "two" as const,  c: (arg) => Boolean(arg),} : { a: (arg: string) => Array<string>; b: ((arg: Array<string>) => "first") | ((arg: Array<string>) => "two"); c: (arg: "first" | "two") => boolean; }
 
   a: (arg) => [arg],
->a : (arg: string) => string[]
->(arg) => [arg] : (arg: string) => string[]
+>a : (arg: string) => Array<string>
+>(arg) => [arg] : (arg: string) => Array<string>
 >arg : string
->[arg] : string[]
+>[arg] : Array<string>
 >arg : string
 
   b: Math.random() ? (arg) => "first" as const : (arg) => "two" as const,
->b : ((arg: string[]) => "first") | ((arg: string[]) => "two")
->Math.random() ? (arg) => "first" as const : (arg) => "two" as const : ((arg: string[]) => "first") | ((arg: string[]) => "two")
+>b : ((arg: Array<string>) => "first") | ((arg: Array<string>) => "two")
+>Math.random() ? (arg) => "first" as const : (arg) => "two" as const : ((arg: Array<string>) => "first") | ((arg: Array<string>) => "two")
 >Math.random() : number
 >Math.random : () => number
 >Math : Math
 >random : () => number
->(arg) => "first" as const : (arg: string[]) => "first"
->arg : string[]
+>(arg) => "first" as const : (arg: Array<string>) => "first"
+>arg : Array<string>
 >"first" as const : "first"
 >"first" : "first"
->(arg) => "two" as const : (arg: string[]) => "two"
->arg : string[]
+>(arg) => "two" as const : (arg: Array<string>) => "two"
+>arg : Array<string>
 >"two" as const : "two"
 >"two" : "two"
 
@@ -934,29 +934,29 @@ declare function onion<T, T2, T3>(arg: {
 }): [T, T2, T3];
 
 const resOnion = onion({
->resOnion : [string[], string, boolean]
->onion({  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  },}) : [string[], string, boolean]
+>resOnion : [Array<string>, string, boolean]
+>onion({  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  },}) : [Array<string>, string, boolean]
 >onion : <T, T2, T3>(arg: { a: (arg1: string) => T; nested: { b: (arg2: T) => T2; nested2: { c: (arg2: T2) => T3; }; }; }) => [T, T2, T3]
->{  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  },} : { a: (arg: string) => string[]; nested: { b: (arg: string[]) => string; nested2: { c: (arg: string) => boolean; }; }; }
+>{  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  },} : { a: (arg: string) => Array<string>; nested: { b: (arg: Array<string>) => string; nested2: { c: (arg: string) => boolean; }; }; }
 
   a: (arg) => [arg],
->a : (arg: string) => string[]
->(arg) => [arg] : (arg: string) => string[]
+>a : (arg: string) => Array<string>
+>(arg) => [arg] : (arg: string) => Array<string>
 >arg : string
->[arg] : string[]
+>[arg] : Array<string>
 >arg : string
 
   nested: {
->nested : { b: (arg: string[]) => string; nested2: { c: (arg: string) => boolean; }; }
->{    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  } : { b: (arg: string[]) => string; nested2: { c: (arg: string) => boolean; }; }
+>nested : { b: (arg: Array<string>) => string; nested2: { c: (arg: string) => boolean; }; }
+>{    b: (arg) => arg.join(","),    nested2: {      c: (arg) => Boolean(arg),    },  } : { b: (arg: Array<string>) => string; nested2: { c: (arg: string) => boolean; }; }
 
     b: (arg) => arg.join(","),
->b : (arg: string[]) => string
->(arg) => arg.join(",") : (arg: string[]) => string
->arg : string[]
+>b : (arg: Array<string>) => string
+>(arg) => arg.join(",") : (arg: Array<string>) => string
+>arg : Array<string>
 >arg.join(",") : string
 >arg.join : (separator?: string) => string
->arg : string[]
+>arg : Array<string>
 >join : (separator?: string) => string
 >"," : ","
 
@@ -1007,39 +1007,39 @@ declare function onion2<T, T2, T3, T4>(arg: {
 }): [T, T2, T3, T4];
 
 const resOnion2 = onion2({
->resOnion2 : [string[], string, number, boolean]
->onion2({  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  },}) : [string[], string, number, boolean]
+>resOnion2 : [Array<string>, string, number, boolean]
+>onion2({  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  },}) : [Array<string>, string, number, boolean]
 >onion2 : <T, T2, T3, T4>(arg: { a: (arg1: string) => T; nested: { b: (arg2: T) => T2; c: (arg3: T) => T3; nested2: { d: (arg4: T3) => T4; }; }; }) => [T, T2, T3, T4]
->{  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  },} : { a: (arg: string) => string[]; nested: { b: (arg: string[]) => string; c: (arg: string[]) => number; nested2: { d: (arg: number) => boolean; }; }; }
+>{  a: (arg) => [arg],  nested: {    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  },} : { a: (arg: string) => Array<string>; nested: { b: (arg: Array<string>) => string; c: (arg: Array<string>) => number; nested2: { d: (arg: number) => boolean; }; }; }
 
   a: (arg) => [arg],
->a : (arg: string) => string[]
->(arg) => [arg] : (arg: string) => string[]
+>a : (arg: string) => Array<string>
+>(arg) => [arg] : (arg: string) => Array<string>
 >arg : string
->[arg] : string[]
+>[arg] : Array<string>
 >arg : string
 
   nested: {
->nested : { b: (arg: string[]) => string; c: (arg: string[]) => number; nested2: { d: (arg: number) => boolean; }; }
->{    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  } : { b: (arg: string[]) => string; c: (arg: string[]) => number; nested2: { d: (arg: number) => boolean; }; }
+>nested : { b: (arg: Array<string>) => string; c: (arg: Array<string>) => number; nested2: { d: (arg: number) => boolean; }; }
+>{    b: (arg) => arg.join(","),    c: (arg) => Number(arg),    nested2: {      d: (arg) => Boolean(arg),    },  } : { b: (arg: Array<string>) => string; c: (arg: Array<string>) => number; nested2: { d: (arg: number) => boolean; }; }
 
     b: (arg) => arg.join(","),
->b : (arg: string[]) => string
->(arg) => arg.join(",") : (arg: string[]) => string
->arg : string[]
+>b : (arg: Array<string>) => string
+>(arg) => arg.join(",") : (arg: Array<string>) => string
+>arg : Array<string>
 >arg.join(",") : string
 >arg.join : (separator?: string) => string
->arg : string[]
+>arg : Array<string>
 >join : (separator?: string) => string
 >"," : ","
 
     c: (arg) => Number(arg),
->c : (arg: string[]) => number
->(arg) => Number(arg) : (arg: string[]) => number
->arg : string[]
+>c : (arg: Array<string>) => number
+>(arg) => Number(arg) : (arg: Array<string>) => number
+>arg : Array<string>
 >Number(arg) : number
 >Number : NumberConstructor
->arg : string[]
+>arg : Array<string>
 
     nested2: {
 >nested2 : { d: (arg: number) => boolean; }

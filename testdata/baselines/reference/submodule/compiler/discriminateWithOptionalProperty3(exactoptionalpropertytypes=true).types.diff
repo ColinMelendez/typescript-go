@@ -1,0 +1,30 @@
+--- old.discriminateWithOptionalProperty3(exactoptionalpropertytypes=true).types
++++ new.discriminateWithOptionalProperty3(exactoptionalpropertytypes=true).types
+@@= skipped -29, +29 lines =@@
+ >CoercedVariableValues : CoercedVariableValues
+
+   | { errors: ReadonlyArray<GraphQLError>; coerced?: never }
+->errors : readonly GraphQLError[]
++>errors : ReadonlyArray<GraphQLError>
+ >coerced : undefined
+
+   | { coerced: { [variable: string]: unknown }; errors?: never };
+@@= skipped -38, +38 lines =@@
+ >{} : {}
+
+   if (coercedVariableValues.errors) {
+->coercedVariableValues.errors : readonly GraphQLError[] | undefined
++>coercedVariableValues.errors : ReadonlyArray<GraphQLError> | undefined
+ >coercedVariableValues : CoercedVariableValues
+->errors : readonly GraphQLError[] | undefined
++>errors : ReadonlyArray<GraphQLError> | undefined
+
+     return coercedVariableValues.errors;
+->coercedVariableValues.errors : readonly GraphQLError[]
++>coercedVariableValues.errors : ReadonlyArray<GraphQLError>
+ >coercedVariableValues : { errors: ReadonlyArray<GraphQLError>; coerced?: never; }
+->errors : readonly GraphQLError[]
++>errors : ReadonlyArray<GraphQLError>
+   }
+
+   return {

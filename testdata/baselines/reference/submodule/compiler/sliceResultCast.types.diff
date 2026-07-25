@@ -1,0 +1,16 @@
+--- old.sliceResultCast.types
++++ new.sliceResultCast.types
+@@= skipped -4, +4 lines =@@
+ >x : [number, string] | [number, string, string]
+
+ x.slice(1) as readonly string[];
+->x.slice(1) as readonly string[] : readonly string[]
+->x.slice(1) : (string | number)[]
+->x.slice : ((start?: number, end?: number) => (string | number)[]) | ((start?: number, end?: number) => (string | number)[])
++>x.slice(1) as readonly string[] : ReadonlyArray<string>
++>x.slice(1) : Array<string | number>
++>x.slice : ((start?: number, end?: number) => Array<string | number>) | ((start?: number, end?: number) => Array<string | number>)
+ >x : [number, string] | [number, string, string]
+->slice : ((start?: number, end?: number) => (string | number)[]) | ((start?: number, end?: number) => (string | number)[])
++>slice : ((start?: number, end?: number) => Array<string | number>) | ((start?: number, end?: number) => Array<string | number>)
+ >1 : 1

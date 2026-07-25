@@ -1,0 +1,20 @@
+--- old.typeParameterConstrainedToOuterTypeParameter.errors.txt
++++ new.typeParameterConstrainedToOuterTypeParameter.errors.txt
+@@= skipped -0, +0 lines =@@
+ typeParameterConstrainedToOuterTypeParameter.ts(10,5): error TS2322: Type 'A<string>' is not assignable to type 'B<string>'.
+   Types of parameters 'x' and 'x' are incompatible.
+-    Type 'U' is not assignable to type 'string[]'.
+-      Type 'string' is not assignable to type 'string[]'.
++    Type 'U' is not assignable to type 'Array<string>'.
++      Type 'string' is not assignable to type 'Array<string>'.
+
+
+ ==== typeParameterConstrainedToOuterTypeParameter.ts (1 errors) ====
+@@= skipped -17, +17 lines =@@
+         ~
+ !!! error TS2322: Type 'A<string>' is not assignable to type 'B<string>'.
+ !!! error TS2322:   Types of parameters 'x' and 'x' are incompatible.
+-!!! error TS2322:     Type 'U' is not assignable to type 'string[]'.
+-!!! error TS2322:       Type 'string' is not assignable to type 'string[]'.
++!!! error TS2322:     Type 'U' is not assignable to type 'Array<string>'.
++!!! error TS2322:       Type 'string' is not assignable to type 'Array<string>'.

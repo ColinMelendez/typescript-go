@@ -10,5 +10,5 @@ type T0<U extends any[] & object> = U;
 >T0 : U
 
 type T1 = T0<string[]>;
->T1 : string[]
+>T1 : Array<string>
 

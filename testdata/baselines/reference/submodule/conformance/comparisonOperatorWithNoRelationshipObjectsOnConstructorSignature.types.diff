@@ -1,0 +1,25 @@
+--- old.comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.types
++++ new.comparisonOperatorWithNoRelationshipObjectsOnConstructorSignature.types
+@@= skipped -64, +64 lines =@@
+
+ declare var a6: { new (...a: Base[]): Base };
+ >a6 : new (...a: Base[]) => Base
+->a : Base[]
++>a : Array<Base>
+
+ declare var b6: { new (...a: C[]): Base };
+ >b6 : new (...a: C[]) => Base
+->a : C[]
++>a : Array<C>
+
+ declare var a7: { new <T>(t: T): T };
+ >a7 : new <T>(t: T) => T
+@@= skipped -12, +12 lines =@@
+
+ declare var b7: { new <T>(t: T[]): T };
+ >b7 : new <T>(t: T[]) => T
+->t : T[]
++>t : Array<T>
+
+ // operator <
+ var r1a1 = a1 < b1;

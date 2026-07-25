@@ -3,7 +3,7 @@
 === types.ts ===
 export type SelectorMap<T extends Record<string, (...params: unknown[]) => unknown>> = {
 >SelectorMap : SelectorMap<T>
->params : unknown[]
+>params : Array<unknown>
 
     [key in keyof T]: T[key];
 };
@@ -11,7 +11,7 @@ export type SelectorMap<T extends Record<string, (...params: unknown[]) => unkno
 === index.ts ===
 export type SelectorMap<T extends Record<string, (...params: unknown[]) => unknown>> = {
 >SelectorMap : SelectorMap<T>
->params : unknown[]
+>params : Array<unknown>
 
     [key in keyof T]: T[key];
 };

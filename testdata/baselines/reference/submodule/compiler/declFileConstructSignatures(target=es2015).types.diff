@@ -1,0 +1,19 @@
+--- old.declFileConstructSignatures(target=es2015).types
++++ new.declFileConstructSignatures(target=es2015).types
+@@= skipped -18, +18 lines =@@
+ export interface IConstructSignatureWithRestParameters {
+     new (a: string, ...rests: string[]): string;
+ >a : string
+->rests : string[]
++>rests : Array<string>
+ }
+
+ export interface IConstructSignatureWithOverloads {
+@@= skipped -42, +42 lines =@@
+
+     new (a: string, ...rests: string[]): string;
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+ }

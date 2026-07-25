@@ -12,7 +12,7 @@ namespace Test {
     }
     interface ILineTokens {
         tokens: IToken[];
->tokens : IToken[]
+>tokens : Array<IToken>
 
         endState: IState;
 >endState : IState
@@ -30,7 +30,7 @@ namespace Test {
         public tokenize(line:string, tokens:IToken[], includeStates:boolean):ILineTokens {
 >tokenize : (line: string, tokens: IToken[], includeStates: boolean) => ILineTokens
 >line : string
->tokens : IToken[]
+>tokens : Array<IToken>
 >includeStates : boolean
 
             return null;

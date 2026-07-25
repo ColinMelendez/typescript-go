@@ -6,7 +6,7 @@ declare function foo(): void;
 
 declare namespace foo { export const items: string[]; }
 >foo : typeof foo
->items : string[]
+>items : Array<string>
 
 export = foo;
 >foo : typeof foo
@@ -38,26 +38,26 @@ import * as foo from 'foo';
 >foo : typeof foo
 
 const items = foo.items;
->items : string[]
->foo.items : string[]
+>items : Array<string>
+>foo.items : Array<string>
 >foo : typeof foo
->items : string[]
+>items : Array<string>
 
 const result: string = items.customMethod();
 >result : string
 >items.customMethod() : string
 >items.customMethod : () => string
->items : string[]
+>items : Array<string>
 >customMethod : () => string
 
 const fresh: string[] = [];
->fresh : string[]
->[] : never[]
+>fresh : Array<string>
+>[] : Array<never>
 
 const result2: string = fresh.customMethod();
 >result2 : string
 >fresh.customMethod() : string
 >fresh.customMethod : () => string
->fresh : string[]
+>fresh : Array<string>
 >customMethod : () => string
 

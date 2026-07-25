@@ -5,7 +5,7 @@
 
 export function repro(board: number[][], pos: number | undefined): void {
 >repro : (board: number[][], pos: number | undefined) => void
->board : number[][]
+>board : Array<Array<number>>
 >pos : number | undefined
 
   if (!pos) return;
@@ -13,17 +13,17 @@ export function repro(board: number[][], pos: number | undefined): void {
 >pos : number | undefined
 
   for (const pattern of [{ target: [-1, -1], intermediate: [-1, 0] }]) {
->pattern : { target: number[]; intermediate: number[]; }
->[{ target: [-1, -1], intermediate: [-1, 0] }] : { target: number[]; intermediate: number[]; }[]
->{ target: [-1, -1], intermediate: [-1, 0] } : { target: number[]; intermediate: number[]; }
->target : number[]
->[-1, -1] : number[]
+>pattern : { target: Array<number>; intermediate: Array<number>; }
+>[{ target: [-1, -1], intermediate: [-1, 0] }] : Array<{ target: Array<number>; intermediate: Array<number>; }>
+>{ target: [-1, -1], intermediate: [-1, 0] } : { target: Array<number>; intermediate: Array<number>; }
+>target : Array<number>
+>[-1, -1] : Array<number>
 >-1 : -1
 >1 : 1
 >-1 : -1
 >1 : 1
->intermediate : number[]
->[-1, 0] : number[]
+>intermediate : Array<number>
+>[-1, 0] : Array<number>
 >-1 : -1
 >1 : 1
 >0 : 0
@@ -33,9 +33,9 @@ export function repro(board: number[][], pos: number | undefined): void {
 >pos + pattern.target[0] : number
 >pos : number
 >pattern.target[0] : number
->pattern.target : number[]
->pattern : { target: number[]; intermediate: number[]; }
->target : number[]
+>pattern.target : Array<number>
+>pattern : { target: Array<number>; intermediate: Array<number>; }
+>target : Array<number>
 >0 : 0
 
     const targetC = pos + pattern.target[1];
@@ -43,16 +43,16 @@ export function repro(board: number[][], pos: number | undefined): void {
 >pos + pattern.target[1] : number
 >pos : number
 >pattern.target[1] : number
->pattern.target : number[]
->pattern : { target: number[]; intermediate: number[]; }
->target : number[]
+>pattern.target : Array<number>
+>pattern : { target: Array<number>; intermediate: Array<number>; }
+>target : Array<number>
 >1 : 1
 
     if (board[targetR][targetC] !== 0) {}
 >board[targetR][targetC] !== 0 : boolean
 >board[targetR][targetC] : number
->board[targetR] : number[]
->board : number[][]
+>board[targetR] : Array<number>
+>board : Array<Array<number>>
 >targetR : number
 >targetC : number
 >0 : 0
@@ -60,9 +60,9 @@ export function repro(board: number[][], pos: number | undefined): void {
     const [ir, ic] = pattern.intermediate;
 >ir : number
 >ic : number
->pattern.intermediate : number[]
->pattern : { target: number[]; intermediate: number[]; }
->intermediate : number[]
+>pattern.intermediate : Array<number>
+>pattern : { target: Array<number>; intermediate: Array<number>; }
+>intermediate : Array<number>
 
     const midC = ic;
 >midC : number
@@ -71,8 +71,8 @@ export function repro(board: number[][], pos: number | undefined): void {
     if (board[ir][midC] === 0) {
 >board[ir][midC] === 0 : boolean
 >board[ir][midC] : number
->board[ir] : number[]
->board : number[][]
+>board[ir] : Array<number>
+>board : Array<Array<number>>
 >ir : number
 >midC : number
 >0 : 0

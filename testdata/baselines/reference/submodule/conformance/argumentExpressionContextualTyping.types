@@ -31,10 +31,10 @@ function baz(x: [string, number, boolean]) { }
 >x : [string, number, boolean]
 
 var o = { x: ["string", 1], y: { c: true, d: "world", e: 3 } };
->o : { x: (string | number)[]; y: { c: boolean; d: string; e: number; }; }
->{ x: ["string", 1], y: { c: true, d: "world", e: 3 } } : { x: (string | number)[]; y: { c: boolean; d: string; e: number; }; }
->x : (string | number)[]
->["string", 1] : (string | number)[]
+>o : { x: Array<string | number>; y: { c: boolean; d: string; e: number; }; }
+>{ x: ["string", 1], y: { c: true, d: "world", e: 3 } } : { x: Array<string | number>; y: { c: boolean; d: string; e: number; }; }
+>x : Array<string | number>
+>["string", 1] : Array<string | number>
 >"string" : "string"
 >1 : 1
 >y : { c: boolean; d: string; e: number; }
@@ -90,8 +90,8 @@ foo({ x: ["string", 1], y: { c: true, d: "world", e: 3 } }); // Not error
 >3 : 3
 
 var array = ["string", 1, true];
->array : (string | number | boolean)[]
->["string", 1, true] : (string | number | boolean)[]
+>array : Array<string | number | boolean>
+>["string", 1, true] : Array<string | number | boolean>
 >"string" : "string"
 >1 : 1
 >true : true
@@ -119,20 +119,20 @@ baz(["string", 1, true]);
 baz(array);                          // Error
 >baz(array) : void
 >baz : (x: [string, number, boolean]) => void
->array : (string | number | boolean)[]
+>array : Array<string | number | boolean>
 
 baz(["string", 1, true, ...array]);  // Error
 >baz(["string", 1, true, ...array]) : void
 >baz : (x: [string, number, boolean]) => void
->["string", 1, true, ...array] : [string, number, true, ...(string | number | boolean)[]]
+>["string", 1, true, ...array] : [string, number, true, ...Array<string | number | boolean>]
 >"string" : "string"
 >1 : 1
 >true : true
 >...array : string | number | boolean
->array : (string | number | boolean)[]
+>array : Array<string | number | boolean>
 
 foo(o);                              // Error because x has an array type namely (string|number)[]
 >foo(o) : void
 >foo : ({ x: [a, b], y: { c, d, e } }: { x: [any, any]; y: { c: any; d: any; e: any; }; }) => void
->o : { x: (string | number)[]; y: { c: boolean; d: string; e: number; }; }
+>o : { x: Array<string | number>; y: { c: boolean; d: string; e: number; }; }
 

@@ -5,7 +5,7 @@ class Signature {
 >Signature : Signature
 
     public parameters: ParameterSymbol[] = null;
->parameters : ParameterSymbol[]
+>parameters : Array<ParameterSymbol>
 }
 
 function aEnclosesB(a: Symbol) {

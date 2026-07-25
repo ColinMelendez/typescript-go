@@ -25,7 +25,7 @@ export const CONTROLLER_CLASS = BindingKey.create<ControllerClass>(null as any);
 === monorepo/context/src/value-promise.ts ===
 export type Constructor<T> = (...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 === monorepo/context/src/bindingkey.ts ===
 import { Constructor } from "@loopback/context"

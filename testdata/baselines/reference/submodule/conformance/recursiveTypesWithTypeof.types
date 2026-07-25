@@ -146,29 +146,29 @@ var k = k[''];
 // Hybrid - contains type literals as well as type arguments
 // These two are recursive
 var hy1: { x: typeof hy1 }[];
->hy1 : { x: typeof hy1; }[]
->x : { x: typeof hy1; }[]
->hy1 : { x: typeof hy1; }[]
+>hy1 : Array<{ x: typeof hy1; }>
+>x : Array<{ x: typeof hy1; }>
+>hy1 : Array<{ x: typeof hy1; }>
 
 var hy1 = hy1[0].x;
->hy1 : { x: typeof hy1; }[]
->hy1[0].x : { x: typeof hy1; }[]
+>hy1 : Array<{ x: typeof hy1; }>
+>hy1[0].x : Array<{ x: typeof hy1; }>
 >hy1[0] : { x: typeof hy1; }
->hy1 : { x: typeof hy1; }[]
+>hy1 : Array<{ x: typeof hy1; }>
 >0 : 0
->x : { x: typeof hy1; }[]
+>x : Array<{ x: typeof hy1; }>
 
 var hy2: { x: Array<typeof hy2> };
 >hy2 : { x: Array<typeof hy2>; }
->x : { x: Array<typeof hy2>; }[]
+>x : Array<{ x: Array<typeof hy2>; }>
 >hy2 : { x: Array<typeof hy2>; }
 
 var hy2 = hy2.x[0];
 >hy2 : { x: Array<typeof hy2>; }
 >hy2.x[0] : { x: Array<typeof hy2>; }
->hy2.x : { x: Array<typeof hy2>; }[]
+>hy2.x : Array<{ x: Array<typeof hy2>; }>
 >hy2 : { x: Array<typeof hy2>; }
->x : { x: Array<typeof hy2>; }[]
+>x : Array<{ x: Array<typeof hy2>; }>
 >0 : 0
 
 interface Foo2<T, U> { }

@@ -15,7 +15,7 @@ declare function fn(a: number, b: number, bb: number, ...c: number[]): number
 >a : number
 >b : number
 >bb : number
->c : number[]
+>c : Array<number>
 
 fn(...nnnu, x)
 >fn(...nnnu, x) : number

@@ -1,0 +1,8 @@
+--- old.genericArray1.js
++++ new.genericArray1.js
+@@= skipped -32, +32 lines =@@
+
+
+ //// [genericArray1.d.ts]
+-declare var lengths: number[];
++declare var lengths: Array<number>;

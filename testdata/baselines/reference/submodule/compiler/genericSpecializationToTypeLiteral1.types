@@ -13,7 +13,7 @@ interface IEnumerable<T> {
 
     zip<TResult>(second: T[], resultSelector: (first: T, second: T, index: number) => TResult): IEnumerable<TResult>;
 >zip : { <TResult_1>(second: IEnumerable<T>, resultSelector: (first: T, second: T, index: number) => TResult_1): IEnumerable<TResult_1>; <TResult>(second: T[], resultSelector: (first: T, second: T, index: number) => TResult): IEnumerable<TResult>; <TResult_1>(...params: any[]): IEnumerable<TResult_1>; }
->second : T[]
+>second : Array<T>
 >resultSelector : (first: T, second: T, index: number) => TResult
 >first : T
 >second : T
@@ -21,24 +21,24 @@ interface IEnumerable<T> {
 
     zip<TResult>(...params: any[]): IEnumerable<TResult>; // last one is selector
 >zip : { <TResult_1>(second: IEnumerable<T>, resultSelector: (first: T, second: T, index: number) => TResult_1): IEnumerable<TResult_1>; <TResult_1>(second: T[], resultSelector: (first: T, second: T, index: number) => TResult_1): IEnumerable<TResult_1>; <TResult>(...params: any[]): IEnumerable<TResult>; }
->params : any[]
+>params : Array<any>
 
     merge<TResult>(...params: IEnumerable<T>[]): IEnumerable<T>;
 >merge : { <TResult>(...params: IEnumerable<T>[]): IEnumerable<T>; <TResult_1>(...params: T[][]): IEnumerable<T>; }
->params : IEnumerable<T>[]
+>params : Array<IEnumerable<T>>
 
     merge<TResult>(...params: T[][]): IEnumerable<T>;
 >merge : { <TResult_1>(...params: IEnumerable<T>[]): IEnumerable<T>; <TResult>(...params: T[][]): IEnumerable<T>; }
->params : T[][]
+>params : Array<Array<T>>
 
 
     concat(...sequences: IEnumerable<T>[]): IEnumerable<T>;
 >concat : { (...sequences: IEnumerable<T>[]): IEnumerable<T>; (...sequences: T[]): IEnumerable<T>; }
->sequences : IEnumerable<T>[]
+>sequences : Array<IEnumerable<T>>
 
     concat(...sequences: T[]): IEnumerable<T>;
 >concat : { (...sequences: IEnumerable<T>[]): IEnumerable<T>; (...sequences: T[]): IEnumerable<T>; }
->sequences : T[]
+>sequences : Array<T>
 
     insert(index: number, second: IEnumerable<T>): IEnumerable<T>;
 >insert : (index: number, second: IEnumerable<T>) => IEnumerable<T>
@@ -57,11 +57,11 @@ interface IEnumerable<T> {
 
     sequenceEqual(second: T[]): boolean;
 >sequenceEqual : { (second: IEnumerable<T>): boolean; <TCompare>(second: IEnumerable<T>, compareSelector: (element: T) => TCompare): boolean; (second: T[]): boolean; <TCompare>(second: T[], compareSelector: (element: T) => TCompare): boolean; }
->second : T[]
+>second : Array<T>
 
     sequenceEqual<TCompare>(second: T[], compareSelector: (element: T) => TCompare): boolean;   
 >sequenceEqual : { (second: IEnumerable<T>): boolean; <TCompare_1>(second: IEnumerable<T>, compareSelector: (element: T) => TCompare_1): boolean; (second: T[]): boolean; <TCompare>(second: T[], compareSelector: (element: T) => TCompare): boolean; }
->second : T[]
+>second : Array<T>
 >compareSelector : (element: T) => TCompare
 >element : T
     

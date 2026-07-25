@@ -155,7 +155,7 @@ interface Disjunction extends NodeBase {
 >EnumTypeNode : any
 
     alternatives: string[]
->alternatives : string[]
+>alternatives : Array<string>
 }
 
 interface Pattern extends NodeBase {
@@ -164,7 +164,7 @@ interface Pattern extends NodeBase {
 >EnumTypeNode : any
 
     elements: string[]
->elements : string[]
+>elements : Array<string>
 }
 
 let n!: NodeA
@@ -178,20 +178,20 @@ if (n.type === "Disjunction") {
 >"Disjunction" : "Disjunction"
 
     n.alternatives.slice()
->n.alternatives.slice() : string[]
->n.alternatives.slice : (start?: number, end?: number) => string[]
->n.alternatives : string[]
+>n.alternatives.slice() : Array<string>
+>n.alternatives.slice : (start?: number, end?: number) => Array<string>
+>n.alternatives : Array<string>
 >n : Disjunction
->alternatives : string[]
->slice : (start?: number, end?: number) => string[]
+>alternatives : Array<string>
+>slice : (start?: number, end?: number) => Array<string>
 }
 else {
     n.elements.slice() // n should be narrowed to Pattern
->n.elements.slice() : string[]
->n.elements.slice : (start?: number, end?: number) => string[]
->n.elements : string[]
+>n.elements.slice() : Array<string>
+>n.elements.slice : (start?: number, end?: number) => Array<string>
+>n.elements : Array<string>
 >n : Pattern
->elements : string[]
->slice : (start?: number, end?: number) => string[]
+>elements : Array<string>
+>slice : (start?: number, end?: number) => Array<string>
 }
 

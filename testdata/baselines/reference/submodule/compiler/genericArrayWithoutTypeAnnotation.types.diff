@@ -1,0 +1,10 @@
+--- old.genericArrayWithoutTypeAnnotation.types
++++ new.genericArrayWithoutTypeAnnotation.types
+@@= skipped -7, +7 lines =@@
+
+     public getBar(foo: IFoo[]) {
+ >getBar : (foo: IFoo[]) => void
+->foo : any[]
++>foo : Array<any>
+     }
+ }

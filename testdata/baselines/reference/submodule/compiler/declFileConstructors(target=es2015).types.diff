@@ -1,0 +1,36 @@
+--- old.declFileConstructors(target=es2015).types
++++ new.declFileConstructors(target=es2015).types
+@@= skipped -29, +29 lines =@@
+
+     constructor(a: string, ...rests: string[]) {
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }
+@@= skipped -90, +90 lines =@@
+
+     constructor(a: string, ...rests: string[]) {
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+         return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+     }

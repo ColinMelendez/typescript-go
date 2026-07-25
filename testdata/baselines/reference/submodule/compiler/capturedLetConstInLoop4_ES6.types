@@ -29,7 +29,7 @@ export function exportedFoo() {
 
 for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     var v0 = x;
 >v0 : any
@@ -50,7 +50,7 @@ for (let x of []) {
 
 for (let x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     var v00 = x;
 >v00 : string
@@ -329,7 +329,7 @@ export function exportedFoo2() {
 
 for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
     var v0_c = x;
 >v0_c : any
@@ -350,7 +350,7 @@ for (const x of []) {
 
 for (const x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
     var v00_c = x;
 >v00_c : string

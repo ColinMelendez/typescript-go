@@ -6,7 +6,7 @@ type Foo = (number | undefined)[] | undefined;
 
 const foo: Foo = [1, 2, 3];
 >foo : Foo
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -19,22 +19,22 @@ if (foo !== undefined && foo[index] !== undefined && foo[index] >= 0) {
 >foo !== undefined && foo[index] !== undefined && foo[index] >= 0 : boolean
 >foo !== undefined && foo[index] !== undefined : boolean
 >foo !== undefined : boolean
->foo : (number | undefined)[]
+>foo : Array<number | undefined>
 >undefined : undefined
 >foo[index] !== undefined : boolean
 >foo[index] : number | undefined
->foo : (number | undefined)[]
+>foo : Array<number | undefined>
 >index : 1
 >undefined : undefined
 >foo[index] >= 0 : boolean
 >foo[index] : number
->foo : (number | undefined)[]
+>foo : Array<number | undefined>
 >index : 1
 >0 : 0
 
     foo[index] // number
 >foo[index] : number
->foo : (number | undefined)[]
+>foo : Array<number | undefined>
 >index : 1
 }
 

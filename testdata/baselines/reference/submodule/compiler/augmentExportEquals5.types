@@ -20,13 +20,13 @@ declare module "express" {
         interface IRoute {
             all(...handler: RequestHandler[]): IRoute;
 >all : (...handler: RequestHandler[]) => IRoute
->handler : RequestHandler[]
+>handler : Array<RequestHandler>
         }
 
         interface IRouterMatcher<T> {
             (name: string|RegExp, ...handlers: RequestHandler[]): T;
 >name : string | RegExp
->handlers : RequestHandler[]
+>handlers : Array<RequestHandler>
         }
 
         interface IRouter<T> extends RequestHandler {

@@ -1,0 +1,11 @@
+--- old.recursiveClassBaseType.js
++++ new.recursiveClassBaseType.js
+@@= skipped -44, +44 lines =@@
+     new (): T;
+ };
+ declare const C_base: new () => {
+-    x: C[];
++    x: Array<C>;
+ };
+ declare class C extends C_base {
+ }

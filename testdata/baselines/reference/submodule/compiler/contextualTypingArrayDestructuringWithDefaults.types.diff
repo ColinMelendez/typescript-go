@@ -1,0 +1,11 @@
+--- old.contextualTypingArrayDestructuringWithDefaults.types
++++ new.contextualTypingArrayDestructuringWithDefaults.types
+@@= skipped -25, +25 lines =@@
+ >{a: "a"} : { a: "a"; }
+ >a : "a"
+ >"a" : "a"
+->[] : undefined[]
++>[] : Array<undefined>
+
+ // not a great example, expect an error
+ function foo() {

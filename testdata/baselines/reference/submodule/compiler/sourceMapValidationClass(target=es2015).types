@@ -6,7 +6,7 @@ class Greeter {
 
     constructor(public greeting: string, ...b: string[]) {
 >greeting : string
->b : string[]
+>b : Array<string>
     }
     greet() {
 >greet : () => string

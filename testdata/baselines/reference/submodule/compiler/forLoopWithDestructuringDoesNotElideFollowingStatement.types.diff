@@ -1,0 +1,22 @@
+--- old.forLoopWithDestructuringDoesNotElideFollowingStatement.types
++++ new.forLoopWithDestructuringDoesNotElideFollowingStatement.types
+@@= skipped -1, +1 lines =@@
+
+ === forLoopWithDestructuringDoesNotElideFollowingStatement.ts ===
+ let array = [{a: 0, b: 1}]
+->array : { a: number; b: number; }[]
+->[{a: 0, b: 1}] : { a: number; b: number; }[]
++>array : Array<{ a: number; b: number; }>
++>[{a: 0, b: 1}] : Array<{ a: number; b: number; }>
+ >{a: 0, b: 1} : { a: number; b: number; }
+ >a : number
+ >0 : 0
+@@= skipped -11, +11 lines =@@
+ for (let { a, ...rest } of array)
+ >a : number
+ >rest : { b: number; }
+->array : { a: number; b: number; }[]
++>array : Array<{ a: number; b: number; }>
+
+     void a
+ >void a : undefined

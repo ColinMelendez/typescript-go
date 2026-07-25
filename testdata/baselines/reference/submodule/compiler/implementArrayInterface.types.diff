@@ -1,0 +1,120 @@
+--- old.implementArrayInterface.types
++++ new.implementArrayInterface.types
+@@= skipped -11, +11 lines =@@
+
+     concat<U extends T[]>(...items: U[]): T[];
+ >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
+->items : U[]
++>items : Array<U>
+
+     concat(...items: T[]): T[];
+ >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
+->items : T[]
++>items : Array<T>
+
+     join(separator?: string): string;
+ >join : (separator?: string) => string
+@@= skipped -15, +15 lines =@@
+
+     push(...items: T[]): number;
+ >push : (...items: T[]) => number
+->items : T[]
++>items : Array<T>
+
+     reverse(): T[];
+ >reverse : () => T[]
+@@= skipped -27, +27 lines =@@
+ >splice : { (start: number): T[]; (start: number, deleteCount: number, ...items: T[]): T[]; }
+ >start : number
+ >deleteCount : number
+->items : T[]
++>items : Array<T>
+
+     unshift(...items: T[]): number;
+ >unshift : (...items: T[]) => number
+->items : T[]
++>items : Array<T>
+
+     indexOf(searchElement: T, fromIndex?: number): number;
+ >indexOf : (searchElement: T, fromIndex?: number) => number
+@@= skipped -21, +21 lines =@@
+ >callbackfn : (value: T, index: number, array: T[]) => boolean
+ >value : T
+ >index : number
+->array : T[]
++>array : Array<T>
+ >thisArg : any
+
+     some(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean;
+@@= skipped -8, +8 lines =@@
+ >callbackfn : (value: T, index: number, array: T[]) => boolean
+ >value : T
+ >index : number
+->array : T[]
++>array : Array<T>
+ >thisArg : any
+
+     forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+@@= skipped -8, +8 lines =@@
+ >callbackfn : (value: T, index: number, array: T[]) => void
+ >value : T
+ >index : number
+->array : T[]
++>array : Array<T>
+ >thisArg : any
+
+     map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
+@@= skipped -8, +8 lines =@@
+ >callbackfn : (value: T, index: number, array: T[]) => U
+ >value : T
+ >index : number
+->array : T[]
++>array : Array<T>
+ >thisArg : any
+
+     filter(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): T[];
+@@= skipped -8, +8 lines =@@
+ >callbackfn : (value: T, index: number, array: T[]) => boolean
+ >value : T
+ >index : number
+->array : T[]
++>array : Array<T>
+ >thisArg : any
+
+     reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue?: T): T;
+@@= skipped -9, +9 lines =@@
+ >previousValue : T
+ >currentValue : T
+ >currentIndex : number
+->array : T[]
++>array : Array<T>
+ >initialValue : T | undefined
+
+     reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
+@@= skipped -9, +9 lines =@@
+ >previousValue : U
+ >currentValue : T
+ >currentIndex : number
+->array : T[]
++>array : Array<T>
+ >initialValue : U
+
+     reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue?: T): T;
+@@= skipped -9, +9 lines =@@
+ >previousValue : T
+ >currentValue : T
+ >currentIndex : number
+->array : T[]
++>array : Array<T>
+ >initialValue : T | undefined
+
+     reduceRight<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
+@@= skipped -9, +9 lines =@@
+ >previousValue : U
+ >currentValue : T
+ >currentIndex : number
+->array : T[]
++>array : Array<T>
+ >initialValue : U
+
+     length: number;

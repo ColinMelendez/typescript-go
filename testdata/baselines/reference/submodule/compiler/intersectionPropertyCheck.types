@@ -45,7 +45,7 @@ function foo<T extends object>(x: { a?: string }, y: T & { a: boolean }) {
 
 interface Test {
   readonly hi?: string[]
->hi : string[] | undefined
+>hi : Array<string> | undefined
 }
 
 function test<T extends object>(value: T): Test {

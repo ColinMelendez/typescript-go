@@ -1,0 +1,26 @@
+--- old.functionImplementationErrors(target=es2015).types
++++ new.functionImplementationErrors(target=es2015).types
+@@= skipped -38, +38 lines =@@
+
+ // FunctionExpression with no return type annotation with return branch of number[] and other of string[]
+ var f4 = function () {
+->f4 : () => string[] | number[]
+->function () {    if (true) {        return [''];    } else {        return [1];    }} : () => string[] | number[]
++>f4 : () => Array<string> | Array<number>
++>function () {    if (true) {        return [''];    } else {        return [1];    }} : () => Array<string> | Array<number>
+
+     if (true) {
+ >true : true
+
+         return [''];
+->[''] : string[]
++>[''] : Array<string>
+ >'' : ""
+
+     } else {
+         return [1];
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+     }
+ }

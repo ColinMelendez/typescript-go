@@ -1,0 +1,53 @@
+--- old.widenedTypes.types
++++ new.widenedTypes.types
+@@= skipped -22, +22 lines =@@
+ >a : string
+
+ var t = [3, (3, null)];
+->t : number[]
+->[3, (3, null)] : number[]
++>t : Array<number>
++>[3, (3, null)] : Array<number>
+ >3 : 3
+ >(3, null) : null
+ >3, null : null
+@@= skipped -10, +10 lines =@@
+ t[3] = "";
+ >t[3] = "" : ""
+ >t[3] : number
+->t : number[]
++>t : Array<number>
+ >3 : 3
+ >"" : ""
+
+@@= skipped -18, +18 lines =@@
+ >y : any
+
+ var u = [3, (y = null)];
+->u : number[]
+->[3, (y = null)] : number[]
++>u : Array<number>
++>[3, (y = null)] : Array<number>
+ >3 : 3
+ >(y = null) : null
+ >y = null : null
+@@= skipped -10, +10 lines =@@
+ u[3] = "";
+ >u[3] = "" : ""
+ >u[3] : number
+->u : number[]
++>u : Array<number>
+ >3 : 3
+ >"" : ""
+
+@@= skipped -14, +14 lines =@@
+
+ // Highlights the difference between array literals and object literals
+ var arr: string[] = [3, null]; // not assignable because null is not widened. BCT is {}
+->arr : string[]
+->[3, null] : number[]
++>arr : Array<string>
++>[3, null] : Array<number>
+ >3 : 3
+
+ var obj: { [x: string]: string; } = { x: 3, y: null }; // assignable because null is widened, and therefore BCT is any

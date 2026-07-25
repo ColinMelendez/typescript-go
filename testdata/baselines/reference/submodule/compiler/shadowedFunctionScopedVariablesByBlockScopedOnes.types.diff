@@ -1,0 +1,20 @@
+--- old.shadowedFunctionScopedVariablesByBlockScopedOnes.types
++++ new.shadowedFunctionScopedVariablesByBlockScopedOnes.types
+@@= skipped -14, +14 lines =@@
+
+     for (let v in []) { var v; }
+ >v : string
+->[] : undefined[]
++>[] : Array<undefined>
+ >v : any
+ }
+ function test3() {
+@@= skipped -8, +8 lines =@@
+
+     for (let v of []) { var v; }
+ >v : any
+->[] : undefined[]
++>[] : Array<undefined>
+ >v : any
+ }
+ function test4() {

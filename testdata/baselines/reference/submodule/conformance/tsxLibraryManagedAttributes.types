@@ -59,7 +59,7 @@ declare class ReactComponent<P={}, S={}> {
 
     props: P & Readonly<{children: ReactNode[]}>;
 >props : P & Readonly<{ children: ReactNode[]; }>
->children : ReactNode[]
+>children : Array<ReactNode>
 
     setState(s: Partial<S>): S;
 >setState : (s: Partial<S>) => S

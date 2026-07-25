@@ -3,11 +3,11 @@
 === asyncawait.ts ===
 export function async<T>(...args: any[]): any { }
 >async : <T>(...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 export function await(...args: any[]): any { }
 >await : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 === a.ts ===
 import { async, await } from './asyncawait';

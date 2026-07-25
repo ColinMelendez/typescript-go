@@ -1,0 +1,11 @@
+--- old.generatorReturnTypeInferenceNonStrict.types
++++ new.generatorReturnTypeInferenceNonStrict.types
+@@= skipped -36, +36 lines =@@
+     //       In non-strict mode, `[]` produces the type `undefined[]` which is implicitly any.
+     yield* [];
+ >yield* [] : undefined
+->[] : undefined[]
++>[] : Array<undefined>
+ }
+
+ function* g004() { // Generator<number, void, undefined>

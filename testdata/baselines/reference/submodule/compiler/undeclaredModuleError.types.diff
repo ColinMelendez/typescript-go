@@ -1,0 +1,36 @@
+--- old.undeclaredModuleError.types
++++ new.undeclaredModuleError.types
+@@= skipped -12, +12 lines =@@
+ >name : string
+ >callback : (error: Error, results: { name: string; stat: fs.Stats; }[]) => void
+ >error : Error
+->results : { name: string; stat: fs.Stats; }[]
++>results : Array<{ name: string; stat: fs.Stats; }>
+ >name : string
+ >stat : fs.Stats
+ >fs : any
+
+ function join(...paths: string[]) {}
+ >join : (...paths: string[]) => void
+->paths : string[]
++>paths : Array<string>
+
+ function instrumentFile(covFileDir: string, covFileName: string, originalFilePath: string) {
+ >instrumentFile : (covFileDir: string, covFileName: string, originalFilePath: string) => void
+@@= skipped -32, +32 lines =@@
+         } , (error: Error, files: {}[]) => {
+ >(error: Error, files: {}[]) => {                files.forEach((file) => {                    var fullPath = join(IDoNotExist);                } );            } : (error: Error, files: {}[]) => void
+ >error : Error
+->files : {}[]
++>files : Array<{}>
+
+                 files.forEach((file) => {
+ >files.forEach((file) => {                    var fullPath = join(IDoNotExist);                } ) : void
+->files.forEach : (callbackfn: (value: {}, index: number, array: {}[]) => void, thisArg?: any) => void
+->files : {}[]
+->forEach : (callbackfn: (value: {}, index: number, array: {}[]) => void, thisArg?: any) => void
++>files.forEach : (callbackfn: (value: {}, index: number, array: Array<{}>) => void, thisArg?: any) => void
++>files : Array<{}>
++>forEach : (callbackfn: (value: {}, index: number, array: Array<{}>) => void, thisArg?: any) => void
+ >(file) => {                    var fullPath = join(IDoNotExist);                } : (file: {}) => void
+ >file : {}

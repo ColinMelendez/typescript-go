@@ -1,0 +1,11 @@
+--- old.restElementWithAssignmentPattern4.types
++++ new.restElementWithAssignmentPattern4.types
+@@= skipped -12, +12 lines =@@
+
+ [...{ 0: a = "", b }] = tuple;
+ >[...{ 0: a = "", b }] = tuple : [string, number]
+->[...{ 0: a = "", b }] : unknown[]
++>[...{ 0: a = "", b }] : Array<unknown>
+ >...{ 0: a = "", b } : any
+ >{ 0: a = "", b } : { 0?: string; b: number; }
+ >0 : string

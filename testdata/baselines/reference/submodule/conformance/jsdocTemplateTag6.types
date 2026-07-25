@@ -104,18 +104,18 @@ function f3(x) {
 >x : T
 
     return [x];
->[x] : T[]
+>[x] : Array<T>
 >x : T
 }
 const t7 = f3("hello");
->t7 : "hello"[]
->f3("hello") : "hello"[]
+>t7 : Array<"hello">
+>f3("hello") : Array<"hello">
 >f3 : <const T>(x: T) => T[]
 >"hello" : "hello"
 
 const t8 = f3("hello");
->t8 : "hello"[]
->f3("hello") : "hello"[]
+>t8 : Array<"hello">
+>f3("hello") : Array<"hello">
 >f3 : <const T>(x: T) => T[]
 >"hello" : "hello"
 

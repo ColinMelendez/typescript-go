@@ -10,8 +10,8 @@ declare var ANY1;
 >ANY1 : any
 
 var ANY2: any[] = ["", ""];
->ANY2 : any[]
->["", ""] : string[]
+>ANY2 : Array<any>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -71,7 +71,7 @@ var ResultIsBoolean1 = delete ANY1;
 var ResultIsBoolean2 = delete ANY2;
 >ResultIsBoolean2 : boolean
 >delete ANY2 : boolean
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsBoolean3 = delete A;
 >ResultIsBoolean3 : boolean
@@ -108,7 +108,7 @@ var ResultIsBoolean9 = delete ANY2[0];
 >ResultIsBoolean9 : boolean
 >delete ANY2[0] : boolean
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsBoolean10 = delete obj1.x;
@@ -211,7 +211,7 @@ delete ANY1;
 delete ANY2[0];
 >delete ANY2[0] : boolean
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 delete ANY, ANY1;

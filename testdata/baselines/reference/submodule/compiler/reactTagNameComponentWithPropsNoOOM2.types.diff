@@ -1,0 +1,22 @@
+--- old.reactTagNameComponentWithPropsNoOOM2.types
++++ new.reactTagNameComponentWithPropsNoOOM2.types
+@@= skipped -19, +19 lines =@@
+ >{} : {}
+
+ const children: any[] = [];
+->children : any[]
+->[] : never[]
++>children : Array<any>
++>[] : Array<never>
+
+ <Tag className={classes} {...rest}>
+ ><Tag className={classes} {...rest}>{children}</Tag> : JSX.Element
+@@= skipped -11, +11 lines =@@
+ >rest : React.HTMLAttributes<HTMLElement>
+
+ {children}
+->children : any[]
++>children : Array<any>
+
+ </Tag>
+ >Tag : keyof React.ReactHTML

@@ -35,7 +35,7 @@ class C3 {
 >C3 : C3
 
     a: this[];
->a : this[]
+>a : Array<this>
 
     b: [this, this];
 >b : [this, this]
@@ -78,13 +78,13 @@ class C4 {
 >this : this
 
     x2 = [this];
->x2 : this[]
->[this] : this[]
+>x2 : Array<this>
+>[this] : Array<this>
 >this : this
 
     x3 = [{ a: this }];
->x3 : { a: this; }[]
->[{ a: this }] : { a: this; }[]
+>x3 : Array<{ a: this; }>
+>[{ a: this }] : Array<{ a: this; }>
 >{ a: this } : { a: this; }
 >a : this
 >this : this
@@ -103,17 +103,17 @@ class C4 {
 >this : this
     }
     f2() {
->f2 : () => this[]
+>f2 : () => Array<this>
 
         return [this];
->[this] : this[]
+>[this] : Array<this>
 >this : this
     }
     f3() {
->f3 : () => { a: this; }[]
+>f3 : () => Array<{ a: this; }>
 
         return [{ a: this }];
->[{ a: this }] : { a: this; }[]
+>[{ a: this }] : Array<{ a: this; }>
 >{ a: this } : { a: this; }
 >a : this
 >this : this

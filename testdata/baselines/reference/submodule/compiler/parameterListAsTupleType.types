@@ -54,10 +54,10 @@ class D {
 
     constructor(a: number, ...rest: string[]) {
 >a : number
->rest : string[]
+>rest : Array<string>
     }
 }
 type Dcps = ConstructorParameters<typeof D>; // should be [number, ...string[]]
->Dcps : [a: number, ...rest: string[]]
+>Dcps : [a: number, ...rest: Array<string>]
 >D : typeof D
 

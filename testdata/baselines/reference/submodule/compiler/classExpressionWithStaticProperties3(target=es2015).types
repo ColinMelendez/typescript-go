@@ -5,9 +5,9 @@ declare var console: any;
 >console : any
 
 const arr: {y(): number}[] = [];
->arr : { y(): number; }[]
+>arr : Array<{ y(): number; }>
 >y : () => number
->[] : never[]
+>[] : Array<never>
 
 for (let i = 0; i < 3; i++) {
 >i : number
@@ -20,9 +20,9 @@ for (let i = 0; i < 3; i++) {
 
     arr.push(class C {
 >arr.push(class C {        static x = i;        static y = () => C.x * 2;    }) : number
->arr.push : (...items: { y(): number; }[]) => number
->arr : { y(): number; }[]
->push : (...items: { y(): number; }[]) => number
+>arr.push : (...items: Array<{ y(): number; }>) => number
+>arr : Array<{ y(): number; }>
+>push : (...items: Array<{ y(): number; }>) => number
 >class C {        static x = i;        static y = () => C.x * 2;    } : typeof C
 >C : typeof C
 
@@ -43,9 +43,9 @@ for (let i = 0; i < 3; i++) {
 }
 arr.forEach(C => console.log(C.y()));
 >arr.forEach(C => console.log(C.y())) : void
->arr.forEach : (callbackfn: (value: { y(): number; }, index: number, array: { y(): number; }[]) => void, thisArg?: any) => void
->arr : { y(): number; }[]
->forEach : (callbackfn: (value: { y(): number; }, index: number, array: { y(): number; }[]) => void, thisArg?: any) => void
+>arr.forEach : (callbackfn: (value: { y(): number; }, index: number, array: Array<{ y(): number; }>) => void, thisArg?: any) => void
+>arr : Array<{ y(): number; }>
+>forEach : (callbackfn: (value: { y(): number; }, index: number, array: Array<{ y(): number; }>) => void, thisArg?: any) => void
 >C => console.log(C.y()) : (C: { y(): number; }) => any
 >C : { y(): number; }
 >console.log(C.y()) : any

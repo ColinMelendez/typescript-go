@@ -28,7 +28,7 @@ class X3<T> {
 >X3 : X3<T>
 
     p3: X3[]
->p3 : any[]
+>p3 : Array<any>
 }
 var a3: X3<number>;
 >a3 : X3<number>
@@ -74,7 +74,7 @@ class X8<T> {
 >X8 : X8<T>
 
     p8: Y[]
->p8 : any[]
+>p8 : Array<any>
 }
 var a8: X8<number>;
 >a8 : X8<number>

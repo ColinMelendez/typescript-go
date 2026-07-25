@@ -1,6 +1,44 @@
 --- old.recursiveConditionalTypes.types
 +++ new.recursiveConditionalTypes.types
-@@= skipped -379, +379 lines =@@
+@@= skipped -70, +70 lines =@@
+ >InfiniteArray : InfiniteArray<T>
+
+ type B0 = Flatten<string[][][]>;
+->B0 : string[]
++>B0 : Array<string>
+
+ type B1 = Flatten<string[][] | readonly (number[] | boolean[][])[]>;
+ >B1 : B1
+
+ type B2 = Flatten<InfiniteArray<string>>;
+->B2 : any[]
++>B2 : Array<any>
+
+ type B3 = B2[0];  // Error
+ >B3 : any
+@@= skipped -26, +26 lines =@@
+ >TT1 : TT1
+
+ type TT2 = TupleOf<number, number>;
+->TT2 : number[]
++>TT2 : Array<number>
+
+ type TT3 = TupleOf<number, any>;
+->TT3 : number[]
++>TT3 : Array<number>
+
+ type TT4 = TupleOf<number, 100>;
+ >TT4 : [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number]
+@@= skipped -164, +164 lines =@@
+ >Intersect : Intersect<U, R>
+
+ type QQ = Intersect<[string[], number[], 7]>;
+->QQ : string[] & number[] & 7
++>QQ : Array<string> & Array<number> & 7
+
+ // Infer between structurally identical recursive conditional types
+
+@@= skipped -119, +119 lines =@@
      : never;
 
  function foo2<T extends unknown[]>(value: T): Enumerate<T['length']> {

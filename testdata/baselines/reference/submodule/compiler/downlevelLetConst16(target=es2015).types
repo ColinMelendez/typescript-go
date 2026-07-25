@@ -587,7 +587,7 @@ function foo5() {
 
     for (let x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -605,7 +605,7 @@ function foo6() {
 
     for (const x in []) {
 >x : string
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -623,7 +623,7 @@ function foo7() {
 
     for (let x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -641,7 +641,7 @@ function foo8() {
 
     for (let [x] of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -660,7 +660,7 @@ function foo9() {
     for (let {a: x} of []) {
 >a : any
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -678,7 +678,7 @@ function foo10() {
 
     for (const x of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -696,7 +696,7 @@ function foo11() {
 
     for (const [x] of []) {
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any
@@ -715,7 +715,7 @@ function foo12() {
     for (const {a: x} of []) {
 >a : any
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
         use(x);
 >use(x) : any

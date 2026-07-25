@@ -1,0 +1,18 @@
+--- old.inheritedGenericCallSignature.types
++++ new.inheritedGenericCallSignature.types
+@@= skipped -27, +27 lines =@@
+  
+
+ var y = x(undefined);
+->y : Date[]
+->x(undefined) : Date[]
++>y : Array<Date>
++>x(undefined) : Array<Date>
+ >x : I2<Date>
+ >undefined : undefined
+
+ y.length;  // should not error
+ >y.length : number
+->y : Date[]
++>y : Array<Date>
+ >length : number

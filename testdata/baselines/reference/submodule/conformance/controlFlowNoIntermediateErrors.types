@@ -11,8 +11,8 @@ function f1() {
 >0 : 0
 
     const otherCodes: (0 | 1 | 2)[] = [2, 0, 1, 0, 2, 2, 2, 0, 1, 0, 2, 1, 1, 0, 2, 1];
->otherCodes : (0 | 1 | 2)[]
->[2, 0, 1, 0, 2, 2, 2, 0, 1, 0, 2, 1, 1, 0, 2, 1] : (0 | 1 | 2)[]
+>otherCodes : Array<0 | 1 | 2>
+>[2, 0, 1, 0, 2, 2, 2, 0, 1, 0, 2, 1, 1, 0, 2, 1] : Array<0 | 1 | 2>
 >2 : 2
 >0 : 0
 >1 : 1
@@ -32,7 +32,7 @@ function f1() {
 
     for (const code2 of otherCodes) {
 >code2 : 0 | 1 | 2
->otherCodes : (0 | 1 | 2)[]
+>otherCodes : Array<0 | 1 | 2>
 
         if (code2 === 0) {        
 >code2 === 0 : boolean

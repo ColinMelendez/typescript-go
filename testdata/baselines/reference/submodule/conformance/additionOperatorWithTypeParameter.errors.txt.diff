@@ -1,0 +1,18 @@
+--- old.additionOperatorWithTypeParameter.errors.txt
++++ new.additionOperatorWithTypeParameter.errors.txt
+@@= skipped -12, +12 lines =@@
+ additionOperatorWithTypeParameter.ts(34,15): error TS2365: Operator '+' cannot be applied to types 'T' and 'T'.
+ additionOperatorWithTypeParameter.ts(35,15): error TS2365: Operator '+' cannot be applied to types 'T' and 'U'.
+ additionOperatorWithTypeParameter.ts(36,15): error TS2365: Operator '+' cannot be applied to types 'T' and '() => void'.
+-additionOperatorWithTypeParameter.ts(37,15): error TS2365: Operator '+' cannot be applied to types 'T' and 'never[]'.
++additionOperatorWithTypeParameter.ts(37,15): error TS2365: Operator '+' cannot be applied to types 'T' and 'Array<never>'.
+
+
+ ==== additionOperatorWithTypeParameter.ts (16 errors) ====
+@@= skipped -72, +72 lines =@@
+ !!! error TS2365: Operator '+' cannot be applied to types 'T' and '() => void'.
+         var r20 = t + [];
+                   ~~~~~~
+-!!! error TS2365: Operator '+' cannot be applied to types 'T' and 'never[]'.
++!!! error TS2365: Operator '+' cannot be applied to types 'T' and 'Array<never>'.
+     }

@@ -68,8 +68,8 @@ function md5(string:string): void {
     };
 
     var x=Array();
->x : any[]
->Array() : any[]
+>x : Array<any>
+>Array() : Array<any>
 >Array : ArrayConstructor
 
     var k,AA,BB,CC,DD,a,b,c,d;
@@ -124,9 +124,9 @@ function md5(string:string): void {
 >21 : 21
 
     x = [1];
->x = [1] : number[]
->x : any[]
->[1] : number[]
+>x = [1] : Array<number>
+>x : Array<any>
+>[1] : Array<number>
 >1 : 1
 
     a = 0x67452301; b = 0xEFCDAB89; c = 0x98BADCFE; d = 0x10325476;
@@ -150,7 +150,7 @@ function md5(string:string): void {
 >k<x.length : boolean
 >k : number
 >x.length : number
->x : any[]
+>x : Array<any>
 >length : number
 >k+=16 : number
 >k : number
@@ -180,7 +180,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+0] : any
->x : any[]
+>x : Array<any>
 >k+0 : number
 >k : number
 >0 : 0
@@ -197,7 +197,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+1] : any
->x : any[]
+>x : Array<any>
 >k+1 : number
 >k : number
 >1 : 1
@@ -214,7 +214,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+2] : any
->x : any[]
+>x : Array<any>
 >k+2 : number
 >k : number
 >2 : 2
@@ -231,7 +231,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+3] : any
->x : any[]
+>x : Array<any>
 >k+3 : number
 >k : number
 >3 : 3
@@ -248,7 +248,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+4] : any
->x : any[]
+>x : Array<any>
 >k+4 : number
 >k : number
 >4 : 4
@@ -265,7 +265,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+5] : any
->x : any[]
+>x : Array<any>
 >k+5 : number
 >k : number
 >5 : 5
@@ -282,7 +282,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+6] : any
->x : any[]
+>x : Array<any>
 >k+6 : number
 >k : number
 >6 : 6
@@ -299,7 +299,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+7] : any
->x : any[]
+>x : Array<any>
 >k+7 : number
 >k : number
 >7 : 7
@@ -316,7 +316,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+8] : any
->x : any[]
+>x : Array<any>
 >k+8 : number
 >k : number
 >8 : 8
@@ -333,7 +333,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+9] : any
->x : any[]
+>x : Array<any>
 >k+9 : number
 >k : number
 >9 : 9
@@ -350,7 +350,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+10] : any
->x : any[]
+>x : Array<any>
 >k+10 : number
 >k : number
 >10 : 10
@@ -367,7 +367,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+11] : any
->x : any[]
+>x : Array<any>
 >k+11 : number
 >k : number
 >11 : 11
@@ -384,7 +384,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+12] : any
->x : any[]
+>x : Array<any>
 >k+12 : number
 >k : number
 >12 : 12
@@ -401,7 +401,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+13] : any
->x : any[]
+>x : Array<any>
 >k+13 : number
 >k : number
 >13 : 13
@@ -418,7 +418,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+14] : any
->x : any[]
+>x : Array<any>
 >k+14 : number
 >k : number
 >14 : 14
@@ -435,7 +435,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+15] : any
->x : any[]
+>x : Array<any>
 >k+15 : number
 >k : number
 >15 : 15
@@ -452,7 +452,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+1] : any
->x : any[]
+>x : Array<any>
 >k+1 : number
 >k : number
 >1 : 1
@@ -469,7 +469,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+6] : any
->x : any[]
+>x : Array<any>
 >k+6 : number
 >k : number
 >6 : 6
@@ -486,7 +486,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+11] : any
->x : any[]
+>x : Array<any>
 >k+11 : number
 >k : number
 >11 : 11
@@ -503,7 +503,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+0] : any
->x : any[]
+>x : Array<any>
 >k+0 : number
 >k : number
 >0 : 0
@@ -520,7 +520,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+5] : any
->x : any[]
+>x : Array<any>
 >k+5 : number
 >k : number
 >5 : 5
@@ -537,7 +537,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+10] : any
->x : any[]
+>x : Array<any>
 >k+10 : number
 >k : number
 >10 : 10
@@ -554,7 +554,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+15] : any
->x : any[]
+>x : Array<any>
 >k+15 : number
 >k : number
 >15 : 15
@@ -571,7 +571,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+4] : any
->x : any[]
+>x : Array<any>
 >k+4 : number
 >k : number
 >4 : 4
@@ -588,7 +588,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+9] : any
->x : any[]
+>x : Array<any>
 >k+9 : number
 >k : number
 >9 : 9
@@ -605,7 +605,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+14] : any
->x : any[]
+>x : Array<any>
 >k+14 : number
 >k : number
 >14 : 14
@@ -622,7 +622,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+3] : any
->x : any[]
+>x : Array<any>
 >k+3 : number
 >k : number
 >3 : 3
@@ -639,7 +639,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+8] : any
->x : any[]
+>x : Array<any>
 >k+8 : number
 >k : number
 >8 : 8
@@ -656,7 +656,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+13] : any
->x : any[]
+>x : Array<any>
 >k+13 : number
 >k : number
 >13 : 13
@@ -673,7 +673,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+2] : any
->x : any[]
+>x : Array<any>
 >k+2 : number
 >k : number
 >2 : 2
@@ -690,7 +690,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+7] : any
->x : any[]
+>x : Array<any>
 >k+7 : number
 >k : number
 >7 : 7
@@ -707,7 +707,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+12] : any
->x : any[]
+>x : Array<any>
 >k+12 : number
 >k : number
 >12 : 12
@@ -724,7 +724,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+5] : any
->x : any[]
+>x : Array<any>
 >k+5 : number
 >k : number
 >5 : 5
@@ -741,7 +741,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+8] : any
->x : any[]
+>x : Array<any>
 >k+8 : number
 >k : number
 >8 : 8
@@ -758,7 +758,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+11] : any
->x : any[]
+>x : Array<any>
 >k+11 : number
 >k : number
 >11 : 11
@@ -775,7 +775,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+14] : any
->x : any[]
+>x : Array<any>
 >k+14 : number
 >k : number
 >14 : 14
@@ -792,7 +792,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+1] : any
->x : any[]
+>x : Array<any>
 >k+1 : number
 >k : number
 >1 : 1
@@ -809,7 +809,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+4] : any
->x : any[]
+>x : Array<any>
 >k+4 : number
 >k : number
 >4 : 4
@@ -826,7 +826,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+7] : any
->x : any[]
+>x : Array<any>
 >k+7 : number
 >k : number
 >7 : 7
@@ -843,7 +843,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+10] : any
->x : any[]
+>x : Array<any>
 >k+10 : number
 >k : number
 >10 : 10
@@ -860,7 +860,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+13] : any
->x : any[]
+>x : Array<any>
 >k+13 : number
 >k : number
 >13 : 13
@@ -877,7 +877,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+0] : any
->x : any[]
+>x : Array<any>
 >k+0 : number
 >k : number
 >0 : 0
@@ -894,7 +894,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+3] : any
->x : any[]
+>x : Array<any>
 >k+3 : number
 >k : number
 >3 : 3
@@ -911,7 +911,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+6] : any
->x : any[]
+>x : Array<any>
 >k+6 : number
 >k : number
 >6 : 6
@@ -928,7 +928,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+9] : any
->x : any[]
+>x : Array<any>
 >k+9 : number
 >k : number
 >9 : 9
@@ -945,7 +945,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+12] : any
->x : any[]
+>x : Array<any>
 >k+12 : number
 >k : number
 >12 : 12
@@ -962,7 +962,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+15] : any
->x : any[]
+>x : Array<any>
 >k+15 : number
 >k : number
 >15 : 15
@@ -979,7 +979,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+2] : any
->x : any[]
+>x : Array<any>
 >k+2 : number
 >k : number
 >2 : 2
@@ -996,7 +996,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+0] : any
->x : any[]
+>x : Array<any>
 >k+0 : number
 >k : number
 >0 : 0
@@ -1013,7 +1013,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+7] : any
->x : any[]
+>x : Array<any>
 >k+7 : number
 >k : number
 >7 : 7
@@ -1030,7 +1030,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+14] : any
->x : any[]
+>x : Array<any>
 >k+14 : number
 >k : number
 >14 : 14
@@ -1047,7 +1047,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+5] : any
->x : any[]
+>x : Array<any>
 >k+5 : number
 >k : number
 >5 : 5
@@ -1064,7 +1064,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+12] : any
->x : any[]
+>x : Array<any>
 >k+12 : number
 >k : number
 >12 : 12
@@ -1081,7 +1081,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+3] : any
->x : any[]
+>x : Array<any>
 >k+3 : number
 >k : number
 >3 : 3
@@ -1098,7 +1098,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+10] : any
->x : any[]
+>x : Array<any>
 >k+10 : number
 >k : number
 >10 : 10
@@ -1115,7 +1115,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+1] : any
->x : any[]
+>x : Array<any>
 >k+1 : number
 >k : number
 >1 : 1
@@ -1132,7 +1132,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+8] : any
->x : any[]
+>x : Array<any>
 >k+8 : number
 >k : number
 >8 : 8
@@ -1149,7 +1149,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+15] : any
->x : any[]
+>x : Array<any>
 >k+15 : number
 >k : number
 >15 : 15
@@ -1166,7 +1166,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+6] : any
->x : any[]
+>x : Array<any>
 >k+6 : number
 >k : number
 >6 : 6
@@ -1183,7 +1183,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+13] : any
->x : any[]
+>x : Array<any>
 >k+13 : number
 >k : number
 >13 : 13
@@ -1200,7 +1200,7 @@ function md5(string:string): void {
 >c : number
 >d : number
 >x[k+4] : any
->x : any[]
+>x : Array<any>
 >k+4 : number
 >k : number
 >4 : 4
@@ -1217,7 +1217,7 @@ function md5(string:string): void {
 >b : number
 >c : number
 >x[k+11] : any
->x : any[]
+>x : Array<any>
 >k+11 : number
 >k : number
 >11 : 11
@@ -1234,7 +1234,7 @@ function md5(string:string): void {
 >a : number
 >b : number
 >x[k+2] : any
->x : any[]
+>x : Array<any>
 >k+2 : number
 >k : number
 >2 : 2
@@ -1251,7 +1251,7 @@ function md5(string:string): void {
 >d : number
 >a : number
 >x[k+9] : any
->x : any[]
+>x : Array<any>
 >k+9 : number
 >k : number
 >9 : 9

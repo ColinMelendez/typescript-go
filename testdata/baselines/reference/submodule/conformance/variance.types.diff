@@ -1,0 +1,29 @@
+--- old.variance.types
++++ new.variance.types
+@@= skipped -37, +37 lines =@@
+ >Bar : Bar<T>
+
+   private static instance: Bar<string>[] = [];
+->instance : Bar<string>[]
+->[] : never[]
++>instance : Array<Bar<string>>
++>[] : Array<never>
+
+   cast(_name: ([T] extends [string] ? string : string)) { }
+ >cast : (_name: ([T] extends [string] ? string : string)) => void
+@@= skipped -12, +12 lines =@@
+
+     Bar.instance.push(this);
+ >Bar.instance.push(this) : number
+->Bar.instance.push : (...items: Bar<string>[]) => number
+->Bar.instance : Bar<string>[]
++>Bar.instance.push : (...items: Array<Bar<string>>) => number
++>Bar.instance : Array<Bar<string>>
+ >Bar : typeof Bar
+->instance : Bar<string>[]
+->push : (...items: Bar<string>[]) => number
++>instance : Array<Bar<string>>
++>push : (...items: Array<Bar<string>>) => number
+ >this : this
+   }
+ }

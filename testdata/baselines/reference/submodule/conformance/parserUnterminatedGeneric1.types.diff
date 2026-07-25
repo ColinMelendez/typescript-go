@@ -1,0 +1,8 @@
+--- old.parserUnterminatedGeneric1.types
++++ new.parserUnterminatedGeneric1.types
+@@= skipped -3, +3 lines =@@
+  interface IQService {
+         all(promises: IPromise < any > []): IPromise<
+ >all : (promises: IPromise<any>[]) => IPromise
+->promises : IPromise<any>[]
++>promises : Array<IPromise<any>>

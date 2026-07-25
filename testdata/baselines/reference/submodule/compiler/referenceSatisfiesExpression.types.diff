@@ -1,0 +1,11 @@
+--- old.referenceSatisfiesExpression.types
++++ new.referenceSatisfiesExpression.types
+@@= skipped -75, +75 lines =@@
+ >(g satisfies number) : number
+ >g satisfies number : number
+ >g : number
+->[10] : number[]
++>[10] : Array<number>
+ >10 : 10
+
+   console.log(g)

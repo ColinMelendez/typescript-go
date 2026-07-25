@@ -1,0 +1,43 @@
+--- old.typeSatisfaction_errorLocations1.types
++++ new.typeSatisfaction_errorLocations1.types
+@@= skipped -119, +119 lines =@@
+
+ declare function fn3(...args: unknown[]): void;
+ >fn3 : (...args: unknown[]) => void
+->args : unknown[]
++>args : Array<unknown>
+
+ fn3(10, ...([10, "20"] satisfies number[]));
+ >fn3(10, ...([10, "20"] satisfies number[])) : void
+ >fn3 : (...args: unknown[]) => void
+ >10 : 10
+ >...([10, "20"] satisfies number[]) : string | number
+->([10, "20"] satisfies number[]) : (string | number)[]
+->[10, "20"] satisfies number[] : (string | number)[]
+->[10, "20"] : (string | number)[]
++>([10, "20"] satisfies number[]) : Array<string | number>
++>[10, "20"] satisfies number[] : Array<string | number>
++>[10, "20"] : Array<string | number>
+ >10 : 10
+ >"20" : "20"
+
+@@= skipped -31, +31 lines =@@
+
+ declare function fn4(...args: number[]): void;
+ >fn4 : (...args: number[]) => void
+->args : number[]
++>args : Array<number>
+
+ fn4(10, ...(["10", "20"] satisfies readonly string[]));
+ >fn4(10, ...(["10", "20"] satisfies readonly string[])) : void
+ >fn4 : (...args: number[]) => void
+ >10 : 10
+ >...(["10", "20"] satisfies readonly string[]) : string
+->(["10", "20"] satisfies readonly string[]) : string[]
+->["10", "20"] satisfies readonly string[] : string[]
+->["10", "20"] : string[]
++>(["10", "20"] satisfies readonly string[]) : Array<string>
++>["10", "20"] satisfies readonly string[] : Array<string>
++>["10", "20"] : Array<string>
+ >"10" : "10"
+ >"20" : "20"

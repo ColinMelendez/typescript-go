@@ -7,26 +7,26 @@ export class Test  {
     constructor() {
 
         let outerArray: Array<number> = [1, 2, 3];
->outerArray : number[]
->[1, 2, 3] : number[]
+>outerArray : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
         let innerArray: Array<number> = [1, 2, 3];
->innerArray : number[]
->[1, 2, 3] : number[]
+>innerArray : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
         for (let outer of outerArray)
 >outer : number
->outerArray : number[]
+>outerArray : Array<number>
 
             for (let inner of innerArray) {
 >inner : number
->innerArray : number[]
+>innerArray : Array<number>
 
                 this.aFunction((newValue, oldValue) => {
 >this.aFunction((newValue, oldValue) => {                    let x = outer + inner + newValue;                }) : void

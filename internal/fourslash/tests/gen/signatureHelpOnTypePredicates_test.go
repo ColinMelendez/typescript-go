@@ -27,5 +27,5 @@ f3(/*3*/)`
 	f.GoToMarker(t, "2")
 	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "f2(a: any): a is unknown"})
 	f.GoToMarker(t, "3")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "f3(a: any, ...b: any[]): a is number", IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "f3(a: any, ...b: Array<any>): a is number", IsVariadic: true, IsVariadicSet: true})
 }

@@ -1,0 +1,35 @@
+--- old.functionOverloads43.types
++++ new.functionOverloads43.types
+@@= skipped -2, +2 lines =@@
+ === functionOverloads43.ts ===
+ function foo(bar: { a:number }[]): number;
+ >foo : { (bar: { a: number; }[]): number; (bar: { a: string; }[]): string; }
+->bar : { a: number; }[]
++>bar : Array<{ a: number; }>
+ >a : number
+
+ function foo(bar: { a:string }[]): string;
+ >foo : { (bar: { a: number; }[]): number; (bar: { a: string; }[]): string; }
+->bar : { a: string; }[]
++>bar : Array<{ a: string; }>
+ >a : string
+
+ function foo([x]: { a:number | string }[]): string | number {
+@@= skipped -30, +30 lines =@@
+ >x : string
+ >foo([{a: "str"}]) : string
+ >foo : { (bar: { a: number; }[]): number; (bar: { a: string; }[]): string; }
+->[{a: "str"}] : { a: string; }[]
++>[{a: "str"}] : Array<{ a: string; }>
+ >{a: "str"} : { a: string; }
+ >a : string
+ >"str" : "str"
+@@= skipped -9, +9 lines =@@
+ >y : number
+ >foo([{a: 100}]) : number
+ >foo : { (bar: { a: number; }[]): number; (bar: { a: string; }[]): string; }
+->[{a: 100}] : { a: number; }[]
++>[{a: 100}] : Array<{ a: number; }>
+ >{a: 100} : { a: number; }
+ >a : number
+ >100 : 100

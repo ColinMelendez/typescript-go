@@ -1,0 +1,23 @@
+--- old.mappedTypeWithNameClauseAppliedToArrayType.types
++++ new.mappedTypeWithNameClauseAppliedToArrayType.types
+@@= skipped -4, +4 lines =@@
+ >Mappy : Mappy<T>
+
+ type NotArray = Mappy<number[]>;
+->NotArray : Mappy<number[]>
++>NotArray : Mappy<Array<number>>
+
+ declare function doArrayStuff(x: unknown[]): void;
+ >doArrayStuff : (x: unknown[]) => void
+->x : unknown[]
++>x : Array<unknown>
+
+ declare const x: NotArray;
+->x : Mappy<number[]>
++>x : Mappy<Array<number>>
+
+ doArrayStuff(x);
+ >doArrayStuff(x) : void
+ >doArrayStuff : (x: unknown[]) => void
+->x : Mappy<number[]>
++>x : Mappy<Array<number>>

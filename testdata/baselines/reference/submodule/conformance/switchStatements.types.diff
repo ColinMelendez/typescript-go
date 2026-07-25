@@ -1,0 +1,38 @@
+--- old.switchStatements.types
++++ new.switchStatements.types
+@@= skipped -44, +44 lines =@@
+ >/[a-z]/ : RegExp
+
+     case[]:
+->[] : never[]
++>[] : Array<never>
+
+     case {}:
+ >{} : {}
+@@= skipped -11, +11 lines =@@
+ >12 : 12
+
+     case['a']:
+->['a'] : string[]
++>['a'] : Array<string>
+ >'a' : "a"
+
+     case typeof x:
+@@= skipped -90, +90 lines =@@
+ >/[a-z]/ : RegExp
+
+ switch ([]) { }
+->[] : never[]
++>[] : Array<never>
+
+ switch ({}) { }
+ >{} : {}
+@@= skipped -11, +11 lines =@@
+ >12 : 12
+
+ switch (['a']) { }
+->['a'] : string[]
++>['a'] : Array<string>
+ >'a' : "a"
+
+ switch (<T>(x: number) => '') { }

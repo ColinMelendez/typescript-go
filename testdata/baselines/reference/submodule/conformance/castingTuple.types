@@ -106,8 +106,8 @@ var t11 = <[number, number]>t10;
 >t10 : [E1, E2]
 
 var array1 = <{}[]>emptyObjTuple;
->array1 : {}[]
-><{}[]>emptyObjTuple : {}[]
+>array1 : Array<{}>
+><{}[]>emptyObjTuple : Array<{}>
 >emptyObjTuple : [{}, {}]
 
 var unionTuple: [C, string | number] = [new C(), "foo"];
@@ -149,8 +149,8 @@ var t9 = <[A, I]>classCDTuple;
 >classCDTuple : [C, D]
 
 var array1 = <number[]>numStrTuple;
->array1 : {}[]
-><number[]>numStrTuple : number[]
+>array1 : Array<{}>
+><number[]>numStrTuple : Array<number>
 >numStrTuple : [number, string]
 
 t4[2] = 10;

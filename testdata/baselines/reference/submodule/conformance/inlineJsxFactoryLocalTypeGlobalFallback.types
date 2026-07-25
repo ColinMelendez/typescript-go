@@ -14,7 +14,7 @@ declare global {
 >__domBrand : void
 
             children: Element[];
->children : Element[]
+>children : Array<Element>
 
             props: {};
 >props : {}
@@ -42,7 +42,7 @@ export namespace predom {
 >__predomBrand : void
 
             children: Element[];
->children : Element[]
+>children : Array<Element>
 
             props: {};
 >props : {}

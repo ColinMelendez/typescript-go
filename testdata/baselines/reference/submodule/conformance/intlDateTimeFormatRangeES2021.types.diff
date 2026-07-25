@@ -1,0 +1,11 @@
+--- old.intlDateTimeFormatRangeES2021.types
++++ new.intlDateTimeFormatRangeES2021.types
+@@= skipped -16, +16 lines =@@
+
+ const [ part ] = new Intl.DateTimeFormat().formatRangeToParts(1000, 1000000000);
+ >part : Intl.DateTimeRangeFormatPart
+->new Intl.DateTimeFormat().formatRangeToParts(1000, 1000000000) : Intl.DateTimeRangeFormatPart[]
++>new Intl.DateTimeFormat().formatRangeToParts(1000, 1000000000) : Array<Intl.DateTimeRangeFormatPart>
+ >new Intl.DateTimeFormat().formatRangeToParts : (startDate: Date | number | bigint, endDate: Date | number | bigint) => Intl.DateTimeRangeFormatPart[]
+ >new Intl.DateTimeFormat() : Intl.DateTimeFormat
+ >Intl.DateTimeFormat : Intl.DateTimeFormatConstructor

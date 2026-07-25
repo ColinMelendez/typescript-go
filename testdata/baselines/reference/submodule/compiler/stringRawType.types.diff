@@ -1,0 +1,15 @@
+--- old.stringRawType.types
++++ new.stringRawType.types
+@@= skipped -5, +5 lines =@@
+ >String.raw : (template: { raw: readonly string[] | ArrayLike<string>; }, ...substitutions: any[]) => string
+ >String : StringConstructor
+ >raw : (template: { raw: readonly string[] | ArrayLike<string>; }, ...substitutions: any[]) => string
+->{ raw: ["foo", "bar", "baz"] } : { raw: string[]; }
+->raw : string[]
+->["foo", "bar", "baz"] : string[]
++>{ raw: ["foo", "bar", "baz"] } : { raw: Array<string>; }
++>raw : Array<string>
++>["foo", "bar", "baz"] : Array<string>
+ >"foo" : "foo"
+ >"bar" : "bar"
+ >"baz" : "baz"

@@ -1,0 +1,10 @@
+--- old.declarationEmitRetainsJsdocyComments.types
++++ new.declarationEmitRetainsJsdocyComments.types
+@@= skipped -63, +63 lines =@@
+         */
+         someMethod(collection: any[]): boolean;
+ >someMethod : (collection: any[]) => boolean
+->collection : any[]
++>collection : Array<any>
+     }
+ }

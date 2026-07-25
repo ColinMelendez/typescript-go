@@ -6,11 +6,11 @@ import * as _ from "./a";
 
 for (const _ of []) { }
 >_ : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for (const _ in []) { }
 >_ : string
->[] : undefined[]
+>[] : Array<undefined>
 
 namespace _ns {
 >_ns : typeof _ns
@@ -20,10 +20,10 @@ namespace _ns {
 
     for (const _ of []) { }
 >_ : any
->[] : undefined[]
+>[] : Array<undefined>
 
     for (const _ in []) { }
 >_ : string
->[] : undefined[]
+>[] : Array<undefined>
 }
 

@@ -1,0 +1,98 @@
+--- old.es5-asyncFunctionArrayLiterals(target=es2015).types
++++ new.es5-asyncFunctionArrayLiterals(target=es2015).types
+@@= skipped -10, +10 lines =@@
+ >arrayLiteral0 : () => Promise<void>
+
+     x = [await y, z];
+->x = [await y, z] : any[]
++>x = [await y, z] : Array<any>
+ >x : any
+->[await y, z] : any[]
++>[await y, z] : Array<any>
+ >await y : any
+ >y : any
+ >z : any
+@@= skipped -12, +12 lines =@@
+ >arrayLiteral1 : () => Promise<void>
+
+     x = [y, await z];
+->x = [y, await z] : any[]
++>x = [y, await z] : Array<any>
+ >x : any
+->[y, await z] : any[]
++>[y, await z] : Array<any>
+ >y : any
+ >await z : any
+ >z : any
+@@= skipped -12, +12 lines =@@
+ >arrayLiteral2 : () => Promise<void>
+
+     x = [...(await y), z];
+->x = [...(await y), z] : any[]
++>x = [...(await y), z] : Array<any>
+ >x : any
+->[...(await y), z] : any[]
++>[...(await y), z] : Array<any>
+ >...(await y) : any
+ >(await y) : any
+ >await y : any
+@@= skipped -14, +14 lines =@@
+ >arrayLiteral3 : () => Promise<void>
+
+     x = [...y, await z];
+->x = [...y, await z] : any[]
++>x = [...y, await z] : Array<any>
+ >x : any
+->[...y, await z] : any[]
++>[...y, await z] : Array<any>
+ >...y : any
+ >y : any
+ >await z : any
+@@= skipped -13, +13 lines =@@
+ >arrayLiteral4 : () => Promise<void>
+
+     x = [await y, ...z];
+->x = [await y, ...z] : any[]
++>x = [await y, ...z] : Array<any>
+ >x : any
+->[await y, ...z] : any[]
++>[await y, ...z] : Array<any>
+ >await y : any
+ >y : any
+ >...z : any
+@@= skipped -13, +13 lines =@@
+ >arrayLiteral5 : () => Promise<void>
+
+     x = [y, ...(await z)];
+->x = [y, ...(await z)] : any[]
++>x = [y, ...(await z)] : Array<any>
+ >x : any
+->[y, ...(await z)] : any[]
++>[y, ...(await z)] : Array<any>
+ >y : any
+ >...(await z) : any
+ >(await z) : any
+@@= skipped -14, +14 lines =@@
+ >arrayLiteral6 : () => Promise<void>
+
+     x = [y, await z, a];
+->x = [y, await z, a] : any[]
++>x = [y, await z, a] : Array<any>
+ >x : any
+->[y, await z, a] : any[]
++>[y, await z, a] : Array<any>
+ >y : any
+ >await z : any
+ >z : any
+@@= skipped -13, +13 lines =@@
+ >arrayLiteral7 : () => Promise<void>
+
+     x = [await y, z, await a];
+->x = [await y, z, await a] : any[]
++>x = [await y, z, await a] : Array<any>
+ >x : any
+->[await y, z, await a] : any[]
++>[await y, z, await a] : Array<any>
+ >await y : any
+ >y : any
+ >z : any

@@ -1,4 +1,4 @@
-iterableArrayPattern13.ts(17,5): error TS2345: Argument of type 'FooIterator' is not assignable to parameter of type '[any, ...any[]]'.
+iterableArrayPattern13.ts(17,5): error TS2345: Argument of type 'FooIterator' is not assignable to parameter of type '[any, ...Array<any>]'.
 
 
 ==== iterableArrayPattern13.ts (1 errors) ====
@@ -20,4 +20,4 @@ iterableArrayPattern13.ts(17,5): error TS2345: Argument of type 'FooIterator' is
     function fun([a, ...b]) { }
     fun(new FooIterator);
         ~~~~~~~~~~~~~~~
-!!! error TS2345: Argument of type 'FooIterator' is not assignable to parameter of type '[any, ...any[]]'.
+!!! error TS2345: Argument of type 'FooIterator' is not assignable to parameter of type '[any, ...Array<any>]'.

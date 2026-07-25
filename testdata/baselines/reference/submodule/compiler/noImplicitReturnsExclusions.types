@@ -179,7 +179,7 @@ export declare function executeCommand<T = unknown>(
 >command : string
 
   ...rest: any[]
->rest : any[]
+>rest : Array<any>
 
 ): Thenable<T>;
 
@@ -191,7 +191,7 @@ export declare function registerCommand(
 
   callback: (...args: any[]) => any,
 >callback : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
   thisArg?: any
 >thisArg : any

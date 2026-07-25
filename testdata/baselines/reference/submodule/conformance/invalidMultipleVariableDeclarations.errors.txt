@@ -13,9 +13,9 @@ invalidMultipleVariableDeclarations.ts(36,5): error TS2403: Subsequent variable 
 invalidMultipleVariableDeclarations.ts(39,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'b' must be of type 'I', but here has type 'C'.
 invalidMultipleVariableDeclarations.ts(40,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'b' must be of type 'I', but here has type 'C2'.
 invalidMultipleVariableDeclarations.ts(43,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'f' must be of type '(x: string) => number', but here has type '(x: number) => string'.
-invalidMultipleVariableDeclarations.ts(46,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type 'number[]'.
-invalidMultipleVariableDeclarations.ts(47,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type '(C | D<string>)[]'.
-invalidMultipleVariableDeclarations.ts(50,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'D<string>[]', but here has type 'D<number>[]'.
+invalidMultipleVariableDeclarations.ts(46,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<number>'.
+invalidMultipleVariableDeclarations.ts(47,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<C | D<string>>'.
+invalidMultipleVariableDeclarations.ts(50,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'Array<D<string>>', but here has type 'Array<D<number>>'.
 invalidMultipleVariableDeclarations.ts(53,5): error TS2403: Subsequent variable declarations must have the same type.  Variable 'm' must be of type 'typeof M', but here has type 'typeof A'.
 
 
@@ -105,17 +105,17 @@ invalidMultipleVariableDeclarations.ts(53,5): error TS2403: Subsequent variable 
     var arr: string[];
     var arr = [1, 2, 3, 4];
         ~~~
-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type 'number[]'.
+!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<number>'.
 !!! related TS6203 invalidMultipleVariableDeclarations.ts:45:5: 'arr' was also declared here.
     var arr = [new C(), new C2(), new D<string>()];
         ~~~
-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'string[]', but here has type '(C | D<string>)[]'.
+!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr' must be of type 'Array<string>', but here has type 'Array<C | D<string>>'.
 !!! related TS6203 invalidMultipleVariableDeclarations.ts:45:5: 'arr' was also declared here.
     
     var arr2 = [new D<string>()];
     var arr2 = new Array<D<number>>();
         ~~~~
-!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'D<string>[]', but here has type 'D<number>[]'.
+!!! error TS2403: Subsequent variable declarations must have the same type.  Variable 'arr2' must be of type 'Array<D<string>>', but here has type 'Array<D<number>>'.
 !!! related TS6203 invalidMultipleVariableDeclarations.ts:49:5: 'arr2' was also declared here.
     
     var m: typeof M;

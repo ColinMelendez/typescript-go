@@ -57,7 +57,7 @@ var {this, switch: { continue} } = { this: 1, switch: { continue: 2 }};
 var [debugger, if] = [1, 2];
 > : any
 > : any
->[1, 2] : number[]
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 

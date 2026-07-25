@@ -1,6 +1,15 @@
 --- old.mixinAccessors4.types
 +++ new.mixinAccessors4.types
-@@= skipped -17, +17 lines =@@
+@@= skipped -6, +6 lines =@@
+ >A : A
+
+   constructor(...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+   get myName(): string {
+ >myName : string
+@@= skipped -11, +11 lines =@@
  }
 
  function Mixin<T extends typeof A>(Super: T) {

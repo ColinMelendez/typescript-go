@@ -13,7 +13,7 @@ interface A {
 >x : Date
 
     <T>(x: T[]): T[];
->x : T[]
+>x : Array<T>
 }
 
 interface B {
@@ -27,20 +27,20 @@ interface B {
 >x : Date
 
     <T>(x: T[]): T[];
->x : T[]
+>x : Array<T>
 }
 
 interface C {
     (x: string, ...y: string[]): number;
 >x : string
->y : string[]
+>y : Array<string>
 
     (x: number, s?: string): number;
 >x : number
 >s : string | undefined
 
     <T>(x: T[]): T[];
->x : T[]
+>x : Array<T>
 }
 
 var f1: A | B | C;
@@ -59,10 +59,10 @@ var s1 = f1("abc");          // boolean | string | number
 >"abc" : "abc"
 
 var a1 = f1([true, false]);  // boolean[]
->a1 : boolean[]
->f1([true, false]) : boolean[]
+>a1 : Array<boolean>
+>f1([true, false]) : Array<boolean>
 >f1 : A | B | C
->[true, false] : boolean[]
+>[true, false] : Array<boolean>
 >true : true
 >false : false
 
@@ -82,10 +82,10 @@ var s2 = f2("abc");          // number | string | boolean
 >"abc" : "abc"
 
 var a2 = f2([true, false]);  // boolean[]
->a2 : boolean[]
->f2([true, false]) : boolean[]
+>a2 : Array<boolean>
+>f2([true, false]) : Array<boolean>
 >f2 : A | B | C
->[true, false] : boolean[]
+>[true, false] : Array<boolean>
 >true : true
 >false : false
 
@@ -105,10 +105,10 @@ var s3 = f3("abc");          // string | boolean | number
 >"abc" : "abc"
 
 var a3 = f3([true, false]);  // boolean[]
->a3 : boolean[]
->f3([true, false]) : boolean[]
+>a3 : Array<boolean>
+>f3([true, false]) : Array<boolean>
 >f3 : A | B | C
->[true, false] : boolean[]
+>[true, false] : Array<boolean>
 >true : true
 >false : false
 

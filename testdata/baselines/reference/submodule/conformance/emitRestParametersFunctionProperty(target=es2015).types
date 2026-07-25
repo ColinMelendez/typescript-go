@@ -5,15 +5,15 @@ var obj: {
 >obj : { func1: (...rest: any) => void; }
 
     func1: (...rest) => void
->func1 : (...rest: any[]) => void
->rest : any[]
+>func1 : (...rest: Array<any>) => void
+>rest : Array<any>
 }
 
 var obj2 = {
->obj2 : { func(...rest: any[]): void; }
->{    func(...rest) { }} : { func(...rest: any[]): void; }
+>obj2 : { func(...rest: Array<any>): void; }
+>{    func(...rest) { }} : { func(...rest: Array<any>): void; }
 
     func(...rest) { }
->func : (...rest: any[]) => void
->rest : any[]
+>func : (...rest: Array<any>) => void
+>rest : Array<any>
 }

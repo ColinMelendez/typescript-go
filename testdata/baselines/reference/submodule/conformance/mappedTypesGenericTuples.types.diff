@@ -1,0 +1,67 @@
+--- old.mappedTypesGenericTuples.types
++++ new.mappedTypesGenericTuples.types
+@@= skipped -12, +12 lines =@@
+ >KA : ["0", "1", "2"]
+
+ type KB = K<[string, string, ...string[], string]>;  // ["0", "1", ...number[], number]
+->KB : ["0", "1", ...number[], number]
++>KB : ["0", "1", ...Array<number>, number]
+
+ type KC = K<[...string[]]>;  // number[]
+->KC : number[]
++>KC : Array<number>
+
+ type KD = K<string[]>;  // number[]
+->KD : number[]
++>KD : Array<number>
+
+ type A = { a: string };
+ >A : A
+@@= skipped -25, +25 lines =@@
+ >d : string
+
+ type V0<T extends unknown[]> = [A, B?, ...T, ...C[]]
+->V0 : [A, (B | undefined)?, ...T, ...C[]]
++>V0 : [A, (B | undefined)?, ...T, ...Array<C>]
+
+ type V1<T extends unknown[]> = [A, ...T, B, ...C[], D]
+->V1 : [A, ...T, B, ...C[], D]
++>V1 : [A, ...T, B, ...Array<C>, D]
+
+ type K0<T extends unknown[]> = K<V0<T>>;  // ["0", "1"?, ...K<T>, ...number[]]
+->K0 : ["0", ("1" | undefined)?, ...K<T>, ...number[]]
++>K0 : ["0", ("1" | undefined)?, ...K<T>, ...Array<number>]
+
+ type K1<T extends unknown[]> = K<V1<T>>;  // ["0", ...K<T>, number, ...number[], number]
+->K1 : ["0", ...K<T>, number, ...number[], number]
++>K1 : ["0", ...K<T>, number, ...Array<number>, number]
+
+ type M0<T extends unknown[]> = M<V0<T>>;  // [A, B?, ...M<T>, ...C[]]
+->M0 : [A, (B | undefined)?, ...M<T>, ...C[]]
++>M0 : [A, (B | undefined)?, ...M<T>, ...Array<C>]
+
+ type M1<T extends unknown[]> = M<V1<T>>;  // [A, ...M<T>, B, ...C[], D]
+->M1 : [A, ...M<T>, B, ...C[], D]
++>M1 : [A, ...M<T>, B, ...Array<C>, D]
+
+ // Repro from #48856
+
+@@= skipped -23, +23 lines =@@
+ >Keys : Keys<O>
+
+ type Keys1 = Keys<[string, ...string[]]>;
+->Keys1 : ["0", ...number[]]
++>Keys1 : ["0", ...Array<number>]
+
+ type Keys2 = Keys<[string, ...string[], number]>;
+->Keys2 : ["0", ...number[], number]
++>Keys2 : ["0", ...Array<number>, number]
+
+ // Repro from #56888
+
+@@= skipped -25, +25 lines =@@
+ >R1 : R1<T>
+
+ type R2<T> = Readonly<[...unknown[], T]>;  // readonly [...unknown[], T]
+->R2 : readonly [...unknown[], T]
++>R2 : readonly [...Array<unknown>, T]

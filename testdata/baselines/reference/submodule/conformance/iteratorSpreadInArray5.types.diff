@@ -1,0 +1,13 @@
+--- old.iteratorSpreadInArray5.types
++++ new.iteratorSpreadInArray5.types
+@@= skipped -33, +33 lines =@@
+ }
+
+ var array: number[] = [0, 1, ...new SymbolIterator];
+->array : number[]
+->[0, 1, ...new SymbolIterator] : (number | symbol)[]
++>array : Array<number>
++>[0, 1, ...new SymbolIterator] : Array<number | symbol>
+ >0 : 0
+ >1 : 1
+ >...new SymbolIterator : symbol

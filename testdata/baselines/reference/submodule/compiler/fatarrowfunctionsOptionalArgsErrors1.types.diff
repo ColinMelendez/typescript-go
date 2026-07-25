@@ -1,0 +1,28 @@
+--- old.fatarrowfunctionsOptionalArgsErrors1.types
++++ new.fatarrowfunctionsOptionalArgsErrors1.types
+@@= skipped -7, +7 lines =@@
+ >101 : 101
+
+ (...arg?) => 102;
+->(...arg?) => 102 : (...arg?: any[]) => number
+->arg : any[]
++>(...arg?) => 102 : (...arg?: Array<any>) => number
++>arg : Array<any>
+ >102 : 102
+
+ (...arg) => 103;
+->(...arg) => 103 : (...arg: any[]) => number
+->arg : any[]
++>(...arg) => 103 : (...arg: Array<any>) => number
++>arg : Array<any>
+ >103 : 103
+
+ (...arg:number [] = []) => 104;
+ >(...arg:number [] = []) => 104 : (...arg?: number[]) => number
+->arg : number[]
+->[] : undefined[]
++>arg : Array<number>
++>[] : Array<undefined>
+ >104 : 104
+
+ // Uninitialized parameter makes the initialized one required

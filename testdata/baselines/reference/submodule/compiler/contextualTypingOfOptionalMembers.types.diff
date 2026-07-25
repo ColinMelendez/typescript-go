@@ -1,0 +1,34 @@
+--- old.contextualTypingOfOptionalMembers.types
++++ new.contextualTypingOfOptionalMembers.types
+@@= skipped -135, +135 lines =@@
+ app3({
+ >app3({    state: 100,    actions: [        s => s // Should be typed number => number    ],    view: (s, a) => undefined as any,}) : void
+ >app3 : <State, Actions extends ActionsArray<State>>(obj: Options<State, Actions>) => void
+->{    state: 100,    actions: [        s => s // Should be typed number => number    ],    view: (s, a) => undefined as any,} : { state: number; actions: ((s: number) => number)[]; view: (s: number, a: ((s: number) => number)[]) => any; }
++>{    state: 100,    actions: [        s => s // Should be typed number => number    ],    view: (s, a) => undefined as any,} : { state: number; actions: Array<(s: number) => number>; view: (s: number, a: Array<(s: number) => number>) => any; }
+
+     state: 100,
+ >state : number
+ >100 : 100
+
+     actions: [
+->actions : ((s: number) => number)[]
+->[        s => s // Should be typed number => number    ] : ((s: number) => number)[]
++>actions : Array<(s: number) => number>
++>[        s => s // Should be typed number => number    ] : Array<(s: number) => number>
+
+         s => s // Should be typed number => number
+ >s => s : (s: number) => number
+@@= skipped -17, +17 lines =@@
+
+     ],
+     view: (s, a) => undefined as any,
+->view : (s: number, a: ((s: number) => number)[]) => any
+->(s, a) => undefined as any : (s: number, a: ((s: number) => number)[]) => any
++>view : (s: number, a: Array<(s: number) => number>) => any
++>(s, a) => undefined as any : (s: number, a: Array<(s: number) => number>) => any
+ >s : number
+->a : ((s: number) => number)[]
++>a : Array<(s: number) => number>
+ >undefined as any : any
+ >undefined : undefined

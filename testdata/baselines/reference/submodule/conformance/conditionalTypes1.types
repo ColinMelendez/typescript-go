@@ -206,7 +206,7 @@ interface Item {
 >name : string
 
     subitems: string[];
->subitems : string[]
+>subitems : Array<string>
 }
 
 type KOItem = KnockedOutObj<Item>;
@@ -220,7 +220,7 @@ interface Part {
 >name : string
 
     subparts: Part[];
->subparts : Part[]
+>subparts : Array<Part>
 
     updatePart(newName: string): void;
 >updatePart : (newName: string) => void
@@ -671,23 +671,23 @@ type T52 = IsNever<any>;  // false
 
 function f22<T>(x: T extends (infer U)[] ? U[] : never) {
 >f22 : <T>(x: T extends (infer U)[] ? U[] : never) => void
->x : T extends (infer U)[] ? U[] : never
+>x : T extends Array<infer U> ? Array<U> : never
 
     let e = x[0];  // {}
 >e : unknown
 >x[0] : unknown
->x : T extends (infer U)[] ? U[] : never
+>x : T extends Array<infer U> ? Array<U> : never
 >0 : 0
 }
 
 function f23<T extends string[]>(x: T extends (infer U)[] ? U[] : never) {
 >f23 : <T extends string[]>(x: T extends (infer U)[] ? U[] : never) => void
->x : T extends (infer U)[] ? U[] : never
+>x : T extends Array<infer U> ? Array<U> : never
 
     let e = x[0];  // string
 >e : string
 >x[0] : string
->x : T extends (infer U)[] ? U[] : never
+>x : T extends Array<infer U> ? Array<U> : never
 >0 : 0
 }
 
@@ -1025,14 +1025,14 @@ declare function assign<T>(o: T, a: RecursivePartial<T>): void;
 >a : RecursivePartial<T>
 
 var a = {o: 1, b: 2, c: [{a: 1, c: '213'}]}
->a : { o: number; b: number; c: { a: number; c: string; }[]; }
->{o: 1, b: 2, c: [{a: 1, c: '213'}]} : { o: number; b: number; c: { a: number; c: string; }[]; }
+>a : { o: number; b: number; c: Array<{ a: number; c: string; }>; }
+>{o: 1, b: 2, c: [{a: 1, c: '213'}]} : { o: number; b: number; c: Array<{ a: number; c: string; }>; }
 >o : number
 >1 : 1
 >b : number
 >2 : 2
->c : { a: number; c: string; }[]
->[{a: 1, c: '213'}] : { a: number; c: string; }[]
+>c : Array<{ a: number; c: string; }>
+>[{a: 1, c: '213'}] : Array<{ a: number; c: string; }>
 >{a: 1, c: '213'} : { a: number; c: string; }
 >a : number
 >1 : 1
@@ -1042,7 +1042,7 @@ var a = {o: 1, b: 2, c: [{a: 1, c: '213'}]}
 assign(a, {o: 2, c: {0: {a: 2, c: '213123'}}})
 >assign(a, {o: 2, c: {0: {a: 2, c: '213123'}}}) : void
 >assign : <T>(o: T, a: RecursivePartial<T>) => void
->a : { o: number; b: number; c: { a: number; c: string; }[]; }
+>a : { o: number; b: number; c: Array<{ a: number; c: string; }>; }
 >{o: 2, c: {0: {a: 2, c: '213123'}}} : { o: number; c: { 0: { a: number; c: string; }; }; }
 >o : number
 >2 : 2

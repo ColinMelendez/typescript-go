@@ -1,0 +1,38 @@
+--- old.objectTypeWithCallSignatureHidingMembersOfFunction.types
++++ new.objectTypeWithCallSignatureHidingMembersOfFunction.types
+@@= skipped -13, +13 lines =@@
+     call(thisArg: number, ...argArray: number[]): any;
+ >call : (thisArg: number, ...argArray: number[]) => any
+ >thisArg : number
+->argArray : number[]
++>argArray : Array<number>
+ }
+
+ var i: I;
+@@= skipped -17, +17 lines =@@
+ var r1b: (thisArg: number, ...argArray: number[]) => void = i.call;
+ >r1b : (thisArg: number, ...argArray: number[]) => void
+ >thisArg : number
+->argArray : number[]
++>argArray : Array<number>
+ >i.call : (thisArg: number, ...argArray: number[]) => any
+ >i : I
+ >call : (thisArg: number, ...argArray: number[]) => any
+@@= skipped -23, +23 lines =@@
+     call(thisArg: number, ...argArray: number[]): any;
+ >call : (thisArg: number, ...argArray: number[]) => any
+ >thisArg : number
+->argArray : number[]
++>argArray : Array<number>
+ }
+
+ var r2: (a: any, b?: any) => void = x.apply;
+@@= skipped -14, +14 lines =@@
+ var r2b: (thisArg: number, ...argArray: number[]) => void = x.call;
+ >r2b : (thisArg: number, ...argArray: number[]) => void
+ >thisArg : number
+->argArray : number[]
++>argArray : Array<number>
+ >x.call : (thisArg: number, ...argArray: number[]) => any
+ >x : { (): void; apply(a: any, b?: any): void; call(thisArg: number, ...argArray: number[]): any; }
+ >call : (thisArg: number, ...argArray: number[]) => any

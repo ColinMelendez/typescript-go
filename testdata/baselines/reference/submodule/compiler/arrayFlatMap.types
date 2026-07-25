@@ -2,26 +2,26 @@
 
 === arrayFlatMap.ts ===
 const array: number[] = [];
->array : number[]
->[] : never[]
+>array : Array<number>
+>[] : Array<never>
 
 const readonlyArray: ReadonlyArray<number> = [];
->readonlyArray : readonly number[]
->[] : never[]
+>readonlyArray : ReadonlyArray<number>
+>[] : Array<never>
 
 array.flatMap((): ReadonlyArray<number> => []); // ok
->array.flatMap((): ReadonlyArray<number> => []) : number[]
->array.flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: number[]) => U | readonly U[], thisArg?: This | undefined) => U[]
->array : number[]
->flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: number[]) => U | readonly U[], thisArg?: This | undefined) => U[]
+>array.flatMap((): ReadonlyArray<number> => []) : Array<number>
+>array.flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: Array<number>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
+>array : Array<number>
+>flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: Array<number>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
 >(): ReadonlyArray<number> => [] : () => ReadonlyArray<number>
->[] : never[]
+>[] : Array<never>
 
 readonlyArray.flatMap((): ReadonlyArray<number> => []); // ok
->readonlyArray.flatMap((): ReadonlyArray<number> => []) : number[]
->readonlyArray.flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: number[]) => U | readonly U[], thisArg?: This | undefined) => U[]
->readonlyArray : readonly number[]
->flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: number[]) => U | readonly U[], thisArg?: This | undefined) => U[]
+>readonlyArray.flatMap((): ReadonlyArray<number> => []) : Array<number>
+>readonlyArray.flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: Array<number>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
+>readonlyArray : ReadonlyArray<number>
+>flatMap : <U, This = undefined>(callback: (this: This, value: number, index: number, array: Array<number>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
 >(): ReadonlyArray<number> => [] : () => ReadonlyArray<number>
->[] : never[]
+>[] : Array<never>
 

@@ -47,14 +47,14 @@ jsdocced(1);
 >1 : 1
 
 function dontDoubleRest(x, ...y) { arguments; }
->dontDoubleRest : (x: any, ...y: any[]) => void
+>dontDoubleRest : (x: any, ...y: Array<any>) => void
 >x : any
->y : any[]
+>y : Array<any>
 >arguments : IArguments
 
 dontDoubleRest(1, 2, 3);
 >dontDoubleRest(1, 2, 3) : void
->dontDoubleRest : (x: any, ...y: any[]) => void
+>dontDoubleRest : (x: any, ...y: Array<any>) => void
 >1 : 1
 >2 : 2
 >3 : 3

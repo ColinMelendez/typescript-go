@@ -1,0 +1,194 @@
+--- old.readonlyTupleAndArrayElaboration.types
++++ new.readonlyTupleAndArrayElaboration.types
+@@= skipped -36, +36 lines =@@
+
+ declare function arryFn(x: number[]): void;
+ >arryFn : (x: number[]) => void
+->x : number[]
++>x : Array<number>
+
+ arryFn(point);
+ >arryFn(point) : void
+@@= skipped -9, +9 lines =@@
+
+ declare function arryFn2(x: Array<number>): void;
+ >arryFn2 : (x: Array<number>) => void
+->x : number[]
++>x : Array<number>
+
+ arryFn2(point);
+ >arryFn2(point) : void
+@@= skipped -8, +8 lines =@@
+ >point : readonly [3, 4]
+
+ declare const a: readonly number[];
+->a : readonly number[]
++>a : ReadonlyArray<number>
+
+ declare const b: Readonly<number[]>;
+->b : readonly number[]
++>b : ReadonlyArray<number>
+
+ declare const c: ReadonlyArray<number>;
+->c : readonly number[]
++>c : ReadonlyArray<number>
+
+ arryFn2(a);
+ >arryFn2(a) : void
+ >arryFn2 : (x: Array<number>) => void
+->a : readonly number[]
++>a : ReadonlyArray<number>
+
+ arryFn2(b);
+ >arryFn2(b) : void
+ >arryFn2 : (x: Array<number>) => void
+->b : readonly number[]
++>b : ReadonlyArray<number>
+
+ arryFn2(c);
+ >arryFn2(c) : void
+ >arryFn2 : (x: Array<number>) => void
+->c : readonly number[]
++>c : ReadonlyArray<number>
+
+ const t1: readonly [1] = [1];
+ >t1 : readonly [1]
+@@= skipped -60, +60 lines =@@
+ >t7 : [1]
+
+ const a1: readonly number[] = [1];
+->a1 : readonly number[]
+->[1] : number[]
++>a1 : ReadonlyArray<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const a2: readonly boolean[] = a1;
+->a2 : readonly boolean[]
+->a1 : readonly number[]
++>a2 : ReadonlyArray<boolean>
++>a1 : ReadonlyArray<number>
+
+ const a3: readonly number[] = [1];
+->a3 : readonly number[]
+->[1] : number[]
++>a3 : ReadonlyArray<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const a4: boolean[] = a3;
+->a4 : boolean[]
+->a3 : readonly number[]
++>a4 : Array<boolean>
++>a3 : ReadonlyArray<number>
+
+ const a5: number[] = [1];
+->a5 : number[]
+->[1] : number[]
++>a5 : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const a6: readonly boolean [] = a5;
+->a6 : readonly boolean[]
+->a5 : number[]
++>a6 : ReadonlyArray<boolean>
++>a5 : Array<number>
+
+ const a7: number[] = [1];
+->a7 : number[]
+->[1] : number[]
++>a7 : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const a8: boolean[] = a7;
+->a8 : boolean[]
+->a7 : number[]
++>a8 : Array<boolean>
++>a7 : Array<number>
+
+ const ta1: readonly [1] = [1];
+ >ta1 : readonly [1]
+@@= skipped -41, +41 lines =@@
+ >1 : 1
+
+ const ta2: readonly boolean[] = ta1;
+->ta2 : readonly boolean[]
++>ta2 : ReadonlyArray<boolean>
+ >ta1 : readonly [1]
+
+ const ta3: readonly [1] = [1];
+@@= skipped -9, +9 lines =@@
+ >1 : 1
+
+ const ta4: number[] = ta3;
+->ta4 : number[]
++>ta4 : Array<number>
+ >ta3 : readonly [1]
+
+ const ta5: [1] = [1];
+@@= skipped -9, +9 lines =@@
+ >1 : 1
+
+ const ta6: readonly boolean[] = ta5;
+->ta6 : readonly boolean[]
++>ta6 : ReadonlyArray<boolean>
+ >ta5 : [1]
+
+ const ta7: [1] = [1];
+@@= skipped -9, +9 lines =@@
+ >1 : 1
+
+ const ta8: boolean[] = ta7;
+->ta8 : boolean[]
++>ta8 : Array<boolean>
+ >ta7 : [1]
+
+ const at1: readonly number[] = [1];
+->at1 : readonly number[]
+->[1] : number[]
++>at1 : ReadonlyArray<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const at2: readonly [1] = at1;
+ >at2 : readonly [1]
+->at1 : readonly number[]
++>at1 : ReadonlyArray<number>
+
+ const at3: readonly number[] = [1];
+->at3 : readonly number[]
+->[1] : number[]
++>at3 : ReadonlyArray<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const at4: [1] = at3;
+ >at4 : [1]
+->at3 : readonly number[]
++>at3 : ReadonlyArray<number>
+
+ const at5: number[] = [1];
+->at5 : number[]
+->[1] : number[]
++>at5 : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const at6: readonly [1] = at5;
+ >at6 : readonly [1]
+->at5 : number[]
++>at5 : Array<number>
+
+ const at7: number[] = [1];
+->at7 : number[]
+->[1] : number[]
++>at7 : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ const at8: [1] = at7;
+ >at8 : [1]
+->at7 : number[]
++>at7 : Array<number>

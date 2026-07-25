@@ -24,17 +24,17 @@ function* g() {
 >g : () => Generator<any, void, unknown>
 
     var o = []
->o : any[]
->[] : never[]
+>o : Array<any>
+>[] : Array<never>
 
     while (true) {
 >true : true
 
         o = yield* o
 >o = yield* o : undefined
->o : any[]
+>o : Array<any>
 >yield* o : undefined
->o : any[]
+>o : Array<any>
     }
 }
 

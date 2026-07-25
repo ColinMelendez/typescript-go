@@ -1,0 +1,64 @@
+--- old.typeGuardConstructorPrimitiveTypes.types
++++ new.typeGuardConstructorPrimitiveTypes.types
+@@= skipped -2, +2 lines =@@
+ === typeGuardConstructorPrimitiveTypes.ts ===
+ // Narrow a union of primitive types
+ let var1: string | number | boolean | any[] | symbol | bigint;
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+
+ if (var1.constructor === String) {
+ >var1.constructor === String : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >String : StringConstructor
+
+@@= skipped -15, +15 lines =@@
+ if (var1.constructor === Number) {
+ >var1.constructor === Number : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >Number : NumberConstructor
+
+@@= skipped -10, +10 lines =@@
+ if (var1.constructor === Boolean) {
+ >var1.constructor === Boolean : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >Boolean : BooleanConstructor
+
+@@= skipped -10, +10 lines =@@
+ if (var1.constructor === Array) {
+ >var1.constructor === Array : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >Array : ArrayConstructor
+
+     var1; // any[]
+->var1 : any[]
++>var1 : Array<any>
+ }
+ if (var1.constructor === Symbol) {
+ >var1.constructor === Symbol : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >Symbol : SymbolConstructor
+
+@@= skipped -20, +20 lines =@@
+ if (var1.constructor === BigInt) {
+ >var1.constructor === BigInt : boolean
+ >var1.constructor : Function
+->var1 : string | number | bigint | symbol | boolean | any[]
++>var1 : string | number | bigint | symbol | boolean | Array<any>
+ >constructor : Function
+ >BigInt : BigIntConstructor

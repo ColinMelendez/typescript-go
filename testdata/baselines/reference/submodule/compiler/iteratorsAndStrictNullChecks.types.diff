@@ -1,0 +1,42 @@
+--- old.iteratorsAndStrictNullChecks.types
++++ new.iteratorsAndStrictNullChecks.types
+@@= skipped -3, +3 lines =@@
+ // for..of
+ for (const x of ["a", "b"]) {
+ >x : string
+->["a", "b"] : string[]
++>["a", "b"] : Array<string>
+ >"a" : "a"
+ >"b" : "b"
+
+@@= skipped -12, +12 lines =@@
+
+ // Spread
+ const xs = [1, 2, 3];
+->xs : number[]
+->[1, 2, 3] : number[]
++>xs : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ const ys = [4, 5];
+->ys : number[]
+->[4, 5] : number[]
++>ys : Array<number>
++>[4, 5] : Array<number>
+ >4 : 4
+ >5 : 5
+
+ xs.push(...ys);
+ >xs.push(...ys) : number
+->xs.push : (...items: number[]) => number
+->xs : number[]
+->push : (...items: number[]) => number
++>xs.push : (...items: Array<number>) => number
++>xs : Array<number>
++>push : (...items: Array<number>) => number
+ >...ys : number
+->ys : number[]
++>ys : Array<number>

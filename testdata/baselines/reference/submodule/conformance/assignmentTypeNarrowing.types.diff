@@ -1,0 +1,37 @@
+--- old.assignmentTypeNarrowing.types
++++ new.assignmentTypeNarrowing.types
+@@= skipped -87, +87 lines =@@
+ >x : number | RegExp
+
+ let a: string[];
+->a : string[]
++>a : Array<string>
+
+ for (x of a) {
+ >x : string | number | boolean | RegExp
+->a : string[]
++>a : Array<string>
+
+     x; // string
+ >x : string
+@@= skipped -18, +18 lines =@@
+ const arr: AOrArrA<{x?: "ok"}> = [{ x: "ok" }]; // weak type
+ >arr : AOrArrA<{ x?: "ok"; }>
+ >x : "ok" | undefined
+->[{ x: "ok" }] : { x: "ok"; }[]
++>[{ x: "ok" }] : Array<{ x: "ok"; }>
+ >{ x: "ok" } : { x: "ok"; }
+ >x : "ok"
+ >"ok" : "ok"
+
+ arr.push({ x: "ok" });
+ >arr.push({ x: "ok" }) : number
+->arr.push : (...items: { x?: "ok"; }[]) => number
+->arr : { x?: "ok"; }[]
+->push : (...items: { x?: "ok"; }[]) => number
++>arr.push : (...items: Array<{ x?: "ok"; }>) => number
++>arr : Array<{ x?: "ok"; }>
++>push : (...items: Array<{ x?: "ok"; }>) => number
+ >{ x: "ok" } : { x: "ok"; }
+ >x : "ok"
+ >"ok" : "ok"

@@ -133,7 +133,7 @@ Object.defineProperty(G.prototype, "x", {
      */
     set(...args) {}
 >set : (...args: number[]) => void
->args : number[]
+>args : Array<number>
 
 });
 

@@ -1,0 +1,27 @@
+--- old.genericCloneReturnTypes2.types
++++ new.genericCloneReturnTypes2.types
+@@= skipped -7, +7 lines =@@
+ >size : number
+
+     public data: T[];
+->data : T[]
++>data : Array<T>
+
+     constructor(n: number) {
+ >n : number
+@@= skipped -13, +13 lines =@@
+ >n : number
+
+         this.data = new Array<T>(this.size);
+->this.data = new Array<T>(this.size) : T[]
+->this.data : T[]
++>this.data = new Array<T>(this.size) : Array<T>
++>this.data : Array<T>
+ >this : this
+->data : T[]
+->new Array<T>(this.size) : T[]
++>data : Array<T>
++>new Array<T>(this.size) : Array<T>
+ >Array : ArrayConstructor
+ >this.size : number
+ >this : this

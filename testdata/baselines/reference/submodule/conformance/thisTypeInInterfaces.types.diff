@@ -1,0 +1,11 @@
+--- old.thisTypeInInterfaces.types
++++ new.thisTypeInInterfaces.types
+@@= skipped -30, +30 lines =@@
+
+ interface I3 {
+     a: this[];
+->a : this[]
++>a : Array<this>
+
+     b: [this, this];
+ >b : [this, this]

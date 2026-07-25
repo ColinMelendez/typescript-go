@@ -1,0 +1,18 @@
+--- old.objectLiteralParameterResolution.types
++++ new.objectLiteralParameterResolution.types
+@@= skipped -4, +4 lines =@@
+     extend<T>(target: T, ...objs: any[]): T;
+ >extend : { <T>(target: T, ...objs: any[]): T; <T_1>(deep: boolean, target: T_1, ...objs: any[]): T_1; }
+ >target : T
+->objs : any[]
++>objs : Array<any>
+
+     extend<T>(deep: boolean, target: T, ...objs: any[]): T;
+ >extend : { <T_1>(target: T_1, ...objs: any[]): T_1; <T>(deep: boolean, target: T, ...objs: any[]): T; }
+ >deep : boolean
+ >target : T
+->objs : any[]
++>objs : Array<any>
+ }
+ declare var $: Foo;
+ >$ : Foo

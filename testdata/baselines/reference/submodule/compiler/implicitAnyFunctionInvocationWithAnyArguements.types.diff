@@ -1,0 +1,85 @@
+--- old.implicitAnyFunctionInvocationWithAnyArguements.types
++++ new.implicitAnyFunctionInvocationWithAnyArguements.types
+@@= skipped -5, +5 lines =@@
+ >arg0 : any
+
+ var anyArray = [null, undefined];  // error at array literal
+->anyArray : (null | undefined)[]
+->[null, undefined] : (null | undefined)[]
++>anyArray : Array<null | undefined>
++>[null, undefined] : Array<null | undefined>
+ >undefined : undefined
+
+ declare var objL: { v; w; }             // error at "y,z"
+@@= skipped -21, +21 lines =@@
+ >testFunctionExprC : (subReplace: (s: string, ...arg: any[]) => string) => void
+ >subReplace : (s: string, ...arg: any[]) => string
+ >s : string
+->arg : any[]
++>arg : Array<any>
+
+ function testFunctionExprC2(eq: (v1: any, v2: any) => number) { };
+ >testFunctionExprC2 : (eq: (v1: any, v2: any) => number) => void
+@@= skipped -53, +53 lines =@@
+ >result1 : void
+ >temp1(anyArray) : void
+ >temp1 : (arg1: any) => void
+->anyArray : (null | undefined)[]
++>anyArray : Array<null | undefined>
+
+ function noError(variable: any, array?: any) { }
+ >noError : (variable: any, array?: any) => void
+@@= skipped -10, +10 lines =@@
+ noError(null, []);
+ >noError(null, []) : void
+ >noError : (variable: any, array?: any) => void
+->[] : never[]
++>[] : Array<never>
+
+ noError(undefined, <any>[]);
+ >noError(undefined, <any>[]) : void
+ >noError : (variable: any, array?: any) => void
+ >undefined : undefined
+ ><any>[] : any
+->[] : never[]
++>[] : Array<never>
+
+ noError(null, [null, undefined]);
+ >noError(null, [null, undefined]) : void
+ >noError : (variable: any, array?: any) => void
+->[null, undefined] : (null | undefined)[]
++>[null, undefined] : Array<null | undefined>
+ >undefined : undefined
+
+ noError(undefined, anyArray);
+ >noError(undefined, anyArray) : void
+ >noError : (variable: any, array?: any) => void
+ >undefined : undefined
+->anyArray : (null | undefined)[]
++>anyArray : Array<null | undefined>
+
+ class C {
+ >C : C
+@@= skipped -34, +34 lines =@@
+ >newC : C
+ >new C([], undefined) : C
+ >C : typeof C
+->[] : never[]
++>[] : Array<never>
+ >undefined : undefined
+
+ var newC1 = new C([], arg0);
+ >newC1 : C
+ >new C([], arg0) : C
+ >C : typeof C
+->[] : never[]
++>[] : Array<never>
+ >arg0 : null
+
+ var newC2 = new C(<any>[], null) 
+@@= skipped -15, +15 lines =@@
+ >new C(<any>[], null) : C
+ >C : typeof C
+ ><any>[] : any
+->[] : never[]
++>[] : Array<never>

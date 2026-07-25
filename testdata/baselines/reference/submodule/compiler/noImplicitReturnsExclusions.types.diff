@@ -1,0 +1,20 @@
+--- old.noImplicitReturnsExclusions.types
++++ new.noImplicitReturnsExclusions.types
+@@= skipped -178, +178 lines =@@
+ >command : string
+
+   ...rest: any[]
+->rest : any[]
++>rest : Array<any>
+
+ ): Thenable<T>;
+
+@@= skipped -12, +12 lines =@@
+
+   callback: (...args: any[]) => any,
+ >callback : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+   thisArg?: any
+ >thisArg : any

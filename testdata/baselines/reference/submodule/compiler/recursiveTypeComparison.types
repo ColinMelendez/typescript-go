@@ -10,13 +10,13 @@ interface Observable<T> {
 
     // Add more to make it slower
     expo1: Property<T[]>; //  0.31 seconds in check
->expo1 : Property<T[]>
+>expo1 : Property<Array<T>>
 
     expo2: Property<T[]>; //  3.11 seconds
->expo2 : Property<T[]>
+>expo2 : Property<Array<T>>
 
     expo3: Property<T[]>; // 82.28 seconds
->expo3 : Property<T[]>
+>expo3 : Property<Array<T>>
 }
 interface Property<T> extends Observable<T> { }
 

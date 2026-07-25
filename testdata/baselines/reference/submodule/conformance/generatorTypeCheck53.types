@@ -19,7 +19,7 @@ function* g() {
 
     yield* [new Baz];
 >yield* [new Baz] : undefined
->[new Baz] : Baz[]
+>[new Baz] : Array<Baz>
 >new Baz : Baz
 >Baz : typeof Baz
 }

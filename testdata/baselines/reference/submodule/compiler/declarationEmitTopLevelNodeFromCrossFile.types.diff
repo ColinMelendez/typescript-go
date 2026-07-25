@@ -1,0 +1,11 @@
+--- old.declarationEmitTopLevelNodeFromCrossFile.types
++++ new.declarationEmitTopLevelNodeFromCrossFile.types
+@@= skipped -8, +8 lines =@@
+ >{ o: (a?: (X | undefined)[]) => {} } : { o: (a?: (X | undefined)[]) => void; }
+ >o : (a?: (X | undefined)[]) => void
+ >(a?: (X | undefined)[]) => {} : (a?: (X | undefined)[]) => void
+->a : (string | undefined)[] | undefined
++>a : Array<string | undefined> | undefined
+
+ === b.ts ===
+ import {fn} from "./a";

@@ -4,7 +4,7 @@
 const x = (a: any[]) => (
 >x : (a: any[]) => number
 >(a: any[]) => (    // comment    undefined as number) : (a: any[]) => number
->a : any[]
+>a : Array<any>
 >(    // comment    undefined as number) : number
 
     // comment

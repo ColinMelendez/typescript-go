@@ -1,0 +1,16 @@
+--- old.typeGuardOfFormTypeOfFunction.types
++++ new.typeGuardOfFormTypeOfFunction.types
+@@= skipped -156, +156 lines =@@
+ function f100<T, K extends keyof T>(obj: T, keys: K[]) : void {
+ >f100 : <T, K extends keyof T>(obj: T, keys: K[]) => void
+ >obj : T
+->keys : K[]
++>keys : Array<K>
+
+     for (const k of keys) {
+ >k : K
+->keys : K[]
++>keys : Array<K>
+
+         const item = obj[k];
+ >item : T[K]

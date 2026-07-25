@@ -31,9 +31,9 @@ export declare const C: {
 };
 export type C = typeof C[keyof typeof C];
 export type C2 = (typeof C)[keyof typeof C];
-export declare const arr: {
+export declare const arr: Array<{
     A: number;
-}[];
+}>;
 export type ArrAlias = typeof arr[number];
 export type CArr = typeof C[];
 export type CArr2 = (typeof C)[];

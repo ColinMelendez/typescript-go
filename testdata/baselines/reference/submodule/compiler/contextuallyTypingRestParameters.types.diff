@@ -1,0 +1,42 @@
+--- old.contextuallyTypingRestParameters.types
++++ new.contextuallyTypingRestParameters.types
+@@= skipped -2, +2 lines =@@
+ === contextuallyTypingRestParameters.ts ===
+ var x: (...y: string[]) => void = function (.../*3*/y) { 
+ >x : (...y: string[]) => void
+->y : string[]
+->function (.../*3*/y) {     var t = y;     var x2: string = t; // This should be error    var x3: string[] = t; // No error    var y2: string = y; // This should be error    var y3: string[] = y; // No error} : (...y: string[]) => void
+->y : string[]
++>y : Array<string>
++>function (.../*3*/y) {     var t = y;     var x2: string = t; // This should be error    var x3: string[] = t; // No error    var y2: string = y; // This should be error    var y3: string[] = y; // No error} : (...y: Array<string>) => void
++>y : Array<string>
+
+     var t = y; 
+->t : string[]
+->y : string[]
++>t : Array<string>
++>y : Array<string>
+
+     var x2: string = t; // This should be error
+ >x2 : string
+->t : string[]
++>t : Array<string>
+
+     var x3: string[] = t; // No error
+->x3 : string[]
+->t : string[]
++>x3 : Array<string>
++>t : Array<string>
+
+     var y2: string = y; // This should be error
+ >y2 : string
+->y : string[]
++>y : Array<string>
+
+     var y3: string[] = y; // No error
+->y3 : string[]
+->y : string[]
++>y3 : Array<string>
++>y : Array<string>
+
+ };

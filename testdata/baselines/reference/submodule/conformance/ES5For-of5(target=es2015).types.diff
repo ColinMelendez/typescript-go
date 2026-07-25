@@ -1,0 +1,11 @@
+--- old.ES5For-of5(target=es2015).types
++++ new.ES5For-of5(target=es2015).types
+@@= skipped -2, +2 lines =@@
+ === ES5For-of5.ts ===
+ for (var _a of []) {
+ >_a : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var x = _a;
+ >x : any

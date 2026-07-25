@@ -11,17 +11,17 @@ f1(1,);
 >1 : 1
 
 function f2(...args,) {}
->f2 : (...args: any[]) => void
->args : any[]
+>f2 : (...args: Array<any>) => void
+>args : Array<any>
 
 // Allowed for ambient declarations
 declare function f25(...args,): void;
->f25 : (...args: any[]) => void
->args : any[]
+>f25 : (...args: Array<any>) => void
+>args : Array<any>
 
 f2(...[],);
 >f2(...[],) : void
->f2 : (...args: any[]) => void
+>f2 : (...args: Array<any>) => void
 >...[] : never
 >[] : []
 

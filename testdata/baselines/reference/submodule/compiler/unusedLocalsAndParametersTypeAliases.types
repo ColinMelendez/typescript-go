@@ -42,11 +42,11 @@ type handler6 = () => void;
 >handler6 : handler6
 
 var y: Array<handler6>;
->y : handler6[]
+>y : Array<handler6>
 
 y[0]();
 >y[0]() : void
 >y[0] : handler6
->y : handler6[]
+>y : Array<handler6>
 >0 : 0
     

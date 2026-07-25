@@ -1,0 +1,11 @@
+--- old.nodeModulesImportAttributesTypeModeDeclarationEmitErrors(module=node20).types
++++ new.nodeModulesImportAttributesTypeModeDeclarationEmitErrors(module=node20).types
+@@= skipped -98, +98 lines =@@
+ >import("pkg", [ {"resolution-mode": "import"} ]).ImportInterface : any
+ >import("pkg", [ {"resolution-mode": "import"} ]) : Promise<{ default: typeof import("./node_modules/pkg/import"); }>
+ >"pkg" : "pkg"
+->[ {"resolution-mode": "import"} ] : { "resolution-mode": string; }[]
++>[ {"resolution-mode": "import"} ] : Array<{ "resolution-mode": string; }>
+ >{"resolution-mode": "import"} : { "resolution-mode": string; }
+ >"resolution-mode" : string
+ >"import" : "import"

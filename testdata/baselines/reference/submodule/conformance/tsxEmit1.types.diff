@@ -1,0 +1,22 @@
+--- old.tsxEmit1.types
++++ new.tsxEmit1.types
+@@= skipped -118, +118 lines =@@
+ >rewrites2 : JSX.Element
+ ><div>{[p, ...p, p]}</div> : JSX.Element
+ >div : any
+->[p, ...p, p] : any[]
++>[p, ...p, p] : Array<any>
+ >p : any
+ >...p : any
+ >p : any
+@@= skipped -28, +28 lines =@@
+ >rewrites5 : JSX.Element
+ ><div a={[p, ...p, p]}></div> : JSX.Element
+ >div : any
+->a : any[]
+->[p, ...p, p] : any[]
++>a : Array<any>
++>[p, ...p, p] : Array<any>
+ >p : any
+ >...p : any
+ >p : any

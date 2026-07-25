@@ -1,6 +1,35 @@
 --- old.jsdocDisallowedInTypescript.types
 +++ new.jsdocDisallowedInTypescript.types
-@@= skipped -26, +26 lines =@@
+@@= skipped -2, +2 lines =@@
+ === jsdocDisallowedInTypescript.ts ===
+ // grammar error from checker
+ var ara: Array.<number> = [1,2,3];
+->ara : number[]
+->[1,2,3] : number[]
++>ara : Array<number>
++>[1,2,3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -9, +9 lines =@@
+ function f(x: ?number, y: Array.<number>) {
+ >f : (x: number | null, y: Array<number>) => number
+ >x : number | null
+->y : number[]
++>y : Array<number>
+
+     return x ? x + y[1] : y[0];
+ >x ? x + y[1] : y[0] : number
+@@= skipped -8, +8 lines =@@
+ >x + y[1] : number
+ >x : number
+ >y[1] : number
+->y : number[]
++>y : Array<number>
+ >1 : 1
+ >y[0] : number
+->y : number[]
++>y : Array<number>
  >0 : 0
  }
  function hof(ctor: function(new: number, string)) {
@@ -41,7 +70,7 @@
  >12 : 12
  >'hullo' : "hullo"
  }
-@@= skipped -29, +37 lines =@@
+@@= skipped -36, +44 lines =@@
  >'what' : "what"
 
  var g: function(number, number): number = (n,m) => n + m;
@@ -68,3 +97,18 @@
 
  var most: !string = 'definite';
  >most : string
+@@= skipped -21, +27 lines =@@
+ >undefined : undefined
+
+ var nns: Array<?number>;
+->nns : (number | null)[]
++>nns : Array<number | null>
+
+ var dns: Array<!number>;
+->dns : number[]
++>dns : Array<number>
+
+ var anys: Array<*>;
+->anys : any[]
++>anys : Array<any>
+

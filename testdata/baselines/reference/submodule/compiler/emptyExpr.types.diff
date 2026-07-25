@@ -1,0 +1,9 @@
+--- old.emptyExpr.types
++++ new.emptyExpr.types
+@@= skipped -1, +1 lines =@@
+
+ === emptyExpr.ts ===
+ [{},]
+->[{},] : {}[]
++>[{},] : Array<{}>
+ >{} : {}

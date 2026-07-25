@@ -21,12 +21,12 @@ tupleTypes.ts(40,7): error TS2322: Type 'undefined' is not assignable to type 'n
 tupleTypes.ts(40,18): error TS2322: Type 'undefined' is not assignable to type 'string'.
 tupleTypes.ts(41,1): error TS2322: Type '[]' is not assignable to type '[number, string]'.
   Source has 0 element(s) but target requires 2.
-tupleTypes.ts(47,1): error TS2322: Type '[number, string]' is not assignable to type 'number[]'.
+tupleTypes.ts(47,1): error TS2322: Type '[number, string]' is not assignable to type 'Array<number>'.
   Type 'string | number' is not assignable to type 'number'.
     Type 'string' is not assignable to type 'number'.
 tupleTypes.ts(47,5): error TS2454: Variable 'a1' is used before being assigned.
 tupleTypes.ts(48,5): error TS2454: Variable 'a2' is used before being assigned.
-tupleTypes.ts(49,1): error TS2322: Type '[number, {}]' is not assignable to type 'number[]'.
+tupleTypes.ts(49,1): error TS2322: Type '[number, {}]' is not assignable to type 'Array<number>'.
   Type 'number | {}' is not assignable to type 'number'.
     Type '{}' is not assignable to type 'number'.
 tupleTypes.ts(49,5): error TS2454: Variable 'a3' is used before being assigned.
@@ -136,7 +136,7 @@ tupleTypes.ts(63,4): error TS2540: Cannot assign to 'length' because it is a rea
     var a3: [number, {}];
     a = a1;   // Error
     ~
-!!! error TS2322: Type '[number, string]' is not assignable to type 'number[]'.
+!!! error TS2322: Type '[number, string]' is not assignable to type 'Array<number>'.
 !!! error TS2322:   Type 'string | number' is not assignable to type 'number'.
 !!! error TS2322:     Type 'string' is not assignable to type 'number'.
         ~~
@@ -146,7 +146,7 @@ tupleTypes.ts(63,4): error TS2540: Cannot assign to 'length' because it is a rea
 !!! error TS2454: Variable 'a2' is used before being assigned.
     a = a3;   // Error
     ~
-!!! error TS2322: Type '[number, {}]' is not assignable to type 'number[]'.
+!!! error TS2322: Type '[number, {}]' is not assignable to type 'Array<number>'.
 !!! error TS2322:   Type 'number | {}' is not assignable to type 'number'.
 !!! error TS2322:     Type '{}' is not assignable to type 'number'.
         ~~

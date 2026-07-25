@@ -1,0 +1,11 @@
+--- old.classInConvertedLoopES5(target=es2015).types
++++ new.classInConvertedLoopES5(target=es2015).types
+@@= skipped -6, +6 lines =@@
+
+ for (const row of ['1', '2', '3', '4', '5']) {
+ >row : string
+->['1', '2', '3', '4', '5'] : string[]
++>['1', '2', '3', '4', '5'] : Array<string>
+ >'1' : "1"
+ >'2' : "2"
+ >'3' : "3"

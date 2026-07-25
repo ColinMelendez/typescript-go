@@ -28,7 +28,7 @@ function tempTag2(templateStrs: TemplateStringsArray, f: FuncType2, h: FuncType2
 
 function tempTag2(...rest: any[]): any {
 >tempTag2 : { (templateStrs: TemplateStringsArray, f: FuncType1, x: number): number; (templateStrs: TemplateStringsArray, f: FuncType2, h: FuncType2, x: string): string; }
->rest : any[]
+>rest : Array<any>
 
     return undefined;
 >undefined : undefined

@@ -1,0 +1,59 @@
+--- old.narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.types
++++ new.narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.types
+@@= skipped -1, +1 lines =@@
+
+ === narrowSwitchOptionalChainContainmentEvolvingArrayNoCrash1.ts ===
+ let foo = [];
+->foo : any[]
+->[] : never[]
++>foo : Array<any>
++>[] : Array<never>
+
+ switch (foo?.length) {
+ >foo?.length : number
+->foo : any[]
++>foo : Array<any>
+ >length : number
+
+   case 1:
+@@= skipped -13, +13 lines =@@
+
+     foo[0];
+ >foo[0] : any
+->foo : any[]
++>foo : Array<any>
+ >0 : 0
+ }
+
+ let bar = [];
+->bar : any[]
+->[] : never[]
++>bar : Array<any>
++>[] : Array<never>
+
+ switch (bar?.length) {
+ >bar?.length : number
+->bar : any[]
++>bar : Array<any>
+ >length : number
+
+   case 1: {
+@@= skipped -18, +18 lines =@@
+
+     bar.push("baz");
+ >bar.push("baz") : number
+->bar.push : (...items: any[]) => number
+->bar : any[]
+->push : (...items: any[]) => number
++>bar.push : (...items: Array<any>) => number
++>bar : Array<any>
++>push : (...items: Array<any>) => number
+ >"baz" : "baz"
+
+     const arr: string[] = bar;
+->arr : string[]
+->bar : string[]
++>arr : Array<string>
++>bar : Array<string>
+   }
+ }

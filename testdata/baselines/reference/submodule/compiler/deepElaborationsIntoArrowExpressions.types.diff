@@ -1,0 +1,20 @@
+--- old.deepElaborationsIntoArrowExpressions.types
++++ new.deepElaborationsIntoArrowExpressions.types
+@@= skipped -36, +36 lines =@@
+ >foo3 : () => Foo[]
+
+     return [{a: ''}];
+->[{a: ''}] : { a: string; }[]
++>[{a: ''}] : Array<{ a: string; }>
+ >{a: ''} : { a: string; }
+ >a : string
+ >'' : ""
+ }
+ var y: Foo[] = [{a: ''}]
+->y : Foo[]
+->[{a: ''}] : { a: string; }[]
++>y : Array<Foo>
++>[{a: ''}] : Array<{ a: string; }>
+ >{a: ''} : { a: string; }
+ >a : string
+ >'' : ""

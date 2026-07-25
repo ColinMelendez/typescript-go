@@ -116,12 +116,12 @@ declare namespace m {
 declare class g<T> {
 }
 declare function foo(): c[];
-declare function foo2(): c[];
+declare function foo2(): Array<c>;
 declare function foo3(): m.c[];
 declare function foo4(): typeof m.c;
 declare function foo5(): g<string>[];
-declare function foo6(): g<string>[];
+declare function foo6(): Array<g<string>>;
 declare function foo7(): m.g<number>[];
-declare function foo8(): m.g<number>[];
+declare function foo8(): Array<m.g<number>>;
 declare function foo9(): (() => c)[];
-declare function foo10(): (() => c)[];
+declare function foo10(): Array<() => c>;

@@ -1,0 +1,13 @@
+--- old.nestedObjectRest.types
++++ new.nestedObjectRest.types
+@@= skipped -19, +19 lines =@@
+ >[{ ...y }] : [any]
+ >{ ...y } : any
+ >y : any
+->[[{ abc: 1 }]] : { abc: number; }[][]
+->[{ abc: 1 }] : { abc: number; }[]
++>[[{ abc: 1 }]] : Array<Array<{ abc: number; }>>
++>[{ abc: 1 }] : Array<{ abc: number; }>
+ >{ abc: 1 } : { abc: number; }
+ >abc : number
+ >1 : 1

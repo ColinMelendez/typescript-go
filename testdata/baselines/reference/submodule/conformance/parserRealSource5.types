@@ -22,8 +22,8 @@ namespace TypeScript {
 >"  " : "  "
 
         public indentStrings: string[] = [];
->indentStrings : string[]
->[] : undefined[]
+>indentStrings : Array<string>
+>[] : Array<undefined>
 
         public indentAmt = 0;
 >indentAmt : number
@@ -78,9 +78,9 @@ namespace TypeScript {
             var indentString = this.indentStrings[this.indentAmt];
 >indentString : string
 >this.indentStrings[this.indentAmt] : string
->this.indentStrings : string[]
+>this.indentStrings : Array<string>
 >this : this
->indentStrings : string[]
+>indentStrings : Array<string>
 >this.indentAmt : number
 >this : this
 >indentAmt : number
@@ -116,9 +116,9 @@ namespace TypeScript {
                 this.indentStrings[this.indentAmt] = indentString;
 >this.indentStrings[this.indentAmt] = indentString : string
 >this.indentStrings[this.indentAmt] : string
->this.indentStrings : string[]
+>this.indentStrings : Array<string>
 >this : this
->indentStrings : string[]
+>indentStrings : Array<string>
 >this.indentAmt : number
 >this : this
 >indentAmt : number

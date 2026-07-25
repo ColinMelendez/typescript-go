@@ -1,0 +1,44 @@
+--- old.lambdaPropSelf.types
++++ new.lambdaPropSelf.types
+@@= skipped -7, +7 lines =@@
+ >Person : Person
+
+     children: string[];
+->children : string[]
++>children : Array<string>
+
+     constructor (public name: string, children: string[]) {
+ >name : string
+->children : string[]
++>children : Array<string>
+
+         this.children = ko.observableArray(children);
+ >this.children = ko.observableArray(children) : any
+->this.children : string[]
++>this.children : Array<string>
+ >this : this
+->children : string[]
++>children : Array<string>
+ >ko.observableArray(children) : any
+ >ko.observableArray : any
+ >ko : any
+ >observableArray : any
+->children : string[]
++>children : Array<string>
+     }
+
+     addChild = () => this.children.push("New child");
+ >addChild : () => number
+ >() => this.children.push("New child") : () => number
+ >this.children.push("New child") : number
+->this.children.push : (...items: string[]) => number
+->this.children : string[]
++>this.children.push : (...items: Array<string>) => number
++>this.children : Array<string>
+ >this : this
+->children : string[]
+->push : (...items: string[]) => number
++>children : Array<string>
++>push : (...items: Array<string>) => number
+ >"New child" : "New child"
+ }

@@ -1,0 +1,9 @@
+--- old.additionOperatorWithTypeParameter.types
++++ new.additionOperatorWithTypeParameter.types
+@@= skipped -153, +153 lines =@@
+ >r20 : any
+ >t + [] : any
+ >t : T
+->[] : never[]
++>[] : Array<never>
+ }

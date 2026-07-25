@@ -1,0 +1,20 @@
+--- old.typeParameterExtendsPrimitive.types
++++ new.typeParameterExtendsPrimitive.types
+@@= skipped -50, +50 lines =@@
+ // #17069
+ function h<T extends Record<K, number>, K extends string>(array: T[], prop: K): number {
+ >h : <T extends Record<K, number>, K extends string>(array: T[], prop: K) => number
+->array : T[]
++>array : Array<T>
+ >prop : K
+
+     let result = 0;
+@@= skipped -9, +9 lines =@@
+
+     for (const v of array) {
+ >v : T
+->array : T[]
++>array : Array<T>
+
+         result += v[prop];
+ >result += v[prop] : number

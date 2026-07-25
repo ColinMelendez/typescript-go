@@ -1,0 +1,20 @@
+--- old.arrayAssignmentTest6.types
++++ new.arrayAssignmentTest6.types
+@@= skipped -11, +11 lines =@@
+     }
+     interface ILineTokens {
+         tokens: IToken[];
+->tokens : IToken[]
++>tokens : Array<IToken>
+
+         endState: IState;
+ >endState : IState
+@@= skipped -18, +18 lines =@@
+         public tokenize(line:string, tokens:IToken[], includeStates:boolean):ILineTokens {
+ >tokenize : (line: string, tokens: IToken[], includeStates: boolean) => ILineTokens
+ >line : string
+->tokens : IToken[]
++>tokens : Array<IToken>
+ >includeStates : boolean
+
+             return null;

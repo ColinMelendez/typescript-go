@@ -1,0 +1,35 @@
+--- old.narrowingByDiscriminantInLoop.types
++++ new.narrowingByDiscriminantInLoop.types
+@@= skipped -12, +12 lines =@@
+
+ interface InterfaceType {
+     members: IDLMemberTypes[];
+->members : IDLMemberTypes[]
++>members : Array<IDLMemberTypes>
+ }
+
+ interface OperationMemberType {
+@@= skipped -25, +25 lines =@@
+
+     for (const memberType of callbackType.members) {
+ >memberType : IDLMemberTypes
+->callbackType.members : IDLMemberTypes[]
++>callbackType.members : Array<IDLMemberTypes>
+ >callbackType : InterfaceType
+->members : IDLMemberTypes[]
++>members : Array<IDLMemberTypes>
+
+         if (memberType.type === "const") {
+ >memberType.type === "const" : boolean
+@@= skipped -46, +46 lines =@@
+
+     for (const memberType of callbackType.members) {
+ >memberType : IDLMemberTypes
+->callbackType.members : IDLMemberTypes[]
++>callbackType.members : Array<IDLMemberTypes>
+ >callbackType : InterfaceType
+->members : IDLMemberTypes[]
++>members : Array<IDLMemberTypes>
+
+         if (memberType.type === "operation") {
+ >memberType.type === "operation" : boolean

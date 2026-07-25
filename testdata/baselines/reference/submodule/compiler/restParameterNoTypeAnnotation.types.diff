@@ -1,0 +1,19 @@
+--- old.restParameterNoTypeAnnotation.types
++++ new.restParameterNoTypeAnnotation.types
+@@= skipped -1, +1 lines =@@
+
+ === restParameterNoTypeAnnotation.ts ===
+ function foo(...rest) {   
+->foo : (...rest: any[]) => number
+->rest : any[]
++>foo : (...rest: Array<any>) => number
++>rest : Array<any>
+
+      var x: number = rest[0];
+ >x : number
+ >rest[0] : any
+->rest : any[]
++>rest : Array<any>
+ >0 : 0
+
+      return x;   

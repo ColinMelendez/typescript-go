@@ -1,7 +1,11 @@
 --- old.mixingApparentTypeOverrides.types
 +++ new.mixingApparentTypeOverrides.types
-@@= skipped -5, +5 lines =@@
- >args : any[]
+@@= skipped -2, +2 lines =@@
+ === mixingApparentTypeOverrides.ts ===
+ type Constructor<T> = new(...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
 
  function Tagged<T extends Constructor<{}>>(Base: T) {
 ->Tagged : <T extends Constructor<{}>>(Base: T) => { new (...args: any[]): (Anonymous class); prototype: Tagged<any>.(Anonymous class); } & T
@@ -14,7 +18,22 @@
  >Base : {}
 
      _tag: string;
-@@= skipped -42, +42 lines =@@
+ >_tag : string
+
+     constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+       super(...args);
+ >super(...args) : void
+ >super : T
+ >...args : any
+->args : any[]
++>args : Array<any>
+
+       this._tag = "";
+ >this._tag = "" : ""
+@@= skipped -45, +45 lines =@@
 
  class B extends Tagged(A) {
  >B : B

@@ -1,0 +1,11 @@
+--- old.mappedTypeAsClauses.types
++++ new.mappedTypeAsClauses.types
+@@= skipped -139, +139 lines =@@
+ >engine : Engine
+
+     wheels: Wheel[];
+->wheels : Wheel[]
++>wheels : Array<Wheel>
+ }
+
+ interface Engine {

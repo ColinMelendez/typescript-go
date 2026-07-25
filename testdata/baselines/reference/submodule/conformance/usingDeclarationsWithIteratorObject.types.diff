@@ -1,0 +1,11 @@
+--- old.usingDeclarationsWithIteratorObject.types
++++ new.usingDeclarationsWithIteratorObject.types
+@@= skipped -51, +51 lines =@@
+ >it4 : ArrayIterator<any>
+ >[].values() : ArrayIterator<any>
+ >[].values : () => ArrayIterator<any>
+->[] : undefined[]
++>[] : Array<undefined>
+ >values : () => ArrayIterator<any>
+
+     using it5 = new Map<string, string>().entries();

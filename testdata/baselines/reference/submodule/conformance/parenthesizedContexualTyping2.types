@@ -26,7 +26,7 @@ function fun<T>(f: FuncType, g: FuncType, x: T): T;
 
 function fun<T>(...rest: any[]): T {
 >fun : { <T_1>(f: FuncType, x: T_1): T_1; <T_1>(f: FuncType, g: FuncType, x: T_1): T_1; }
->rest : any[]
+>rest : Array<any>
 
     return undefined;
 >undefined : undefined

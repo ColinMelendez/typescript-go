@@ -10,7 +10,7 @@ namespace M {
         public f(x:string,...rest:number[]) {
 >f : (x: string, ...rest: number[]) => string
 >x : string
->rest : number[]
+>rest : Array<number>
 
             var sum=0;
 >sum : number
@@ -22,7 +22,7 @@ namespace M {
 >i<rest.length : boolean
 >i : number
 >rest.length : number
->rest : number[]
+>rest : Array<number>
 >length : number
 >i++ : number
 >i : number
@@ -31,7 +31,7 @@ namespace M {
 >sum+=rest[i] : number
 >sum : number
 >rest[i] : number
->rest : number[]
+>rest : Array<number>
 >i : number
             }
             result+=(x+": "+sum);
@@ -57,7 +57,7 @@ namespace M {
 
         public fonly(...rest:string[]) {
 >fonly : (...rest: string[]) => any
->rest : string[]
+>rest : Array<string>
 
             builder="";
 >builder="" : ""
@@ -70,7 +70,7 @@ namespace M {
 >i<rest.length : boolean
 >i : number
 >rest.length : number
->rest : string[]
+>rest : Array<string>
 >length : number
 >i++ : number
 >i : number
@@ -79,7 +79,7 @@ namespace M {
 >builder+=rest[i] : string
 >builder : any
 >rest[i] : string
->rest : string[]
+>rest : Array<string>
 >i : number
             }
             return builder;

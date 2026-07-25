@@ -1,0 +1,20 @@
+--- old.jsDeclarationsWithDefaultAsNamespaceLikeMerge.types
++++ new.jsDeclarationsWithDefaultAsNamespaceLikeMerge.types
+@@= skipped -5, +5 lines =@@
+
+ interface Mapper<R> {
+     <Key extends string>(map: Key[]): { [K in Key]: R };
+->map : Key[]
++>map : Array<Key>
+
+     <Map extends Record<string, string>>(map: Map): { [K in keyof Map]: R };
+ >map : Map
+@@= skipped -31, +31 lines =@@
+         ...mapState(['panels'])
+ >mapState(['panels']) : { panels: import("./helper").Computed; }
+ >mapState : import("./helper").Mapper<import("./helper").Computed>
+->['panels'] : "panels"[]
++>['panels'] : Array<"panels">
+ >'panels' : "panels"
+     }
+ }

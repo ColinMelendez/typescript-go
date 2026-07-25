@@ -1,0 +1,209 @@
+--- old.unspecializedConstraints.types
++++ new.unspecializedConstraints.types
+@@= skipped -140, +140 lines =@@
+ >!setEquals(this.getSignatures(), that.getSignatures()) : boolean
+ >setEquals(this.getSignatures(), that.getSignatures()) : boolean
+ >setEquals : <T extends Equals<T>>(a: T[], b: T[]) => boolean
+->this.getSignatures() : Signature[]
++>this.getSignatures() : Array<Signature>
+ >this.getSignatures : () => Signature[]
+ >this : this
+ >getSignatures : () => Signature[]
+->that.getSignatures() : Signature[]
++>that.getSignatures() : Array<Signature>
+ >that.getSignatures : () => Signature[]
+ >that : Type
+ >getSignatures : () => Signature[]
+@@= skipped -17, +17 lines =@@
+ >getProperties : () => Property[]
+
+             return [];
+->[] : never[]
++>[] : Array<never>
+         }
+         getProperty(index: number): Property {
+ >getProperty : (index: number) => Property
+@@= skipped -39, +39 lines =@@
+ >getSignatures : () => Signature[]
+
+             return [];
+->[] : never[]
++>[] : Array<never>
+         }
+         isPrimitive(): boolean {
+ >isPrimitive : () => boolean
+@@= skipped -93, +93 lines =@@
+ >Symbol : Symbol
+
+         constructor(public typeParameters: TypeParameter[], public parameters: Parameter[], public returnType: Type) {
+->typeParameters : TypeParameter[]
+->parameters : Parameter[]
++>typeParameters : Array<TypeParameter>
++>parameters : Array<Parameter>
+ >returnType : Type
+
+             super();
+@@= skipped -18, +18 lines =@@
+ >this.parameters.length === other.parameters.length &&                this.typeParameters.length === other.typeParameters.length : boolean
+ >this.parameters.length === other.parameters.length : boolean
+ >this.parameters.length : number
+->this.parameters : Parameter[]
++>this.parameters : Array<Parameter>
+ >this : this
+->parameters : Parameter[]
++>parameters : Array<Parameter>
+ >length : number
+ >other.parameters.length : number
+->other.parameters : Parameter[]
++>other.parameters : Array<Parameter>
+ >other : Signature
+->parameters : Parameter[]
++>parameters : Array<Parameter>
+ >length : number
+
+                 this.typeParameters.length === other.typeParameters.length &&
+ >this.typeParameters.length === other.typeParameters.length : boolean
+ >this.typeParameters.length : number
+->this.typeParameters : TypeParameter[]
++>this.typeParameters : Array<TypeParameter>
+ >this : this
+->typeParameters : TypeParameter[]
++>typeParameters : Array<TypeParameter>
+ >length : number
+ >other.typeParameters.length : number
+->other.typeParameters : TypeParameter[]
++>other.typeParameters : Array<TypeParameter>
+ >other : Signature
+->typeParameters : TypeParameter[]
++>typeParameters : Array<TypeParameter>
+ >length : number
+
+                 arrayEquals(this.parameters, other.parameters) &&
+ >arrayEquals(this.parameters, other.parameters) : boolean
+ >arrayEquals : <T extends Equals<T>>(a: T[], b: T[]) => boolean
+->this.parameters : Parameter[]
++>this.parameters : Array<Parameter>
+ >this : this
+->parameters : Parameter[]
+->other.parameters : Parameter[]
++>parameters : Array<Parameter>
++>other.parameters : Array<Parameter>
+ >other : Signature
+->parameters : Parameter[]
++>parameters : Array<Parameter>
+
+                 arrayEquals(this.typeParameters, other.typeParameters);
+ >arrayEquals(this.typeParameters, other.typeParameters) : boolean
+ >arrayEquals : <T extends Equals<T>>(a: T[], b: T[]) => boolean
+->this.typeParameters : TypeParameter[]
++>this.typeParameters : Array<TypeParameter>
+ >this : this
+->typeParameters : TypeParameter[]
+->other.typeParameters : TypeParameter[]
++>typeParameters : Array<TypeParameter>
++>other.typeParameters : Array<TypeParameter>
+ >other : Signature
+->typeParameters : TypeParameter[]
++>typeParameters : Array<TypeParameter>
+         }
+         equals(other: Signature): boolean {
+ >equals : (other: Signature) => boolean
+@@= skipped -176, +176 lines =@@
+
+     function arrayContains<T extends Equals<T>>(a: T[], item: T): boolean {
+ >arrayContains : <T extends Equals<T>>(a: T[], item: T) => boolean
+->a : T[]
++>a : Array<T>
+ >item : T
+
+         var len = a.length;
+ >len : number
+ >a.length : number
+->a : T[]
++>a : Array<T>
+ >length : number
+
+         for (var i = 0; i < len; i++) {
+@@= skipped -24, +24 lines =@@
+ >item : T
+ >equals : (other: T) => boolean
+ >a[i] : T
+->a : T[]
++>a : Array<T>
+ >i : number
+ >true : true
+         }
+@@= skipped -10, +10 lines =@@
+
+     function arrayEquals<T extends Equals<T>>(a: T[], b: T[]): boolean {
+ >arrayEquals : <T extends Equals<T>>(a: T[], b: T[]) => boolean
+->a : T[]
+->b : T[]
++>a : Array<T>
++>b : Array<T>
+
+         var len = a.length;
+ >len : number
+ >a.length : number
+->a : T[]
++>a : Array<T>
+ >length : number
+
+         if (b.length !== len) return false;
+ >b.length !== len : boolean
+ >b.length : number
+->b : T[]
++>b : Array<T>
+ >length : number
+ >len : number
+ >false : false
+@@= skipped -31, +31 lines =@@
+ >a[i].equals(b[i]) : boolean
+ >a[i].equals : (other: T) => boolean
+ >a[i] : T
+->a : T[]
++>a : Array<T>
+ >i : number
+ >equals : (other: T) => boolean
+ >b[i] : T
+->b : T[]
++>b : Array<T>
+ >i : number
+ >false : false
+         }
+@@= skipped -14, +14 lines =@@
+
+     function setEquals<T extends Equals<T>>(a: T[], b: T[]): boolean {
+ >setEquals : <T extends Equals<T>>(a: T[], b: T[]) => boolean
+->a : T[]
+->b : T[]
++>a : Array<T>
++>b : Array<T>
+
+         var len = a.length;
+ >len : number
+ >a.length : number
+->a : T[]
++>a : Array<T>
+ >length : number
+
+         if (b.length !== len) return false;
+ >b.length !== len : boolean
+ >b.length : number
+->b : T[]
++>b : Array<T>
+ >length : number
+ >len : number
+ >false : false
+@@= skipped -30, +30 lines =@@
+ >!arrayContains(b, a[i]) : boolean
+ >arrayContains(b, a[i]) : boolean
+ >arrayContains : <T_1 extends Equals<T_1>>(a: T_1[], item: T_1) => boolean
+->b : T[]
++>b : Array<T>
+ >a[i] : T
+->a : T[]
++>a : Array<T>
+ >i : number
+ >false : false
+         }

@@ -1,0 +1,60 @@
+--- old.tsxSpreadChildrenInvalidType(jsx=react-jsx,target=es2015).types
++++ new.tsxSpreadChildrenInvalidType(jsx=react-jsx,target=es2015).types
+@@= skipped -19, +19 lines =@@
+ }
+ interface TodoListProps {
+     todos: TodoProp[];
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+ }
+ function Todo(prop: { key: number, todo: string }) {
+ >Todo : (prop: { key: number; todo: string; }) => any
+@@= skipped -25, +25 lines =@@
+ }
+ function TodoList({ todos }: TodoListProps) {
+ >TodoList : ({ todos }: TodoListProps) => any
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+
+     return <div>
+ ><div>        {...<Todo key={todos[0].id} todo={todos[0].todo} />}    </div> : any
+@@= skipped -12, +12 lines =@@
+ >key : number
+ >todos[0].id : number
+ >todos[0] : TodoProp
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+ >0 : 0
+ >id : number
+ >todo : string
+ >todos[0].todo : string
+ >todos[0] : TodoProp
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+ >0 : 0
+ >todo : string
+
+@@= skipped -15, +15 lines =@@
+ }
+ function TodoListNoError({ todos }: TodoListProps) {
+ >TodoListNoError : ({ todos }: TodoListProps) => any
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+
+     // any is not checked
+     return <div>
+@@= skipped -15, +15 lines =@@
+ >key : number
+ >todos[0].id : number
+ >todos[0] : TodoProp
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+ >0 : 0
+ >id : number
+ >todo : string
+ >todos[0].todo : string
+ >todos[0] : TodoProp
+->todos : TodoProp[]
++>todos : Array<TodoProp>
+ >0 : 0
+ >todo : string

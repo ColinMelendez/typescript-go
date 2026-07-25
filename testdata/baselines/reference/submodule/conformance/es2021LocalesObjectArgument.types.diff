@@ -1,0 +1,32 @@
+--- old.es2021LocalesObjectArgument.types
++++ new.es2021LocalesObjectArgument.types
+@@= skipped -36, +36 lines =@@
+ >Intl.ListFormat : { new (locales?: Intl.LocalesArgument, options?: Intl.ListFormatOptions): Intl.ListFormat; prototype: Intl.ListFormat; supportedLocalesOf(locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">): Intl.UnicodeBCP47LocaleIdentifier[]; }
+ >Intl : typeof Intl
+ >ListFormat : { new (locales?: Intl.LocalesArgument, options?: Intl.ListFormatOptions): Intl.ListFormat; prototype: Intl.ListFormat; supportedLocalesOf(locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">): Intl.UnicodeBCP47LocaleIdentifier[]; }
+->[deDE, jaJP] : Intl.Locale[]
++>[deDE, jaJP] : Array<Intl.Locale>
+ >deDE : Intl.Locale
+ >jaJP : Intl.Locale
+
+ Intl.ListFormat.supportedLocalesOf(enUS);
+->Intl.ListFormat.supportedLocalesOf(enUS) : string[]
++>Intl.ListFormat.supportedLocalesOf(enUS) : Array<string>
+ >Intl.ListFormat.supportedLocalesOf : (locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">) => Intl.UnicodeBCP47LocaleIdentifier[]
+ >Intl.ListFormat : { new (locales?: Intl.LocalesArgument, options?: Intl.ListFormatOptions): Intl.ListFormat; prototype: Intl.ListFormat; supportedLocalesOf(locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">): Intl.UnicodeBCP47LocaleIdentifier[]; }
+ >Intl : typeof Intl
+@@= skipped -14, +14 lines =@@
+ >enUS : Intl.Locale
+
+ Intl.ListFormat.supportedLocalesOf([deDE, jaJP]);
+->Intl.ListFormat.supportedLocalesOf([deDE, jaJP]) : string[]
++>Intl.ListFormat.supportedLocalesOf([deDE, jaJP]) : Array<string>
+ >Intl.ListFormat.supportedLocalesOf : (locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">) => Intl.UnicodeBCP47LocaleIdentifier[]
+ >Intl.ListFormat : { new (locales?: Intl.LocalesArgument, options?: Intl.ListFormatOptions): Intl.ListFormat; prototype: Intl.ListFormat; supportedLocalesOf(locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">): Intl.UnicodeBCP47LocaleIdentifier[]; }
+ >Intl : typeof Intl
+ >ListFormat : { new (locales?: Intl.LocalesArgument, options?: Intl.ListFormatOptions): Intl.ListFormat; prototype: Intl.ListFormat; supportedLocalesOf(locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">): Intl.UnicodeBCP47LocaleIdentifier[]; }
+ >supportedLocalesOf : (locales: Intl.LocalesArgument, options?: Pick<Intl.ListFormatOptions, "localeMatcher">) => Intl.UnicodeBCP47LocaleIdentifier[]
+->[deDE, jaJP] : Intl.Locale[]
++>[deDE, jaJP] : Array<Intl.Locale>
+ >deDE : Intl.Locale
+ >jaJP : Intl.Locale

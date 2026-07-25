@@ -1,0 +1,31 @@
+--- old.conditionalOperatorConditoinIsStringType.types
++++ new.conditionalOperatorConditoinIsStringType.types
+@@= skipped -114, +114 lines =@@
+ >"string" : "string"
+
+ var array = ["1", "2", "3"];
+->array : string[]
+->["1", "2", "3"] : string[]
++>array : Array<string>
++>["1", "2", "3"] : Array<string>
+ >"1" : "1"
+ >"2" : "2"
+ >"3" : "3"
+@@= skipped -39, +39 lines =@@
+ array[1] ? exprIsObject1 : exprIsObject2;
+ >array[1] ? exprIsObject1 : exprIsObject2 : Object
+ >array[1] : string
+->array : string[]
++>array : Array<string>
+ >1 : 1
+ >exprIsObject1 : Object
+ >exprIsObject2 : Object
+@@= skipped -135, +135 lines =@@
+ >resultIsObject3 : Object
+ >array[1] ? exprIsObject1 : exprIsObject2 : Object
+ >array[1] : string
+->array : string[]
++>array : Array<string>
+ >1 : 1
+ >exprIsObject1 : Object
+ >exprIsObject2 : Object

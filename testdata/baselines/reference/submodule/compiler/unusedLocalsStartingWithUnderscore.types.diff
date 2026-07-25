@@ -1,0 +1,28 @@
+--- old.unusedLocalsStartingWithUnderscore.types
++++ new.unusedLocalsStartingWithUnderscore.types
+@@= skipped -5, +5 lines =@@
+
+ for (const _ of []) { }
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ for (const _ in []) { }
+ >_ : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+ namespace _ns {
+ >_ns : typeof _ns
+@@= skipped -14, +14 lines =@@
+
+     for (const _ of []) { }
+ >_ : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     for (const _ in []) { }
+ >_ : string
+->[] : undefined[]
++>[] : Array<undefined>
+ }

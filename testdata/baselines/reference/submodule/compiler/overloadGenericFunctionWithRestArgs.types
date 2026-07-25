@@ -15,11 +15,11 @@ class A<U>{
 }
 function Choice<T>(...v_args: T[]): A<T>;
 >Choice : <T>(...v_args: T[]) => A<T>
->v_args : T[]
+>v_args : Array<T>
 
 function Choice<T>(...v_args: T[]): A<T> {
 >Choice : <T_1>(...v_args: T_1[]) => A<T_1>
->v_args : T[]
+>v_args : Array<T>
 
     return new A<T>();
 >new A<T>() : A<T>

@@ -8,7 +8,7 @@ declare function useState1<S>(initialState: (S extends (() => any) ? never : S) 
 declare function useState2<S>(initialState: (S extends ((...args: any[]) => any) ? never : S) | (() => S)): S; // Any args
 >useState2 : <S>(initialState: (S extends ((...args: any[]) => any) ? never : S) | (() => S)) => S
 >initialState : (() => S) | (S extends (...args: any[]) => any ? never : S)
->args : any[]
+>args : Array<any>
 
 const func1 = useState1(() => () => 0);
 >func1 : () => 0
@@ -33,7 +33,7 @@ declare function useState3<S, T extends S>(initialState: (T extends (() => any) 
 declare function useState4<S, T extends S>(initialState: (T extends ((...args: any[]) => any) ? never : T) | (() => S)): S; // Any args
 >useState4 : <S, T extends S>(initialState: (T extends ((...args: any[]) => any) ? never : T) | (() => S)) => S
 >initialState : (() => S) | (T extends (...args: any[]) => any ? never : T)
->args : any[]
+>args : Array<any>
 
 const func3 = useState1(() => () => 0);
 >func3 : () => 0

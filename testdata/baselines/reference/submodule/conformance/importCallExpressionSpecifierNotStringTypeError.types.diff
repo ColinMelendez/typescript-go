@@ -1,0 +1,10 @@
+--- old.importCallExpressionSpecifierNotStringTypeError.types
++++ new.importCallExpressionSpecifierNotStringTypeError.types
+@@= skipped -46, +46 lines =@@
+ var p3 = import(["path1", "path2"]);
+ >p3 : Promise<any>
+ >import(["path1", "path2"]) : Promise<any>
+->["path1", "path2"] : string[]
++>["path1", "path2"] : Array<string>
+ >"path1" : "path1"
+ >"path2" : "path2"

@@ -2,23 +2,23 @@
 
 === bindingPatternInParameter01.ts ===
 const nestedArray = [[[1, 2]], [[3, 4]]];
->nestedArray : number[][][]
->[[[1, 2]], [[3, 4]]] : number[][][]
->[[1, 2]] : number[][]
->[1, 2] : number[]
+>nestedArray : Array<Array<Array<number>>>
+>[[[1, 2]], [[3, 4]]] : Array<Array<Array<number>>>
+>[[1, 2]] : Array<Array<number>>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
->[[3, 4]] : number[][]
->[3, 4] : number[]
+>[[3, 4]] : Array<Array<number>>
+>[3, 4] : Array<number>
 >3 : 3
 >4 : 4
 
 nestedArray.forEach(([[a, b]]) => {
 >nestedArray.forEach(([[a, b]]) => {  console.log(a, b);}) : void
->nestedArray.forEach : (callbackfn: (value: number[][], index: number, array: number[][][]) => void, thisArg?: any) => void
->nestedArray : number[][][]
->forEach : (callbackfn: (value: number[][], index: number, array: number[][][]) => void, thisArg?: any) => void
->([[a, b]]) => {  console.log(a, b);} : ([[a, b]]: number[][]) => void
+>nestedArray.forEach : (callbackfn: (value: Array<Array<number>>, index: number, array: Array<Array<Array<number>>>) => void, thisArg?: any) => void
+>nestedArray : Array<Array<Array<number>>>
+>forEach : (callbackfn: (value: Array<Array<number>>, index: number, array: Array<Array<Array<number>>>) => void, thisArg?: any) => void
+>([[a, b]]) => {  console.log(a, b);} : ([[a, b]]: Array<Array<number>>) => void
 >a : number
 >b : number
 

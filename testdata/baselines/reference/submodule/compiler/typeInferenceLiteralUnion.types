@@ -48,7 +48,7 @@ class NumCoercible {
  */
 export function extent<T extends Numeric>(array: Array<T | Primitive>): [T | Primitive, T | Primitive] | [undefined, undefined] {
 >extent : <T extends Numeric>(array: Array<T | Primitive>) => [T | Primitive, T | Primitive] | [undefined, undefined]
->array : (T | Primitive)[]
+>array : Array<T | Primitive>
 
     return [undefined, undefined];
 >[undefined, undefined] : [undefined, undefined]
@@ -65,7 +65,7 @@ extentMixed = extent([new NumCoercible(10), 13, '12', true]);
 >extentMixed : [undefined, undefined] | [NumCoercible | Primitive, NumCoercible | Primitive]
 >extent([new NumCoercible(10), 13, '12', true]) : [undefined, undefined] | [NumCoercible | Primitive, NumCoercible | Primitive]
 >extent : <T extends Numeric>(array: Array<T | Primitive>) => [T | Primitive, T | Primitive] | [undefined, undefined]
->[new NumCoercible(10), 13, '12', true] : (string | number | true | NumCoercible)[]
+>[new NumCoercible(10), 13, '12', true] : Array<string | number | true | NumCoercible>
 >new NumCoercible(10) : NumCoercible
 >NumCoercible : typeof NumCoercible
 >10 : 10

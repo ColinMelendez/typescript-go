@@ -2,8 +2,8 @@
 
 === commentOnArrayElement5.ts ===
 const array = [
->array : number[]
->[    /* element 1 */    1,    /* end of element 1 */    /* extra comment */] : number[]
+>array : Array<number>
+>[    /* element 1 */    1,    /* end of element 1 */    /* extra comment */] : Array<number>
 
     /* element 1 */
     1,

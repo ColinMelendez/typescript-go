@@ -2,8 +2,8 @@
 
 === voidArrayLit.ts ===
 var va = [(() => {})()]; // ok
->va : void[]
->[(() => {})()] : void[]
+>va : Array<void>
+>[(() => {})()] : Array<void>
 >(() => {})() : void
 >(() => {}) : () => void
 >() => {} : () => void

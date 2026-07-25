@@ -8,7 +8,7 @@
 
 interface PropsType {
     children: [string, number] | boolean[];
->children : boolean[] | [string, number]
+>children : Array<boolean> | [string, number]
 }
 declare class Foo extends React.Component<PropsType, {}> {}
 >Foo : Foo

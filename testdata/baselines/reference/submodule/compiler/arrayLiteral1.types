@@ -2,8 +2,8 @@
 
 === arrayLiteral1.ts ===
 var v30 = [1, 2];
->v30 : number[]
->[1, 2] : number[]
+>v30 : Array<number>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 

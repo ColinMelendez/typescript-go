@@ -1,6 +1,15 @@
 --- old.keyofAndIndexedAccess.js
 +++ new.keyofAndIndexedAccess.js
-@@= skipped -1140, +1140 lines =@@
+@@= skipped -1103, +1103 lines =@@
+     setProperty<K extends keyof PropType>(key: K, value: PropType[K]): void;
+ }
+ declare function f20(component: Component<Shape>): void;
+-declare function pluck<T, K extends keyof T>(array: T[], key: K): T[K][];
++declare function pluck<T, K extends keyof T>(array: T[], key: K): Array<T[K]>;
+ declare function f30(shapes: Shape[]): void;
+ declare function f31<K extends keyof Shape>(key: K): Shape[K];
+ declare function f32<K extends "width" | "height">(key: K): Shape[K];
+@@= skipped -37, +37 lines =@@
      a: {
          x: any;
      };
@@ -16,3 +25,12 @@
  declare function f84(): void;
  declare class C1 {
      x: number;
+@@= skipped -94, +94 lines =@@
+     args: [string, number];
+     returnValue: string[];
+ };
+-declare let result: string[];
++declare let result: Array<string>;
+ type KeyTypes = "a" | "b";
+ declare let MyThingy: {
+     [key in KeyTypes]: string[];

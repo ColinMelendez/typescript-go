@@ -1,0 +1,78 @@
+--- old.booleanFilterAnyArray.types
++++ new.booleanFilterAnyArray.types
+@@= skipped -38, +38 lines =@@
+ >Bullean : BulleanConstructor
+
+ declare let realanys: any[];
+->realanys : any[]
++>realanys : Array<any>
+
+ var ys: any[];
+->ys : any[]
++>ys : Array<any>
+
+ var ys = realanys.filter(Boolean)
+->ys : any[]
+->realanys.filter(Boolean) : any[]
+->realanys.filter : { <S extends any>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): S[]; (predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]; }
+->realanys : any[]
+->filter : { <S extends any>(predicate: (value: any, index: number, array: any[]) => value is S, thisArg?: any): S[]; (predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]; }
++>ys : Array<any>
++>realanys.filter(Boolean) : Array<any>
++>realanys.filter : { <S extends any>(predicate: (value: any, index: number, array: Array<any>) => value is S, thisArg?: any): Array<S>; (predicate: (value: any, index: number, array: Array<any>) => unknown, thisArg?: any): Array<any>; }
++>realanys : Array<any>
++>filter : { <S extends any>(predicate: (value: any, index: number, array: Array<any>) => value is S, thisArg?: any): Array<S>; (predicate: (value: any, index: number, array: Array<any>) => unknown, thisArg?: any): Array<any>; }
+ >Boolean : BooleanConstructor
+
+ var foo = [{ name: 'x' }]
+->foo : { name: string; }[]
+->[{ name: 'x' }] : { name: string; }[]
++>foo : Array<{ name: string; }>
++>[{ name: 'x' }] : Array<{ name: string; }>
+ >{ name: 'x' } : { name: string; }
+ >name : string
+ >'x' : "x"
+
+ var foor: Array<{name: string}>
+->foor : { name: string; }[]
++>foor : Array<{ name: string; }>
+ >name : string
+
+ var foor = foo.filter(x => x.name)
+->foor : { name: string; }[]
+->foo.filter(x => x.name) : { name: string; }[]
+->foo.filter : { <S extends { name: string; }>(predicate: (value: { name: string; }, index: number, array: { name: string; }[]) => value is S, thisArg?: any): S[]; (predicate: (value: { name: string; }, index: number, array: { name: string; }[]) => unknown, thisArg?: any): { name: string; }[]; }
+->foo : { name: string; }[]
+->filter : { <S extends { name: string; }>(predicate: (value: { name: string; }, index: number, array: { name: string; }[]) => value is S, thisArg?: any): S[]; (predicate: (value: { name: string; }, index: number, array: { name: string; }[]) => unknown, thisArg?: any): { name: string; }[]; }
++>foor : Array<{ name: string; }>
++>foo.filter(x => x.name) : Array<{ name: string; }>
++>foo.filter : { <S extends { name: string; }>(predicate: (value: { name: string; }, index: number, array: Array<{ name: string; }>) => value is S, thisArg?: any): Array<S>; (predicate: (value: { name: string; }, index: number, array: Array<{ name: string; }>) => unknown, thisArg?: any): Array<{ name: string; }>; }
++>foo : Array<{ name: string; }>
++>filter : { <S extends { name: string; }>(predicate: (value: { name: string; }, index: number, array: Array<{ name: string; }>) => value is S, thisArg?: any): Array<S>; (predicate: (value: { name: string; }, index: number, array: Array<{ name: string; }>) => unknown, thisArg?: any): Array<{ name: string; }>; }
+ >x => x.name : (x: { name: string; }) => string
+ >x : { name: string; }
+ >x.name : string
+@@= skipped -37, +37 lines =@@
+ >name : string
+
+ var foos: Array<boolean>
+->foos : boolean[]
++>foos : Array<boolean>
+
+ var foos = [true, true, false, null].filter((thing): thing is boolean => thing !== null)
+->foos : boolean[]
+->[true, true, false, null].filter((thing): thing is boolean => thing !== null) : boolean[]
+->[true, true, false, null].filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => unknown, thisArg?: any): (boolean | null)[]; }
+->[true, true, false, null] : (boolean | null)[]
++>foos : Array<boolean>
++>[true, true, false, null].filter((thing): thing is boolean => thing !== null) : Array<boolean>
++>[true, true, false, null].filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => unknown, thisArg?: any): Array<boolean | null>; }
++>[true, true, false, null] : Array<boolean | null>
+ >true : true
+ >true : true
+ >false : false
+->filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => unknown, thisArg?: any): (boolean | null)[]; }
++>filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => unknown, thisArg?: any): Array<boolean | null>; }
+ >(thing): thing is boolean => thing !== null : (thing: boolean | null) => thing is boolean
+ >thing : boolean | null
+ >thing !== null : boolean

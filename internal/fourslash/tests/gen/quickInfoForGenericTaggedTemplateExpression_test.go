@@ -29,11 +29,11 @@ declare function foo<T>(strings: TemplateStringsArray, ...values: T[]): void;
 /*7*/foo` + "`" + `` + "`" + `;`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "function foo<number>(strings: TemplateStringsArray, ...values: number[]): void", "")
-	f.VerifyQuickInfoAt(t, "2", "function foo<string | number>(strings: TemplateStringsArray, ...values: (string | number)[]): void", "")
-	f.VerifyQuickInfoAt(t, "3", "function foo<{\n    a: number;\n}>(strings: TemplateStringsArray, ...values: {\n    a: number;\n}[]): void", "")
-	f.VerifyQuickInfoAt(t, "4", "function foo<T1>(strings: TemplateStringsArray, ...values: T1[]): void", "")
-	f.VerifyQuickInfoAt(t, "5", "function foo<T2>(strings: TemplateStringsArray, ...values: T2[]): void", "")
-	f.VerifyQuickInfoAt(t, "6", "function foo<T3>(strings: TemplateStringsArray, ...values: T3[]): void", "")
-	f.VerifyQuickInfoAt(t, "7", "function foo<unknown>(strings: TemplateStringsArray, ...values: unknown[]): void", "")
+	f.VerifyQuickInfoAt(t, "1", "function foo<number>(strings: TemplateStringsArray, ...values: Array<number>): void", "")
+	f.VerifyQuickInfoAt(t, "2", "function foo<string | number>(strings: TemplateStringsArray, ...values: Array<string | number>): void", "")
+	f.VerifyQuickInfoAt(t, "3", "function foo<{\n    a: number;\n}>(strings: TemplateStringsArray, ...values: Array<{\n    a: number;\n}>): void", "")
+	f.VerifyQuickInfoAt(t, "4", "function foo<T1>(strings: TemplateStringsArray, ...values: Array<T1>): void", "")
+	f.VerifyQuickInfoAt(t, "5", "function foo<T2>(strings: TemplateStringsArray, ...values: Array<T2>): void", "")
+	f.VerifyQuickInfoAt(t, "6", "function foo<T3>(strings: TemplateStringsArray, ...values: Array<T3>): void", "")
+	f.VerifyQuickInfoAt(t, "7", "function foo<unknown>(strings: TemplateStringsArray, ...values: Array<unknown>): void", "")
 }

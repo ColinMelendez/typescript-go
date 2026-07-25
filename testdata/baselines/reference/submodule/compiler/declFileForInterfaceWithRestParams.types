@@ -3,19 +3,19 @@
 === declFileForInterfaceWithRestParams.ts ===
 interface I {
     foo(...x): typeof x;
->foo : (...x: any[]) => typeof x
->x : any[]
->x : any[]
+>foo : (...x: Array<any>) => typeof x
+>x : Array<any>
+>x : Array<any>
 
     foo2(a: number, ...x): typeof x;
->foo2 : (a: number, ...x: any[]) => typeof x
+>foo2 : (a: number, ...x: Array<any>) => typeof x
 >a : number
->x : any[]
->x : any[]
+>x : Array<any>
+>x : Array<any>
 
     foo3(b: string, ...x: string[]): typeof x;
 >foo3 : (b: string, ...x: string[]) => typeof x
 >b : string
->x : string[]
->x : string[]
+>x : Array<string>
+>x : Array<string>
 }

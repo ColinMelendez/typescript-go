@@ -1,0 +1,11 @@
+--- old.genericRestTypes.types
++++ new.genericRestTypes.types
+@@= skipped -22, +22 lines =@@
+ type Bind1<T extends (head: any, ...tail: any[]) => any> = (...args: Tail<Parameters<T>>) => ReturnType<T>;
+ >Bind1 : Bind1<T>
+ >head : any
+->tail : any[]
++>tail : Array<any>
+ >args : Tail<Parameters<T>>
+
+ type Generic = Bind1<MyFunctionType>; // (bar: string) => boolean

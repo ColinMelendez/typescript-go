@@ -1,0 +1,13 @@
+--- old.destructuringAssignment_private.types
++++ new.destructuringAssignment_private.types
+@@= skipped -8, +8 lines =@@
+ >0 : 0
+
+     private o = [{ a: 1 }];
+->o : { a: number; }[]
+->[{ a: 1 }] : { a: number; }[]
++>o : Array<{ a: number; }>
++>[{ a: 1 }] : Array<{ a: number; }>
+ >{ a: 1 } : { a: number; }
+ >a : number
+ >1 : 1

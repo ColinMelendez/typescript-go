@@ -1,0 +1,14 @@
+--- old.iterableArrayPattern8.errors.txt
++++ new.iterableArrayPattern8.errors.txt
+@@= skipped -0, +0 lines =@@
+-iterableArrayPattern8.ts(17,8): error TS2322: Type 'Foo[]' is not assignable to type 'string'.
++iterableArrayPattern8.ts(17,8): error TS2322: Type 'Array<Foo>' is not assignable to type 'string'.
+
+
+ ==== iterableArrayPattern8.ts (1 errors) ====
+@@= skipped -19, +19 lines =@@
+     var a: Bar, b: string;
+     [a, ...b] = new FooIterator;
+            ~
+-!!! error TS2322: Type 'Foo[]' is not assignable to type 'string'.
++!!! error TS2322: Type 'Array<Foo>' is not assignable to type 'string'.

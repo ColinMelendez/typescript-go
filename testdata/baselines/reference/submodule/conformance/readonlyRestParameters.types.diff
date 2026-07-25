@@ -1,0 +1,49 @@
+--- old.readonlyRestParameters.types
++++ new.readonlyRestParameters.types
+@@= skipped -26, +26 lines =@@
+
+ function f1(...args: readonly string[]) {
+ >f1 : (...args: readonly string[]) => void
+->args : readonly string[]
++>args : ReadonlyArray<string>
+
+     f0(...args);  // Error
+ >f0(...args) : void
+ >f0 : (a: string, b: string) => void
+ >...args : string
+->args : readonly string[]
++>args : ReadonlyArray<string>
+
+     f1('abc', 'def');
+ >f1('abc', 'def') : void
+@@= skipped -19, +19 lines =@@
+ >f1 : (...args: readonly string[]) => void
+ >'abc' : "abc"
+ >...args : string
+->args : readonly string[]
++>args : ReadonlyArray<string>
+
+     f1(...args);
+ >f1(...args) : void
+ >f1 : (...args: readonly string[]) => void
+ >...args : string
+->args : readonly string[]
++>args : ReadonlyArray<string>
+ }
+
+ function f2(...args: readonly [string, string]) {
+@@= skipped -60, +60 lines =@@
+
+ function f4(...args: readonly string[]) {
+ >f4 : (...args: readonly string[]) => void
+->args : readonly string[]
++>args : ReadonlyArray<string>
+
+     args[0] = 'abc';  // Error
+ >args[0] = 'abc' : "abc"
+ >args[0] : string
+->args : readonly string[]
++>args : ReadonlyArray<string>
+ >0 : 0
+ >'abc' : "abc"
+ }

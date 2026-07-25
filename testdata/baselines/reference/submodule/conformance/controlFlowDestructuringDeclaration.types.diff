@@ -1,0 +1,29 @@
+--- old.controlFlowDestructuringDeclaration.types
++++ new.controlFlowDestructuringDeclaration.types
+@@= skipped -52, +52 lines =@@
+
+     let [x]: (string | number)[] = [1];
+ >x : string | number
+->[1] : number[]
++>[1] : Array<number>
+ >1 : 1
+
+     x;
+@@= skipped -8, +8 lines =@@
+
+     let [y]: (string | undefined)[] = [""];
+ >y : string | undefined
+->[""] : string[]
++>[""] : Array<string>
+ >"" : ""
+
+     y;
+@@= skipped -9, +9 lines =@@
+     let [z = ""]: (string | undefined)[] = [undefined];
+ >z : string
+ >"" : ""
+->[undefined] : undefined[]
++>[undefined] : Array<undefined>
+ >undefined : undefined
+
+     z;

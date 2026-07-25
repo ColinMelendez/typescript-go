@@ -1,0 +1,11 @@
+--- old.infinitelyExpandingTypesNonGenericBase.types
++++ new.infinitelyExpandingTypesNonGenericBase.types
+@@= skipped -16, +16 lines =@@
+ >Base : Base
+
+     options: Options<Functionality<T>[]>;
+->options : Options<Functionality<T>[]>
++>options : Options<Array<Functionality<T>>>
+ }
+
+ interface OptionsBase<T> {

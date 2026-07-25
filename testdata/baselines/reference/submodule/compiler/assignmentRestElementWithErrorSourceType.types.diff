@@ -1,0 +1,11 @@
+--- old.assignmentRestElementWithErrorSourceType.types
++++ new.assignmentRestElementWithErrorSourceType.types
+@@= skipped -5, +5 lines =@@
+
+ [...c] = tupel; // intentionally misspelled
+ >[...c] = tupel : any
+->[...c] : any[]
++>[...c] : Array<any>
+ >...c : any
+ >c : any
+ >tupel : any

@@ -54,17 +54,17 @@ export class ClassA {
 >ClassA : ClassA
 
     array: SomeClass[];
->array : SomeClass[]
+>array : Array<SomeClass>
 
     constructor(...init: SomeClass[]) {
->init : SomeClass[]
+>init : Array<SomeClass>
 
         this.array = init;
->this.array = init : SomeClass[]
->this.array : SomeClass[]
+>this.array = init : Array<SomeClass>
+>this.array : Array<SomeClass>
 >this : this
->array : SomeClass[]
->init : SomeClass[]
+>array : Array<SomeClass>
+>init : Array<SomeClass>
     }
 
     @annotation1()
@@ -73,6 +73,6 @@ export class ClassA {
 
     foo(... args: SomeClass1[]) {
 >foo : (...args: SomeClass1[]) => void
->args : SomeClass1[]
+>args : Array<SomeClass1>
     }
 }

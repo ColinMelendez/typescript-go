@@ -1,7 +1,7 @@
 declFileGenericType.ts(5,40): error TS2322: Type 'null' is not assignable to type 'A<B>'.
 declFileGenericType.ts(6,45): error TS2322: Type 'null' is not assignable to type 'A<B>'.
-declFileGenericType.ts(7,47): error TS2322: Type 'null' is not assignable to type 'A<B>[]'.
-declFileGenericType.ts(8,65): error TS2322: Type 'null' is not assignable to type 'A<B>[]'.
+declFileGenericType.ts(7,47): error TS2322: Type 'null' is not assignable to type 'Array<A<B>>'.
+declFileGenericType.ts(8,65): error TS2322: Type 'null' is not assignable to type 'Array<A<B>>'.
 declFileGenericType.ts(10,34): error TS2322: Type 'null' is not assignable to type 'T'.
   'T' could be instantiated with an arbitrary type which could be unrelated to 'null'.
 declFileGenericType.ts(12,51): error TS2322: Type 'null' is not assignable to type 'T'.
@@ -21,10 +21,10 @@ declFileGenericType.ts(12,51): error TS2322: Type 'null' is not assignable to ty
 !!! error TS2322: Type 'null' is not assignable to type 'A<B>'.
         export function F3<T>(x: T): C.A<C.B>[] { return null; }
                                                   ~~~~~~
-!!! error TS2322: Type 'null' is not assignable to type 'A<B>[]'.
+!!! error TS2322: Type 'null' is not assignable to type 'Array<A<B>>'.
         export function F4<T extends A<B>>(x: T): Array<C.A<C.B>> { return null; }
                                                                     ~~~~~~
-!!! error TS2322: Type 'null' is not assignable to type 'A<B>[]'.
+!!! error TS2322: Type 'null' is not assignable to type 'Array<A<B>>'.
     
         export function F5<T>(): T { return null; }
                                      ~~~~~~

@@ -39,23 +39,23 @@ declare function fn6(e?);
 >e : any
 
 declare function fn7(x, y?, ...z);
->fn7 : (x: any, y?: any, ...z: any[]) => any
+>fn7 : (x: any, y?: any, ...z: Array<any>) => any
 >x : any
 >y : any
->z : any[]
+>z : Array<any>
 
 declare function fn8(y?, ...z: number[]);
 >fn8 : (y?: any, ...z: number[]) => any
 >y : any
->z : number[]
+>z : Array<number>
 
 declare function fn9(...q: {}[]);
 >fn9 : (...q: {}[]) => any
->q : {}[]
+>q : Array<{}>
 
 declare function fn10<T>(...q: T[]);
 >fn10 : <T>(...q: T[]) => any
->q : T[]
+>q : Array<T>
 
 // Ambient class
 declare class cls {

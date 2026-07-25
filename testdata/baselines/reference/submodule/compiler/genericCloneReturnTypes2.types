@@ -8,7 +8,7 @@ class MyList<T> {
 >size : number
 
     public data: T[];
->data : T[]
+>data : Array<T>
 
     constructor(n: number) {
 >n : number
@@ -21,11 +21,11 @@ class MyList<T> {
 >n : number
 
         this.data = new Array<T>(this.size);
->this.data = new Array<T>(this.size) : T[]
->this.data : T[]
+>this.data = new Array<T>(this.size) : Array<T>
+>this.data : Array<T>
 >this : this
->data : T[]
->new Array<T>(this.size) : T[]
+>data : Array<T>
+>new Array<T>(this.size) : Array<T>
 >Array : ArrayConstructor
 >this.size : number
 >this : this

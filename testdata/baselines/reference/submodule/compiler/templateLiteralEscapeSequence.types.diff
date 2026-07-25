@@ -1,0 +1,11 @@
+--- old.templateLiteralEscapeSequence.types
++++ new.templateLiteralEscapeSequence.types
+@@= skipped -3, +3 lines =@@
+ declare function tag(template: TemplateStringsArray, ...substitutions: any[]): string;
+ >tag : (template: TemplateStringsArray, ...substitutions: any[]) => string
+ >template : TemplateStringsArray
+->substitutions : any[]
++>substitutions : Array<any>
+
+ `\u`;
+ >`\u` : "\\u"

@@ -29,7 +29,7 @@
 >a : any
 >b : any
 >c : any
->d : any[]
+>d : Array<any>
 
 class C1 {}
 >C1 : C1

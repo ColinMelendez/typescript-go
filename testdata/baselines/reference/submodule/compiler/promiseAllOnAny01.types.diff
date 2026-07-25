@@ -1,0 +1,32 @@
+--- old.promiseAllOnAny01.types
++++ new.promiseAllOnAny01.types
+@@= skipped -1, +1 lines =@@
+
+ === promiseAllOnAny01.ts ===
+ async function foo(x: any) {
+->foo : (x: any) => Promise<any[]>
++>foo : (x: any) => Promise<Array<any>>
+ >x : any
+
+     let abc = await Promise.all(x);
+->abc : any[]
+->await Promise.all(x) : any[]
+->Promise.all(x) : Promise<any[]>
++>abc : Array<any>
++>await Promise.all(x) : Array<any>
++>Promise.all(x) : Promise<Array<any>>
+ >Promise.all : <T extends readonly unknown[] | []>(values: T) => Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>
+ >Promise : PromiseConstructor
+ >all : <T extends readonly unknown[] | []>(values: T) => Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>
+ >x : any
+
+     let result: any[] = abc;
+->result : any[]
+->abc : any[]
++>result : Array<any>
++>abc : Array<any>
+
+     return result;
+->result : any[]
++>result : Array<any>
+ }

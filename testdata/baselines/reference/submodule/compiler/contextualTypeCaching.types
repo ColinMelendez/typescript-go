@@ -75,7 +75,7 @@ type WebpackPluginFunction = (this: MyCompiler, compiler: MyCompiler) => void;
 
 interface Optimization {
   minimizer?: (WebpackPluginInstance | WebpackPluginFunction)[];
->minimizer : (WebpackPluginFunction | WebpackPluginInstance)[] | undefined
+>minimizer : Array<WebpackPluginFunction | WebpackPluginInstance> | undefined
 }
 declare const A: <T, P extends keyof T>(
 >A : <T, P extends keyof T>(obj: T, prop: P, factory: () => T[P]) => void
@@ -100,8 +100,8 @@ export const applyOptimizationDefaults = (optimization: Optimization) => {
 >A : <T, P extends keyof T>(obj: T, prop: P, factory: () => T[P]) => void
 >optimization : Optimization
 >"minimizer" : "minimizer"
->() => [    {      apply: (compiler) => {},    },  ] : () => { apply: (compiler: MyCompiler) => void; }[]
->[    {      apply: (compiler) => {},    },  ] : { apply: (compiler: MyCompiler) => void; }[]
+>() => [    {      apply: (compiler) => {},    },  ] : () => Array<{ apply: (compiler: MyCompiler) => void; }>
+>[    {      apply: (compiler) => {},    },  ] : Array<{ apply: (compiler: MyCompiler) => void; }>
     {
 >{      apply: (compiler) => {},    } : { apply: (compiler: MyCompiler) => void; }
 

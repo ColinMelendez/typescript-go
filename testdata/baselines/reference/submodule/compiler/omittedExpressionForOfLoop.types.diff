@@ -1,0 +1,14 @@
+--- old.omittedExpressionForOfLoop.types
++++ new.omittedExpressionForOfLoop.types
+@@= skipped -9, +9 lines =@@
+ }
+
+ for (const [,] of []) {
+->[] : never[]
++>[] : Array<never>
+ }
+
+ for (const [] of []) {
+->[] : never[]
++>[] : Array<never>
+ }

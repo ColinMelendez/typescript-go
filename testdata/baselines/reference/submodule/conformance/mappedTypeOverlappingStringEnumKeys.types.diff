@@ -1,0 +1,29 @@
+--- old.mappedTypeOverlappingStringEnumKeys.types
++++ new.mappedTypeOverlappingStringEnumKeys.types
+@@= skipped -58, +58 lines =@@
+
+ const catMap: CatMap = {
+ >catMap : CatMap
+->{  cat: [    { type: TerrestrialAnimalTypes.CAT, address: "" },    { type: AlienAnimalTypes.CAT, planet: "" }  ],  dog: [] as never[]} : { cat: ({ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; })[]; dog: never[]; }
++>{  cat: [    { type: TerrestrialAnimalTypes.CAT, address: "" },    { type: AlienAnimalTypes.CAT, planet: "" }  ],  dog: [] as never[]} : { cat: Array<{ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; }>; dog: never[]; }
+
+   cat: [
+->cat : ({ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; })[]
+->[    { type: TerrestrialAnimalTypes.CAT, address: "" },    { type: AlienAnimalTypes.CAT, planet: "" }  ] : ({ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; })[]
++>cat : Array<{ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; }>
++>[    { type: TerrestrialAnimalTypes.CAT, address: "" },    { type: AlienAnimalTypes.CAT, planet: "" }  ] : Array<{ type: TerrestrialAnimalTypes.CAT; address: string; } | { type: AlienAnimalTypes; planet: string; }>
+
+     { type: TerrestrialAnimalTypes.CAT, address: "" },
+ >{ type: TerrestrialAnimalTypes.CAT, address: "" } : { type: TerrestrialAnimalTypes.CAT; address: string; }
+@@= skipped -26, +26 lines =@@
+
+   ],
+   dog: [] as never[]
+->dog : never[]
+->[] as never[] : never[]
+->[] : never[]
++>dog : Array<never>
++>[] as never[] : Array<never>
++>[] : Array<never>
+
+ };

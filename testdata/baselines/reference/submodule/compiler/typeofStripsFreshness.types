@@ -3,7 +3,7 @@
 === typeofStripsFreshness.ts ===
 interface Collection<T> {
     elems: T[];
->elems : T[]
+>elems : Array<T>
 }
 interface CollectionStatic {
     new <T>(): Collection<T>;

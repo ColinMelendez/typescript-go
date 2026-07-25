@@ -5,19 +5,19 @@
 
 function narrow(x: readonly number[] | number): readonly number[] {
 >narrow : (x: readonly number[] | number) => readonly number[]
->x : number | readonly number[]
+>x : number | ReadonlyArray<number>
 
     if (x instanceof Array) {
 >x instanceof Array : boolean
->x : number | readonly number[]
+>x : number | ReadonlyArray<number>
 >Array : ArrayConstructor
 
         return x;
->x : readonly number[]
+>x : ReadonlyArray<number>
 
     } else {
         return [x];
->[x] : number[]
+>[x] : Array<number>
 >x : number
     }
 }

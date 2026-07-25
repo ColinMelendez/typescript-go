@@ -1,0 +1,91 @@
+--- old.typedArrays-es5(target=es2015).types
++++ new.typedArrays-es5(target=es2015).types
+@@= skipped -7, +7 lines =@@
+ >1 : 1
+
+ [...float32Array];
+->[...float32Array] : number[]
++>[...float32Array] : Array<number>
+ >...float32Array : number
+ >float32Array : Float32Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...float64Array];
+->[...float64Array] : number[]
++>[...float64Array] : Array<number>
+ >...float64Array : number
+ >float64Array : Float64Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...int16Array];
+->[...int16Array] : number[]
++>[...int16Array] : Array<number>
+ >...int16Array : number
+ >int16Array : Int16Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...int32Array];
+->[...int32Array] : number[]
++>[...int32Array] : Array<number>
+ >...int32Array : number
+ >int32Array : Int32Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...int8Array];
+->[...int8Array] : number[]
++>[...int8Array] : Array<number>
+ >...int8Array : number
+ >int8Array : Int8Array<ArrayBuffer>
+
+@@= skipped -10, +10 lines =@@
+ >NodeList : { new (): NodeList; prototype: NodeList; }
+
+ [...nodeList];
+->[...nodeList] : Node[]
++>[...nodeList] : Array<Node>
+ >...nodeList : Node
+ >nodeList : NodeList
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...uint16Array];
+->[...uint16Array] : number[]
++>[...uint16Array] : Array<number>
+ >...uint16Array : number
+ >uint16Array : Uint16Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...uint32Array];
+->[...uint32Array] : number[]
++>[...uint32Array] : Array<number>
+ >...uint32Array : number
+ >uint32Array : Uint32Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...uint8Array];
+->[...uint8Array] : number[]
++>[...uint8Array] : Array<number>
+ >...uint8Array : number
+ >uint8Array : Uint8Array<ArrayBuffer>
+
+@@= skipped -11, +11 lines =@@
+ >1 : 1
+
+ [...uint8ClampedArray];
+->[...uint8ClampedArray] : number[]
++>[...uint8ClampedArray] : Array<number>
+ >...uint8ClampedArray : number
+ >uint8ClampedArray : Uint8ClampedArray<ArrayBuffer>

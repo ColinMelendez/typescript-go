@@ -3,13 +3,13 @@
 === declarationEmitClassMixinLocalClassDeclaration.ts ===
 export type AnyFunction<Result = any> = (...input: any[]) => Result
 >AnyFunction : AnyFunction<Result>
->input : any[]
+>input : Array<any>
 
 export type AnyConstructor<Instance extends object = object, Static extends object = object> =
 >AnyConstructor : AnyConstructor<Instance, Static>
 
     (new (...input: any[]) => Instance) & Static
->input : any[]
+>input : Array<any>
 
 
 type MixinHelperFunc = <A extends AnyConstructor, T>(required: [A], arg: T) => T extends AnyFunction<infer M> ? M : never

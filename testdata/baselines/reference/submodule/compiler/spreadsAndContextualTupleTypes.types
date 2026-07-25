@@ -52,18 +52,18 @@ fx2([...t3, 'a']);
 >'a' : "a"
 
 const x1: [...string[], '!'] = ['!'];
->x1 : [...string[], "!"]
+>x1 : [...Array<string>, "!"]
 >['!'] : ["!"]
 >'!' : "!"
 
 const x2: [...string[], '!'] = ['a', '!'];
->x2 : [...string[], "!"]
+>x2 : [...Array<string>, "!"]
 >['a', '!'] : [string, "!"]
 >'a' : "a"
 >'!' : "!"
 
 const x3: [...string[], '!'] = [...t3, '!'];
->x3 : [...string[], "!"]
+>x3 : [...Array<string>, "!"]
 >[...t3, '!'] : ["x", "y", "z", "!"]
 >...t3 : "x" | "y" | "z"
 >t3 : readonly ["x", "y", "z"]

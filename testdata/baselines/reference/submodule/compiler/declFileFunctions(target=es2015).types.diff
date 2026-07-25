@@ -1,0 +1,65 @@
+--- old.declFileFunctions(target=es2015).types
++++ new.declFileFunctions(target=es2015).types
+@@= skipped -20, +20 lines =@@
+ export function fooWithRestParameters(a: string, ...rests: string[]) {
+ >fooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+     return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+ }
+@@= skipped -64, +64 lines =@@
+ >true : true
+ }
+ export function fooWithTypeTypePredicateAndRestParam(a: any, ...rest): a is number {
+->fooWithTypeTypePredicateAndRestParam : (a: any, ...rest: any[]) => a is number
++>fooWithTypeTypePredicateAndRestParam : (a: any, ...rest: Array<any>) => a is number
+ >a : any
+->rest : any[]
++>rest : Array<any>
+
+     return true;
+ >true : true
+@@= skipped -28, +28 lines =@@
+ function nonExportedFooWithRestParameters(a: string, ...rests: string[]) {
+ >nonExportedFooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+     return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+ }
+@@= skipped -49, +49 lines =@@
+ function globalfooWithRestParameters(a: string, ...rests: string[]) {
+ >globalfooWithRestParameters : (a: string, ...rests: string[]) => string
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+     return a + rests.join("");
+ >a + rests.join("") : string
+ >a : string
+ >rests.join("") : string
+ >rests.join : (separator?: string) => string
+->rests : string[]
++>rests : Array<string>
+ >join : (separator?: string) => string
+ >"" : ""
+ }

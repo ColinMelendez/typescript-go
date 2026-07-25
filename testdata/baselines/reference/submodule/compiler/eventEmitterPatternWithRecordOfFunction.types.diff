@@ -1,0 +1,11 @@
+--- old.eventEmitterPatternWithRecordOfFunction.types
++++ new.eventEmitterPatternWithRecordOfFunction.types
+@@= skipped -4, +4 lines =@@
+     emit(event: string, ...args: any[]): boolean;
+ >emit : (event: string, ...args: any[]) => boolean
+ >event : string
+->args : any[]
++>args : Array<any>
+ }
+
+ type Args<F> = F extends (...args: infer A) => void ? A : never;

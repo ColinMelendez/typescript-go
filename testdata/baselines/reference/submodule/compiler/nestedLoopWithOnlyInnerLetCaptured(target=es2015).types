@@ -6,7 +6,7 @@ declare let doSomething;
 
 for (let a1 of [])
 >a1 : any
->[] : undefined[]
+>[] : Array<undefined>
 
     for (let a2 of a1.someArray)
 >a2 : any

@@ -17,7 +17,7 @@ export default { foo: 1 + 1 };
 
 === c.ts ===
 export default [{ foo: 1 + 1 }];
->[{ foo: 1 + 1 }] : { foo: number; }[]
+>[{ foo: 1 + 1 }] : Array<{ foo: number; }>
 >{ foo: 1 + 1 } : { foo: number; }
 >foo : number
 >1 + 1 : number

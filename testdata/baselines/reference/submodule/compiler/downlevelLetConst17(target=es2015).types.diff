@@ -1,0 +1,29 @@
+--- old.downlevelLetConst17(target=es2015).types
++++ new.downlevelLetConst17(target=es2015).types
+@@= skipped -141, +141 lines =@@
+
+ for (let x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+     use(x);
+ >use(x) : any
+@@= skipped -10, +10 lines =@@
+
+ for (const x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+     use(x);
+ >use(x) : any
+@@= skipped -10, +10 lines =@@
+
+ for (const x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     use(x);
+ >use(x) : any

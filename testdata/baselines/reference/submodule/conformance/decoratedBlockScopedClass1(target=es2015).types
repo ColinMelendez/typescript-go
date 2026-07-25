@@ -7,7 +7,7 @@ function decorator() {
     return (target: new (...args: any[]) => any) => {}
 >(target: new (...args: any[]) => any) => {} : (target: new (...args: any[]) => any) => void
 >target : new (...args: any[]) => any
->args : any[]
+>args : Array<any>
 }
 
 @decorator()

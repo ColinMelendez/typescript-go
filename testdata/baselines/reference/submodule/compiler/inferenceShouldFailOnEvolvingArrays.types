@@ -53,29 +53,29 @@ function logFirstLength<T extends string[], U extends string>(arg: { [K in U]: T
 >arg : { [K in U]: T; }[U]
 }
 logFirstLength([42]);  // error
->logFirstLength([42]) : string[]
+>logFirstLength([42]) : Array<string>
 >logFirstLength : <T extends string[], U extends string>(arg: { [K in U]: T; }[U]) => T
->[42] : number[]
+>[42] : Array<number>
 >42 : 42
 
 let zz = [];
->zz : any[]
->[] : never[]
+>zz : Array<any>
+>[] : Array<never>
 
 zz.push(logLength(42));  // no error; T is inferred as `any`
 >zz.push(logLength(42)) : number
->zz.push : (...items: any[]) => number
->zz : any[]
->push : (...items: any[]) => number
+>zz.push : (...items: Array<any>) => number
+>zz : Array<any>
+>push : (...items: Array<any>) => number
 >logLength(42) : string
 >logLength : <T extends string, U extends string>(arg: { [K in U]: T; }[U]) => T
 >42 : 42
 
 zz = logFirstLength([42]);  // no error; T is inferred as `any[]`
->zz = logFirstLength([42]) : string[]
->zz : any[]
->logFirstLength([42]) : string[]
+>zz = logFirstLength([42]) : Array<string>
+>zz : Array<any>
+>logFirstLength([42]) : Array<string>
 >logFirstLength : <T extends string[], U extends string>(arg: { [K in U]: T; }[U]) => T
->[42] : number[]
+>[42] : Array<number>
 >42 : 42
 

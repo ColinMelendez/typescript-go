@@ -13,7 +13,7 @@ export const cls = class {
 
 function id<T extends new (...a: any[]) => any>(cls: T) {
 >id : <T extends new (...a: any[]) => any>(cls: T) => T
->a : any[]
+>a : Array<any>
 >cls : T
 
     return cls;

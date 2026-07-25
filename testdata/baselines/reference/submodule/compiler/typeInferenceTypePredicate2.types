@@ -2,24 +2,24 @@
 
 === typeInferenceTypePredicate2.ts ===
 [true, true, false, null]
->[true, true, false, null]    .filter((thing): thing is boolean => thing !== null)    .map(thing => thing.toString()) : string[]
->[true, true, false, null]    .filter((thing): thing is boolean => thing !== null)    .map : <U>(callbackfn: (value: boolean, index: number, array: boolean[]) => U, thisArg?: any) => U[]
->[true, true, false, null]    .filter((thing): thing is boolean => thing !== null) : boolean[]
->[true, true, false, null]    .filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => unknown, thisArg?: any): (boolean | null)[]; }
->[true, true, false, null] : (boolean | null)[]
+>[true, true, false, null]    .filter((thing): thing is boolean => thing !== null)    .map(thing => thing.toString()) : Array<string>
+>[true, true, false, null]    .filter((thing): thing is boolean => thing !== null)    .map : <U>(callbackfn: (value: boolean, index: number, array: Array<boolean>) => U, thisArg?: any) => Array<U>
+>[true, true, false, null]    .filter((thing): thing is boolean => thing !== null) : Array<boolean>
+>[true, true, false, null]    .filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => unknown, thisArg?: any): Array<boolean | null>; }
+>[true, true, false, null] : Array<boolean | null>
 >true : true
 >true : true
 >false : false
 
     .filter((thing): thing is boolean => thing !== null)
->filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: boolean | null, index: number, array: (boolean | null)[]) => unknown, thisArg?: any): (boolean | null)[]; }
+>filter : { <S extends boolean | null>(predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: boolean | null, index: number, array: Array<boolean | null>) => unknown, thisArg?: any): Array<boolean | null>; }
 >(thing): thing is boolean => thing !== null : (thing: boolean | null) => thing is boolean
 >thing : boolean | null
 >thing !== null : boolean
 >thing : boolean | null
 
     .map(thing => thing.toString());
->map : <U>(callbackfn: (value: boolean, index: number, array: boolean[]) => U, thisArg?: any) => U[]
+>map : <U>(callbackfn: (value: boolean, index: number, array: Array<boolean>) => U, thisArg?: any) => Array<U>
 >thing => thing.toString() : (thing: boolean) => string
 >thing : boolean
 >thing.toString() : string

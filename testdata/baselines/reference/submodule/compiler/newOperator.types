@@ -133,7 +133,7 @@ class S {
 >S : S
 
     public get xs(): M.T[] {
->xs : M.T[]
+>xs : Array<M.T>
 >M : any
 
         return new M.T[];

@@ -1,0 +1,94 @@
+--- old.destructuringVariableDeclaration1ES5.types
++++ new.destructuringVariableDeclaration1ES5.types
+@@= skipped -78, +78 lines =@@
+ //      If the binding element is a rest element, T is an array type with
+ //          an element type E, where E is the type of the numeric index signature of S.
+ var [...c1] = [1,2,3]; 
+->c1 : number[]
+->[1,2,3] : number[]
++>c1 : Array<number>
++>[1,2,3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+ var [...c2] = [1,2,3, "string"]; 
+->c2 : (string | number)[]
+->[1,2,3, "string"] : (string | number)[]
++>c2 : Array<string | number>
++>[1,2,3, "string"] : Array<string | number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -29, +29 lines =@@
+ //      Otherwise, if S is a tuple- like type (section 3.3.3):
+ //              Otherwise, if S has a numeric index signature, T is the type of the numeric index signature.
+ var temp1 = [true, false, true]
+->temp1 : boolean[]
+->[true, false, true] : boolean[]
++>temp1 : Array<boolean>
++>[true, false, true] : Array<boolean>
+ >true : true
+ >false : false
+ >true : true
+@@= skipped -9, +9 lines =@@
+ var [d3, d4] = [1, "string", ...temp1];
+ >d3 : number
+ >d4 : string
+->[1, "string", ...temp1] : [number, string, ...boolean[]]
++>[1, "string", ...temp1] : [number, string, ...Array<boolean>]
+ >1 : 1
+ >"string" : "string"
+ >...temp1 : boolean
+->temp1 : boolean[]
++>temp1 : Array<boolean>
+
+ //  Combining both forms of destructuring,
+ var {e: [e1, e2, e3 = { b1: 1000, b4: 200 }]} = { e: [1, 2, { b1: 4, b4: 0 }] }; 
+@@= skipped -51, +51 lines =@@
+ // to the widened form of the type associated with the destructuring variable declaration, binding property, or binding element.
+ var {g: {g1 = [undefined, null]}}: { g: { g1: any[] } } = { g: { g1: [1, 2] } };
+ >g : any
+->g1 : any[]
+->[undefined, null] : (null | undefined)[]
++>g1 : Array<any>
++>[undefined, null] : Array<null | undefined>
+ >undefined : undefined
+ >g : { g1: any[]; }
+->g1 : any[]
+->{ g: { g1: [1, 2] } } : { g: { g1: number[]; }; }
+->g : { g1: number[]; }
+->{ g1: [1, 2] } : { g1: number[]; }
+->g1 : number[]
+->[1, 2] : number[]
++>g1 : Array<any>
++>{ g: { g1: [1, 2] } } : { g: { g1: Array<number>; }; }
++>g : { g1: Array<number>; }
++>{ g1: [1, 2] } : { g1: Array<number>; }
++>g1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ var {h: {h1 = [undefined, null]}}: { h: { h1: number[] } } = { h: { h1: [1, 2] } };
+ >h : any
+->h1 : number[]
+->[undefined, null] : (null | undefined)[]
++>h1 : Array<number>
++>[undefined, null] : Array<null | undefined>
+ >undefined : undefined
+ >h : { h1: number[]; }
+->h1 : number[]
+->{ h: { h1: [1, 2] } } : { h: { h1: number[]; }; }
+->h : { h1: number[]; }
+->{ h1: [1, 2] } : { h1: number[]; }
+->h1 : number[]
+->[1, 2] : number[]
++>h1 : Array<number>
++>{ h: { h1: [1, 2] } } : { h: { h1: Array<number>; }; }
++>h : { h1: Array<number>; }
++>{ h1: [1, 2] } : { h1: Array<number>; }
++>h1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2

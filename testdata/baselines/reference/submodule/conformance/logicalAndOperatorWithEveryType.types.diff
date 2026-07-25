@@ -1,0 +1,181 @@
+--- old.logicalAndOperatorWithEveryType.types
++++ new.logicalAndOperatorWithEveryType.types
+@@= skipped -31, +31 lines =@@
+ >a7 : {}
+
+ declare var a8: string[];
+->a8 : string[]
++>a8 : Array<string>
+
+ var ra1 = a1 && a1;
+ >ra1 : any
+@@= skipped -47, +47 lines =@@
+ var ra8 = a8 && a1;
+ >ra8 : any
+ >a8 && a1 : any
+->a8 : string[]
++>a8 : Array<string>
+ >a1 : any
+
+ var ra9 = null && a1;
+@@= skipped -59, +59 lines =@@
+ var rb8 = a8 && a2;
+ >rb8 : boolean
+ >a8 && a2 : boolean
+->a8 : string[]
++>a8 : Array<string>
+ >a2 : boolean
+
+ var rb9 = null && a2;
+@@= skipped -59, +59 lines =@@
+ var rc8 = a8 && a3;
+ >rc8 : number
+ >a8 && a3 : number
+->a8 : string[]
++>a8 : Array<string>
+ >a3 : number
+
+ var rc9 = null && a3;
+@@= skipped -59, +59 lines =@@
+ var rd8 = a8 && a4;
+ >rd8 : string
+ >a8 && a4 : string
+->a8 : string[]
++>a8 : Array<string>
+ >a4 : string
+
+ var rd9 = null && a4;
+@@= skipped -59, +59 lines =@@
+ var re8 = a8 && a5;
+ >re8 : void
+ >a8 && a5 : void
+->a8 : string[]
++>a8 : Array<string>
+ >a5 : void
+
+ var re9 = null && a5;
+@@= skipped -59, +59 lines =@@
+ var rf8 = a8 && a6;
+ >rf8 : E
+ >a8 && a6 : E
+->a8 : string[]
++>a8 : Array<string>
+ >a6 : E
+
+ var rf9 = null && a6;
+@@= skipped -59, +59 lines =@@
+ var rg8 = a8 && a7;
+ >rg8 : {}
+ >a8 && a7 : {}
+->a8 : string[]
++>a8 : Array<string>
+ >a7 : {}
+
+ var rg9 = null && a7;
+@@= skipped -15, +15 lines =@@
+ >a7 : {}
+
+ var rh1 = a1 && a8;
+->rh1 : string[]
+->a1 && a8 : string[]
++>rh1 : Array<string>
++>a1 && a8 : Array<string>
+ >a1 : any
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh2 = a2 && a8;
+->rh2 : string[]
+->a2 && a8 : string[]
++>rh2 : Array<string>
++>a2 && a8 : Array<string>
+ >a2 : boolean
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh3 = a3 && a8;
+->rh3 : string[]
+->a3 && a8 : string[]
++>rh3 : Array<string>
++>a3 && a8 : Array<string>
+ >a3 : number
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh4 = a4 && a8;
+->rh4 : string[]
+->a4 && a8 : string[]
++>rh4 : Array<string>
++>a4 && a8 : Array<string>
+ >a4 : string
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh5 = a5 && a8;
+ >rh5 : void
+ >a5 && a8 : void
+ >a5 : void
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh6 = a6 && a8;
+->rh6 : string[]
+->a6 && a8 : string[]
++>rh6 : Array<string>
++>a6 && a8 : Array<string>
+ >a6 : E
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh7 = a7 && a8;
+->rh7 : string[]
+->a7 && a8 : string[]
++>rh7 : Array<string>
++>a7 && a8 : Array<string>
+ >a7 : {}
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh8 = a8 && a8;
+->rh8 : string[]
+->a8 && a8 : string[]
+->a8 : string[]
+->a8 : string[]
++>rh8 : Array<string>
++>a8 && a8 : Array<string>
++>a8 : Array<string>
++>a8 : Array<string>
+
+ var rh9 = null && a8;
+ >rh9 : any
+ >null && a8 : null
+->a8 : string[]
++>a8 : Array<string>
+
+ var rh10 = undefined && a8;
+ >rh10 : any
+ >undefined && a8 : undefined
+ >undefined : undefined
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri1 = a1 && null;
+ >ri1 : any
+@@= skipped -96, +96 lines =@@
+ var ri8 = a8 && null;
+ >ri8 : any
+ >a8 && null : null
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri9 = null && null;
+ >ri9 : any
+@@= skipped -56, +56 lines =@@
+ var rj8 = a8 && undefined;
+ >rj8 : any
+ >a8 && undefined : undefined
+->a8 : string[]
++>a8 : Array<string>
+ >undefined : undefined
+
+ var rj9 = null && undefined;

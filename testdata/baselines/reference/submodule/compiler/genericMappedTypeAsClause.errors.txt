@@ -1,7 +1,7 @@
 genericMappedTypeAsClause.ts(11,36): error TS2322: Type 'string' is not assignable to type 'number'.
 genericMappedTypeAsClause.ts(14,11): error TS2322: Type 'number' is not assignable to type 'MappedModel<T>'.
 genericMappedTypeAsClause.ts(15,11): error TS2322: Type 'string' is not assignable to type 'MappedModel<T>'.
-genericMappedTypeAsClause.ts(16,11): error TS2322: Type 'number[]' is not assignable to type 'MappedModel<T>'.
+genericMappedTypeAsClause.ts(16,11): error TS2322: Type 'Array<number>' is not assignable to type 'MappedModel<T>'.
 genericMappedTypeAsClause.ts(17,11): error TS2322: Type 'boolean' is not assignable to type 'MappedModel<T>'.
 genericMappedTypeAsClause.ts(18,34): error TS2353: Object literal may only specify known properties, and 'a' does not exist in type 'MappedModel<T>'.
 genericMappedTypeAsClause.ts(19,11): error TS2322: Type 'undefined' is not assignable to type 'MappedModel<T>'.
@@ -33,7 +33,7 @@ genericMappedTypeAsClause.ts(25,60): error TS2312: An interface can only extend 
 !!! error TS2322: Type 'string' is not assignable to type 'MappedModel<T>'.
         const x3: MappedModel<T> = [1, 2, 3];  // Error
               ~~
-!!! error TS2322: Type 'number[]' is not assignable to type 'MappedModel<T>'.
+!!! error TS2322: Type 'Array<number>' is not assignable to type 'MappedModel<T>'.
         const x4: MappedModel<T> = false;  // Error
               ~~
 !!! error TS2322: Type 'boolean' is not assignable to type 'MappedModel<T>'.

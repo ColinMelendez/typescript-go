@@ -26,6 +26,6 @@ var /**/y = x(undefined); // Typeof y should be Date[]
 y.length;`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "var y: Date[]", "")
+	f.VerifyQuickInfoAt(t, "", "var y: Array<Date>", "")
 	f.VerifyNoErrors(t)
 }

@@ -1,0 +1,17 @@
+--- old.declarationEmitInferredDefaultExportType2.types
++++ new.declarationEmitInferredDefaultExportType2.types
+@@= skipped -2, +2 lines =@@
+ === declarationEmitInferredDefaultExportType2.ts ===
+ // test.ts
+ export = {
+->{  foo: [],  bar: undefined,  baz: null} : { foo: never[]; bar: undefined; baz: null; }
++>{  foo: [],  bar: undefined,  baz: null} : { foo: Array<never>; bar: undefined; baz: null; }
+
+   foo: [],
+->foo : never[]
+->[] : never[]
++>foo : Array<never>
++>[] : Array<never>
+
+   bar: undefined,
+ >bar : undefined

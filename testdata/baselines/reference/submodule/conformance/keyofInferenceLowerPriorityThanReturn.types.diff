@@ -1,0 +1,19 @@
+--- old.keyofInferenceLowerPriorityThanReturn.types
++++ new.keyofInferenceLowerPriorityThanReturn.types
+@@= skipped -35, +35 lines =@@
+
+     public static tableColumns<Cols>(cols: (keyof Cols)[]): ConflictTarget<Cols>;
+ >tableColumns : <Cols>(cols: (keyof Cols)[]) => ConflictTarget<Cols>
+->cols : (keyof Cols)[]
++>cols : Array<keyof Cols>
+
+     protected dummy: [ConflictTarget<Cols>, Cols];
+ >dummy : [ConflictTarget<Cols>, Cols]
+@@= skipped -50, +50 lines =@@
+ >ConflictTarget.tableColumns : <Cols>(cols: (keyof Cols)[]) => ConflictTarget<Cols>
+ >ConflictTarget : typeof ConflictTarget
+ >tableColumns : <Cols>(cols: (keyof Cols)[]) => ConflictTarget<Cols>
+->["serial"] : "serial"[]
++>["serial"] : Array<"serial">
+ >"serial" : "serial"
+ }

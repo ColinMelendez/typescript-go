@@ -1,0 +1,46 @@
+--- old.derivedClassSuperStatementPosition(target=es2015).types
++++ new.derivedClassSuperStatementPosition(target=es2015).types
+@@= skipped -55, +55 lines =@@
+ >Object : Object
+
+     x1: boolean[];
+->x1 : boolean[]
++>x1 : Array<boolean>
+
+     x2: boolean[];
+->x2 : boolean[]
++>x2 : Array<boolean>
+
+     constructor(...x: boolean[]) {
+->x : boolean[]
++>x : Array<boolean>
+
+         this.x1 = x;
+->this.x1 = x : boolean[]
+->this.x1 : boolean[]
++>this.x1 = x : Array<boolean>
++>this.x1 : Array<boolean>
+ >this : this
+->x1 : boolean[]
+->x : boolean[]
++>x1 : Array<boolean>
++>x : Array<boolean>
+
+         super(x);
+ >super(x) : void
+ >super : ObjectConstructor
+->x : boolean[]
++>x : Array<boolean>
+
+         this.x2 = x;
+->this.x2 = x : boolean[]
+->this.x2 : boolean[]
++>this.x2 = x : Array<boolean>
++>this.x2 : Array<boolean>
+ >this : this
+->x2 : boolean[]
+->x : boolean[]
++>x2 : Array<boolean>
++>x : Array<boolean>
+     }
+ }

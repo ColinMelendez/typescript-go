@@ -7,7 +7,7 @@ declare function log(message?: any): void;
 
 for (const x of [1, 2, 3]) {
 >x : number
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

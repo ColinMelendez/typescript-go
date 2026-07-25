@@ -1,0 +1,11 @@
+--- old.ES5For-of12(target=es2015).types
++++ new.ES5For-of12(target=es2015).types
+@@= skipped -3, +3 lines =@@
+ for ([""] of [[""]]) { }
+ >[""] : [string]
+ >"" : ""
+->[[""]] : string[][]
+->[""] : string[]
++>[[""]] : Array<Array<string>>
++>[""] : Array<string>
+ >"" : ""

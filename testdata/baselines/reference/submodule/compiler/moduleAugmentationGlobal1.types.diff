@@ -1,0 +1,21 @@
+--- old.moduleAugmentationGlobal1.types
++++ new.moduleAugmentationGlobal1.types
+@@= skipped -19, +19 lines =@@
+ }
+
+ let x = [1];
+->x : number[]
+->[1] : number[]
++>x : Array<number>
++>[1] : Array<number>
+ >1 : 1
+
+ let y = x.getA().x;
+@@= skipped -9, +9 lines =@@
+ >x.getA().x : number
+ >x.getA() : A
+ >x.getA : () => A
+->x : number[]
++>x : Array<number>
+ >getA : () => A
+ >x : number

@@ -9,20 +9,23 @@
  >len : number
 
      /**
-@@= skipped -8, +8 lines =@@
+      * @type {number[]}
       */
      this.storage = new Array(len);
- >this.storage = new Array(len) : any[]
+->this.storage = new Array(len) : any[]
 ->this.storage : number[]
 ->this : this
 ->storage : number[]
+->new Array(len) : any[]
++>this.storage = new Array(len) : Array<any>
 +>this.storage : any
 +>this : any
 +>storage : any
- >new Array(len) : any[]
++>new Array(len) : Array<any>
  >Array : ArrayConstructor
  >len : number
-@@= skipped -11, +11 lines =@@
+ }
+@@= skipped -19, +19 lines =@@
  Vec.prototype = {
  >Vec.prototype = {    /**     * @param {Vec} other     */    dot(other) {        if (other.storage.length !== this.storage.length) {            throw new Error(`Dot product only applicable for vectors of equal length`);        }        let sum = 0;        for (let i = 0; i < this.storage.length; i++) {            sum += (this.storage[i] * other.storage[i]);        }        return sum;    },    magnitude() {        let sum = 0;        for (let i = 0; i < this.storage.length; i++) {            sum += (this.storage[i] ** 2);        }        return Math.sqrt(sum);    }} : { dot(other: Vec): number; magnitude(): number; }
  >Vec.prototype : { dot(other: Vec): number; magnitude(): number; }

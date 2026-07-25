@@ -1,6 +1,42 @@
 --- old.dependentDestructuredVariables.types
 +++ new.dependentDestructuredVariables.types
-@@= skipped -574, +574 lines =@@
+@@= skipped -427, +427 lines =@@
+
+ interface B<T> { variant: 'b', value: Array<T> }
+ >variant : "b"
+->value : T[]
++>value : Array<T>
+
+ type AB<T> = A<T> | B<T>;
+ >AB : AB<T>
+@@= skipped -11, +11 lines =@@
+
+ declare function printValueList<T>(t: Array<T>): void;
+ >printValueList : <T>(t: Array<T>) => void
+->t : T[]
++>t : Array<T>
+
+ function unrefined1<T>(ab: AB<T>): void {
+ >unrefined1 : <T>(ab: AB<T>) => void
+@@= skipped -8, +8 lines =@@
+
+     const { variant, value } = ab;
+ >variant : "a" | "b"
+->value : T | T[]
++>value : T | Array<T>
+ >ab : AB<T>
+
+     if (variant === 'a') {
+@@= skipped -17, +17 lines =@@
+         printValueList<T>(value);
+ >printValueList<T>(value) : void
+ >printValueList : <T_1>(t: Array<T_1>) => void
+->value : T[]
++>value : Array<T>
+     }
+ }
+
+@@= skipped -111, +111 lines =@@
  });
 
  const f51: (...args: ['A', number] | ['B', string]) => void = (kind, payload) => {
@@ -18,3 +54,85 @@
  >args : ["B"] | ["A", number]
  >(kind, payload?) => {    if (kind === 'A') {        payload.toFixed();    }    else {        payload;  // undefined    }} : (kind: "A" | "B", payload?: number | undefined) => void
  >kind : "A" | "B"
+@@= skipped -27, +27 lines =@@
+ >readFile : (path: string, callback: (...args: [err: null, data: unknown[]] | [err: Error, data: undefined]) => void) => void
+ >path : string
+ >callback : (...args: [err: null, data: unknown[]] | [err: Error, data: undefined]) => void
+->args : [err: null, data: unknown[]] | [err: Error, data: undefined]
++>args : [err: null, data: Array<unknown>] | [err: Error, data: undefined]
+
+ readFile('hello', (err, data) => {
+ >readFile('hello', (err, data) => {    if (err === null) {        data.length;    }    else {        err.message;    }}) : void
+ >readFile : (path: string, callback: (...args: [err: null, data: unknown[]] | [err: Error, data: undefined]) => void) => void
+ >'hello' : "hello"
+->(err, data) => {    if (err === null) {        data.length;    }    else {        err.message;    }} : (err: Error | null, data: unknown[] | undefined) => void
++>(err, data) => {    if (err === null) {        data.length;    }    else {        err.message;    }} : (err: Error | null, data: Array<unknown> | undefined) => void
+ >err : Error | null
+->data : unknown[] | undefined
++>data : Array<unknown> | undefined
+
+     if (err === null) {
+ >err === null : boolean
+@@= skipped -16, +16 lines =@@
+
+         data.length;
+ >data.length : number
+->data : unknown[]
++>data : Array<unknown>
+ >length : number
+     }
+     else {
+@@= skipped -15, +15 lines =@@
+ >ReducerArgs : ReducerArgs
+ >a : number
+ >b : number
+->firstArr : any[]
+->secondArr : any[]
++>firstArr : Array<any>
++>secondArr : Array<any>
+
+ const reducer: (...args: ReducerArgs) => void = (op, args) => {
+ >reducer : (...args: ReducerArgs) => void
+@@= skipped -38, +38 lines =@@
+ >console.log : (...data: any[]) => void
+ >console : Console
+ >log : (...data: any[]) => void
+->args.firstArr.concat(args.secondArr) : any[]
+->args.firstArr.concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+->args.firstArr : any[]
+->args : { firstArr: any[]; secondArr: any[]; }
+->firstArr : any[]
+->concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+->args.secondArr : any[]
+->args : { firstArr: any[]; secondArr: any[]; }
+->secondArr : any[]
++>args.firstArr.concat(args.secondArr) : Array<any>
++>args.firstArr.concat : { (...items: Array<ConcatArray<any>>): Array<any>; (...items: Array<any>): Array<any>; }
++>args.firstArr : Array<any>
++>args : { firstArr: any[]; secondArr: any[]; }
++>firstArr : Array<any>
++>concat : { (...items: Array<ConcatArray<any>>): Array<any>; (...items: Array<any>): Array<any>; }
++>args.secondArr : Array<any>
++>args : { firstArr: any[]; secondArr: any[]; }
++>secondArr : Array<any>
+
+             break;
+     }
+@@= skipped -28, +28 lines =@@
+ >reducer("concat", { firstArr: [1, 2], secondArr: [3, 4] }) : void
+ >reducer : (...args: ReducerArgs) => void
+ >"concat" : "concat"
+->{ firstArr: [1, 2], secondArr: [3, 4] } : { firstArr: number[]; secondArr: number[]; }
+->firstArr : number[]
+->[1, 2] : number[]
++>{ firstArr: [1, 2], secondArr: [3, 4] } : { firstArr: Array<number>; secondArr: Array<number>; }
++>firstArr : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+->secondArr : number[]
+->[3, 4] : number[]
++>secondArr : Array<number>
++>[3, 4] : Array<number>
+ >3 : 3
+ >4 : 4

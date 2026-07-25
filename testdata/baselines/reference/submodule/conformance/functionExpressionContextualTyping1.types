@@ -183,12 +183,12 @@ class C<T, U> {
 >k : U
 >j : number
 >k : U
->(j, k) => {            return [j, k];        } : (j: any, k: any) => any[]
+>(j, k) => {            return [j, k];        } : (j: any, k: any) => Array<any>
 >j : any
 >k : any
 
             return [j, k];
->[j, k] : any[]
+>[j, k] : Array<any>
 >j : any
 >k : any
 

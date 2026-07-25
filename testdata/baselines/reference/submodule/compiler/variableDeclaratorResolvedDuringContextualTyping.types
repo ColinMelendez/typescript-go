@@ -45,11 +45,11 @@ namespace WinJS {
 
         static join(promises: Promise[]): Promise;
 >join : { (promises: { [name: string]: Promise; }): Promise; (promises: Promise[]): Promise; }
->promises : Promise[]
+>promises : Array<Promise>
 
         static any(promises: Promise[]): Promise;
 >any : (promises: Promise[]) => Promise
->promises : Promise[]
+>promises : Array<Promise>
 
         static timeout(delay: number): Promise;
 >timeout : (delay: number) => Promise
@@ -149,11 +149,11 @@ namespace WinJS {
 
         public static join<ValueType>(promises: TPromise<ValueType>[]): TPromise<ValueType[]>;
 >join : <ValueType>(promises: TPromise<ValueType>[]) => TPromise<ValueType[]>
->promises : TPromise<ValueType>[]
+>promises : Array<TPromise<ValueType>>
 
         public static any<ValueType>(promises: TPromise<ValueType>[]): TPromise<ValueType>;
 >any : <ValueType>(promises: TPromise<ValueType>[]) => TPromise<ValueType>
->promises : TPromise<ValueType>[]
+>promises : Array<TPromise<ValueType>>
 
         public static wrapError<ValueType>(error: any): TPromise<ValueType>;
 >wrapError : <ValueType>(error: any) => TPromise<ValueType>

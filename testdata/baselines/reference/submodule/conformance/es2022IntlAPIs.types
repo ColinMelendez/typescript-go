@@ -53,8 +53,8 @@ for (const key of enumerationKeys) {
 >enumerationKeys : readonly ["calendar", "collation", "currency", "numberingSystem", "timeZone", "unit"]
 
   var supported = Intl.supportedValuesOf(key);
->supported : string[]
->Intl.supportedValuesOf(key) : string[]
+>supported : Array<string>
+>Intl.supportedValuesOf(key) : Array<string>
 >Intl.supportedValuesOf : (key: "calendar" | "collation" | "currency" | "numberingSystem" | "timeZone" | "unit") => string[]
 >Intl : typeof Intl
 >supportedValuesOf : (key: "calendar" | "collation" | "currency" | "numberingSystem" | "timeZone" | "unit") => string[]

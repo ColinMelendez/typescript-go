@@ -1,0 +1,17 @@
+--- old.destructuringParameterDeclaration1ES5.errors.txt
++++ new.destructuringParameterDeclaration1ES5.errors.txt
+@@= skipped -0, +0 lines =@@
+-destructuringParameterDeclaration1ES5.ts(12,4): error TS2345: Argument of type '[number, number, string[][], number]' is not assignable to parameter of type '[number, number, string[][]]'.
++destructuringParameterDeclaration1ES5.ts(12,4): error TS2345: Argument of type '[number, number, Array<Array<string>>, number]' is not assignable to parameter of type '[number, number, Array<Array<string>>]'.
+   Source has 4 element(s) but target allows only 3.
+ destructuringParameterDeclaration1ES5.ts(23,5): error TS7010: 'b5', which lacks return-type annotation, implicitly has an 'any' return type.
+ destructuringParameterDeclaration1ES5.ts(23,8): error TS7006: Parameter 'z' implicitly has an 'any' type.
+@@= skipped -75, +75 lines =@@
+     a1([1, 2, [["world"]]]);
+     a1([1, 2, [["world"]], 3]);
+        ~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2345: Argument of type '[number, number, string[][], number]' is not assignable to parameter of type '[number, number, string[][]]'.
++!!! error TS2345: Argument of type '[number, number, Array<Array<string>>, number]' is not assignable to parameter of type '[number, number, Array<Array<string>>]'.
+ !!! error TS2345:   Source has 4 element(s) but target allows only 3.
+     
+     // If the declaration includes an initializer expression (which is permitted only

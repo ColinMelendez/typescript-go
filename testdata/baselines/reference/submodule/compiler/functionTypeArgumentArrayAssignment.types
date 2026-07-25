@@ -16,8 +16,8 @@ namespace test {
 >map : <U>() => void
 
         var ys: U[] = [];
->ys : U[]
->[] : never[]
+>ys : Array<U>
+>[] : Array<never>
     }
 }
 

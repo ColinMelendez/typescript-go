@@ -6,7 +6,7 @@ class Foo { }
 
 declare function as(...args: any[]);
 >as : (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 // Example 1
 var x = 10

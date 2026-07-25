@@ -1,0 +1,20 @@
+--- old.declarationEmitDestructuring2.types
++++ new.declarationEmitDestructuring2.types
+@@= skipped -52, +52 lines =@@
+ >b1 : any
+
+ function h1([a, [b], [[c]], {x = 10, y = [1, 2, 3], z: {a1, b1}}]){ }
+->h1 : ([a, [b], [[c]], { x, y, z: { a1, b1 } }]: [any, [any], [[any]], { x?: number; y?: number[]; z: { a1: any; b1: any; }; }]) => void
++>h1 : ([a, [b], [[c]], { x, y, z: { a1, b1 } }]: [any, [any], [[any]], { x?: number; y?: Array<number>; z: { a1: any; b1: any; }; }]) => void
+ >a : any
+ >b : any
+ >c : any
+ >x : number
+ >10 : 10
+->y : number[]
+->[1, 2, 3] : number[]
++>y : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

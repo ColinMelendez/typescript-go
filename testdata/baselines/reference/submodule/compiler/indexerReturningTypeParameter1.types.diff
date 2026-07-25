@@ -1,0 +1,24 @@
+--- old.indexerReturningTypeParameter1.types
++++ new.indexerReturningTypeParameter1.types
+@@= skipped -9, +9 lines =@@
+ >a : f
+
+ var r = a.groupBy();
+->r : { [key: string]: unknown[]; }
+->a.groupBy() : { [key: string]: unknown[]; }
++>r : { [key: string]: Array<unknown>; }
++>a.groupBy() : { [key: string]: Array<unknown>; }
+ >a.groupBy : <T>() => { [key: string]: T[]; }
+ >a : f
+ >groupBy : <T>() => { [key: string]: T[]; }
+@@= skipped -20, +20 lines =@@
+ >a2 : c
+
+ var r2 = a2.groupBy();
+->r2 : { [key: string]: unknown[]; }
+->a2.groupBy() : { [key: string]: unknown[]; }
++>r2 : { [key: string]: Array<unknown>; }
++>a2.groupBy() : { [key: string]: Array<unknown>; }
+ >a2.groupBy : <T>() => { [key: string]: T[]; }
+ >a2 : c
+ >groupBy : <T>() => { [key: string]: T[]; }

@@ -1,16 +1,71 @@
 --- old.parserRealSource8.types
 +++ new.parserRealSource8.types
-@@= skipped -2177, +2177 lines =@@
+@@= skipped -18, +18 lines =@@
+ >typeFlow : TypeFlow
+
+                      public modDeclChain: ModuleDeclaration[]) {
+->modDeclChain : ModuleDeclaration[]
++>modDeclChain : Array<ModuleDeclaration>
+         }
+     }
+
+@@= skipped -266, +266 lines =@@
+
+         context.modDeclChain.push(moduleDecl);
+ >context.modDeclChain.push(moduleDecl) : number
+->context.modDeclChain.push : (...items: ModuleDeclaration[]) => number
+->context.modDeclChain : ModuleDeclaration[]
++>context.modDeclChain.push : (...items: Array<ModuleDeclaration>) => number
++>context.modDeclChain : Array<ModuleDeclaration>
+ >context : AssignScopeContext
+->modDeclChain : ModuleDeclaration[]
+->push : (...items: ModuleDeclaration[]) => number
++>modDeclChain : Array<ModuleDeclaration>
++>push : (...items: Array<ModuleDeclaration>) => number
+ >moduleDecl : ModuleDeclaration
+
+         context.typeFlow.checker.currentModDecl = moduleDecl;
+@@= skipped -1893, +1893 lines =@@
 
                  context.modDeclChain.pop();
  >context.modDeclChain.pop() : any
 ->context.modDeclChain.pop : () => any
+->context.modDeclChain : ModuleDeclaration[]
 +>context.modDeclChain.pop : () => ModuleDeclaration | undefined
- >context.modDeclChain : ModuleDeclaration[]
++>context.modDeclChain : Array<ModuleDeclaration>
  >context : AssignScopeContext
- >modDeclChain : ModuleDeclaration[]
+->modDeclChain : ModuleDeclaration[]
 ->pop : () => any
++>modDeclChain : Array<ModuleDeclaration>
 +>pop : () => ModuleDeclaration | undefined
 
                  if (context.modDeclChain.length >= 1) {
  >context.modDeclChain.length >= 1 : boolean
+ >context.modDeclChain.length : number
+->context.modDeclChain : ModuleDeclaration[]
++>context.modDeclChain : Array<ModuleDeclaration>
+ >context : AssignScopeContext
+->modDeclChain : ModuleDeclaration[]
++>modDeclChain : Array<ModuleDeclaration>
+ >length : number
+ >1 : 1
+
+@@= skipped -25, +25 lines =@@
+ >checker : any
+ >currentModDecl : any
+ >context.modDeclChain[context.modDeclChain.length - 1] : ModuleDeclaration
+->context.modDeclChain : ModuleDeclaration[]
++>context.modDeclChain : Array<ModuleDeclaration>
+ >context : AssignScopeContext
+->modDeclChain : ModuleDeclaration[]
++>modDeclChain : Array<ModuleDeclaration>
+ >context.modDeclChain.length - 1 : number
+ >context.modDeclChain.length : number
+->context.modDeclChain : ModuleDeclaration[]
++>context.modDeclChain : Array<ModuleDeclaration>
+ >context : AssignScopeContext
+->modDeclChain : ModuleDeclaration[]
++>modDeclChain : Array<ModuleDeclaration>
+ >length : number
+ >1 : 1
+                 }

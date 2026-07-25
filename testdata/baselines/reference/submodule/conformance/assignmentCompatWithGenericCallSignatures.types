@@ -11,7 +11,7 @@ var f: <S extends { p: string }[]>(x: S) => void
 var g: <T extends { p: string }>(x: T[]) => void
 >g : <T extends { p: string; }>(x: T[]) => void
 >p : string
->x : T[]
+>x : Array<T>
 
 f = g; // ok
 >f = g : <T extends { p: string; }>(x: T[]) => void

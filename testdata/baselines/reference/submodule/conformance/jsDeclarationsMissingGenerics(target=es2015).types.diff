@@ -1,0 +1,13 @@
+--- old.jsDeclarationsMissingGenerics(target=es2015).types
++++ new.jsDeclarationsMissingGenerics(target=es2015).types
+@@= skipped -4, +4 lines =@@
+  * @param {Array} x
+  */
+ function x(x) {}
+->x : (x: any[]) => void
+->x : any[]
++>x : (x: Array<any>) => void
++>x : Array<any>
+
+ /**
+  * @param {Promise} x

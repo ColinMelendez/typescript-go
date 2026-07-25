@@ -1,0 +1,32 @@
+--- old.objectFreeze.types
++++ new.objectFreeze.types
+@@= skipped -38, +38 lines =@@
+ >1 : 1
+
+ const a = Object.freeze([1, 2, 3]);
+->a : readonly number[]
+->Object.freeze([1, 2, 3]) : readonly number[]
++>a : ReadonlyArray<number>
++>Object.freeze([1, 2, 3]) : ReadonlyArray<number>
+ >Object.freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
+ >Object : ObjectConstructor
+ >freeze : { <T extends Function>(f: T): T; <T extends { [idx: string]: U | null | undefined | object; }, U extends string | bigint | number | boolean | symbol>(o: T): Readonly<T>; <T>(o: T): Readonly<T>; }
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -13, +13 lines =@@
+ a[0] = a[2].toString();
+ >a[0] = a[2].toString() : string
+ >a[0] : number
+->a : readonly number[]
++>a : ReadonlyArray<number>
+ >0 : 0
+ >a[2].toString() : string
+ >a[2].toString : (radix?: number) => string
+ >a[2] : number
+->a : readonly number[]
++>a : ReadonlyArray<number>
+ >2 : 2
+ >toString : (radix?: number) => string

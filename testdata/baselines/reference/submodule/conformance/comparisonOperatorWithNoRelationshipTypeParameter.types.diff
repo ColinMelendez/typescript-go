@@ -1,0 +1,154 @@
+--- old.comparisonOperatorWithNoRelationshipTypeParameter.types
++++ new.comparisonOperatorWithNoRelationshipTypeParameter.types
+@@= skipped -26, +26 lines =@@
+ >a : string
+
+ var g: any[];
+->g : any[]
++>g : Array<any>
+
+ function foo<T, U>(t: T, u: U) {
+ >foo : <T, U>(t: T, u: U) => void
+@@= skipped -96, +96 lines =@@
+ >r1a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r1b1 = a < t;
+ >r1b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r1b7 = g < t;
+ >r1b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator >
+@@= skipped -44, +44 lines =@@
+ >r2a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r2b1 = a < t;
+ >r2b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r2b7 = g < t;
+ >r2b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator <=
+@@= skipped -44, +44 lines =@@
+ >r3a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r3b1 = a < t;
+ >r3b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r3b7 = g < t;
+ >r3b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator >=
+@@= skipped -44, +44 lines =@@
+ >r4a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r4b1 = a < t;
+ >r4b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r4b7 = g < t;
+ >r4b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator ==
+@@= skipped -44, +44 lines =@@
+ >r5a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r5b1 = a < t;
+ >r5b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r5b7 = g < t;
+ >r5b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator !=
+@@= skipped -44, +44 lines =@@
+ >r6a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r6b1 = a < t;
+ >r6b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r6b7 = g < t;
+ >r6b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator ===
+@@= skipped -44, +44 lines =@@
+ >r7a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r7b1 = a < t;
+ >r7b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r7b7 = g < t;
+ >r7b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+
+     // operator !==
+@@= skipped -44, +44 lines =@@
+ >r8a7 : boolean
+ >t < g : boolean
+ >t : T
+->g : any[]
++>g : Array<any>
+
+     var r8b1 = a < t;
+ >r8b1 : boolean
+@@= skipped -41, +41 lines =@@
+     var r8b7 = g < t;
+ >r8b7 : boolean
+ >g < t : boolean
+->g : any[]
++>g : Array<any>
+ >t : T
+ }

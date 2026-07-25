@@ -35,9 +35,9 @@ class C8 extends Error { }
 
 class C9 extends Array { }
 >C9 : C9
->Array : any[]
+>Array : Array<any>
 
 class C10 extends Array<number> { }
 >C10 : C10
->Array : number[]
+>Array : Array<number>
 

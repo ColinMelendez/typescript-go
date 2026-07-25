@@ -16,19 +16,19 @@ namespace TypeScript {
 >checker : TypeChecker
 
         public resolveBaseTypeLinks(typeLinks: TypeLink[], scope: SymbolScope) {
->resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Type[]
->typeLinks : TypeLink[]
+>resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Array<Type>
+>typeLinks : Array<TypeLink>
 >scope : SymbolScope
 
             var extendsList: Type[] = null;
->extendsList : Type[]
+>extendsList : Array<Type>
 
             if (typeLinks) {
->typeLinks : TypeLink[]
+>typeLinks : Array<TypeLink>
 
                 extendsList = new Type[];
 >extendsList = new Type[] : any
->extendsList : Type[]
+>extendsList : Array<Type>
 >new Type[] : any
 >Type[] : any
 >Type : any
@@ -39,7 +39,7 @@ namespace TypeScript {
 >0 : 0
 >len : number
 >typeLinks.length : number
->typeLinks : TypeLink[]
+>typeLinks : Array<TypeLink>
 >length : number
 >i < len : boolean
 >i : number
@@ -50,7 +50,7 @@ namespace TypeScript {
                     var typeLink = typeLinks[i];
 >typeLink : TypeLink
 >typeLinks[i] : TypeLink
->typeLinks : TypeLink[]
+>typeLinks : Array<TypeLink>
 >i : number
 
                     this.checker.resolvingBases = true;
@@ -93,7 +93,7 @@ namespace TypeScript {
                         extendsList[i] = typeLink.type.instanceType;
 >extendsList[i] = typeLink.type.instanceType : any
 >extendsList[i] : Type
->extendsList : Type[]
+>extendsList : Array<Type>
 >i : number
 >typeLink.type.instanceType : any
 >typeLink.type : any
@@ -105,7 +105,7 @@ namespace TypeScript {
                         extendsList[i] = typeLink.type;
 >extendsList[i] = typeLink.type : any
 >extendsList[i] : Type
->extendsList : Type[]
+>extendsList : Array<Type>
 >i : number
 >typeLink.type : any
 >typeLink : TypeLink
@@ -114,7 +114,7 @@ namespace TypeScript {
                 }
             }
             return extendsList;
->extendsList : Type[]
+>extendsList : Array<Type>
         }
 
         public resolveBases(scope: SymbolScope, type: Type) {
@@ -123,14 +123,14 @@ namespace TypeScript {
 >type : Type
 
             type.extendsList = this.resolveBaseTypeLinks(type.extendsTypeLinks, scope);
->type.extendsList = this.resolveBaseTypeLinks(type.extendsTypeLinks, scope) : Type[]
+>type.extendsList = this.resolveBaseTypeLinks(type.extendsTypeLinks, scope) : Array<Type>
 >type.extendsList : any
 >type : Type
 >extendsList : any
->this.resolveBaseTypeLinks(type.extendsTypeLinks, scope) : Type[]
->this.resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Type[]
+>this.resolveBaseTypeLinks(type.extendsTypeLinks, scope) : Array<Type>
+>this.resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Array<Type>
 >this : this
->resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Type[]
+>resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Array<Type>
 >type.extendsTypeLinks : any
 >type : Type
 >extendsTypeLinks : any
@@ -259,14 +259,14 @@ namespace TypeScript {
             }
 
             type.implementsList = this.resolveBaseTypeLinks(type.implementsTypeLinks, scope);
->type.implementsList = this.resolveBaseTypeLinks(type.implementsTypeLinks, scope) : Type[]
+>type.implementsList = this.resolveBaseTypeLinks(type.implementsTypeLinks, scope) : Array<Type>
 >type.implementsList : any
 >type : Type
 >implementsList : any
->this.resolveBaseTypeLinks(type.implementsTypeLinks, scope) : Type[]
->this.resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Type[]
+>this.resolveBaseTypeLinks(type.implementsTypeLinks, scope) : Array<Type>
+>this.resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Array<Type>
 >this : this
->resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Type[]
+>resolveBaseTypeLinks : (typeLinks: TypeLink[], scope: SymbolScope) => Array<Type>
 >type.implementsTypeLinks : any
 >type : Type
 >implementsTypeLinks : any

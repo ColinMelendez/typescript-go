@@ -5,28 +5,28 @@
 
 
 var a : string[] = [1,2,"3"]; // should produce an error
->a : string[]
->[1,2,"3"] : (string | number)[]
+>a : Array<string>
+>[1,2,"3"] : Array<string | number>
 >1 : 1
 >2 : 2
 >"3" : "3"
 
 
 function func1(stuff:any[]) { return stuff; }
->func1 : (stuff: any[]) => any[]
->stuff : any[]
->stuff : any[]
+>func1 : (stuff: any[]) => Array<any>
+>stuff : Array<any>
+>stuff : Array<any>
 
 function func2(stuff1:string, stuff2:number, stuff3:number) {
->func2 : (stuff1: string, stuff2: number, stuff3: number) => any[]
+>func2 : (stuff1: string, stuff2: number, stuff3: number) => Array<any>
 >stuff1 : string
 >stuff2 : number
 >stuff3 : number
 
 	return func1([stuff1, stuff2, stuff3]);
->func1([stuff1, stuff2, stuff3]) : any[]
->func1 : (stuff: any[]) => any[]
->[stuff1, stuff2, stuff3] : (string | number)[]
+>func1([stuff1, stuff2, stuff3]) : Array<any>
+>func1 : (stuff: any[]) => Array<any>
+>[stuff1, stuff2, stuff3] : Array<string | number>
 >stuff1 : string
 >stuff2 : number
 >stuff3 : number

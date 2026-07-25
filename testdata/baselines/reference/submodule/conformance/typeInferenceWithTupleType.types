@@ -33,16 +33,16 @@ var combineEle2 = combineResult[1]; // number
 
 function zip<T, U>(array1: T[], array2: U[]): [[T, U]] {
 >zip : <T, U>(array1: T[], array2: U[]) => [[T, U]]
->array1 : T[]
->array2 : U[]
+>array1 : Array<T>
+>array2 : Array<U>
 
     if (array1.length != array2.length) {
 >array1.length != array2.length : boolean
 >array1.length : number
->array1 : T[]
+>array1 : Array<T>
 >length : number
 >array2.length : number
->array2 : U[]
+>array2 : Array<U>
 >length : number
 
         return [[undefined, undefined]];
@@ -54,7 +54,7 @@ function zip<T, U>(array1: T[], array2: U[]): [[T, U]] {
     var length = array1.length;
 >length : number
 >array1.length : number
->array1 : T[]
+>array1 : Array<T>
 >length : number
 
     var zipResult: [[T, U]];
@@ -71,15 +71,15 @@ function zip<T, U>(array1: T[], array2: U[]): [[T, U]] {
 
         zipResult.push([array1[i], array2[i]]);
 >zipResult.push([array1[i], array2[i]]) : number
->zipResult.push : (...items: [T, U][]) => number
+>zipResult.push : (...items: Array<[T, U]>) => number
 >zipResult : [[T, U]]
->push : (...items: [T, U][]) => number
+>push : (...items: Array<[T, U]>) => number
 >[array1[i], array2[i]] : [T, U]
 >array1[i] : T
->array1 : T[]
+>array1 : Array<T>
 >i : number
 >array2[i] : U
->array2 : U[]
+>array2 : Array<U>
 >i : number
     }
     return zipResult;
@@ -90,10 +90,10 @@ var zipResult = zip(["foo", "bar"], [5, 6]);
 >zipResult : [[string, number]]
 >zip(["foo", "bar"], [5, 6]) : [[string, number]]
 >zip : <T, U>(array1: T[], array2: U[]) => [[T, U]]
->["foo", "bar"] : string[]
+>["foo", "bar"] : Array<string>
 >"foo" : "foo"
 >"bar" : "bar"
->[5, 6] : number[]
+>[5, 6] : Array<number>
 >5 : 5
 >6 : 6
 
@@ -115,11 +115,11 @@ var zipResultEleEle = zipResult[0][0]; // string
 
 declare function f1<T1, T2>(values: [T1[], T2[]]): T1;
 >f1 : <T1, T2>(values: [T1[], T2[]]) => T1
->values : [T1[], T2[]]
+>values : [Array<T1>, Array<T2>]
 
 declare function f2<T1, T2>(values: readonly [T1[], T2[]]): T1;
 >f2 : <T1, T2>(values: readonly [T1[], T2[]]) => T1
->values : readonly [T1[], T2[]]
+>values : readonly [Array<T1>, Array<T2>]
 
 let expected: "a";
 >expected : "a"
@@ -129,7 +129,7 @@ expected = f1(undefined as ["a"[], "b"[]]);
 >expected : "a"
 >f1(undefined as ["a"[], "b"[]]) : "a"
 >f1 : <T1, T2>(values: [T1[], T2[]]) => T1
->undefined as ["a"[], "b"[]] : ["a"[], "b"[]]
+>undefined as ["a"[], "b"[]] : [Array<"a">, Array<"b">]
 >undefined : undefined
 
 expected = f2(undefined as ["a"[], "b"[]]);
@@ -137,6 +137,6 @@ expected = f2(undefined as ["a"[], "b"[]]);
 >expected : "a"
 >f2(undefined as ["a"[], "b"[]]) : "a"
 >f2 : <T1, T2>(values: readonly [T1[], T2[]]) => T1
->undefined as ["a"[], "b"[]] : ["a"[], "b"[]]
+>undefined as ["a"[], "b"[]] : [Array<"a">, Array<"b">]
 >undefined : undefined
 

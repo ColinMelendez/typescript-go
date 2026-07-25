@@ -1,0 +1,214 @@
+--- old.logicalOrOperatorWithEveryType.types
++++ new.logicalOrOperatorWithEveryType.types
+@@= skipped -34, +34 lines =@@
+ >a : string
+
+ declare var a8: string[];
+->a8 : string[]
++>a8 : Array<string>
+
+ var ra1 = a1 || a1;         // any       || any is any
+ >ra1 : any
+@@= skipped -47, +47 lines =@@
+ var ra8 = a8 || a1;         // array     || any is any
+ >ra8 : any
+ >a8 || a1 : any
+->a8 : string[]
++>a8 : Array<string>
+ >a1 : any
+
+ var ra9 = null || a1;       // null      || any is any
+@@= skipped -57, +57 lines =@@
+ >a2 : boolean
+
+ var rb8 = a8 || a2;         // array     || boolean is array | boolean
+->rb8 : boolean | string[]
+->a8 || a2 : boolean | string[]
+->a8 : string[]
++>rb8 : boolean | Array<string>
++>a8 || a2 : boolean | Array<string>
++>a8 : Array<string>
+ >a2 : boolean
+
+ var rb9 = null || a2;       // null      || boolean is boolean
+@@= skipped -59, +59 lines =@@
+ >a3 : number
+
+ var rc8 = a8 || a3;         // array     || number is array | number
+->rc8 : number | string[]
+->a8 || a3 : number | string[]
+->a8 : string[]
++>rc8 : number | Array<string>
++>a8 || a3 : number | Array<string>
++>a8 : Array<string>
+ >a3 : number
+
+ var rc9 = null || a3;       // null      || number is number
+@@= skipped -59, +59 lines =@@
+ >a4 : string
+
+ var rd8 = a8 || a4;         // array     || string is array | string
+->rd8 : string | string[]
+->a8 || a4 : string | string[]
+->a8 : string[]
++>rd8 : string | Array<string>
++>a8 || a4 : string | Array<string>
++>a8 : Array<string>
+ >a4 : string
+
+ var rd9 = null || a4;       // null      || string is string
+@@= skipped -59, +59 lines =@@
+ >a5 : void
+
+ var re8 = a8 || a5;         // array     || void is array | void
+->re8 : void | string[]
+->a8 || a5 : void | string[]
+->a8 : string[]
++>re8 : void | Array<string>
++>a8 || a5 : void | Array<string>
++>a8 : Array<string>
+ >a5 : void
+
+ var re9 = null || a5;       // null      || void is void
+@@= skipped -59, +59 lines =@@
+ >a6 : E
+
+ var rg8 = a8 || a6;         // array     || enum is array | enum
+->rg8 : string[] | E
+->a8 || a6 : string[] | E
+->a8 : string[]
++>rg8 : Array<string> | E
++>a8 || a6 : Array<string> | E
++>a8 : Array<string>
+ >a6 : E
+
+ var rg9 = null || a6;       // null      || enum is E
+@@= skipped -59, +59 lines =@@
+ >a7 : { a: string; }
+
+ var rh8 = a8 || a7;         // array     || object is array | object
+->rh8 : string[] | { a: string; }
+->a8 || a7 : string[] | { a: string; }
+->a8 : string[]
++>rh8 : Array<string> | { a: string; }
++>a8 || a7 : Array<string> | { a: string; }
++>a8 : Array<string>
+ >a7 : { a: string; }
+
+ var rh9 = null || a7;       // null      || object is object
+@@= skipped -20, +20 lines =@@
+ >ri1 : any
+ >a1 || a8 : any
+ >a1 : any
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri2 = a2 || a8;         // boolean   || array is boolean | array
+->ri2 : true | string[]
+->a2 || a8 : true | string[]
++>ri2 : true | Array<string>
++>a2 || a8 : true | Array<string>
+ >a2 : boolean
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri3 = a3 || a8;         // number    || array is number | array
+->ri3 : number | string[]
+->a3 || a8 : number | string[]
++>ri3 : number | Array<string>
++>a3 || a8 : number | Array<string>
+ >a3 : number
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri4 = a4 || a8;         // string    || array is string | array
+->ri4 : string | string[]
+->a4 || a8 : string | string[]
++>ri4 : string | Array<string>
++>a4 || a8 : string | Array<string>
+ >a4 : string
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri5 = a5 || a8;         // void      || array is void | array
+->ri5 : string[]
+->a5 || a8 : string[]
++>ri5 : Array<string>
++>a5 || a8 : Array<string>
+ >a5 : void
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri6 = a6 || a8;         // enum      || array is enum | array
+->ri6 : E.b | E.c | string[]
+->a6 || a8 : E.b | E.c | string[]
++>ri6 : E.b | E.c | Array<string>
++>a6 || a8 : E.b | E.c | Array<string>
+ >a6 : E
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri7 = a7 || a8;         // object    || array is object | array
+->ri7 : string[] | { a: string; }
+->a7 || a8 : string[] | { a: string; }
++>ri7 : Array<string> | { a: string; }
++>a7 || a8 : Array<string> | { a: string; }
+ >a7 : { a: string; }
+->a8 : string[]
++>a8 : Array<string>
+
+ var ri8 = a8 || a8;         // array     || array is array
+->ri8 : string[]
+->a8 || a8 : string[]
+->a8 : string[]
+->a8 : string[]
++>ri8 : Array<string>
++>a8 || a8 : Array<string>
++>a8 : Array<string>
++>a8 : Array<string>
+
+ var ri9 = null || a8;       // null      || array is array
+->ri9 : string[]
+->null || a8 : string[]
+->a8 : string[]
++>ri9 : Array<string>
++>null || a8 : Array<string>
++>a8 : Array<string>
+
+ var ri10 = undefined || a8; // undefined || array is array
+->ri10 : string[]
+->undefined || a8 : string[]
++>ri10 : Array<string>
++>undefined || a8 : Array<string>
+ >undefined : undefined
+->a8 : string[]
++>a8 : Array<string>
+
+ var rj1 = a1 || null;         // any       || null is any
+ >rj1 : any
+@@= skipped -91, +91 lines =@@
+ >a7 : { a: string; }
+
+ var rj8 = a8 || null;         // array     || null is array
+->rj8 : string[]
+->a8 || null : string[]
+->a8 : string[]
++>rj8 : Array<string>
++>a8 || null : Array<string>
++>a8 : Array<string>
+
+ var rj9 = null || null;       // null      || null is any
+ >rj9 : any
+@@= skipped -56, +56 lines =@@
+ >undefined : undefined
+
+ var rf8 = a8 || undefined;         // array     || undefined is array
+->rf8 : string[]
+->a8 || undefined : string[]
+->a8 : string[]
++>rf8 : Array<string>
++>a8 || undefined : Array<string>
++>a8 : Array<string>
+ >undefined : undefined
+
+ var rf9 = null || undefined;       // null      || undefined is any

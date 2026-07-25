@@ -1,0 +1,17 @@
+--- old.contextualTypeTupleEnd.errors.txt
++++ new.contextualTypeTupleEnd.errors.txt
+@@= skipped -0, +0 lines =@@
+-contextualTypeTupleEnd.ts(8,1): error TS2345: Argument of type '[]' is not assignable to parameter of type '[...((arg: number) => void)[], (arg: string) => void]'.
++contextualTypeTupleEnd.ts(8,1): error TS2345: Argument of type '[]' is not assignable to parameter of type '[...Array<(arg: number) => void>, (arg: string) => void]'.
+   Source has 0 element(s) but target requires 1.
+ contextualTypeTupleEnd.ts(13,7): error TS2322: Type '[]' is not assignable to type 'Funcs'.
+   Source has 0 element(s) but target requires 1.
+@@= skipped -15, +15 lines =@@
+     
+     f1();  // Error
+     ~~~~
+-!!! error TS2345: Argument of type '[]' is not assignable to parameter of type '[...((arg: number) => void)[], (arg: string) => void]'.
++!!! error TS2345: Argument of type '[]' is not assignable to parameter of type '[...Array<(arg: number) => void>, (arg: string) => void]'.
+ !!! error TS2345:   Source has 0 element(s) but target requires 1.
+     f1(x => str(x));
+     f1(x => num(x), x => str(x));

@@ -2,7 +2,7 @@
 
 === parserArrayLiteralExpression7.ts ===
 var v = [1,];
->v : number[]
->[1,] : number[]
+>v : Array<number>
+>[1,] : Array<number>
 >1 : 1
 

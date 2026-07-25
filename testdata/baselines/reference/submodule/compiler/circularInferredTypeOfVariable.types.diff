@@ -1,0 +1,58 @@
+--- old.circularInferredTypeOfVariable.types
++++ new.circularInferredTypeOfVariable.types
+@@= skipped -8, +8 lines =@@
+
+     function foo(p: string[]): string[] {
+ >foo : (p: string[]) => string[]
+->p : string[]
++>p : Array<string>
+
+         return [];
+->[] : never[]
++>[] : Array<never>
+     }
+
+     function bar(p: string[]): string[] {
+ >bar : (p: string[]) => string[]
+->p : string[]
++>p : Array<string>
+
+         return [];
+->[] : never[]
++>[] : Array<never>
+     }
+
+     let a1: string[] | undefined = [];
+->a1 : string[] | undefined
+->[] : never[]
++>a1 : Array<string> | undefined
++>[] : Array<never>
+
+     while (true) {
+ >true : true
+
+         let a2 = foo(a1!);
+->a2 : string[]
+->foo(a1!) : string[]
++>a2 : Array<string>
++>foo(a1!) : Array<string>
+ >foo : (p: string[]) => string[]
+->a1! : string[]
+->a1 : string[]
++>a1! : Array<string>
++>a1 : Array<string>
+
+         a1 = await bar(a2);
+->a1 = await bar(a2) : string[]
+->a1 : string[] | undefined
+->await bar(a2) : string[]
+->bar(a2) : string[]
++>a1 = await bar(a2) : Array<string>
++>a1 : Array<string> | undefined
++>await bar(a2) : Array<string>
++>bar(a2) : Array<string>
+ >bar : (p: string[]) => string[]
+->a2 : string[]
++>a2 : Array<string>
+     }
+ });

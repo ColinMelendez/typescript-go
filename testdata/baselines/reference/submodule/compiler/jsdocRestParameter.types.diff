@@ -7,11 +7,11 @@
 ->f : (...args: number[]) => void
 ->a : number | undefined
 +>f : (a: number[]) => void
-+>a : number[]
++>a : Array<number>
 
      a; // number | undefined
 ->a : number | undefined
-+>a : number[]
++>a : Array<number>
 
      // Ideally this would be a number. But currently checker.ts has only one `argumentsSymbol`, so it's `any`.
      arguments[0];
@@ -20,8 +20,9 @@
  f([1, 2]); // Error
  >f([1, 2]) : void
 ->f : (...args: number[]) => void
+->[1, 2] : number[]
 +>f : (a: number[]) => void
- >[1, 2] : number[]
++>[1, 2] : Array<number>
  >1 : 1
  >2 : 2
 

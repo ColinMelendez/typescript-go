@@ -20,53 +20,53 @@ async function countEverything(): Promise<number> {
     const providerA = async (): Promise<A[]> => { return [] }
 >providerA : () => Promise<A[]>
 >async (): Promise<A[]> => { return [] } : () => Promise<A[]>
->[] : never[]
+>[] : Array<never>
 
     const providerB = async (): Promise<B[]> => { return [] }
 >providerB : () => Promise<B[]>
 >async (): Promise<B[]> => { return [] } : () => Promise<B[]>
->[] : never[]
+>[] : Array<never>
 
     const [resultA, resultB] = await Promise.all([
->resultA : A[]
->resultB : B[]
->await Promise.all([        providerA(),        providerB(),    ]) : [A[], B[]]
->Promise.all([        providerA(),        providerB(),    ]) : Promise<[A[], B[]]>
+>resultA : Array<A>
+>resultB : Array<B>
+>await Promise.all([        providerA(),        providerB(),    ]) : [Array<A>, Array<B>]
+>Promise.all([        providerA(),        providerB(),    ]) : Promise<[Array<A>, Array<B>]>
 >Promise.all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
 >Promise : PromiseConstructor
 >all : { <T>(values: Iterable<T | PromiseLike<T>>): Promise<Awaited<T>[]>; <T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]>; }>; }
->[        providerA(),        providerB(),    ] : [Promise<A[]>, Promise<B[]>]
+>[        providerA(),        providerB(),    ] : [Promise<Array<A>>, Promise<Array<B>>]
 
         providerA(),
->providerA() : Promise<A[]>
+>providerA() : Promise<Array<A>>
 >providerA : () => Promise<A[]>
 
         providerB(),
->providerB() : Promise<B[]>
+>providerB() : Promise<Array<B>>
 >providerB : () => Promise<B[]>
 
     ]);
 
     const dataA: A[] = resultA;
->dataA : A[]
->resultA : A[]
+>dataA : Array<A>
+>resultA : Array<A>
 
     const dataB: B[] = resultB;
->dataB : B[]
->resultB : B[]
+>dataB : Array<B>
+>resultB : Array<B>
 
     if (dataA && dataB) {
->dataA && dataB : B[]
->dataA : A[]
->dataB : B[]
+>dataA && dataB : Array<B>
+>dataA : Array<A>
+>dataB : Array<B>
 
         return dataA.length + dataB.length;
 >dataA.length + dataB.length : number
 >dataA.length : number
->dataA : A[]
+>dataA : Array<A>
 >length : number
 >dataB.length : number
->dataB : B[]
+>dataB : Array<B>
 >length : number
     }
     return 0;

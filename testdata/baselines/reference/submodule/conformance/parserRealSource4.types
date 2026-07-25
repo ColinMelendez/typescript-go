@@ -116,8 +116,8 @@ namespace TypeScript {
 >getAllKeys : () => string[]
 
             var result: string[] = [];
->result : string[]
->[] : undefined[]
+>result : Array<string>
+>[] : Array<undefined>
 
             for (var k in this.table) {
 >k : string
@@ -137,15 +137,15 @@ namespace TypeScript {
                     result[result.length] = k;
 >result[result.length] = k : string
 >result[result.length] : string
->result : string[]
+>result : Array<string>
 >result.length : number
->result : string[]
+>result : Array<string>
 >length : number
 >k : string
                 }
             }
             return result;
->result : string[]
+>result : Array<string>
         }
 
         public add(key: string, data): boolean {
@@ -418,16 +418,16 @@ namespace TypeScript {
 >getAllKeys : () => string[]
 
             return this.primaryTable.getAllKeys().concat(this.secondaryTable.getAllKeys());
->this.primaryTable.getAllKeys().concat(this.secondaryTable.getAllKeys()) : string[]
->this.primaryTable.getAllKeys().concat : { (...items: ConcatArray<string>[]): string[]; (...items: (string | ConcatArray<string>)[]): string[]; }
->this.primaryTable.getAllKeys() : string[]
+>this.primaryTable.getAllKeys().concat(this.secondaryTable.getAllKeys()) : Array<string>
+>this.primaryTable.getAllKeys().concat : { (...items: Array<ConcatArray<string>>): Array<string>; (...items: Array<string | ConcatArray<string>>): Array<string>; }
+>this.primaryTable.getAllKeys() : Array<string>
 >this.primaryTable.getAllKeys : () => string[]
 >this.primaryTable : IHashTable
 >this : this
 >primaryTable : IHashTable
 >getAllKeys : () => string[]
->concat : { (...items: ConcatArray<string>[]): string[]; (...items: (string | ConcatArray<string>)[]): string[]; }
->this.secondaryTable.getAllKeys() : string[]
+>concat : { (...items: Array<ConcatArray<string>>): Array<string>; (...items: Array<string | ConcatArray<string>>): Array<string>; }
+>this.secondaryTable.getAllKeys() : Array<string>
 >this.secondaryTable.getAllKeys : () => string[]
 >this.secondaryTable : IHashTable
 >this : this
@@ -1044,12 +1044,12 @@ namespace TypeScript {
 >SimpleHashTable : SimpleHashTable
 
         private keys = [];
->keys : any[]
->[] : undefined[]
+>keys : Array<any>
+>[] : Array<undefined>
 
         private values = [];
->values : any[]
->[] : undefined[]
+>values : Array<any>
+>[] : Array<undefined>
 
         public lookup(key, findValue?: boolean) {
 >lookup : (key: any, findValue?: boolean) => { key: any; data: any; }
@@ -1057,20 +1057,20 @@ namespace TypeScript {
 >findValue : boolean
 
             var searchArray = this.keys;
->searchArray : any[]
->this.keys : any[]
+>searchArray : Array<any>
+>this.keys : Array<any>
 >this : this
->keys : any[]
+>keys : Array<any>
 
             if (findValue) {
 >findValue : boolean
 
                 searchArray = this.values;
->searchArray = this.values : any[]
->searchArray : any[]
->this.values : any[]
+>searchArray = this.values : Array<any>
+>searchArray : Array<any>
+>this.values : Array<any>
 >this : this
->values : any[]
+>values : Array<any>
             }
 
             for (var i = 0; i < searchArray.length; i++) {
@@ -1079,7 +1079,7 @@ namespace TypeScript {
 >i < searchArray.length : boolean
 >i : number
 >searchArray.length : number
->searchArray : any[]
+>searchArray : Array<any>
 >length : number
 >i++ : number
 >i : number
@@ -1087,7 +1087,7 @@ namespace TypeScript {
                 if (searchArray[i] == key) {
 >searchArray[i] == key : boolean
 >searchArray[i] : any
->searchArray : any[]
+>searchArray : Array<any>
 >i : number
 >key : any
 
@@ -1097,17 +1097,17 @@ namespace TypeScript {
                         key: this.keys[i],
 >key : any
 >this.keys[i] : any
->this.keys : any[]
+>this.keys : Array<any>
 >this : this
->keys : any[]
+>keys : Array<any>
 >i : number
 
                         data: this.values[i],
 >data : any
 >this.values[i] : any
->this.values : any[]
+>this.values : Array<any>
 >this : this
->values : any[]
+>values : Array<any>
 >i : number
 
                     };
@@ -1139,26 +1139,26 @@ namespace TypeScript {
             this.keys[this.keys.length] = key;
 >this.keys[this.keys.length] = key : any
 >this.keys[this.keys.length] : any
->this.keys : any[]
+>this.keys : Array<any>
 >this : this
->keys : any[]
+>keys : Array<any>
 >this.keys.length : number
->this.keys : any[]
+>this.keys : Array<any>
 >this : this
->keys : any[]
+>keys : Array<any>
 >length : number
 >key : any
 
             this.values[this.values.length] = data;
 >this.values[this.values.length] = data : any
 >this.values[this.values.length] : any
->this.values : any[]
+>this.values : Array<any>
 >this : this
->values : any[]
+>values : Array<any>
 >this.values.length : number
->this.values : any[]
+>this.values : Array<any>
 >this : this
->values : any[]
+>values : Array<any>
 >length : number
 >data : any
 

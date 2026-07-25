@@ -9,14 +9,64 @@
  >obj : { a: number; b: 0 | 1; c: string; }
  >a : number
  >b : 0 | 1
-@@= skipped -440, +440 lines =@@
+@@= skipped -348, +348 lines =@@
+
+ export interface EntityState<E extends Entity> {
+     ids: IdOf<E>[];
+->ids : IdOf<E>[]
++>ids : Array<IdOf<E>>
+
+     entities: { [key: string]: E, [key: number]: E };
+ >entities : { [key: string]: E; [key: number]: E; }
+@@= skipped -14, +14 lines =@@
+ >state : EntityState<E>
+
+     const { ids, entities } = state;
+->ids : IdOf<E>[]
++>ids : Array<IdOf<E>>
+ >entities : { [key: string]: E; [key: number]: E; }
+ >state : EntityState<E>
+
+     return ids.map(id => entities[id]);
+->ids.map(id => entities[id]) : { [key: string]: E; [key: number]: E; }[IdOf<E>][]
+->ids.map : <U>(callbackfn: (value: IdOf<E>, index: number, array: IdOf<E>[]) => U, thisArg?: any) => U[]
+->ids : IdOf<E>[]
+->map : <U>(callbackfn: (value: IdOf<E>, index: number, array: IdOf<E>[]) => U, thisArg?: any) => U[]
++>ids.map(id => entities[id]) : Array<{ [key: string]: E; [key: number]: E; }[IdOf<E>]>
++>ids.map : <U>(callbackfn: (value: IdOf<E>, index: number, array: Array<IdOf<E>>) => U, thisArg?: any) => Array<U>
++>ids : Array<IdOf<E>>
++>map : <U>(callbackfn: (value: IdOf<E>, index: number, array: Array<IdOf<E>>) => U, thisArg?: any) => Array<U>
+ >id => entities[id] : (id: IdOf<E>) => { [key: string]: E; [key: number]: E; }[IdOf<E>]
+ >id : IdOf<E>
+ >entities[id] : { [key: string]: E; [key: number]: E; }[IdOf<E>]
+@@= skipped -22, +22 lines =@@
+ >state : EntityState<E>
+
+     const { ids, entities } = state;
+->ids : IdOf<E>[]
++>ids : Array<IdOf<E>>
+ >entities : { [key: string]: E; [key: number]: E; }
+ >state : EntityState<E>
+
+@@= skipped -8, +8 lines =@@
+ >!ids.includes(id) : boolean
+ >ids.includes(id) : boolean
+ >ids.includes : (searchElement: IdOf<E>, fromIndex?: number) => boolean
+->ids : IdOf<E>[]
++>ids : Array<IdOf<E>>
+ >includes : (searchElement: IdOf<E>, fromIndex?: number) => boolean
+ >id : IdOf<E>
+
+@@= skipped -48, +48 lines =@@
  // Repros from #30938
 
  function fn<T extends {elements: Array<string>} | {elements: Array<number>}>(param: T, cb: (element: T['elements'][number]) => void) {
 ->fn : <T extends { elements: Array<string>; } | { elements: Array<number>; }>(param: T, cb: (element: T["elements"][number]) => void) => void
+->elements : string[]
+->elements : number[]
 +>fn : <T extends { elements: Array<string>; } | { elements: Array<number>; }>(param: T, cb: (element: T['elements'][number]) => void) => void
- >elements : string[]
- >elements : number[]
++>elements : Array<string>
++>elements : Array<number>
  >param : T
 ->cb : (element: T["elements"][number]) => void
 +>cb : (element: T['elements'][number]) => void
@@ -27,5 +77,24 @@
 ->cb : (element: T["elements"][number]) => void
 +>cb : (element: T['elements'][number]) => void
  >param.elements[0] : string | number
- >param.elements : string[] | number[]
+->param.elements : string[] | number[]
++>param.elements : Array<string> | Array<number>
  >param : { elements: Array<string>; } | { elements: Array<number>; }
+->elements : string[] | number[]
++>elements : Array<string> | Array<number>
+ >0 : 0
+ }
+
+@@= skipped -51, +51 lines =@@
+ >fn4 : <K extends number>() => void
+
+     let x: Array<string>[K] = 'abc';
+->x : string[][K]
++>x : Array<string>[K]
+ >'abc' : "abc"
+
+     let y: ReadonlyArray<string>[K] = 'abc';
+->y : (readonly string[])[K]
++>y : ReadonlyArray<string>[K]
+ >'abc' : "abc"
+ }

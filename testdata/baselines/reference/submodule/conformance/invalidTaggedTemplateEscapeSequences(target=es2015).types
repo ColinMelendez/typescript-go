@@ -4,7 +4,7 @@
 function tag (str: any, ...args: any[]): any {
 >tag : (str: any, ...args: any[]) => any
 >str : any
->args : any[]
+>args : Array<any>
 
   return str
 >str : any

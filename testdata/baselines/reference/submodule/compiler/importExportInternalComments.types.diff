@@ -1,0 +1,11 @@
+--- old.importExportInternalComments.types
++++ new.importExportInternalComments.types
+@@= skipped -5, +5 lines =@@
+
+ === default.ts ===
+ /*1*/ export /*2*/ default /*3*/ Array /*4*/;
+->Array : T[]
++>Array : Array<T>
+
+ === index.ts ===
+ /*1*/ import /*2*/ D /*3*/, /*4*/ { /*5*/ A /*6*/, /*7*/ B /*8*/ as /*9*/ C /*10*/ } /*11*/ from /*12*/ "foo";

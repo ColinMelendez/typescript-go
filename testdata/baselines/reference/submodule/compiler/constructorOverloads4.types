@@ -8,15 +8,15 @@ declare namespace M {
 >Function : Function
 
         constructor(...args: string[]);
->args : string[]
+>args : Array<string>
     }
     export function Function(...args: any[]): any;
 >Function : typeof Function
->args : any[]
+>args : Array<any>
 
     export function Function(...args: string[]): Function;
 >Function : typeof Function
->args : string[]
+>args : Array<string>
 }
 
 

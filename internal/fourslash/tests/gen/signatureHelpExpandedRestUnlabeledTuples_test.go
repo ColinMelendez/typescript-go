@@ -28,5 +28,5 @@ complex("ok", "ok", e => void e, {}, /*3*/);`
 	f.GoToMarker(t, "2")
 	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "complex(item: string, another: string, rest_0: object, rest_1: (err: Error) => void): void", ParameterCount: 4, ParameterName: "rest_0", ParameterSpan: "rest_0: object", OverloadsCount: 3, IsVariadic: false, IsVariadicSet: true})
 	f.GoToMarker(t, "3")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "complex(item: string, another: string, rest_0: (err: Error) => void, ...rest: object[]): void", OverloadsCount: 3, IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "complex(item: string, another: string, rest_0: (err: Error) => void, ...rest: Array<object>): void", OverloadsCount: 3, IsVariadic: true, IsVariadicSet: true})
 }

@@ -12,7 +12,7 @@ export {x};
 
 for await (const y of []) {}
 >y : any
->[] : undefined[]
+>[] : Array<undefined>
 
 === index.js ===
 // esm format file
@@ -26,5 +26,5 @@ export {x};
 
 for await (const y of []) {}
 >y : any
->[] : undefined[]
+>[] : Array<undefined>
 

@@ -14,12 +14,12 @@ function repeat(
 	return Array(times).fill(message).join(` `);
 >Array(times).fill(message).join(` `) : string
 >Array(times).fill(message).join : (separator?: string) => string
->Array(times).fill(message) : any[]
->Array(times).fill : (value: any, start?: number, end?: number) => any[]
->Array(times) : any[]
+>Array(times).fill(message) : Array<any>
+>Array(times).fill : (value: any, start?: number, end?: number) => Array<any>
+>Array(times) : Array<any>
 >Array : ArrayConstructor
 >times : number
->fill : (value: any, start?: number, end?: number) => any[]
+>fill : (value: any, start?: number, end?: number) => Array<any>
 >message : string
 >join : (separator?: string) => string
 >` ` : " "

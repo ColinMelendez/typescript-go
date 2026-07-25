@@ -2,8 +2,8 @@
 
 === panicForInEmptyDeclarationList.ts ===
 let x: string[] = [];
->x : string[]
->[] : never[]
+>x : Array<string>
+>[] : Array<never>
 
 let i = 0;
 >i : number
@@ -18,7 +18,7 @@ function f() {
     let y = x[i];
 >y : string
 >x[i] : string
->x : string[]
+>x : Array<string>
 >i : number
 
     return y;

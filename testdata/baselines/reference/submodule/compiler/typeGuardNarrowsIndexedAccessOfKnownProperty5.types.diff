@@ -1,0 +1,30 @@
+--- old.typeGuardNarrowsIndexedAccessOfKnownProperty5.types
++++ new.typeGuardNarrowsIndexedAccessOfKnownProperty5.types
+@@= skipped -61, +61 lines =@@
+ >x : number | undefined
+ }
+ const c: Foo[] = [];
+->c : Foo[]
+->[] : never[]
++>c : Array<Foo>
++>[] : Array<never>
+
+ const cIndex = 1;
+ >cIndex : 1
+@@= skipped -10, +10 lines =@@
+ if (c[cIndex].x) {
+ >c[cIndex].x : number | undefined
+ >c[cIndex] : Foo
+->c : Foo[]
++>c : Array<Foo>
+ >cIndex : 1
+ >x : number | undefined
+
+     c[cIndex].x // number
+ >c[cIndex].x : number
+ >c[cIndex] : Foo
+->c : Foo[]
++>c : Array<Foo>
+ >cIndex : 1
+ >x : number
+ }

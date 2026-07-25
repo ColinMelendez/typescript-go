@@ -11,7 +11,7 @@ type InstanceInterface<I> = {
 >InstanceInterface : InstanceInterface<I>
 
     new(...args: any[]): I
->args : any[]
+>args : Array<any>
 
     prototype: I
 >prototype : I
@@ -29,13 +29,13 @@ function cloneClass<T extends Constructor<{}>>(OriginalClass: T): T {
 >OriginalClass : {}
 
         constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
             super(...args)
 >super(...args) : void
 >super : T
 >...args : any
->args : any[]
+>args : Array<any>
         }
     }
     return AnotherOriginalClass

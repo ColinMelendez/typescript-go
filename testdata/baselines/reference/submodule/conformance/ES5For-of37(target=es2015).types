@@ -5,7 +5,7 @@
 
 for (const i of [0, 1, 2, 3, 4]) {
 >i : number
->[0, 1, 2, 3, 4] : number[]
+>[0, 1, 2, 3, 4] : Array<number>
 >0 : 0
 >1 : 1
 >2 : 2
@@ -16,7 +16,7 @@ for (const i of [0, 1, 2, 3, 4]) {
         // Ensure catch binding for the following loop is reset per iteration:
         for (const j of [1, 2, 3]) {
 >j : number
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

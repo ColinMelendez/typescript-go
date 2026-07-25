@@ -23,7 +23,7 @@ undefinedIsSubtypeOfEverything.ts(47,5): error TS2416: Property 'foo' in type 'D
   Type 'Date' is not assignable to type 'undefined'.
 undefinedIsSubtypeOfEverything.ts(47,5): error TS2564: Property 'foo' has no initializer and is not definitely assigned in the constructor.
 undefinedIsSubtypeOfEverything.ts(52,5): error TS2416: Property 'foo' in type 'D6' is not assignable to the same property in base type 'Base'.
-  Type 'number[]' is not assignable to type 'undefined'.
+  Type 'Array<number>' is not assignable to type 'undefined'.
 undefinedIsSubtypeOfEverything.ts(52,5): error TS2564: Property 'foo' has no initializer and is not definitely assigned in the constructor.
 undefinedIsSubtypeOfEverything.ts(56,5): error TS2416: Property 'foo' in type 'D7' is not assignable to the same property in base type 'Base'.
   Type '{ bar: number; }' is not assignable to type 'undefined'.
@@ -156,7 +156,7 @@ undefinedIsSubtypeOfEverything.ts(119,5): error TS2564: Property 'foo' has no in
         foo: number[];
         ~~~
 !!! error TS2416: Property 'foo' in type 'D6' is not assignable to the same property in base type 'Base'.
-!!! error TS2416:   Type 'number[]' is not assignable to type 'undefined'.
+!!! error TS2416:   Type 'Array<number>' is not assignable to type 'undefined'.
         ~~~
 !!! error TS2564: Property 'foo' has no initializer and is not definitely assigned in the constructor.
     }

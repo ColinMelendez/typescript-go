@@ -22,23 +22,23 @@ type ValidType = TypeA | TypeB;
 
 interface Wrapper {
     types: ValidType[];
->types : ValidType[]
+>types : Array<ValidType>
 }
 
 const foo: Wrapper[] = [];
->foo : Wrapper[]
->[] : never[]
+>foo : Array<Wrapper>
+>[] : Array<never>
 
 foo.push({
 >foo.push({    types: [{        type: "A"    }]}) : number
->foo.push : (...items: Wrapper[]) => number
->foo : Wrapper[]
->push : (...items: Wrapper[]) => number
->{    types: [{        type: "A"    }]} : { types: { type: "A"; }[]; }
+>foo.push : (...items: Array<Wrapper>) => number
+>foo : Array<Wrapper>
+>push : (...items: Array<Wrapper>) => number
+>{    types: [{        type: "A"    }]} : { types: Array<{ type: "A"; }>; }
 
     types: [{
->types : { type: "A"; }[]
->[{        type: "A"    }] : { type: "A"; }[]
+>types : Array<{ type: "A"; }>
+>[{        type: "A"    }] : Array<{ type: "A"; }>
 >{        type: "A"    } : { type: "A"; }
 
         type: "A"

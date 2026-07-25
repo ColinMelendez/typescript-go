@@ -1,0 +1,44 @@
+--- old.commaOperatorWithSecondOperandBooleanType.types
++++ new.commaOperatorWithSecondOperandBooleanType.types
+@@= skipped -102, +102 lines =@@
+
+ [1, 2, 3], !BOOLEAN;
+ >[1, 2, 3], !BOOLEAN : boolean
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -9, +9 lines =@@
+
+ OBJECT = [1, 2, 3], BOOLEAN = false;
+ >OBJECT = [1, 2, 3], BOOLEAN = false : false
+->OBJECT = [1, 2, 3] : number[]
++>OBJECT = [1, 2, 3] : Array<number>
+ >OBJECT : Object
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -44, +44 lines =@@
+ >resultIsBoolean10 : boolean
+ >([1, 2, 3], !BOOLEAN) : true
+ >[1, 2, 3], !BOOLEAN : true
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -11, +11 lines =@@
+ >resultIsBoolean11 : boolean
+ >(OBJECT = [1, 2, 3], BOOLEAN = false) : false
+ >OBJECT = [1, 2, 3], BOOLEAN = false : false
+->OBJECT = [1, 2, 3] : number[]
++>OBJECT = [1, 2, 3] : Array<number>
+ >OBJECT : Object
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

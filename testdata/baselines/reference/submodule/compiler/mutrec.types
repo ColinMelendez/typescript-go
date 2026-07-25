@@ -3,12 +3,12 @@
 === mutrec.ts ===
 interface A {
     x:B[];
->x : B[]
+>x : Array<B>
 }
 
 interface B {
     x:A[];
->x : A[]
+>x : Array<A>
 }
 
 function f(p: A) { return p };

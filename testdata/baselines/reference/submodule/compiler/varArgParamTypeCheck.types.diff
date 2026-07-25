@@ -1,0 +1,11 @@
+--- old.varArgParamTypeCheck.types
++++ new.varArgParamTypeCheck.types
+@@= skipped -2, +2 lines =@@
+ === varArgParamTypeCheck.ts ===
+ function sequence(...sequences:{():void;}[]) {
+ >sequence : (...sequences: { (): void; }[]) => void
+->sequences : (() => void)[]
++>sequences : Array<() => void>
+ }
+
+ function callback(clb:()=>void) {

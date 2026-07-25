@@ -1,0 +1,11 @@
+--- old.jsDeclarationsMissingGenerics(target=es2015).js
++++ new.jsDeclarationsMissingGenerics(target=es2015).js
+@@= skipped -25, +25 lines =@@
+ /**
+  * @param {Array} x
+  */
+-declare function x(x: any[]): void;
++declare function x(x: Array<any>): void;
+ /**
+  * @param {Promise} x
+  */

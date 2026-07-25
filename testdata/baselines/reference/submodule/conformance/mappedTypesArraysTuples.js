@@ -167,22 +167,22 @@ type T53 = Readonly<Partial<string[]>>;
 type T54 = ReadWrite<Required<T53>>;
 declare function unboxify<T>(x: Boxified<T>): T;
 declare let x10: [Box<number>, Box<string>, ...Box<boolean>[]];
-declare let y10: [number, string, ...boolean[]];
+declare let y10: [number, string, ...Array<boolean>];
 declare let x11: Box<number>[];
-declare let y11: number[];
+declare let y11: Array<number>;
 declare let x12: {
     a: Box<number>;
     b: Box<string[]>;
 };
 declare let y12: {
     a: number;
-    b: string[];
+    b: Array<string>;
 };
 declare function nonpartial<T>(x: Partial<T>): T;
 declare let x20: [number | undefined, string?, ...boolean[]];
-declare let y20: [number, string, ...boolean[]];
+declare let y20: [number, string, ...Array<boolean>];
 declare let x21: (number | undefined)[];
-declare let y21: number[];
+declare let y21: Array<number>;
 declare let x22: {
     a: number | undefined;
     b?: string[];

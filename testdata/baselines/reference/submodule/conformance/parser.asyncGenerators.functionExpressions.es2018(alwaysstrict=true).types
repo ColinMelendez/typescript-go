@@ -139,7 +139,7 @@ const f16 = async function * () {
 
     yield * [];
 >yield * [] : any
->[] : undefined[]
+>[] : Array<undefined>
 
 };
 === awaitWithValueIsOk.ts ===

@@ -1,4 +1,4 @@
-bug24252.js(8,9): error TS2322: Type 'string[]' is not assignable to type 'number[]'.
+bug24252.js(8,9): error TS2322: Type 'Array<string>' is not assignable to type 'Array<number>'.
   Type 'string' is not assignable to type 'number'.
 
 
@@ -12,7 +12,7 @@ bug24252.js(8,9): error TS2322: Type 'string[]' is not assignable to type 'numbe
             var y;
             y = x;
             ~
-!!! error TS2322: Type 'string[]' is not assignable to type 'number[]'.
+!!! error TS2322: Type 'Array<string>' is not assignable to type 'Array<number>'.
 !!! error TS2322:   Type 'string' is not assignable to type 'number'.
         }
     };

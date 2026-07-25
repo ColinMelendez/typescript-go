@@ -1,0 +1,88 @@
+--- old.genericCallWithArrayLiteralArgs.types
++++ new.genericCallWithArrayLiteralArgs.types
+@@= skipped -9, +9 lines =@@
+ }
+
+ var r = foo([1, 2]); // number[]
+->r : number[]
+->foo([1, 2]) : number[]
++>r : Array<number>
++>foo([1, 2]) : Array<number>
+ >foo : <T>(t: T) => T
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ var r = foo<number[]>([1, 2]); // number[]
+->r : number[]
+->foo<number[]>([1, 2]) : number[]
++>r : Array<number>
++>foo<number[]>([1, 2]) : Array<number>
+ >foo : <T>(t: T) => T
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ var ra = foo<any[]>([1, 2]); // any[]
+->ra : any[]
+->foo<any[]>([1, 2]) : any[]
++>ra : Array<any>
++>foo<any[]>([1, 2]) : Array<any>
+ >foo : <T>(t: T) => T
+->[1, 2] : number[]
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+ var r2 = foo([]); // any[]
+->r2 : never[]
+->foo([]) : never[]
++>r2 : Array<never>
++>foo([]) : Array<never>
+ >foo : <T>(t: T) => T
+->[] : never[]
++>[] : Array<never>
+
+ var r3 = foo<number[]>([]); // number[]
+->r3 : number[]
+->foo<number[]>([]) : number[]
++>r3 : Array<number>
++>foo<number[]>([]) : Array<number>
+ >foo : <T>(t: T) => T
+->[] : never[]
++>[] : Array<never>
+
+ var r4 = foo([1, '']); // {}[]
+->r4 : (string | number)[]
+->foo([1, '']) : (string | number)[]
++>r4 : Array<string | number>
++>foo([1, '']) : Array<string | number>
+ >foo : <T>(t: T) => T
+->[1, ''] : (string | number)[]
++>[1, ''] : Array<string | number>
+ >1 : 1
+ >'' : ""
+
+ var r5 = foo<any[]>([1, '']); // any[]
+->r5 : any[]
+->foo<any[]>([1, '']) : any[]
++>r5 : Array<any>
++>foo<any[]>([1, '']) : Array<any>
+ >foo : <T>(t: T) => T
+->[1, ''] : (string | number)[]
++>[1, ''] : Array<string | number>
+ >1 : 1
+ >'' : ""
+
+ var r6 = foo<Object[]>([1, '']); // Object[]
+->r6 : Object[]
+->foo<Object[]>([1, '']) : Object[]
++>r6 : Array<Object>
++>foo<Object[]>([1, '']) : Array<Object>
+ >foo : <T>(t: T) => T
+->[1, ''] : (string | number)[]
++>[1, ''] : Array<string | number>
+ >1 : 1
+ >'' : ""

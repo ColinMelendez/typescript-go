@@ -3,7 +3,7 @@
 === ES5For-of2.ts ===
 for (var v of []) {
 >v : any
->[] : undefined[]
+>[] : Array<undefined>
 
     var x = v;
 >x : any

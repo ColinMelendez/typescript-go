@@ -1,0 +1,20 @@
+--- old.mixinAccessors5.types
++++ new.mixinAccessors5.types
+@@= skipped -17, +17 lines =@@
+ >GetterA : GetterA
+
+   constructor(...args: any[]);
+->args : any[]
++>args : Array<any>
+
+   get inCompendium(): boolean;
+ >inCompendium : boolean
+@@= skipped -10, +10 lines =@@
+ >GetterB : GetterB
+
+   constructor(...args: any[]);
+->args : any[]
++>args : Array<any>
+
+   get inCompendium(): boolean;
+ >inCompendium : boolean

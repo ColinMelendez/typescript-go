@@ -1,0 +1,10 @@
+--- old.interfaceDoesNotDependOnBaseTypes.types
++++ new.interfaceDoesNotDependOnBaseTypes.types
+@@= skipped -21, +21 lines =@@
+ >x.push : any
+ >x : StringTree
+ >push : any
+->[""] : string[]
++>[""] : Array<string>
+ >"" : ""
+ }

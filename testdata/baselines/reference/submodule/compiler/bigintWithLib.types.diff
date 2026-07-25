@@ -1,0 +1,38 @@
+--- old.bigintWithLib.types
++++ new.bigintWithLib.types
+@@= skipped -124, +124 lines =@@
+ >bigIntArray : BigInt64Array<ArrayBufferLike>
+ >new BigInt64Array([1n, 2n, 3n]) : BigInt64Array<ArrayBuffer>
+ >BigInt64Array : BigInt64ArrayConstructor
+->[1n, 2n, 3n] : bigint[]
++>[1n, 2n, 3n] : Array<bigint>
+ >1n : 1n
+ >2n : 2n
+ >3n : 3n
+@@= skipped -10, +10 lines =@@
+ >bigIntArray : BigInt64Array<ArrayBufferLike>
+ >new BigInt64Array([1, 2, 3]) : BigInt64Array<ArrayBuffer>
+ >BigInt64Array : BigInt64ArrayConstructor
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -70, +70 lines =@@
+ >bigUintArray : BigUint64Array<ArrayBufferLike>
+ >new BigUint64Array([1n, 2n, 3n]) : BigUint64Array<ArrayBuffer>
+ >BigUint64Array : BigUint64ArrayConstructor
+->[1n, 2n, 3n] : bigint[]
++>[1n, 2n, 3n] : Array<bigint>
+ >1n : 1n
+ >2n : 2n
+ >3n : 3n
+@@= skipped -10, +10 lines =@@
+ >bigUintArray : BigUint64Array<ArrayBufferLike>
+ >new BigUint64Array([1, 2, 3]) : BigUint64Array<ArrayBuffer>
+ >BigUint64Array : BigUint64ArrayConstructor
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

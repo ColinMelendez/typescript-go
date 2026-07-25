@@ -1,0 +1,19 @@
+--- old.unionTypeWithRecursiveSubtypeReduction2.types
++++ new.unionTypeWithRecursiveSubtypeReduction2.types
+@@= skipped -4, +4 lines =@@
+ >Module : Module
+
+     public members: Class[];
+->members : Class[]
++>members : Array<Class>
+ }
+
+ class Namespace {
+ >Namespace : Namespace
+
+     public members: (Class | Property)[];
+->members : (Class | Property)[]
++>members : Array<Class | Property>
+ }
+
+ class Class {

@@ -1,0 +1,282 @@
+--- old.sourceMapValidationDestructuringForOfObjectBindingPatternDefaultValues2(target=es2015).types
++++ new.sourceMapValidationDestructuringForOfObjectBindingPatternDefaultValues2(target=es2015).types
+@@= skipped -32, +32 lines =@@
+ }
+
+ let robots: Robot[] = [{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }];
+->robots : Robot[]
+->[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : { name: string; skill: string; }[]
++>robots : Array<Robot>
++>[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : Array<{ name: string; skill: string; }>
+ >{ name: "mower", skill: "mowing" } : { name: string; skill: string; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -14, +14 lines =@@
+ >"trimming" : "trimming"
+
+ let multiRobots: MultiRobot[] = [{ name: "mower", skills: { primary: "mowing", secondary: "none" } },
+->multiRobots : MultiRobot[]
+->[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : { name: string; skills: { primary: string; secondary: string; }; }[]
++>multiRobots : Array<MultiRobot>
++>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<{ name: string; skills: { primary: string; secondary: string; }; }>
+ >{ name: "mower", skills: { primary: "mowing", secondary: "none" } } : { name: string; skills: { primary: string; secondary: string; }; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -24, +24 lines =@@
+ >"edging" : "edging"
+
+ function getRobots() {
+->getRobots : () => Robot[]
++>getRobots : () => Array<Robot>
+
+     return robots;
+->robots : Robot[]
++>robots : Array<Robot>
+ }
+
+ function getMultiRobots() {
+->getMultiRobots : () => MultiRobot[]
++>getMultiRobots : () => Array<MultiRobot>
+
+     return multiRobots;
+->multiRobots : MultiRobot[]
++>multiRobots : Array<MultiRobot>
+ }
+
+ let nameA: string, primaryA: string, secondaryA: string, i: number, skillA: string;
+@@= skipped -32, +32 lines =@@
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -15, +15 lines =@@
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -16, +16 lines =@@
+ >nameA = "noName" : "noName"
+ >nameA : string
+ >"noName" : "noName"
+->[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : { name: string; skill: string; }[]
++>[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : Array<{ name: string; skill: string; }>
+ >{ name: "mower", skill: "mowing" } : { name: string; skill: string; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -39, +39 lines =@@
+ >"nosKill" : "nosKill"
+ >secondary : string
+ >"noSkill" : "noSkill"
+->multiRobots : MultiRobot[]
++>multiRobots : Array<MultiRobot>
+
+     console.log(primaryA);
+ >console.log(primaryA) : void
+@@= skipped -29, +29 lines =@@
+ >"nosKill" : "nosKill"
+ >secondary : string
+ >"noSkill" : "noSkill"
+->getMultiRobots() : MultiRobot[]
+->getMultiRobots : () => MultiRobot[]
++>getMultiRobots() : Array<MultiRobot>
++>getMultiRobots : () => Array<MultiRobot>
+
+     console.log(primaryA);
+ >console.log(primaryA) : void
+@@= skipped -32, +32 lines =@@
+ >"noSkill" : "noSkill"
+
+     <MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },
+-><MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },        { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : MultiRobot[]
+->[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },        { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : { name: string; skills: { primary: string; secondary: string; }; }[]
++><MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },        { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<MultiRobot>
++>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },        { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<{ name: string; skills: { primary: string; secondary: string; }; }>
+ >{ name: "mower", skills: { primary: "mowing", secondary: "none" } } : { name: string; skills: { primary: string; secondary: string; }; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -35, +35 lines =@@
+ >{ name = "noName" } : { name?: string; }
+ >name : string
+ >"noName" : "noName"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -13, +13 lines =@@
+ >{ name = "noName" } : { name?: string; }
+ >name : string
+ >"noName" : "noName"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -14, +14 lines =@@
+ >{ name = "noName" } : { name?: string; }
+ >name : string
+ >"noName" : "noName"
+->[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : { name: string; skill: string; }[]
++>[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : Array<{ name: string; skill: string; }>
+ >{ name: "mower", skill: "mowing" } : { name: string; skill: string; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -43, +43 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of multiRobots) {
+->multiRobots : MultiRobot[]
++>multiRobots : Array<MultiRobot>
+
+     console.log(primaryA);
+ >console.log(primaryA) : void
+@@= skipped -33, +33 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of getMultiRobots()) {
+->getMultiRobots() : MultiRobot[]
+->getMultiRobots : () => MultiRobot[]
++>getMultiRobots() : Array<MultiRobot>
++>getMultiRobots : () => Array<MultiRobot>
+
+     console.log(primaryA);
+ >console.log(primaryA) : void
+@@= skipped -34, +34 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of [{ name: "mower", skills: { primary: "mowing", secondary: "none" } },
+->[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : { name: string; skills: { primary: string; secondary: string; }; }[]
++>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<{ name: string; skills: { primary: string; secondary: string; }; }>
+ >{ name: "mower", skills: { primary: "mowing", secondary: "none" } } : { name: string; skills: { primary: string; secondary: string; }; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -41, +41 lines =@@
+ >skillA = "noSkill" : "noSkill"
+ >skillA : string
+ >"noSkill" : "noSkill"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -19, +19 lines =@@
+ >skillA = "noSkill" : "noSkill"
+ >skillA : string
+ >"noSkill" : "noSkill"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -20, +20 lines =@@
+ >skillA = "noSkill" : "noSkill"
+ >skillA : string
+ >"noSkill" : "noSkill"
+->[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : { name: string; skill: string; }[]
++>[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : Array<{ name: string; skill: string; }>
+ >{ name: "mower", skill: "mowing" } : { name: string; skill: string; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -53, +53 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of multiRobots) {
+->multiRobots : MultiRobot[]
++>multiRobots : Array<MultiRobot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -43, +43 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of getMultiRobots()) {
+->getMultiRobots() : MultiRobot[]
+->getMultiRobots : () => MultiRobot[]
++>getMultiRobots() : Array<MultiRobot>
++>getMultiRobots : () => Array<MultiRobot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -44, +44 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of <MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },
+-><MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : MultiRobot[]
+->[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : { name: string; skills: { primary: string; secondary: string; }; }[]
++><MultiRobot[]>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<MultiRobot>
++>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<{ name: string; skills: { primary: string; secondary: string; }; }>
+ >{ name: "mower", skills: { primary: "mowing", secondary: "none" } } : { name: string; skills: { primary: string; secondary: string; }; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -37, +37 lines =@@
+ >"noName" : "noName"
+ >skill : string
+ >"noSkill" : "noSkill"
+->robots : Robot[]
++>robots : Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -15, +15 lines =@@
+ >"noName" : "noName"
+ >skill : string
+ >"noSkill" : "noSkill"
+->getRobots() : Robot[]
+->getRobots : () => Robot[]
++>getRobots() : Array<Robot>
++>getRobots : () => Array<Robot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -16, +16 lines =@@
+ >"noName" : "noName"
+ >skill : string
+ >"noSkill" : "noSkill"
+->[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : { name: string; skill: string; }[]
++>[{ name: "mower", skill: "mowing" }, { name: "trimmer", skill: "trimming" }] : Array<{ name: string; skill: string; }>
+ >{ name: "mower", skill: "mowing" } : { name: string; skill: string; }
+ >name : string
+ >"mower" : "mower"
+@@= skipped -47, +47 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of multiRobots) {
+->multiRobots : MultiRobot[]
++>multiRobots : Array<MultiRobot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -37, +37 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of getMultiRobots()) {
+->getMultiRobots() : MultiRobot[]
+->getMultiRobots : () => MultiRobot[]
++>getMultiRobots() : Array<MultiRobot>
++>getMultiRobots : () => Array<MultiRobot>
+
+     console.log(nameA);
+ >console.log(nameA) : void
+@@= skipped -38, +38 lines =@@
+ >"noSkill" : "noSkill"
+
+ } of [{ name: "mower", skills: { primary: "mowing", secondary: "none" } },
+->[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : { name: string; skills: { primary: string; secondary: string; }; }[]
++>[{ name: "mower", skills: { primary: "mowing", secondary: "none" } },    { name: "trimmer", skills: { primary: "trimming", secondary: "edging" } }] : Array<{ name: string; skills: { primary: string; secondary: string; }; }>
+ >{ name: "mower", skills: { primary: "mowing", secondary: "none" } } : { name: string; skills: { primary: string; secondary: string; }; }
+ >name : string
+ >"mower" : "mower"

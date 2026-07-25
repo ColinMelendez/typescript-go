@@ -156,14 +156,14 @@ type InferThunkActionCreatorType<
 >InferThunkActionCreatorType : InferThunkActionCreatorType<TActionCreator>
 
   TActionCreator extends (...args: any[]) => any
->args : any[]
+>args : Array<any>
 
 > = TActionCreator extends (
   ...args: infer TParams
 >args : TParams
 
 ) => (...args: any[]) => infer TReturn
->args : any[]
+>args : Array<any>
 
   ? (...args: TParams) => TReturn
 >args : TParams
@@ -174,7 +174,7 @@ type HandleThunkActionCreator<TActionCreator> = TActionCreator extends (
 >HandleThunkActionCreator : HandleThunkActionCreator<TActionCreator>
 
   ...args: any[]
->args : any[]
+>args : Array<any>
 
 ) => any
   ? InferThunkActionCreatorType<TActionCreator>

@@ -1,0 +1,20 @@
+--- old.contextuallyTypedParametersWithInitializers1.types
++++ new.contextuallyTypedParametersWithInitializers1.types
+@@= skipped -133, +133 lines =@@
+
+ const f5: (...args: any[]) => any = (x = 1) => 0;  // any
+ >f5 : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+ >(x = 1) => 0 : (x?: any) => number
+ >x : any
+ >1 : 1
+@@= skipped -43, +43 lines =@@
+
+ declare function g5<T extends (...args: any[]) => any>(x: T): T;
+ >g5 : <T extends (...args: any[]) => any>(x: T) => T
+->args : any[]
++>args : Array<any>
+ >x : T
+
+ declare function g6<T extends () => any>(x: T): T;

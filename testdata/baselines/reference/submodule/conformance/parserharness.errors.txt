@@ -129,9 +129,9 @@ parserharness.ts(1136,21): error TS2322: Type 'null' is not assignable to type '
 parserharness.ts(1139,73): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
   No index signature with a parameter of type 'string' was found on type '{}'.
 parserharness.ts(1176,132): error TS2503: Cannot find namespace 'TypeScript'.
-parserharness.ts(1177,21): error TS7034: Variable 'lines' implicitly has type 'any[]' in some locations where its type cannot be determined.
-parserharness.ts(1178,50): error TS7005: Variable 'lines' implicitly has an 'any[]' type.
-parserharness.ts(1179,29): error TS7005: Variable 'lines' implicitly has an 'any[]' type.
+parserharness.ts(1177,21): error TS7034: Variable 'lines' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
+parserharness.ts(1178,50): error TS7005: Variable 'lines' implicitly has an 'Array<any>' type.
+parserharness.ts(1179,29): error TS7005: Variable 'lines' implicitly has an 'Array<any>' type.
 parserharness.ts(1193,29): error TS2552: Cannot find name 'WScript'. Did you mean 'scripts'?
 parserharness.ts(1236,45): error TS7006: Parameter 'value' implicitly has an 'any' type.
 parserharness.ts(1256,126): error TS2503: Cannot find namespace 'TypeScript'.
@@ -153,8 +153,8 @@ parserharness.ts(1340,38): error TS2503: Cannot find namespace 'TypeScript'.
 parserharness.ts(1344,165): error TS2503: Cannot find namespace 'TypeScript'.
 parserharness.ts(1345,26): error TS2503: Cannot find namespace 'TypeScript'.
 parserharness.ts(1385,17): error TS2322: Type 'null' is not assignable to type 'CompilationContext'.
-parserharness.ts(1387,21): error TS7034: Variable 'addedFiles' implicitly has type 'any[]' in some locations where its type cannot be determined.
-parserharness.ts(1397,21): error TS7005: Variable 'addedFiles' implicitly has an 'any[]' type.
+parserharness.ts(1387,21): error TS7034: Variable 'addedFiles' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
+parserharness.ts(1397,21): error TS7005: Variable 'addedFiles' implicitly has an 'Array<any>' type.
 parserharness.ts(1426,25): error TS2503: Cannot find namespace 'TypeScript'.
 parserharness.ts(1430,9): error TS1128: Declaration or statement expected.
 parserharness.ts(1430,17): error TS2304: Cannot find name 'optionRegex'.
@@ -1642,13 +1642,13 @@ parserharness.ts(2067,62): error TS18048: 'comparison' is possibly 'undefined'.
 !!! error TS2503: Cannot find namespace 'TypeScript'.
                     var lines = [];
                         ~~~~~
-!!! error TS7034: Variable 'lines' implicitly has type 'any[]' in some locations where its type cannot be determined.
+!!! error TS7034: Variable 'lines' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
                     fileResults.forEach(v => lines = lines.concat(v.file.lines));
                                                      ~~~~~
-!!! error TS7005: Variable 'lines' implicitly has an 'any[]' type.
+!!! error TS7005: Variable 'lines' implicitly has an 'Array<any>' type.
                     this.code = lines.join("\n")
                                 ~~~~~
-!!! error TS7005: Variable 'lines' implicitly has an 'any[]' type.
+!!! error TS7005: Variable 'lines' implicitly has an 'Array<any>' type.
     
                     this.errors = [];
     
@@ -1901,7 +1901,7 @@ parserharness.ts(2067,62): error TS18048: 'comparison' is possibly 'undefined'.
                 } else {
                     var addedFiles = [];
                         ~~~~~~~~~~
-!!! error TS7034: Variable 'addedFiles' implicitly has type 'any[]' in some locations where its type cannot be determined.
+!!! error TS7034: Variable 'addedFiles' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
                     var precompile = () => {
                         // REVIEW: if any dependency has a triple slash reference then does postCompile potentially have to do a recreate since we can't update references with updateUnit?
                         // easy enough to do if so, prefer to avoid the recreate cost until it proves to be an issue
@@ -1913,7 +1913,7 @@ parserharness.ts(2067,62): error TS18048: 'comparison' is possibly 'undefined'.
                     var postcompile = () => {
                         addedFiles.forEach(file => {
                         ~~~~~~~~~~
-!!! error TS7005: Variable 'addedFiles' implicitly has an 'any[]' type.
+!!! error TS7005: Variable 'addedFiles' implicitly has an 'Array<any>' type.
                             updateUnit('', file);
                         });
                     };

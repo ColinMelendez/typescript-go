@@ -1,0 +1,16 @@
+--- old.typeArgumentsWithStringLiteralTypes01.types
++++ new.typeArgumentsWithStringLiteralTypes01.types
+@@= skipped -43, +43 lines =@@
+
+ function fun3<T>(...args: T[]): T {
+ >fun3 : <T>(...args: T[]) => T
+->args : T[]
++>args : Array<T>
+
+     return args[+randBool()];
+ >args[+randBool()] : T
+->args : T[]
++>args : Array<T>
+ >+randBool() : number
+ >randBool() : boolean
+ >randBool : () => boolean

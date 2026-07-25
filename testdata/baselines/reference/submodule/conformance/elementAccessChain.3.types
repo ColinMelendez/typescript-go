@@ -110,7 +110,7 @@ for (obj?.["a"] of []);
 >obj?.["a"] : any
 >obj : any
 >"a" : "a"
->[] : never[]
+>[] : Array<never>
 
 for (obj?.a["b"] of []);
 >obj?.a["b"] : any
@@ -118,7 +118,7 @@ for (obj?.a["b"] of []);
 >obj : any
 >a : any
 >"b" : "b"
->[] : never[]
+>[] : Array<never>
 
 ({ a: obj?.["a"] } = { a: 1 });
 >({ a: obj?.["a"] } = { a: 1 }) : { a: number; }
@@ -171,22 +171,22 @@ for (obj?.a["b"] of []);
 >1 : 1
 
 [...obj?.["a"]] = [];
->[...obj?.["a"]] = [] : never[]
->[...obj?.["a"]] : any[]
+>[...obj?.["a"]] = [] : Array<never>
+>[...obj?.["a"]] : Array<any>
 >...obj?.["a"] : any
 >obj?.["a"] : any
 >obj : any
 >"a" : "a"
->[] : never[]
+>[] : Array<never>
 
 [...obj?.a["b"]] = [];
->[...obj?.a["b"]] = [] : never[]
->[...obj?.a["b"]] : any[]
+>[...obj?.a["b"]] = [] : Array<never>
+>[...obj?.a["b"]] : Array<any>
 >...obj?.a["b"] : any
 >obj?.a["b"] : any
 >obj?.a : any
 >obj : any
 >a : any
 >"b" : "b"
->[] : never[]
+>[] : Array<never>
 

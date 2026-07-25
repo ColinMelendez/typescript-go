@@ -1,0 +1,49 @@
+--- old.decrementOperatorWithAnyOtherType.types
++++ new.decrementOperatorWithAnyOtherType.types
+@@= skipped -9, +9 lines =@@
+ >ANY1 : any
+
+ var ANY2: any[] = ["", ""];
+->ANY2 : any[]
+->["", ""] : string[]
++>ANY2 : Array<any>
++>["", ""] : Array<string>
+ >"" : ""
+ >"" : ""
+
+@@= skipped -55, +55 lines =@@
+ >ResultIsNumber5 : number
+ >--ANY2[0] : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsNumber6 = --obj.x;
+@@= skipped -35, +35 lines =@@
+ >ResultIsNumber9 : number
+ >ANY2[0]-- : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsNumber10 = obj.x--;
+@@= skipped -43, +43 lines =@@
+ --ANY2[0];
+ >--ANY2[0] : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ --ANY, --ANY1;
+@@= skipped -33, +33 lines =@@
+ ANY2[0]--;
+ >ANY2[0]-- : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ ANY--, ANY1--;

@@ -4,7 +4,7 @@
 function declare(x: any, ...ys: any[]) {
 >declare : (x: any, ...ys: any[]) => void
 >x : any
->ys : any[]
+>ys : Array<any>
 }
 
 declare `Hello ${0} world!`;

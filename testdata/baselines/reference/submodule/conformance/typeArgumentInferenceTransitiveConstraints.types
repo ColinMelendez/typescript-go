@@ -2,22 +2,22 @@
 
 === typeArgumentInferenceTransitiveConstraints.ts ===
 function fn<A extends Date, B extends A, C extends B>(a: A, b: B, c: C) {
->fn : <A extends Date, B extends A, C extends B>(a: A, b: B, c: C) => A[]
+>fn : <A extends Date, B extends A, C extends B>(a: A, b: B, c: C) => Array<A>
 >a : A
 >b : B
 >c : C
 
     return [a, b, c];
->[a, b, c] : A[]
+>[a, b, c] : Array<A>
 >a : A
 >b : B
 >c : C
 }
 
 var d = fn(new Date(), new Date(), new Date());
->d : Date[]
->fn(new Date(), new Date(), new Date()) : Date[]
->fn : <A extends Date, B extends A, C extends B>(a: A, b: B, c: C) => A[]
+>d : Array<Date>
+>fn(new Date(), new Date(), new Date()) : Array<Date>
+>fn : <A extends Date, B extends A, C extends B>(a: A, b: B, c: C) => Array<A>
 >new Date() : Date
 >Date : DateConstructor
 >new Date() : Date
@@ -26,5 +26,5 @@ var d = fn(new Date(), new Date(), new Date());
 >Date : DateConstructor
 
 var d: Date[]; // Should be OK (d should be Date[])
->d : Date[]
+>d : Array<Date>
 

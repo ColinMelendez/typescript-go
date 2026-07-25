@@ -63,28 +63,28 @@ const item3 = satisfies<Item>()({ value: null });
 >value : null
 
 const values2: Array<"1" | "2" | null> = ["1", "2", null];
->values2 : ("1" | "2" | null)[]
->["1", "2", null] : ("1" | "2" | null)[]
+>values2 : Array<"1" | "2" | null>
+>["1", "2", null] : Array<"1" | "2" | null>
 >"1" : "1"
 >"2" : "2"
 
 const filteredValues2 = values2.filter(isNotNull);
->filteredValues2 : ("1" | "2")[]
->values2.filter(isNotNull) : ("1" | "2")[]
->values2.filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => unknown, thisArg?: any): ("1" | "2" | null)[]; }
->values2 : ("1" | "2" | null)[]
->filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => unknown, thisArg?: any): ("1" | "2" | null)[]; }
+>filteredValues2 : Array<"1" | "2">
+>values2.filter(isNotNull) : Array<"1" | "2">
+>values2.filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => unknown, thisArg?: any): Array<"1" | "2" | null>; }
+>values2 : Array<"1" | "2" | null>
+>filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => unknown, thisArg?: any): Array<"1" | "2" | null>; }
 >isNotNull : <T>(value: T | null) => value is T
 
 const values1 = [item1, item2, item3].map(item => item.value);
->values1 : ("1" | "2" | null)[]
->[item1, item2, item3].map(item => item.value) : ("1" | "2" | null)[]
->[item1, item2, item3].map : <U>(callbackfn: (value: { value: "1"; } | { value: "2"; } | { value: null; }, index: number, array: ({ value: "1"; } | { value: "2"; } | { value: null; })[]) => U, thisArg?: any) => U[]
->[item1, item2, item3] : ({ value: "1"; } | { value: "2"; } | { value: null; })[]
+>values1 : Array<"1" | "2" | null>
+>[item1, item2, item3].map(item => item.value) : Array<"1" | "2" | null>
+>[item1, item2, item3].map : <U>(callbackfn: (value: { value: "1"; } | { value: "2"; } | { value: null; }, index: number, array: Array<{ value: "1"; } | { value: "2"; } | { value: null; }>) => U, thisArg?: any) => Array<U>
+>[item1, item2, item3] : Array<{ value: "1"; } | { value: "2"; } | { value: null; }>
 >item1 : { value: "1"; }
 >item2 : { value: "2"; }
 >item3 : { value: null; }
->map : <U>(callbackfn: (value: { value: "1"; } | { value: "2"; } | { value: null; }, index: number, array: ({ value: "1"; } | { value: "2"; } | { value: null; })[]) => U, thisArg?: any) => U[]
+>map : <U>(callbackfn: (value: { value: "1"; } | { value: "2"; } | { value: null; }, index: number, array: Array<{ value: "1"; } | { value: "2"; } | { value: null; }>) => U, thisArg?: any) => Array<U>
 >item => item.value : (item: { value: "1"; } | { value: "2"; } | { value: null; }) => "1" | "2" | null
 >item : { value: "1"; } | { value: "2"; } | { value: null; }
 >item.value : "1" | "2" | null
@@ -92,10 +92,10 @@ const values1 = [item1, item2, item3].map(item => item.value);
 >value : "1" | "2" | null
 
 const filteredValues1 = values1.filter(isNotNull);
->filteredValues1 : ("1" | "2")[]
->values1.filter(isNotNull) : ("1" | "2")[]
->values1.filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => unknown, thisArg?: any): ("1" | "2" | null)[]; }
->values1 : ("1" | "2" | null)[]
->filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => value is S, thisArg?: any): S[]; (predicate: (value: "1" | "2" | null, index: number, array: ("1" | "2" | null)[]) => unknown, thisArg?: any): ("1" | "2" | null)[]; }
+>filteredValues1 : Array<"1" | "2">
+>values1.filter(isNotNull) : Array<"1" | "2">
+>values1.filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => unknown, thisArg?: any): Array<"1" | "2" | null>; }
+>values1 : Array<"1" | "2" | null>
+>filter : { <S extends "1" | "2" | null>(predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => value is S, thisArg?: any): Array<S>; (predicate: (value: "1" | "2" | null, index: number, array: Array<"1" | "2" | null>) => unknown, thisArg?: any): Array<"1" | "2" | null>; }
 >isNotNull : <T>(value: T | null) => value is T
 

@@ -5,7 +5,7 @@ class Base {
 >Base : Base
 
     constructor(...a: string[]) { }
->a : string[]
+>a : Array<string>
 }
 
 class Derived extends Base { }

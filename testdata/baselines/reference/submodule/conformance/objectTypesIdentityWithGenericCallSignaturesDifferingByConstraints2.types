@@ -83,11 +83,11 @@ function foo1(x: any) { }
 
 function foo1b(x: B<Array<number>, Array<number>>);
 >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo1b(x: B<Array<number>, Array<number>>); // error
 >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo1b(x: any) { }
 >foo1b : { (x: B<Array<number>, Array<number>>): any; (x: B<Array<number>, Array<number>>): any; }
@@ -151,7 +151,7 @@ function foo5(x: A);
 
 function foo5(x: B<Array<number>, Array<number>>); // ok
 >foo5 : { (x: A): any; (x: B<Array<number>, Array<number>>): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo5(x: any) { }
 >foo5 : { (x: A): any; (x: B<Array<number>, Array<number>>): any; }
@@ -220,7 +220,7 @@ function foo7(x: any) { }
 
 function foo8(x: B<Array<number>, Array<number>>);
 >foo8 : { (x: B<Array<number>, Array<number>>): any; (x: I<Number, Number>): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo8(x: I<Number, Number>); // ok
 >foo8 : { (x: B<Array<number>, Array<number>>): any; (x: I<Number, Number>): any; }
@@ -232,7 +232,7 @@ function foo8(x: any) { }
 
 function foo9(x: B<Array<number>, Array<number>>);
 >foo9 : { (x: B<Array<number>, Array<number>>): any; (x: C<String, String>): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo9(x: C<String, String>); // ok
 >foo9 : { (x: B<Array<number>, Array<number>>): any; (x: C<String, String>): any; }
@@ -244,7 +244,7 @@ function foo9(x: any) { }
 
 function foo10(x: B<Array<number>, Array<number>>);
 >foo10 : { (x: B<Array<number>, Array<number>>): any; (x: typeof a): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo10(x: typeof a); // ok
 >foo10 : { (x: B<Array<number>, Array<number>>): any; (x: typeof a): any; }
@@ -257,7 +257,7 @@ function foo10(x: any) { }
 
 function foo11(x: B<Array<number>, Array<number>>);
 >foo11 : { (x: B<Array<number>, Array<number>>): any; (x: typeof b): any; }
->x : B<number[], number[]>
+>x : B<Array<number>, Array<number>>
 
 function foo11(x: typeof b); // ok
 >foo11 : { (x: B<Array<number>, Array<number>>): any; (x: typeof b): any; }

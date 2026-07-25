@@ -7,18 +7,18 @@ type S = `${number}`;
 >S : `${number}`
 
 const b = {
->b : { c: void[]; }
->{  c: (["4"] as S[]).map(function (s) {    const a = { ...s, y: 6 };  }),} : { c: void[]; }
+>b : { c: Array<void>; }
+>{  c: (["4"] as S[]).map(function (s) {    const a = { ...s, y: 6 };  }),} : { c: Array<void>; }
 
   c: (["4"] as S[]).map(function (s) {
->c : void[]
->(["4"] as S[]).map(function (s) {    const a = { ...s, y: 6 };  }) : void[]
->(["4"] as S[]).map : <U>(callbackfn: (value: `${number}`, index: number, array: `${number}`[]) => U, thisArg?: any) => U[]
->(["4"] as S[]) : `${number}`[]
->["4"] as S[] : `${number}`[]
->["4"] : "4"[]
+>c : Array<void>
+>(["4"] as S[]).map(function (s) {    const a = { ...s, y: 6 };  }) : Array<void>
+>(["4"] as S[]).map : <U>(callbackfn: (value: `${number}`, index: number, array: Array<`${number}`>) => U, thisArg?: any) => Array<U>
+>(["4"] as S[]) : Array<`${number}`>
+>["4"] as S[] : Array<`${number}`>
+>["4"] : Array<"4">
 >"4" : "4"
->map : <U>(callbackfn: (value: `${number}`, index: number, array: `${number}`[]) => U, thisArg?: any) => U[]
+>map : <U>(callbackfn: (value: `${number}`, index: number, array: Array<`${number}`>) => U, thisArg?: any) => Array<U>
 >function (s) {    const a = { ...s, y: 6 };  } : (s: `${number}`) => void
 >s : `${number}`
 

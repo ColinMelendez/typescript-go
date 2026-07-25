@@ -1,0 +1,61 @@
+--- old.underscoreMapFirst.types
++++ new.underscoreMapFirst.types
+@@= skipped -16, +16 lines =@@
+         (value: T, index: number, list: T[]): TResult;
+ >value : T
+ >index : number
+->list : T[]
++>list : Array<T>
+     }
+
+     interface Dictionary<T> extends Collection<T> {
+@@= skipped -42, +42 lines =@@
+
+ interface IData {
+     series: ISeries[];
+->series : ISeries[]
++>series : Array<ISeries>
+ }
+
+ interface ISeries {
+     items: any[];
+->items : any[]
++>items : Array<any>
+
+     key: string;
+ >key : string
+@@= skipped -19, +19 lines =@@
+ >getDataSeries : () => ISeries[]
+
+         var data: IData[] = this.model.get("data");
+->data : IData[]
++>data : Array<IData>
+ >this.model.get("data") : any
+ >this.model.get : any
+ >this.model : any
+@@= skipped -10, +10 lines =@@
+ >"data" : "data"
+
+         var allSeries: ISeries[][] = _.pluck(data, "series");
+->allSeries : ISeries[][]
+->_.pluck(data, "series") : any[]
++>allSeries : Array<Array<ISeries>>
++>_.pluck(data, "series") : Array<any>
+ >_.pluck : <T extends {}>(list: _.Collection<T>, propertyName: string) => any[]
+ >_ : typeof _
+ >pluck : <T extends {}>(list: _.Collection<T>, propertyName: string) => any[]
+->data : IData[]
++>data : Array<IData>
+ >"series" : "series"
+
+         return _.map(allSeries, _.first);
+->_.map(allSeries, _.first) : ISeries[]
++>_.map(allSeries, _.first) : Array<ISeries>
+ >_.map : <T, TResult>(list: _.List<T>, iterator: _.ListIterator<T, TResult>, context?: any) => TResult[]
+ >_ : typeof _
+ >map : <T, TResult>(list: _.List<T>, iterator: _.ListIterator<T, TResult>, context?: any) => TResult[]
+->allSeries : ISeries[][]
++>allSeries : Array<Array<ISeries>>
+ >_.first : <T>(array: _.List<T>) => T
+ >_ : typeof _
+ >first : <T>(array: _.List<T>) => T

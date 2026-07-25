@@ -6,7 +6,7 @@ function f1 () {
 
     for (const elem in ["a", "b", "c"]) {
 >elem : string
->["a", "b", "c"] : string[]
+>["a", "b", "c"] : Array<string>
 >"a" : "a"
 >"b" : "b"
 >"c" : "c"

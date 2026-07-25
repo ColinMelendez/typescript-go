@@ -1,0 +1,270 @@
+--- old.arrayAssignmentTest1.types
++++ new.arrayAssignmentTest1.types
+@@= skipped -77, +77 lines =@@
+ >C1 : typeof C1
+
+ var arr_any: any[] = [];
+->arr_any : any[]
+->[] : never[]
++>arr_any : Array<any>
++>[] : Array<never>
+
+ var arr_i1: I1[] = [];
+->arr_i1 : I1[]
+->[] : never[]
++>arr_i1 : Array<I1>
++>[] : Array<never>
+
+ var arr_c1: C1[] = [];
+->arr_c1 : C1[]
+->[] : never[]
++>arr_c1 : Array<C1>
++>[] : Array<never>
+
+ var arr_c2: C2[] = [];
+->arr_c2 : C2[]
+->[] : never[]
++>arr_c2 : Array<C2>
++>[] : Array<never>
+
+ var arr_i1_2: I1[] = [];
+->arr_i1_2 : I1[]
+->[] : never[]
++>arr_i1_2 : Array<I1>
++>[] : Array<never>
+
+ var arr_c1_2: C1[] = [];
+->arr_c1_2 : C1[]
+->[] : never[]
++>arr_c1_2 : Array<C1>
++>[] : Array<never>
+
+ var arr_c2_2: C2[] = [];
+->arr_c2_2 : C2[]
+->[] : never[]
++>arr_c2_2 : Array<C2>
++>[] : Array<never>
+
+ var arr_c3: C3[] = [];
+->arr_c3 : C3[]
+->[] : never[]
++>arr_c3 : Array<C3>
++>[] : Array<never>
+
+ var i1_error: I1 = []; // should be an error - is
+ >i1_error : I1
+->[] : never[]
++>[] : Array<never>
+
+ var c1_error: C1 = []; // should be an error - is
+ >c1_error : C1
+->[] : never[]
++>[] : Array<never>
+
+ var c2_error: C2 = []; // should be an error - is
+ >c2_error : C2
+->[] : never[]
++>[] : Array<never>
+
+ var c3_error: C3 = []; // should be an error - is
+ >c3_error : C3
+->[] : never[]
++>[] : Array<never>
+
+
+ arr_any = arr_i1; // should be ok - is
+->arr_any = arr_i1 : I1[]
+->arr_any : any[]
+->arr_i1 : I1[]
++>arr_any = arr_i1 : Array<I1>
++>arr_any : Array<any>
++>arr_i1 : Array<I1>
+
+ arr_any = arr_c1; // should be ok - is
+->arr_any = arr_c1 : C1[]
+->arr_any : any[]
+->arr_c1 : C1[]
++>arr_any = arr_c1 : Array<C1>
++>arr_any : Array<any>
++>arr_c1 : Array<C1>
+
+ arr_any = arr_c2; // should be ok - is
+->arr_any = arr_c2 : C2[]
+->arr_any : any[]
+->arr_c2 : C2[]
++>arr_any = arr_c2 : Array<C2>
++>arr_any : Array<any>
++>arr_c2 : Array<C2>
+
+ arr_any = arr_c3; // should be ok - is
+->arr_any = arr_c3 : C3[]
+->arr_any : any[]
+->arr_c3 : C3[]
++>arr_any = arr_c3 : Array<C3>
++>arr_any : Array<any>
++>arr_c3 : Array<C3>
+
+ arr_i1 = arr_i1; // should be ok - subtype relationship - is
+->arr_i1 = arr_i1 : I1[]
+->arr_i1 : I1[]
+->arr_i1 : I1[]
++>arr_i1 = arr_i1 : Array<I1>
++>arr_i1 : Array<I1>
++>arr_i1 : Array<I1>
+
+ arr_i1 = arr_c1; // should be ok - subtype relationship - is
+->arr_i1 = arr_c1 : C1[]
+->arr_i1 : I1[]
+->arr_c1 : C1[]
++>arr_i1 = arr_c1 : Array<C1>
++>arr_i1 : Array<I1>
++>arr_c1 : Array<C1>
+
+ arr_i1 = arr_c2; // should be ok - subtype relationship - is
+->arr_i1 = arr_c2 : C2[]
+->arr_i1 : I1[]
+->arr_c2 : C2[]
++>arr_i1 = arr_c2 : Array<C2>
++>arr_i1 : Array<I1>
++>arr_c2 : Array<C2>
+
+ arr_i1 = arr_c3; // should be an error - is
+->arr_i1 = arr_c3 : C3[]
+->arr_i1 : I1[]
+->arr_c3 : C3[]
++>arr_i1 = arr_c3 : Array<C3>
++>arr_i1 : Array<I1>
++>arr_c3 : Array<C3>
+
+ arr_c1 = arr_c1; // should be ok - subtype relationship - is
+->arr_c1 = arr_c1 : C1[]
+->arr_c1 : C1[]
+->arr_c1 : C1[]
++>arr_c1 = arr_c1 : Array<C1>
++>arr_c1 : Array<C1>
++>arr_c1 : Array<C1>
+
+ arr_c1 = arr_c2; // should be ok - subtype relationship - is
+->arr_c1 = arr_c2 : C2[]
+->arr_c1 : C1[]
+->arr_c2 : C2[]
++>arr_c1 = arr_c2 : Array<C2>
++>arr_c1 : Array<C1>
++>arr_c2 : Array<C2>
+
+ arr_c1 = arr_i1; // should be an error - is
+->arr_c1 = arr_i1 : I1[]
+->arr_c1 : C1[]
+->arr_i1 : I1[]
++>arr_c1 = arr_i1 : Array<I1>
++>arr_c1 : Array<C1>
++>arr_i1 : Array<I1>
+
+ arr_c1 = arr_c3; // should be an error - is
+->arr_c1 = arr_c3 : C3[]
+->arr_c1 : C1[]
+->arr_c3 : C3[]
++>arr_c1 = arr_c3 : Array<C3>
++>arr_c1 : Array<C1>
++>arr_c3 : Array<C3>
+
+ arr_c2 = arr_c2; // should be ok - subtype relationship - is
+->arr_c2 = arr_c2 : C2[]
+->arr_c2 : C2[]
+->arr_c2 : C2[]
++>arr_c2 = arr_c2 : Array<C2>
++>arr_c2 : Array<C2>
++>arr_c2 : Array<C2>
+
+ arr_c2 = arr_c1; // should be an error - subtype relationship - is
+->arr_c2 = arr_c1 : C1[]
+->arr_c2 : C2[]
+->arr_c1 : C1[]
++>arr_c2 = arr_c1 : Array<C1>
++>arr_c2 : Array<C2>
++>arr_c1 : Array<C1>
+
+ arr_c2 = arr_i1; // should be an error - subtype relationship - is
+->arr_c2 = arr_i1 : I1[]
+->arr_c2 : C2[]
+->arr_i1 : I1[]
++>arr_c2 = arr_i1 : Array<I1>
++>arr_c2 : Array<C2>
++>arr_i1 : Array<I1>
+
+ arr_c2 = arr_c3; // should be an error - is
+->arr_c2 = arr_c3 : C3[]
+->arr_c2 : C2[]
+->arr_c3 : C3[]
++>arr_c2 = arr_c3 : Array<C3>
++>arr_c2 : Array<C2>
++>arr_c3 : Array<C3>
+
+ // "clean up bug" occurs at this point
+ // if you move these three expressions to another file, they raise an error
+ // something to do with state from the above propagating forward?
+ arr_c3 = arr_c2_2; // should be an error - is
+->arr_c3 = arr_c2_2 : C2[]
+->arr_c3 : C3[]
+->arr_c2_2 : C2[]
++>arr_c3 = arr_c2_2 : Array<C2>
++>arr_c3 : Array<C3>
++>arr_c2_2 : Array<C2>
+
+ arr_c3 = arr_c1_2; // should be an error - is
+->arr_c3 = arr_c1_2 : C1[]
+->arr_c3 : C3[]
+->arr_c1_2 : C1[]
++>arr_c3 = arr_c1_2 : Array<C1>
++>arr_c3 : Array<C3>
++>arr_c1_2 : Array<C1>
+
+ arr_c3 = arr_i1_2; // should be an error - is
+->arr_c3 = arr_i1_2 : I1[]
+->arr_c3 : C3[]
+->arr_i1_2 : I1[]
++>arr_c3 = arr_i1_2 : Array<I1>
++>arr_c3 : Array<C3>
++>arr_i1_2 : Array<I1>
+
+ arr_any = f1; // should be an error - is
+ >arr_any = f1 : () => C1
+->arr_any : any[]
++>arr_any : Array<any>
+ >f1 : () => C1
+
+ arr_any = o1; // should be an error - is
+ >arr_any = o1 : { one: number; }
+->arr_any : any[]
++>arr_any : Array<any>
+ >o1 : { one: number; }
+
+ arr_any = a1; // should be ok - is
+ >arr_any = a1 : any
+->arr_any : any[]
++>arr_any : Array<any>
+ >a1 : any
+
+ arr_any = c1; // should be an error - is
+ >arr_any = c1 : C1
+->arr_any : any[]
++>arr_any : Array<any>
+ >c1 : C1
+
+ arr_any = c2; // should be an error - is
+ >arr_any = c2 : C2
+->arr_any : any[]
++>arr_any : Array<any>
+ >c2 : C2
+
+ arr_any = c3; // should be an error - is
+ >arr_any = c3 : C3
+->arr_any : any[]
++>arr_any : Array<any>
+ >c3 : C3
+
+ arr_any = i1; // should be an error - is
+ >arr_any = i1 : I1
+->arr_any : any[]
++>arr_any : Array<any>
+ >i1 : I1

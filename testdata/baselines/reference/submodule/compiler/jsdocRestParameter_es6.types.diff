@@ -1,0 +1,13 @@
+--- old.jsdocRestParameter_es6.types
++++ new.jsdocRestParameter_es6.types
+@@= skipped -3, +3 lines =@@
+ /** @param {...number} a */
+ function f(...a) {
+ >f : (...a: number[]) => void
+->a : number[]
++>a : Array<number>
+
+     a; // number[]
+->a : number[]
++>a : Array<number>
+ }

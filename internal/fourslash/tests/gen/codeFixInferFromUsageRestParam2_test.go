@@ -25,5 +25,5 @@ f(3, false, "s2");
 f(4, "s1", "s2", false, "s4");`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyRangeAfterCodeFix(t, `...rest: (string | boolean)[]`, false, 0, 0)
+	f.VerifyRangeAfterCodeFix(t, `...rest: Array<string | boolean>`, false, 0, 0)
 }

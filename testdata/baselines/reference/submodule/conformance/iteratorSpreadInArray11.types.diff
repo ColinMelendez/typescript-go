@@ -1,0 +1,12 @@
+--- old.iteratorSpreadInArray11.types
++++ new.iteratorSpreadInArray11.types
+@@= skipped -4, +4 lines =@@
+ >iter : Iterable<number>
+
+ var array = [...iter];
+->array : number[]
+->[...iter] : number[]
++>array : Array<number>
++>[...iter] : Array<number>
+ >...iter : number
+ >iter : Iterable<number>

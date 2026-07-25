@@ -1,0 +1,24 @@
+--- old.typeInferenceWithTupleType.errors.txt
++++ new.typeInferenceWithTupleType.errors.txt
+@@= skipped -3, +3 lines =@@
+   'U' could be instantiated with an arbitrary type which could be unrelated to 'undefined'.
+ typeInferenceWithTupleType.ts(16,9): error TS2454: Variable 'zipResult' is used before being assigned.
+ typeInferenceWithTupleType.ts(18,12): error TS2454: Variable 'zipResult' is used before being assigned.
+-typeInferenceWithTupleType.ts(31,15): error TS2352: Conversion of type 'undefined' to type '["a"[], "b"[]]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+-typeInferenceWithTupleType.ts(32,15): error TS2352: Conversion of type 'undefined' to type '["a"[], "b"[]]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
++typeInferenceWithTupleType.ts(31,15): error TS2352: Conversion of type 'undefined' to type '[Array<"a">, Array<"b">]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
++typeInferenceWithTupleType.ts(32,15): error TS2352: Conversion of type 'undefined' to type '[Array<"a">, Array<"b">]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+
+
+ ==== typeInferenceWithTupleType.ts (6 errors) ====
+@@= skipped -47, +47 lines =@@
+     let expected: "a";
+     expected = f1(undefined as ["a"[], "b"[]]);
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2352: Conversion of type 'undefined' to type '["a"[], "b"[]]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
++!!! error TS2352: Conversion of type 'undefined' to type '[Array<"a">, Array<"b">]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+     expected = f2(undefined as ["a"[], "b"[]]);
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2352: Conversion of type 'undefined' to type '["a"[], "b"[]]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
++!!! error TS2352: Conversion of type 'undefined' to type '[Array<"a">, Array<"b">]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+     

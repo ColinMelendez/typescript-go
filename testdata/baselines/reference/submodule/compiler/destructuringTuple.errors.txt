@@ -1,7 +1,7 @@
 destructuringTuple.ts(11,7): error TS2488: Type 'number' must have a '[Symbol.iterator]()' method that returns an iterator.
 destructuringTuple.ts(11,48): error TS2769: No overload matches this call.
   The last overload gave the following error.
-    Type 'never[]' is not assignable to type '[]'.
+    Type 'Array<never>' is not assignable to type '[]'.
       Target allows only 0 element(s) but source may have more.
 destructuringTuple.ts(11,60): error TS2769: No overload matches this call.
   The last overload gave the following error.
@@ -25,7 +25,7 @@ destructuringTuple.ts(11,60): error TS2769: No overload matches this call.
                                                    ~~~~~~~~~~~~~~~
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   The last overload gave the following error.
-!!! error TS2769:     Type 'never[]' is not assignable to type '[]'.
+!!! error TS2769:     Type 'Array<never>' is not assignable to type '[]'.
 !!! error TS2769:       Target allows only 0 element(s) but source may have more.
 !!! related TS6502 lib.es5.d.ts:--:--: The expected type comes from the return type of this signature.
 !!! related TS2771 lib.es5.d.ts:--:--: The last overload is declared here.

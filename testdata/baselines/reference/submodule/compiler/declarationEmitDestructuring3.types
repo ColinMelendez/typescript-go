@@ -2,10 +2,10 @@
 
 === declarationEmitDestructuring3.ts ===
 function bar([x, z, ...w]) { }
->bar : ([x, z, ...w]: [any, any, ...any[]]) => void
+>bar : ([x, z, ...w]: [any, any, ...Array<any>]) => void
 >x : any
 >z : any
->w : any[]
+>w : Array<any>
 
 function foo([x, ...y] = [1, "string", true]) { }
 >foo : ([x, ...y]?: [number, string, boolean]) => void

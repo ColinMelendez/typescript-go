@@ -3,15 +3,15 @@
 === contextualSignatureInstantiation3.ts ===
 function map<T, U>(items: T[], f: (x: T) => U): U[]{
 >map : <T, U>(items: T[], f: (x: T) => U) => U[]
->items : T[]
+>items : Array<T>
 >f : (x: T) => U
 >x : T
 
     return items.map(f);
->items.map(f) : U[]
->items.map : <U_1>(callbackfn: (value: T, index: number, array: T[]) => U_1, thisArg?: any) => U_1[]
->items : T[]
->map : <U_1>(callbackfn: (value: T, index: number, array: T[]) => U_1, thisArg?: any) => U_1[]
+>items.map(f) : Array<U>
+>items.map : <U_1>(callbackfn: (value: T, index: number, array: Array<T>) => U_1, thisArg?: any) => Array<U_1>
+>items : Array<T>
+>map : <U_1>(callbackfn: (value: T, index: number, array: Array<T>) => U_1, thisArg?: any) => Array<U_1>
 >f : (x: T) => U
 }
 
@@ -24,55 +24,55 @@ function identity<T>(x: T) {
 }
 
 function singleton<T>(x: T) {
->singleton : <T>(x: T) => T[]
+>singleton : <T>(x: T) => Array<T>
 >x : T
 
     return [x];
->[x] : T[]
+>[x] : Array<T>
 >x : T
 }
 
 var xs = [1, 2, 3];
->xs : number[]
->[1, 2, 3] : number[]
+>xs : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
 
 // Have compiler check that we get the correct types
 var v1: number[];
->v1 : number[]
+>v1 : Array<number>
 
 var v1 = xs.map(identity);      // Error if not number[]
->v1 : number[]
->xs.map(identity) : number[]
->xs.map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
->xs : number[]
->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
+>v1 : Array<number>
+>xs.map(identity) : Array<number>
+>xs.map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+>xs : Array<number>
+>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
 >identity : <T>(x: T) => T
 
 var v1 = map(xs, identity);     // Error if not number[]
->v1 : number[]
->map(xs, identity) : number[]
+>v1 : Array<number>
+>map(xs, identity) : Array<number>
 >map : <T, U>(items: T[], f: (x: T) => U) => U[]
->xs : number[]
+>xs : Array<number>
 >identity : <T>(x: T) => T
 
 var v2: number[][];         
->v2 : number[][]
+>v2 : Array<Array<number>>
 
 var v2 = xs.map(singleton);     // Error if not number[][]
->v2 : number[][]
->xs.map(singleton) : number[][]
->xs.map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
->xs : number[]
->map : <U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any) => U[]
->singleton : <T>(x: T) => T[]
+>v2 : Array<Array<number>>
+>xs.map(singleton) : Array<Array<number>>
+>xs.map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+>xs : Array<number>
+>map : <U>(callbackfn: (value: number, index: number, array: Array<number>) => U, thisArg?: any) => Array<U>
+>singleton : <T>(x: T) => Array<T>
 
 var v2 = map(xs, singleton);    // Error if not number[][]
->v2 : number[][]
->map(xs, singleton) : number[][]
+>v2 : Array<Array<number>>
+>map(xs, singleton) : Array<Array<number>>
 >map : <T, U>(items: T[], f: (x: T) => U) => U[]
->xs : number[]
->singleton : <T>(x: T) => T[]
+>xs : Array<number>
+>singleton : <T>(x: T) => Array<T>
 

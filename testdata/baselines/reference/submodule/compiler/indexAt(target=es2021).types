@@ -4,7 +4,7 @@
 [0].at(0);
 >[0].at(0) : any
 >[0].at : any
->[0] : number[]
+>[0] : Array<number>
 >0 : 0
 >at : any
 >0 : 0

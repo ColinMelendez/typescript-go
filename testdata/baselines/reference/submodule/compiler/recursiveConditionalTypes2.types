@@ -95,7 +95,7 @@ interface _Array<T> {
 
 const z: _Array<DefaultsDeep<{}, {}>> = [];
 >z : _Array<DefaultsDeep<{}, {}>>
->[] : never[]
+>[] : Array<never>
 
 z.find((_) => true);
 >z.find((_) => true) : void

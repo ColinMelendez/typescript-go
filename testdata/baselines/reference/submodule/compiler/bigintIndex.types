@@ -7,8 +7,8 @@ interface BigIntIndex<E> {
 }
 
 const arr: number[] = [1, 2, 3];
->arr : number[]
->[1, 2, 3] : number[]
+>arr : Array<number>
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -16,28 +16,28 @@ const arr: number[] = [1, 2, 3];
 let num: number = arr[1];
 >num : number
 >arr[1] : number
->arr : number[]
+>arr : Array<number>
 >1 : 1
 
 num = arr["1"];
 >num = arr["1"] : number
 >num : number
 >arr["1"] : number
->arr : number[]
+>arr : Array<number>
 >"1" : "1"
 
 num = arr[1n]; // should error
 >num = arr[1n] : any
 >num : number
 >arr[1n] : any
->arr : number[]
+>arr : Array<number>
 >1n : 1n
 
 num = [1, 2, 3][1n]; // should error
 >num = [1, 2, 3][1n] : any
 >num : number
 >[1, 2, 3][1n] : any
->[1, 2, 3] : number[]
+>[1, 2, 3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

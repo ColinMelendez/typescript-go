@@ -8,19 +8,19 @@ namespace A {
 >Outer : Outer
 
         inners: Inner[];
->inners : Inner[]
+>inners : Array<Inner>
     }
     export type Inner = {
 >Inner : Inner
 
         mids: Mid[];
->mids : Mid[]
+>mids : Array<Mid>
     }
     export type Mid = {
 >Mid : Mid
 
         leaves: Leaf[];
->leaves : Leaf[]
+>leaves : Array<Leaf>
     }
     export type Leaf = {
 >Leaf : Leaf
@@ -35,19 +35,19 @@ namespace B {
 >Outer : Outer
 
         inners: Inner[];
->inners : Inner[]
+>inners : Array<Inner>
     }
     export type Inner = {
 >Inner : Inner
 
         mids: Mid[];
->mids : Mid[]
+>mids : Array<Mid>
     }
     export type Mid = {
 >Mid : Mid
 
         leaves: Leaf[];
->leaves : Leaf[]
+>leaves : Array<Leaf>
     }
     export type Leaf = {
 >Leaf : Leaf

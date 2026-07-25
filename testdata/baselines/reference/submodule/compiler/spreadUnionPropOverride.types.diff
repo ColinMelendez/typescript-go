@@ -1,0 +1,26 @@
+--- old.spreadUnionPropOverride.types
++++ new.spreadUnionPropOverride.types
+@@= skipped -13, +13 lines =@@
+ };
+
+ const things: Thing[] = [];
+->things : Thing[]
+->[] : never[]
++>things : Array<Thing>
++>[] : Array<never>
+
+ function find(id: string): undefined | Thing {
+ >find : (id: string) => undefined | Thing
+@@= skipped -9, +9 lines =@@
+
+     return things.find(thing => thing.id === id);
+ >things.find(thing => thing.id === id) : Thing | undefined
+->things.find : { <S extends Thing>(predicate: (value: Thing, index: number, obj: Thing[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: Thing, index: number, obj: Thing[]) => unknown, thisArg?: any): Thing | undefined; }
+->things : Thing[]
+->find : { <S extends Thing>(predicate: (value: Thing, index: number, obj: Thing[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: Thing, index: number, obj: Thing[]) => unknown, thisArg?: any): Thing | undefined; }
++>things.find : { <S extends Thing>(predicate: (value: Thing, index: number, obj: Array<Thing>) => value is S, thisArg?: any): S | undefined; (predicate: (value: Thing, index: number, obj: Array<Thing>) => unknown, thisArg?: any): Thing | undefined; }
++>things : Array<Thing>
++>find : { <S extends Thing>(predicate: (value: Thing, index: number, obj: Array<Thing>) => value is S, thisArg?: any): S | undefined; (predicate: (value: Thing, index: number, obj: Array<Thing>) => unknown, thisArg?: any): Thing | undefined; }
+ >thing => thing.id === id : (thing: Thing) => boolean
+ >thing : Thing
+ >thing.id === id : boolean

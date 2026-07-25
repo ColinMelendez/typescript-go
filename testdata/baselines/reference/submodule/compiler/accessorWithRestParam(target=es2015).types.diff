@@ -1,0 +1,14 @@
+--- old.accessorWithRestParam(target=es2015).types
++++ new.accessorWithRestParam(target=es2015).types
+@@= skipped -5, +5 lines =@@
+
+     set X(...v) { }
+ >X : any
+->v : any[]
++>v : Array<any>
+
+     static set X(...v2) { }
+ >X : any
+->v2 : any[]
++>v2 : Array<any>
+ }

@@ -23,6 +23,7 @@ leading(false, "ok", /*3*/);`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
 	f.GoToMarker(t, "1")
+	// Rest parameter type reuses the source annotation `string[]`.
 	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(allCaps: boolean, ...names: string[]): void", ParameterCount: 2, ParameterName: "allCaps", ParameterSpan: "allCaps: boolean", OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})
 	f.GoToMarker(t, "2")
 	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "leading(allCaps: boolean, ...names: string[]): void", ParameterCount: 2, ParameterName: "names", ParameterSpan: "...names: string[]", OverloadsCount: 1, IsVariadic: true, IsVariadicSet: true})

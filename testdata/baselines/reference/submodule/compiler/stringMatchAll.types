@@ -10,8 +10,8 @@ const matches = "matchAll".matchAll(/\w/g);
 >/\w/g : RegExp
 
 const array = [...matches];
->array : RegExpExecArray[]
->[...matches] : RegExpExecArray[]
+>array : Array<RegExpExecArray>
+>[...matches] : Array<RegExpExecArray>
 >...matches : RegExpExecArray
 >matches : RegExpStringIterator<RegExpExecArray>
 
@@ -19,6 +19,6 @@ const { index, input } = array[0];
 >index : number
 >input : string
 >array[0] : RegExpExecArray
->array : RegExpExecArray[]
+>array : Array<RegExpExecArray>
 >0 : 0
 

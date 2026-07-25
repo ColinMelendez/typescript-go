@@ -22,5 +22,5 @@ function map() {
 
 //// [genericArray0.d.ts]
 declare var x: number[];
-declare var y: number[];
+declare var y: Array<number>;
 declare function map<U>(): void;

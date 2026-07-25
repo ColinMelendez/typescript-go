@@ -34,7 +34,7 @@ declare const foo2: Foo2;
 if (foo2.b/*4*/ar?.b/*5*/az.q/*6*/we) {}`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "(property) A.arr: string[]", "")
+	f.VerifyQuickInfoAt(t, "1", "(property) A.arr: Array<string>", "")
 	f.VerifyQuickInfoAt(t, "2", "(property) Foo.bar: {\n    baz: string;\n}", "")
 	f.VerifyQuickInfoAt(t, "3", "(property) baz: string | undefined", "")
 	f.VerifyQuickInfoAt(t, "4", "(property) Foo2.bar?: {\n    baz: {\n        qwe: string;\n    };\n} | undefined", "")

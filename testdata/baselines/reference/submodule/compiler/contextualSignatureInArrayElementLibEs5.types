@@ -7,7 +7,7 @@ declare function test(
 >test : (arg: Record<string, (arg: string) => void> | Array<(arg: number) => void>) => void
 
   arg: Record<string, (arg: string) => void> | Array<(arg: number) => void>
->arg : ((arg: number) => void)[] | Record<string, (arg: string) => void>
+>arg : Array<(arg: number) => void> | Record<string, (arg: string) => void>
 >arg : string
 >arg : number
 
@@ -16,7 +16,7 @@ declare function test(
 test([
 >test([  (arg) => {    arg; // number  },]) : void
 >test : (arg: Record<string, (arg: string) => void> | Array<(arg: number) => void>) => void
->[  (arg) => {    arg; // number  },] : ((arg: any) => void)[]
+>[  (arg) => {    arg; // number  },] : Array<(arg: any) => void>
 
   (arg) => {
 >(arg) => {    arg; // number  } : (arg: any) => void

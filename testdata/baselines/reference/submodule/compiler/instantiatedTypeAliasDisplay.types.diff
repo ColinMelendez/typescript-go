@@ -1,0 +1,13 @@
+--- old.instantiatedTypeAliasDisplay.types
++++ new.instantiatedTypeAliasDisplay.types
+@@= skipped -29, +29 lines =@@
+ >f1 : <A>() => Z<A, number>
+
+ const x2 = f2({}, {}, {}, {});  // Z<{}, string[]>
+->x2 : Z<{}, string[]>
+->f2({}, {}, {}, {}) : Z<{}, string[]>
++>x2 : Z<{}, Array<string>>
++>f2({}, {}, {}, {}) : Z<{}, Array<string>>
+ >f2 : <A, B, C, D, E>(a: A, b: B, c: C, d: D) => Z<A, string[]>
+ >{} : {}
+ >{} : {}

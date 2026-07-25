@@ -5,11 +5,11 @@ import DefaultSpinner from './QSpinner'
 >DefaultSpinner : any
 
 export default {
->{  mixins: [DefaultSpinner],  name: 'QSpinner'} : { mixins: any[]; name: string; }
+>{  mixins: [DefaultSpinner],  name: 'QSpinner'} : { mixins: Array<any>; name: string; }
 
   mixins: [DefaultSpinner],
->mixins : any[]
->[DefaultSpinner] : any[]
+>mixins : Array<any>
+>[DefaultSpinner] : Array<any>
 >DefaultSpinner : any
 
   name: 'QSpinner'

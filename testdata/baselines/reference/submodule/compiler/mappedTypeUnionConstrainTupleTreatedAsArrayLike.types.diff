@@ -1,0 +1,32 @@
+--- old.mappedTypeUnionConstrainTupleTreatedAsArrayLike.types
++++ new.mappedTypeUnionConstrainTupleTreatedAsArrayLike.types
+@@= skipped -8, +8 lines =@@
+ >args : T
+
+   const arr: any[] = [] as HomomorphicMappedType<T>
+->arr : any[]
++>arr : Array<any>
+ >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
+ >[] : []
+
+   const arr2: readonly any[] = [] as HomomorphicMappedType<T>
+->arr2 : readonly any[]
++>arr2 : ReadonlyArray<any>
+ >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
+ >[] : []
+ }
+@@= skipped -15, +15 lines =@@
+ >args : T
+
+   const arr: any[] = [] as HomomorphicMappedType<T> // error
+->arr : any[]
++>arr : Array<any>
+ >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
+ >[] : []
+
+   const arr2: readonly any[] = [] as HomomorphicMappedType<T>
+->arr2 : readonly any[]
++>arr2 : ReadonlyArray<any>
+ >[] as HomomorphicMappedType<T> : HomomorphicMappedType<T>
+ >[] : []
+ }

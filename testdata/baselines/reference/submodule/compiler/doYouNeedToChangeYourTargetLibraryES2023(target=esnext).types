@@ -2,8 +2,8 @@
 
 === doYouNeedToChangeYourTargetLibraryES2023.ts ===
 export let array = [0, 2, 3, 4];
->array : number[]
->[0, 2, 3, 4] : number[]
+>array : Array<number>
+>[0, 2, 3, 4] : Array<number>
 >0 : 0
 >2 : 2
 >3 : 3
@@ -22,9 +22,9 @@ function somePredicate(x: any): boolean {
 export let lastIndex1 = array.findLastIndex(v => v === 4);
 >lastIndex1 : number
 >array.findLastIndex(v => v === 4) : number
->array.findLastIndex : (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any) => number
->array : number[]
->findLastIndex : (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any) => number
+>array.findLastIndex : (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any) => number
+>array : Array<number>
+>findLastIndex : (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any) => number
 >v => v === 4 : (v: number) => v is 4
 >v : number
 >v === 4 : boolean
@@ -34,57 +34,57 @@ export let lastIndex1 = array.findLastIndex(v => v === 4);
 export let lastIndex2 = array.findLastIndex(somePredicate);
 >lastIndex2 : number
 >array.findLastIndex(somePredicate) : number
->array.findLastIndex : (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any) => number
->array : number[]
->findLastIndex : (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any) => number
+>array.findLastIndex : (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any) => number
+>array : Array<number>
+>findLastIndex : (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any) => number
 >somePredicate : (x: any) => boolean
 
 export let last1 = array.findLast(somePredicate);
 >last1 : number | undefined
 >array.findLast(somePredicate) : number | undefined
->array.findLast : { <S extends number>(predicate: (value: number, index: number, array: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number | undefined; }
->array : number[]
->findLast : { <S extends number>(predicate: (value: number, index: number, array: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number | undefined; }
+>array.findLast : { <S extends number>(predicate: (value: number, index: number, array: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any): number | undefined; }
+>array : Array<number>
+>findLast : { <S extends number>(predicate: (value: number, index: number, array: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any): number | undefined; }
 >somePredicate : (x: any) => boolean
 
 export let last2 = array.findLast(somePredicate);
 >last2 : number | undefined
 >array.findLast(somePredicate) : number | undefined
->array.findLast : { <S extends number>(predicate: (value: number, index: number, array: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number | undefined; }
->array : number[]
->findLast : { <S extends number>(predicate: (value: number, index: number, array: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: number[]) => unknown, thisArg?: any): number | undefined; }
+>array.findLast : { <S extends number>(predicate: (value: number, index: number, array: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any): number | undefined; }
+>array : Array<number>
+>findLast : { <S extends number>(predicate: (value: number, index: number, array: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, array: Array<number>) => unknown, thisArg?: any): number | undefined; }
 >somePredicate : (x: any) => boolean
 
 export let sorted = array.toSorted();
->sorted : number[]
->array.toSorted() : number[]
->array.toSorted : (compareFn?: ((a: number, b: number) => number) | undefined) => number[]
->array : number[]
->toSorted : (compareFn?: ((a: number, b: number) => number) | undefined) => number[]
+>sorted : Array<number>
+>array.toSorted() : Array<number>
+>array.toSorted : (compareFn?: ((a: number, b: number) => number) | undefined) => Array<number>
+>array : Array<number>
+>toSorted : (compareFn?: ((a: number, b: number) => number) | undefined) => Array<number>
 
 export let spliced1 = array.toSpliced(2);
->spliced1 : number[]
->array.toSpliced(2) : number[]
->array.toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
->array : number[]
->toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
+>spliced1 : Array<number>
+>array.toSpliced(2) : Array<number>
+>array.toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
+>array : Array<number>
+>toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
 >2 : 2
 
 export let spliced2 = array.toSpliced(2, 1);
->spliced2 : number[]
->array.toSpliced(2, 1) : number[]
->array.toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
->array : number[]
->toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
+>spliced2 : Array<number>
+>array.toSpliced(2, 1) : Array<number>
+>array.toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
+>array : Array<number>
+>toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
 >2 : 2
 >1 : 1
 
 export let spliced3 = array.toSpliced(2, 1, 4, 5, 6, 7);
->spliced3 : number[]
->array.toSpliced(2, 1, 4, 5, 6, 7) : number[]
->array.toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
->array : number[]
->toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
+>spliced3 : Array<number>
+>array.toSpliced(2, 1, 4, 5, 6, 7) : Array<number>
+>array.toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
+>array : Array<number>
+>toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
 >2 : 2
 >1 : 1
 >4 : 4
@@ -93,20 +93,20 @@ export let spliced3 = array.toSpliced(2, 1, 4, 5, 6, 7);
 >7 : 7
 
 export let spliced4 = array.toSpliced(2, undefined);
->spliced4 : number[]
->array.toSpliced(2, undefined) : number[]
->array.toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
->array : number[]
->toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
+>spliced4 : Array<number>
+>array.toSpliced(2, undefined) : Array<number>
+>array.toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
+>array : Array<number>
+>toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
 >2 : 2
 >undefined : undefined
 
 export let spliced5 = array.toSpliced(2, undefined, 4, 5, 6, 7);
->spliced5 : number[]
->array.toSpliced(2, undefined, 4, 5, 6, 7) : number[]
->array.toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
->array : number[]
->toSpliced : { (start: number, deleteCount: number, ...items: number[]): number[]; (start: number, deleteCount?: number): number[]; }
+>spliced5 : Array<number>
+>array.toSpliced(2, undefined, 4, 5, 6, 7) : Array<number>
+>array.toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
+>array : Array<number>
+>toSpliced : { (start: number, deleteCount: number, ...items: Array<number>): Array<number>; (start: number, deleteCount?: number): Array<number>; }
 >2 : 2
 >undefined : undefined
 >4 : 4
@@ -115,20 +115,20 @@ export let spliced5 = array.toSpliced(2, undefined, 4, 5, 6, 7);
 >7 : 7
 
 export let startsWithOne = array.with(0, 1);
->startsWithOne : number[]
->array.with(0, 1) : number[]
->array.with : (index: number, value: number) => number[]
->array : number[]
->with : (index: number, value: number) => number[]
+>startsWithOne : Array<number>
+>array.with(0, 1) : Array<number>
+>array.with : (index: number, value: number) => Array<number>
+>array : Array<number>
+>with : (index: number, value: number) => Array<number>
 >0 : 0
 >1 : 1
 
 export let inTheEnd = array.with(-1, 1);
->inTheEnd : number[]
->array.with(-1, 1) : number[]
->array.with : (index: number, value: number) => number[]
->array : number[]
->with : (index: number, value: number) => number[]
+>inTheEnd : Array<number>
+>array.with(-1, 1) : Array<number>
+>array.with : (index: number, value: number) => Array<number>
+>array : Array<number>
+>with : (index: number, value: number) => Array<number>
 >-1 : -1
 >1 : 1
 >1 : 1

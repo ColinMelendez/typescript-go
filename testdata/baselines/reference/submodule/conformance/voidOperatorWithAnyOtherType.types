@@ -10,8 +10,8 @@ declare var ANY1;
 >ANY1 : any
 
 var ANY2: any[] = ["", ""];
->ANY2 : any[]
->["", ""] : string[]
+>ANY2 : Array<any>
+>["", ""] : Array<string>
 >"" : ""
 >"" : ""
 
@@ -71,7 +71,7 @@ var ResultIsAny1 = void ANY1;
 var ResultIsAny2 = void ANY2;
 >ResultIsAny2 : undefined
 >void ANY2 : undefined
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsAny3 = void A;
 >ResultIsAny3 : undefined
@@ -108,7 +108,7 @@ var ResultIsAny9 = void ANY2[0]
 >ResultIsAny9 : undefined
 >void ANY2[0] : undefined
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 var ResultIsAny10 = void obj1.x;
@@ -211,7 +211,7 @@ void ANY1;
 void ANY2[0];
 >void ANY2[0] : undefined
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 
 void ANY, ANY1;

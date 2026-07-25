@@ -1,0 +1,20 @@
+--- old.unusedParametersWithUnderscore.types
++++ new.unusedParametersWithUnderscore.types
+@@= skipped -25, +25 lines =@@
+ }
+
+ function f4(...arg) {
+->f4 : (...arg: any[]) => void
+->arg : any[]
++>f4 : (...arg: Array<any>) => void
++>arg : Array<any>
+ }
+
+ function f5(..._arg) {
+->f5 : (..._arg: any[]) => void
+->_arg : any[]
++>f5 : (..._arg: Array<any>) => void
++>_arg : Array<any>
+ }
+
+ function f6(arg?, _arg?) {

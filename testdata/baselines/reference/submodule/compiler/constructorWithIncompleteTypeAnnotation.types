@@ -34,7 +34,7 @@ namespace TypeScriptAllInOne {
 
         static Main(...args: string[]) {
 >Main : (...args: string[]) => void
->args : string[]
+>args : Array<string>
 
             try {
                 var bfs = new BasicFeatures();
@@ -578,8 +578,8 @@ namespace TypeScriptAllInOne {
 >OPERATOR : () => number
 
             var a: number[] = [1, 2, 3, 4, 5, ];/*[] bug*/ // YES []
->a : number[]
->[1, 2, 3, 4, 5, ] : number[]
+>a : Array<number>
+>[1, 2, 3, 4, 5, ] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3
@@ -589,7 +589,7 @@ namespace TypeScriptAllInOne {
             var i = a[1];/*[]*/
 >i : number
 >a[1] : number
->a : number[]
+>a : Array<number>
 >1 : 1
 
             i = i + i - i * i / i % i & i | i ^ i;/*+ - * / % & | ^*/

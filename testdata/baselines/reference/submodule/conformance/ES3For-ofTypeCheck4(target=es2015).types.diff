@@ -1,0 +1,13 @@
+--- old.ES3For-ofTypeCheck4(target=es2015).types
++++ new.ES3For-ofTypeCheck4(target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === ES3For-ofTypeCheck4.ts ===
+ var union: string | string[];
+->union : string | string[]
++>union : string | Array<string>
+
+ for (const v of union) { }
+ >v : string
+->union : string | string[]
++>union : string | Array<string>

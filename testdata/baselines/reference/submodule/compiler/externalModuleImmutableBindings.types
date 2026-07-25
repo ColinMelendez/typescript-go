@@ -130,105 +130,105 @@ for (stuff.x in []) {}
 >stuff.x : any
 >stuff : typeof stuff
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff.x of []) {}
 >stuff.x : any
 >stuff : typeof stuff
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff['x'] in []) {}
 >stuff['x'] : any
 >stuff : typeof stuff
 >'x' : "x"
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff['x'] of []) {}
 >stuff['x'] : any
 >stuff : typeof stuff
 >'x' : "x"
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff.blah in []) {}
 >stuff.blah : any
 >stuff : typeof stuff
 >blah : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff.blah of []) {}
 >stuff.blah : any
 >stuff : typeof stuff
 >blah : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff[n] in []) {}
 >stuff[n] : any
 >stuff : typeof stuff
 >n : string
->[] : undefined[]
+>[] : Array<undefined>
 
 for (stuff[n] of []) {}
 >stuff[n] : any
 >stuff : typeof stuff
 >n : string
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff.x) in []) {}
 >(stuff.x) : any
 >stuff.x : any
 >stuff : typeof stuff
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff.x) of []) {}
 >(stuff.x) : any
 >stuff.x : any
 >stuff : typeof stuff
 >x : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff['x']) in []) {}
 >(stuff['x']) : any
 >stuff['x'] : any
 >stuff : typeof stuff
 >'x' : "x"
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff['x']) of []) {}
 >(stuff['x']) : any
 >stuff['x'] : any
 >stuff : typeof stuff
 >'x' : "x"
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff.blah) in []) {}
 >(stuff.blah) : any
 >stuff.blah : any
 >stuff : typeof stuff
 >blah : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff.blah) of []) {}
 >(stuff.blah) : any
 >stuff.blah : any
 >stuff : typeof stuff
 >blah : any
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff[n]) in []) {}
 >(stuff[n]) : any
 >stuff[n] : any
 >stuff : typeof stuff
 >n : string
->[] : undefined[]
+>[] : Array<undefined>
 
 for ((stuff[n]) of []) {}
 >(stuff[n]) : any
 >stuff[n] : any
 >stuff : typeof stuff
 >n : string
->[] : undefined[]
+>[] : Array<undefined>
 
 
 

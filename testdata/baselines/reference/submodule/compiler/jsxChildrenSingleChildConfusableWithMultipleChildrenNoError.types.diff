@@ -1,0 +1,20 @@
+--- old.jsxChildrenSingleChildConfusableWithMultipleChildrenNoError.types
++++ new.jsxChildrenSingleChildConfusableWithMultipleChildrenNoError.types
+@@= skipped -11, +11 lines =@@
+
+ interface Props {
+     children: Tab[]
+->children : Tab[]
++>children : Array<Tab>
+ }
+
+ function TabLayout(props: Props) {
+@@= skipped -26, +26 lines =@@
+ >TabLayout : (props: Props) => JSX.Element
+
+             {[
+->[                ['Users', <div/>],                ['Products', <div/>]            ] : [string, JSX.Element][]
++>[                ['Users', <div/>],                ['Products', <div/>]            ] : Array<[string, JSX.Element]>
+
+                 ['Users', <div/>],
+ >['Users', <div/>] : [string, JSX.Element]

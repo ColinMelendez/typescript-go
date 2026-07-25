@@ -1,0 +1,74 @@
+--- old.shorthandPropertyAssignmentsInDestructuring(target=es2015).types
++++ new.shorthandPropertyAssignmentsInDestructuring(target=es2015).types
+@@= skipped -11, +11 lines =@@
+ >{ s0 = 5 } : { s0?: any; }
+ >s0 : any
+ >5 : 5
+->[{ s0: 1 }] : { s0: number; }[]
++>[{ s0: 1 }] : Array<{ s0: number; }>
+ >{ s0: 1 } : { s0: number; }
+ >s0 : number
+ >1 : 1
+@@= skipped -19, +19 lines =@@
+ >s0 = 5 : 5
+ >s0 : any
+ >5 : 5
+->[{ s0: 1 }] : { s0: number; }[]
++>[{ s0: 1 }] : Array<{ s0: number; }>
+ >{ s0: 1 } : { s0: number; }
+ >s0 : number
+ >1 : 1
+@@= skipped -18, +18 lines =@@
+ >{ s1 = 5 } : { s1?: any; }
+ >s1 : any
+ >5 : 5
+->[{}] : {}[]
++>[{}] : Array<{}>
+ >{} : {}
+ 	}
+ });
+@@= skipped -18, +18 lines =@@
+ >s1 = 5 : 5
+ >s1 : any
+ >5 : 5
+->[{}] : {}[]
++>[{}] : Array<{}>
+ >{} : {}
+ 	}
+ });
+@@= skipped -16, +16 lines =@@
+ >{ s2 = 5 } : { s2?: any; }
+ >s2 : any
+ >5 : 5
+->[{ s2: "" }] : { s2: string; }[]
++>[{ s2: "" }] : Array<{ s2: string; }>
+ >{ s2: "" } : { s2: string; }
+ >s2 : string
+ >"" : ""
+@@= skipped -20, +20 lines =@@
+ >s2 = 5 : 5
+ >s2 : any
+ >5 : 5
+->[{ s2: "" }] : { s2: string; }[]
++>[{ s2: "" }] : Array<{ s2: string; }>
+ >{ s2: "" } : { s2: string; }
+ >s2 : string
+ >"" : ""
+@@= skipped -18, +18 lines =@@
+ >{ s3 = 5 } : { s3?: string; }
+ >s3 : string
+ >5 : 5
+->[{ s3: "" }] : { s3: string; }[]
++>[{ s3: "" }] : Array<{ s3: string; }>
+ >{ s3: "" } : { s3: string; }
+ >s3 : string
+ >"" : ""
+@@= skipped -20, +20 lines =@@
+ >s3 = 5 : 5
+ >s3 : string
+ >5 : 5
+->[{ s3: "" }] : { s3: string; }[]
++>[{ s3: "" }] : Array<{ s3: string; }>
+ >{ s3: "" } : { s3: string; }
+ >s3 : string
+ >"" : ""

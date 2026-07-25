@@ -1,0 +1,17 @@
+--- old.tailRecursiveConditionalTypes.types
++++ new.tailRecursiveConditionalTypes.types
+@@= skipped -36, +36 lines =@@
+ >T30 : [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+ type T31 = Reverse<string[]>;
+->T31 : string[]
++>T31 : Array<string>
+
+ type TupleOf<T, N extends number> = number extends N ? T[] : TupleOfRec<T, N, []>;
+ >TupleOf : TupleOf<T, N>
+@@= skipped -14, +14 lines =@@
+ >T40 : [any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any, any]
+
+ type T41 = TupleOf<any, number>;
+->T41 : any[]
++>T41 : Array<any>

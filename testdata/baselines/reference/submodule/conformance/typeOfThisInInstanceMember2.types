@@ -95,17 +95,17 @@ var r4 = c.z;
 >z : string
 
 var rs = [r, r2, r3];
->rs : C<string>[]
->[r, r2, r3] : C<string>[]
+>rs : Array<C<string>>
+>[r, r2, r3] : Array<C<string>>
 >r : C<string>
 >r2 : C<string>
 >r3 : C<string>
 
 rs.forEach(x => {
 >rs.forEach(x => {    x.foo;    x.x;    x.y;    x.z;}) : void
->rs.forEach : (callbackfn: (value: C<string>, index: number, array: C<string>[]) => void, thisArg?: any) => void
->rs : C<string>[]
->forEach : (callbackfn: (value: C<string>, index: number, array: C<string>[]) => void, thisArg?: any) => void
+>rs.forEach : (callbackfn: (value: C<string>, index: number, array: Array<C<string>>) => void, thisArg?: any) => void
+>rs : Array<C<string>>
+>forEach : (callbackfn: (value: C<string>, index: number, array: Array<C<string>>) => void, thisArg?: any) => void
 >x => {    x.foo;    x.x;    x.y;    x.z;} : (x: C<string>) => void
 >x : C<string>
 

@@ -6,7 +6,7 @@ var v: string;
 
 for (v of ["hello"]) { }
 >v : string
->["hello"] : string[]
+>["hello"] : Array<string>
 >"hello" : "hello"
 
 for (v of "hello") { }

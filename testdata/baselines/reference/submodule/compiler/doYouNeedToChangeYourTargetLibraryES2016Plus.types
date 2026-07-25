@@ -6,7 +6,7 @@ const testIncludes = ["hello"].includes("world");
 >testIncludes : any
 >["hello"].includes("world") : any
 >["hello"].includes : any
->["hello"] : string[]
+>["hello"] : Array<string>
 >"hello" : "hello"
 >includes : any
 >"world" : "world"
@@ -161,14 +161,14 @@ const testArrayFlat = [].flat();
 >testArrayFlat : any
 >[].flat() : any
 >[].flat : any
->[] : undefined[]
+>[] : Array<undefined>
 >flat : any
 
 const testArrayFlatMap = [].flatMap();
 >testArrayFlatMap : any
 >[].flatMap() : any
 >[].flatMap : any
->[] : undefined[]
+>[] : Array<undefined>
 >flatMap : any
 
 const testObjectConstructorFromEntries = Object.fromEntries({});
@@ -222,7 +222,7 @@ const testPromiseAllSettled = Promise.allSettled([]);
 >Promise.allSettled : any
 >Promise : PromiseConstructor
 >allSettled : any
->[] : undefined[]
+>[] : Array<undefined>
 
 const testStringMatchAll = "".matchAll();
 >testStringMatchAll : any
@@ -254,7 +254,7 @@ const testPromiseAny = Promise.any([]);
 >Promise.any : any
 >Promise : PromiseConstructor
 >any : any
->[] : undefined[]
+>[] : Array<undefined>
 
 const testStringReplaceAll = "".replaceAll();
 >testStringReplaceAll : any

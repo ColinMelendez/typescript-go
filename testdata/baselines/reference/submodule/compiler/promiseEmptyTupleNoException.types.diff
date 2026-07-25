@@ -1,0 +1,15 @@
+--- old.promiseEmptyTupleNoException.types
++++ new.promiseEmptyTupleNoException.types
+@@= skipped -4, +4 lines =@@
+ >get : () => Promise<[]>
+
+   let emails = [];
+->emails : any[]
+->[] : undefined[]
++>emails : Array<any>
++>[] : Array<undefined>
+
+   return emails;
+->emails : any[]
++>emails : Array<any>
+ }

@@ -1,0 +1,38 @@
+--- old.localClassesInLoop_ES6.types
++++ new.localClassesInLoop_ES6.types
+@@= skipped -8, +8 lines =@@
+ >"use strict" : "use strict"
+
+ var data = [];
+->data : any[]
+->[] : undefined[]
++>data : Array<any>
++>[] : Array<undefined>
+
+ for (let x = 0; x < 2; ++x) {
+ >x : number
+@@= skipped -17, +17 lines =@@
+
+     data.push(() => C);
+ >data.push(() => C) : number
+->data.push : (...items: any[]) => number
+->data : any[]
+->push : (...items: any[]) => number
++>data.push : (...items: Array<any>) => number
++>data : Array<any>
++>push : (...items: Array<any>) => number
+ >() => C : () => typeof C
+ >C : typeof C
+ }
+@@= skipped -13, +13 lines =@@
+ >data[0]() === data[1]() : boolean
+ >data[0]() : any
+ >data[0] : any
+->data : any[]
++>data : Array<any>
+ >0 : 0
+ >data[1]() : any
+ >data[1] : any
+->data : any[]
++>data : Array<any>
+ >1 : 1

@@ -1,0 +1,10 @@
+--- old.castExpressionParentheses.types
++++ new.castExpressionParentheses.types
+@@= skipped -15, +15 lines =@@
+ (<any>[1,3,]); 
+ >(<any>[1,3,]) : any
+ ><any>[1,3,] : any
+->[1,3,] : number[]
++>[1,3,] : Array<number>
+ >1 : 1
+ >3 : 3

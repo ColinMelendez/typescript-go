@@ -1,0 +1,145 @@
+--- old.collisionArgumentsFunction(alwaysstrict=true,target=es2015).types
++++ new.collisionArgumentsFunction(alwaysstrict=true,target=es2015).types
+@@= skipped -2, +2 lines =@@
+ === collisionArgumentsFunction.ts ===
+ // Functions
+ function f1(arguments: number, ...restParameters) { //arguments is error
+->f1 : (arguments: number, ...restParameters: any[]) => void
++>f1 : (arguments: number, ...restParameters: Array<any>) => void
+ >arguments : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+     var arguments = 10; // no error
+ >arguments : number
+ >10 : 10
+ }
+ function f12(i: number, ...arguments) { //arguments is error
+->f12 : (i: number, ...arguments: any[]) => void
++>f12 : (i: number, ...arguments: Array<any>) => void
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+     var arguments: any[]; // no error
+->arguments : any[]
++>arguments : Array<any>
+ }
+ function f1NoError(arguments: number) { // no error
+ >f1NoError : (arguments: number) => void
+@@= skipped -26, +26 lines =@@
+ }
+
+ declare function f2(i: number, ...arguments); // no error - no code gen
+->f2 : (i: number, ...arguments: any[]) => any
++>f2 : (i: number, ...arguments: Array<any>) => any
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+ declare function f21(arguments: number, ...rest); // no error - no code gen
+->f21 : (arguments: number, ...rest: any[]) => any
++>f21 : (arguments: number, ...rest: Array<any>) => any
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+ declare function f2NoError(arguments: number); // no error
+ >f2NoError : (arguments: number) => any
+ >arguments : number
+
+ function f3(...restParameters) {
+->f3 : (...restParameters: any[]) => void
+->restParameters : any[]
++>f3 : (...restParameters: Array<any>) => void
++>restParameters : Array<any>
+
+     var arguments = 10; // no error
+ >arguments : number
+@@= skipped -30, +30 lines =@@
+ }
+
+ function f4(arguments: number, ...rest); // no codegen no error
+->f4 : { (arguments: number, ...rest: any[]): any; (arguments: string, ...rest: any[]): any; }
++>f4 : { (arguments: number, ...rest: Array<any>): any; (arguments: string, ...rest: Array<any>): any; }
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+ function f4(arguments: string, ...rest); // no codegen no error
+->f4 : { (arguments: number, ...rest: any[]): any; (arguments: string, ...rest: any[]): any; }
++>f4 : { (arguments: number, ...rest: Array<any>): any; (arguments: string, ...rest: Array<any>): any; }
+ >arguments : string
+->rest : any[]
++>rest : Array<any>
+
+ function f4(arguments: any, ...rest) { // error
+->f4 : { (arguments: number, ...rest: any[]): any; (arguments: string, ...rest: any[]): any; }
++>f4 : { (arguments: number, ...rest: Array<any>): any; (arguments: string, ...rest: Array<any>): any; }
+ >arguments : any
+->rest : any[]
++>rest : Array<any>
+
+     var arguments: any; // No error
+ >arguments : any
+ }
+ function f42(i: number, ...arguments); // no codegen no error
+->f42 : { (i: number, ...arguments: any[]): any; (i: string, ...arguments: any[]): any; }
++>f42 : { (i: number, ...arguments: Array<any>): any; (i: string, ...arguments: Array<any>): any; }
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+ function f42(i: string, ...arguments); // no codegen no error
+->f42 : { (i: number, ...arguments: any[]): any; (i: string, ...arguments: any[]): any; }
++>f42 : { (i: number, ...arguments: Array<any>): any; (i: string, ...arguments: Array<any>): any; }
+ >i : string
+->arguments : any[]
++>arguments : Array<any>
+
+ function f42(i: any, ...arguments) { // error
+->f42 : { (i: number, ...arguments: any[]): any; (i: string, ...arguments: any[]): any; }
++>f42 : { (i: number, ...arguments: Array<any>): any; (i: string, ...arguments: Array<any>): any; }
+ >i : any
+->arguments : any[]
++>arguments : Array<any>
+
+     var arguments: any[]; // No error
+->arguments : any[]
++>arguments : Array<any>
+ }
+ function f4NoError(arguments: number); // no error
+ >f4NoError : { (arguments: number): any; (arguments: string): any; }
+@@= skipped -52, +52 lines =@@
+ }
+
+ declare function f5(arguments: number, ...rest); // no codegen no error
+->f5 : { (arguments: number, ...rest: any[]): any; (arguments: string, ...rest: any[]): any; }
++>f5 : { (arguments: number, ...rest: Array<any>): any; (arguments: string, ...rest: Array<any>): any; }
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+ declare function f5(arguments: string, ...rest); // no codegen no error
+->f5 : { (arguments: number, ...rest: any[]): any; (arguments: string, ...rest: any[]): any; }
++>f5 : { (arguments: number, ...rest: Array<any>): any; (arguments: string, ...rest: Array<any>): any; }
+ >arguments : string
+->rest : any[]
++>rest : Array<any>
+
+ declare function f52(i: number, ...arguments); // no codegen no error
+->f52 : { (i: number, ...arguments: any[]): any; (i: string, ...arguments: any[]): any; }
++>f52 : { (i: number, ...arguments: Array<any>): any; (i: string, ...arguments: Array<any>): any; }
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+ declare function f52(i: string, ...arguments); // no codegen no error
+->f52 : { (i: number, ...arguments: any[]): any; (i: string, ...arguments: any[]): any; }
++>f52 : { (i: number, ...arguments: Array<any>): any; (i: string, ...arguments: Array<any>): any; }
+ >i : string
+->arguments : any[]
++>arguments : Array<any>
+
+ declare function f6(arguments: number); // no codegen no error
+ >f6 : { (arguments: number): any; (arguments: string): any; }

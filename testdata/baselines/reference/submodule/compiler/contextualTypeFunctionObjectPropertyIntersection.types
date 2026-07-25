@@ -315,7 +315,7 @@ type ValidateSliceCaseReducers<S, ACR extends SliceCaseReducers<S>> = ACR & {
     ? {
         prepare(...a: never[]): Omit<A, "type">;
 >prepare : (...a: never[]) => Omit<A, "type">
->a : never[]
+>a : Array<never>
       }
     : {};
 };

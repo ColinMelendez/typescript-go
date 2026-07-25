@@ -1,0 +1,39 @@
+--- old.collectionPatternNoError.types
++++ new.collectionPatternNoError.types
+@@= skipped -2, +2 lines =@@
+ === collectionPatternNoError.ts ===
+ interface MsgConstructor<T extends Message> {
+   new(data: Array<{}>): T;
+->data : {}[]
++>data : Array<{}>
+ }
+ class Message {
+ >Message : Message
+@@= skipped -49, +49 lines =@@
+ >messageList : MsgConstructor<U>
+
+     messageList.methodOnMessageList();
+->messageList.methodOnMessageList() : T[]
+->messageList.methodOnMessageList : () => T[]
++>messageList.methodOnMessageList() : Array<T>
++>messageList.methodOnMessageList : () => Array<T>
+ >messageList : U
+->methodOnMessageList : () => T[]
++>methodOnMessageList : () => Array<T>
+   }
+ }
+
+@@= skipped -21, +21 lines =@@
+ >messageList : MsgConstructor<U["TType"]>
+
+   fetchMsg(messageList).methodOnMessageList();
+->fetchMsg(messageList).methodOnMessageList() : T[]
+->fetchMsg(messageList).methodOnMessageList : () => T[]
++>fetchMsg(messageList).methodOnMessageList() : Array<T>
++>fetchMsg(messageList).methodOnMessageList : () => Array<T>
+ >fetchMsg(messageList) : U["TType"]
+ >fetchMsg : <V extends Message>(protoCtor: MsgConstructor<V>) => V
+ >messageList : MsgConstructor<U["TType"]>
+->methodOnMessageList : () => T[]
++>methodOnMessageList : () => Array<T>
+ }

@@ -30,20 +30,20 @@ const [f, g = f, h = i, i = f] = [1]; // error for h = i
 
 (function ([a, b = a]) { // ok
 >(function ([a, b = a]) { // ok})([1]) : void
->(function ([a, b = a]) { // ok}) : ([a, b]: number[]) => void
->function ([a, b = a]) { // ok} : ([a, b]: number[]) => void
+>(function ([a, b = a]) { // ok}) : ([a, b]: Array<number>) => void
+>function ([a, b = a]) { // ok} : ([a, b]: Array<number>) => void
 >a : number
 >b : number
 >a : number
 
 })([1]);
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
 (function ([c, d = c, e = e]) { // error for e = e
 >(function ([c, d = c, e = e]) { // error for e = e})([1]) : void
->(function ([c, d = c, e = e]) { // error for e = e}) : ([c, d, e]: number[]) => void
->function ([c, d = c, e = e]) { // error for e = e} : ([c, d, e]: number[]) => void
+>(function ([c, d = c, e = e]) { // error for e = e}) : ([c, d, e]: Array<number>) => void
+>function ([c, d = c, e = e]) { // error for e = e} : ([c, d, e]: Array<number>) => void
 >c : number
 >d : number
 >c : number
@@ -51,13 +51,13 @@ const [f, g = f, h = i, i = f] = [1]; // error for h = i
 >e : any
 
 })([1]);
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
 (function ([f, g = f, h = i, i = f]) { // error for h = i
 >(function ([f, g = f, h = i, i = f]) { // error for h = i})([1]) : void
->(function ([f, g = f, h = i, i = f]) { // error for h = i}) : ([f, g, h, i]: number[]) => void
->function ([f, g = f, h = i, i = f]) { // error for h = i} : ([f, g, h, i]: number[]) => void
+>(function ([f, g = f, h = i, i = f]) { // error for h = i}) : ([f, g, h, i]: Array<number>) => void
+>function ([f, g = f, h = i, i = f]) { // error for h = i} : ([f, g, h, i]: Array<number>) => void
 >f : number
 >g : number
 >f : number
@@ -67,6 +67,6 @@ const [f, g = f, h = i, i = f] = [1]; // error for h = i
 >f : number
 
 })([1])
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 

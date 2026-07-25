@@ -42,11 +42,11 @@ var b = { new<T extends RegExp>(x: T) { return ''; } }; // not a construct signa
 
 function foo1b(x: B<Array<number>>);
 >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo1b(x: B<Array<number>>); // error
 >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo1b(x: any) { }
 >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
@@ -106,7 +106,7 @@ function foo4(x: any) { }
 
 function foo8(x: B<Array<number>>);
 >foo8 : { (x: B<Array<number>>): any; (x: I<Number>): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo8(x: I<Number>); // ok
 >foo8 : { (x: B<Array<number>>): any; (x: I<Number>): any; }
@@ -118,7 +118,7 @@ function foo8(x: any) { }
 
 function foo9(x: B<Array<number>>);
 >foo9 : { (x: B<Array<number>>): any; (x: C<String>): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo9(x: C<String>); // error, types are structurally equal
 >foo9 : { (x: B<Array<number>>): any; (x: C<String>): any; }
@@ -130,7 +130,7 @@ function foo9(x: any) { }
 
 function foo10(x: B<Array<number>>);
 >foo10 : { (x: B<Array<number>>): any; (x: typeof a): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo10(x: typeof a); // ok
 >foo10 : { (x: B<Array<number>>): any; (x: typeof a): any; }
@@ -143,7 +143,7 @@ function foo10(x: any) { }
 
 function foo11(x: B<Array<number>>);
 >foo11 : { (x: B<Array<number>>): any; (x: typeof b): any; }
->x : B<number[]>
+>x : B<Array<number>>
 
 function foo11(x: typeof b); // ok
 >foo11 : { (x: B<Array<number>>): any; (x: typeof b): any; }

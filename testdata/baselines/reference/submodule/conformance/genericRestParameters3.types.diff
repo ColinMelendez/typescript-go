@@ -1,0 +1,24 @@
+--- old.genericRestParameters3.types
++++ new.genericRestParameters3.types
+@@= skipped -215, +215 lines =@@
+
+ declare function foo2(...args: string[] | number[]): void;
+ >foo2 : (...args: string[] | number[]) => void
+->args : string[] | number[]
++>args : Array<string> | Array<number>
+
+ let x2: ReadonlyArray<string> = ["hello"];
+->x2 : readonly string[]
+->["hello"] : string[]
++>x2 : ReadonlyArray<string>
++>["hello"] : Array<string>
+ >"hello" : "hello"
+
+ foo2(...x2);
+ >foo2(...x2) : void
+ >foo2 : (...args: string[] | number[]) => void
+ >...x2 : string
+->x2 : readonly string[]
++>x2 : ReadonlyArray<string>
+
+ // Repros from #47754

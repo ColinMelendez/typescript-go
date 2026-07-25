@@ -15,12 +15,12 @@ foo1({ b: 5 });
 
 function foo2(x: number[]) { }
 >foo2 : (x: number[]) => void
->x : number[]
+>x : Array<number>
 
 foo2(["s", "t"]);
 >foo2(["s", "t"]) : void
 >foo2 : (x: number[]) => void
->["s", "t"] : string[]
+>["s", "t"] : Array<string>
 >"s" : "s"
 >"t" : "t"
 

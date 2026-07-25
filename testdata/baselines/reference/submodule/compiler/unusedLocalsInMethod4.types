@@ -5,19 +5,19 @@ function f<T, NonNull extends {}>() {
 >f : <T, NonNull extends {}>() => void
 
     let x1: number[]; // should error
->x1 : number[]
+>x1 : Array<number>
 
     let x2: number[] | null; // should error
->x2 : number[] | null
+>x2 : Array<number> | null
 
     let x3: number[] | undefined; // should not error
->x3 : number[] | undefined
+>x3 : Array<number> | undefined
 
     let x4: number[] | undefined | null; // should not error
->x4 : number[] | null | undefined
+>x4 : Array<number> | null | undefined
 
     let x5!: number[]; // should not error
->x5 : number[]
+>x5 : Array<number>
 
     let x6: any; // should not error
 >x6 : any
@@ -45,35 +45,35 @@ function f<T, NonNull extends {}>() {
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x1 : number[]
+>x1 : Array<number>
 
         console.log(x2);
 >console.log(x2) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x2 : number[] | null
+>x2 : Array<number> | null
 
         console.log(x3);
 >console.log(x3) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x3 : number[] | undefined
+>x3 : Array<number> | undefined
 
         console.log(x4);
 >console.log(x4) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x4 : number[] | null | undefined
+>x4 : Array<number> | null | undefined
 
         console.log(x5);
 >console.log(x5) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x5 : number[]
+>x5 : Array<number>
 
         console.log(x6);
 >console.log(x6) : void
@@ -135,19 +135,19 @@ function f2<T, NonNull extends {}>() {
 >f2 : <T, NonNull extends {}>() => void
 
     let x1: number[]; // should error
->x1 : number[]
+>x1 : Array<number>
 
     let x2: number[] | null; // should error
->x2 : number[] | null
+>x2 : Array<number> | null
 
     let x3: number[] | undefined; // should not error
->x3 : number[] | undefined
+>x3 : Array<number> | undefined
 
     let x4: number[] | undefined | null; // should not error
->x4 : number[] | null | undefined
+>x4 : Array<number> | null | undefined
 
     let x5!: number[]; // should not error
->x5 : number[]
+>x5 : Array<number>
 
     let x6: any; // should not error
 >x6 : any
@@ -166,35 +166,35 @@ function f2<T, NonNull extends {}>() {
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x1 : number[]
+>x1 : Array<number>
 
     console.log(x2);
 >console.log(x2) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x2 : number[] | null
+>x2 : Array<number> | null
 
     console.log(x3);
 >console.log(x3) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x3 : number[] | undefined
+>x3 : Array<number> | undefined
 
     console.log(x4);
 >console.log(x4) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x4 : number[] | null | undefined
+>x4 : Array<number> | null | undefined
 
     console.log(x5);
 >console.log(x5) : void
 >console.log : (...data: any[]) => void
 >console : Console
 >log : (...data: any[]) => void
->x5 : number[]
+>x5 : Array<number>
 
     console.log(x6);
 >console.log(x6) : void
@@ -229,7 +229,7 @@ function f3() {
 >f3 : () => void
 
     let x: number[];    // should error
->x : number[]
+>x : Array<number>
 
     function foo() {
 >foo : () => void
@@ -237,7 +237,7 @@ function f3() {
         x.toString();
 >x.toString() : string
 >x.toString : () => string
->x : number[]
+>x : Array<number>
 >toString : () => string
     }
     foo();
@@ -308,7 +308,7 @@ function f7() {
 
     for (key of []) {
 >key : string
->[] : never[]
+>[] : Array<never>
 
         console.log(key);
 >console.log(key) : void
@@ -332,12 +332,12 @@ function f8() {
 >rest : {}
 
         [_, ...rest] = bar();
->[_, ...rest] = bar() : [number, ...string[]]
->[_, ...rest] : [any, ...unknown[]]
+>[_, ...rest] = bar() : [number, ...Array<string>]
+>[_, ...rest] : [any, ...Array<unknown>]
 >_ : any
 >...rest : any
 >rest : {}
->bar() : [number, ...string[]]
+>bar() : [number, ...Array<string>]
 >bar : () => [number, ...string[]]
     }
 }

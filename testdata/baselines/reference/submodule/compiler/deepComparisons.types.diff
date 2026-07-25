@@ -1,0 +1,11 @@
+--- old.deepComparisons.types
++++ new.deepComparisons.types
+@@= skipped -28, +28 lines =@@
+
+ type Bar<T> = { x: Bar<T[]> };
+ >Bar : Bar<T>
+->x : Bar<T[]>
++>x : Bar<Array<T>>
+
+ function f2<U>() {
+ >f2 : <U>() => void

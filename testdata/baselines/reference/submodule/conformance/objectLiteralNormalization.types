@@ -5,7 +5,7 @@
 let a1 = [{ a: 0 }, { a: 1, b: "x" }, { a: 2, b: "y", c: true }][0];
 >a1 : { a: number; b?: undefined; c?: undefined; } | { a: number; b: string; c?: undefined; } | { a: number; b: string; c: boolean; }
 >[{ a: 0 }, { a: 1, b: "x" }, { a: 2, b: "y", c: true }][0] : { a: number; } | { a: number; b: string; } | { a: number; b: string; c: boolean; }
->[{ a: 0 }, { a: 1, b: "x" }, { a: 2, b: "y", c: true }] : ({ a: number; } | { a: number; b: string; } | { a: number; b: string; c: boolean; })[]
+>[{ a: 0 }, { a: 1, b: "x" }, { a: 2, b: "y", c: true }] : Array<{ a: number; } | { a: number; b: string; } | { a: number; b: string; c: boolean; }>
 >{ a: 0 } : { a: number; }
 >a : number
 >0 : 0
@@ -71,7 +71,7 @@ a1 = { c: true };  // Error
 let a2 = [{ a: 1, b: 2 }, { a: "abc" }, {}][0];
 >a2 : { a: number; b: number; } | { b?: undefined; a: string; } | { b?: undefined; a?: undefined; }
 >[{ a: 1, b: 2 }, { a: "abc" }, {}][0] : { a: number; b: number; } | { a: string; } | {}
->[{ a: 1, b: 2 }, { a: "abc" }, {}] : ({ a: number; b: number; } | { a: string; } | {})[]
+>[{ a: 1, b: 2 }, { a: "abc" }, {}] : Array<{ a: number; b: number; } | { a: string; } | {}>
 >{ a: 1, b: 2 } : { a: number; b: number; }
 >a : number
 >1 : 1
@@ -202,7 +202,7 @@ let c4 = !true ? {} : { a: 0, b: 0 };
 let d1 = [{ kind: 'a', pos: { x: 0, y: 0 } }, { kind: 'b', pos: !true ? { a: "x" } : { b: 0 } }][0];
 >d1 : { kind: string; pos: { b?: undefined; a?: undefined; x: number; y: number; }; } | { kind: string; pos: { b?: undefined; x?: undefined; y?: undefined; a: string; } | { a?: undefined; x?: undefined; y?: undefined; b: number; }; }
 >[{ kind: 'a', pos: { x: 0, y: 0 } }, { kind: 'b', pos: !true ? { a: "x" } : { b: 0 } }][0] : { kind: string; pos: { x: number; y: number; }; } | { kind: string; pos: { a: string; } | { b: number; }; }
->[{ kind: 'a', pos: { x: 0, y: 0 } }, { kind: 'b', pos: !true ? { a: "x" } : { b: 0 } }] : ({ kind: string; pos: { x: number; y: number; }; } | { kind: string; pos: { a: string; } | { b: number; }; })[]
+>[{ kind: 'a', pos: { x: 0, y: 0 } }, { kind: 'b', pos: !true ? { a: "x" } : { b: 0 } }] : Array<{ kind: string; pos: { x: number; y: number; }; } | { kind: string; pos: { a: string; } | { b: number; }; }>
 >{ kind: 'a', pos: { x: 0, y: 0 } } : { kind: string; pos: { x: number; y: number; }; }
 >kind : string
 >'a' : "a"
@@ -267,7 +267,7 @@ d1.pos.b;
 
 declare function f<T>(...items: T[]): T;
 >f : <T>(...items: T[]) => T
->items : T[]
+>items : Array<T>
 
 declare let data: { a: 1, b: "abc", c: true };
 >data : { a: 1; b: "abc"; c: true; }

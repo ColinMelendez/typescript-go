@@ -1,0 +1,56 @@
+--- old.sourceMapValidationDestructuringVariableStatementArrayBindingPatternDefaultValues2(target=es2015).types
++++ new.sourceMapValidationDestructuringVariableStatementArrayBindingPatternDefaultValues2(target=es2015).types
+@@= skipped -12, +12 lines =@@
+
+ var multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
+ >multiRobotA : MultiSkilledRobot
+->["mower", ["mowing", ""]] : [string, string[]]
++>["mower", ["mowing", ""]] : [string, Array<string>]
+ >"mower" : "mower"
+->["mowing", ""] : string[]
++>["mowing", ""] : Array<string>
+ >"mowing" : "mowing"
+ >"" : ""
+
+ var multiRobotB: MultiSkilledRobot = ["trimmer", ["trimming", "edging"]];
+ >multiRobotB : MultiSkilledRobot
+->["trimmer", ["trimming", "edging"]] : [string, string[]]
++>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
+ >"trimmer" : "trimmer"
+->["trimming", "edging"] : string[]
++>["trimming", "edging"] : Array<string>
+ >"trimming" : "trimming"
+ >"edging" : "edging"
+
+ let [, skillA = ["noSkill", "noSkill"]] = multiRobotA;
+->skillA : string[]
+->["noSkill", "noSkill"] : string[]
++>skillA : Array<string>
++>["noSkill", "noSkill"] : Array<string>
+ >"noSkill" : "noSkill"
+ >"noSkill" : "noSkill"
+ >multiRobotA : MultiSkilledRobot
+@@= skipped -41, +41 lines =@@
+ let [nameMC = "noName" ] = ["roomba", ["vacuum", "mopping"]];
+ >nameMC : string
+ >"noName" : "noName"
+->["roomba", ["vacuum", "mopping"]] : [string, string[]]
++>["roomba", ["vacuum", "mopping"]] : [string, Array<string>]
+ >"roomba" : "roomba"
+->["vacuum", "mopping"] : string[]
++>["vacuum", "mopping"] : Array<string>
+ >"vacuum" : "vacuum"
+ >"mopping" : "mopping"
+
+@@= skipped -34, +34 lines =@@
+ >log : (msg: string) => void
+ >skillA[0] + skillA[1] : string
+ >skillA[0] : string
+->skillA : string[]
++>skillA : Array<string>
+ >0 : 0
+ >skillA[1] : string
+->skillA : string[]
++>skillA : Array<string>
+ >1 : 1
+ }

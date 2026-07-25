@@ -19,7 +19,7 @@ declare function invalidArgType(arg: unique symbol): void;
 
 declare function invalidRestArgType(...arg: (unique symbol)[]): void;
 >invalidRestArgType : (...arg: (unique symbol)[]) => void
->arg : symbol[]
+>arg : Array<symbol>
 
 declare function invalidReturnType(): unique symbol;
 >invalidReturnType : () => unique symbol
@@ -57,7 +57,7 @@ class InvalidClass {
 
     invalidRestArgType(...args: (unique symbol)[]): void { return; }
 >invalidRestArgType : (...args: (unique symbol)[]) => void
->args : symbol[]
+>args : Array<symbol>
 
     invalidReturnType(): unique symbol { return; }
 >invalidReturnType : () => unique symbol
@@ -92,7 +92,7 @@ class InvalidClass {
 
     static invalidStaticRestArgType(...args: (unique symbol)[]): void { return; }
 >invalidStaticRestArgType : (...args: (unique symbol)[]) => void
->args : symbol[]
+>args : Array<symbol>
 
     static invalidStaticReturnType(): unique symbol { return; }
 >invalidStaticReturnType : () => unique symbol
@@ -130,7 +130,7 @@ interface InvalidInterface {
 
     invalidRestArgType(...args: (unique symbol)[]): void;
 >invalidRestArgType : (...args: (unique symbol)[]) => void
->args : symbol[]
+>args : Array<symbol>
 
     invalidReturnType(): unique symbol;
 >invalidReturnType : () => unique symbol
@@ -163,7 +163,7 @@ type InvalidTypeLiteral = {
 
     invalidRestArgType(...args: (unique symbol)[]): void;
 >invalidRestArgType : (...args: (unique symbol)[]) => void
->args : symbol[]
+>args : Array<symbol>
 
     invalidReturnType(): unique symbol;
 >invalidReturnType : () => unique symbol
@@ -199,7 +199,7 @@ declare const invalidTypeArgument: Promise<unique symbol>;
 >invalidTypeArgument : Promise<symbol>
 
 declare const invalidArrayType: (unique symbol)[];
->invalidArrayType : symbol[]
+>invalidArrayType : Array<symbol>
 
 declare const invalidTupleType: [unique symbol];
 >invalidTupleType : [symbol]

@@ -31,14 +31,14 @@ declare function d_f5(x, y: any, z): void;
 
 // Implicit-'any[]' errors for r.
 declare function d_f6(...r): void;
->d_f6 : (...r: any[]) => void
->r : any[]
+>d_f6 : (...r: Array<any>) => void
+>r : Array<any>
 
 // Implicit-'any'/'any[]' errors for x, r.
 declare function d_f7(x, ...r): void;
->d_f7 : (x: any, ...r: any[]) => void
+>d_f7 : (x: any, ...r: Array<any>) => void
 >x : any
->r : any[]
+>r : Array<any>
 
 // Implicit-'any' errors for x1, y2, x3, and y3.
 declare function d_f8(x1, y1: number): any;
@@ -81,12 +81,12 @@ declare var d_f12: (x, y: any, z) => string;
 
 // Implicit-'any[]' error for r.
 declare var d_f13: (...r) => string;
->d_f13 : (...r: any[]) => string
->r : any[]
+>d_f13 : (...r: Array<any>) => string
+>r : Array<any>
 
 // Implicit-'any'/'any[]' errors for x, r.
 declare var d_f14: (x, ...r) => string;
->d_f14 : (x: any, ...r: any[]) => string
+>d_f14 : (x: any, ...r: Array<any>) => string
 >x : any
->r : any[]
+>r : Array<any>
 

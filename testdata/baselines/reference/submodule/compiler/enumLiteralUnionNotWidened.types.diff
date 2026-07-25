@@ -1,0 +1,13 @@
+--- old.enumLiteralUnionNotWidened.types
++++ new.enumLiteralUnionNotWidened.types
+@@= skipped -26, +26 lines =@@
+ >List : List<T>
+ {
+ 	private readonly items: T[] = [];
+->items : T[]
+->[] : never[]
++>items : Array<T>
++>[] : Array<never>
+ }
+
+ function asList<T>(arg: T): List<T> { return new List(); }

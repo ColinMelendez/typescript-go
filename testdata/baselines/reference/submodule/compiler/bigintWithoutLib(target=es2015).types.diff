@@ -1,0 +1,38 @@
+--- old.bigintWithoutLib(target=es2015).types
++++ new.bigintWithoutLib(target=es2015).types
+@@= skipped -126, +126 lines =@@
+ >bigIntArray : BigInt64Array
+ >new BigInt64Array([1n, 2n, 3n]) : any
+ >BigInt64Array : any
+->[1n, 2n, 3n] : bigint[]
++>[1n, 2n, 3n] : Array<bigint>
+ >1n : 1n
+ >2n : 2n
+ >3n : 3n
+@@= skipped -10, +10 lines =@@
+ >bigIntArray : BigInt64Array
+ >new BigInt64Array([1, 2, 3]) : any
+ >BigInt64Array : any
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -70, +70 lines =@@
+ >bigUintArray : BigUint64Array
+ >new BigUint64Array([1n, 2n, 3n]) : any
+ >BigUint64Array : any
+->[1n, 2n, 3n] : bigint[]
++>[1n, 2n, 3n] : Array<bigint>
+ >1n : 1n
+ >2n : 2n
+ >3n : 3n
+@@= skipped -10, +10 lines =@@
+ >bigUintArray : BigUint64Array
+ >new BigUint64Array([1, 2, 3]) : any
+ >BigUint64Array : any
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

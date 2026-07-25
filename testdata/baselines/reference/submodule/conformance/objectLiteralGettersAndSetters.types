@@ -166,10 +166,10 @@ var sameType1 = { get x(): string { return undefined; }, set x(n: string) { } };
 var sameType2 = { get x(): Array<number> { return undefined; }, set x(n: number[]) { } };
 >sameType2 : { x: Array<number>; }
 >{ get x(): Array<number> { return undefined; }, set x(n: number[]) { } } : { x: Array<number>; }
->x : number[]
+>x : Array<number>
 >undefined : undefined
->x : number[]
->n : number[]
+>x : Array<number>
+>n : Array<number>
 
 var sameType3 = { get x(): any { return undefined; }, set x(n: typeof anyVar) { } };
 >sameType3 : { x: any; }

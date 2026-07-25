@@ -1,0 +1,92 @@
+--- old.awaitedTypeJQuery.types
++++ new.awaitedTypeJQuery.types
+@@= skipped -28, +28 lines =@@
+ >t : TR
+ >u : UR
+ >v : VR
+->s : SR[]
++>s : Array<SR>
+
+                 BRD, BJD, BND,
+                 CRD, CJD, CND,
+@@= skipped -10, +10 lines =@@
+ >t : TJ
+ >u : UJ
+ >v : VJ
+->s : SJ[]
++>s : Array<SJ>
+
+                 BRF, BJF, BNF,
+                 CRF, CJF, CNF,
+@@= skipped -10, +10 lines =@@
+ >t : TN
+ >u : UN
+ >v : VN
+->s : SN[]
++>s : Array<SN>
+
+                 BRP, BJP, BNP,
+                 CRP, CJP, CNP,
+@@= skipped -26, +26 lines =@@
+ >t : TJ
+ >u : UJ
+ >v : VJ
+->s : SJ[]
++>s : Array<SJ>
+
+                 BRF, BJF, BNF,
+                 CRF, CJF, CNF,
+@@= skipped -10, +10 lines =@@
+ >t : TN
+ >u : UN
+ >v : VN
+->s : SN[]
++>s : Array<SN>
+
+                 BRP, BJP, BNP,
+                 CRP, CJP, CNP,
+@@= skipped -25, +25 lines =@@
+ >t : TN
+ >u : UN
+ >v : VN
+->s : SN[]
++>s : Array<SN>
+
+                 BRP, BJP, BNP,
+                 CRP, CJP, CNP,
+@@= skipped -23, +23 lines =@@
+ >t : TR
+ >u : UR
+ >v : VR
+->s : SR[]
++>s : Array<SR>
+
+                 BRD, BJD, BND,
+                 CRD, CJD, CND,
+@@= skipped -10, +10 lines =@@
+ >t : TJ
+ >u : UJ
+ >v : VJ
+->s : SJ[]
++>s : Array<SJ>
+
+                 BRF, BJF, BNF,
+                 CRF, CJF, CNF,
+@@= skipped -25, +25 lines =@@
+ >t : TJ
+ >u : UJ
+ >v : VJ
+->s : SJ[]
++>s : Array<SJ>
+
+                 BRF, BJF, BNF,
+                 CRF, CJF, CNF,
+@@= skipped -22, +22 lines =@@
+ >t : TR
+ >u : UR
+ >v : VR
+->s : SR[]
++>s : Array<SR>
+
+                 BRD, BJD, BND,
+                 CRD, CJD, CND,

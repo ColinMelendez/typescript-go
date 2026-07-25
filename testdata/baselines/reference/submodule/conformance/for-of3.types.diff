@@ -1,0 +1,8 @@
+--- old.for-of3.types
++++ new.for-of3.types
+@@= skipped -6, +6 lines =@@
+ for (v++ of []) { }
+ >v++ : number
+ >v : any
+->[] : never[]
++>[] : Array<never>

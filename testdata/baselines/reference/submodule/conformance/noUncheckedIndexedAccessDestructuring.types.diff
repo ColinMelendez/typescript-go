@@ -1,0 +1,94 @@
+--- old.noUncheckedIndexedAccessDestructuring.types
++++ new.noUncheckedIndexedAccessDestructuring.types
+@@= skipped -1, +1 lines =@@
+
+ === noUncheckedIndexedAccessDestructuring.ts ===
+ declare const strArray: string[];
+->strArray : string[]
++>strArray : Array<string>
+
+ declare const strStrTuple: [string, string];
+ >strStrTuple : [string, string]
+@@= skipped -10, +10 lines =@@
+ // Destructuring from a simple array -> include undefined
+ const [s1] = strArray;
+ >s1 : string | undefined
+->strArray : string[]
++>strArray : Array<string>
+
+ s1.toString(); // Should error, s1 possibly undefined
+ >s1.toString() : string
+@@= skipped -10, +10 lines =@@
+
+ // Destructuring a rest element -> do not include undefined
+ const [...s2] = strArray;
+->s2 : string[]
+->strArray : string[]
++>s2 : Array<string>
++>strArray : Array<string>
+
+ s2.push(undefined); // Should error, 'undefined' not part of s2's element type
+ >s2.push(undefined) : number
+->s2.push : (...items: string[]) => number
+->s2 : string[]
+->push : (...items: string[]) => number
++>s2.push : (...items: Array<string>) => number
++>s2 : Array<string>
++>push : (...items: Array<string>) => number
+ >undefined : undefined
+
+ // Destructuring a rest element -> do not include undefined
+ const [, , ...s3] = strArray;
+->s3 : string[]
+->strArray : string[]
++>s3 : Array<string>
++>strArray : Array<string>
+
+ s3.push(undefined); // Should error, 'undefined' not part of s2's element type
+ >s3.push(undefined) : number
+->s3.push : (...items: string[]) => number
+->s3 : string[]
+->push : (...items: string[]) => number
++>s3.push : (...items: Array<string>) => number
++>s3 : Array<string>
++>push : (...items: Array<string>) => number
+ >undefined : undefined
+
+ // Declaration forms for object destructuring
+@@= skipped -154, +154 lines =@@
+ >target_string_undef : string | undefined
+
+ declare let target_string_arr: string[];
+->target_string_arr : string[]
++>target_string_arr : Array<string>
+
+ // Assignment forms
+ [target_string] = strArray; // Should error
+->[target_string] = strArray : string[]
++>[target_string] = strArray : Array<string>
+ >[target_string] : [string]
+ >target_string : string
+->strArray : string[]
++>strArray : Array<string>
+
+ [target_string_undef] = strArray;  // Should OK
+->[target_string_undef] = strArray : string[]
++>[target_string_undef] = strArray : Array<string>
+ >[target_string_undef] : [string | undefined]
+ >target_string_undef : string | undefined
+->strArray : string[]
++>strArray : Array<string>
+
+ [,,, ...target_string_arr] = strArray; // Should OK
+->[,,, ...target_string_arr] = strArray : string[]
+->[,,, ...target_string_arr] : [undefined, undefined, undefined, ...string[]]
++>[,,, ...target_string_arr] = strArray : Array<string>
++>[,,, ...target_string_arr] : [undefined, undefined, undefined, ...Array<string>]
+ >...target_string_arr : string
+->target_string_arr : string[]
+->strArray : string[]
++>target_string_arr : Array<string>
++>strArray : Array<string>
+
+ {
+     let x: number, y: number, z: number | undefined;

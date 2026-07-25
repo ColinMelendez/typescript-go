@@ -1,0 +1,8 @@
+--- old.YieldStarExpression1_es6.types
++++ new.YieldStarExpression1_es6.types
+@@= skipped -3, +3 lines =@@
+ yield * [];
+ >yield * [] : number
+ >yield : any
+->[] : never[]
++>[] : Array<never>

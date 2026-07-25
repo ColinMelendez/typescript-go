@@ -14,16 +14,16 @@ type NodeWithId = ITreeItem & { Id?: number };
 
 function getMaxId(items: NodeWithId[]) {
 >getMaxId : (items: NodeWithId[]) => void
->items : NodeWithId[]
+>items : Array<NodeWithId>
 }
 
 const nodes = [] as ITreeItem[];
->nodes : ITreeItem[]
->[] as ITreeItem[] : ITreeItem[]
->[] : never[]
+>nodes : Array<ITreeItem>
+>[] as ITreeItem[] : Array<ITreeItem>
+>[] : Array<never>
 
 getMaxId(nodes);
 >getMaxId(nodes) : void
 >getMaxId : (items: NodeWithId[]) => void
->nodes : ITreeItem[]
+>nodes : Array<ITreeItem>
 

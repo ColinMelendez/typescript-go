@@ -1,0 +1,11 @@
+--- old.recursiveComplicatedClasses.types
++++ new.recursiveComplicatedClasses.types
+@@= skipped -4, +4 lines =@@
+ >Signature : Signature
+
+     public parameters: ParameterSymbol[] = null;
+->parameters : ParameterSymbol[]
++>parameters : Array<ParameterSymbol>
+ }
+
+ function aEnclosesB(a: Symbol) {

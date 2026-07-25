@@ -1,0 +1,20 @@
+--- old.jsdocTypeTag.types
++++ new.jsdocTypeTag.types
+@@= skipped -58, +58 lines =@@
+
+ /** @type {Array} */
+ var A;
+->A : any[]
++>A : Array<any>
+
+ /** @type {array} */
+ var a;
+@@= skipped -82, +82 lines =@@
+ >nl : null
+
+ var A: any[];
+->A : any[]
++>A : Array<any>
+
+ var a: any[];
+ >a : array

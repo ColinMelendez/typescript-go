@@ -1,0 +1,20 @@
+--- old.controlFlowForOfStatement.types
++++ new.controlFlowForOfStatement.types
+@@= skipped -1, +1 lines =@@
+
+ === controlFlowForOfStatement.ts ===
+ let obj: number[];
+->obj : number[]
++>obj : Array<number>
+
+ let x: string | number | boolean | RegExp;
+ >x : string | number | boolean | RegExp
+@@= skipped -15, +15 lines =@@
+
+     for (x of obj) {
+ >x : string | number | boolean | RegExp
+->obj : number[]
++>obj : Array<number>
+
+         x = x.toExponential();
+ >x = x.toExponential() : string

@@ -24,7 +24,7 @@ declare class M1 {
 >M1 : M1
 
     constructor(...args: any[]);
->args : any[]
+>args : Array<any>
 
     p: number;
 >p : number
@@ -37,7 +37,7 @@ declare class M2 {
 >M2 : M2
 
     constructor(...args: any[]);
->args : any[]
+>args : Array<any>
 
     f(): number;
 >f : () => number

@@ -19,7 +19,7 @@ f(h)
 type Check<T> = T extends (this: infer U, ...args: any[]) => any ? string : unknown;
 >Check : Check<T>
 >this : U
->args : any[]
+>args : Array<any>
 
 type r1 = Check<(this: number) => void>; // should be string
 >r1 : string
@@ -28,7 +28,7 @@ type r1 = Check<(this: number) => void>; // should be string
 type This<T>  = T extends (this: infer U, ...args: any[]) => any ? U : unknown;
 >This : This<T>
 >this : U
->args : any[]
+>args : Array<any>
 
 type r2 = This<(this: number) => void>; // should be number
 >r2 : number

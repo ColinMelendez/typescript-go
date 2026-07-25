@@ -1,0 +1,11 @@
+--- old.objectLitArrayDeclNoNew.types
++++ new.objectLitArrayDeclNoNew.types
+@@= skipped -17, +17 lines =@@
+
+     export interface ILineTokens {
+         tokens: IToken[];
+->tokens : IToken[]
++>tokens : Array<IToken>
+
+         endState: IState;
+ >endState : IState

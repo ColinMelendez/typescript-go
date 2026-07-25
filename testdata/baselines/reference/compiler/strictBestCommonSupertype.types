@@ -29,7 +29,7 @@ function inject<T>(token: ProviderToken<T>): T {
 
 interface Type<T> extends Function {
     new (...args: any[]): T;
->args : any[]
+>args : Array<any>
 }
 
 type ProviderToken<T> = Type<T> | AbstractType<T>;

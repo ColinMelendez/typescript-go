@@ -26,8 +26,8 @@ const val1: Foo.Yep | Bar.Yep = x;
 >x : { type: string; }
 
 const y = [{ type: "a" }, { type: "b" }];
->y : { type: string; }[]
->[{ type: "a" }, { type: "b" }] : { type: string; }[]
+>y : Array<{ type: string; }>
+>[{ type: "a" }, { type: "b" }] : Array<{ type: string; }>
 >{ type: "a" } : { type: string; }
 >type : string
 >"a" : "a"
@@ -39,5 +39,5 @@ const val2: [Foo.Yep, Bar.Yep] = y;
 >val2 : [Foo.Yep, Bar.Yep]
 >Foo : any
 >Bar : any
->y : { type: string; }[]
+>y : Array<{ type: string; }>
 

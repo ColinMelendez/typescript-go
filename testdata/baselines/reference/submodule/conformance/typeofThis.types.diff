@@ -1,0 +1,20 @@
+--- old.typeofThis.types
++++ new.typeofThis.types
+@@= skipped -404, +404 lines =@@
+
+         for (const dummy in []) {}
+ >dummy : string
+->[] : never[]
++>[] : Array<never>
+
+         type Test = typeof this;
+ >Test : this
+@@= skipped -12, +12 lines =@@
+
+         for (const dummy of []) {}
+ >dummy : never
+->[] : never[]
++>[] : Array<never>
+
+         type Test = typeof this;
+ >Test : this

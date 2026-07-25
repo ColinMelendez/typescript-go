@@ -6,7 +6,7 @@ class C {
 
     public {[name:string]:VariableDeclaration};
 > : any
->[name:string] : any[]
+>[name:string] : Array<any>
 >name : void
 >string : any
 >VariableDeclaration : any

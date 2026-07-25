@@ -3,14 +3,14 @@
 === jsdocArrayObjectPromiseImplicitAny.js ===
 /** @type {Array} */
 var anyArray = [5];
->anyArray : any[]
->[5] : number[]
+>anyArray : Array<any>
+>[5] : Array<number>
 >5 : 5
 
 /** @type {Array<number>} */
 var numberArray = [5];
->numberArray : number[]
->[5] : number[]
+>numberArray : Array<number>
+>[5] : Array<number>
 >5 : 5
 
 /**
@@ -18,11 +18,11 @@ var numberArray = [5];
  * @return {Array}
  */
 function returnAnyArray(arr) {
->returnAnyArray : (arr: any[]) => any[]
->arr : any[]
+>returnAnyArray : (arr: Array<any>) => Array<any>
+>arr : Array<any>
 
   return arr;
->arr : any[]
+>arr : Array<any>
 }
 
 /** @type {Promise} */

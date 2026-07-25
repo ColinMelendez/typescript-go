@@ -4,10 +4,10 @@
 interface I {
     f<T, U>(a1: { a: T; b: U }[], a2: { a: T; b: U }[]): { c: T; d: U };
 >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
->a1 : { a: T; b: U; }[]
+>a1 : Array<{ a: T; b: U; }>
 >a : T
 >b : U
->a2 : { a: T; b: U; }[]
+>a2 : Array<{ a: T; b: U; }>
 >a : T
 >b : U
 >c : T
@@ -15,7 +15,7 @@ interface I {
 
     g<T, U>(...arg: { a: T; b: U }[][]): { c: T; d: U };
 >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
->arg : { a: T; b: U; }[][]
+>arg : Array<Array<{ a: T; b: U; }>>
 >a : T
 >b : U
 >c : T
@@ -38,9 +38,9 @@ var t1 = x.f([o], [o]);
 >x.f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
 >x : I
 >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
 
 var t1: { c: number; d: string }; 
@@ -54,9 +54,9 @@ var t2 = x.f<number, string>([o], [o]);
 >x.f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
 >x : I
 >f : <T, U>(a1: { a: T; b: U; }[], a2: { a: T; b: U; }[]) => { c: T; d: U; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
 
 var t2: { c: number; d: string }; 
@@ -70,9 +70,9 @@ var t3 = x.g([o], [o]);
 >x.g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
 >x : I
 >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
 
 var t3: { c: number; d: string };
@@ -86,9 +86,9 @@ var t4 = x.g<number, string>([o], [o]);
 >x.g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
 >x : I
 >g : <T, U>(...arg: { a: T; b: U; }[][]) => { c: T; d: U; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
->[o] : { a: number; b: string; }[]
+>[o] : Array<{ a: number; b: string; }>
 >o : { a: number; b: string; }
 
 var t4: { c: number; d: string };

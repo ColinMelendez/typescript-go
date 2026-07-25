@@ -6,7 +6,7 @@ export function classExtender<TFunction>(superClass: TFunction, _instanceModifie
 >superClass : TFunction
 >_instanceModifier : (instance: any, args: any[]) => void
 >instance : any
->args : any[]
+>args : Array<any>
 
     return class decoratorFunc extends superClass {
 >class decoratorFunc extends superClass {        constructor(...args: any[]) {            super(...args);            _instanceModifier(this, args);        }    } : typeof decoratorFunc
@@ -14,19 +14,19 @@ export function classExtender<TFunction>(superClass: TFunction, _instanceModifie
 >superClass : TFunction
 
         constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
             super(...args);
 >super(...args) : void
 >super : any
 >...args : any
->args : any[]
+>args : Array<any>
 
             _instanceModifier(this, args);
 >_instanceModifier(this, args) : void
 >_instanceModifier : (instance: any, args: any[]) => void
 >this : this
->args : any[]
+>args : Array<any>
         }
     };
 }
@@ -37,11 +37,11 @@ class MyClass { private x; }
 
 export function classExtender2<TFunction extends new (...args: string[]) => MyClass>(superClass: TFunction, _instanceModifier: (instance: any, args: any[]) => void): TFunction {
 >classExtender2 : <TFunction extends new (...args: string[]) => MyClass>(superClass: TFunction, _instanceModifier: (instance: any, args: any[]) => void) => TFunction
->args : string[]
+>args : Array<string>
 >superClass : TFunction
 >_instanceModifier : (instance: any, args: any[]) => void
 >instance : any
->args : any[]
+>args : Array<any>
 
     return class decoratorFunc extends superClass {
 >class decoratorFunc extends superClass {        constructor(...args: any[]) {            super(...args);            _instanceModifier(this, args);        }    } : { new (...args: any[]): decoratorFunc; prototype: classExtender2.decoratorFunc; } & TFunction
@@ -49,19 +49,19 @@ export function classExtender2<TFunction extends new (...args: string[]) => MyCl
 >superClass : MyClass
 
         constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
             super(...args);
 >super(...args) : void
 >super : TFunction
 >...args : any
->args : any[]
+>args : Array<any>
 
             _instanceModifier(this, args);
 >_instanceModifier(this, args) : void
 >_instanceModifier : (instance: any, args: any[]) => void
 >this : this
->args : any[]
+>args : Array<any>
         }
     };
 }

@@ -7,11 +7,15 @@
 -      Type 'string | number | boolean' is not assignable to type 'boolean'.
 -        Type 'string' is not assignable to type 'boolean'.
 -  Overload 2 of 2, '(list: Dictionary<unknown>, iterator?: Iterator_<unknown, boolean>, context?: any): boolean', gave the following error.
+-    Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
+-      Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
 +underscoreTest1_underscoreTests.ts(26,7): error TS2769: No overload matches this call.
 +  The last overload gave the following error.
-     Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
-       Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
++    Argument of type 'Array<string | number | boolean>' is not assignable to parameter of type 'Dictionary<unknown>'.
++      Index signature for type 'string' is missing in type 'Array<string | number | boolean>'.
 
+
+ ==== underscoreTest1_underscoreTests.ts (1 errors) ====
 @@= skipped -34, +30 lines =@@
      var odds = _.reject([1, 2, 3, 4, 5, 6], (num) => num % 2 == 0);
      
@@ -24,9 +28,11 @@
 -!!! error TS2769:       Type 'string | number | boolean' is not assignable to type 'boolean'.
 -!!! error TS2769:         Type 'string' is not assignable to type 'boolean'.
 -!!! error TS2769:   Overload 2 of 2, '(list: Dictionary<unknown>, iterator?: Iterator_<unknown, boolean>, context?: any): boolean', gave the following error.
+-!!! error TS2769:     Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
+-!!! error TS2769:       Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
 +!!! error TS2769:   The last overload gave the following error.
- !!! error TS2769:     Argument of type '(string | number | boolean)[]' is not assignable to parameter of type 'Dictionary<unknown>'.
- !!! error TS2769:       Index signature for type 'string' is missing in type '(string | number | boolean)[]'.
++!!! error TS2769:     Argument of type 'Array<string | number | boolean>' is not assignable to parameter of type 'Dictionary<unknown>'.
++!!! error TS2769:       Index signature for type 'string' is missing in type 'Array<string | number | boolean>'.
 +!!! related TS2771 underscoreTest1_underscore.ts:452:9: The last overload is declared here.
      
      _.any([null, 0, 'yes', false]);

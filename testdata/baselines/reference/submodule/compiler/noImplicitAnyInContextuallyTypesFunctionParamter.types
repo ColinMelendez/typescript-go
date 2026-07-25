@@ -2,16 +2,16 @@
 
 === noImplicitAnyInContextuallyTypesFunctionParamter.ts ===
 var regexMatchList = ['', ''];
->regexMatchList : string[]
->['', ''] : string[]
+>regexMatchList : Array<string>
+>['', ''] : Array<string>
 >'' : ""
 >'' : ""
 
 regexMatchList.forEach(match => ''.replace(match, ''));
 >regexMatchList.forEach(match => ''.replace(match, '')) : void
->regexMatchList.forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
->regexMatchList : string[]
->forEach : (callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any) => void
+>regexMatchList.forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
+>regexMatchList : Array<string>
+>forEach : (callbackfn: (value: string, index: number, array: Array<string>) => void, thisArg?: any) => void
 >match => ''.replace(match, '') : (match: string) => string
 >match : string
 >''.replace(match, '') : string

@@ -76,100 +76,100 @@ const d = {
 };
 
 function e (.../* comment e */args) {
->e : (...args: any[]) => number
->args : any[]
+>e : (...args: Array<any>) => number
+>args : Array<any>
 
   const [ea, eb] = [.../* comment eab */args];
 >ea : any
 >eb : any
->[.../* comment eab */args] : any[]
+>[.../* comment eab */args] : Array<any>
 >.../* comment eab */args : any
->args : any[]
+>args : Array<any>
 
   return args.length;
 >args.length : number
->args : any[]
+>args : Array<any>
 >length : number
 }
 
 function f (
->f : (first: any, ...rest: any[]) => number
+>f : (first: any, ...rest: Array<any>) => number
 
   first,
 >first : any
 
   .../* comment f */rest
->rest : any[]
+>rest : Array<any>
 
 ) {
   return rest.length;
 >rest.length : number
->rest : any[]
+>rest : Array<any>
 >length : number
 }
 
 function g (
->g : (first: any, ...rest: any[]) => number
+>g : (first: any, ...rest: Array<any>) => number
 
   first,
 >first : any
 
   .../* comment g */
   rest
->rest : any[]
+>rest : Array<any>
 
 ) {
   const [ga, gb] = [.../* comment gab */
 >ga : any
 >gb : any
->[.../* comment gab */    rest  ] : any[]
+>[.../* comment gab */    rest  ] : Array<any>
 >.../* comment gab */    rest : any
 
     rest
->rest : any[]
+>rest : Array<any>
 
   ]
   return rest.length;
 >rest.length : number
->rest : any[]
+>rest : Array<any>
 >length : number
 }
 
 const h = (.../* comment h */args) => args.length;
->h : (...args: any[]) => number
->(.../* comment h */args) => args.length : (...args: any[]) => number
->args : any[]
+>h : (...args: Array<any>) => number
+>(.../* comment h */args) => args.length : (...args: Array<any>) => number
+>args : Array<any>
 >args.length : number
->args : any[]
+>args : Array<any>
 >length : number
 
 const i = (
->i : (first: any, ...rest: any[]) => number
->(  first, .../* comment i */rest) => rest.length : (first: any, ...rest: any[]) => number
+>i : (first: any, ...rest: Array<any>) => number
+>(  first, .../* comment i */rest) => rest.length : (first: any, ...rest: Array<any>) => number
 
   first, .../* comment i */rest
 >first : any
->rest : any[]
+>rest : Array<any>
 
 ) => rest.length;
 >rest.length : number
->rest : any[]
+>rest : Array<any>
 >length : number
 
 const j = (
->j : (first: any, ...rest: any[]) => number
->(  first,  .../* comment j */  rest) => rest.length : (first: any, ...rest: any[]) => number
+>j : (first: any, ...rest: Array<any>) => number
+>(  first,  .../* comment j */  rest) => rest.length : (first: any, ...rest: Array<any>) => number
 
   first,
 >first : any
 
   .../* comment j */
   rest
->rest : any[]
+>rest : Array<any>
 
 ) => rest.length;
 >rest.length : number
->rest : any[]
+>rest : Array<any>
 >length : number
 
 function k ({

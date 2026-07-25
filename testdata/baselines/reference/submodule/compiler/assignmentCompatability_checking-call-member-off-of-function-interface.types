@@ -19,9 +19,9 @@ x = '';
 >'' : ""
 
 x = [''];
->x = [''] : string[]
+>x = [''] : Array<string>
 >x : Callable
->[''] : string[]
+>[''] : Array<string>
 >'' : ""
 
 x = 4;
@@ -56,7 +56,7 @@ fn('');
 fn(['']);
 >fn(['']) : void
 >fn : (c: Callable) => void
->[''] : string[]
+>[''] : Array<string>
 >'' : ""
 
 fn(4);

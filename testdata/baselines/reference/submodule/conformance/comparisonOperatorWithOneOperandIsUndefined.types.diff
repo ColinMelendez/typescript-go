@@ -1,0 +1,153 @@
+--- old.comparisonOperatorWithOneOperandIsUndefined.types
++++ new.comparisonOperatorWithOneOperandIsUndefined.types
+@@= skipped -130, +130 lines =@@
+ >f : {}
+
+ var g: string[];
+->g : string[]
++>g : Array<string>
+
+ // operator <
+ var r1a1 = x < a;
+@@= skipped -43, +43 lines =@@
+ >r1a7 : boolean
+ >x < g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r1b1 = a < x;
+ >r1b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r1b7 = g < x;
+ >r1b7 : boolean
+ >g < x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator >
+@@= skipped -44, +44 lines =@@
+ >r2a7 : boolean
+ >x > g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r2b1 = a > x;
+ >r2b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r2b7 = g > x;
+ >r2b7 : boolean
+ >g > x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator <=
+@@= skipped -44, +44 lines =@@
+ >r3a7 : boolean
+ >x <= g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r3b1 = a <= x;
+ >r3b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r3b7 = g <= x;
+ >r3b7 : boolean
+ >g <= x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator >=
+@@= skipped -44, +44 lines =@@
+ >r4a7 : boolean
+ >x >= g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r4b1 = a >= x;
+ >r4b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r4b7 = g >= x;
+ >r4b7 : boolean
+ >g >= x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator ==
+@@= skipped -44, +44 lines =@@
+ >r5a7 : boolean
+ >x == g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r5b1 = a == x;
+ >r5b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r5b7 = g == x;
+ >r5b7 : boolean
+ >g == x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator !=
+@@= skipped -44, +44 lines =@@
+ >r6a7 : boolean
+ >x != g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r6b1 = a != x;
+ >r6b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r6b7 = g != x;
+ >r6b7 : boolean
+ >g != x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator ===
+@@= skipped -44, +44 lines =@@
+ >r7a7 : boolean
+ >x === g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r7b1 = a === x;
+ >r7b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r7b7 = g === x;
+ >r7b7 : boolean
+ >g === x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined
+
+ // operator !==
+@@= skipped -44, +44 lines =@@
+ >r8a7 : boolean
+ >x !== g : boolean
+ >x : undefined
+->g : string[]
++>g : Array<string>
+
+ var r8b1 = a !== x;
+ >r8b1 : boolean
+@@= skipped -41, +41 lines =@@
+ var r8b7 = g !== x;
+ >r8b7 : boolean
+ >g !== x : boolean
+->g : string[]
++>g : Array<string>
+ >x : undefined

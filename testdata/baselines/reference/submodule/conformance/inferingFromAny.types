@@ -13,7 +13,7 @@ declare function f1<T>(t: T): T
 
 declare function f2<T>(t: T[]): T;
 >f2 : <T>(t: T[]) => T
->t : T[]
+>t : Array<T>
 
 declare function f3<T, U>(t: [T, U]): [T, U];
 >f3 : <T, U>(t: [T, U]) => [T, U]

@@ -22,7 +22,7 @@ var x4: typeof '';
 >'' : ""
 
 var x5: typeof [];
->x5 : any[]
+>x5 : Array<any>
 > : any
 
 var x6: typeof null;

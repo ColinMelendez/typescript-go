@@ -1,0 +1,30 @@
+--- old.enumIndexer.types
++++ new.enumIndexer.types
+@@= skipped -8, +8 lines =@@
+ >bar : MyEnumType.bar
+ }
+ var _arr = [{ key: 'foo' }, { key: 'bar' }]
+->_arr : { key: string; }[]
+->[{ key: 'foo' }, { key: 'bar' }] : { key: string; }[]
++>_arr : Array<{ key: string; }>
++>[{ key: 'foo' }, { key: 'bar' }] : Array<{ key: string; }>
+ >{ key: 'foo' } : { key: string; }
+ >key : string
+ >'foo' : "foo"
+@@= skipped -16, +16 lines =@@
+ >foo : MyEnumType.foo
+
+ var x = _arr.map(o => MyEnumType[o.key] === enumValue); // these are not same type
+->x : boolean[]
+->_arr.map(o => MyEnumType[o.key] === enumValue) : boolean[]
+->_arr.map : <U>(callbackfn: (value: { key: string; }, index: number, array: { key: string; }[]) => U, thisArg?: any) => U[]
+->_arr : { key: string; }[]
+->map : <U>(callbackfn: (value: { key: string; }, index: number, array: { key: string; }[]) => U, thisArg?: any) => U[]
++>x : Array<boolean>
++>_arr.map(o => MyEnumType[o.key] === enumValue) : Array<boolean>
++>_arr.map : <U>(callbackfn: (value: { key: string; }, index: number, array: Array<{ key: string; }>) => U, thisArg?: any) => Array<U>
++>_arr : Array<{ key: string; }>
++>map : <U>(callbackfn: (value: { key: string; }, index: number, array: Array<{ key: string; }>) => U, thisArg?: any) => Array<U>
+ >o => MyEnumType[o.key] === enumValue : (o: { key: string; }) => boolean
+ >o : { key: string; }
+ >MyEnumType[o.key] === enumValue : boolean

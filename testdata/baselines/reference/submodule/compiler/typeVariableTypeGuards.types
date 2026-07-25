@@ -179,7 +179,7 @@ function f4<T extends string[] | undefined>(obj: T | undefined, x: number) {
         obj[x].length;
 >obj[x].length : number
 >obj[x] : string
->obj : string[]
+>obj : Array<string>
 >x : number
 >length : number
     }

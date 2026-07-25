@@ -1,0 +1,41 @@
+--- old.nestedTypeVariableInfersLiteral.types
++++ new.nestedTypeVariableInfersLiteral.types
+@@= skipped -3, +3 lines =@@
+ // https://github.com/Microsoft/TypeScript/issues/19632
+ declare function direct<A extends string>(a: A | A[]): Record<A, string>
+ >direct : <A extends string>(a: A | A[]) => Record<A, string>
+->a : A | A[]
++>a : A | Array<A>
+
+ declare function nested<A extends string>(a: { fields: A }): Record<A, string>
+ >nested : <A extends string>(a: { fields: A; }) => Record<A, string>
+@@= skipped -10, +10 lines =@@
+ declare function nestedUnion<A extends string>(a: { fields: A | A[] }): Record<A, string>
+ >nestedUnion : <A extends string>(a: { fields: A | A[]; }) => Record<A, string>
+ >a : { fields: A | A[]; }
+->fields : A | A[]
++>fields : A | Array<A>
+
+ const directUnionSingle = direct("z")
+ >directUnionSingle : Record<"z", string>
+@@= skipped -12, +12 lines =@@
+ >directUnionArray : Record<"y" | "z", string>
+ >direct(["z", "y"]) : Record<"y" | "z", string>
+ >direct : <A extends string>(a: A | A[]) => Record<A, string>
+->["z", "y"] : ("y" | "z")[]
++>["z", "y"] : Array<"y" | "z">
+ >"z" : "z"
+ >"y" : "y"
+
+@@= skipped -24, +24 lines =@@
+ >nestedUnionArray : Record<"y" | "z", string>
+ >nestedUnion({fields: ["z", "y"]}) : Record<"y" | "z", string>
+ >nestedUnion : <A extends string>(a: { fields: A | A[]; }) => Record<A, string>
+->{fields: ["z", "y"]} : { fields: ("y" | "z")[]; }
+->fields : ("y" | "z")[]
+->["z", "y"] : ("y" | "z")[]
++>{fields: ["z", "y"]} : { fields: Array<"y" | "z">; }
++>fields : Array<"y" | "z">
++>["z", "y"] : Array<"y" | "z">
+ >"z" : "z"
+ >"y" : "y"

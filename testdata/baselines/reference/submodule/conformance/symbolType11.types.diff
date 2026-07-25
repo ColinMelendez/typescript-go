@@ -1,0 +1,14 @@
+--- old.symbolType11.types
++++ new.symbolType11.types
+@@= skipped -14, +14 lines =@@
+ >s : symbol
+
+ s && [];
+->s && [] : never[]
++>s && [] : Array<never>
+ >s : symbol
+->[] : never[]
++>[] : Array<never>
+
+ 0 && s;
+ >0 && s : 0

@@ -1,0 +1,11 @@
+--- old.jsxNamespaceReexports.types
++++ new.jsxNamespaceReexports.types
+@@= skipped -4, +4 lines =@@
+ >createElement : (element: string, props: any, ...children: any[]) => any
+ >element : string
+ >props : any
+->children : any[]
++>children : Array<any>
+
+ namespace JSX {
+   export interface IntrinsicElements {

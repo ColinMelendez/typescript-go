@@ -133,7 +133,7 @@ var r4 = foo6(E.A);
 
 declare function foo7(x: number[]): number[];
 >foo7 : { (x: number[]): number[]; (x: E): E; }
->x : number[]
+>x : Array<number>
 
 declare function foo7(x: E): E;
 >foo7 : { (x: number[]): number[]; (x: E): E; }

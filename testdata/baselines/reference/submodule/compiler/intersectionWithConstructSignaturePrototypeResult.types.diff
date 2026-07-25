@@ -1,0 +1,11 @@
+--- old.intersectionWithConstructSignaturePrototypeResult.types
++++ new.intersectionWithConstructSignaturePrototypeResult.types
+@@= skipped -18, +18 lines =@@
+
+   } & EmberObject) &
+   (new (...args: any[]) => {
+->args : any[]
++>args : Array<any>
+
+     firstName: string;
+ >firstName : string

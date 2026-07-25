@@ -9,15 +9,15 @@ class c {
 }
 
 var x: (() => c)[] = [() => new c()];
->x : (() => c)[]
->[() => new c()] : (() => c)[]
+>x : Array<() => c>
+>[() => new c()] : Array<() => c>
 >() => new c() : () => c
 >new c() : c
 >c : typeof c
 
 var y = [() => new c()];
->y : (() => c)[]
->[() => new c()] : (() => c)[]
+>y : Array<() => c>
+>[() => new c()] : Array<() => c>
 >() => new c() : () => c
 >new c() : c
 >c : typeof c

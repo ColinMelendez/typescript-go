@@ -5,8 +5,8 @@ var a;
 >a : any
 
 var b = [];
->b : any[]
->[] : undefined[]
+>b : Array<any>
+>[] : Array<undefined>
 
 var c;
 >c : any
@@ -16,13 +16,13 @@ for (a in b[c] = b[c] || [], d) {
 >b[c] = b[c] || [], d : any
 >b[c] = b[c] || [] : any
 >b[c] : any
->b : any[]
+>b : Array<any>
 >c : any
 >b[c] || [] : any
 >b[c] : any
->b : any[]
+>b : Array<any>
 >c : any
->[] : undefined[]
+>[] : Array<undefined>
 >d : any
 
 }

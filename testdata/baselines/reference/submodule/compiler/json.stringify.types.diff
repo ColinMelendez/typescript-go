@@ -1,0 +1,11 @@
+--- old.json.stringify.types
++++ new.json.stringify.types
+@@= skipped -26, +26 lines =@@
+ >JSON : JSON
+ >stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (number | string)[] | null, space?: string | number): string; }
+ >value : null
+->["a", 1] : (string | number)[]
++>["a", 1] : Array<string | number>
+ >"a" : "a"
+ >1 : 1
+ >2 : 2

@@ -1,0 +1,57 @@
+--- old.assignmentCompatBetweenTupleAndArray.types
++++ new.assignmentCompatBetweenTupleAndArray.types
+@@= skipped -13, +13 lines =@@
+ >emptyObjTuple : [{}]
+
+ declare var numArray: number[];
+->numArray : number[]
++>numArray : Array<number>
+
+ declare var emptyObjArray: {}[];
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>
+
+ // no error
+ numArray = numNumTuple;
+ >numArray = numNumTuple : [number, number]
+->numArray : number[]
++>numArray : Array<number>
+ >numNumTuple : [number, number]
+
+ emptyObjArray = emptyObjTuple;
+ >emptyObjArray = emptyObjTuple : [{}]
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>
+ >emptyObjTuple : [{}]
+
+ emptyObjArray = numStrTuple;
+ >emptyObjArray = numStrTuple : [number, string]
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>
+ >numStrTuple : [number, string]
+
+ emptyObjArray = numNumTuple;
+ >emptyObjArray = numNumTuple : [number, number]
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>
+ >numNumTuple : [number, number]
+
+ emptyObjArray = numEmptyObjTuple;
+ >emptyObjArray = numEmptyObjTuple : [number, {}]
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>
+ >numEmptyObjTuple : [number, {}]
+
+ // error
+ numArray = numStrTuple;
+ >numArray = numStrTuple : [number, string]
+->numArray : number[]
++>numArray : Array<number>
+ >numStrTuple : [number, string]
+
+ emptyObjTuple = emptyObjArray;
+->emptyObjTuple = emptyObjArray : {}[]
++>emptyObjTuple = emptyObjArray : Array<{}>
+ >emptyObjTuple : [{}]
+->emptyObjArray : {}[]
++>emptyObjArray : Array<{}>

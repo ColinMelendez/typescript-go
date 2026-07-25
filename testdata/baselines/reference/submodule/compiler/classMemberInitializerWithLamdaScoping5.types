@@ -7,7 +7,7 @@ declare var console: {
     log(message?: any, ...optionalParams: any[]): void;
 >log : (message?: any, ...optionalParams: any[]) => void
 >message : any
->optionalParams : any[]
+>optionalParams : Array<any>
 
 };
 class Greeter {

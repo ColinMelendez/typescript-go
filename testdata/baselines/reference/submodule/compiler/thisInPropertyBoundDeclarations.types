@@ -8,8 +8,8 @@ class Bug {
 >name : string
 
     private static func: Function[] = [
->func : Function[]
->[     (that: Bug, name: string) => {         that.foo(name);     }    ] : ((that: Bug, name: string) => void)[]
+>func : Array<Function>
+>[     (that: Bug, name: string) => {         that.foo(name);     }    ] : Array<(that: Bug, name: string) => void>
 
      (that: Bug, name: string) => {
 >(that: Bug, name: string) => {         that.foo(name);     } : (that: Bug, name: string) => void

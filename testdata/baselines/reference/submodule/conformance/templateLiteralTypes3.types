@@ -522,16 +522,16 @@ type DotString = `${string}.${string}.${string}`;
 
 declare function noSpread<P extends DotString>(args: P[]): P;
 >noSpread : <P extends DotString>(args: P[]) => P
->args : P[]
+>args : Array<P>
 
 declare function spread<P extends DotString>(...args: P[]): P;
 >spread : <P extends DotString>(...args: P[]) => P
->args : P[]
+>args : Array<P>
 
 noSpread([`1.${'2'}.3`, `1.${'2'}.4`]);
 >noSpread([`1.${'2'}.3`, `1.${'2'}.4`]) : "1.2.3" | "1.2.4"
 >noSpread : <P extends DotString>(args: P[]) => P
->[`1.${'2'}.3`, `1.${'2'}.4`] : ("1.2.3" | "1.2.4")[]
+>[`1.${'2'}.3`, `1.${'2'}.4`] : Array<"1.2.3" | "1.2.4">
 >`1.${'2'}.3` : "1.2.3"
 >'2' : "2"
 >`1.${'2'}.4` : "1.2.4"
@@ -540,7 +540,7 @@ noSpread([`1.${'2'}.3`, `1.${'2'}.4`]);
 noSpread([`1.${'2' as string}.3`, `1.${'2' as string}.4`]);
 >noSpread([`1.${'2' as string}.3`, `1.${'2' as string}.4`]) : `1.${string}.3` | `1.${string}.4`
 >noSpread : <P extends DotString>(args: P[]) => P
->[`1.${'2' as string}.3`, `1.${'2' as string}.4`] : (`1.${string}.3` | `1.${string}.4`)[]
+>[`1.${'2' as string}.3`, `1.${'2' as string}.4`] : Array<`1.${string}.3` | `1.${string}.4`>
 >`1.${'2' as string}.3` : `1.${string}.3`
 >'2' as string : string
 >'2' : "2"

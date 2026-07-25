@@ -8,16 +8,16 @@ declare const s3: [string, string, string];
 >s3 : [string, string, string]
 
 declare const s2_: [string, string, ...string[]];
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 
 declare const s_: string[];
->s_ : string[]
+>s_ : Array<string>
 
 declare const n_: number[];
->n_ : number[]
+>n_ : Array<number>
 
 declare const s2n_: [string, string, ...number[]];
->s2n_ : [string, string, ...number[]]
+>s2n_ : [string, string, ...Array<number>]
 
 declare function fs2(a: string, b: string): void;
 >fs2 : (a: string, b: string) => void
@@ -28,13 +28,13 @@ declare function fs2_(a: string, b: string, ...c: string[]): void;
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >a : string
 >b : string
->c : string[]
+>c : Array<string>
 
 declare function fs2n_(a: string, b: string, ...c: number[]): void;
 >fs2n_ : (a: string, b: string, ...c: number[]) => void
 >a : string
 >b : string
->c : number[]
+>c : Array<number>
 
 declare function fs5(a: string, b: string, c: string, d: string, e: string): void;
 >fs5 : (a: string, b: string, c: string, d: string, e: string) => void
@@ -97,75 +97,75 @@ fs2_(...s_); // error on ...s_
 >fs2_(...s_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 
 fs2_(...s2n_); // error on ...s2n_
 >fs2_(...s2n_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s2n_ : string | number
->s2n_ : [string, string, ...number[]]
+>s2n_ : [string, string, ...Array<number>]
 
 fs2_(...s_, ...s_); // error on ...s_
 >fs2_(...s_, ...s_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 
 fs2_(...s_, ...s_, ...s_); // error on ...s_
 >fs2_(...s_, ...s_, ...s_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 
 // fs2n_(...s2, ...s_); //           FIXME: should be a type error
 fs2n_(...s2_); // error on ...s2_
 >fs2n_(...s2_) : void
 >fs2n_ : (a: string, b: string, ...c: number[]) => void
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 
 // ok
 fs2_(...s2_);
 >fs2_(...s2_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 
 fs2_(...s2_, ...s_);
 >fs2_(...s2_, ...s_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 
 fs2_(...s2_, ...s2_);
 >fs2_(...s2_, ...s2_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 
 fs2_(...s_, ...s2_);
 >fs2_(...s_, ...s2_) : void
 >fs2_ : (a: string, b: string, ...c: string[]) => void
 >...s_ : string
->s_ : string[]
+>s_ : Array<string>
 >...s2_ : string
->s2_ : [string, string, ...string[]]
+>s2_ : [string, string, ...Array<string>]
 
 fs2n_(...s2n_);
 >fs2n_(...s2n_) : void
 >fs2n_ : (a: string, b: string, ...c: number[]) => void
 >...s2n_ : string | number
->s2n_ : [string, string, ...number[]]
+>s2n_ : [string, string, ...Array<number>]
 
 fs2n_(...s2);
 >fs2n_(...s2) : void

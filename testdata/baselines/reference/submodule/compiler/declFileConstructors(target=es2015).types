@@ -30,14 +30,14 @@ export class ConstructorWithRestParamters {
 
     constructor(a: string, ...rests: string[]) {
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }
@@ -120,14 +120,14 @@ class GlobalConstructorWithRestParamters {
 
     constructor(a: string, ...rests: string[]) {
 >a : string
->rests : string[]
+>rests : Array<string>
 
         return a + rests.join("");
 >a + rests.join("") : string
 >a : string
 >rests.join("") : string
 >rests.join : (separator?: string) => string
->rests : string[]
+>rests : Array<string>
 >join : (separator?: string) => string
 >"" : ""
     }

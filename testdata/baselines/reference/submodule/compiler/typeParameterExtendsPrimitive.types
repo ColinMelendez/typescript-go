@@ -51,7 +51,7 @@ function g<T extends I>(i: IdMap<T>) {
 // #17069
 function h<T extends Record<K, number>, K extends string>(array: T[], prop: K): number {
 >h : <T extends Record<K, number>, K extends string>(array: T[], prop: K) => number
->array : T[]
+>array : Array<T>
 >prop : K
 
     let result = 0;
@@ -60,7 +60,7 @@ function h<T extends Record<K, number>, K extends string>(array: T[], prop: K): 
 
     for (const v of array) {
 >v : T
->array : T[]
+>array : Array<T>
 
         result += v[prop];
 >result += v[prop] : number

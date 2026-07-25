@@ -1,0 +1,26 @@
+--- old.commaOperatorWithSecondOperandAnyType.types
++++ new.commaOperatorWithSecondOperandAnyType.types
+@@= skipped -93, +93 lines =@@
+ >ANY : any
+
+ "string", [null, 1];
+->"string", [null, 1] : number[]
++>"string", [null, 1] : Array<number>
+ >"string" : "string"
+->[null, 1] : number[]
++>[null, 1] : Array<number>
+ >1 : 1
+
+ "string".charAt(0), [null, 1];
+->"string".charAt(0), [null, 1] : number[]
++>"string".charAt(0), [null, 1] : Array<number>
+ >"string".charAt(0) : string
+ >"string".charAt : (pos: number) => string
+ >"string" : "string"
+ >charAt : (pos: number) => string
+ >0 : 0
+->[null, 1] : number[]
++>[null, 1] : Array<number>
+ >1 : 1
+
+ true, x("any");

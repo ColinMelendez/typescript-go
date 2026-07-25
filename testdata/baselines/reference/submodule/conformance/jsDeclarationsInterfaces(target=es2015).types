@@ -51,7 +51,7 @@ export interface C<T, U> {
 
     method(...args: any[]): number;
 >method : { <Q = number>(): number; <Q>(a: T & Q): Q & number; (a?: number): number; (...args: any[]): number; }
->args : any[]
+>args : Array<any>
 
     optMethod?(): number;
 >optMethod : (() => number) | undefined

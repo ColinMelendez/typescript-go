@@ -238,11 +238,11 @@ declare let a1: readonly [];
 declare let a2: readonly [1, 2, 3];
 declare let a3: readonly [10, 'hello', true];
 declare let a4: readonly [1, 2, 3];
-declare let a5: number[];
-declare let a6: readonly number[];
-declare let a7: number[];
-declare let a8: readonly ["abc", ...number[]];
-declare let a9: (number | "abc")[];
+declare let a5: Array<number>;
+declare let a6: ReadonlyArray<number>;
+declare let a7: Array<number>;
+declare let a8: readonly ["abc", ...Array<number>];
+declare let a9: Array<number | "abc">;
 declare let d: {
     [x: string]: string;
 };

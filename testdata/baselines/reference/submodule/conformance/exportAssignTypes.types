@@ -23,11 +23,11 @@ var v3: boolean = iBoolean;
 >iBoolean : boolean
 
 import iArray = require('./expArray');
->iArray : number[]
+>iArray : Array<number>
 
 var v4: Array<number> = iArray;
->v4 : number[]
->iArray : number[]
+>v4 : Array<number>
+>iArray : Array<number>
 
 import iObject = require('./expObject');
 >iObject : { answer: number; when: number; }
@@ -77,13 +77,13 @@ export = x;
 
 === expArray.ts ===
 var x = [1,2];
->x : number[]
->[1,2] : number[]
+>x : Array<number>
+>[1,2] : Array<number>
 >1 : 1
 >2 : 2
 
 export = x;
->x : number[]
+>x : Array<number>
 
 === expObject.ts ===
 var x = { answer: 42, when: 1776};

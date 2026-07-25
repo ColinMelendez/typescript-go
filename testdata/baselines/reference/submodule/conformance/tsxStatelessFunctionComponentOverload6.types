@@ -8,7 +8,7 @@ import React = require('react')
 
 declare function log(...args: any[]): void;
 >log : (...args: any[]) => void
->args : any[]
+>args : Array<any>
 
 export interface ClickableProps {
     children?: string;

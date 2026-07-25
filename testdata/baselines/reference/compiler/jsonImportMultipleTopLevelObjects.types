@@ -2,7 +2,7 @@
 
 === data.json ===
 {"a": 1}
->{"a": 1}{"b": 2} : ({ a: number; } | { b: number; })[]
+>{"a": 1}{"b": 2} : Array<{ a: number; } | { b: number; }>
 >{"a": 1} : { a: number; }
 >"a" : number
 >1 : 1
@@ -14,5 +14,5 @@
 
 === index.ts ===
 import data from "./data.json";
->data : ({ a: number; b?: undefined; } | { a?: undefined; b: number; })[]
+>data : Array<{ a: number; b?: undefined; } | { a?: undefined; b: number; }>
 

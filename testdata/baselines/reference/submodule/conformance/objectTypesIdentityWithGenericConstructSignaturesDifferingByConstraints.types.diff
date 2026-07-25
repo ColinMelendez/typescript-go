@@ -1,0 +1,52 @@
+--- old.objectTypesIdentityWithGenericConstructSignaturesDifferingByConstraints.types
++++ new.objectTypesIdentityWithGenericConstructSignaturesDifferingByConstraints.types
+@@= skipped -41, +41 lines =@@
+
+ function foo1b(x: B<Array<number>>);
+ >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo1b(x: B<Array<number>>); // error
+ >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo1b(x: any) { }
+ >foo1b : { (x: B<Array<number>>): any; (x: B<Array<number>>): any; }
+@@= skipped -64, +64 lines =@@
+
+ function foo8(x: B<Array<number>>);
+ >foo8 : { (x: B<Array<number>>): any; (x: I<Number>): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo8(x: I<Number>); // ok
+ >foo8 : { (x: B<Array<number>>): any; (x: I<Number>): any; }
+@@= skipped -12, +12 lines =@@
+
+ function foo9(x: B<Array<number>>);
+ >foo9 : { (x: B<Array<number>>): any; (x: C<String>): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo9(x: C<String>); // error, types are structurally equal
+ >foo9 : { (x: B<Array<number>>): any; (x: C<String>): any; }
+@@= skipped -12, +12 lines =@@
+
+ function foo10(x: B<Array<number>>);
+ >foo10 : { (x: B<Array<number>>): any; (x: typeof a): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo10(x: typeof a); // ok
+ >foo10 : { (x: B<Array<number>>): any; (x: typeof a): any; }
+@@= skipped -13, +13 lines =@@
+
+ function foo11(x: B<Array<number>>);
+ >foo11 : { (x: B<Array<number>>): any; (x: typeof b): any; }
+->x : B<number[]>
++>x : B<Array<number>>
+
+ function foo11(x: typeof b); // ok
+ >foo11 : { (x: B<Array<number>>): any; (x: typeof b): any; }

@@ -15,7 +15,7 @@ function test2() {
 
     for (let v in []) { var v; }
 >v : string
->[] : undefined[]
+>[] : Array<undefined>
 >v : any
 }
 function test3() {
@@ -23,7 +23,7 @@ function test3() {
 
     for (let v of []) { var v; }
 >v : any
->[] : undefined[]
+>[] : Array<undefined>
 >v : any
 }
 function test4() {

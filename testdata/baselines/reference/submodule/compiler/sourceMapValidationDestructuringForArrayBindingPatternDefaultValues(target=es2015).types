@@ -30,17 +30,17 @@ function getRobot() {
 
 let multiRobotA: MultiSkilledRobot = ["mower", ["mowing", ""]];
 >multiRobotA : MultiSkilledRobot
->["mower", ["mowing", ""]] : [string, string[]]
+>["mower", ["mowing", ""]] : [string, Array<string>]
 >"mower" : "mower"
->["mowing", ""] : string[]
+>["mowing", ""] : Array<string>
 >"mowing" : "mowing"
 >"" : ""
 
 let multiRobotB: MultiSkilledRobot = ["trimmer", ["trimming", "edging"]];
 >multiRobotB : MultiSkilledRobot
->["trimmer", ["trimming", "edging"]] : [string, string[]]
+>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
 >"trimmer" : "trimmer"
->["trimming", "edging"] : string[]
+>["trimming", "edging"] : Array<string>
 >"trimming" : "trimming"
 >"edging" : "edging"
 
@@ -311,9 +311,9 @@ for (let [nameB = "name"] = getMultiRobot(), i = 0; i < 1; i++) {
 for (let [nameB = "name"] = ["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
 >nameB : string
 >"name" : "name"
->["trimmer", ["trimming", "edging"]] : [string, string[]]
+>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
 >"trimmer" : "trimmer"
->["trimming", "edging"] : string[]
+>["trimming", "edging"] : Array<string>
 >"trimming" : "trimming"
 >"edging" : "edging"
 >i : number

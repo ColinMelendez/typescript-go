@@ -72,7 +72,7 @@ interface I8 {
 >x : string
 
     foo: number[];
->foo : number[]
+>foo : Array<number>
 }
 
 

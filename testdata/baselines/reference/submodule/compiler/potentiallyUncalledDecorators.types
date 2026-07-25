@@ -17,7 +17,7 @@ class FooComponent {
 // Glimmer-style tracked API:
 declare const tracked: PropertyDecorator & { (...watchedProperties: string[]): any; }
 >tracked : PropertyDecorator & ((...watchedProperties: string[]) => any)
->watchedProperties : string[]
+>watchedProperties : Array<string>
 
 class Person {
 >Person : Person
@@ -63,7 +63,7 @@ declare function noArgs(): OmniDecorator;
 
 declare function allRest(...args: any[]): OmniDecorator;
 >allRest : (...args: any[]) => OmniDecorator
->args : any[]
+>args : Array<any>
 
 declare function oneOptional(x?: any): OmniDecorator;
 >oneOptional : (x?: any) => OmniDecorator
@@ -83,7 +83,7 @@ declare function threeOptional(x?: any, y?: any, z?: any): OmniDecorator;
 declare function oneOptionalWithRest(x?: any, ...args: any[]): OmniDecorator;
 >oneOptionalWithRest : (x?: any, ...args: any[]) => OmniDecorator
 >x : any
->args : any[]
+>args : Array<any>
 
 declare const anyDec: any;
 >anyDec : any

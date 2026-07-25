@@ -64,7 +64,7 @@ declare global {
         */
         someMethod(collection: any[]): boolean;
 >someMethod : (collection: any[]) => boolean
->collection : any[]
+>collection : Array<any>
     }
 }
 

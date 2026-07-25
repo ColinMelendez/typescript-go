@@ -1,0 +1,11 @@
+--- old.sourceMapValidationDecorators(target=es2015).types
++++ new.sourceMapValidationDecorators(target=es2015).types
+@@= skipped -67, +67 lines =@@
+ >30 : 30
+
+       ...b: string[]) {
+->b : string[]
++>b : Array<string>
+     }
+     
+     @PropertyDecorator1

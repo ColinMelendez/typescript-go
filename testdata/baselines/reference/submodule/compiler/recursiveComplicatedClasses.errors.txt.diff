@@ -1,0 +1,17 @@
+--- old.recursiveComplicatedClasses.errors.txt
++++ new.recursiveComplicatedClasses.errors.txt
+@@= skipped -0, +0 lines =@@
+-recursiveComplicatedClasses.ts(2,12): error TS2322: Type 'null' is not assignable to type 'ParameterSymbol[]'.
++recursiveComplicatedClasses.ts(2,12): error TS2322: Type 'null' is not assignable to type 'Array<ParameterSymbol>'.
+ recursiveComplicatedClasses.ts(9,7): error TS2300: Duplicate identifier 'Symbol'.
+ recursiveComplicatedClasses.ts(10,12): error TS2564: Property 'bound' has no initializer and is not definitely assigned in the constructor.
+ recursiveComplicatedClasses.ts(13,27): error TS2345: Argument of type 'TypeSymbol' is not assignable to parameter of type 'Symbol'.
+@@= skipped -10, +10 lines =@@
+     class Signature {
+         public parameters: ParameterSymbol[] = null;
+                ~~~~~~~~~~
+-!!! error TS2322: Type 'null' is not assignable to type 'ParameterSymbol[]'.
++!!! error TS2322: Type 'null' is not assignable to type 'Array<ParameterSymbol>'.
+     }
+     
+     function aEnclosesB(a: Symbol) {

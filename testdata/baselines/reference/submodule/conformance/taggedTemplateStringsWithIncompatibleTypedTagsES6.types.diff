@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithIncompatibleTypedTagsES6.types
++++ new.taggedTemplateStringsWithIncompatibleTypedTagsES6.types
+@@= skipped -3, +3 lines =@@
+ interface I {
+     (stringParts: TemplateStringsArray, ...rest: boolean[]): I;
+ >stringParts : TemplateStringsArray
+->rest : boolean[]
++>rest : Array<boolean>
+
+     g: I;
+ >g : I

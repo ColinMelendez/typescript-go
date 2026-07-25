@@ -18,7 +18,7 @@ var p = new Proxy(t, {});
 >{} : {}
 
 Reflect.ownKeys({});
->Reflect.ownKeys({}) : (string | symbol)[]
+>Reflect.ownKeys({}) : Array<string | symbol>
 >Reflect.ownKeys : (target: object) => (string | symbol)[]
 >Reflect : typeof Reflect
 >ownKeys : (target: object) => (string | symbol)[]

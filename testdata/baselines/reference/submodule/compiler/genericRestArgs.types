@@ -3,66 +3,66 @@
 === genericRestArgs.ts ===
 function makeArrayG<T>(...items: T[]): T[] { return items; }
 >makeArrayG : <T>(...items: T[]) => T[]
->items : T[]
->items : T[]
+>items : Array<T>
+>items : Array<T>
 
 var a1Ga = makeArrayG(1, ""); // no error
->a1Ga : number[]
->makeArrayG(1, "") : number[]
+>a1Ga : Array<number>
+>makeArrayG(1, "") : Array<number>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""
 
 var a1Gb = makeArrayG<any>(1, ""); 
->a1Gb : any[]
->makeArrayG<any>(1, "") : any[]
+>a1Gb : Array<any>
+>makeArrayG<any>(1, "") : Array<any>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""
 
 var a1Gc = makeArrayG<Object>(1, ""); 
->a1Gc : Object[]
->makeArrayG<Object>(1, "") : Object[]
+>a1Gc : Array<Object>
+>makeArrayG<Object>(1, "") : Array<Object>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""
 
 var a1Gd = makeArrayG<number>(1, ""); // error
->a1Gd : number[]
->makeArrayG<number>(1, "") : number[]
+>a1Gd : Array<number>
+>makeArrayG<number>(1, "") : Array<number>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""
 
 function makeArrayGOpt<T>(item1?: T, item2?: T, item3?: T) {
->makeArrayGOpt : <T>(item1?: T, item2?: T, item3?: T) => (T | undefined)[]
+>makeArrayGOpt : <T>(item1?: T, item2?: T, item3?: T) => Array<T | undefined>
 >item1 : T | undefined
 >item2 : T | undefined
 >item3 : T | undefined
 
     return [item1, item2, item3];
->[item1, item2, item3] : (T | undefined)[]
+>[item1, item2, item3] : Array<T | undefined>
 >item1 : T | undefined
 >item2 : T | undefined
 >item3 : T | undefined
 }
 var a2Ga = makeArrayGOpt(1, ""); 
->a2Ga : (number | undefined)[]
->makeArrayGOpt(1, "") : (number | undefined)[]
->makeArrayGOpt : <T>(item1?: T, item2?: T, item3?: T) => (T | undefined)[]
+>a2Ga : Array<number | undefined>
+>makeArrayGOpt(1, "") : Array<number | undefined>
+>makeArrayGOpt : <T>(item1?: T, item2?: T, item3?: T) => Array<T | undefined>
 >1 : 1
 >"" : ""
 
 var a2Gb = makeArrayG<any>(1, "");
->a2Gb : any[]
->makeArrayG<any>(1, "") : any[]
+>a2Gb : Array<any>
+>makeArrayG<any>(1, "") : Array<any>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""
 
 var a2Gc = makeArrayG<any[]>(1, ""); // error
->a2Gc : any[][]
->makeArrayG<any[]>(1, "") : any[][]
+>a2Gc : Array<Array<any>>
+>makeArrayG<any[]>(1, "") : Array<Array<any>>
 >makeArrayG : <T>(...items: T[]) => T[]
 >1 : 1
 >"" : ""

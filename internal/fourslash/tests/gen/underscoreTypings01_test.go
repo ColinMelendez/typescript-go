@@ -43,17 +43,17 @@ var /*11*/dd = aa.map(/*12*/x => x.length);
 var e = a.map(x => x./*13*/`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "1", "var b: number[]", "")
+	f.VerifyQuickInfoAt(t, "1", "var b: Array<number>", "")
 	f.VerifyQuickInfoAt(t, "2", "(parameter) x: string", "")
-	f.VerifyQuickInfoAt(t, "3", "var c: number[]", "")
+	f.VerifyQuickInfoAt(t, "3", "var c: Array<number>", "")
 	f.VerifyQuickInfoAt(t, "4", "(parameter) x: string", "")
-	f.VerifyQuickInfoAt(t, "5", "var d: number[]", "")
+	f.VerifyQuickInfoAt(t, "5", "var d: Array<number>", "")
 	f.VerifyQuickInfoAt(t, "6", "(parameter) x: string", "")
-	f.VerifyQuickInfoAt(t, "7", "var bb: any[]", "")
+	f.VerifyQuickInfoAt(t, "7", "var bb: Array<any>", "")
 	f.VerifyQuickInfoAt(t, "8", "(parameter) x: any", "")
-	f.VerifyQuickInfoAt(t, "9", "var cc: any[]", "")
+	f.VerifyQuickInfoAt(t, "9", "var cc: Array<any>", "")
 	f.VerifyQuickInfoAt(t, "10", "(parameter) x: any", "")
-	f.VerifyQuickInfoAt(t, "11", "var dd: any[]", "")
+	f.VerifyQuickInfoAt(t, "11", "var dd: Array<any>", "")
 	f.VerifyQuickInfoAt(t, "12", "(parameter) x: any", "")
 	f.VerifyCompletions(t, "13", &fourslash.CompletionsExpectedList{
 		IsIncomplete: false,

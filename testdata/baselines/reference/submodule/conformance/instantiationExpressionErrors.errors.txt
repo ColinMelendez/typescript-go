@@ -1,6 +1,6 @@
 instantiationExpressionErrors.ts(7,13): error TS1477: An instantiation expression cannot be followed by a property access.
 instantiationExpressionErrors.ts(8,13): error TS1477: An instantiation expression cannot be followed by a property access.
-instantiationExpressionErrors.ts(13,12): error TS2365: Operator '>' cannot be applied to types 'boolean' and 'string[]'.
+instantiationExpressionErrors.ts(13,12): error TS2365: Operator '>' cannot be applied to types 'boolean' and 'Array<string>'.
 instantiationExpressionErrors.ts(13,14): error TS2693: 'number' only refers to a type, but is being used as a value here.
 instantiationExpressionErrors.ts(18,12): error TS2365: Operator '>' cannot be applied to types 'boolean' and 'number'.
 instantiationExpressionErrors.ts(18,14): error TS2693: 'number' only refers to a type, but is being used as a value here.
@@ -35,7 +35,7 @@ instantiationExpressionErrors.ts(45,12): error TS2365: Operator '>' cannot be ap
     
     const a6 = f<number>['g'];  // Error
                ~~~~~~~~~~~~~~
-!!! error TS2365: Operator '>' cannot be applied to types 'boolean' and 'string[]'.
+!!! error TS2365: Operator '>' cannot be applied to types 'boolean' and 'Array<string>'.
                  ~~~~~~
 !!! error TS2693: 'number' only refers to a type, but is being used as a value here.
     const a7 = (f<number>)['g'];

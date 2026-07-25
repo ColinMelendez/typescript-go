@@ -1,0 +1,48 @@
+--- old.trailingCommasInBindingPatterns.types
++++ new.trailingCommasInBindingPatterns.types
+@@= skipped -1, +1 lines =@@
+
+ === trailingCommasInBindingPatterns.ts ===
+ const [...a,] = [];
+->a : any[]
+->[] : undefined[]
++>a : Array<any>
++>[] : Array<undefined>
+
+ const {...b,} = {};
+ >b : {}
+@@= skipped -12, +12 lines =@@
+ >d : any
+
+ ([...c,] = []);
+->([...c,] = []) : undefined[]
+->[...c,] = [] : undefined[]
+->[...c,] : any[]
++>([...c,] = []) : Array<undefined>
++>[...c,] = [] : Array<undefined>
++>[...c,] : Array<any>
+ >...c : any
+ >c : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ ({...d,} = {});
+ >({...d,} = {}) : {}
+@@= skipped -18, +18 lines =@@
+ const [e,] = <any>[];
+ >e : any
+ ><any>[] : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ const {f,} = <any>{};
+ >f : any
+@@= skipped -17, +17 lines =@@
+ >[g,] : [any]
+ >g : any
+ ><any>[] : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+ ({h,} = <any>{});
+ >({h,} = <any>{}) : any

@@ -45,7 +45,7 @@ class FooIterator {
 function fun([a, ...b] = new FooIterator) { }
 >fun : ([a, ...b]?: FooIterator) => void
 >a : Foo
->b : Foo[]
+>b : Array<Foo>
 >new FooIterator : FooIterator
 >FooIterator : typeof FooIterator
 

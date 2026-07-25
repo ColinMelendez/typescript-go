@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithTypeErrorInFunctionExpressionsInSubstitutionExpressionES6.types
++++ new.taggedTemplateStringsWithTypeErrorInFunctionExpressionsInSubstitutionExpressionES6.types
+@@= skipped -2, +2 lines =@@
+ === taggedTemplateStringsWithTypeErrorInFunctionExpressionsInSubstitutionExpressionES6.ts ===
+ function foo(...rest: any[]) {
+ >foo : (...rest: any[]) => void
+->rest : any[]
++>rest : Array<any>
+ }
+
+ foo `${function (x: number) { x = "bad"; } }`;

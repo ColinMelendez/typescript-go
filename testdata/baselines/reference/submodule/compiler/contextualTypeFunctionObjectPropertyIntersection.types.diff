@@ -1,0 +1,11 @@
+--- old.contextualTypeFunctionObjectPropertyIntersection.types
++++ new.contextualTypeFunctionObjectPropertyIntersection.types
+@@= skipped -314, +314 lines =@@
+     ? {
+         prepare(...a: never[]): Omit<A, "type">;
+ >prepare : (...a: never[]) => Omit<A, "type">
+->a : never[]
++>a : Array<never>
+       }
+     : {};
+ };

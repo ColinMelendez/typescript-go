@@ -1,0 +1,81 @@
+--- old.nonNullFullInference.types
++++ new.nonNullFullInference.types
+@@= skipped -4, +4 lines =@@
+
+ function testNonNullInference(numbers: number[]) {
+ >testNonNullInference : (numbers: number[]) => number | undefined
+->numbers : number[]
++>numbers : Array<number>
+
+     let last;
+ >last : any
+
+     for (const n of numbers) {
+ >n : number
+->numbers : number[]
++>numbers : Array<number>
+
+         if (n % 2) {
+ >n % 2 : number
+@@= skipped -33, +33 lines =@@
+ }
+
+ function testNonNullInferenceWithArrays(numbers: number[]) {
+->testNonNullInferenceWithArrays : (numbers: number[]) => number[] | undefined
+->numbers : number[]
++>testNonNullInferenceWithArrays : (numbers: number[]) => Array<number> | undefined
++>numbers : Array<number>
+
+     let result;
+ >result : any
+
+     const arr = [];
+->arr : any[]
+->[] : never[]
++>arr : Array<any>
++>[] : Array<never>
+
+     for (const n of numbers) {
+ >n : number
+->numbers : number[]
++>numbers : Array<number>
+
+         if (n % 2) {
+ >n % 2 : number
+@@= skipped -20, +20 lines =@@
+ >2 : 2
+
+             return [n];
+->[n] : number[]
++>[n] : Array<number>
+ >n : number
+         }
+
+         arr.push(n);
+ >arr.push(n) : number
+->arr.push : (...items: any[]) => number
+->arr : any[]
+->push : (...items: any[]) => number
++>arr.push : (...items: Array<any>) => number
++>arr : Array<any>
++>push : (...items: Array<any>) => number
+ >n : number
+
+         result = arr;
+->result = arr : number[]
++>result = arr : Array<number>
+ >result : any
+->arr : number[]
++>arr : Array<number>
+     }
+
+     result;
+->result : number[] | undefined
++>result : Array<number> | undefined
+
+     result!;
+->result! : number[]
+->result : number[]
++>result! : Array<number>
++>result : Array<number>
+ }

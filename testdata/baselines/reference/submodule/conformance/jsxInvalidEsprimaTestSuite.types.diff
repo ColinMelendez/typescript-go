@@ -1,0 +1,20 @@
+--- old.jsxInvalidEsprimaTestSuite.types
++++ new.jsxInvalidEsprimaTestSuite.types
+@@= skipped -121, +121 lines =@@
+ ><a : any
+ >a : any
+ >[foo]> : boolean
+->[foo] : any[]
++>[foo] : Array<any>
+ >foo : any
+ > : any
+ >a[foo]> : boolean
+@@= skipped -14, +14 lines =@@
+ ><a : any
+ >a : any
+ >['foo']> : boolean
+->['foo'] : string[]
++>['foo'] : Array<string>
+ >'foo' : "foo"
+ > : any
+ >a['foo']> : boolean

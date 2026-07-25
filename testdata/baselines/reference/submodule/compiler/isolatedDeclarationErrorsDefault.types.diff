@@ -1,0 +1,11 @@
+--- old.isolatedDeclarationErrorsDefault.types
++++ new.isolatedDeclarationErrorsDefault.types
+@@= skipped -16, +16 lines =@@
+
+ === c.ts ===
+ export default [{ foo: 1 + 1 }];
+->[{ foo: 1 + 1 }] : { foo: number; }[]
++>[{ foo: 1 + 1 }] : Array<{ foo: number; }>
+ >{ foo: 1 + 1 } : { foo: number; }
+ >foo : number
+ >1 + 1 : number

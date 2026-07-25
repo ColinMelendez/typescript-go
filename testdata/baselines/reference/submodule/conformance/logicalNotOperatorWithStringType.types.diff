@@ -1,0 +1,40 @@
+--- old.logicalNotOperatorWithStringType.types
++++ new.logicalNotOperatorWithStringType.types
+@@= skipped -5, +5 lines =@@
+ >STRING : string
+
+ var STRING1: string[] = ["", "abc"];
+->STRING1 : string[]
+->["", "abc"] : string[]
++>STRING1 : Array<string>
++>["", "abc"] : Array<string>
+ >"" : ""
+ >"abc" : "abc"
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsBoolean2 = !STRING1;
+ >ResultIsBoolean2 : boolean
+ >!STRING1 : false
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ // string type literal
+ var ResultIsBoolean3 = !"";
+@@= skipped -47, +47 lines =@@
+ >ResultIsBoolean8 : boolean
+ >!STRING1[0] : boolean
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ var ResultIsBoolean9 = !foo();
+@@= skipped -62, +62 lines =@@
+
+ !STRING1;
+ >!STRING1 : false
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ !foo();
+ >!foo() : boolean

@@ -1,0 +1,11 @@
+--- old.alwaysStrictAlreadyUseStrict.types
++++ new.alwaysStrictAlreadyUseStrict.types
+@@= skipped -7, +7 lines =@@
+ >f : () => void
+
+     var a = [];
+->a : any[]
+->[] : never[]
++>a : Array<any>
++>[] : Array<never>
+ }

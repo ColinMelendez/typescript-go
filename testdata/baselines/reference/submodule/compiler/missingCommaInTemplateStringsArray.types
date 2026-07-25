@@ -2,8 +2,8 @@
 
 === missingCommaInTemplateStringsArray.ts ===
 var array = [
->array : any[]
->[    `template string 1`    `template string 2`  ] : any[]
+>array : Array<any>
+>[    `template string 1`    `template string 2`  ] : Array<any>
 
     `template string 1`
 >`template string 1`    `template string 2` : any

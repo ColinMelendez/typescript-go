@@ -21,7 +21,7 @@ typeGuardFunctionErrors.ts(37,51): error TS2677: A type predicate's type must be
 typeGuardFunctionErrors.ts(41,56): error TS2677: A type predicate's type must be assignable to its parameter's type.
   Type 'number' is not assignable to type 'string'.
 typeGuardFunctionErrors.ts(45,56): error TS2677: A type predicate's type must be assignable to its parameter's type.
-  Type 'T[]' is not assignable to type 'string'.
+  Type 'Array<T>' is not assignable to type 'string'.
 typeGuardFunctionErrors.ts(52,22): error TS7006: Parameter 'p1' implicitly has an 'any' type.
 typeGuardFunctionErrors.ts(53,22): error TS7006: Parameter 'p1' implicitly has an 'any' type.
 typeGuardFunctionErrors.ts(55,18): error TS7010: 'hasNoTypeGuard', which lacks return-type annotation, implicitly has an 'any' return type.
@@ -201,7 +201,7 @@ typeGuardFunctionErrors.ts(166,54): error TS2344: Type 'number' does not satisfy
     function hasNonMathcingGenericType<T>(a: string): a is T[] {
                                                            ~~~
 !!! error TS2677: A type predicate's type must be assignable to its parameter's type.
-!!! error TS2677:   Type 'T[]' is not assignable to type 'string'.
+!!! error TS2677:   Type 'Array<T>' is not assignable to type 'string'.
         return true;
     }
     

@@ -60,9 +60,9 @@ foo2(1, { length: {} });
 >{} : {}
 
 foo2([], ['']);
->foo2([], ['']) : { length: never[]; }
+>foo2([], ['']) : { length: Array<never>; }
 >foo2 : <T, U extends { length: T; }>(x: T, y: U) => U
->[] : never[]
->[''] : string[]
+>[] : Array<never>
+>[''] : Array<string>
 >'' : ""
 

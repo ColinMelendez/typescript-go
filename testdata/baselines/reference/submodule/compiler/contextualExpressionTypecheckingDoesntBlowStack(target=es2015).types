@@ -15,11 +15,11 @@ export default class Operation {
 >parameterValues : any
 
         let result: IValidationError[] | null = null;
->result : IValidationError[] | null
+>result : Array<IValidationError> | null
 
         for(const parameterLocation of Object.keys(parameterValues)) {
 >parameterLocation : string
->Object.keys(parameterValues) : string[]
+>Object.keys(parameterValues) : Array<string>
 >Object.keys : { (o: object): string[]; (o: {}): string[]; }
 >Object : ObjectConstructor
 >keys : { (o: object): string[]; (o: {}): string[]; }
@@ -68,20 +68,20 @@ export default class Operation {
 
                 // Commenting out this line will fix the problem.
                 result = (result || []).concat(innerResult);
->result = (result || []).concat(innerResult) : IValidationError[]
->result : IValidationError[] | null
->(result || []).concat(innerResult) : IValidationError[]
->(result || []).concat : { (...items: ConcatArray<IValidationError>[]): IValidationError[]; (...items: (ConcatArray<IValidationError> | IValidationError)[]): IValidationError[]; }
->(result || []) : IValidationError[]
->result || [] : IValidationError[]
->result : IValidationError[] | null
->[] : never[]
->concat : { (...items: ConcatArray<IValidationError>[]): IValidationError[]; (...items: (ConcatArray<IValidationError> | IValidationError)[]): IValidationError[]; }
+>result = (result || []).concat(innerResult) : Array<IValidationError>
+>result : Array<IValidationError> | null
+>(result || []).concat(innerResult) : Array<IValidationError>
+>(result || []).concat : { (...items: Array<ConcatArray<IValidationError>>): Array<IValidationError>; (...items: Array<ConcatArray<IValidationError> | IValidationError>): Array<IValidationError>; }
+>(result || []) : Array<IValidationError>
+>result || [] : Array<IValidationError>
+>result : Array<IValidationError> | null
+>[] : Array<never>
+>concat : { (...items: Array<ConcatArray<IValidationError>>): Array<IValidationError>; (...items: Array<ConcatArray<IValidationError> | IValidationError>): Array<IValidationError>; }
 >innerResult : any
             }
         }
 
         return result;
->result : IValidationError[] | null
+>result : Array<IValidationError> | null
     }
 }

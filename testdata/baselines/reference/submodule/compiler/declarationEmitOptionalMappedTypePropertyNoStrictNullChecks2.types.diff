@@ -1,0 +1,11 @@
+--- old.declarationEmitOptionalMappedTypePropertyNoStrictNullChecks2.types
++++ new.declarationEmitOptionalMappedTypePropertyNoStrictNullChecks2.types
+@@= skipped -16, +16 lines =@@
+ >status : "uninitialized"
+
+     originalArgs?: any[];
+->originalArgs : any[]
++>originalArgs : Array<any>
+
+   }>;
+ };

@@ -1,0 +1,74 @@
+--- old.downlevelLetConst16(target=es2015).types
++++ new.downlevelLetConst16(target=es2015).types
+@@= skipped -586, +586 lines =@@
+
+     for (let x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -18, +18 lines =@@
+
+     for (const x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -18, +18 lines =@@
+
+     for (let x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -18, +18 lines =@@
+
+     for (let [x] of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -19, +19 lines =@@
+     for (let {a: x} of []) {
+ >a : any
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -18, +18 lines =@@
+
+     for (const x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -18, +18 lines =@@
+
+     for (const [x] of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any
+@@= skipped -19, +19 lines =@@
+     for (const {a: x} of []) {
+ >a : any
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         use(x);
+ >use(x) : any

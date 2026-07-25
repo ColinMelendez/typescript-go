@@ -1,4 +1,4 @@
-doYouNeedToChangeYourTargetLibraryES2016Plus.ts(2,32): error TS2550: Property 'includes' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2016' or later.
+doYouNeedToChangeYourTargetLibraryES2016Plus.ts(2,32): error TS2550: Property 'includes' does not exist on type 'Array<string>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2016' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(5,31): error TS2550: Property 'padStart' does not exist on type '""'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2017' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(6,29): error TS2550: Property 'padEnd' does not exist on type '""'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2017' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(7,44): error TS2550: Property 'values' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2017' or later.
@@ -23,8 +23,8 @@ doYouNeedToChangeYourTargetLibraryES2016Plus.ts(21,35): error TS2583: Cannot fin
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(22,26): error TS2583: Cannot find name 'AsyncIterable'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2018' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(23,34): error TS2583: Cannot find name 'AsyncIterableIterator'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2018' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(24,70): error TS2550: Property 'formatToParts' does not exist on type 'NumberFormat'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2018' or later.
-doYouNeedToChangeYourTargetLibraryES2016Plus.ts(27,26): error TS2550: Property 'flat' does not exist on type 'undefined[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
-doYouNeedToChangeYourTargetLibraryES2016Plus.ts(28,29): error TS2550: Property 'flatMap' does not exist on type 'undefined[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
+doYouNeedToChangeYourTargetLibraryES2016Plus.ts(27,26): error TS2550: Property 'flat' does not exist on type 'Array<undefined>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
+doYouNeedToChangeYourTargetLibraryES2016Plus.ts(28,29): error TS2550: Property 'flatMap' does not exist on type 'Array<undefined>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(29,49): error TS2550: Property 'fromEntries' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(30,32): error TS2550: Property 'trimStart' does not exist on type '""'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
 doYouNeedToChangeYourTargetLibraryES2016Plus.ts(31,30): error TS2550: Property 'trimEnd' does not exist on type '""'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
@@ -44,7 +44,7 @@ doYouNeedToChangeYourTargetLibraryES2016Plus.ts(47,46): error TS2550: Property '
     // es2016
     const testIncludes = ["hello"].includes("world");
                                    ~~~~~~~~
-!!! error TS2550: Property 'includes' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2016' or later.
+!!! error TS2550: Property 'includes' does not exist on type 'Array<string>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2016' or later.
     
     // es2017
     const testStringPadStart = "".padStart(2);
@@ -119,10 +119,10 @@ doYouNeedToChangeYourTargetLibraryES2016Plus.ts(47,46): error TS2550: Property '
     // es2019
     const testArrayFlat = [].flat();
                              ~~~~
-!!! error TS2550: Property 'flat' does not exist on type 'undefined[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
+!!! error TS2550: Property 'flat' does not exist on type 'Array<undefined>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
     const testArrayFlatMap = [].flatMap();
                                 ~~~~~~~
-!!! error TS2550: Property 'flatMap' does not exist on type 'undefined[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
+!!! error TS2550: Property 'flatMap' does not exist on type 'Array<undefined>'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
     const testObjectConstructorFromEntries = Object.fromEntries({});
                                                     ~~~~~~~~~~~
 !!! error TS2550: Property 'fromEntries' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.

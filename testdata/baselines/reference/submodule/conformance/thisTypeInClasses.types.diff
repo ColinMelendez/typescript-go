@@ -1,0 +1,11 @@
+--- old.thisTypeInClasses.types
++++ new.thisTypeInClasses.types
+@@= skipped -31, +31 lines =@@
+ >C3 : C3
+
+     a: this[];
+->a : this[]
++>a : Array<this>
+
+     b: [this, this];
+ >b : [this, this]

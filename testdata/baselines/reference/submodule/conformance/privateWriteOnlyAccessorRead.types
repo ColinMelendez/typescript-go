@@ -11,8 +11,8 @@ class Test {
 >bar : number
 
   set #valueRest(v: number[]) {}
->#valueRest : number[]
->v : number[]
+>#valueRest : Array<number>
+>v : Array<number>
 
   set #valueOne(v: number) {}
 >#valueOne : number
@@ -120,11 +120,11 @@ class Test {
 
     [this.#valueOne, ...this.#valueRest] = [1, 2, 3];
 >[this.#valueOne, ...this.#valueRest] = [1, 2, 3] : [number, number, number]
->[this.#valueOne, ...this.#valueRest] : [number, ...number[]]
+>[this.#valueOne, ...this.#valueRest] : [number, ...Array<number>]
 >this.#valueOne : number
 >this : this
 >...this.#valueRest : number
->this.#valueRest : number[]
+>this.#valueRest : Array<number>
 >this : this
 >[1, 2, 3] : [number, number, number]
 >1 : 1
@@ -132,8 +132,8 @@ class Test {
 >3 : 3
 
     let arr = [
->arr : number[]
->[        this.#valueOne,        ...this.#valueRest    ] : number[]
+>arr : Array<number>
+>[        this.#valueOne,        ...this.#valueRest    ] : Array<number>
 
         this.#valueOne,
 >this.#valueOne : number
@@ -141,7 +141,7 @@ class Test {
 
         ...this.#valueRest
 >...this.#valueRest : number
->this.#valueRest : number[]
+>this.#valueRest : Array<number>
 >this : this
 
     ];

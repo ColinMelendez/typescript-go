@@ -1,0 +1,11 @@
+--- old.namedTupleMembers.types
++++ new.namedTupleMembers.types
+@@= skipped -180, +180 lines =@@
+
+ declare function getArgsForInjection<T extends (...args: any[]) => any>(x: T): Parameters<T>;
+ >getArgsForInjection : <T extends (...args: any[]) => any>(x: T) => Parameters<T>
+->args : any[]
++>args : Array<any>
+ >x : T
+
+ export const argumentsOfGAsFirstArgument = f(getArgsForInjection(g)); // one tuple with captures arguments as first member

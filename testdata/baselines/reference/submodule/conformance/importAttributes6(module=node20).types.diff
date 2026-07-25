@@ -1,0 +1,11 @@
+--- old.importAttributes6(module=node20).types
++++ new.importAttributes6(module=node20).types
+@@= skipped -16, +16 lines =@@
+ import * as thing4 from "./mod.mjs" with { field: ["a"] };
+ >thing4 : typeof thing1
+ >field : any
+->["a"] : string[]
++>["a"] : Array<string>
+ >"a" : "a"
+
+ import * as thing5 from "./mod.mjs" with { field: { a: 0 } };

@@ -1,0 +1,11 @@
+--- old.assignmentCompatability32.types
++++ new.assignmentCompatability32.types
+@@= skipped -20, +20 lines =@@
+
+     export declare var aa:{one:boolean[];};;
+ >aa : { one: boolean[]; }
+->one : boolean[]
++>one : Array<boolean>
+
+     export var __val__aa = aa;
+ >__val__aa : { one: boolean[]; }

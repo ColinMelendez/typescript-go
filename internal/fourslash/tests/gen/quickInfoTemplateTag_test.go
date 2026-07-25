@@ -27,5 +27,5 @@ function /**/myMixin(cls) {
 }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "function myMixin<T extends new (...args: any[]) => any>(cls: T): {\n    new (...args: any[]): (Anonymous class);\n    prototype: myMixin<any>.(Anonymous class);\n} & T", "Doc")
+	f.VerifyQuickInfoAt(t, "", "function myMixin<T extends new (...args: Array<any>) => any>(cls: T): {\n    new (...args: Array<any>): (Anonymous class);\n    prototype: myMixin<any>.(Anonymous class);\n} & T", "Doc")
 }

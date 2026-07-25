@@ -1,0 +1,38 @@
+--- old.bitwiseNotOperatorWithAnyOtherType.types
++++ new.bitwiseNotOperatorWithAnyOtherType.types
+@@= skipped -9, +9 lines =@@
+ >ANY1 : any
+
+ declare var ANY2: any[];
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ declare var obj: () => {};
+ >obj : () => {}
+@@= skipped -53, +53 lines =@@
+ var ResultIsNumber1 = ~ANY2;
+ >ResultIsNumber1 : number
+ >~ANY2 : number
+->ANY2 : any[]
++>ANY2 : Array<any>
+
+ var ResultIsNumber2 = ~A;
+ >ResultIsNumber2 : number
+@@= skipped -37, +37 lines =@@
+ >ResultIsNumber8 : number
+ >~ANY2[0] : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ var ResultIsNumber9 = ~obj1.x;
+@@= skipped -103, +103 lines =@@
+ ~ANY2[0];
+ >~ANY2[0] : number
+ >ANY2[0] : any
+->ANY2 : any[]
++>ANY2 : Array<any>
+ >0 : 0
+
+ ~ANY, ANY1;

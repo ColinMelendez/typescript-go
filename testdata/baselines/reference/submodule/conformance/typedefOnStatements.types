@@ -34,14 +34,14 @@ for (;; false) {
 /** @typedef {{ i: string }} I */
 for (let i in []) {
 >i : string
->[] : never[]
+>[] : Array<never>
 }
 /** @typedef {{ j: string }} J */
 break;
 /** @typedef {{ k: string }} K */
 for (let k of []) {
 >k : never
->[] : never[]
+>[] : Array<never>
 }
 /** @typedef {{ l: string }} L */
 continue;

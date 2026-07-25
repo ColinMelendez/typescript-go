@@ -1,0 +1,38 @@
+--- old.capturedLetConstInLoop4_ES6.types
++++ new.capturedLetConstInLoop4_ES6.types
+@@= skipped -28, +28 lines =@@
+
+ for (let x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var v0 = x;
+ >v0 : any
+@@= skipped -21, +21 lines =@@
+
+ for (let x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var v00 = x;
+ >v00 : string
+@@= skipped -279, +279 lines =@@
+
+ for (const x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var v0_c = x;
+ >v0_c : any
+@@= skipped -21, +21 lines =@@
+
+ for (const x in []) {
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+     var v00_c = x;
+ >v00_c : string

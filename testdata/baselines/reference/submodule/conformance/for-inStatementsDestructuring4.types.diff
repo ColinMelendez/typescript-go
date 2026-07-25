@@ -1,0 +1,8 @@
+--- old.for-inStatementsDestructuring4.types
++++ new.for-inStatementsDestructuring4.types
+@@= skipped -8, +8 lines =@@
+ >{a, b} : { a: any; b: any; }
+ >a : any
+ >b : any
+->[] : undefined[]
++>[] : Array<undefined>

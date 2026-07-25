@@ -1,0 +1,34 @@
+--- old.destructuringArrayBindingPatternAndAssignment2.types
++++ new.destructuringArrayBindingPatternAndAssignment2.types
+@@= skipped -50, +50 lines =@@
+ // V is an array assignment pattern, S is the type Any or an array-like type (section 3.3.2), and, for each assignment element E in V,
+ //      S is not a tuple- like type and the numeric index signature type of S is assignable to the target given in E.
+ var temp = [1, 2, 3]
+->temp : number[]
+->[1, 2, 3] : number[]
++>temp : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -9, +9 lines =@@
+ var [c0, c1]: [number, number] = [...temp];  // Error
+ >c0 : number
+ >c1 : number
+->[...temp] : number[]
++>[...temp] : Array<number>
+ >...temp : number
+->temp : number[]
++>temp : Array<number>
+
+ var [c2, c3]: [string, string] = [...temp];  // Error
+ >c2 : string
+ >c3 : string
+->[...temp] : number[]
++>[...temp] : Array<number>
+ >...temp : number
+->temp : number[]
++>temp : Array<number>
+
+ interface F {
+     [idx: number]: boolean

@@ -1,6 +1,15 @@
 --- old.jsDeclarationsMissingTypeParameters(target=es2015).types
 +++ new.jsDeclarationsMissingTypeParameters(target=es2015).types
-@@= skipped -11, +11 lines =@@
+@@= skipped -4, +4 lines =@@
+   * @param {Array=} y desc
+   */
+ function x(y) { }
+->x : (y?: any[] | undefined) => void
+->y : any[]
++>x : (y?: Array<any> | undefined) => void
++>y : Array<any>
+
+ // @ts-ignore
  /** @param {function (Array)} func Invoked
   */
  function y(func) { return; }
@@ -11,3 +20,10 @@
 
  /**
   * @return {(Array.<> | null)} list of devices
+  */
+ function z() { return null ;}
+->z : () => (any[] | null)
++>z : () => (Array<any> | null)
+
+ /**
+  * 

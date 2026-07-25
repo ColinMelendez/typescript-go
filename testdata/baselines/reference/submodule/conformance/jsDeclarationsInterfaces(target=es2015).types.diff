@@ -1,0 +1,11 @@
+--- old.jsDeclarationsInterfaces(target=es2015).types
++++ new.jsDeclarationsInterfaces(target=es2015).types
+@@= skipped -50, +50 lines =@@
+
+     method(...args: any[]): number;
+ >method : { <Q = number>(): number; <Q>(a: T & Q): Q & number; (a?: number): number; (...args: any[]): number; }
+->args : any[]
++>args : Array<any>
+
+     optMethod?(): number;
+ >optMethod : (() => number) | undefined

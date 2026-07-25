@@ -1,0 +1,9 @@
+--- old.for-of8.types
++++ new.for-of8.types
+@@= skipped -5, +5 lines =@@
+
+ for (var v of [0]) { }
+ >v : number
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0

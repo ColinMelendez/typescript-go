@@ -3,25 +3,25 @@
 === overloadResolutionTest1.ts ===
 function foo(bar:{a:number;}[]):string;
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: number; }[]
+>bar : Array<{ a: number; }>
 >a : number
 
 function foo(bar:{a:boolean;}[]):number;
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: boolean; }[]
+>bar : Array<{ a: boolean; }>
 >a : boolean
 
 function foo(bar:{a:any;}[]):any{ return bar };
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->bar : { a: any; }[]
+>bar : Array<{ a: any; }>
 >a : any
->bar : { a: any; }[]
+>bar : Array<{ a: any; }>
 
 var x1 = foo([{a:true}]); // works
 >x1 : number
 >foo([{a:true}]) : number
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->[{a:true}] : { a: true; }[]
+>[{a:true}] : Array<{ a: true; }>
 >{a:true} : { a: true; }
 >a : true
 >true : true
@@ -30,7 +30,7 @@ var x11 = foo([{a:0}]); // works
 >x11 : string
 >foo([{a:0}]) : string
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->[{a:0}] : { a: number; }[]
+>[{a:0}] : Array<{ a: number; }>
 >{a:0} : { a: number; }
 >a : number
 >0 : 0
@@ -39,7 +39,7 @@ var x111 = foo([{a:"s"}]); // error - does not match any signature
 >x111 : never
 >foo([{a:"s"}]) : never
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->[{a:"s"}] : { a: string; }[]
+>[{a:"s"}] : Array<{ a: string; }>
 >{a:"s"} : { a: string; }
 >a : string
 >"s" : "s"
@@ -48,7 +48,7 @@ var x1111 = foo([{a:null}]); // works - ambiguous call is resolved to be the fir
 >x1111 : string
 >foo([{a:null}]) : string
 >foo : { (bar: { a: number; }[]): string; (bar: { a: boolean; }[]): number; }
->[{a:null}] : { a: null; }[]
+>[{a:null}] : Array<{ a: null; }>
 >{a:null} : { a: null; }
 >a : null
 

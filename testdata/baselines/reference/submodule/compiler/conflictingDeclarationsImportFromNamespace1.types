@@ -15,7 +15,7 @@ declare module "./index" {
 >object : T
 
         ...props: Array<U>
->props : U[]
+>props : Array<U>
 
       ): Pick<T, U>;
     }

@@ -1,0 +1,45 @@
+--- old.overloadResolutionOverNonCTLambdas.types
++++ new.overloadResolutionOverNonCTLambdas.types
+@@= skipped -11, +11 lines =@@
+   function bug2(message:string, ...args:any[]):string {
+ >bug2 : (message: string, ...args: any[]) => string
+ >message : string
+->args : any[]
++>args : Array<any>
+
+     var result= message.replace(/\{(\d+)\}/g, function(match, ...rest) {
+ >result : string
+@@= skipped -9, +9 lines =@@
+ >message : string
+ >replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; (searchValue: { [Symbol.replace](string: string, replaceValue: string): string; }, replaceValue: string): string; (searchValue: { [Symbol.replace](string: string, replacer: (substring: string, ...args: any[]) => string): string; }, replacer: (substring: string, ...args: any[]) => string): string; }
+ >/\{(\d+)\}/g : RegExp
+->function(match, ...rest) {      var index= rest[0];      return typeof args[index] !== 'undefined'        ? args[index]        : match;    } : (match: string, ...rest: any[]) => any
++>function(match, ...rest) {      var index= rest[0];      return typeof args[index] !== 'undefined'        ? args[index]        : match;    } : (match: string, ...rest: Array<any>) => any
+ >match : string
+->rest : any[]
++>rest : Array<any>
+
+       var index= rest[0];
+ >index : any
+ >rest[0] : any
+->rest : any[]
++>rest : Array<any>
+ >0 : 0
+
+       return typeof args[index] !== 'undefined'
+@@= skipped -15, +15 lines =@@
+ >typeof args[index] !== 'undefined' : boolean
+ >typeof args[index] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >args[index] : any
+->args : any[]
++>args : Array<any>
+ >index : any
+ >'undefined' : "undefined"
+
+         ? args[index]
+ >args[index] : any
+->args : any[]
++>args : Array<any>
+ >index : any
+
+         : match;

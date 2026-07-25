@@ -1,0 +1,11 @@
+--- old.indexAt(target=es2021).types
++++ new.indexAt(target=es2021).types
+@@= skipped -3, +3 lines =@@
+ [0].at(0);
+ >[0].at(0) : any
+ >[0].at : any
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0
+ >at : any
+ >0 : 0

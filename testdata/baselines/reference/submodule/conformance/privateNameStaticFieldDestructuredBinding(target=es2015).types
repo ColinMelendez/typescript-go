@@ -23,10 +23,10 @@ class A {
 >6 : 6
     }
     testArray() {
->testArray : () => number[]
+>testArray : () => Array<number>
 
         return [10, 11];
->[10, 11] : number[]
+>[10, 11] : Array<number>
 >10 : 10
 >11 : 11
     }
@@ -48,16 +48,16 @@ class A {
 >testObject : () => { x: number; y: number; }
 
         ([A.#field, y] = this.testArray());
->([A.#field, y] = this.testArray()) : number[]
->[A.#field, y] = this.testArray() : number[]
+>([A.#field, y] = this.testArray()) : Array<number>
+>[A.#field, y] = this.testArray() : Array<number>
 >[A.#field, y] : [number, number]
 >A.#field : number
 >A : typeof A
 >y : number
->this.testArray() : number[]
->this.testArray : () => number[]
+>this.testArray() : Array<number>
+>this.testArray : () => Array<number>
 >this : this
->testArray : () => number[]
+>testArray : () => Array<number>
 
         ({ a: A.#field, b: [A.#field] } = { a: 1, b: [2] });
 >({ a: A.#field, b: [A.#field] } = { a: 1, b: [2] }) : { a: number; b: [number]; }

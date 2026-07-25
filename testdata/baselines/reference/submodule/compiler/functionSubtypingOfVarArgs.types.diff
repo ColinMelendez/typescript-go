@@ -1,0 +1,31 @@
+--- old.functionSubtypingOfVarArgs.types
++++ new.functionSubtypingOfVarArgs.types
+@@= skipped -4, +4 lines =@@
+ >EventBase : EventBase
+
+     private _listeners = [];
+->_listeners : any[]
+->[] : undefined[]
++>_listeners : Array<any>
++>[] : Array<undefined>
+
+     add(listener: (...args: any[]) => void): void {
+ >add : (listener: (...args: any[]) => void) => void
+ >listener : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+
+         this._listeners.push(listener);
+ >this._listeners.push(listener) : number
+->this._listeners.push : (...items: any[]) => number
+->this._listeners : any[]
++>this._listeners.push : (...items: Array<any>) => number
++>this._listeners : Array<any>
+ >this : this
+->_listeners : any[]
+->push : (...items: any[]) => number
++>_listeners : Array<any>
++>push : (...items: Array<any>) => number
+ >listener : (...args: any[]) => void
+     }
+ }

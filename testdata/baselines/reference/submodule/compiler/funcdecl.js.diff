@@ -1,0 +1,11 @@
+--- old.funcdecl.js
++++ new.funcdecl.js
+@@= skipped -143, +143 lines =@@
+ declare var withInitializedParamsVar: typeof withInitializedParams;
+ declare function withOptionalInitializedParams(a: string, c?: string): void;
+ declare var withOptionalInitializedParamsVar: typeof withOptionalInitializedParams;
+-declare function withRestParams(a: string, ...myRestParameter: number[]): number[];
++declare function withRestParams(a: string, ...myRestParameter: number[]): Array<number>;
+ declare var withRestParamsVar: typeof withRestParams;
+ declare function overload1(n: number): string;
+ declare function overload1(s: string): string;

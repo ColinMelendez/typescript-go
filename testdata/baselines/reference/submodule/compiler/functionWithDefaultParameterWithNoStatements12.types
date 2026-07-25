@@ -2,17 +2,17 @@
 
 === functionWithDefaultParameterWithNoStatements12.ts ===
 var v: any[];
->v : any[]
+>v : Array<any>
 
 function foo(a = (v)) { }
->foo : (a?: any[]) => void
->a : any[]
->(v) : any[]
->v : any[]
+>foo : (a?: Array<any>) => void
+>a : Array<any>
+>(v) : Array<any>
+>v : Array<any>
 
 function bar(a = (v)) {
->bar : (a?: any[]) => void
->a : any[]
->(v) : any[]
->v : any[]
+>bar : (a?: Array<any>) => void
+>a : Array<any>
+>(v) : Array<any>
+>v : Array<any>
 }

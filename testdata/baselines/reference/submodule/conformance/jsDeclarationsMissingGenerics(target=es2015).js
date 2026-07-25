@@ -26,7 +26,7 @@ function y(x) { }
 /**
  * @param {Array} x
  */
-declare function x(x: any[]): void;
+declare function x(x: Array<any>): void;
 /**
  * @param {Promise} x
  */

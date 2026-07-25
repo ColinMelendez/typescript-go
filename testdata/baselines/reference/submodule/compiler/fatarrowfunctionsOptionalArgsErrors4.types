@@ -100,7 +100,7 @@
 
         (...a: number[]) => 119, 
 >(...a: number[]) => 119 : (...a: number[]) => number
->a : number[]
+>a : Array<number>
 >119 : 119
 
         (a, b? = 0, ...c: number[]) => 120,
@@ -108,7 +108,7 @@
 >a : any
 >b : number
 >0 : 0
->c : number[]
+>c : Array<number>
 >120 : 120
 
         (a) => (b) => (c) => 121,

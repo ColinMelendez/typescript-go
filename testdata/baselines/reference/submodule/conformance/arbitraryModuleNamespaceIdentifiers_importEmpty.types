@@ -15,8 +15,8 @@ import {
 
 } from "./arbitraryModuleNamespaceIdentifiers_importEmpty";
 const xyz = [x, y, z];
->xyz : any[]
->[x, y, z] : any[]
+>xyz : Array<any>
+>[x, y, z] : Array<any>
 >x : any
 >y : any
 >z : any

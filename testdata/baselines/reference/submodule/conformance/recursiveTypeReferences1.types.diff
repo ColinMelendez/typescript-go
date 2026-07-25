@@ -1,0 +1,470 @@
+--- old.recursiveTypeReferences1.types
++++ new.recursiveTypeReferences1.types
+@@= skipped -9, +9 lines =@@
+
+ const a1: ValueOrArray<number> = [1, [2, 3], [4, [5, [6, 7]]]];
+ >a1 : ValueOrArray<number>
+->[1, [2, 3], [4, [5, [6, 7]]]] : (number | (number | (number | number[])[])[])[]
++>[1, [2, 3], [4, [5, [6, 7]]]] : Array<number | Array<number | Array<number | Array<number>>>>
+ >1 : 1
+->[2, 3] : number[]
++>[2, 3] : Array<number>
+ >2 : 2
+ >3 : 3
+->[4, [5, [6, 7]]] : (number | (number | number[])[])[]
++>[4, [5, [6, 7]]] : Array<number | Array<number | Array<number>>>
+ >4 : 4
+->[5, [6, 7]] : (number | number[])[]
++>[5, [6, 7]] : Array<number | Array<number>>
+ >5 : 5
+->[6, 7] : number[]
++>[6, 7] : Array<number>
+ >6 : 6
+ >7 : 7
+
+@@= skipped -51, +51 lines =@@
+
+ let data: Json = {
+ >data : Json
+->{    caption: "Test",    location: { x: 10, y: 20 },    values: [true, [10, 20], null]} : { caption: string; location: { x: number; y: number; }; values: (true | number[] | null)[]; }
++>{    caption: "Test",    location: { x: 10, y: 20 },    values: [true, [10, 20], null]} : { caption: string; location: { x: number; y: number; }; values: Array<true | Array<number> | null>; }
+
+     caption: "Test",
+ >caption : string
+@@= skipped -15, +15 lines =@@
+ >20 : 20
+
+     values: [true, [10, 20], null]
+->values : (true | number[] | null)[]
+->[true, [10, 20], null] : (true | number[] | null)[]
++>values : Array<true | Array<number> | null>
++>[true, [10, 20], null] : Array<true | Array<number> | null>
+ >true : true
+->[10, 20] : number[]
++>[10, 20] : Array<number>
+ >10 : 10
+ >20 : 20
+
+@@= skipped -113, +113 lines =@@
+
+ declare function flat1<T>(a: Array<T | Array<T>>): Array<T>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->a : (T | T[])[]
++>a : Array<T | Array<T>>
+
+ declare function flat2<T>(a: Array<T | Array<T | Array<T>>>): Array<T>;
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->a : (T | (T | T[])[])[]
++>a : Array<T | Array<T | Array<T>>>
+
+ flat([1, [2, [3]]]);  // number[]
+->flat([1, [2, [3]]]) : number[]
++>flat([1, [2, [3]]]) : Array<number>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[1, [2, [3]]] : (number | (number | number[])[])[]
++>[1, [2, [3]]] : Array<number | Array<number | Array<number>>>
+ >1 : 1
+->[2, [3]] : (number | number[])[]
++>[2, [3]] : Array<number | Array<number>>
+ >2 : 2
+->[3] : number[]
++>[3] : Array<number>
+ >3 : 3
+
+ flat([[[0]]]);  // number[]
+->flat([[[0]]]) : number[]
++>flat([[[0]]]) : Array<number>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[[[0]]] : number[][][]
+->[[0]] : number[][]
+->[0] : number[]
++>[[[0]]] : Array<Array<Array<number>>>
++>[[0]] : Array<Array<number>>
++>[0] : Array<number>
+ >0 : 0
+
+ flat([[[[[[[[[[[4]]]]]]]]]]]);  // number[]
+->flat([[[[[[[[[[[4]]]]]]]]]]]) : number[]
++>flat([[[[[[[[[[[4]]]]]]]]]]]) : Array<number>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[[[[[[[[[[[4]]]]]]]]]]] : number[][][][][][][][][][][]
+->[[[[[[[[[[4]]]]]]]]]] : number[][][][][][][][][][]
+->[[[[[[[[[4]]]]]]]]] : number[][][][][][][][][]
+->[[[[[[[[4]]]]]]]] : number[][][][][][][][]
+->[[[[[[[4]]]]]]] : number[][][][][][][]
+->[[[[[[4]]]]]] : number[][][][][][]
+->[[[[[4]]]]] : number[][][][][]
+->[[[[4]]]] : number[][][][]
+->[[[4]]] : number[][][]
+->[[4]] : number[][]
+->[4] : number[]
++>[[[[[[[[[[[4]]]]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>>>>
++>[[[[[[[[[[4]]]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>>>
++>[[[[[[[[[4]]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>>
++>[[[[[[[[4]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>
++>[[[[[[[4]]]]]]] : Array<Array<Array<Array<Array<Array<Array<number>>>>>>>
++>[[[[[[4]]]]]] : Array<Array<Array<Array<Array<Array<number>>>>>>
++>[[[[[4]]]]] : Array<Array<Array<Array<Array<number>>>>>
++>[[[[4]]]] : Array<Array<Array<Array<number>>>>
++>[[[4]]] : Array<Array<Array<number>>>
++>[[4]] : Array<Array<number>>
++>[4] : Array<number>
+ >4 : 4
+
+ flat([1, 'a', [2]]);  // (string | number)[]
+->flat([1, 'a', [2]]) : (string | number)[]
++>flat([1, 'a', [2]]) : Array<string | number>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[1, 'a', [2]] : (string | number | number[])[]
++>[1, 'a', [2]] : Array<string | number | Array<number>>
+ >1 : 1
+ >'a' : "a"
+->[2] : number[]
++>[2] : Array<number>
+ >2 : 2
+
+ flat([1, [2, 'a']]);  // (string | number)[]
+->flat([1, [2, 'a']]) : (string | number)[]
++>flat([1, [2, 'a']]) : Array<string | number>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[1, [2, 'a']] : (number | (string | number)[])[]
++>[1, [2, 'a']] : Array<number | Array<string | number>>
+ >1 : 1
+->[2, 'a'] : (string | number)[]
++>[2, 'a'] : Array<string | number>
+ >2 : 2
+ >'a' : "a"
+
+ flat([1, ['a']]);  // Error
+->flat([1, ['a']]) : string[]
++>flat([1, ['a']]) : Array<string>
+ >flat : <T>(a: RecArray<T>) => Array<T>
+->[1, ['a']] : (number | string[])[]
++>[1, ['a']] : Array<number | Array<string>>
+ >1 : 1
+->['a'] : string[]
++>['a'] : Array<string>
+ >'a' : "a"
+
+ flat1([1, [2, [3]]]);  // (number | number[])[]
+->flat1([1, [2, [3]]]) : (number | number[])[]
++>flat1([1, [2, [3]]]) : Array<number | Array<number>>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->[1, [2, [3]]] : (number | (number | number[])[])[]
++>[1, [2, [3]]] : Array<number | Array<number | Array<number>>>
+ >1 : 1
+->[2, [3]] : (number | number[])[]
++>[2, [3]] : Array<number | Array<number>>
+ >2 : 2
+->[3] : number[]
++>[3] : Array<number>
+ >3 : 3
+
+ flat1([[[0]]]);  // number[][]
+->flat1([[[0]]]) : number[][]
++>flat1([[[0]]]) : Array<Array<number>>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->[[[0]]] : number[][][]
+->[[0]] : number[][]
+->[0] : number[]
++>[[[0]]] : Array<Array<Array<number>>>
++>[[0]] : Array<Array<number>>
++>[0] : Array<number>
+ >0 : 0
+
+ flat1([1, 'a', [2]]);  // (string | number)[]
+->flat1([1, 'a', [2]]) : (string | number)[]
++>flat1([1, 'a', [2]]) : Array<string | number>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->[1, 'a', [2]] : (string | number | number[])[]
++>[1, 'a', [2]] : Array<string | number | Array<number>>
+ >1 : 1
+ >'a' : "a"
+->[2] : number[]
++>[2] : Array<number>
+ >2 : 2
+
+ flat1([1, [2, 'a']]);  // (string | number)[]
+->flat1([1, [2, 'a']]) : (string | number)[]
++>flat1([1, [2, 'a']]) : Array<string | number>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->[1, [2, 'a']] : (number | (string | number)[])[]
++>[1, [2, 'a']] : Array<number | Array<string | number>>
+ >1 : 1
+->[2, 'a'] : (string | number)[]
++>[2, 'a'] : Array<string | number>
+ >2 : 2
+ >'a' : "a"
+
+ flat1([1, ['a']]);  // Error
+->flat1([1, ['a']]) : string[]
++>flat1([1, ['a']]) : Array<string>
+ >flat1 : <T>(a: Array<T | Array<T>>) => Array<T>
+->[1, ['a']] : (number | string[])[]
++>[1, ['a']] : Array<number | Array<string>>
+ >1 : 1
+->['a'] : string[]
++>['a'] : Array<string>
+ >'a' : "a"
+
+ flat2([1, [2, [3]]]);  // number[]
+->flat2([1, [2, [3]]]) : number[]
++>flat2([1, [2, [3]]]) : Array<number>
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->[1, [2, [3]]] : (number | (number | number[])[])[]
++>[1, [2, [3]]] : Array<number | Array<number | Array<number>>>
+ >1 : 1
+->[2, [3]] : (number | number[])[]
++>[2, [3]] : Array<number | Array<number>>
+ >2 : 2
+->[3] : number[]
++>[3] : Array<number>
+ >3 : 3
+
+ flat2([[[0]]]);  // number[]
+->flat2([[[0]]]) : number[]
++>flat2([[[0]]]) : Array<number>
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->[[[0]]] : number[][][]
+->[[0]] : number[][]
+->[0] : number[]
++>[[[0]]] : Array<Array<Array<number>>>
++>[[0]] : Array<Array<number>>
++>[0] : Array<number>
+ >0 : 0
+
+ flat2([1, 'a', [2]]);  // (string | number)[]
+->flat2([1, 'a', [2]]) : (string | number)[]
++>flat2([1, 'a', [2]]) : Array<string | number>
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->[1, 'a', [2]] : (string | number | number[])[]
++>[1, 'a', [2]] : Array<string | number | Array<number>>
+ >1 : 1
+ >'a' : "a"
+->[2] : number[]
++>[2] : Array<number>
+ >2 : 2
+
+ flat2([1, [2, 'a']]);  // (string | number)[]
+->flat2([1, [2, 'a']]) : (string | number)[]
++>flat2([1, [2, 'a']]) : Array<string | number>
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->[1, [2, 'a']] : (number | (string | number)[])[]
++>[1, [2, 'a']] : Array<number | Array<string | number>>
+ >1 : 1
+->[2, 'a'] : (string | number)[]
++>[2, 'a'] : Array<string | number>
+ >2 : 2
+ >'a' : "a"
+
+ flat2([1, ['a']]);  // Error
+->flat2([1, ['a']]) : string[]
++>flat2([1, ['a']]) : Array<string>
+ >flat2 : <T>(a: Array<T | Array<T | Array<T>>>) => Array<T>
+->[1, ['a']] : (number | string[])[]
++>[1, ['a']] : Array<number | Array<string>>
+ >1 : 1
+->['a'] : string[]
++>['a'] : Array<string>
+ >'a' : "a"
+
+ type T10 = T10[];
+@@= skipped -219, +219 lines =@@
+ function parse(node: Tree, index: number[] = []): HTMLUListElement {
+ >parse : (node: Tree, index?: number[]) => HTMLUListElement
+ >node : Tree
+->index : number[]
+->[] : never[]
++>index : Array<number>
++>[] : Array<never>
+
+   return html('ul', node.map(([el, children], i) => {
+ >html('ul', node.map(([el, children], i) => {    const idx = [...index, i + 1];    return html('li', [      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ]);  })) : any
+ >html : any
+ >'ul' : "ul"
+->node.map(([el, children], i) => {    const idx = [...index, i + 1];    return html('li', [      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ]);  }) : any[]
+->node.map : <U>(callbackfn: (value: [HTMLHeadingElement, Tree], index: number, array: [HTMLHeadingElement, Tree][]) => U, thisArg?: any) => U[]
++>node.map(([el, children], i) => {    const idx = [...index, i + 1];    return html('li', [      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ]);  }) : Array<any>
++>node.map : <U>(callbackfn: (value: [HTMLHeadingElement, Tree], index: number, array: Array<[HTMLHeadingElement, Tree]>) => U, thisArg?: any) => Array<U>
+ >node : Tree
+->map : <U>(callbackfn: (value: [HTMLHeadingElement, Tree], index: number, array: [HTMLHeadingElement, Tree][]) => U, thisArg?: any) => U[]
++>map : <U>(callbackfn: (value: [HTMLHeadingElement, Tree], index: number, array: Array<[HTMLHeadingElement, Tree]>) => U, thisArg?: any) => Array<U>
+ >([el, children], i) => {    const idx = [...index, i + 1];    return html('li', [      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ]);  } : ([el, children]: [HTMLHeadingElement, Tree], i: number) => any
+ >el : HTMLHeadingElement
+ >children : Tree
+ >i : number
+
+     const idx = [...index, i + 1];
+->idx : number[]
+->[...index, i + 1] : number[]
++>idx : Array<number>
++>[...index, i + 1] : Array<number>
+ >...index : number
+->index : number[]
++>index : Array<number>
+ >i + 1 : number
+ >i : number
+ >1 : 1
+@@= skipped -29, +29 lines =@@
+ >html('li', [      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ]) : any
+ >html : any
+ >'li' : "li"
+->[      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ] : any[]
++>[      html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),      children.length > 0 ? parse(children, idx) : frag()    ] : Array<any>
+
+       html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!),
+ >html('a', { href: `#${el.id}`, rel: 'noopener', 'data-index': idx.join('.') }, el.textContent!) : any
+@@= skipped -17, +17 lines =@@
+ >'data-index' : string
+ >idx.join('.') : string
+ >idx.join : (separator?: string) => string
+->idx : number[]
++>idx : Array<number>
+ >join : (separator?: string) => string
+ >'.' : "."
+ >el.textContent! : string
+@@= skipped -18, +18 lines =@@
+ >parse(children, idx) : HTMLUListElement
+ >parse : (node: Tree, index?: number[]) => HTMLUListElement
+ >children : Tree
+->idx : number[]
++>idx : Array<number>
+ >frag() : any
+ >frag : any
+
+@@= skipped -10, +10 lines =@@
+
+ function cons(hs: HTMLHeadingElement[]): Tree {
+ >cons : (hs: HTMLHeadingElement[]) => Tree
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+
+   return hs
+ >hs    .reduce<HTMLHeadingElement[][]>((hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    }, [[]])    .reduce<Tree>((node, hs) =>      hs.length === 0        ? node        : concat<Tree[number]>(node, [[hs.shift()!, cons(hs)]])    , []) : Tree
+->hs    .reduce<HTMLHeadingElement[][]>((hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    }, [[]])    .reduce : { (callbackfn: (previousValue: HTMLHeadingElement[], currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => HTMLHeadingElement[]): HTMLHeadingElement[]; (callbackfn: (previousValue: HTMLHeadingElement[], currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => HTMLHeadingElement[], initialValue: HTMLHeadingElement[]): HTMLHeadingElement[]; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => U, initialValue: U): U; }
+->hs    .reduce<HTMLHeadingElement[][]>((hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    }, [[]]) : HTMLHeadingElement[][]
+->hs    .reduce : { (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => HTMLHeadingElement): HTMLHeadingElement; (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => HTMLHeadingElement, initialValue: HTMLHeadingElement): HTMLHeadingElement; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => U, initialValue: U): U; }
+->hs : HTMLHeadingElement[]
++>hs    .reduce<HTMLHeadingElement[][]>((hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    }, [[]])    .reduce : { (callbackfn: (previousValue: Array<HTMLHeadingElement>, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => Array<HTMLHeadingElement>): Array<HTMLHeadingElement>; (callbackfn: (previousValue: Array<HTMLHeadingElement>, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => Array<HTMLHeadingElement>, initialValue: Array<HTMLHeadingElement>): Array<HTMLHeadingElement>; <U>(callbackfn: (previousValue: U, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => U, initialValue: U): U; }
++>hs    .reduce<HTMLHeadingElement[][]>((hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    }, [[]]) : Array<Array<HTMLHeadingElement>>
++>hs    .reduce : { (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => HTMLHeadingElement): HTMLHeadingElement; (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => HTMLHeadingElement, initialValue: HTMLHeadingElement): HTMLHeadingElement; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => U, initialValue: U): U; }
++>hs : Array<HTMLHeadingElement>
+
+     .reduce<HTMLHeadingElement[][]>((hss, h) => {
+->reduce : { (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => HTMLHeadingElement): HTMLHeadingElement; (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => HTMLHeadingElement, initialValue: HTMLHeadingElement): HTMLHeadingElement; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement, currentIndex: number, array: HTMLHeadingElement[]) => U, initialValue: U): U; }
+->(hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    } : (hss: HTMLHeadingElement[][], h: HTMLHeadingElement) => any
+->hss : HTMLHeadingElement[][]
++>reduce : { (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => HTMLHeadingElement): HTMLHeadingElement; (callbackfn: (previousValue: HTMLHeadingElement, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => HTMLHeadingElement, initialValue: HTMLHeadingElement): HTMLHeadingElement; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement, currentIndex: number, array: Array<HTMLHeadingElement>) => U, initialValue: U): U; }
++>(hss, h) => {      const hs = hss.pop()!;      return hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]);    } : (hss: Array<Array<HTMLHeadingElement>>, h: HTMLHeadingElement) => any
++>hss : Array<Array<HTMLHeadingElement>>
+ >h : HTMLHeadingElement
+
+       const hs = hss.pop()!;
+->hs : HTMLHeadingElement[]
+->hss.pop()! : HTMLHeadingElement[]
+->hss.pop() : HTMLHeadingElement[] | undefined
+->hss.pop : () => HTMLHeadingElement[] | undefined
+->hss : HTMLHeadingElement[][]
+->pop : () => HTMLHeadingElement[] | undefined
++>hs : Array<HTMLHeadingElement>
++>hss.pop()! : Array<HTMLHeadingElement>
++>hss.pop() : Array<HTMLHeadingElement> | undefined
++>hss.pop : () => Array<HTMLHeadingElement> | undefined
++>hss : Array<Array<HTMLHeadingElement>>
++>pop : () => Array<HTMLHeadingElement> | undefined
+
+       return hs.length === 0 || level(h) > level(hs[0])
+ >hs.length === 0 || level(h) > level(hs[0])        ? concat(hss, [concat(hs, [h])])        : concat(hss, [hs, [h]]) : any
+ >hs.length === 0 || level(h) > level(hs[0]) : boolean
+ >hs.length === 0 : boolean
+ >hs.length : number
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+ >length : number
+ >0 : 0
+ >level(h) > level(hs[0]) : boolean
+@@= skipped -38, +38 lines =@@
+ >level(hs[0]) : number
+ >level : (h: HTMLHeadingElement) => number
+ >hs[0] : HTMLHeadingElement
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+ >0 : 0
+
+         ? concat(hss, [concat(hs, [h])])
+ >concat(hss, [concat(hs, [h])]) : any
+ >concat : any
+->hss : HTMLHeadingElement[][]
+->[concat(hs, [h])] : any[]
++>hss : Array<Array<HTMLHeadingElement>>
++>[concat(hs, [h])] : Array<any>
+ >concat(hs, [h]) : any
+ >concat : any
+->hs : HTMLHeadingElement[]
+->[h] : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
++>[h] : Array<HTMLHeadingElement>
+ >h : HTMLHeadingElement
+
+         : concat(hss, [hs, [h]]);
+ >concat(hss, [hs, [h]]) : any
+ >concat : any
+->hss : HTMLHeadingElement[][]
+->[hs, [h]] : HTMLHeadingElement[][]
+->hs : HTMLHeadingElement[]
+->[h] : HTMLHeadingElement[]
++>hss : Array<Array<HTMLHeadingElement>>
++>[hs, [h]] : Array<Array<HTMLHeadingElement>>
++>hs : Array<HTMLHeadingElement>
++>[h] : Array<HTMLHeadingElement>
+ >h : HTMLHeadingElement
+
+     }, [[]])
+->[[]] : never[][]
+->[] : never[]
++>[[]] : Array<Array<never>>
++>[] : Array<never>
+
+     .reduce<Tree>((node, hs) =>
+->reduce : { (callbackfn: (previousValue: HTMLHeadingElement[], currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => HTMLHeadingElement[]): HTMLHeadingElement[]; (callbackfn: (previousValue: HTMLHeadingElement[], currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => HTMLHeadingElement[], initialValue: HTMLHeadingElement[]): HTMLHeadingElement[]; <U>(callbackfn: (previousValue: U, currentValue: HTMLHeadingElement[], currentIndex: number, array: HTMLHeadingElement[][]) => U, initialValue: U): U; }
+->(node, hs) =>      hs.length === 0        ? node        : concat<Tree[number]>(node, [[hs.shift()!, cons(hs)]]) : (node: Tree, hs: HTMLHeadingElement[]) => any
++>reduce : { (callbackfn: (previousValue: Array<HTMLHeadingElement>, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => Array<HTMLHeadingElement>): Array<HTMLHeadingElement>; (callbackfn: (previousValue: Array<HTMLHeadingElement>, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => Array<HTMLHeadingElement>, initialValue: Array<HTMLHeadingElement>): Array<HTMLHeadingElement>; <U>(callbackfn: (previousValue: U, currentValue: Array<HTMLHeadingElement>, currentIndex: number, array: Array<Array<HTMLHeadingElement>>) => U, initialValue: U): U; }
++>(node, hs) =>      hs.length === 0        ? node        : concat<Tree[number]>(node, [[hs.shift()!, cons(hs)]]) : (node: Tree, hs: Array<HTMLHeadingElement>) => any
+ >node : Tree
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+
+       hs.length === 0
+ >hs.length === 0        ? node        : concat<Tree[number]>(node, [[hs.shift()!, cons(hs)]]) : any
+ >hs.length === 0 : boolean
+ >hs.length : number
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+ >length : number
+ >0 : 0
+
+@@= skipped -48, +48 lines =@@
+ >concat<Tree[number]>(node, [[hs.shift()!, cons(hs)]]) : any
+ >concat : any
+ >node : Tree
+->[[hs.shift()!, cons(hs)]] : (HTMLHeadingElement | Tree)[][]
+->[hs.shift()!, cons(hs)] : (HTMLHeadingElement | Tree)[]
++>[[hs.shift()!, cons(hs)]] : Array<Array<HTMLHeadingElement | Tree>>
++>[hs.shift()!, cons(hs)] : Array<HTMLHeadingElement | Tree>
+ >hs.shift()! : HTMLHeadingElement
+ >hs.shift() : HTMLHeadingElement | undefined
+ >hs.shift : () => HTMLHeadingElement | undefined
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+ >shift : () => HTMLHeadingElement | undefined
+ >cons(hs) : Tree
+ >cons : (hs: HTMLHeadingElement[]) => Tree
+->hs : HTMLHeadingElement[]
++>hs : Array<HTMLHeadingElement>
+
+     , []);
+->[] : never[]
++>[] : Array<never>
+ }
+
+ function level(h: HTMLHeadingElement): number {

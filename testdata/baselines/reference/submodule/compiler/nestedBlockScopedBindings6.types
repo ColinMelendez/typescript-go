@@ -6,7 +6,7 @@ function a0() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -33,7 +33,7 @@ function a1() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -64,7 +64,7 @@ function a2() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -95,7 +95,7 @@ function a3() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -130,7 +130,7 @@ function a4() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -163,7 +163,7 @@ function a5() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -195,7 +195,7 @@ function a6() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;
@@ -223,7 +223,7 @@ function a7() {
 
     for (let x of [1]) {
 >x : number
->[1] : number[]
+>[1] : Array<number>
 >1 : 1
 
         x = x + 1;

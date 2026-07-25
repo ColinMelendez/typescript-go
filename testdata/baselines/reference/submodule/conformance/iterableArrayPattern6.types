@@ -44,14 +44,14 @@ class FooIterator {
 
 var a: Bar, b: string[];
 >a : Bar
->b : string[]
+>b : Array<string>
 
 [a, ...b] = new FooIterator;
 >[a, ...b] = new FooIterator : FooIterator
->[a, ...b] : [Bar, ...string[]]
+>[a, ...b] : [Bar, ...Array<string>]
 >a : Bar
 >...b : string
->b : string[]
+>b : Array<string>
 >new FooIterator : FooIterator
 >FooIterator : typeof FooIterator
 

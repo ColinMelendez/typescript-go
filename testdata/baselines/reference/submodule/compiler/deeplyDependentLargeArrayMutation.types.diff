@@ -1,0 +1,459 @@
+--- old.deeplyDependentLargeArrayMutation.types
++++ new.deeplyDependentLargeArrayMutation.types
+@@= skipped -5, +5 lines =@@
+ >build : () => void
+
+     var arr = [];
+->arr : any[]
+->[] : never[]
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value';
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
+->length : number
+->'value' : "value"
+-
+-    arr[arr.length] = 'value'; 
+->arr[arr.length] = 'value' : "value"
+->arr[arr.length] : any
+->arr : any[]
+->arr.length : number
+->arr : any[]
++>arr : Array<any>
++>[] : Array<never>
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value';
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
++>length : number
++>'value' : "value"
++
++    arr[arr.length] = 'value'; 
++>arr[arr.length] = 'value' : "value"
++>arr[arr.length] : any
++>arr : Array<any>
++>arr.length : number
++>arr : Array<any>
+ >length : number
+ >'value' : "value"
+ }

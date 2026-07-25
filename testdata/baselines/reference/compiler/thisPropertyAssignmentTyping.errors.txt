@@ -1,6 +1,6 @@
 main.js(47,21): error TS2532: Object is possibly 'undefined'.
 main.js(55,9): error TS2322: Type 'string' is not assignable to type 'number'.
-main.js(64,9): error TS7008: Member 'bar' implicitly has an 'any[]' type.
+main.js(64,9): error TS7008: Member 'bar' implicitly has an 'Array<any>' type.
 
 
 ==== main.js (3 errors) ====
@@ -73,7 +73,7 @@ main.js(64,9): error TS7008: Member 'bar' implicitly has an 'any[]' type.
         method1() {
             this.bar = [];  // Error: Implicit any[]
             ~~~~~~~~~~~~~
-!!! error TS7008: Member 'bar' implicitly has an 'any[]' type.
+!!! error TS7008: Member 'bar' implicitly has an 'Array<any>' type.
             this.bar.push("baz");
             this.bar;  // any[]
         }    

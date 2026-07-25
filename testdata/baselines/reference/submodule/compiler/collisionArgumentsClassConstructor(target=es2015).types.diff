@@ -1,0 +1,128 @@
+--- old.collisionArgumentsClassConstructor(target=es2015).types
++++ new.collisionArgumentsClassConstructor(target=es2015).types
+@@= skipped -6, +6 lines =@@
+
+     constructor(i: number, ...arguments) { // error
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+         var arguments: any[]; // no error
+->arguments : any[]
++>arguments : Array<any>
+     }
+ }
+ class c12 {
+@@= skipped -11, +11 lines =@@
+
+     constructor(arguments: number, ...rest) { // error
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+         var arguments = 10; // no error
+ >arguments : number
+@@= skipped -23, +23 lines =@@
+ >c2 : c2
+
+     constructor(...restParameters) {
+->restParameters : any[]
++>restParameters : Array<any>
+
+         var arguments = 10; // no error
+ >arguments : number
+@@= skipped -22, +22 lines =@@
+
+     constructor(public arguments: number, ...restParameters) { //arguments is error
+ >arguments : number
+->restParameters : any[]
++>restParameters : Array<any>
+
+         var arguments = 10; // no error
+ >arguments : number
+@@= skipped -24, +24 lines =@@
+
+     constructor(i: number, ...arguments); // No error - no code gen
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+ }
+ declare class c42 {
+ >c42 : c42
+
+     constructor(arguments: number, ...rest); // No error - no code gen
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+ }
+ declare class c4NoError {
+ >c4NoError : c4NoError
+@@= skipped -21, +21 lines =@@
+
+     constructor(i: number, ...arguments); // no codegen no error
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+     constructor(i: string, ...arguments); // no codegen no error
+ >i : string
+->arguments : any[]
++>arguments : Array<any>
+
+     constructor(i: any, ...arguments) { // error
+ >i : any
+->arguments : any[]
++>arguments : Array<any>
+
+         var arguments: any[]; // no error
+->arguments : any[]
++>arguments : Array<any>
+     }
+ }
+
+@@= skipped -20, +20 lines =@@
+
+     constructor(arguments: number, ...rest); // no codegen no error
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+     constructor(arguments: string, ...rest); // no codegen no error
+ >arguments : string
+->rest : any[]
++>rest : Array<any>
+
+     constructor(arguments: any, ...rest) { // error
+ >arguments : any
+->rest : any[]
++>rest : Array<any>
+
+         var arguments: any; // no error
+ >arguments : any
+@@= skipped -37, +37 lines =@@
+
+     constructor(i: number, ...arguments); // no codegen no error
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+     constructor(i: string, ...arguments); // no codegen no error
+ >i : string
+->arguments : any[]
++>arguments : Array<any>
+ }
+ declare class c62 {
+ >c62 : c62
+
+     constructor(arguments: number, ...rest); // no codegen no error
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+     constructor(arguments: string, ...rest); // no codegen no error
+ >arguments : string
+->rest : any[]
++>rest : Array<any>
+ }
+
+ declare class c6NoError {

@@ -4,5 +4,5 @@
 for (var [a, b] in []) {}
 >a : string
 >b : string
->[] : never[]
+>[] : Array<never>
 

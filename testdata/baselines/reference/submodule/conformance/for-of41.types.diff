@@ -1,0 +1,28 @@
+--- old.for-of41.types
++++ new.for-of41.types
+@@= skipped -1, +1 lines =@@
+
+ === for-of41.ts ===
+ var array = [{x: [0], y: {p: ""}}]
+->array : { x: number[]; y: { p: string; }; }[]
+->[{x: [0], y: {p: ""}}] : { x: number[]; y: { p: string; }; }[]
+->{x: [0], y: {p: ""}} : { x: number[]; y: { p: string; }; }
+->x : number[]
+->[0] : number[]
++>array : Array<{ x: Array<number>; y: { p: string; }; }>
++>[{x: [0], y: {p: ""}}] : Array<{ x: Array<number>; y: { p: string; }; }>
++>{x: [0], y: {p: ""}} : { x: Array<number>; y: { p: string; }; }
++>x : Array<number>
++>[0] : Array<number>
+ >0 : 0
+ >y : { p: string; }
+ >{p: ""} : { p: string; }
+@@= skipped -16, +16 lines =@@
+ >a : number
+ >y : any
+ >p : string
+->array : { x: number[]; y: { p: string; }; }[]
++>array : Array<{ x: Array<number>; y: { p: string; }; }>
+
+     a;
+ >a : number

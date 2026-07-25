@@ -1,0 +1,41 @@
+--- old.emptyVariableDeclarationBindingPatterns01_ES6.types
++++ new.emptyVariableDeclarationBindingPatterns01_ES6.types
+@@= skipped -86, +86 lines =@@
+ >function () {    const ns: number[][] = [];    for (var {} of ns) {    }    for (let {} of ns) {    }    for (const {} of ns) {    }    for (var [] of ns) {    }    for (let [] of ns) {    }    for (const [] of ns) {    }} : () => void
+
+     const ns: number[][] = [];
+->ns : number[][]
+->[] : never[]
++>ns : Array<Array<number>>
++>[] : Array<never>
+
+     for (var {} of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+
+     for (let {} of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+
+     for (const {} of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+
+     for (var [] of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+
+     for (let [] of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+
+     for (const [] of ns) {
+->ns : number[][]
++>ns : Array<Array<number>>
+     }
+ })();

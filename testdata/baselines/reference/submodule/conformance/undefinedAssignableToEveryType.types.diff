@@ -1,0 +1,11 @@
+--- old.undefinedAssignableToEveryType.types
++++ new.undefinedAssignableToEveryType.types
+@@= skipped -84, +84 lines =@@
+ >undefined : undefined
+
+ var m: number[] = undefined;
+->m : number[]
++>m : Array<number>
+ >undefined : undefined
+
+ var n: { foo: string } = undefined;

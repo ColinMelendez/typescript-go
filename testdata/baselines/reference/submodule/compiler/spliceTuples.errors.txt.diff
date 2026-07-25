@@ -1,0 +1,16 @@
+--- old.spliceTuples.errors.txt
++++ new.spliceTuples.errors.txt
+@@= skipped -0, +0 lines =@@
+-spliceTuples.ts(23,1): error TS2322: Type '[number, string, boolean, ...boolean[]]' is not assignable to type '[number, string, boolean, boolean, ...boolean[]]'.
++spliceTuples.ts(23,1): error TS2322: Type '[number, string, boolean, ...Array<boolean>]' is not assignable to type '[number, string, boolean, boolean, ...Array<boolean>]'.
+   Source provides no match for required element at position 3 in target.
+
+
+@@= skipped -26, +26 lines =@@
+     let k6: [number, string, boolean, boolean, ...boolean[]];
+     k6 = [1, ...sbb_];
+     ~~
+-!!! error TS2322: Type '[number, string, boolean, ...boolean[]]' is not assignable to type '[number, string, boolean, boolean, ...boolean[]]'.
++!!! error TS2322: Type '[number, string, boolean, ...Array<boolean>]' is not assignable to type '[number, string, boolean, boolean, ...Array<boolean>]'.
+ !!! error TS2322:   Source provides no match for required element at position 3 in target.
+     

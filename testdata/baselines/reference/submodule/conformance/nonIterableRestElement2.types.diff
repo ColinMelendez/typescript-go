@@ -1,0 +1,16 @@
+--- old.nonIterableRestElement2.types
++++ new.nonIterableRestElement2.types
+@@= skipped -5, +5 lines =@@
+ >{} : {}
+
+ [...c] = ["", 0];
+->[...c] = ["", 0] : (string | number)[]
+->[...c] : unknown[]
++>[...c] = ["", 0] : Array<string | number>
++>[...c] : Array<unknown>
+ >...c : any
+ >c : {}
+->["", 0] : (string | number)[]
++>["", 0] : Array<string | number>
+ >"" : ""
+ >0 : 0

@@ -5,7 +5,7 @@
 for (let {[a]: a} of [{ }]) continue;
 >a : any
 >a : any
->[{ }] : {}[]
+>[{ }] : Array<{}>
 >{ } : {}
 
 // 2:

@@ -24,7 +24,19 @@
 +>Wagon : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }
  >circle : (wagons?: Wagon[] | undefined) => number
  >function (wagons) {    return wagons ? wagons.length : 3.14;} : (wagons?: Wagon[] | undefined) => number
- >wagons : Wagon[] | undefined
+->wagons : Wagon[] | undefined
++>wagons : Array<Wagon> | undefined
+
+     return wagons ? wagons.length : 3.14;
+ >wagons ? wagons.length : 3.14 : number
+->wagons : Wagon[] | undefined
++>wagons : Array<Wagon> | undefined
+ >wagons.length : number
+->wagons : Wagon[]
++>wagons : Array<Wagon>
+ >length : number
+ >3.14 : 3.14
+ }
 @@= skipped -18, +18 lines =@@
  >Wagon.prototype.load = function (supplies) {} : (supplies?: any[] | undefined) => void
  >Wagon.prototype.load : any
@@ -34,7 +46,11 @@
  >prototype : any
  >load : any
  >function (supplies) {} : (supplies?: any[] | undefined) => void
-@@= skipped -11, +11 lines =@@
+->supplies : any[] | undefined
++>supplies : Array<any> | undefined
+ }
+ /** @param {*[]=} supplies - Yep, still a great type */
+ Wagon.prototype.weight = supplies => supplies ? supplies.length : -1
  >Wagon.prototype.weight = supplies => supplies ? supplies.length : -1 : (supplies?: any[] | undefined) => number
  >Wagon.prototype.weight : any
  >Wagon.prototype : any
@@ -43,7 +59,18 @@
  >prototype : any
  >weight : any
  >supplies => supplies ? supplies.length : -1 : (supplies?: any[] | undefined) => number
-@@= skipped -17, +17 lines =@@
+->supplies : any[] | undefined
++>supplies : Array<any> | undefined
+ >supplies ? supplies.length : -1 : number
+->supplies : any[] | undefined
++>supplies : Array<any> | undefined
+ >supplies.length : number
+->supplies : any[]
++>supplies : Array<any>
+ >length : number
+ >-1 : -1
+ >1 : 1
+@@= skipped -28, +28 lines =@@
  >Wagon.prototype.speed = function () {    return this.numberOxen / this.weight()} : () => number
  >Wagon.prototype.speed : any
  >Wagon.prototype : any
@@ -84,7 +111,16 @@
 
          this.foonly = 12
  >this.foonly = 12 : 12
-@@= skipped -54, +54 lines =@@
+@@= skipped -39, +39 lines =@@
+      */
+     load(files, format) {
+ >load : (files: Array<string>, format: "csv" | "json" | "xmlolololol") => void
+->files : string[]
++>files : Array<string>
+ >format : "csv" | "json" | "xmlolololol"
+
+         if (format === "xmlolololol") {
+@@= skipped -15, +15 lines =@@
          }
          else {
              super.speed() // run faster
@@ -144,13 +180,13 @@
  >circle : (others: (typeof Wagon)[]) => number
 ->others : (typeof Wagon)[]
 ->Wagon : typeof Wagon
-+>others : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }[]
++>others : Array<{ (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }>
 +>Wagon : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }
 
          return others.length
  >others.length : number
 ->others : (typeof Wagon)[]
-+>others : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }[]
++>others : Array<{ (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }>
  >length : number
      }
  }

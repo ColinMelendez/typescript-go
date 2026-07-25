@@ -8,32 +8,32 @@ export function prepareConfig({
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : undefined[]
+>json : Array<string>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
 
 }: {
   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>>
+>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>>
 
 } = {}) {
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 
 export function prepareConfigWithoutAnnotation({
->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: any[]; }; }) => void
+>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<any>; }; }) => void
 
     additionalFiles: {
 >additionalFiles : any
 
         json = []
->json : any[]
->[] : undefined[]
+>json : Array<any>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
@@ -42,7 +42,7 @@ export function prepareConfigWithoutAnnotation({
 >{} : {}
 
     json
->json : any[]
+>json : Array<any>
 }
 
 export const prepareConfigWithContextualSignature: (param:{
@@ -50,7 +50,7 @@ export const prepareConfigWithContextualSignature: (param:{
 >param : { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }
 
   additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>;
->additionalFiles : Partial<Record<"json" | "json5" | "jsonc", string[]>>
+>additionalFiles : Partial<Record<"json" | "json5" | "jsonc", Array<string>>>
 
 }) => void = ({
 >({    additionalFiles: {        json = []    } = {}} = {}) => {    json // string[]} : ({ additionalFiles: { json } }?: { additionalFiles?: Partial<Record<"json" | "jsonc" | "json5", string[]>>; }) => void
@@ -59,8 +59,8 @@ export const prepareConfigWithContextualSignature: (param:{
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : undefined[]
+>json : Array<string>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
@@ -69,6 +69,6 @@ export const prepareConfigWithContextualSignature: (param:{
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 

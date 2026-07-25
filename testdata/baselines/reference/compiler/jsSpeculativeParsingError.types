@@ -13,9 +13,9 @@ const is_morning = new Date().getHours() < 12;
 
 // prettier-ignore
 const greeting = ([
->greeting : string[]
->([  is_morning ? 'good morning' : 'good evening']) : string[]
->[  is_morning ? 'good morning' : 'good evening'] : string[]
+>greeting : Array<string>
+>([  is_morning ? 'good morning' : 'good evening']) : Array<string>
+>[  is_morning ? 'good morning' : 'good evening'] : Array<string>
 
   is_morning ? 'good morning' : 'good evening'
 >is_morning ? 'good morning' : 'good evening' : "good evening" | "good morning"

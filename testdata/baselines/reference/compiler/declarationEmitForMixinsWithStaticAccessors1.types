@@ -9,8 +9,8 @@
 
 function mix<T extends new (...args: any[]) => any, U extends new (...args: any[]) => any>(
 >mix : <T extends new (...args: any[]) => any, U extends new (...args: any[]) => any>(base1: T, base2: U) => T & U
->args : any[]
->args : any[]
+>args : Array<any>
+>args : Array<any>
 
     base1: T, base2: U
 >base1 : T

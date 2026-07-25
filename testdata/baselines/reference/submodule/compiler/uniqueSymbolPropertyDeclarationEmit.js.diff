@@ -1,0 +1,10 @@
+--- old.uniqueSymbolPropertyDeclarationEmit.js
++++ new.uniqueSymbolPropertyDeclarationEmit.js
+@@= skipped -53, +53 lines =@@
+ import Op from './op';
+ import { Po } from './po';
+ export default function foo(): {
+-    [Op.or]: any[];
++    [Op.or]: Array<any>;
+     [Po.ro]: {};
+ };

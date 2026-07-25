@@ -1,0 +1,29 @@
+--- old.staticFieldWithInterfaceContext.types
++++ new.staticFieldWithInterfaceContext.types
+@@= skipped -108, +108 lines =@@
+
+ let [ c7 ]: I[] = [class { static x = { a: "a" } }];
+ >c7 : I
+->[class { static x = { a: "a" } }] : (typeof (Anonymous class))[]
++>[class { static x = { a: "a" } }] : Array<typeof (Anonymous class)>
+ >class { static x = { a: "a" } } : typeof (Anonymous class)
+ >x : { a: "a"; }
+ >{ a: "a" } : { a: "a"; }
+@@= skipped -23, +23 lines =@@
+ >{ a: "a" } : { a: "a"; }
+ >a : "a"
+ >"a" : "a"
+->[] : never[]
++>[] : Array<never>
+
+ let [ c10 = class { static x = { a: "a" } } ]: [I?] = [class { static x = { a: "a" } }];
+ >c10 : I
+@@= skipped -23, +23 lines =@@
+ >{ a: "a" } : { a: "a"; }
+ >a : "a"
+ >"a" : "a"
+->[class { static x = { a: "a" } }] : (typeof (Anonymous class))[]
++>[class { static x = { a: "a" } }] : Array<typeof (Anonymous class)>
+ >class { static x = { a: "a" } } : typeof (Anonymous class)
+ >x : { a: "a"; }
+ >{ a: "a" } : { a: "a"; }

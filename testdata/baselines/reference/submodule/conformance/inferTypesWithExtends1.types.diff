@@ -1,0 +1,46 @@
+--- old.inferTypesWithExtends1.types
++++ new.inferTypesWithExtends1.types
+@@= skipped -20, +20 lines =@@
+ // infer to argument
+ type X2<T extends (...args: any[]) => void> =
+ >X2 : X2<T>
+->args : any[]
++>args : Array<any>
+
+     T extends (a: infer U extends string) => void ? ["string", U] :
+ >a : U
+@@= skipped -25, +25 lines =@@
+ // infer to return type
+ type X3<T extends (...args: any[]) => any> =
+ >X3 : X3<T>
+->args : any[]
++>args : Array<any>
+
+     T extends (...args: any[]) => (infer U extends string) ? ["string", U] :
+->args : any[]
++>args : Array<any>
+
+     T extends (...args: any[]) => (infer U extends number) ? ["number", U] :
+->args : any[]
++>args : Array<any>
+
+     never;
+
+@@= skipped -22, +22 lines =@@
+ // infer to instance type
+ type X4<T extends new (...args: any[]) => any> =
+ >X4 : X4<T>
+->args : any[]
++>args : Array<any>
+
+     T extends new (...args: any[]) => (infer U extends { a: string }) ? ["string", U] :
+->args : any[]
++>args : Array<any>
+ >a : string
+
+     T extends new (...args: any[]) => (infer U extends { a: number }) ? ["number", U] :
+->args : any[]
++>args : Array<any>
+ >a : number
+
+     never;

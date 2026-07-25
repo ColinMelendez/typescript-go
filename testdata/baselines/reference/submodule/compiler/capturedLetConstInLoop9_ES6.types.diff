@@ -1,0 +1,56 @@
+--- old.capturedLetConstInLoop9_ES6.types
++++ new.capturedLetConstInLoop9_ES6.types
+@@= skipped -96, +96 lines =@@
+
+     for (let a of []) {
+ >a : any
+->[] : undefined[]
++>[] : Array<undefined>
+         
+         if (a === 1) {
+ >a === 1 : boolean
+@@= skipped -21, +21 lines =@@
+         
+         for (let b of []) {
+ >b : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+             var [{x, y:z}] = [{x:1, y:2}];
+ >x : number
+@@= skipped -49, +49 lines =@@
+
+         for (let b of []) {
+ >b : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+             var [{x1, y:z1}] = [{x1:1, y:arguments.length}];
+ >x1 : number
+@@= skipped -71, +71 lines =@@
+
+     for (let x of []) {
+ >x : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         if (x === 1) {
+ >x === 1 : boolean
+@@= skipped -44, +44 lines =@@
+         
+         for (let y of []) {
+ >y : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+             switch(y) {
+ >y : any
+@@= skipped -56, +56 lines =@@
+
+     for (let y of []) {
+ >y : any
+->[] : undefined[]
++>[] : Array<undefined>
+
+         let z = arguments.length;
+ >z : number

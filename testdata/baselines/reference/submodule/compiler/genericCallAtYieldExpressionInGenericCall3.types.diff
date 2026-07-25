@@ -1,0 +1,11 @@
+--- old.genericCallAtYieldExpressionInGenericCall3.types
++++ new.genericCallAtYieldExpressionInGenericCall3.types
+@@= skipped -12, +12 lines =@@
+ interface MicroIterator<T extends Micro<any, any, any>> {
+   next(...args: ReadonlyArray<any>): IteratorResult<T, Success<T>>;
+ >next : (...args: ReadonlyArray<any>) => IteratorResult<T, Success<T>>
+->args : readonly any[]
++>args : ReadonlyArray<any>
+ }
+
+ interface Micro<out A, out E = never, out R = never> {

@@ -1,0 +1,87 @@
+--- old.thisInFunctionCall.types
++++ new.thisInFunctionCall.types
+@@= skipped -4, +4 lines =@@
+ >Test : Test
+
+   data: number[]
+->data : number[]
++>data : Array<number>
+
+   constructor() {
+     this.data = [1, 2, 3]
+->this.data = [1, 2, 3] : number[]
+->this.data : number[]
++>this.data = [1, 2, 3] : Array<number>
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->[1, 2, 3] : number[]
++>data : Array<number>
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -19, +19 lines =@@
+
+     this.data.find(function (d) {
+ >this.data.find(function (d) {      return d === this.data.length    }) : number | undefined
+->this.data.find : { <S extends number>(predicate: (value: number, index: number, obj: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: number[]) => unknown, thisArg?: any): number | undefined; }
+->this.data : number[]
++>this.data.find : { <S extends number>(predicate: (value: number, index: number, obj: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: Array<number>) => unknown, thisArg?: any): number | undefined; }
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->find : { <S extends number>(predicate: (value: number, index: number, obj: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: number[]) => unknown, thisArg?: any): number | undefined; }
++>data : Array<number>
++>find : { <S extends number>(predicate: (value: number, index: number, obj: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: Array<number>) => unknown, thisArg?: any): number | undefined; }
+ >function (d) {      return d === this.data.length    } : (d: number) => boolean
+ >d : number
+
+@@= skipped -25, +25 lines =@@
+
+     this.data.forEach(function (d) {
+ >this.data.forEach(function (d) {      console.log(d === this.data.length)    }) : void
+->this.data.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->this.data : number[]
++>this.data.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>data : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+ >function (d) {      console.log(d === this.data.length)    } : (d: number) => void
+ >d : number
+
+@@= skipped -29, +29 lines =@@
+
+     this.data.forEach(
+ >this.data.forEach(    /** @this {Test} */    function (d) {      console.log(d === this.data.length)    }, this) : void
+->this.data.forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
+->this.data : number[]
++>this.data.forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->forEach : (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any) => void
++>data : Array<number>
++>forEach : (callbackfn: (value: number, index: number, array: Array<number>) => void, thisArg?: any) => void
+
+     /** @this {Test} */
+     function (d) {
+@@= skipped -33, +33 lines =@@
+
+     this.data.find(
+ >this.data.find(    /** @this {Test} */    function (d) {      return d === this.data.length    }, this) : number | undefined
+->this.data.find : { <S extends number>(predicate: (value: number, index: number, obj: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: number[]) => unknown, thisArg?: any): number | undefined; }
+->this.data : number[]
++>this.data.find : { <S extends number>(predicate: (value: number, index: number, obj: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: Array<number>) => unknown, thisArg?: any): number | undefined; }
++>this.data : Array<number>
+ >this : this
+->data : number[]
+->find : { <S extends number>(predicate: (value: number, index: number, obj: number[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: number[]) => unknown, thisArg?: any): number | undefined; }
++>data : Array<number>
++>find : { <S extends number>(predicate: (value: number, index: number, obj: Array<number>) => value is S, thisArg?: any): S | undefined; (predicate: (value: number, index: number, obj: Array<number>) => unknown, thisArg?: any): number | undefined; }
+
+     /** @this {Test} */
+     function (d) {

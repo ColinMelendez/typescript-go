@@ -1,0 +1,11 @@
+--- old.blockScopedBindingsInDownlevelGenerator(target=es2015).types
++++ new.blockScopedBindingsInDownlevelGenerator(target=es2015).types
+@@= skipped -5, +5 lines =@@
+
+   for (const i of [1,2,3]) {
+ >i : number
+->[1,2,3] : number[]
++>[1,2,3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

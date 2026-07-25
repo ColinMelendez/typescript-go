@@ -1,0 +1,11 @@
+--- old.collisionRestParameterUnderscoreIUsage.types
++++ new.collisionRestParameterUnderscoreIUsage.types
+@@= skipped -13, +13 lines =@@
+ >Foo : Foo
+
+     constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+         console.log(_i); // This should result in error
+ >console.log(_i) : void

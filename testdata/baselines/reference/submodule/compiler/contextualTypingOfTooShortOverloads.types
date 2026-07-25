@@ -45,20 +45,20 @@ interface MyApp {
 
 interface IRouterHandler<T> {
     (...handlers: RequestHandler[]): T;
->handlers : RequestHandler[]
+>handlers : Array<RequestHandler>
 
     (...handlers: RequestHandlerParams[]): T;
->handlers : RequestHandlerParams[]
+>handlers : Array<RequestHandlerParams>
 }
 
 interface IRouterMatcher<T> {
     (path: PathParams, ...handlers: RequestHandler[]): T;
 >path : PathParams
->handlers : RequestHandler[]
+>handlers : Array<RequestHandler>
 
     (path: PathParams, ...handlers: RequestHandlerParams[]): T;
 >path : PathParams
->handlers : RequestHandlerParams[]
+>handlers : Array<RequestHandlerParams>
 }
 
 type PathParams = string | RegExp | (string | RegExp)[];

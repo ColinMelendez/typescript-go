@@ -1,0 +1,13 @@
+--- old.esnextmodulekindWithES5Target6(target=es2015).types
++++ new.esnextmodulekindWithES5Target6(target=es2015).types
+@@= skipped -7, +7 lines =@@
+ }
+
+ export function f2(...arg) {
+->f2 : (...arg: any[]) => void
+->arg : any[]
++>f2 : (...arg: Array<any>) => void
++>arg : Array<any>
+ }
+
+ export default function f3(d = 0) {

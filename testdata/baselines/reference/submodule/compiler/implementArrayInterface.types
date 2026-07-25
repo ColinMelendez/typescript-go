@@ -12,11 +12,11 @@ declare class MyArray<T> implements Array<T> {
 
     concat<U extends T[]>(...items: U[]): T[];
 >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
->items : U[]
+>items : Array<U>
 
     concat(...items: T[]): T[];
 >concat : { <U extends T[]>(...items: U[]): T[]; (...items: T[]): T[]; }
->items : T[]
+>items : Array<T>
 
     join(separator?: string): string;
 >join : (separator?: string) => string
@@ -27,7 +27,7 @@ declare class MyArray<T> implements Array<T> {
 
     push(...items: T[]): number;
 >push : (...items: T[]) => number
->items : T[]
+>items : Array<T>
 
     reverse(): T[];
 >reverse : () => T[]
@@ -54,11 +54,11 @@ declare class MyArray<T> implements Array<T> {
 >splice : { (start: number): T[]; (start: number, deleteCount: number, ...items: T[]): T[]; }
 >start : number
 >deleteCount : number
->items : T[]
+>items : Array<T>
 
     unshift(...items: T[]): number;
 >unshift : (...items: T[]) => number
->items : T[]
+>items : Array<T>
 
     indexOf(searchElement: T, fromIndex?: number): number;
 >indexOf : (searchElement: T, fromIndex?: number) => number
@@ -75,7 +75,7 @@ declare class MyArray<T> implements Array<T> {
 >callbackfn : (value: T, index: number, array: T[]) => boolean
 >value : T
 >index : number
->array : T[]
+>array : Array<T>
 >thisArg : any
 
     some(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): boolean;
@@ -83,7 +83,7 @@ declare class MyArray<T> implements Array<T> {
 >callbackfn : (value: T, index: number, array: T[]) => boolean
 >value : T
 >index : number
->array : T[]
+>array : Array<T>
 >thisArg : any
 
     forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
@@ -91,7 +91,7 @@ declare class MyArray<T> implements Array<T> {
 >callbackfn : (value: T, index: number, array: T[]) => void
 >value : T
 >index : number
->array : T[]
+>array : Array<T>
 >thisArg : any
 
     map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
@@ -99,7 +99,7 @@ declare class MyArray<T> implements Array<T> {
 >callbackfn : (value: T, index: number, array: T[]) => U
 >value : T
 >index : number
->array : T[]
+>array : Array<T>
 >thisArg : any
 
     filter(callbackfn: (value: T, index: number, array: T[]) => boolean, thisArg?: any): T[];
@@ -107,7 +107,7 @@ declare class MyArray<T> implements Array<T> {
 >callbackfn : (value: T, index: number, array: T[]) => boolean
 >value : T
 >index : number
->array : T[]
+>array : Array<T>
 >thisArg : any
 
     reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue?: T): T;
@@ -116,7 +116,7 @@ declare class MyArray<T> implements Array<T> {
 >previousValue : T
 >currentValue : T
 >currentIndex : number
->array : T[]
+>array : Array<T>
 >initialValue : T | undefined
 
     reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
@@ -125,7 +125,7 @@ declare class MyArray<T> implements Array<T> {
 >previousValue : U
 >currentValue : T
 >currentIndex : number
->array : T[]
+>array : Array<T>
 >initialValue : U
 
     reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue?: T): T;
@@ -134,7 +134,7 @@ declare class MyArray<T> implements Array<T> {
 >previousValue : T
 >currentValue : T
 >currentIndex : number
->array : T[]
+>array : Array<T>
 >initialValue : T | undefined
 
     reduceRight<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
@@ -143,7 +143,7 @@ declare class MyArray<T> implements Array<T> {
 >previousValue : U
 >currentValue : T
 >currentIndex : number
->array : T[]
+>array : Array<T>
 >initialValue : U
 
     length: number;

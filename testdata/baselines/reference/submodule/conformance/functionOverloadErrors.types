@@ -23,11 +23,11 @@ function fn2a() {
 }
 function fn2b(n: number[]);
 >fn2b : { (n: number[]): any; (n: Array<number>): any; }
->n : number[]
+>n : Array<number>
 
 function fn2b(n: Array<number>);
 >fn2b : { (n: number[]): any; (n: Array<number>): any; }
->n : number[]
+>n : Array<number>
 
 function fn2b() {
 >fn2b : { (n: number[]): any; (n: Array<number>): any; }
@@ -51,7 +51,7 @@ function fn3(): any {
 //Function overload with rest param and another with only an optional parameter
 function fn6(...t: any[]);
 >fn6 : { (...t: any[]): any; (x?: any): any; }
->t : any[]
+>t : Array<any>
 
 function fn6(x?: any);
 >fn6 : { (...t: any[]): any; (x?: any): any; }
@@ -63,7 +63,7 @@ function fn6() { }
 //Function overload with rest param and another with only optional parameters
 function fn7(...t: any[]);
 >fn7 : { (...t: any[]): any; (x?: any, y?: any, z?: any): any; }
->t : any[]
+>t : Array<any>
 
 function fn7(x?: any, y?: any, z?: any);
 >fn7 : { (...t: any[]): any; (x?: any, y?: any, z?: any): any; }

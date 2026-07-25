@@ -1,0 +1,38 @@
+--- old.interfaceExtendsObjectIntersectionErrors.errors.txt
++++ new.interfaceExtendsObjectIntersectionErrors.errors.txt
+@@= skipped -4, +4 lines =@@
+   Type 'I2' is not assignable to type '{ b: number; }'.
+     Types of property 'b' are incompatible.
+       Type 'string' is not assignable to type 'number'.
+-interfaceExtendsObjectIntersectionErrors.ts(9,11): error TS2430: Interface 'I3' incorrectly extends interface 'number[]'.
++interfaceExtendsObjectIntersectionErrors.ts(9,11): error TS2430: Interface 'I3' incorrectly extends interface 'Array<number>'.
+   Types of property 'length' are incompatible.
+     Type 'string' is not assignable to type 'number'.
+ interfaceExtendsObjectIntersectionErrors.ts(10,11): error TS2430: Interface 'I4' incorrectly extends interface '[string, number]'.
+@@= skipped -13, +13 lines =@@
+   Type 'string' is not assignable to type 'number'.
+ interfaceExtendsObjectIntersectionErrors.ts(17,38): error TS2416: Property 'b' in type 'C2' is not assignable to the same property in base type 'T2'.
+   Type 'string' is not assignable to type 'number'.
+-interfaceExtendsObjectIntersectionErrors.ts(18,38): error TS2416: Property 'length' in type 'C3' is not assignable to the same property in base type 'number[]'.
++interfaceExtendsObjectIntersectionErrors.ts(18,38): error TS2416: Property 'length' in type 'C3' is not assignable to the same property in base type 'Array<number>'.
+   Type 'string' is not assignable to type 'number'.
+ interfaceExtendsObjectIntersectionErrors.ts(19,38): error TS2416: Property '0' in type 'C4' is not assignable to the same property in base type '[string, number]'.
+   Type 'number' is not assignable to type 'string'.
+@@= skipped -57, +57 lines =@@
+ !!! error TS2430:       Type 'string' is not assignable to type 'number'.
+     interface I3 extends T3 { length: string }
+               ~~
+-!!! error TS2430: Interface 'I3' incorrectly extends interface 'number[]'.
++!!! error TS2430: Interface 'I3' incorrectly extends interface 'Array<number>'.
+ !!! error TS2430:   Types of property 'length' are incompatible.
+ !!! error TS2430:     Type 'string' is not assignable to type 'number'.
+     interface I4 extends T4 { 0: number }
+@@= skipped -27, +27 lines =@@
+ !!! error TS2416:   Type 'string' is not assignable to type 'number'.
+     class C3 extends Constructor<T3>() { length: string }
+                                          ~~~~~~
+-!!! error TS2416: Property 'length' in type 'C3' is not assignable to the same property in base type 'number[]'.
++!!! error TS2416: Property 'length' in type 'C3' is not assignable to the same property in base type 'Array<number>'.
+ !!! error TS2416:   Type 'string' is not assignable to type 'number'.
+     class C4 extends Constructor<T4>() { 0: number }
+                                          ~

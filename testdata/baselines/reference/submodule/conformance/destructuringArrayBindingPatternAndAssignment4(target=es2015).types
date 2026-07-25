@@ -5,9 +5,9 @@
 
 
 declare const data: number[] | null;
->data : number[] | null
+>data : Array<number> | null
 
 const [value] = data; // Error
 >value : any
->data : number[] | null
+>data : Array<number> | null
 

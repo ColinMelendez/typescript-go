@@ -1,0 +1,8 @@
+--- old.for-of56(alwaysstrict=true).types
++++ new.for-of56(alwaysstrict=true).types
+@@= skipped -2, +2 lines =@@
+ === for-of56.ts ===
+ for (var let of []) {}
+ >let : any
+->[] : undefined[]
++>[] : Array<undefined>

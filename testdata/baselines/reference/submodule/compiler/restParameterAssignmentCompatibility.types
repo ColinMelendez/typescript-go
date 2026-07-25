@@ -5,8 +5,8 @@ class T {
 >T : T
 
     m(...p3) {
->m : (...p3: any[]) => void
->p3 : any[]
+>m : (...p3: Array<any>) => void
+>p3 : Array<any>
 
     }
 }

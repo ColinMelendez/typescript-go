@@ -12,8 +12,8 @@ export function prepareConfig({
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : undefined[]
+>json : Array<string>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
@@ -22,18 +22,18 @@ export function prepareConfig({
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 
 export function prepareConfigWithoutAnnotation({
->prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: any[]; }; }) => void
+>prepareConfigWithoutAnnotation : ({ additionalFiles: { json } }?: { additionalFiles?: { json?: Array<any>; }; }) => void
 
     additionalFiles: {
 >additionalFiles : any
 
         json = []
->json : any[]
->[] : undefined[]
+>json : Array<any>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
@@ -42,7 +42,7 @@ export function prepareConfigWithoutAnnotation({
 >{} : {}
 
     json
->json : any[]
+>json : Array<any>
 }
 
 /** @type {(param: {
@@ -56,8 +56,8 @@ export const prepareConfigWithContextualSignature = ({
 >additionalFiles : any
 
         json = []
->json : string[]
->[] : undefined[]
+>json : Array<string>
+>[] : Array<undefined>
 
     } = {}
 >{} : {}
@@ -66,7 +66,7 @@ export const prepareConfigWithContextualSignature = ({
 >{} : {}
 
     json // string[]
->json : string[]
+>json : Array<string>
 }
 
 // Additional repros from https://github.com/microsoft/TypeScript/issues/59936
@@ -75,22 +75,22 @@ export const prepareConfigWithContextualSignature = ({
  * @param {{ a?: { json?: string[] }}} [config]
  */
 function f1({ a: { json = [] } = {} } = {}) { return json }
->f1 : ({ a: { json } }?: { a?: { json?: string[]; }; }) => string[]
+>f1 : ({ a: { json } }?: { a?: { json?: string[]; }; }) => Array<string>
 >a : any
->json : string[]
->[] : undefined[]
+>json : Array<string>
+>[] : Array<undefined>
 >{} : {}
 >{} : {}
->json : string[]
+>json : Array<string>
 
 /**
  * @param {[[string[]?]?]} [x]
  */
 function f2([[json = []] = []] = []) { return json }
->f2 : ([[json]]?: [[string[]?]?]) => string[]
->json : string[]
->[] : undefined[]
+>f2 : ([[json]]?: [[string[]?]?]) => Array<string>
+>json : Array<string>
+>[] : Array<undefined>
 >[] : []
 >[] : []
->json : string[]
+>json : Array<string>
 

@@ -1,0 +1,19 @@
+--- old.declFileCallSignatures(target=es2015).types
++++ new.declFileCallSignatures(target=es2015).types
+@@= skipped -18, +18 lines =@@
+ export interface ICallSignatureWithRestParameters {
+     (a: string, ...rests: string[]): string;
+ >a : string
+->rests : string[]
++>rests : Array<string>
+ }
+
+ export interface ICallSignatureWithOverloads {
+@@= skipped -42, +42 lines =@@
+
+     (a: string, ...rests: string[]): string;
+ >a : string
+->rests : string[]
++>rests : Array<string>
+
+ }

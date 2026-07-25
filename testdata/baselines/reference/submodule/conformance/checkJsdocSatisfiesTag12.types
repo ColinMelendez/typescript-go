@@ -47,8 +47,8 @@ const t3 = {};
  * @satisfies {Array.<number, number>}
  */
 const t4 = [1, 2];
->t4 : number[]
->[1, 2] : number[]
+>t4 : Array<number>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 

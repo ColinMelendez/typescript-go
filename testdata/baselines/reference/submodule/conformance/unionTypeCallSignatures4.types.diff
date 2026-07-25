@@ -1,0 +1,18 @@
+--- old.unionTypeCallSignatures4.types
++++ new.unionTypeCallSignatures4.types
+@@= skipped -14, +14 lines =@@
+ type F3 = (a: string, ...rest: string[]) => void;
+ >F3 : F3
+ >a : string
+->rest : string[]
++>rest : Array<string>
+
+ type F4 = (a: string, b?: string, ...rest: string[]) => void;
+ >F4 : F4
+ >a : string
+ >b : string | undefined
+->rest : string[]
++>rest : Array<string>
+
+ type F5 = (a: string, b: string) => void;
+ >F5 : F5

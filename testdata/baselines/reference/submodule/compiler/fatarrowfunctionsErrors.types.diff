@@ -1,0 +1,17 @@
+--- old.fatarrowfunctionsErrors.types
++++ new.fatarrowfunctionsErrors.types
+@@= skipped -4, +4 lines =@@
+ >foo((...Far:any[])=>{return 0;}) : any
+ >foo : any
+ >(...Far:any[])=>{return 0;} : (...Far: any[]) => number
+->Far : any[]
++>Far : Array<any>
+ >0 : 0
+
+ foo((1)=>{return 0;}); 
+@@= skipped -59, +59 lines =@@
+ var x4= (...a: any[]) { };
+ >x4 : (...a: any[]) => void
+ >(...a: any[]) { } : (...a: any[]) => void
+->a : any[]
++>a : Array<any>

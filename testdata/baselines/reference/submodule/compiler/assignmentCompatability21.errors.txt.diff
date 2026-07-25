@@ -1,0 +1,24 @@
+--- old.assignmentCompatability21.errors.txt
++++ new.assignmentCompatability21.errors.txt
+@@= skipped -0, +0 lines =@@
+-assignmentCompatability21.ts(9,1): error TS2322: Type 'interfaceWithPublicAndOptional<number, string>' is not assignable to type '{ two: string[]; }'.
++assignmentCompatability21.ts(9,1): error TS2322: Type 'interfaceWithPublicAndOptional<number, string>' is not assignable to type '{ two: Array<string>; }'.
+   Types of property 'two' are incompatible.
+-    Type 'string | undefined' is not assignable to type 'string[]'.
+-      Type 'undefined' is not assignable to type 'string[]'.
++    Type 'string | undefined' is not assignable to type 'Array<string>'.
++      Type 'undefined' is not assignable to type 'Array<string>'.
+
+
+ ==== assignmentCompatability21.ts (1 errors) ====
+@@= skipped -14, +14 lines =@@
+     }
+     __test2__.__val__obj = __test1__.__val__obj4
+     ~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2322: Type 'interfaceWithPublicAndOptional<number, string>' is not assignable to type '{ two: string[]; }'.
++!!! error TS2322: Type 'interfaceWithPublicAndOptional<number, string>' is not assignable to type '{ two: Array<string>; }'.
+ !!! error TS2322:   Types of property 'two' are incompatible.
+-!!! error TS2322:     Type 'string | undefined' is not assignable to type 'string[]'.
+-!!! error TS2322:       Type 'undefined' is not assignable to type 'string[]'.
++!!! error TS2322:     Type 'string | undefined' is not assignable to type 'Array<string>'.
++!!! error TS2322:       Type 'undefined' is not assignable to type 'Array<string>'.

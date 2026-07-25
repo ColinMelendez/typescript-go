@@ -34,12 +34,12 @@ declare function isDecorator(node: Node): node is Decorator;
 
 declare function every<T, U extends T>(array: readonly T[], callback: (element: T) => element is U): array is readonly U[];
 >every : <T, U extends T>(array: readonly T[], callback: (element: T) => element is U) => array is readonly U[]
->array : readonly T[]
+>array : ReadonlyArray<T>
 >callback : (element: T) => element is U
 >element : T
 
 declare const modifiers: readonly Decorator[] | readonly Modifier[];
->modifiers : readonly Decorator[] | readonly Modifier[]
+>modifiers : ReadonlyArray<Decorator> | ReadonlyArray<Modifier>
 
 function foo() {
 >foo : () => void
@@ -47,13 +47,13 @@ function foo() {
     every(modifiers, isModifier);
 >every(modifiers, isModifier) : boolean
 >every : <T, U extends T>(array: readonly T[], callback: (element: T) => element is U) => array is readonly U[]
->modifiers : readonly Decorator[] | readonly Modifier[]
+>modifiers : ReadonlyArray<Decorator> | ReadonlyArray<Modifier>
 >isModifier : (node: Node) => node is Modifier
 
     every(modifiers, isDecorator);
 >every(modifiers, isDecorator) : boolean
 >every : <T, U extends T>(array: readonly T[], callback: (element: T) => element is U) => array is readonly U[]
->modifiers : readonly Decorator[] | readonly Modifier[]
+>modifiers : ReadonlyArray<Decorator> | ReadonlyArray<Modifier>
 >isDecorator : (node: Node) => node is Decorator
 }
 

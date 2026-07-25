@@ -1,0 +1,44 @@
+--- old.unknownType1.types
++++ new.unknownType1.types
+@@= skipped -15, +15 lines =@@
+ >T03 : string
+
+ type T04 = unknown & string[];  // string[]
+->T04 : string[]
++>T04 : Array<string>
+
+ type T05 = unknown & unknown;  // unknown
+ >T05 : unknown
+@@= skipped -243, +243 lines =@@
+ >"hello" : "hello"
+
+     x = [1, 2, 3];
+->x = [1, 2, 3] : number[]
++>x = [1, 2, 3] : Array<number>
+ >x : unknown
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+@@= skipped -57, +57 lines =@@
+ >x : unknown
+
+     let v5: string[] = x;  // Error
+->v5 : string[]
++>v5 : Array<string>
+ >x : unknown
+
+     let v6: {} = x;  // Error
+@@= skipped -43, +43 lines =@@
+ >5 : 5
+
+     x = [1, 2, 3]; // Error
+->x = [1, 2, 3] : number[]
++>x = [1, 2, 3] : Array<number>
+ >x : { [x: string]: unknown; }
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

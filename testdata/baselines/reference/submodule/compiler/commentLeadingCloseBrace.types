@@ -2,22 +2,22 @@
 
 === commentLeadingCloseBrace.ts ===
 declare function commentedParameters(...args): any;
->commentedParameters : (...args: any[]) => any
->args : any[]
+>commentedParameters : (...args: Array<any>) => any
+>args : Array<any>
 
 function ifelse() {
 >ifelse : () => void
 
     if (commentedParameters(1, 2)) {
 >commentedParameters(1, 2) : any
->commentedParameters : (...args: any[]) => any
+>commentedParameters : (...args: Array<any>) => any
 >1 : 1
 >2 : 2
 
         /*comment1*/
         commentedParameters(3, 4);
 >commentedParameters(3, 4) : any
->commentedParameters : (...args: any[]) => any
+>commentedParameters : (...args: Array<any>) => any
 >3 : 3
 >4 : 4
 
@@ -25,7 +25,7 @@ function ifelse() {
     } else {
         commentedParameters(5, 6);
 >commentedParameters(5, 6) : any
->commentedParameters : (...args: any[]) => any
+>commentedParameters : (...args: Array<any>) => any
 >5 : 5
 >6 : 6
     }

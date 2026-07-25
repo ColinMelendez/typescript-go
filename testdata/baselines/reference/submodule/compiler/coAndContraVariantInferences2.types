@@ -87,26 +87,26 @@ function f2(b: B, c: C) {
 
 declare function every<T, U extends T>(array: readonly T[], f: (x: T) => x is U): array is readonly U[];
 >every : <T, U extends T>(array: readonly T[], f: (x: T) => x is U) => array is readonly U[]
->array : readonly T[]
+>array : ReadonlyArray<T>
 >f : (x: T) => x is U
 >x : T
 
 function f3(arr: readonly B[] | readonly C[]) {
 >f3 : (arr: readonly B[] | readonly C[]) => void
->arr : readonly B[] | readonly C[]
+>arr : ReadonlyArray<B> | ReadonlyArray<C>
 
     if (every(arr, isC)) {
 >every(arr, isC) : boolean
 >every : <T, U extends T>(array: readonly T[], f: (x: T) => x is U) => array is readonly U[]
->arr : readonly B[] | readonly C[]
+>arr : ReadonlyArray<B> | ReadonlyArray<C>
 >isC : (x: A) => x is C
 
         arr; // readonly C[]
->arr : readonly C[]
+>arr : ReadonlyArray<C>
     }
     else {
         arr; // readonly B[]
->arr : readonly B[]
+>arr : ReadonlyArray<B>
     }
 }
 
@@ -276,15 +276,15 @@ interface NodeArray<T extends Node> extends Array<T> {
 
 declare function isNodeArray<T extends Node>(array: readonly T[]): array is NodeArray<T>;
 >isNodeArray : <T extends Node>(array: readonly T[]) => array is NodeArray<T>
->array : readonly T[]
+>array : ReadonlyArray<T>
 
 declare const types: readonly TypeNode[];
->types : readonly TypeNode[]
+>types : ReadonlyArray<TypeNode>
 
 const x = tryCast(types, isNodeArray);  // NodeAray<TypeNode>
 >x : NodeArray<TypeNode>
 >tryCast(types, isNodeArray) : NodeArray<TypeNode>
 >tryCast : <TOut extends TIn, TIn = any>(value: TIn | undefined, test: (value: TIn) => value is TOut) => TOut
->types : readonly TypeNode[]
+>types : ReadonlyArray<TypeNode>
 >isNodeArray : <T extends Node>(array: readonly T[]) => array is NodeArray<T>
 

@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithWhitespaceEscapes.types
++++ new.taggedTemplateStringsWithWhitespaceEscapes.types
+@@= skipped -2, +2 lines =@@
+ === taggedTemplateStringsWithWhitespaceEscapes.ts ===
+ function f(...args: any[]) {
+ >f : (...args: any[]) => void
+->args : any[]
++>args : Array<any>
+ }
+
+ f `\t\n\v\f\r\\`;

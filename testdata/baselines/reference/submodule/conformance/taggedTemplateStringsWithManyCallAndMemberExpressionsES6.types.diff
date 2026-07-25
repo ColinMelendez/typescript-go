@@ -1,0 +1,11 @@
+--- old.taggedTemplateStringsWithManyCallAndMemberExpressionsES6.types
++++ new.taggedTemplateStringsWithManyCallAndMemberExpressionsES6.types
+@@= skipped -3, +3 lines =@@
+ interface I {
+     (strs: TemplateStringsArray, ...subs: number[]): I;
+ >strs : TemplateStringsArray
+->subs : number[]
++>subs : Array<number>
+
+     member: {
+ >member : new (s: string) => { new (n: number): { new (): boolean; }; }

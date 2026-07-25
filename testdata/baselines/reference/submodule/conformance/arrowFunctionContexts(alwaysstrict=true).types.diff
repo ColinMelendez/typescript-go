@@ -1,0 +1,85 @@
+--- old.arrowFunctionContexts(alwaysstrict=true).types
++++ new.arrowFunctionContexts(alwaysstrict=true).types
+@@= skipped -53, +53 lines =@@
+ >n : number
+
+ var arr = [(n: number) => ''];
+->arr : ((n: number) => string)[]
+->[(n: number) => ''] : ((n: number) => string)[]
++>arr : Array<(n: number) => string>
++>[(n: number) => ''] : Array<(n: number) => string>
+ >(n: number) => '' : (n: number) => string
+ >n : number
+ >'' : ""
+
+ var arr: { (n: number): string; }[]; // Incorrect error here (bug 829597)
+->arr : ((n: number) => string)[]
++>arr : Array<(n: number) => string>
+ >n : number
+
+ // Arrow function as enum value
+@@= skipped -102, +102 lines =@@
+ >n : number
+
+     var arr = [(n: number) => ''];
+->arr : ((n: number) => string)[]
+->[(n: number) => ''] : ((n: number) => string)[]
++>arr : Array<(n: number) => string>
++>[(n: number) => ''] : Array<(n: number) => string>
+ >(n: number) => '' : (n: number) => string
+ >n : number
+ >'' : ""
+
+     var arr: { (n: number): string; }[]; // Incorrect error here (bug 829597)
+->arr : ((n: number) => string)[]
++>arr : Array<(n: number) => string>
+ >n : number
+
+     // Arrow function as enum value
+@@= skipped -49, +49 lines =@@
+
+ // <Identifier>(ParamList) => { ... } is a generic arrow function
+ var generic1 = <T>(n: T) => [n];
+->generic1 : <T>(n: T) => T[]
+-><T>(n: T) => [n] : <T>(n: T) => T[]
++>generic1 : <T>(n: T) => Array<T>
++><T>(n: T) => [n] : <T>(n: T) => Array<T>
+ >n : T
+->[n] : T[]
++>[n] : Array<T>
+ >n : T
+
+ var generic1: { <T>(n: T): T[] }; // Incorrect error, Bug 829597
+->generic1 : <T>(n: T) => T[]
++>generic1 : <T>(n: T) => Array<T>
+ >n : T
+
+ var generic2 = <T>(n: T) => { return [n]; };
+->generic2 : <T>(n: T) => T[]
+-><T>(n: T) => { return [n]; } : <T>(n: T) => T[]
++>generic2 : <T>(n: T) => Array<T>
++><T>(n: T) => { return [n]; } : <T>(n: T) => Array<T>
+ >n : T
+->[n] : T[]
++>[n] : Array<T>
+ >n : T
+
+ var generic2: { <T>(n: T): T[] };
+->generic2 : <T>(n: T) => T[]
++>generic2 : <T>(n: T) => Array<T>
+ >n : T
+
+ // <Identifier> ((ParamList) => { ... } ) is a type assertion to an arrow function
+ var asserted1 = <any>((n) => [n]);
+ >asserted1 : any
+ ><any>((n) => [n]) : any
+->((n) => [n]) : (n: any) => any[]
+->(n) => [n] : (n: any) => any[]
++>((n) => [n]) : (n: any) => Array<any>
++>(n) => [n] : (n: any) => Array<any>
+ >n : any
+->[n] : any[]
++>[n] : Array<any>
+ >n : any
+
+ var asserted1: any;

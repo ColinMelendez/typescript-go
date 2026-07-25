@@ -2,54 +2,54 @@
 
 === collisionArgumentsInType.ts ===
 var v1: (i: number, ...arguments) => void; // no error - no code gen
->v1 : (i: number, ...arguments: any[]) => void
+>v1 : (i: number, ...arguments: Array<any>) => void
 >i : number
->arguments : any[]
+>arguments : Array<any>
 
 var v12: (arguments: number, ...restParameters) => void; // no error - no code gen
->v12 : (arguments: number, ...restParameters: any[]) => void
+>v12 : (arguments: number, ...restParameters: Array<any>) => void
 >arguments : number
->restParameters : any[]
+>restParameters : Array<any>
 
 var v2: {
->v2 : { (arguments: number, ...restParameters: any[]): any; new (arguments: number, ...restParameters: any[]): any; foo(arguments: number, ...restParameters: any[]): any; prop: (arguments: number, ...restParameters: any) => void; }
+>v2 : { (arguments: number, ...restParameters: Array<any>): any; new (arguments: number, ...restParameters: Array<any>): any; foo(arguments: number, ...restParameters: Array<any>): any; prop: (arguments: number, ...restParameters: any) => void; }
 
     (arguments: number, ...restParameters); // no error - no code gen
 >arguments : number
->restParameters : any[]
+>restParameters : Array<any>
 
     new (arguments: number, ...restParameters); // no error - no code gen
 >arguments : number
->restParameters : any[]
+>restParameters : Array<any>
 
     foo(arguments: number, ...restParameters); // no error - no code gen
->foo : (arguments: number, ...restParameters: any[]) => any
+>foo : (arguments: number, ...restParameters: Array<any>) => any
 >arguments : number
->restParameters : any[]
+>restParameters : Array<any>
 
     prop: (arguments: number, ...restParameters) => void; // no error - no code gen
->prop : (arguments: number, ...restParameters: any[]) => void
+>prop : (arguments: number, ...restParameters: Array<any>) => void
 >arguments : number
->restParameters : any[]
+>restParameters : Array<any>
 }
 var v21: {
->v21 : { (i: number, ...arguments: any[]): any; new (i: number, ...arguments: any[]): any; foo(i: number, ...arguments: any[]): any; prop: (i: number, ...arguments: any) => void; }
+>v21 : { (i: number, ...arguments: Array<any>): any; new (i: number, ...arguments: Array<any>): any; foo(i: number, ...arguments: Array<any>): any; prop: (i: number, ...arguments: any) => void; }
 
     (i: number, ...arguments); // no error - no code gen
 >i : number
->arguments : any[]
+>arguments : Array<any>
 
     new (i: number, ...arguments); // no error - no code gen
 >i : number
->arguments : any[]
+>arguments : Array<any>
 
     foo(i: number, ...arguments); // no error - no code gen
->foo : (i: number, ...arguments: any[]) => any
+>foo : (i: number, ...arguments: Array<any>) => any
 >i : number
->arguments : any[]
+>arguments : Array<any>
 
     prop: (i: number, ...arguments) => void; // no error - no code gen
->prop : (i: number, ...arguments: any[]) => void
+>prop : (i: number, ...arguments: Array<any>) => void
 >i : number
->arguments : any[]
+>arguments : Array<any>
 }

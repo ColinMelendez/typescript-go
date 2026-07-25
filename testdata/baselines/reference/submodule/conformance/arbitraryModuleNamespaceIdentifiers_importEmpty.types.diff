@@ -1,0 +1,13 @@
+--- old.arbitraryModuleNamespaceIdentifiers_importEmpty.types
++++ new.arbitraryModuleNamespaceIdentifiers_importEmpty.types
+@@= skipped -14, +14 lines =@@
+
+ } from "./arbitraryModuleNamespaceIdentifiers_importEmpty";
+ const xyz = [x, y, z];
+->xyz : any[]
+->[x, y, z] : any[]
++>xyz : Array<any>
++>[x, y, z] : Array<any>
+ >x : any
+ >y : any
+ >z : any

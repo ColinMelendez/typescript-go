@@ -1,0 +1,9 @@
+--- old.for-of7.types
++++ new.for-of7.types
+@@= skipped -5, +5 lines =@@
+
+ for (let v of [0]) { }
+ >v : number
+->[0] : number[]
++>[0] : Array<number>
+ >0 : 0

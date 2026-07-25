@@ -2,12 +2,12 @@
 
 === newLexicalEnvironmentForConvertedLoop.ts ===
 function baz(x: any) {
->baz : (x: any) => any[][]
+>baz : (x: any) => Array<Array<any>>
 >x : any
 
   return [[x, x]];
->[[x, x]] : any[][]
->[x, x] : any[]
+>[[x, x]] : Array<Array<any>>
+>[x, x] : Array<any>
 >x : any
 >x : any
 }
@@ -19,15 +19,15 @@ function foo(set: any) {
   for (const [value, i] of baz(set.values)) {
 >value : any
 >i : any
->baz(set.values) : any[][]
->baz : (x: any) => any[][]
+>baz(set.values) : Array<Array<any>>
+>baz : (x: any) => Array<Array<any>>
 >set.values : any
 >set : any
 >values : any
 
     const bar: any = [];
 >bar : any
->[] : never[]
+>[] : Array<never>
 
     (() => bar);
 >(() => bar) : () => any

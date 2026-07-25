@@ -1,0 +1,40 @@
+--- old.logicalNotOperatorWithNumberType.types
++++ new.logicalNotOperatorWithNumberType.types
+@@= skipped -5, +5 lines =@@
+ >NUMBER : number
+
+ var NUMBER1: number[] = [1, 2];
+->NUMBER1 : number[]
+->[1, 2] : number[]
++>NUMBER1 : Array<number>
++>[1, 2] : Array<number>
+ >1 : 1
+ >2 : 2
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsBoolean2 = !NUMBER1;
+ >ResultIsBoolean2 : boolean
+ >!NUMBER1 : false
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ // number type literal
+ var ResultIsBoolean3 = !1;
+@@= skipped -47, +47 lines =@@
+ >ResultIsBoolean8 : boolean
+ >!NUMBER1[0] : boolean
+ >NUMBER1[0] : number
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+ >0 : 0
+
+ var ResultIsBoolean9 = !foo();
+@@= skipped -53, +53 lines =@@
+
+ !NUMBER1;
+ >!NUMBER1 : false
+->NUMBER1 : number[]
++>NUMBER1 : Array<number>
+
+ !foo();
+ >!foo() : boolean

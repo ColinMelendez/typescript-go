@@ -1,6 +1,15 @@
 --- old.mixinClassesAnnotated.types
 +++ new.mixinClassesAnnotated.types
-@@= skipped -41, +41 lines =@@
+@@= skipped -2, +2 lines =@@
+ === mixinClassesAnnotated.ts ===
+ type Constructor<T> = new(...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ class Base {
+ >Base : Base
+@@= skipped -39, +39 lines =@@
  >message : string
 
      class extends superClass {
@@ -9,7 +18,23 @@
  >superClass : Base
 
          static message = "hello";
-@@= skipped -58, +58 lines =@@
+@@= skipped -41, +41 lines =@@
+ >_tag : string
+
+         constructor(...args: any[]) {
+->args : any[]
++>args : Array<any>
+
+             super(...args);
+ >super(...args) : void
+ >super : T
+ >...args : any
+->args : any[]
++>args : Array<any>
+
+             this._tag = "hello";
+ >this._tag = "hello" : "hello"
+@@= skipped -17, +17 lines =@@
          }
      }
      return C;

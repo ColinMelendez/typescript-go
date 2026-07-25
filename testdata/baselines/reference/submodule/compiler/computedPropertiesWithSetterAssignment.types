@@ -36,36 +36,36 @@ declare const foo: Foo;
 >foo : Foo
 
 foo.k = ['foo'];
->foo.k = ['foo'] : string[]
+>foo.k = ['foo'] : Array<string>
 >foo.k : Iterable<string>
 >foo : Foo
 >k : Iterable<string>
->['foo'] : string[]
+>['foo'] : Array<string>
 >'foo' : "foo"
 
 foo['k'] = ['foo'];
->foo['k'] = ['foo'] : string[]
+>foo['k'] = ['foo'] : Array<string>
 >foo['k'] : Iterable<string>
 >foo : Foo
 >'k' : "k"
->['foo'] : string[]
+>['foo'] : Array<string>
 >'foo' : "foo"
 
 foo[Props.k] = ['foo'];
->foo[Props.k] = ['foo'] : string[]
+>foo[Props.k] = ['foo'] : Array<string>
 >foo[Props.k] : Iterable<string>
 >foo : Foo
 >Props.k : Props
 >Props : typeof Props
 >k : Props
->['foo'] : string[]
+>['foo'] : Array<string>
 >'foo' : "foo"
 
 foo[k] = ['foo'];
->foo[k] = ['foo'] : string[]
+>foo[k] = ['foo'] : Array<string>
 >foo[k] : Iterable<string>
 >foo : Foo
 >k : unique symbol
->['foo'] : string[]
+>['foo'] : Array<string>
 >'foo' : "foo"
 

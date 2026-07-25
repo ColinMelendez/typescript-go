@@ -5,7 +5,7 @@
 
 type Constructor<T> = new(...args: any[]) => T;
 >Constructor : Constructor<T>
->args : any[]
+>args : Array<any>
 
 class A {
 >A : A
@@ -243,13 +243,13 @@ function PersonMixin<T extends Constructor<Person>>(Base: T) {
 >Base : Person
 
 		constructor(...args: any[]) {
->args : any[]
+>args : Array<any>
 
 			super(...args);
 >super(...args) : void
 >super : T
 >...args : any
->args : any[]
+>args : Array<any>
 		}
 
 		myProtectedFunction() {

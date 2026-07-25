@@ -1,0 +1,11 @@
+--- old.functionCall14.types
++++ new.functionCall14.types
+@@= skipped -3, +3 lines =@@
+ function foo(a?:string, ...b:number[]){} 
+ >foo : (a?: string, ...b: number[]) => void
+ >a : string | undefined
+->b : number[]
++>b : Array<number>
+
+ foo('foo', 1); 
+ >foo('foo', 1) : void

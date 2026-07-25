@@ -1,0 +1,16 @@
+--- old.for-inStatements.types
++++ new.for-inStatements.types
+@@= skipped -20, +20 lines =@@
+
+ for (var x in []) { }
+ >x : string
+->[] : undefined[]
++>[] : Array<undefined>
+
+ for (var x in [1, 2, 3, 4, 5]) { }
+ >x : string
+->[1, 2, 3, 4, 5] : number[]
++>[1, 2, 3, 4, 5] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

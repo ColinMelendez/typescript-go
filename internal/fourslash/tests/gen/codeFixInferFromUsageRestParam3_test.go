@@ -21,5 +21,5 @@ function f(a: number, [|...rest |]){
 }`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyRangeAfterCodeFix(t, `...rest: number[]`, false, 0, 0)
+	f.VerifyRangeAfterCodeFix(t, `...rest: Array<number>`, false, 0, 0)
 }

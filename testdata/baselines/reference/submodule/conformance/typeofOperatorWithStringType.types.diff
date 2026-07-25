@@ -1,0 +1,58 @@
+--- old.typeofOperatorWithStringType.types
++++ new.typeofOperatorWithStringType.types
+@@= skipped -5, +5 lines =@@
+ >STRING : string
+
+ var STRING1: string[] = ["", "abc"];
+->STRING1 : string[]
+->["", "abc"] : string[]
++>STRING1 : Array<string>
++>["", "abc"] : Array<string>
+ >"" : ""
+ >"abc" : "abc"
+
+@@= skipped -40, +40 lines =@@
+ var ResultIsString2 = typeof STRING1;
+ >ResultIsString2 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >typeof STRING1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ // string type literal
+ var ResultIsString3 = typeof "";
+@@= skipped -47, +47 lines =@@
+ >ResultIsString8 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >typeof STRING1[0] : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+ >STRING1[0] : string
+->STRING1 : string[]
++>STRING1 : Array<string>
+ >0 : 0
+
+ var ResultIsString9 = typeof foo();
+@@= skipped -62, +62 lines =@@
+
+ typeof STRING1;
+ >typeof STRING1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ typeof foo();
+ >typeof foo() : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+@@= skipped -22, +22 lines =@@
+ >z : string
+
+ declare var x: string[];
+->x : string[]
++>x : Array<string>
+
+ declare var r: () => string;
+ >r : () => string
+@@= skipped -13, +13 lines =@@
+ x: typeof STRING1;
+ >x : any
+ >typeof STRING1 : "bigint" | "boolean" | "function" | "number" | "object" | "string" | "symbol" | "undefined"
+->STRING1 : string[]
++>STRING1 : Array<string>
+
+ r: typeof foo;
+ >r : any

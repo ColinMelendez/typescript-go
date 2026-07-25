@@ -1,0 +1,27 @@
+--- old.iteratorSpreadInArray6.types
++++ new.iteratorSpreadInArray6.types
+@@= skipped -33, +33 lines =@@
+ }
+
+ var array: number[] = [0, 1];
+->array : number[]
+->[0, 1] : number[]
++>array : Array<number>
++>[0, 1] : Array<number>
+ >0 : 0
+ >1 : 1
+
+ array.concat([...new SymbolIterator]);
+->array.concat([...new SymbolIterator]) : number[]
+->array.concat : { (...items: ConcatArray<number>[]): number[]; (...items: (number | ConcatArray<number>)[]): number[]; }
+->array : number[]
+->concat : { (...items: ConcatArray<number>[]): number[]; (...items: (number | ConcatArray<number>)[]): number[]; }
+->[...new SymbolIterator] : symbol[]
++>array.concat([...new SymbolIterator]) : Array<number>
++>array.concat : { (...items: Array<ConcatArray<number>>): Array<number>; (...items: Array<number | ConcatArray<number>>): Array<number>; }
++>array : Array<number>
++>concat : { (...items: Array<ConcatArray<number>>): Array<number>; (...items: Array<number | ConcatArray<number>>): Array<number>; }
++>[...new SymbolIterator] : Array<symbol>
+ >...new SymbolIterator : symbol
+ >new SymbolIterator : SymbolIterator
+ >SymbolIterator : typeof SymbolIterator

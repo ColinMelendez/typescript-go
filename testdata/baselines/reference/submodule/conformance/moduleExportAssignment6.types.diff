@@ -1,0 +1,57 @@
+--- old.moduleExportAssignment6.types
++++ new.moduleExportAssignment6.types
+@@= skipped -15, +15 lines =@@
+ >x : number
+
+         this.exports = [x]
+->this.exports = [x] : number[]
++>this.exports = [x] : Array<number>
+ >this.exports : any
+ >this : this
+ >exports : any
+->[x] : number[]
++>[x] : Array<number>
+ >x : number
+     }
+     /** @param {number} y */
+@@= skipped -21, +21 lines =@@
+     }
+ }
+ function exec() {
+->exec : () => number[]
++>exec : () => Array<number>
+
+     const module = new C(12);
+ >module : C
+@@= skipped -9, +9 lines =@@
+ >12 : 12
+
+     return module.exports; // should be fine because `module` is defined locally
+->module.exports : number[]
++>module.exports : Array<number>
+ >module : C
+->exports : number[]
++>exports : Array<number>
+ }
+
+ function tricky() {
+->tricky : () => () => number[]
++>tricky : () => () => Array<number>
+
+     // (a trickier variant of what webpack does)
+     const module = new C(12);
+@@= skipped -16, +16 lines =@@
+ >12 : 12
+
+     return () => {
+->() => {        return module.exports;    } : () => number[]
++>() => {        return module.exports;    } : () => Array<number>
+
+         return module.exports;
+->module.exports : number[]
++>module.exports : Array<number>
+ >module : C
+->exports : number[]
++>exports : Array<number>
+     }
+ }

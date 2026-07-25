@@ -1,0 +1,9 @@
+--- old.restParamModifier2.types
++++ new.restParamModifier2.types
+@@= skipped -4, +4 lines =@@
+ >C : C
+
+     constructor(public ...rest: string[]) {}
+->rest : string[]
++>rest : Array<string>
+ }

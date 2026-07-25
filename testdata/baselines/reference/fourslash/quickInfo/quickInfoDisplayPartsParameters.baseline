@@ -35,7 +35,7 @@
 //                                                                                        ^^^^^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | (parameter) restParam: string[]
+// | (parameter) restParam: Array<string>
 // | ```
 // | 
 // | ----------------------------------------------------------------------
@@ -67,7 +67,7 @@
 //     ^^^^^^^^^
 // | ----------------------------------------------------------------------
 // | ```typescript
-// | (parameter) restParam: string[]
+// | (parameter) restParam: Array<string>
 // | ```
 // | 
 // | ----------------------------------------------------------------------
@@ -194,7 +194,7 @@
     "item": {
       "contents": {
         "kind": "markdown",
-        "value": "```typescript\n(parameter) restParam: string[]\n```\n"
+        "value": "```typescript\n(parameter) restParam: Array<string>\n```\n"
       },
       "range": {
         "start": {
@@ -302,7 +302,7 @@
     "item": {
       "contents": {
         "kind": "markdown",
-        "value": "```typescript\n(parameter) restParam: string[]\n```\n"
+        "value": "```typescript\n(parameter) restParam: Array<string>\n```\n"
       },
       "range": {
         "start": {

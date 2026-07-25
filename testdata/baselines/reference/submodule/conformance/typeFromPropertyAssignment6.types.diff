@@ -12,7 +12,11 @@
  >class I {    messages() { return [] }} : typeof I
  >I : typeof I
 
-@@= skipped -12, +12 lines =@@
+     messages() { return [] }
+->messages : () => any[]
+->[] : undefined[]
++>messages : () => Array<any>
++>[] : Array<undefined>
  }
  /** @type {!Outer.Inner} */
  Outer.i

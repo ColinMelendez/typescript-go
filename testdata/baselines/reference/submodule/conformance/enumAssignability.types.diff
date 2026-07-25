@@ -1,0 +1,11 @@
+--- old.enumAssignability.types
++++ new.enumAssignability.types
+@@= skipped -130, +130 lines =@@
+ >e : E
+
+     var m: number[] = e;
+->m : number[]
++>m : Array<number>
+ >e : E
+
+     var n: { foo: string } = e;

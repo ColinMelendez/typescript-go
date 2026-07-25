@@ -5,7 +5,7 @@ export function func(details: number, message: string, ...args: any[]): void;
 >func : (details: number, message: string, ...args: any[]) => void
 >details : number
 >message : string
->args : any[]
+>args : Array<any>
 
 export function func(details: number, message: string): any {
 >func : (details: number, message: string, ...args: any[]) => void
@@ -24,7 +24,7 @@ export class C {
     constructor(details: number, message: string, ...args: any[]);
 >details : number
 >message : string
->args : any[]
+>args : Array<any>
 
     constructor(details: number, message: string) {
 >details : number
@@ -40,7 +40,7 @@ export class C {
 >method : (details: number, message: string, ...args: any[]) => void
 >details : number
 >message : string
->args : any[]
+>args : Array<any>
 
     method(details: number, message: string): any {
 >method : (details: number, message: string, ...args: any[]) => void
@@ -59,7 +59,7 @@ export function genericFunc<T>(details: number, message: T, ...args: any[]): voi
 >genericFunc : <T>(details: number, message: T, ...args: any[]) => void
 >details : number
 >message : T
->args : any[]
+>args : Array<any>
 
 export function genericFunc(details: number, message: any): any {
 >genericFunc : <T>(details: number, message: T, ...args: any[]) => void

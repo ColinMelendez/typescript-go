@@ -1,0 +1,31 @@
+--- old.selfReferencingSpreadInLoop.types
++++ new.selfReferencingSpreadInLoop.types
+@@= skipped -1, +1 lines =@@
+
+ === selfReferencingSpreadInLoop.ts ===
+ let additional = [];
+->additional : any[]
+->[] : never[]
++>additional : Array<any>
++>[] : Array<never>
+
+ for (const subcomponent of [1, 2, 3]) {
+ >subcomponent : number
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3
+
+     additional = [...additional, subcomponent];
+->additional = [...additional, subcomponent] : any[]
+->additional : any[]
+->[...additional, subcomponent] : any[]
++>additional = [...additional, subcomponent] : Array<any>
++>additional : Array<any>
++>[...additional, subcomponent] : Array<any>
+ >...additional : any
+->additional : any[]
++>additional : Array<any>
+ >subcomponent : number
+ }

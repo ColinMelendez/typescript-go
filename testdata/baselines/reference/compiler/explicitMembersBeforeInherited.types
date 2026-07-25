@@ -11,7 +11,7 @@ type IndentationSubTree<L> = Exclude<IndentationTree<L>, TopNode<L>>;
 
 interface NodeBase<L> {
 	subs: IndentationSubTree<L>[];
->subs : IndentationSubTree<L>[]
+>subs : Array<IndentationSubTree<L>>
 }
 
 interface VirtualNode<L> extends NodeBase<L> {

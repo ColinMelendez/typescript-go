@@ -20,7 +20,16 @@
  /other2.ts(7,79): error TS2694: Namespace '"/node_modules/pkg/require"' has no exported member 'ImportInterface'.
  /other3.ts(3,7): error TS1340: Module 'pkg' does not refer to a type, but is used as a type here. Did you mean 'typeof import('pkg')'?
  /other3.ts(3,21): error TS1005: '{' expected.
-@@= skipped -44, +40 lines =@@
+@@= skipped -16, +12 lines =@@
+ /other3.ts(3,55): error TS1005: ';' expected.
+ /other3.ts(3,56): error TS1128: Declaration or statement expected.
+ /other3.ts(3,57): error TS2304: Cannot find name 'RequireInterface'.
+-/other3.ts(4,21): error TS2559: Type '{ "resolution-mode": string; }[]' has no properties in common with type 'ImportCallOptions'.
++/other3.ts(4,21): error TS2559: Type 'Array<{ "resolution-mode": string; }>' has no properties in common with type 'ImportCallOptions'.
+ /other3.ts(4,56): error TS2339: Property 'ImportInterface' does not exist on type 'Promise<{ default: typeof import("/node_modules/pkg/import"); }>'.
+ /other3.ts(6,34): error TS1340: Module 'pkg' does not refer to a type, but is used as a type here. Did you mean 'typeof import('pkg')'?
+ /other3.ts(6,48): error TS1005: '{' expected.
+@@= skipped -28, +28 lines =@@
  /other4.ts(10,56): error TS1005: ',' expected.
  /other4.ts(10,57): error TS1134: Variable declaration expected.
  /other4.ts(10,73): error TS1005: ',' expected.
@@ -78,7 +87,16 @@
                                                                                    ~~~~~~~~~~~~~~~
  !!! error TS2694: Namespace '"/node_modules/pkg/require"' has no exported member 'ImportInterface'.
  ==== /other3.ts (16 errors) ====
-@@= skipped -124, +116 lines =@@
+@@= skipped -47, +39 lines =@@
+ !!! error TS2304: Cannot find name 'RequireInterface'.
+         & import("pkg", [ {"resolution-mode": "import"} ]).ImportInterface;
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-!!! error TS2559: Type '{ "resolution-mode": string; }[]' has no properties in common with type 'ImportCallOptions'.
++!!! error TS2559: Type 'Array<{ "resolution-mode": string; }>' has no properties in common with type 'ImportCallOptions'.
+                                                            ~~~~~~~~~~~~~~~
+ !!! error TS2339: Property 'ImportInterface' does not exist on type 'Promise<{ default: typeof import("/node_modules/pkg/import"); }>'.
+     
+@@= skipped -77, +77 lines =@@
  !!! error TS1134: Variable declaration expected.
                                                                              ~
  !!! error TS1005: ',' expected.

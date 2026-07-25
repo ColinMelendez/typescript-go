@@ -1,0 +1,42 @@
+--- old.collisionArgumentsArrowFunctions(alwaysstrict=true,target=es2015).types
++++ new.collisionArgumentsArrowFunctions(alwaysstrict=true,target=es2015).types
+@@= skipped -1, +1 lines =@@
+
+ === collisionArgumentsArrowFunctions.ts ===
+ var f1 = (i: number, ...arguments) => { //arguments is error
+->f1 : (i: number, ...arguments: any[]) => void
+->(i: number, ...arguments) => { //arguments is error    var arguments: any[]; // no error} : (i: number, ...arguments: any[]) => void
++>f1 : (i: number, ...arguments: Array<any>) => void
++>(i: number, ...arguments) => { //arguments is error    var arguments: any[]; // no error} : (i: number, ...arguments: Array<any>) => void
+ >i : number
+->arguments : any[]
++>arguments : Array<any>
+
+     var arguments: any[]; // no error
+->arguments : any[]
++>arguments : Array<any>
+ }
+ var f12 = (arguments: number, ...rest) => { //arguments is error
+->f12 : (arguments: number, ...rest: any[]) => void
+->(arguments: number, ...rest) => { //arguments is error    var arguments = 10; // no error} : (arguments: number, ...rest: any[]) => void
++>f12 : (arguments: number, ...rest: Array<any>) => void
++>(arguments: number, ...rest) => { //arguments is error    var arguments = 10; // no error} : (arguments: number, ...rest: Array<any>) => void
+ >arguments : number
+->rest : any[]
++>rest : Array<any>
+
+     var arguments = 10; // no error
+ >arguments : number
+@@= skipped -29, +29 lines =@@
+ }
+
+ var f2 = (...restParameters) => {
+->f2 : (...restParameters: any[]) => void
+->(...restParameters) => {    var arguments = 10; // No Error} : (...restParameters: any[]) => void
+->restParameters : any[]
++>f2 : (...restParameters: Array<any>) => void
++>(...restParameters) => {    var arguments = 10; // No Error} : (...restParameters: Array<any>) => void
++>restParameters : Array<any>
+
+     var arguments = 10; // No Error
+ >arguments : number

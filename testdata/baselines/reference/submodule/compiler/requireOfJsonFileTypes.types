@@ -5,7 +5,7 @@ import b = require('./b.json');
 >b : { a: boolean; b: string; c: null; d: boolean; }
 
 import c = require('./c.json');
->c : (string | null)[]
+>c : Array<string | null>
 
 import d = require('./d.json');
 >d : string
@@ -14,10 +14,10 @@ import e = require('./e.json');
 >e : number
 
 import f = require('./f.json');
->f : number[]
+>f : Array<number>
 
 import g = require('./g.json');
->g : boolean[]
+>g : Array<boolean>
 
 let booleanLiteral: boolean, nullLiteral: null;
 >booleanLiteral : boolean
@@ -60,7 +60,7 @@ booleanLiteral = b.d;
 const stringOrNumberOrNull: string | number | null = c[0];
 >stringOrNumberOrNull : string | number | null
 >c[0] : string | null
->c : (string | null)[]
+>c : Array<string | null>
 >0 : 0
 
 stringLiteral = d;
@@ -77,14 +77,14 @@ numberLiteral = f[0];
 >numberLiteral = f[0] : number
 >numberLiteral : number
 >f[0] : number
->f : number[]
+>f : Array<number>
 >0 : 0
 
 booleanLiteral = g[0];
 >booleanLiteral = g[0] : boolean
 >booleanLiteral : boolean
 >g[0] : boolean
->g : boolean[]
+>g : Array<boolean>
 >0 : 0
 
 === b.json ===
@@ -109,7 +109,7 @@ booleanLiteral = g[0];
 
 === c.json ===
 ["a", null, "string"]
->["a", null, "string"] : (string | null)[]
+>["a", null, "string"] : Array<string | null>
 >"a" : "a"
 >"string" : "string"
 
@@ -124,14 +124,14 @@ booleanLiteral = g[0];
 
 === f.json ===
 [-10, 30]
->[-10, 30] : number[]
+>[-10, 30] : Array<number>
 >-10 : -10
 >10 : 10
 >30 : 30
 
 === g.json ===
 [true, false]
->[true, false] : boolean[]
+>[true, false] : Array<boolean>
 >true : true
 >false : false
 

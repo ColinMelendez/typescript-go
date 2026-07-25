@@ -1,0 +1,29 @@
+--- old.yieldExpressionInControlFlow.errors.txt
++++ new.yieldExpressionInControlFlow.errors.txt
+@@= skipped -0, +0 lines =@@
+-alsoFails.ts(3,9): error TS7034: Variable 'o' implicitly has type 'any[]' in some locations where its type cannot be determined.
+-alsoFails.ts(5,9): error TS2322: Type 'undefined' is not assignable to type 'any[]'.
+-alsoFails.ts(5,20): error TS7005: Variable 'o' implicitly has an 'any[]' type.
++alsoFails.ts(3,9): error TS7034: Variable 'o' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
++alsoFails.ts(5,9): error TS2322: Type 'undefined' is not assignable to type 'Array<any>'.
++alsoFails.ts(5,20): error TS7005: Variable 'o' implicitly has an 'Array<any>' type.
+ bug25149.js(4,13): error TS7057: 'yield' expression implicitly results in an 'any' type because its containing generator lacks a return-type annotation.
+
+
+@@= skipped -18, +18 lines =@@
+     function* g() {
+         var o = []
+             ~
+-!!! error TS7034: Variable 'o' implicitly has type 'any[]' in some locations where its type cannot be determined.
++!!! error TS7034: Variable 'o' implicitly has type 'Array<any>' in some locations where its type cannot be determined.
+         while (true) {
+             o = yield* o
+             ~
+-!!! error TS2322: Type 'undefined' is not assignable to type 'any[]'.
++!!! error TS2322: Type 'undefined' is not assignable to type 'Array<any>'.
+                        ~
+-!!! error TS7005: Variable 'o' implicitly has an 'any[]' type.
++!!! error TS7005: Variable 'o' implicitly has an 'Array<any>' type.
+         }
+     }
+     

@@ -61,14 +61,14 @@ const identity = x => x;
  */
 function flatMap(array, iterable = identity) {
 >flatMap : { <T, U>(array: T[], iterable: (x: T) => U[]): U[]; <T>(array: T[][]): T[]; }
->array : unknown[]
+>array : Array<unknown>
 >iterable : (x: unknown) => unknown
 >identity : <T>(x: T) => T
 
   /** @type {unknown[]} */
   const result = [];
->result : unknown[]
->[] : never[]
+>result : Array<unknown>
+>[] : Array<never>
 
   for (let i = 0; i < array.length; i += 1) {
 >i : number
@@ -76,7 +76,7 @@ function flatMap(array, iterable = identity) {
 >i < array.length : boolean
 >i : number
 >array.length : number
->array : unknown[]
+>array : Array<unknown>
 >length : number
 >i += 1 : number
 >i : number
@@ -84,18 +84,18 @@ function flatMap(array, iterable = identity) {
 
     result.push(.../** @type {unknown[]} */(iterable(array[i])));
 >result.push(.../** @type {unknown[]} */(iterable(array[i]))) : number
->result.push : (...items: unknown[]) => number
->result : unknown[]
->push : (...items: unknown[]) => number
+>result.push : (...items: Array<unknown>) => number
+>result : Array<unknown>
+>push : (...items: Array<unknown>) => number
 >.../** @type {unknown[]} */(iterable(array[i])) : unknown
->(iterable(array[i])) : unknown[]
+>(iterable(array[i])) : Array<unknown>
 >iterable(array[i]) : unknown
 >iterable : (x: unknown) => unknown
 >array[i] : unknown
->array : unknown[]
+>array : Array<unknown>
 >i : number
   }
   return result;
->result : unknown[]
+>result : Array<unknown>
 }
 

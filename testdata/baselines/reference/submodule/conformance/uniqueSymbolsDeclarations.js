@@ -487,7 +487,7 @@ declare const constInitToLReadonlyNestedTypeWithTypeQuery: typeof l.nested.reado
 declare const constInitToLReadonlyTypeWithIndexedAccess: L["readonlyType"];
 declare const constInitToLReadonlyNestedTypeWithIndexedAccess: L["nested"]["readonlyNestedType"];
 declare const promiseForConstCall: Promise<typeof constCall>;
-declare const arrayOfConstCall: symbol[];
+declare const arrayOfConstCall: Array<symbol>;
 declare const s: unique symbol;
 declare namespace N {
     const s: unique symbol;

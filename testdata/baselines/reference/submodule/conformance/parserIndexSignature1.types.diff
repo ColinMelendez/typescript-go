@@ -1,0 +1,9 @@
+--- old.parserIndexSignature1.types
++++ new.parserIndexSignature1.types
+@@= skipped -2, +2 lines =@@
+ === parserIndexSignature1.ts ===
+ interface I {
+   [...a]
+->a : any[]
++>a : Array<any>
+ }

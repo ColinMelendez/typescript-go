@@ -29,7 +29,7 @@ someOptional(); // no error here; x and y are optional in JS`
 	defer done()
 	f.VerifyNoErrors(t)
 	f.GoToMarker(t, "1")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "allOptional(...args: any[]): void", ParameterCount: 1, ParameterName: "args", ParameterSpan: "...args: any[]", IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "allOptional(...args: Array<any>): void", ParameterCount: 1, ParameterName: "args", ParameterSpan: "...args: Array<any>", IsVariadic: true, IsVariadicSet: true})
 	f.GoToMarker(t, "2")
-	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "someOptional(x: any, y: any, ...args: any[]): void", ParameterCount: 3, ParameterName: "x", ParameterSpan: "x: any", IsVariadic: true, IsVariadicSet: true})
+	f.VerifySignatureHelp(t, fourslash.VerifySignatureHelpOptions{Text: "someOptional(x: any, y: any, ...args: Array<any>): void", ParameterCount: 3, ParameterName: "x", ParameterSpan: "x: any", IsVariadic: true, IsVariadicSet: true})
 }

@@ -1,0 +1,20 @@
+--- old.builtinIterator.types
++++ new.builtinIterator.types
+@@= skipped -6, +6 lines =@@
+ >Iterator.from : <T>(value: Iterator<T, unknown, undefined> | Iterable<T, unknown, undefined>) => IteratorObject<T, undefined, unknown>
+ >Iterator : IteratorConstructor
+ >from : <T>(value: Iterator<T, unknown, undefined> | Iterable<T, unknown, undefined>) => IteratorObject<T, undefined, unknown>
+->[0, 1, 2] : number[]
++>[0, 1, 2] : Array<number>
+ >0 : 0
+ >1 : 1
+ >2 : 2
+@@= skipped -104, +104 lines =@@
+ >[0, 1, 2].values().map : <U>(callbackfn: (value: number, index: number) => U) => IteratorObject<U, undefined, unknown>
+ >[0, 1, 2].values() : ArrayIterator<number>
+ >[0, 1, 2].values : () => ArrayIterator<number>
+->[0, 1, 2] : number[]
++>[0, 1, 2] : Array<number>
+ >0 : 0
+ >1 : 1
+ >2 : 2

@@ -6,8 +6,8 @@ var x: string, y: number;
 >y : number
 
 var array = [{ x: "", y: true }]
->array : { x: string; y: boolean; }[]
->[{ x: "", y: true }] : { x: string; y: boolean; }[]
+>array : Array<{ x: string; y: boolean; }>
+>[{ x: "", y: true }] : Array<{ x: string; y: boolean; }>
 >{ x: "", y: true } : { x: string; y: boolean; }
 >x : string
 >"" : ""
@@ -27,7 +27,7 @@ for ({x, y: y = E.x} of array) {
 >E.x : E
 >E : typeof E
 >x : E
->array : { x: string; y: boolean; }[]
+>array : Array<{ x: string; y: boolean; }>
 
     x;
 >x : string

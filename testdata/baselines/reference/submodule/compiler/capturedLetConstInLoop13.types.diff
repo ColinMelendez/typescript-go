@@ -1,0 +1,16 @@
+--- old.capturedLetConstInLoop13.types
++++ new.capturedLetConstInLoop13.types
+@@= skipped -16, +16 lines =@@
+
+     private register(...names: string[]): void {
+ >register : (...names: string[]) => void
+->names : string[]
++>names : Array<string>
+
+         for (let name of names) {
+ >name : string
+->names : string[]
++>names : Array<string>
+
+             this.bar({
+ >this.bar({                [name + ".a"]: () => { this.foo(name); },            }) : void

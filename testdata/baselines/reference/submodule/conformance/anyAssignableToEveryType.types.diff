@@ -1,0 +1,11 @@
+--- old.anyAssignableToEveryType.types
++++ new.anyAssignableToEveryType.types
+@@= skipped -87, +87 lines =@@
+ >a : any
+
+ var m: number[] = a;
+->m : number[]
++>m : Array<number>
+ >a : any
+
+ var n: { foo: string } = a;

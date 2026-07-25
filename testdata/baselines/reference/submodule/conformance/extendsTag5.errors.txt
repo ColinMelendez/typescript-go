@@ -1,9 +1,9 @@
 /a.js(29,16): error TS2344: Type '{ a: string; b: string; }' does not satisfy the constraint 'Foo'.
   Types of property 'b' are incompatible.
-    Type 'string' is not assignable to type 'boolean | string[]'.
+    Type 'string' is not assignable to type 'boolean | Array<string>'.
 /a.js(42,16): error TS2344: Type '{ a: string; b: string; }' does not satisfy the constraint 'Foo'.
   Types of property 'b' are incompatible.
-    Type 'string' is not assignable to type 'boolean | string[]'.
+    Type 'string' is not assignable to type 'boolean | Array<string>'.
 
 
 ==== /a.js (2 errors) ====
@@ -45,7 +45,7 @@
     ~~~~
 !!! error TS2344: Type '{ a: string; b: string; }' does not satisfy the constraint 'Foo'.
 !!! error TS2344:   Types of property 'b' are incompatible.
-!!! error TS2344:     Type 'string' is not assignable to type 'boolean | string[]'.
+!!! error TS2344:     Type 'string' is not assignable to type 'boolean | Array<string>'.
      */
     class C extends A {}
     
@@ -59,7 +59,7 @@
                    ~~~~~~~~~~~~~~~~~~~~~~
 !!! error TS2344: Type '{ a: string; b: string; }' does not satisfy the constraint 'Foo'.
 !!! error TS2344:   Types of property 'b' are incompatible.
-!!! error TS2344:     Type 'string' is not assignable to type 'boolean | string[]'.
+!!! error TS2344:     Type 'string' is not assignable to type 'boolean | Array<string>'.
      */
     class E extends A {}
     

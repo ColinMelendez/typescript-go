@@ -74,12 +74,12 @@ declare var b5: { fn(a?: C): void };
 declare var a6: { fn(...a: Base[]): void };
 >a6 : { fn(...a: Base[]): void; }
 >fn : (...a: Base[]) => void
->a : Base[]
+>a : Array<Base>
 
 declare var b6: { fn(...a: C[]): void };
 >b6 : { fn(...a: C[]): void; }
 >fn : (...a: C[]) => void
->a : C[]
+>a : Array<C>
 
 declare var a7: { fn<T>(t: T): T };
 >a7 : { fn<T>(t: T): T; }
@@ -89,7 +89,7 @@ declare var a7: { fn<T>(t: T): T };
 declare var b7: { fn<T>(t: T[]): T };
 >b7 : { fn<T>(t: T[]): T; }
 >fn : <T>(t: T[]) => T
->t : T[]
+>t : Array<T>
 
 // operator <
 var r1a1 = a1 < b1;

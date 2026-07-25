@@ -1,0 +1,11 @@
+--- old.anyAssignabilityInInheritance.types
++++ new.anyAssignabilityInInheritance.types
+@@= skipped -101, +101 lines =@@
+
+ declare function foo8(x: number[]): number[];
+ >foo8 : { (x: number[]): number[]; (x: any): any; }
+->x : number[]
++>x : Array<number>
+
+ declare function foo8(x: any): any;
+ >foo8 : { (x: number[]): number[]; (x: any): any; }

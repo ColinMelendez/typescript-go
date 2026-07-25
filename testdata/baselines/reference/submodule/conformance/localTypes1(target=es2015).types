@@ -2,7 +2,7 @@
 
 === localTypes1.ts ===
 function f1() {
->f1 : () => I[]
+>f1 : () => Array<I>
 
     enum E {
 >E : E
@@ -23,11 +23,11 @@ function f1() {
 >x : E
     }
     type A = I[];
->A : I[]
+>A : Array<I>
 
     let a: A = [new C()];
->a : I[]
->[new C()] : C[]
+>a : Array<I>
+>[new C()] : Array<C>
 >new C() : C
 >C : typeof C
 
@@ -35,7 +35,7 @@ function f1() {
 >a[0].x = E.B : E.B
 >a[0].x : E
 >a[0] : I
->a : I[]
+>a : Array<I>
 >0 : 0
 >x : E
 >E.B : E.B
@@ -43,14 +43,14 @@ function f1() {
 >B : E.B
 
     return a;
->a : I[]
+>a : Array<I>
 }
 
 function f2() {
->f2 : () => I[]
+>f2 : () => Array<I>
 
     function g() {
->g : () => I[]
+>g : () => Array<I>
 
         enum E {
 >E : E
@@ -71,11 +71,11 @@ function f2() {
 >x : E
         }
         type A = I[];
->A : I[]
+>A : Array<I>
 
         let a: A = [new C()];
->a : I[]
->[new C()] : C[]
+>a : Array<I>
+>[new C()] : Array<C>
 >new C() : C
 >C : typeof C
 
@@ -83,7 +83,7 @@ function f2() {
 >a[0].x = E.B : E.B
 >a[0].x : E
 >a[0] : I
->a : I[]
+>a : Array<I>
 >0 : 0
 >x : E
 >E.B : E.B
@@ -91,15 +91,15 @@ function f2() {
 >B : E.B
 
         return a;
->a : I[]
+>a : Array<I>
     }
     return g();
->g() : I[]
->g : () => I[]
+>g() : Array<I>
+>g : () => Array<I>
 }
 
 function f3(b: boolean) {
->f3 : (b: boolean) => I[]
+>f3 : (b: boolean) => Array<I>
 >b : boolean
 
     if (true) {
@@ -127,11 +127,11 @@ function f3(b: boolean) {
 >x : E
             }
             type A = I[];
->A : I[]
+>A : Array<I>
 
             let a: A = [new C()];
->a : I[]
->[new C()] : C[]
+>a : Array<I>
+>[new C()] : Array<C>
 >new C() : C
 >C : typeof C
 
@@ -139,7 +139,7 @@ function f3(b: boolean) {
 >a[0].x = E.B : E.B
 >a[0].x : E
 >a[0] : I
->a : I[]
+>a : Array<I>
 >0 : 0
 >x : E
 >E.B : E.B
@@ -147,7 +147,7 @@ function f3(b: boolean) {
 >B : E.B
 
             return a;
->a : I[]
+>a : Array<I>
         }
         else {
             class A {
@@ -161,11 +161,11 @@ function f3(b: boolean) {
 >x : E
             }
             type C = J[];
->C : J[]
+>C : Array<J>
 
             let c: C = [new A()];
->c : J[]
->[new A()] : A[]
+>c : Array<J>
+>[new A()] : Array<A>
 >new A() : A
 >A : typeof A
 
@@ -173,7 +173,7 @@ function f3(b: boolean) {
 >c[0].x = E.B : E.B
 >c[0].x : E
 >c[0] : J
->c : J[]
+>c : Array<J>
 >0 : 0
 >x : E
 >E.B : E.B
@@ -181,7 +181,7 @@ function f3(b: boolean) {
 >B : E.B
 
             return c;
->c : J[]
+>c : Array<J>
         }
     }
 }

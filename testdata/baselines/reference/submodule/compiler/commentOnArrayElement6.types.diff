@@ -1,0 +1,11 @@
+--- old.commentOnArrayElement6.types
++++ new.commentOnArrayElement6.types
+@@= skipped -1, +1 lines =@@
+
+ === commentOnArrayElement6.ts ===
+ const array = [1, /* comment */];
+->array : number[]
+->[1, /* comment */] : number[]
++>array : Array<number>
++>[1, /* comment */] : Array<number>
+ >1 : 1

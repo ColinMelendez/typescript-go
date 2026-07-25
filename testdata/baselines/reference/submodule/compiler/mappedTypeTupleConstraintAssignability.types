@@ -61,7 +61,7 @@ declare class TupleSchema<
   TFlags extends Flags = ""
 > {
   constructor(schemas: [ISchema<any>, ...ISchema<any>[]]);
->schemas : [ISchema<any, any, any, any>, ...ISchema<any, any, any, any>[]]
+>schemas : [ISchema<any, any, any, any>, ...Array<ISchema<any, any, any, any>>]
 }
 
 export function create<T extends AnyTuple>(schemas: {

@@ -1,0 +1,10 @@
+--- old.cachedContextualTypes.types
++++ new.cachedContextualTypes.types
+@@= skipped -4, +4 lines =@@
+
+ declare function createInstance<Ctor extends new (...args: any[]) => any, R extends InstanceType<Ctor>>(ctor: Ctor, ...args: ConstructorParameters<Ctor>): R;
+ >createInstance : <Ctor extends new (...args: any[]) => any, R extends InstanceType<Ctor>>(ctor: Ctor, ...args: ConstructorParameters<Ctor>) => R
+->args : any[]
++>args : Array<any>
+ >ctor : Ctor
+ >args : ConstructorParameters<Ctor>

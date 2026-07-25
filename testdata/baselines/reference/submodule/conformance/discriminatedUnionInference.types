@@ -27,7 +27,7 @@ type Item<T> = { kind: 'a', data: T } | { kind: 'b', data: T[] };
 >kind : "a"
 >data : T
 >kind : "b"
->data : T[]
+>data : Array<T>
 
 declare function foo<T>(item: Item<T>): T;
 >foo : <T>(item: Item<T>) => T
@@ -47,11 +47,11 @@ let x2 = foo({ kind: 'b', data: [1, 2] });  // number
 >x2 : number
 >foo({ kind: 'b', data: [1, 2] }) : number
 >foo : <T>(item: Item<T>) => T
->{ kind: 'b', data: [1, 2] } : { kind: "b"; data: number[]; }
+>{ kind: 'b', data: [1, 2] } : { kind: "b"; data: Array<number>; }
 >kind : "b"
 >'b' : "b"
->data : number[]
->[1, 2] : number[]
+>data : Array<number>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 

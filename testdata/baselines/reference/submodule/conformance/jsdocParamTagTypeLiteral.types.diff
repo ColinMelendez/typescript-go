@@ -28,20 +28,29 @@
   */
  function foo2(/** @param opts2 bad idea theatre! */opts2) {
 ->foo2 : (opts2: {    anotherX: string;    anotherY?: string | undefined;}) => void
+->opts2 : { anotherX: string; anotherY?: string | undefined; }[]
 +>foo2 : (opts2: { anotherX: string; anotherY?: string | undefined; }[]) => void
- >opts2 : { anotherX: string; anotherY?: string | undefined; }[]
++>opts2 : Array<{ anotherX: string; anotherY?: string | undefined; }>
 
      opts2[0].anotherX;
-@@= skipped -13, +13 lines =@@
+ >opts2[0].anotherX : string
+ >opts2[0] : { anotherX: string; anotherY?: string | undefined; }
+->opts2 : { anotherX: string; anotherY?: string | undefined; }[]
++>opts2 : Array<{ anotherX: string; anotherY?: string | undefined; }>
+ >0 : 0
+ >anotherX : string
+ }
 
  foo2([{anotherX: "world"}]);
  >foo2([{anotherX: "world"}]) : void
 ->foo2 : (opts2: {    anotherX: string;    anotherY?: string | undefined;}) => void
+->[{anotherX: "world"}] : { anotherX: string; }[]
 +>foo2 : (opts2: { anotherX: string; anotherY?: string | undefined; }[]) => void
- >[{anotherX: "world"}] : { anotherX: string; }[]
++>[{anotherX: "world"}] : Array<{ anotherX: string; }>
  >{anotherX: "world"} : { anotherX: string; }
  >anotherX : string
-@@= skipped -11, +11 lines =@@
+ >"world" : "world"
+@@= skipped -24, +24 lines =@@
   * @param {string} opts3.x
   */
  function foo3(opts3) {
@@ -66,14 +75,14 @@
 ->foo4 : (opts4: {    x: string;    y?: string | undefined;    z?: string;    w?: string;}) => void
 ->opts4 : { x: string; y?: string | undefined; z?: string | undefined; w?: string | undefined; }[]
 +>foo4 : (opts4: { x: string; y?: string | undefined; z?: string; w?: string; }[]) => void
-+>opts4 : { x: string; y?: string | undefined; z?: string; w?: string; }[]
++>opts4 : Array<{ x: string; y?: string | undefined; z?: string; w?: string; }>
 
      opts4[0].x;
  >opts4[0].x : string
 ->opts4[0] : { x: string; y?: string | undefined; z?: string | undefined; w?: string | undefined; }
 ->opts4 : { x: string; y?: string | undefined; z?: string | undefined; w?: string | undefined; }[]
 +>opts4[0] : { x: string; y?: string | undefined; z?: string; w?: string; }
-+>opts4 : { x: string; y?: string | undefined; z?: string; w?: string; }[]
++>opts4 : Array<{ x: string; y?: string | undefined; z?: string; w?: string; }>
  >0 : 0
  >x : string
  }
@@ -81,10 +90,12 @@
  foo4([{ x: 'hi' }]);
  >foo4([{ x: 'hi' }]) : void
 ->foo4 : (opts4: {    x: string;    y?: string | undefined;    z?: string;    w?: string;}) => void
+->[{ x: 'hi' }] : { x: string; }[]
 +>foo4 : (opts4: { x: string; y?: string | undefined; z?: string; w?: string; }[]) => void
- >[{ x: 'hi' }] : { x: string; }[]
++>[{ x: 'hi' }] : Array<{ x: string; }>
  >{ x: 'hi' } : { x: string; }
  >x : string
+ >'hi' : "hi"
 @@= skipped -30, +30 lines =@@
   * @param {number} opts5[].unnest - Here we are almost all the way back at the beginning.
   */
@@ -92,22 +103,24 @@
 ->foo5 : (opts5: {    help: string;    what: {        a: string;        bad: {            idea: string;            oh: boolean;        };    };    unnest: number;}) => void
 ->opts5 : { help: string; what: {    a: string;    bad: {        idea: string;        oh: boolean;    };}; unnest: number; }[]
 +>foo5 : (opts5: { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }[]) => void
-+>opts5 : { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }[]
++>opts5 : Array<{ help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }>
 
      opts5[0].what.bad[0].idea;
  >opts5[0].what.bad[0].idea : string
  >opts5[0].what.bad[0] : { idea: string; oh: boolean; }
- >opts5[0].what.bad : { idea: string; oh: boolean; }[]
+->opts5[0].what.bad : { idea: string; oh: boolean; }[]
 ->opts5[0].what : { a: string; bad: {    idea: string;    oh: boolean;}; }
 ->opts5[0] : { help: string; what: {    a: string;    bad: {        idea: string;        oh: boolean;    };}; unnest: number; }
 ->opts5 : { help: string; what: {    a: string;    bad: {        idea: string;        oh: boolean;    };}; unnest: number; }[]
++>opts5[0].what.bad : Array<{ idea: string; oh: boolean; }>
 +>opts5[0].what : { a: string; bad: { idea: string; oh: boolean; }[]; }
 +>opts5[0] : { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }
-+>opts5 : { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }[]
++>opts5 : Array<{ help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }>
  >0 : 0
 ->what : { a: string; bad: {    idea: string;    oh: boolean;}; }
+->bad : { idea: string; oh: boolean; }[]
 +>what : { a: string; bad: { idea: string; oh: boolean; }[]; }
- >bad : { idea: string; oh: boolean; }[]
++>bad : Array<{ idea: string; oh: boolean; }>
  >0 : 0
  >idea : string
 
@@ -116,7 +129,7 @@
 ->opts5[0] : { help: string; what: {    a: string;    bad: {        idea: string;        oh: boolean;    };}; unnest: number; }
 ->opts5 : { help: string; what: {    a: string;    bad: {        idea: string;        oh: boolean;    };}; unnest: number; }[]
 +>opts5[0] : { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }
-+>opts5 : { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }[]
++>opts5 : Array<{ help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }>
  >0 : 0
  >unnest : number
  }
@@ -124,7 +137,23 @@
  foo5([{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 }]);
  >foo5([{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 }]) : void
 ->foo5 : (opts5: {    help: string;    what: {        a: string;        bad: {            idea: string;            oh: boolean;        };    };    unnest: number;}) => void
+->[{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 }] : { help: string; what: { a: string; bad: { idea: string; oh: false; }[]; }; unnest: number; }[]
+->{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 } : { help: string; what: { a: string; bad: { idea: string; oh: false; }[]; }; unnest: number; }
 +>foo5 : (opts5: { help: string; what: { a: string; bad: { idea: string; oh: boolean; }[]; }; unnest: number; }[]) => void
- >[{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 }] : { help: string; what: { a: string; bad: { idea: string; oh: false; }[]; }; unnest: number; }[]
- >{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 } : { help: string; what: { a: string; bad: { idea: string; oh: false; }[]; }; unnest: number; }
++>[{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 }] : Array<{ help: string; what: { a: string; bad: Array<{ idea: string; oh: false; }>; }; unnest: number; }>
++>{ help: "help", what: { a: 'a', bad: [{ idea: 'idea', oh: false }] }, unnest: 1 } : { help: string; what: { a: string; bad: Array<{ idea: string; oh: false; }>; }; unnest: number; }
  >help : string
+ >"help" : "help"
+->what : { a: string; bad: { idea: string; oh: false; }[]; }
+->{ a: 'a', bad: [{ idea: 'idea', oh: false }] } : { a: string; bad: { idea: string; oh: false; }[]; }
++>what : { a: string; bad: Array<{ idea: string; oh: false; }>; }
++>{ a: 'a', bad: [{ idea: 'idea', oh: false }] } : { a: string; bad: Array<{ idea: string; oh: false; }>; }
+ >a : string
+ >'a' : "a"
+->bad : { idea: string; oh: false; }[]
+->[{ idea: 'idea', oh: false }] : { idea: string; oh: false; }[]
++>bad : Array<{ idea: string; oh: false; }>
++>[{ idea: 'idea', oh: false }] : Array<{ idea: string; oh: false; }>
+ >{ idea: 'idea', oh: false } : { idea: string; oh: false; }
+ >idea : string
+ >'idea' : "idea"

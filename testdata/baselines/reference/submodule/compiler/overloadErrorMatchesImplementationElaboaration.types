@@ -22,7 +22,7 @@ ea.publish([1,2,3]);
 >ea.publish : (event: string, data?: any) => void
 >ea : EventAggregator
 >publish : (event: string, data?: any) => void
->[1,2,3] : number[]
+>[1,2,3] : Array<number>
 >1 : 1
 >2 : 2
 >3 : 3

@@ -1,0 +1,13 @@
+--- old.iteratorSpreadInArray8.types
++++ new.iteratorSpreadInArray8.types
+@@= skipped -23, +23 lines =@@
+ }
+
+ var array = [...new SymbolIterator];
+->array : any[]
+->[...new SymbolIterator] : any[]
++>array : Array<any>
++>[...new SymbolIterator] : Array<any>
+ >...new SymbolIterator : any
+ >new SymbolIterator : SymbolIterator
+ >SymbolIterator : typeof SymbolIterator

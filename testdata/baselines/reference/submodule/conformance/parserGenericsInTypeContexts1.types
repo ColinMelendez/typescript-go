@@ -22,7 +22,7 @@ var v3: G.H.I<T>;
 >H : any
 
 var v6: K<T>[];
->v6 : K<T>[]
+>v6 : Array<K<T>>
 
 
 function f1(a: E<T>) {

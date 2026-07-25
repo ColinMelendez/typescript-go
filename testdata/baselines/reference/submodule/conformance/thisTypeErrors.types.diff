@@ -1,0 +1,11 @@
+--- old.thisTypeErrors.types
++++ new.thisTypeErrors.types
+@@= skipped -8, +8 lines =@@
+ >a : any
+
+ var x3: this[];
+->x3 : any[]
++>x3 : Array<any>
+
+ function f1(x: this): this {
+ >f1 : (x: this) => this

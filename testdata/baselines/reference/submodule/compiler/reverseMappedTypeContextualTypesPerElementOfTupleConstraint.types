@@ -25,7 +25,7 @@ declare function bindAll<
 
         ev: Parameters<Extract<TTarget[TTypes[K]], (...args: any[]) => any>>[0]
 >ev : Parameters<Extract<TTarget[TTypes[K]], (...args: any[]) => any>>[0]
->args : any[]
+>args : Array<any>
 
       ) => void;
     };

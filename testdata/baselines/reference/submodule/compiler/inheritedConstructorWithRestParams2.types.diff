@@ -1,0 +1,17 @@
+--- old.inheritedConstructorWithRestParams2.types
++++ new.inheritedConstructorWithRestParams2.types
+@@= skipped -22, +22 lines =@@
+
+     constructor(x: T, ...y: U[]);
+ >x : T
+->y : U[]
++>y : Array<U>
+
+     constructor(x1: T, x2: T, ...y: U[]);
+ >x1 : T
+ >x2 : T
+->y : U[]
++>y : Array<U>
+
+     constructor(x1: T, x2: U, y: T);
+ >x1 : T

@@ -5,8 +5,8 @@
  * @param {Array} x
  */
 function x(x) {}
->x : (x: any[]) => void
->x : any[]
+>x : (x: Array<any>) => void
+>x : Array<any>
 
 /**
  * @param {Promise} x

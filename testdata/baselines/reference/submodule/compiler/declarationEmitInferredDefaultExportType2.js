@@ -19,7 +19,7 @@ module.exports = {
 
 //// [declarationEmitInferredDefaultExportType2.d.ts]
 declare const _default: {
-    foo: never[];
+    foo: Array<never>;
     bar: undefined;
     baz: null;
 };

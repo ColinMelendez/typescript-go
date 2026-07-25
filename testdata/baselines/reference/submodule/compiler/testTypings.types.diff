@@ -1,0 +1,10 @@
+--- old.testTypings.types
++++ new.testTypings.types
+@@= skipped -8, +8 lines =@@
+
+ declare function sort<U extends IComparable<U>>(items: U[]): U[];
+ >sort : <U extends IComparable<U>>(items: U[]) => U[]
+->items : U[]
++>items : Array<U>
+
+

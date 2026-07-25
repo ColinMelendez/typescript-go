@@ -8,8 +8,8 @@ for (let [x = 'a' in {}] of [[]]) console.log(x)
 >'a' in {} : boolean
 >'a' : "a"
 >{} : {}
->[[]] : never[][]
->[] : never[]
+>[[]] : Array<Array<never>>
+>[] : Array<never>
 >console.log(x) : void
 >console.log : (...data: any[]) => void
 >console : Console
@@ -21,7 +21,7 @@ for (let {x = 'a' in {}} of [{}]) console.log(x)
 >'a' in {} : boolean
 >'a' : "a"
 >{} : {}
->[{}] : {}[]
+>[{}] : Array<{}>
 >{} : {}
 >console.log(x) : void
 >console.log : (...data: any[]) => void

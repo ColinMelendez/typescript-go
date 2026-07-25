@@ -1,0 +1,22 @@
+--- old.for-of43.types
++++ new.for-of43.types
+@@= skipped -1, +1 lines =@@
+
+ === for-of43.ts ===
+ var array = [{ x: "", y: 0 }]
+->array : { x: string; y: number; }[]
+->[{ x: "", y: 0 }] : { x: string; y: number; }[]
++>array : Array<{ x: string; y: number; }>
++>[{ x: "", y: 0 }] : Array<{ x: string; y: number; }>
+ >{ x: "", y: 0 } : { x: string; y: number; }
+ >x : string
+ >"" : ""
+@@= skipped -15, +15 lines =@@
+ >y : any
+ >b : number | boolean
+ >true : true
+->array : { x: string; y: number; }[]
++>array : Array<{ x: string; y: number; }>
+
+     a;
+ >a : string

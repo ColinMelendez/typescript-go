@@ -1,0 +1,17 @@
+--- old.comparisonOperatorWithSubtypeObjectOnInstantiatedCallSignature.types
++++ new.comparisonOperatorWithSubtypeObjectOnInstantiatedCallSignature.types
+@@= skipped -61, +61 lines =@@
+ var a5: { fn<T>(...x: T[]): T };
+ >a5 : { fn<T>(...x: T[]): T; }
+ >fn : <T>(...x: T[]) => T
+->x : T[]
++>x : Array<T>
+
+ var b5: { fn(...x: string[]): string };
+ >b5 : { fn(...x: string[]): string; }
+ >fn : (...x: string[]) => string
+->x : string[]
++>x : Array<string>
+
+ var a6: { fn<T>(x: T, y: T): T };
+ >a6 : { fn<T>(x: T, y: T): T; }

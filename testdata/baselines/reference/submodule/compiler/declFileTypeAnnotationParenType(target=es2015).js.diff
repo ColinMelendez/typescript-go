@@ -1,0 +1,10 @@
+--- old.declFileTypeAnnotationParenType(target=es2015).js
++++ new.declFileTypeAnnotationParenType(target=es2015).js
+@@= skipped -25, +25 lines =@@
+     private p;
+ }
+ declare var x: (() => c)[];
+-declare var y: (() => c)[];
++declare var y: Array<() => c>;
+ declare var k: (() => c) | string;
+ declare var l: () => c;

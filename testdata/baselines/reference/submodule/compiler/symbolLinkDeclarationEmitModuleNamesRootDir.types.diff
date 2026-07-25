@@ -1,0 +1,11 @@
+--- old.symbolLinkDeclarationEmitModuleNamesRootDir.types
++++ new.symbolLinkDeclarationEmitModuleNamesRootDir.types
+@@= skipped -24, +24 lines =@@
+ === /monorepo/context/src/value-promise.d.ts ===
+ export type Constructor<T> = (...args: any[]) => T;
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ === /monorepo/context/src/bindingkey.d.ts ===
+ import { Constructor } from "./value-promise"

@@ -12,13 +12,13 @@ type TreeNode = {
 }
 
 var nodes: TreeNode[];
->nodes : TreeNode[]
+>nodes : Array<TreeNode>
 
 nodes.map(n => n.name);
->nodes.map(n => n.name) : string[]
->nodes.map : <U>(callbackfn: (value: TreeNode, index: number, array: TreeNode[]) => U, thisArg?: any) => U[]
->nodes : TreeNode[]
->map : <U>(callbackfn: (value: TreeNode, index: number, array: TreeNode[]) => U, thisArg?: any) => U[]
+>nodes.map(n => n.name) : Array<string>
+>nodes.map : <U>(callbackfn: (value: TreeNode, index: number, array: Array<TreeNode>) => U, thisArg?: any) => Array<U>
+>nodes : Array<TreeNode>
+>map : <U>(callbackfn: (value: TreeNode, index: number, array: Array<TreeNode>) => U, thisArg?: any) => Array<U>
 >n => n.name : (n: TreeNode) => string
 >n : TreeNode
 >n.name : string

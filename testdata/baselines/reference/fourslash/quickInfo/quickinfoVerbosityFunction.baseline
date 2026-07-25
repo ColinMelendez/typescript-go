@@ -22,10 +22,10 @@
 // |         color: string;
 // |         size: number;
 // |     };
-// |     getApple(size: number): {
+// |     getApple(size: number): Array<{
 // |         color: string;
 // |         size: number;
-// |     }[];
+// |     }>;
 // | }
 // | ```
 // | 
@@ -175,7 +175,7 @@
       "hover": {
         "contents": {
           "kind": "markdown",
-          "value": "```typescript\nconst o: {\n    takeOneApple(a: {\n        color: string;\n        size: number;\n    }): void;\n    getApple(): {\n        color: string;\n        size: number;\n    };\n    getApple(size: number): {\n        color: string;\n        size: number;\n    }[];\n}\n```\n"
+          "value": "```typescript\nconst o: {\n    takeOneApple(a: {\n        color: string;\n        size: number;\n    }): void;\n    getApple(): {\n        color: string;\n        size: number;\n    };\n    getApple(size: number): Array<{\n        color: string;\n        size: number;\n    }>;\n}\n```\n"
         },
         "range": {
           "start": {

@@ -1,0 +1,23 @@
+--- old.flatArrayNoExcessiveStackDepth.types
++++ new.flatArrayNoExcessiveStackDepth.types
+@@= skipped -3, +3 lines =@@
+ // Repro from #43493
+
+ declare const foo: unknown[];
+->foo : unknown[]
++>foo : Array<unknown>
+
+ const bar = foo.flatMap(bar => bar as Foo);
+->bar : string[]
+->foo.flatMap(bar => bar as Foo) : string[]
+->foo.flatMap : <U, This = undefined>(callback: (this: This, value: unknown, index: number, array: unknown[]) => U | readonly U[], thisArg?: This | undefined) => U[]
+->foo : unknown[]
+->flatMap : <U, This = undefined>(callback: (this: This, value: unknown, index: number, array: unknown[]) => U | readonly U[], thisArg?: This | undefined) => U[]
++>bar : Array<string>
++>foo.flatMap(bar => bar as Foo) : Array<string>
++>foo.flatMap : <U, This = undefined>(callback: (this: This, value: unknown, index: number, array: Array<unknown>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
++>foo : Array<unknown>
++>flatMap : <U, This = undefined>(callback: (this: This, value: unknown, index: number, array: Array<unknown>) => U | ReadonlyArray<U>, thisArg?: This | undefined) => Array<U>
+ >bar => bar as Foo : (this: undefined, bar: unknown) => Foo
+ >bar : unknown
+ >bar as Foo : Foo

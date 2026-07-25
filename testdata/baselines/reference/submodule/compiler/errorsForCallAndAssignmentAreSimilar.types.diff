@@ -1,0 +1,29 @@
+--- old.errorsForCallAndAssignmentAreSimilar.types
++++ new.errorsForCallAndAssignmentAreSimilar.types
+@@= skipped -14, +14 lines =@@
+
+     function foo(x: Disc[]) {
+ >foo : (x: ({ kind: "hddvd"; } | { kind: "bluray"; })[]) => void
+->x : ({ kind: "hddvd"; } | { kind: "bluray"; })[]
++>x : Array<{ kind: "hddvd"; } | { kind: "bluray"; }>
+     }
+
+     foo([
+ >foo([        { kind: "bluray", },        { kind: "hdpvd", }    ]) : void
+ >foo : (x: ({ kind: "hddvd"; } | { kind: "bluray"; })[]) => void
+->[        { kind: "bluray", },        { kind: "hdpvd", }    ] : ({ kind: "bluray"; } | { kind: "hdpvd"; })[]
++>[        { kind: "bluray", },        { kind: "hdpvd", }    ] : Array<{ kind: "bluray"; } | { kind: "hdpvd"; }>
+
+         { kind: "bluray", },
+ >{ kind: "bluray", } : { kind: "bluray"; }
+@@= skipped -21, +21 lines =@@
+     ]);
+
+     const ds: Disc[] = [
+->ds : ({ kind: "hddvd"; } | { kind: "bluray"; })[]
+->[        { kind: "bluray", },        { kind: "hdpvd", }    ] : ({ kind: "bluray"; } | { kind: "hdpvd"; })[]
++>ds : Array<{ kind: "hddvd"; } | { kind: "bluray"; }>
++>[        { kind: "bluray", },        { kind: "hdpvd", }    ] : Array<{ kind: "bluray"; } | { kind: "hdpvd"; }>
+
+         { kind: "bluray", },
+ >{ kind: "bluray", } : { kind: "bluray"; }

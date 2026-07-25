@@ -41,14 +41,16 @@
  >twice : any
  >'hi' : "hi"
 
-@@= skipped -22, +22 lines =@@
+     // twices: any[] | null
      this.twices = []
- >this.twices = [] : never[]
+->this.twices = [] : never[]
++>this.twices = [] : Array<never>
  >this.twices : any
 ->this : this
 +>this : any
  >twices : any
- >[] : never[]
+->[] : never[]
++>[] : Array<never>
 
      this.twices = null
  >this.twices = null : null

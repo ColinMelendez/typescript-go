@@ -1,0 +1,34 @@
+--- old.generatorYieldContextualType.types
++++ new.generatorYieldContextualType.types
+@@= skipped -225, +225 lines =@@
+ >repo : any
+
+   Context extends { repos: any[]; title: string; status: any }
+->repos : any[]
++>repos : Array<any>
+ >title : string
+ >status : any
+
+@@= skipped -24, +24 lines =@@
+
+   });
+   const selection: StepSelection<typeof step> = yield step;
+->selection : QuickPickItem[] | Directive
++>selection : Array<QuickPickItem> | Directive
+ >step : QuickPickStep<QuickPickItem>
+ >yield step : any
+ >step : QuickPickStep<QuickPickItem>
+@@= skipped -11, +11 lines =@@
+ >canPickStepContinue : <T extends QuickPickStep>(_step: T, _state: PartialStepState, _selection: StepItemType<T> | Directive) => _selection is StepItemType<T>
+ >step : QuickPickStep<QuickPickItem>
+ >state : State
+->selection : QuickPickItem[] | Directive
++>selection : Array<QuickPickItem> | Directive
+
+     ? selection[0]
+ >selection[0] : QuickPickItem
+->selection : QuickPickItem[]
++>selection : Array<QuickPickItem>
+ >0 : 0
+
+     : StepResult.Break;

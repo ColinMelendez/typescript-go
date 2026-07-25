@@ -37,7 +37,7 @@ function* g003() { // Generator<any (implicit), void, unknown>
     //       In non-strict mode, `[]` produces the type `undefined[]` which is implicitly any.
     yield* [];
 >yield* [] : undefined
->[] : undefined[]
+>[] : Array<undefined>
 }
 
 function* g004() { // Generator<number, void, undefined>

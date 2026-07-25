@@ -18,68 +18,68 @@ interface Snapshot<T> extends DataSnapshot {
 // Repro from 34619
 
 interface A { b: B[] }
->b : B[]
+>b : Array<B>
 
 interface B { c: C }
 >c : C
 
 interface C { d: D[] }
->d : D[]
+>d : Array<D>
 
 interface D { e: E[] }
->e : E[]
+>e : Array<E>
 
 interface E { f: F[] }
->f : F[]
+>f : Array<F>
 
 interface F { g: G }
 >g : G
 
 interface G { h: H[] }
->h : H[]
+>h : Array<H>
 
 interface H { i: string }
 >i : string
 
 const x: A = {
 >x : A
->{  b: [    {      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    },  ],} : { b: { c: { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }; }[]; }
+>{  b: [    {      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    },  ],} : { b: Array<{ c: { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }; }>; }
 
   b: [
->b : { c: { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }; }[]
->[    {      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    },  ] : { c: { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }; }[]
+>b : Array<{ c: { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }; }>
+>[    {      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    },  ] : Array<{ c: { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }; }>
     {
->{      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    } : { c: { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }; }
+>{      c: {        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      },    } : { c: { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }; }
 
       c: {
->c : { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }
->{        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      } : { d: { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]; }
+>c : { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }
+>{        d: [          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ],      } : { d: Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>; }
 
         d: [
->d : { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]
->[          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ] : { e: { f: { g: { h: {}[]; }; }[]; }[]; }[]
+>d : Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>
+>[          {            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          },        ] : Array<{ e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }>
           {
->{            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          } : { e: { f: { g: { h: {}[]; }; }[]; }[]; }
+>{            e: [              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ],          } : { e: Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>; }
 
             e: [
->e : { f: { g: { h: {}[]; }; }[]; }[]
->[              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ] : { f: { g: { h: {}[]; }; }[]; }[]
+>e : Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>
+>[              {                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              },            ] : Array<{ f: Array<{ g: { h: Array<{}>; }; }>; }>
               {
->{                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              } : { f: { g: { h: {}[]; }; }[]; }
+>{                f: [                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ],              } : { f: Array<{ g: { h: Array<{}>; }; }>; }
 
                 f: [
->f : { g: { h: {}[]; }; }[]
->[                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ] : { g: { h: {}[]; }; }[]
+>f : Array<{ g: { h: Array<{}>; }; }>
+>[                  {                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  },                ] : Array<{ g: { h: Array<{}>; }; }>
                   {
->{                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  } : { g: { h: {}[]; }; }
+>{                    g: {                      h: [                        {                          // i: '',                        },                      ],                    },                  } : { g: { h: Array<{}>; }; }
 
                     g: {
->g : { h: {}[]; }
->{                      h: [                        {                          // i: '',                        },                      ],                    } : { h: {}[]; }
+>g : { h: Array<{}>; }
+>{                      h: [                        {                          // i: '',                        },                      ],                    } : { h: Array<{}>; }
 
                       h: [
->h : {}[]
->[                        {                          // i: '',                        },                      ] : {}[]
+>h : Array<{}>
+>[                        {                          // i: '',                        },                      ] : Array<{}>
                         {
 >{                          // i: '',                        } : {}
 
@@ -101,25 +101,25 @@ const x: A = {
 // Repro from 34619
 
 const a1: string[][][][][] = [[[[[42]]]]];
->a1 : string[][][][][]
->[[[[[42]]]]] : number[][][][][]
->[[[[42]]]] : number[][][][]
->[[[42]]] : number[][][]
->[[42]] : number[][]
->[42] : number[]
+>a1 : Array<Array<Array<Array<Array<string>>>>>
+>[[[[[42]]]]] : Array<Array<Array<Array<Array<number>>>>>
+>[[[[42]]]] : Array<Array<Array<Array<number>>>>
+>[[[42]]] : Array<Array<Array<number>>>
+>[[42]] : Array<Array<number>>
+>[42] : Array<number>
 >42 : 42
 
 const a2: string[][][][][][][][][][] = [[[[[[[[[[42]]]]]]]]]];
->a2 : string[][][][][][][][][][]
->[[[[[[[[[[42]]]]]]]]]] : number[][][][][][][][][][]
->[[[[[[[[[42]]]]]]]]] : number[][][][][][][][][]
->[[[[[[[[42]]]]]]]] : number[][][][][][][][]
->[[[[[[[42]]]]]]] : number[][][][][][][]
->[[[[[[42]]]]]] : number[][][][][][]
->[[[[[42]]]]] : number[][][][][]
->[[[[42]]]] : number[][][][]
->[[[42]]] : number[][][]
->[[42]] : number[][]
->[42] : number[]
+>a2 : Array<Array<Array<Array<Array<Array<Array<Array<Array<Array<string>>>>>>>>>>
+>[[[[[[[[[[42]]]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>>>
+>[[[[[[[[[42]]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>>
+>[[[[[[[[42]]]]]]]] : Array<Array<Array<Array<Array<Array<Array<Array<number>>>>>>>>
+>[[[[[[[42]]]]]]] : Array<Array<Array<Array<Array<Array<Array<number>>>>>>>
+>[[[[[[42]]]]]] : Array<Array<Array<Array<Array<Array<number>>>>>>
+>[[[[[42]]]]] : Array<Array<Array<Array<Array<number>>>>>
+>[[[[42]]]] : Array<Array<Array<Array<number>>>>
+>[[[42]]] : Array<Array<Array<number>>>
+>[[42]] : Array<Array<number>>
+>[42] : Array<number>
 >42 : 42
 

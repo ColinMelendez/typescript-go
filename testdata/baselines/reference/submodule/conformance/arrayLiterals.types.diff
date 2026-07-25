@@ -1,0 +1,143 @@
+--- old.arrayLiterals.types
++++ new.arrayLiterals.types
+@@= skipped -3, +3 lines =@@
+ // Empty array literal with no contextual type has type Undefined[]
+
+ var arr1= [[], [1], ['']];
+->arr1 : (string[] | number[])[]
+->[[], [1], ['']] : (string[] | number[])[]
+->[] : undefined[]
+->[1] : number[]
++>arr1 : Array<Array<string> | Array<number>>
++>[[], [1], ['']] : Array<Array<string> | Array<number>>
++>[] : Array<undefined>
++>[1] : Array<number>
+ >1 : 1
+->[''] : string[]
++>[''] : Array<string>
+ >'' : ""
+
+ var arr2 = [[null], [1], ['']];
+->arr2 : (string[] | number[])[]
+->[[null], [1], ['']] : (string[] | number[])[]
+->[null] : null[]
+->[1] : number[]
++>arr2 : Array<Array<string> | Array<number>>
++>[[null], [1], ['']] : Array<Array<string> | Array<number>>
++>[null] : Array<null>
++>[1] : Array<number>
+ >1 : 1
+->[''] : string[]
++>[''] : Array<string>
+ >'' : ""
+
+
+ // Array literal with elements of only EveryType E has type E[]
+ var stringArrArr = [[''], [""]];
+->stringArrArr : string[][]
+->[[''], [""]] : string[][]
+->[''] : string[]
++>stringArrArr : Array<Array<string>>
++>[[''], [""]] : Array<Array<string>>
++>[''] : Array<string>
+ >'' : ""
+->[""] : string[]
++>[""] : Array<string>
+ >"" : ""
+
+ var stringArr = ['', ""];
+->stringArr : string[]
+->['', ""] : string[]
++>stringArr : Array<string>
++>['', ""] : Array<string>
+ >'' : ""
+ >"" : ""
+
+ var numberArr = [0, 0.0, 0x00, 1e1];
+->numberArr : number[]
+->[0, 0.0, 0x00, 1e1] : number[]
++>numberArr : Array<number>
++>[0, 0.0, 0x00, 1e1] : Array<number>
+ >0 : 0
+ >0.0 : 0
+ >0x00 : 0
+ >1e1 : 10
+
+ var boolArr = [false, true, false, true];
+->boolArr : boolean[]
+->[false, true, false, true] : boolean[]
++>boolArr : Array<boolean>
++>[false, true, false, true] : Array<boolean>
+ >false : false
+ >true : true
+ >false : false
+@@= skipped -54, +54 lines =@@
+ >p : any
+
+ var classArr = [new C(), new C()];
+->classArr : C[]
+->[new C(), new C()] : C[]
++>classArr : Array<C>
++>[new C(), new C()] : Array<C>
+ >new C() : C
+ >C : typeof C
+ >new C() : C
+ >C : typeof C
+
+ var classTypeArray = [C, C, C];
+->classTypeArray : (typeof C)[]
+->[C, C, C] : (typeof C)[]
++>classTypeArray : Array<typeof C>
++>[C, C, C] : Array<typeof C>
+ >C : typeof C
+ >C : typeof C
+ >C : typeof C
+
+ var classTypeArray: Array<typeof C>; // Should OK, not be a parse error
+->classTypeArray : (typeof C)[]
++>classTypeArray : Array<typeof C>
+ >C : typeof C
+
+ // Contextual type C with numeric index signature makes array literal of EveryType E of type BCT(E,C)[]
+@@= skipped -24, +24 lines =@@
+ >n : number
+ >a : string
+ >b : number
+->[{ a: '', b: 0, c: '' }, { a: "", b: 3, c: 0 }] : ({ a: string; b: number; c: string; } | { a: string; b: number; c: number; })[]
++>[{ a: '', b: 0, c: '' }, { a: "", b: 3, c: 0 }] : Array<{ a: string; b: number; c: string; } | { a: string; b: number; c: number; }>
+ >{ a: '', b: 0, c: '' } : { a: string; b: number; c: string; }
+ >a : string
+ >'' : ""
+@@= skipped -17, +17 lines =@@
+ >0 : 0
+
+ var context2 = [{ a: '', b: 0, c: '' }, { a: "", b: 3, c: 0 }];
+->context2 : ({ a: string; b: number; c: string; } | { a: string; b: number; c: number; })[]
+->[{ a: '', b: 0, c: '' }, { a: "", b: 3, c: 0 }] : ({ a: string; b: number; c: string; } | { a: string; b: number; c: number; })[]
++>context2 : Array<{ a: string; b: number; c: string; } | { a: string; b: number; c: number; }>
++>[{ a: '', b: 0, c: '' }, { a: "", b: 3, c: 0 }] : Array<{ a: string; b: number; c: string; } | { a: string; b: number; c: number; }>
+ >{ a: '', b: 0, c: '' } : { a: string; b: number; c: string; }
+ >a : string
+ >'' : ""
+@@= skipped -33, +33 lines =@@
+ >n : any
+
+ var context3: Base[] = [new Derived1(), new Derived2()];
+->context3 : Base[]
+->[new Derived1(), new Derived2()] : (Derived1 | Derived2)[]
++>context3 : Array<Base>
++>[new Derived1(), new Derived2()] : Array<Derived1 | Derived2>
+ >new Derived1() : Derived1
+ >Derived1 : typeof Derived1
+ >new Derived2() : Derived2
+@@= skipped -9, +9 lines =@@
+
+ // Contextual type C with numeric index signature of type Base makes array literal of Derived1 and Derived2 have type Base[]
+ var context4: Base[] = [new Derived1(), new Derived1()];
+->context4 : Base[]
+->[new Derived1(), new Derived1()] : Derived1[]
++>context4 : Array<Base>
++>[new Derived1(), new Derived1()] : Array<Derived1>
+ >new Derived1() : Derived1
+ >Derived1 : typeof Derived1
+ >new Derived1() : Derived1

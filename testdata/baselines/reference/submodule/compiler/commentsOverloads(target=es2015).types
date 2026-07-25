@@ -128,12 +128,12 @@ interface i1 {
     // foo 3
     foo(arr: number[]): number;
 >foo : { (a: number): number; (b: string): number; (arr: number[]): number; (arr: string[]): number; }
->arr : number[]
+>arr : Array<number>
 
     /** foo 4 */
     foo(arr: string[]): number;
 >foo : { (a: number): number; (b: string): number; (arr: number[]): number; (arr: string[]): number; }
->arr : string[]
+>arr : Array<string>
 
     foo2(a: number): number;
 >foo2 : { (a: number): number; (b: string): number; }

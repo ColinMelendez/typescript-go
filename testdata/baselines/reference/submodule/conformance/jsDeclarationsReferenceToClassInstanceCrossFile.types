@@ -24,9 +24,9 @@ console.log("Objects", render.objects);
 >console : Console
 >log : (...data: any[]) => void
 >"Objects" : "Objects"
->render.objects : Rectangle[]
+>render.objects : Array<Rectangle>
 >render : Render
->objects : Rectangle[]
+>objects : Array<Rectangle>
 
 === rectangle.js ===
 class Rectangle {
@@ -66,11 +66,11 @@ class Render {
          * @type {Rectangle[]}
          */
         this.objects = [];
->this.objects = [] : never[]
->this.objects : Rectangle[]
+>this.objects = [] : Array<never>
+>this.objects : Array<Rectangle>
 >this : this
->objects : Rectangle[]
->[] : never[]
+>objects : Array<Rectangle>
+>[] : Array<never>
     }
     /**
      * Adds a rectangle
@@ -87,11 +87,11 @@ class Render {
 
         this.objects.push(obj);
 >this.objects.push(obj) : number
->this.objects.push : (...items: Rectangle[]) => number
->this.objects : Rectangle[]
+>this.objects.push : (...items: Array<Rectangle>) => number
+>this.objects : Array<Rectangle>
 >this : this
->objects : Rectangle[]
->push : (...items: Rectangle[]) => number
+>objects : Array<Rectangle>
+>push : (...items: Array<Rectangle>) => number
 >obj : Rectangle
 
         return obj;

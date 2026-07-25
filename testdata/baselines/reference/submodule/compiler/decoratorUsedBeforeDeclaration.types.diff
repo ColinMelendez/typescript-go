@@ -1,0 +1,20 @@
+--- old.decoratorUsedBeforeDeclaration.types
++++ new.decoratorUsedBeforeDeclaration.types
+@@= skipped -126, +126 lines =@@
+
+ function deco(...args: any[]): any {}
+ >deco : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ enum Enum {
+ >Enum : Enum
+@@= skipped -17, +17 lines =@@
+ const lambda = (...args: any[]): any => {};
+ >lambda : (...args: any[]) => any
+ >(...args: any[]): any => {} : (...args: any[]) => any
+->args : any[]
++>args : Array<any>
+
+ @lambda(Enum.No)
+ >lambda(Enum.No) : any

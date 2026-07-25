@@ -10,7 +10,7 @@ import {Yoha} from './yoha';
 
 function foo(...args: any[]) {}
 >foo : (...args: any[]) => void
->args : any[]
+>args : Array<any>
 
 class Bar {
 >Bar : Bar
@@ -30,7 +30,7 @@ import {Yoha} from './yoha';
 
 function foo(...args: any[]) {}
 >foo : (...args: any[]) => void
->args : any[]
+>args : Array<any>
 
 class Bar {
 >Bar : Bar
@@ -39,7 +39,7 @@ class Bar {
 >yoha : (yoha: any, ...bar: Yoha[]) => void
 >foo : (...args: any[]) => void
 >yoha : any
->bar : Yoha[]
+>bar : Array<Yoha>
 
   //                      ^^^^
 }

@@ -1,0 +1,11 @@
+--- old.contextualTypeBasedOnIntersectionWithAnyInTheMix5.types
++++ new.contextualTypeBasedOnIntersectionWithAnyInTheMix5.types
+@@= skipped -11, +11 lines =@@
+ >ExtractComputedReturns : ExtractComputedReturns<T>
+
+   [key in keyof T]: T[key] extends (...args: any[]) => infer TReturn
+->args : any[]
++>args : Array<any>
+
+     ? TReturn
+     : never;

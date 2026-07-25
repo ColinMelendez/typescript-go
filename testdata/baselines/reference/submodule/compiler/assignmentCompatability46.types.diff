@@ -1,0 +1,11 @@
+--- old.assignmentCompatability46.types
++++ new.assignmentCompatability46.types
+@@= skipped -7, +7 lines =@@
+ fn([1, 2, 3])
+ >fn([1, 2, 3]) : void
+ >fn : (x: never) => void
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

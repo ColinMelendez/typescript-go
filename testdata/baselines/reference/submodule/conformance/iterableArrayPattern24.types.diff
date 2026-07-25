@@ -1,0 +1,20 @@
+--- old.iterableArrayPattern24.types
++++ new.iterableArrayPattern24.types
+@@= skipped -2, +2 lines =@@
+ === iterableArrayPattern24.ts ===
+ var a: string, b: boolean[];
+ >a : string
+->b : boolean[]
++>b : Array<boolean>
+
+ [a, ...b] = { 0: "", 1: true };
+ >[a, ...b] = { 0: "", 1: true } : { 0: string; 1: true; }
+->[a, ...b] : [string, ...boolean[]]
++>[a, ...b] : [string, ...Array<boolean>]
+ >a : string
+ >...b : boolean
+->b : boolean[]
++>b : Array<boolean>
+ >{ 0: "", 1: true } : { 0: string; 1: true; }
+ >0 : string
+ >"" : ""

@@ -1,0 +1,13 @@
+--- old.parser509630.types
++++ new.parser509630.types
+@@= skipped -4, +4 lines =@@
+ >Type : Type
+
+     public examples = [ // typing here
+->examples : any[]
+->[ : undefined[]
++>examples : Array<any>
++>[ : Array<undefined>
+ }
+ class Any extends Type {
+ >Any : Any

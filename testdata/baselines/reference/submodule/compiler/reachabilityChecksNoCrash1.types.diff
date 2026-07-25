@@ -5,7 +5,24 @@
  >T : any
  > : any
 ->{    const out = [];    for await (const v of asyncIterable) {        out.push(await v);    } : { const: any; for: any; of: any; asyncIterable: any; out: any; "": any; }
-+>{    const out = [];    for await (const v of asyncIterable) {        out.push(await v);    } : { const: never[]; for: any; of: any; asyncIterable: any; out: any; "": any; }
++>{    const out = [];    for await (const v of asyncIterable) {        out.push(await v);    } : { const: Array<never>; for: any; of: any; asyncIterable: any; out: any; "": any; }
 
      const out = [];
- >const : never[]
+->const : never[]
+->out = [] : never[]
++>const : Array<never>
++>out = [] : Array<never>
+ >out : any
+->[] : never[]
++>[] : Array<never>
+
+     for await (const v of asyncIterable) {
+ >for : any
+ >await ( : any
+ >( : any
+ > : any
+->const : never[]
++>const : Array<never>
+ >v : any
+ >of : any
+ >asyncIterable : any

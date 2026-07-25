@@ -42,14 +42,14 @@ interface I {
 
     // Implicit-'any[]' errors for r.
     f6(...r): void;
->f6 : (...r: any[]) => void
->r : any[]
+>f6 : (...r: Array<any>) => void
+>r : Array<any>
 
     // Implicit-'any'/'any[]' errors for x, r.
     f7(x, ...r): void;
->f7 : (x: any, ...r: any[]) => void
+>f7 : (x: any, ...r: Array<any>) => void
 >x : any
->r : any[]
+>r : Array<any>
 
     // Implicit-'any' errors for x1, y2, x3, and y3.
     f8(x1, y1: number): any;
@@ -92,12 +92,12 @@ interface I {
 
     // Implicit-'any[]' error for r.
     f13: (...r) => string;
->f13 : (...r: any[]) => string
->r : any[]
+>f13 : (...r: Array<any>) => string
+>r : Array<any>
 
     // Implicit-'any'/'any[]' errors for x, r.
     f14: (x, ...r) => string;
->f14 : (x: any, ...r: any[]) => string
+>f14 : (x: any, ...r: Array<any>) => string
 >x : any
->r : any[]
+>r : Array<any>
 }

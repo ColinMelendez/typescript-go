@@ -1,4 +1,4 @@
-index.js(3,42): error TS2740: Type 'IArguments' is missing the following properties from type 'string[]': pop, push, concat, join, and 23 more.
+index.js(3,42): error TS2740: Type 'IArguments' is missing the following properties from type 'Array<string>': pop, push, concat, join, and 23 more.
 
 
 ==== index.js (1 errors) ====
@@ -6,7 +6,7 @@ index.js(3,42): error TS2740: Type 'IArguments' is missing the following propert
         return function () {
             return importScripts.apply(this, arguments);
                                              ~~~~~~~~~
-!!! error TS2740: Type 'IArguments' is missing the following properties from type 'string[]': pop, push, concat, join, and 23 more.
+!!! error TS2740: Type 'IArguments' is missing the following properties from type 'Array<string>': pop, push, concat, join, and 23 more.
         };
     })(importScripts);
     

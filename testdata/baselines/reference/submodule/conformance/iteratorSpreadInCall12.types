@@ -5,7 +5,7 @@ class Foo<T> {
 >Foo : Foo<T>
 
     constructor(...s: T[]) { }
->s : T[]
+>s : Array<T>
 }
 
 class SymbolIterator {
@@ -75,12 +75,12 @@ new Foo(...[...new SymbolIterator, ...[...new _StringIterator]]);
 >new Foo(...[...new SymbolIterator, ...[...new _StringIterator]]) : Foo<string | symbol>
 >Foo : typeof Foo
 >...[...new SymbolIterator, ...[...new _StringIterator]] : string | symbol
->[...new SymbolIterator, ...[...new _StringIterator]] : (string | symbol)[]
+>[...new SymbolIterator, ...[...new _StringIterator]] : Array<string | symbol>
 >...new SymbolIterator : symbol
 >new SymbolIterator : SymbolIterator
 >SymbolIterator : typeof SymbolIterator
 >...[...new _StringIterator] : string
->[...new _StringIterator] : string[]
+>[...new _StringIterator] : Array<string>
 >...new _StringIterator : string
 >new _StringIterator : _StringIterator
 >_StringIterator : typeof _StringIterator

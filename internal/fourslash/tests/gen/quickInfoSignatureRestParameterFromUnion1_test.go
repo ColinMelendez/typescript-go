@@ -21,5 +21,5 @@ func TestQuickInfoSignatureRestParameterFromUnion1(t *testing.T) {
 /**/rest({ a: true, b: true }, "foo", "bar");`
 	f, done := fourslash.NewFourslash(t, nil /*capabilities*/, content)
 	defer done()
-	f.VerifyQuickInfoAt(t, "", "const rest: (v: {\n    a: true;\n} & {\n    b: true;\n}, ...rest: string[]) => unknown", "")
+	f.VerifyQuickInfoAt(t, "", "const rest: (v: {\n    a: true;\n} & {\n    b: true;\n}, ...rest: Array<string>) => unknown", "")
 }

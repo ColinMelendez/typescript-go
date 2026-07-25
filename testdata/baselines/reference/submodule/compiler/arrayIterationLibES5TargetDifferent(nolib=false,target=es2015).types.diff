@@ -1,0 +1,11 @@
+--- old.arrayIterationLibES5TargetDifferent(nolib=false,target=es2015).types
++++ new.arrayIterationLibES5TargetDifferent(nolib=false,target=es2015).types
+@@= skipped -6, +6 lines =@@
+
+ for (const x of [1, 2, 3]) {
+ >x : number
+->[1, 2, 3] : number[]
++>[1, 2, 3] : Array<number>
+ >1 : 1
+ >2 : 2
+ >3 : 3

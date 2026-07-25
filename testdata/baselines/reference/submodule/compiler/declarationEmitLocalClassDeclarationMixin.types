@@ -2,7 +2,7 @@
 
 === declarationEmitLocalClassDeclarationMixin.ts ===
 interface Constructor<C> { new (...args: any[]): C; }
->args : any[]
+>args : Array<any>
 
 function mixin<B extends Constructor<{}>>(Base: B) {
 >mixin : <B extends Constructor<{}>>(Base: B) => { new (...args: any[]): PrivateMixed; prototype: mixin.PrivateMixed; } & B

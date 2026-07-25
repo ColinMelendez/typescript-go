@@ -63,20 +63,20 @@ interface Foo {
 >x : number | undefined
 }
 const c: Foo[] = [];
->c : Foo[]
->[] : never[]
+>c : Array<Foo>
+>[] : Array<never>
 
 if (c[cIndex].x) {
 >c[cIndex].x : number | undefined
 >c[cIndex] : Foo
->c : Foo[]
+>c : Array<Foo>
 >cIndex : 1
 >x : number | undefined
 
     c[cIndex].x // number
 >c[cIndex].x : number
 >c[cIndex] : Foo
->c : Foo[]
+>c : Array<Foo>
 >cIndex : 1
 >x : number
 }

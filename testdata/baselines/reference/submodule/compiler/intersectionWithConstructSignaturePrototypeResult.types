@@ -19,7 +19,7 @@ type PersonType = Readonly<typeof EmberObject> &
 
   } & EmberObject) &
   (new (...args: any[]) => {
->args : any[]
+>args : Array<any>
 
     firstName: string;
 >firstName : string

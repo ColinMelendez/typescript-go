@@ -83,11 +83,11 @@ var b8: { new (a?: Derived): Base };
 
 var a9: { new (...a: Base[]): Base };
 >a9 : new (...a: Base[]) => Base
->a : Base[]
+>a : Array<Base>
 
 var b9: { new (...a: Derived[]): Base };
 >b9 : new (...a: Derived[]) => Base
->a : Derived[]
+>a : Array<Derived>
 
 //var a10: { <T, U extends T>(t: T, u: U): T[] };
 //var b10: { <A, B extends A>(a: A, b: B): A[] };

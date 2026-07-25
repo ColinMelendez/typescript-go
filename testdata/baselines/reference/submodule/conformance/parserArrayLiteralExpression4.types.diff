@@ -1,0 +1,10 @@
+--- old.parserArrayLiteralExpression4.types
++++ new.parserArrayLiteralExpression4.types
+@@= skipped -1, +1 lines =@@
+
+ === parserArrayLiteralExpression4.ts ===
+ var v = [,,,];
+->v : undefined[]
+->[,,,] : undefined[]
++>v : Array<undefined>
++>[,,,] : Array<undefined>

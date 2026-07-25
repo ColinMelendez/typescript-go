@@ -1,0 +1,19 @@
+--- old.iterableArrayPattern6.types
++++ new.iterableArrayPattern6.types
+@@= skipped -43, +43 lines =@@
+
+ var a: Bar, b: string[];
+ >a : Bar
+->b : string[]
++>b : Array<string>
+
+ [a, ...b] = new FooIterator;
+ >[a, ...b] = new FooIterator : FooIterator
+->[a, ...b] : [Bar, ...string[]]
++>[a, ...b] : [Bar, ...Array<string>]
+ >a : Bar
+ >...b : string
+->b : string[]
++>b : Array<string>
+ >new FooIterator : FooIterator
+ >FooIterator : typeof FooIterator

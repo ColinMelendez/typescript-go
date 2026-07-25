@@ -1,0 +1,20 @@
+--- old.intersectionPropertyCheck.errors.txt
++++ new.intersectionPropertyCheck.errors.txt
+@@= skipped -4, +4 lines =@@
+ intersectionPropertyCheck.ts(7,3): error TS2322: Type 'T & { a: boolean; }' is not assignable to type '{ a?: string | undefined; }'.
+   Types of property 'a' are incompatible.
+     Type 'boolean' is not assignable to type 'string'.
+-intersectionPropertyCheck.ts(17,22): error TS2322: Type 'boolean' is not assignable to type 'string[]'.
++intersectionPropertyCheck.ts(17,22): error TS2322: Type 'boolean' is not assignable to type 'Array<string>'.
+
+
+ ==== intersectionPropertyCheck.ts (4 errors) ====
+@@= skipped -33, +33 lines =@@
+     function test<T extends object>(value: T): Test {
+       return { ...value, hi: true }
+                          ~~
+-!!! error TS2322: Type 'boolean' is not assignable to type 'string[]'.
++!!! error TS2322: Type 'boolean' is not assignable to type 'Array<string>'.
+ !!! related TS6500 intersectionPropertyCheck.ts:13:12: The expected type comes from property 'hi' which is declared here on type 'Test'
+     }
+     

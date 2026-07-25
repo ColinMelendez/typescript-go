@@ -15,9 +15,9 @@ interface String {}
 
 === input.ts ===
 declare var x: string[];
->x : string[]
+>x : Array<string>
 
 var [a] = x;
 >a : any
->x : string[]
+>x : Array<string>
 

@@ -4,7 +4,7 @@
 // repro from #8166
 interface Constructor<T> {
     new(...args: any[]): T;
->args : any[]
+>args : Array<any>
 
     prototype: T;
 >prototype : T

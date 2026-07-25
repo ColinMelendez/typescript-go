@@ -24,11 +24,11 @@ function f3(a, b = 0, c?) { }
 >c : any
 
 function f4(a, b = 0, ...c) { }
->f4 : (a: any, b?: number, ...c: any[]) => void
+>f4 : (a: any, b?: number, ...c: Array<any>) => void
 >a : any
 >b : number
 >0 : 0
->c : any[]
+>c : Array<any>
 
 f1(0, 1, 2);
 >f1(0, 1, 2) : void
@@ -53,7 +53,7 @@ f3(0, 1, 2);
 
 f4(0, 1, 2);
 >f4(0, 1, 2) : void
->f4 : (a: any, b?: number, ...c: any[]) => void
+>f4 : (a: any, b?: number, ...c: Array<any>) => void
 >0 : 0
 >1 : 1
 >2 : 2
@@ -78,7 +78,7 @@ f3(0, 1);
 
 f4(0, 1);
 >f4(0, 1) : void
->f4 : (a: any, b?: number, ...c: any[]) => void
+>f4 : (a: any, b?: number, ...c: Array<any>) => void
 >0 : 0
 >1 : 1
 
@@ -99,6 +99,6 @@ f3(0);
 
 f4(0);
 >f4(0) : void
->f4 : (a: any, b?: number, ...c: any[]) => void
+>f4 : (a: any, b?: number, ...c: Array<any>) => void
 >0 : 0
 

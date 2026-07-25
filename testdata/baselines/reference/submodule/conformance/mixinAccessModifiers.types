@@ -3,13 +3,13 @@
 === mixinAccessModifiers.ts ===
 type Constructable = new (...args: any[]) => object;
 >Constructable : Constructable
->args : any[]
+>args : Array<any>
 
 class Private {
 >Private : Private
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	private p: string;
 >p : string
@@ -19,7 +19,7 @@ class Private2 {
 >Private2 : Private2
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	private p: string;
 >p : string
@@ -29,7 +29,7 @@ class Protected {
 >Protected : Protected
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	protected p: string;
 >p : string
@@ -42,7 +42,7 @@ class Protected2 {
 >Protected2 : Protected2
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	protected p: string;
 >p : string
@@ -55,7 +55,7 @@ class Public {
 >Public : Public
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	public p: string;
 >p : string
@@ -68,7 +68,7 @@ class Public2 {
 >Public2 : Public2
 
 	constructor (...args: any[]) {}
->args : any[]
+>args : Array<any>
 
 	public p: string;
 >p : string

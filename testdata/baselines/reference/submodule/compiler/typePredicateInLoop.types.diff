@@ -1,0 +1,23 @@
+--- old.typePredicateInLoop.types
++++ new.typePredicateInLoop.types
+@@= skipped -9, +9 lines =@@
+
+ interface TypeExt extends Type {
+   arr: Type[];
+->arr : Type[]
++>arr : Array<Type>
+ }
+
+ const guard = (arg: Type): arg is TypeExt => arg.type === 1;
+@@= skipped -30, +30 lines =@@
+
+     for (const ITEM of arg.arr) {
+ >ITEM : Type
+->arg.arr : Type[]
++>arg.arr : Array<Type>
+ >arg : TypeExt
+->arr : Type[]
++>arr : Array<Type>
+
+       if (otherFunc(ITEM, arg)) {
+ >otherFunc(ITEM, arg) : void

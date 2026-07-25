@@ -13,14 +13,14 @@ declare const Base: <T>(val: T) => { new(): T };
 
 class C extends Base({ x: p<C[]>(() => []) }) { }
 >C : C
->Base({ x: p<C[]>(() => []) }) : { x: C[]; }
+>Base({ x: p<C[]>(() => []) }) : { x: Array<C>; }
 >Base : <T>(val: T) => { new (): T; }
->{ x: p<C[]>(() => []) } : { x: C[]; }
->x : C[]
->p<C[]>(() => []) : C[]
+>{ x: p<C[]>(() => []) } : { x: Array<C>; }
+>x : Array<C>
+>p<C[]>(() => []) : Array<C>
 >p : <T>(fn: () => T) => T
->() => [] : () => never[]
->[] : never[]
+>() => [] : () => Array<never>
+>[] : Array<never>
 
 // Repro from #44359
 

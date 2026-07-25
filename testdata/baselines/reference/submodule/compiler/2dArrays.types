@@ -17,23 +17,23 @@ class Board {
 >Board : Board
 
     ships: Ship[] = [];
->ships : Ship[]
->[] : never[]
+>ships : Array<Ship>
+>[] : Array<never>
 
     cells: Cell[] = [];
->cells : Cell[]
->[] : never[]
+>cells : Array<Cell>
+>[] : Array<never>
 
     private allShipsSunk() {
 >allShipsSunk : () => boolean
 
         return this.ships.every(function (val) { return val.isSunk; });
 >this.ships.every(function (val) { return val.isSunk; }) : boolean
->this.ships.every : { <S extends Ship>(predicate: (value: Ship, index: number, array: Ship[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Ship, index: number, array: Ship[]) => unknown, thisArg?: any): boolean; }
->this.ships : Ship[]
+>this.ships.every : { <S extends Ship>(predicate: (value: Ship, index: number, array: Array<Ship>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Ship, index: number, array: Array<Ship>) => unknown, thisArg?: any): boolean; }
+>this.ships : Array<Ship>
 >this : this
->ships : Ship[]
->every : { <S extends Ship>(predicate: (value: Ship, index: number, array: Ship[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: Ship, index: number, array: Ship[]) => unknown, thisArg?: any): boolean; }
+>ships : Array<Ship>
+>every : { <S extends Ship>(predicate: (value: Ship, index: number, array: Array<Ship>) => value is S, thisArg?: any): this is Array<S>; (predicate: (value: Ship, index: number, array: Array<Ship>) => unknown, thisArg?: any): boolean; }
 >function (val) { return val.isSunk; } : (val: Ship) => boolean
 >val : Ship
 >val.isSunk : boolean

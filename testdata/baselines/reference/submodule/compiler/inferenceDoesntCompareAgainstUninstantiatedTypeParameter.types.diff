@@ -1,0 +1,37 @@
+--- old.inferenceDoesntCompareAgainstUninstantiatedTypeParameter.types
++++ new.inferenceDoesntCompareAgainstUninstantiatedTypeParameter.types
+@@= skipped -36, +36 lines =@@
+ >ClassA : typeof ClassA
+ >new ConcreteClass() : ConcreteClass
+ >ConcreteClass : typeof ConcreteClass
+->{    values: o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ]} : { values: (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]; }
++>{    values: o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ]} : { values: (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>; }
+
+     values: o => [
+->values : (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]
+->o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]
++>values : (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>
++>o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>
+ >o : ConcreteClass
+->[        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : { value: string; func: (x: ConcreteClass) => string; }[]
++>[        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : Array<{ value: string; func: (x: ConcreteClass) => string; }>
+         {
+ >{            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        } : { value: string; func: (x: ConcreteClass) => string; }
+
+@@= skipped -31, +31 lines =@@
+ >ClassA : typeof ClassA
+ >new ConcreteClass() : ConcreteClass
+ >ConcreteClass : typeof ConcreteClass
+->{    values: o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ]} : { values: (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]; }
++>{    values: o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ]} : { values: (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>; }
+
+     values: o => [
+->values : (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]
+->o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : (o: ConcreteClass) => { value: string; func: (x: ConcreteClass) => string; }[]
++>values : (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>
++>o => [        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : (o: ConcreteClass) => Array<{ value: string; func: (x: ConcreteClass) => string; }>
+ >o : ConcreteClass
+->[        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : { value: string; func: (x: ConcreteClass) => string; }[]
++>[        {            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        }    ] : Array<{ value: string; func: (x: ConcreteClass) => string; }>
+         {
+ >{            value: o.theName,            func: x => 'asdfkjhgfdfghjkjhgfdfghjklkjhgfdfghjklkjhgfghj'        } : { value: string; func: (x: ConcreteClass) => string; }

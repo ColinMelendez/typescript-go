@@ -3,7 +3,7 @@
 === taggedTemplateStringsWithMultilineTemplate.ts ===
 function f(...args: any[]): void {
 >f : (...args: any[]) => void
->args : any[]
+>args : Array<any>
 }
 
 f `

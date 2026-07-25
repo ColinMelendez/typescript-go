@@ -6,8 +6,8 @@ var ANY1: any;
 >ANY1 : any
 
 var ANY2: any[] = [1, 2];
->ANY2 : any[]
->[1, 2] : number[]
+>ANY2 : Array<any>
+>[1, 2] : Array<number>
 >1 : 1
 >2 : 2
 
@@ -62,7 +62,7 @@ var objA = new A();
 var ResultIsNumber1 = ++ANY2;
 >ResultIsNumber1 : number
 >++ANY2 : number
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsNumber2 = ++A;
 >ResultIsNumber2 : number
@@ -87,7 +87,7 @@ var ResultIsNumber5 = ++obj1;
 var ResultIsNumber6 = ANY2++;
 >ResultIsNumber6 : number
 >ANY2++ : number
->ANY2 : any[]
+>ANY2 : Array<any>
 
 var ResultIsNumber7 = A++;
 >ResultIsNumber7 : number
@@ -240,11 +240,11 @@ var ResultIsNumber30 = obj1.y++;
 // miss assignment operators
 ++ANY2;
 >++ANY2 : number
->ANY2 : any[]
+>ANY2 : Array<any>
 
 ANY2++;
 >ANY2++ : number
->ANY2 : any[]
+>ANY2 : Array<any>
 
 ++ANY1++;
 >++ANY1 : number
@@ -254,14 +254,14 @@ ANY2++;
 
 ++ANY2++;
 >++ANY2 : number
->ANY2 : any[]
+>ANY2 : Array<any>
 >++ : number
 > : any
 
 ++ANY2[0]++;
 >++ANY2[0] : number
 >ANY2[0] : any
->ANY2 : any[]
+>ANY2 : Array<any>
 >0 : 0
 >++ : number
 > : any

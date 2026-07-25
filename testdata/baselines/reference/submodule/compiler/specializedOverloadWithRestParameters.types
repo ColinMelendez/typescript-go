@@ -11,17 +11,17 @@ class Derived1 extends Base { bar() { } }
 >bar : () => void
 
 function f(tagName: 'span', ...args): Derived1;   // error
->f : { (tagName: 'span', ...args: any[]): Derived1; (tagName: number, ...args: any[]): Base; }
+>f : { (tagName: 'span', ...args: Array<any>): Derived1; (tagName: number, ...args: Array<any>): Base; }
 >tagName : "span"
->args : any[]
+>args : Array<any>
 
 function f(tagName: number, ...args): Base;
->f : { (tagName: 'span', ...args: any[]): Derived1; (tagName: number, ...args: any[]): Base; }
+>f : { (tagName: 'span', ...args: Array<any>): Derived1; (tagName: number, ...args: Array<any>): Base; }
 >tagName : number
->args : any[]
+>args : Array<any>
 
 function f(tagName: any): Base {
->f : { (tagName: 'span', ...args: any[]): Derived1; (tagName: number, ...args: any[]): Base; }
+>f : { (tagName: 'span', ...args: Array<any>): Derived1; (tagName: number, ...args: Array<any>): Base; }
 >tagName : any
 
     return null;

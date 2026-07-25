@@ -3,7 +3,7 @@
 === typeParameterConstrainedToOuterTypeParameter.ts ===
 interface A<T> {
     <U extends T>(x: U[])
->x : U[]
+>x : Array<U>
 }
 
 interface B<T> {

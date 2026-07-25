@@ -1,0 +1,11 @@
+--- old.contextualSigInstantiationRestParams.types
++++ new.contextualSigInstantiationRestParams.types
+@@= skipped -7, +7 lines =@@
+
+ declare function contextual(...s: string[]): string
+ >contextual : (...s: string[]) => string
+->s : string[]
++>s : Array<string>
+
+ var sig: typeof contextual = toInstantiate;
+ >sig : (...s: string[]) => string

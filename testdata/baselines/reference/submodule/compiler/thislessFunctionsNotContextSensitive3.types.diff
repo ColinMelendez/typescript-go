@@ -1,0 +1,46 @@
+--- old.thislessFunctionsNotContextSensitive3.types
++++ new.thislessFunctionsNotContextSensitive3.types
+@@= skipped -94, +94 lines =@@
+ >Extension.create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
+ >Extension : typeof Extension
+ >create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
+->{  name: "slash-command",  addOptions() {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions(): { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Plugin[]; }
++>{  name: "slash-command",  addOptions() {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions(): { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Array<Plugin>; }
+
+   name: "slash-command",
+ >name : string
+@@= skipped -25, +25 lines =@@
+     };
+   },
+   addProseMirrorPlugins() {
+->addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Plugin[]
++>addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Array<Plugin>
+
+     return [
+->[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Plugin[]
++>[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Array<Plugin>
+
+       Suggestion({
+ >Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }) : Plugin
+@@= skipped -33, +33 lines =@@
+ >Extension.create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
+ >Extension : typeof Extension
+ >create : <O = any>(config: Partial<ExtensionConfig<O>>) => Extension<O>
+->{  name: "slash-command",  addOptions: () => {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions: () => { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Plugin[]; }
++>{  name: "slash-command",  addOptions: () => {    return {      suggestion: {        char: "/",      } as SuggestionOptions,    };  },  addProseMirrorPlugins() {    return [      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ];  },} : { name: string; addOptions: () => { suggestion: SuggestionOptions; }; addProseMirrorPlugins(this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }): Array<Plugin>; }
+
+   name: "slash-command",
+ >name : string
+@@= skipped -26, +26 lines =@@
+     };
+   },
+   addProseMirrorPlugins() {
+->addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Plugin[]
++>addProseMirrorPlugins : (this: { options: { suggestion: SuggestionOptions; }; editor: Editor; }) => Array<Plugin>
+
+     return [
+->[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Plugin[]
++>[      Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }),    ] : Array<Plugin>
+
+       Suggestion({
+ >Suggestion({        editor: this.editor, // error        ...this.options.suggestion,      }) : Plugin

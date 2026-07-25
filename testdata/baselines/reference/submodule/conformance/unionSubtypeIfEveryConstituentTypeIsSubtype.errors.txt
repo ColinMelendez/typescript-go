@@ -9,8 +9,8 @@ unionSubtypeIfEveryConstituentTypeIsSubtype.ts(42,5): error TS2411: Property 'fo
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(43,5): error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'RegExp'.
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(49,5): error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type '{ bar: number; }'.
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(50,5): error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type '{ bar: number; }'.
-unionSubtypeIfEveryConstituentTypeIsSubtype.ts(56,5): error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'number[]'.
-unionSubtypeIfEveryConstituentTypeIsSubtype.ts(57,5): error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'number[]'.
+unionSubtypeIfEveryConstituentTypeIsSubtype.ts(56,5): error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'Array<number>'.
+unionSubtypeIfEveryConstituentTypeIsSubtype.ts(57,5): error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'Array<number>'.
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(63,5): error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'I8'.
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(64,5): error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'I8'.
 unionSubtypeIfEveryConstituentTypeIsSubtype.ts(70,5): error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'A'.
@@ -110,10 +110,10 @@ unionSubtypeIfEveryConstituentTypeIsSubtype.ts(129,5): error TS2411: Property 'f
         [x: string]: number[];
         foo: string | number;
         ~~~
-!!! error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'number[]'.
+!!! error TS2411: Property 'foo' of type 'string | number' is not assignable to 'string' index type 'Array<number>'.
         foo2: e | number;
         ~~~~
-!!! error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'number[]'.
+!!! error TS2411: Property 'foo2' of type 'number' is not assignable to 'string' index type 'Array<number>'.
     }
     
     

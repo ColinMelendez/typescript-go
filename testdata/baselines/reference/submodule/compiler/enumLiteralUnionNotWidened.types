@@ -27,8 +27,8 @@ class List<T>
 >List : List<T>
 {
 	private readonly items: T[] = [];
->items : T[]
->[] : never[]
+>items : Array<T>
+>[] : Array<never>
 }
 
 function asList<T>(arg: T): List<T> { return new List(); }

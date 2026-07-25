@@ -1,0 +1,11 @@
+--- old.recursiveConditionalTypes2.types
++++ new.recursiveConditionalTypes2.types
+@@= skipped -94, +94 lines =@@
+
+ const z: _Array<DefaultsDeep<{}, {}>> = [];
+ >z : _Array<DefaultsDeep<{}, {}>>
+->[] : never[]
++>[] : Array<never>
+
+ z.find((_) => true);
+ >z.find((_) => true) : void

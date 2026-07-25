@@ -1,0 +1,63 @@
+--- old.mixinAccessModifiers.types
++++ new.mixinAccessModifiers.types
+@@= skipped -2, +2 lines =@@
+ === mixinAccessModifiers.ts ===
+ type Constructable = new (...args: any[]) => object;
+ >Constructable : Constructable
+->args : any[]
++>args : Array<any>
+
+ class Private {
+ >Private : Private
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	private p: string;
+ >p : string
+@@= skipped -16, +16 lines =@@
+ >Private2 : Private2
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	private p: string;
+ >p : string
+@@= skipped -10, +10 lines =@@
+ >Protected : Protected
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	protected p: string;
+ >p : string
+@@= skipped -13, +13 lines =@@
+ >Protected2 : Protected2
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	protected p: string;
+ >p : string
+@@= skipped -13, +13 lines =@@
+ >Public : Public
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	public p: string;
+ >p : string
+@@= skipped -13, +13 lines =@@
+ >Public2 : Public2
+
+ 	constructor (...args: any[]) {}
+->args : any[]
++>args : Array<any>
+
+ 	public p: string;
+ >p : string

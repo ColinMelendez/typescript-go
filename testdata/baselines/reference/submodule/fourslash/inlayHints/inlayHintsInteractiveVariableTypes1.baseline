@@ -85,6 +85,25 @@
       "value": ": "
     },
     {
+      "value": "Array",
+      "location": {
+        "uri": "bundled:///libs/lib.es5.d.ts",
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 0
+          },
+          "end": {
+            "line": 0,
+            "character": 0
+          }
+        }
+      }
+    },
+    {
+      "value": "<"
+    },
+    {
       "value": "Foo",
       "location": {
         "uri": "file:///inlayHintsInteractiveVariableTypes1.ts",
@@ -101,7 +120,7 @@
       }
     },
     {
-      "value": "[]"
+      "value": ">"
     },
     {
       "value": ")"

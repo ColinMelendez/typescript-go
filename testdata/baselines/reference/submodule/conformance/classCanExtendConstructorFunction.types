@@ -23,13 +23,13 @@ Wagon.circle = function (wagons) {
 >Wagon : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }
 >circle : (wagons?: Wagon[] | undefined) => number
 >function (wagons) {    return wagons ? wagons.length : 3.14;} : (wagons?: Wagon[] | undefined) => number
->wagons : Wagon[] | undefined
+>wagons : Array<Wagon> | undefined
 
     return wagons ? wagons.length : 3.14;
 >wagons ? wagons.length : 3.14 : number
->wagons : Wagon[] | undefined
+>wagons : Array<Wagon> | undefined
 >wagons.length : number
->wagons : Wagon[]
+>wagons : Array<Wagon>
 >length : number
 >3.14 : 3.14
 }
@@ -42,7 +42,7 @@ Wagon.prototype.load = function (supplies) {
 >prototype : any
 >load : any
 >function (supplies) {} : (supplies?: any[] | undefined) => void
->supplies : any[] | undefined
+>supplies : Array<any> | undefined
 }
 /** @param {*[]=} supplies - Yep, still a great type */
 Wagon.prototype.weight = supplies => supplies ? supplies.length : -1
@@ -53,11 +53,11 @@ Wagon.prototype.weight = supplies => supplies ? supplies.length : -1
 >prototype : any
 >weight : any
 >supplies => supplies ? supplies.length : -1 : (supplies?: any[] | undefined) => number
->supplies : any[] | undefined
+>supplies : Array<any> | undefined
 >supplies ? supplies.length : -1 : number
->supplies : any[] | undefined
+>supplies : Array<any> | undefined
 >supplies.length : number
->supplies : any[]
+>supplies : Array<any>
 >length : number
 >-1 : -1
 >1 : 1
@@ -105,7 +105,7 @@ class Sql extends Wagon {
      */
     load(files, format) {
 >load : (files: Array<string>, format: "csv" | "json" | "xmlolololol") => void
->files : string[]
+>files : Array<string>
 >format : "csv" | "json" | "xmlolololol"
 
         if (format === "xmlolololol") {
@@ -203,12 +203,12 @@ class Conestoga extends Wagon {
     // should error since others is not optional
     static circle(others: (typeof Wagon)[]) {
 >circle : (others: (typeof Wagon)[]) => number
->others : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }[]
+>others : Array<{ (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }>
 >Wagon : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }
 
         return others.length
 >others.length : number
->others : { (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }[]
+>others : Array<{ (numberOxen: number): void; circle: (wagons?: Wagon[] | undefined) => number; }>
 >length : number
     }
 }

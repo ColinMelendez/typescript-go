@@ -32,5 +32,5 @@ x/**/
 	defer done()
 	f.MarkTestAsStradaServer()
 	f.GoToMarker(t, "")
-	f.VerifyQuickInfoIs(t, "let x: number[]", "")
+	f.VerifyQuickInfoIs(t, "let x: Array<number>", "")
 }

@@ -1,0 +1,24 @@
+--- old.inferenceFromIncompleteSource.types
++++ new.inferenceFromIncompleteSource.types
+@@= skipped -4, +4 lines =@@
+
+ interface ListProps<T, K extends keyof T> {
+   items: T[];
+->items : T[]
++>items : Array<T>
+
+   itemKey: K;
+ >itemKey : K
+@@= skipped -16, +16 lines =@@
+ Component({items: [{name:' string'}], itemKey: 'name' });
+ >Component({items: [{name:' string'}], itemKey: 'name' }) : void
+ >Component : <T, K extends keyof T>(x: ListProps<T, K>) => void
+->{items: [{name:' string'}], itemKey: 'name' } : { items: { name: string; }[]; itemKey: "name"; }
+->items : { name: string; }[]
+->[{name:' string'}] : { name: string; }[]
++>{items: [{name:' string'}], itemKey: 'name' } : { items: Array<{ name: string; }>; itemKey: "name"; }
++>items : Array<{ name: string; }>
++>[{name:' string'}] : Array<{ name: string; }>
+ >{name:' string'} : { name: string; }
+ >name : string
+ >' string' : " string"

@@ -1,0 +1,11 @@
+--- old.modularizeLibrary_UsingES5LibAndES6FeatureLibs.types
++++ new.modularizeLibrary_UsingES5LibAndES6FeatureLibs.types
+@@= skipped -17, +17 lines =@@
+ >{} : {}
+
+ Reflect.ownKeys({});
+->Reflect.ownKeys({}) : (string | symbol)[]
++>Reflect.ownKeys({}) : Array<string | symbol>
+ >Reflect.ownKeys : (target: object) => (string | symbol)[]
+ >Reflect : typeof Reflect
+ >ownKeys : (target: object) => (string | symbol)[]

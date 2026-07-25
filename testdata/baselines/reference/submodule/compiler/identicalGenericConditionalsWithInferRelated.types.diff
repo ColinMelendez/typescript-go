@@ -1,0 +1,11 @@
+--- old.identicalGenericConditionalsWithInferRelated.types
++++ new.identicalGenericConditionalsWithInferRelated.types
+@@= skipped -32, +32 lines =@@
+ // repro from https://github.com/microsoft/TypeScript/issues/26627
+ export type Constructor<T> = new (...args: any[]) => T
+ >Constructor : Constructor<T>
+->args : any[]
++>args : Array<any>
+
+ export type MappedResult<T> =
+ >MappedResult : MappedResult<T>

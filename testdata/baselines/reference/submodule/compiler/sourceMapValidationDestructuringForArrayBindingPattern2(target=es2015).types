@@ -68,8 +68,8 @@ let numberA2: number, nameA2: string, skillA2: string, nameMA: string;
 
 let numberA3: number, robotAInfo: (number | string)[], multiRobotAInfo: (string | [string, string])[];
 >numberA3 : number
->robotAInfo : (string | number)[]
->multiRobotAInfo : (string | [string, string])[]
+>robotAInfo : Array<string | number>
+>multiRobotAInfo : Array<string | [string, string]>
 
 let i: number;
 >i : number
@@ -339,12 +339,12 @@ for ([nameB] = getMultiRobot(), i = 0; i < 1; i++) {
 }
 for ([nameB] = ["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
 >[nameB] = ["trimmer", ["trimming", "edging"]], i = 0 : 0
->[nameB] = ["trimmer", ["trimming", "edging"]] : [string, string[]]
+>[nameB] = ["trimmer", ["trimming", "edging"]] : [string, Array<string>]
 >[nameB] : [string]
 >nameB : string
->["trimmer", ["trimming", "edging"]] : [string, string[]]
+>["trimmer", ["trimming", "edging"]] : [string, Array<string>]
 >"trimmer" : "trimmer"
->["trimming", "edging"] : string[]
+>["trimming", "edging"] : Array<string>
 >"trimming" : "trimming"
 >"edging" : "edging"
 >i = 0 : 0
@@ -524,10 +524,10 @@ for ([nameMA, [primarySkillA, secondarySkillA]] = ["trimmer", ["trimming", "edgi
 for ([numberA3, ...robotAInfo] = robotA, i = 0; i < 1; i++) {
 >[numberA3, ...robotAInfo] = robotA, i = 0 : 0
 >[numberA3, ...robotAInfo] = robotA : Robot
->[numberA3, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 : number
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
+>robotAInfo : Array<string | number>
 >robotA : Robot
 >i = 0 : 0
 >i : number
@@ -548,10 +548,10 @@ for ([numberA3, ...robotAInfo] = robotA, i = 0; i < 1; i++) {
 for ([numberA3, ...robotAInfo] = getRobot(), i = 0; i < 1; i++) {
 >[numberA3, ...robotAInfo] = getRobot(), i = 0 : 0
 >[numberA3, ...robotAInfo] = getRobot() : Robot
->[numberA3, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 : number
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
+>robotAInfo : Array<string | number>
 >getRobot() : Robot
 >getRobot : () => Robot
 >i = 0 : 0
@@ -573,10 +573,10 @@ for ([numberA3, ...robotAInfo] = getRobot(), i = 0; i < 1; i++) {
 for ([numberA3, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"], i = 0; i < 1; i++) {
 >[numberA3, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"], i = 0 : 0
 >[numberA3, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"] : Robot
->[numberA3, ...robotAInfo] : [number, ...(string | number)[]]
+>[numberA3, ...robotAInfo] : [number, ...Array<string | number>]
 >numberA3 : number
 >...robotAInfo : string | number
->robotAInfo : (string | number)[]
+>robotAInfo : Array<string | number>
 ><Robot>[2, "trimmer", "trimming"] : Robot
 >[2, "trimmer", "trimming"] : [number, string, string]
 >2 : 2
@@ -601,9 +601,9 @@ for ([numberA3, ...robotAInfo] = <Robot>[2, "trimmer", "trimming"], i = 0; i < 1
 for ([...multiRobotAInfo] = multiRobotA, i = 0; i < 1; i++) {
 >[...multiRobotAInfo] = multiRobotA, i = 0 : 0
 >[...multiRobotAInfo] = multiRobotA : MultiSkilledRobot
->[...multiRobotAInfo] : (string | [string, string])[]
+>[...multiRobotAInfo] : Array<string | [string, string]>
 >...multiRobotAInfo : string | [string, string]
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 >multiRobotA : MultiSkilledRobot
 >i = 0 : 0
 >i : number
@@ -619,14 +619,14 @@ for ([...multiRobotAInfo] = multiRobotA, i = 0; i < 1; i++) {
 >console.log : (msg: any) => void
 >console : { log(msg: any): void; }
 >log : (msg: any) => void
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 }
 for ([...multiRobotAInfo] = getMultiRobot(), i = 0; i < 1; i++) {
 >[...multiRobotAInfo] = getMultiRobot(), i = 0 : 0
 >[...multiRobotAInfo] = getMultiRobot() : MultiSkilledRobot
->[...multiRobotAInfo] : (string | [string, string])[]
+>[...multiRobotAInfo] : Array<string | [string, string]>
 >...multiRobotAInfo : string | [string, string]
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 >getMultiRobot() : MultiSkilledRobot
 >getMultiRobot : () => MultiSkilledRobot
 >i = 0 : 0
@@ -643,14 +643,14 @@ for ([...multiRobotAInfo] = getMultiRobot(), i = 0; i < 1; i++) {
 >console.log : (msg: any) => void
 >console : { log(msg: any): void; }
 >log : (msg: any) => void
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 }
 for ([...multiRobotAInfo] = <MultiSkilledRobot>["trimmer", ["trimming", "edging"]], i = 0; i < 1; i++) {
 >[...multiRobotAInfo] = <MultiSkilledRobot>["trimmer", ["trimming", "edging"]], i = 0 : 0
 >[...multiRobotAInfo] = <MultiSkilledRobot>["trimmer", ["trimming", "edging"]] : MultiSkilledRobot
->[...multiRobotAInfo] : (string | [string, string])[]
+>[...multiRobotAInfo] : Array<string | [string, string]>
 >...multiRobotAInfo : string | [string, string]
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 ><MultiSkilledRobot>["trimmer", ["trimming", "edging"]] : MultiSkilledRobot
 >["trimmer", ["trimming", "edging"]] : [string, [string, string]]
 >"trimmer" : "trimmer"
@@ -671,5 +671,5 @@ for ([...multiRobotAInfo] = <MultiSkilledRobot>["trimmer", ["trimming", "edging"
 >console.log : (msg: any) => void
 >console : { log(msg: any): void; }
 >log : (msg: any) => void
->multiRobotAInfo : (string | [string, string])[]
+>multiRobotAInfo : Array<string | [string, string]>
 }

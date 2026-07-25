@@ -20,10 +20,10 @@ function f2(x) {
 >foo.f1 : (params: any) => void
 >foo : { f1: (params: any) => void; }
 >f1 : (params: any) => void
->{ x, arguments: [] } : { x: any; arguments: undefined[]; }
+>{ x, arguments: [] } : { x: any; arguments: Array<undefined>; }
 >x : any
->arguments : undefined[]
->[] : undefined[]
+>arguments : Array<undefined>
+>[] : Array<undefined>
 }
 
 f2(1, 2, 3);

@@ -1,0 +1,30 @@
+--- old.noSubtypeReduction.types
++++ new.noSubtypeReduction.types
+@@= skipped -4, +4 lines =@@
+
+ export interface IA {
+     arr: { A: number; }[];
+->arr : { A: number; }[]
++>arr : Array<{ A: number; }>
+ >A : number
+ }
+
+ export interface IAB {
+     arr: { A: number; B: number; }[];
+->arr : { A: number; B: number; }[]
++>arr : Array<{ A: number; B: number; }>
+ >A : number
+ >B : number
+ }
+@@= skipped -22, +22 lines =@@
+
+     for (const el of x.arr) {
+ >el : { A: number; } | { A: number; B: number; }
+->x.arr : { A: number; }[] | { A: number; B: number; }[]
++>x.arr : Array<{ A: number; }> | Array<{ A: number; B: number; }>
+ >x : IA | IAB
+->arr : { A: number; }[] | { A: number; B: number; }[]
++>arr : Array<{ A: number; }> | Array<{ A: number; B: number; }>
+
+         if ('A' in el) { }
+ >'A' in el : boolean

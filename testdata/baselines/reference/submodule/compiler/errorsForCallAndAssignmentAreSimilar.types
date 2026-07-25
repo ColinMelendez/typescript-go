@@ -15,13 +15,13 @@ function minimalExample1() {
 
     function foo(x: Disc[]) {
 >foo : (x: ({ kind: "hddvd"; } | { kind: "bluray"; })[]) => void
->x : ({ kind: "hddvd"; } | { kind: "bluray"; })[]
+>x : Array<{ kind: "hddvd"; } | { kind: "bluray"; }>
     }
 
     foo([
 >foo([        { kind: "bluray", },        { kind: "hdpvd", }    ]) : void
 >foo : (x: ({ kind: "hddvd"; } | { kind: "bluray"; })[]) => void
->[        { kind: "bluray", },        { kind: "hdpvd", }    ] : ({ kind: "bluray"; } | { kind: "hdpvd"; })[]
+>[        { kind: "bluray", },        { kind: "hdpvd", }    ] : Array<{ kind: "bluray"; } | { kind: "hdpvd"; }>
 
         { kind: "bluray", },
 >{ kind: "bluray", } : { kind: "bluray"; }
@@ -36,8 +36,8 @@ function minimalExample1() {
     ]);
 
     const ds: Disc[] = [
->ds : ({ kind: "hddvd"; } | { kind: "bluray"; })[]
->[        { kind: "bluray", },        { kind: "hdpvd", }    ] : ({ kind: "bluray"; } | { kind: "hdpvd"; })[]
+>ds : Array<{ kind: "hddvd"; } | { kind: "bluray"; }>
+>[        { kind: "bluray", },        { kind: "hdpvd", }    ] : Array<{ kind: "bluray"; } | { kind: "hdpvd"; }>
 
         { kind: "bluray", },
 >{ kind: "bluray", } : { kind: "bluray"; }

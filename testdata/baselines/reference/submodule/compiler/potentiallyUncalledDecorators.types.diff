@@ -1,0 +1,29 @@
+--- old.potentiallyUncalledDecorators.types
++++ new.potentiallyUncalledDecorators.types
+@@= skipped -16, +16 lines =@@
+ // Glimmer-style tracked API:
+ declare const tracked: PropertyDecorator & { (...watchedProperties: string[]): any; }
+ >tracked : PropertyDecorator & ((...watchedProperties: string[]) => any)
+->watchedProperties : string[]
++>watchedProperties : Array<string>
+
+ class Person {
+ >Person : Person
+@@= skipped -46, +46 lines =@@
+
+ declare function allRest(...args: any[]): OmniDecorator;
+ >allRest : (...args: any[]) => OmniDecorator
+->args : any[]
++>args : Array<any>
+
+ declare function oneOptional(x?: any): OmniDecorator;
+ >oneOptional : (x?: any) => OmniDecorator
+@@= skipped -20, +20 lines =@@
+ declare function oneOptionalWithRest(x?: any, ...args: any[]): OmniDecorator;
+ >oneOptionalWithRest : (x?: any, ...args: any[]) => OmniDecorator
+ >x : any
+->args : any[]
++>args : Array<any>
+
+ declare const anyDec: any;
+ >anyDec : any

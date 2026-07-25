@@ -1,0 +1,20 @@
+--- old.jsxChildrenIndividualErrorElaborations.types
++++ new.jsxChildrenIndividualErrorElaborations.types
+@@= skipped -67, +67 lines =@@
+
+ interface PropsArr {
+   children: ((x: number) => string)[];
+->children : ((x: number) => string)[]
++>children : Array<(x: number) => string>
+ >x : number
+ }
+
+@@= skipped -61, +61 lines =@@
+
+ interface PropsMixed {
+   children: Cb | Cb[];
+->children : Cb[] | Cb
++>children : Array<Cb> | Cb
+ }
+
+ export function Blah3(props: PropsMixed) {

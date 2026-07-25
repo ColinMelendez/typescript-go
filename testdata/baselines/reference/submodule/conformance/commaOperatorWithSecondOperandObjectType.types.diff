@@ -1,0 +1,15 @@
+--- old.commaOperatorWithSecondOperandObjectType.types
++++ new.commaOperatorWithSecondOperandObjectType.types
+@@= skipped -101, +101 lines =@@
+ >{} : {}
+
+ !BOOLEAN, []
+->!BOOLEAN, [] : never[]
++>!BOOLEAN, [] : Array<never>
+ >!BOOLEAN : boolean
+ >BOOLEAN : boolean
+->[] : never[]
++>[] : Array<never>
+
+ "string", new Date()
+ >"string", new Date() : Date

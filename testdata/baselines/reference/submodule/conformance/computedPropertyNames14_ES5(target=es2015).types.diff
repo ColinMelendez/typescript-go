@@ -1,0 +1,11 @@
+--- old.computedPropertyNames14_ES5(target=es2015).types
++++ new.computedPropertyNames14_ES5(target=es2015).types
+@@= skipped -16, +16 lines =@@
+
+     [[]]() { }
+ >[[]] : () => void
+->[] : never[]
++>[] : Array<never>
+
+     static [{}]() { }
+ >[{}] : () => void
