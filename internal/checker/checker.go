@@ -640,6 +640,7 @@ type Checker struct {
 	reverseHomomorphicMappedCache               map[ReverseMappedTypeKey]*Type
 	iterationTypesCache                         map[IterationTypesKey]IterationTypes
 	markerTypes                                 collections.Set[*Type]
+	resolvingExplicitTypeOfSymbol               collections.Set[*ast.Symbol]
 	undefinedSymbol                             *ast.Symbol
 	argumentsSymbol                             *ast.Symbol
 	requireSymbol                               *ast.Symbol
@@ -12285,6 +12286,10 @@ func (c *Checker) classDeclarationExtendsNull(classDecl *ast.Node) bool {
 
 func (c *Checker) checkAssertion(node *ast.Node, checkMode CheckMode) *Type {
 	if node.Kind == ast.KindTypeAssertionExpression {
+		file := ast.GetSourceFileOfNode(node)
+		if file != nil && tspath.FileExtensionIsOneOf(file.FileName(), []string{tspath.ExtensionMts, tspath.ExtensionCts}) {
+			c.grammarErrorOnNode(node, diagnostics.This_syntax_is_reserved_in_files_with_the_mts_or_cts_extension_Use_an_as_expression_instead)
+		}
 		if c.shouldCheckErasableSyntax(node) {
 			c.addDiagnostic(ast.NewDiagnostic(ast.GetSourceFileOfNode(node), core.NewTextRange(scanner.SkipTrivia(ast.GetSourceFileOfNode(node).Text(), node.Pos()), node.Expression().Pos()), diagnostics.This_syntax_is_not_allowed_when_erasableSyntaxOnly_is_enabled))
 		}
@@ -13263,6 +13268,9 @@ func (c *Checker) checkObjectLiteral(node *ast.Node, checkMode CheckMode) *Type 
 			if allPropertiesTable != nil {
 				allPropertiesTable[prop.Name] = prop
 			}
+			if ast.IsIdentifier(memberDecl.Name()) {
+				c.checkDeprecatedProperty(memberDecl.Name(), contextualType)
+			}
 			if contextualType != nil && checkMode&CheckModeInferential != 0 && checkMode&CheckModeSkipContextSensitive == 0 && (ast.IsPropertyAssignment(memberDecl) || ast.IsMethodDeclaration(memberDecl)) && c.isContextSensitive(memberDecl) {
 				inferenceContext := c.getInferenceContext(node)
 				// In CheckMode.Inferential we should always have an inference context
@@ -13345,6 +13353,19 @@ func (c *Checker) checkObjectLiteral(node *ast.Node, checkMode CheckMode) *Type 
 		})
 	}
 	return createObjectLiteralType()
+}
+
+func (c *Checker) checkDeprecatedProperty(name *ast.IdentifierNode, contextualType *Type) {
+	if contextualType == nil || name == nil {
+		return
+	}
+	prop := c.getPropertyOfType(contextualType, name.Text())
+	if prop == nil || len(prop.Declarations) == 0 {
+		return
+	}
+	if c.isDeprecatedSymbol(prop) {
+		c.addDeprecatedSuggestion(name, prop.Declarations, name.Text())
+	}
 }
 
 func (c *Checker) checkSpreadPropOverrides(t *Type, props ast.SymbolTable, spread *ast.Node) {
