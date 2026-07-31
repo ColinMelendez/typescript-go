@@ -1,3 +1,22 @@
+## Fork Notes
+
+This fork of the typescript compiler changes the expression of array types to use the generic type notation (`Array<T>` or `ReadonlyArray<T>`) rather than the special `T[]` syntax. This affects type hints, inlays, hovers, and popouts provided by the language server, as well as compiler error messages, diagnostics, and generated outputs.
+
+All changes in ths fork are cosmetic; there are no differences in language semantics vs the upstream version of typescript.
+
+Releases of this fork will have the same features as the equivalently-tagged releases of the upstream.
+
+To use this fork, you can add `"typescript": "https://github.com/ColinMelendez/typescript-go/releases/download/<version>/typescript.tgz"` (replacing version with an available release) to your `package.json`, and then select the local version of typescript in your editor of choice.
+
+You may also have to explicitly point your editor at it in some cases, for example, this is required for vscode in `.vscode/settings.json` (example on mac):
+
+```json
+{
+    "js/ts.experimental.useTsgo": true,
+    "js/ts.tsdk.path": "node_modules/typescript/node_modules/@typescript/typescript-darwin-arm64/lib"
+}
+```
+
 # TypeScript 7
 
 [Not sure what this is? Read the announcement post!](https://devblogs.microsoft.com/typescript/typescript-native-port/)
